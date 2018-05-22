@@ -57,7 +57,6 @@ XML;
 		return $data;
 	}
 
-
 	function sendData($data)
 	{
 		$headers = array(
@@ -71,536 +70,534 @@ XML;
 		return $this->response = new RapidConnectResponse($this, $httpResponse->getBody()->getContents());
 	}
 
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addCommonGroup(\SimpleXMLElement $data)
+    {
+        // Mandatory
+        if (!$this->validatePymtType()) {
+            throw new InvalidRequestException("Invalid payment type");
+        }
+        $data->CommonGrp->PymtType = $this->getPymtType();
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addCommonGroup(\SimpleXMLElement $data)
-	{
-		// Mandatory
-		if (!$this->validatePaymentType()) {
-		    throw new InvalidRequestException("Invalid payment type");
-		}
-		$data->CommonGrp->PymtType = $this->getPaymentType();
+        // Mandatory
+        if (!$this->validateTxnType()) {
+            throw new InvalidRequestException("Invalid transaction type");
+        }
+        $data->CommonGrp->TxnType = $this->getTxnType();
 
-		// Mandatory
-		if (!$this->validateTransactionType()) {
-		    throw new InvalidRequestException("Invalid transaction type");
-		}
-		$data->CommonGrp->TxnType = $this->getTransactionType();
+        // Mandatory
+        if (!$this->validateLocalDateTime()) {
+            throw new InvalidRequestException("Invalid local date and time");
+        }
+        $data->CommonGrp->LocalDateTime = $this->getLocalDateTime();
 
-		// Mandatory
-		if (!$this->validateLocalDateandTime()) {
-		    throw new InvalidRequestException("Invalid local date and time");
-		}
-		$data->CommonGrp->LocalDateTime = $this->getLocalDateandTime();
+        // Mandatory
+        if (!$this->validateTrnmsnDateTime()) {
+            throw new InvalidRequestException("Invalid transmission date and time");
+        }
+        $data->CommonGrp->TrnmsnDateTime = $this->getTrnmsnDateTime();
 
-		// Mandatory
-		if (!$this->validateTransmissionDateandTime()) {
-		    throw new InvalidRequestException("Invalid transmission date and time");
-		}
-		$data->CommonGrp->TrnmsnDateTime = $this->getTransmissionDateandTime();
+        // Mandatory
+        if (!$this->validateSTAN()) {
+            throw new InvalidRequestException("Invalid stan");
+        }
+        $data->CommonGrp->STAN = $this->getSTAN();
 
-		// Mandatory
-		if (!$this->validateSTAN()) {
-		    throw new InvalidRequestException("Invalid stan");
-		}
-		$data->CommonGrp->STAN = $this->getSTAN();
+        // Mandatory
+        if (!$this->validateRefNum()) {
+            throw new InvalidRequestException("Invalid reference number");
+        }
+        $data->CommonGrp->RefNum = $this->getRefNum();
 
-		// Mandatory
-		if (!$this->validateReferenceNumber()) {
-		    throw new InvalidRequestException("Invalid reference number");
-		}
-		$data->CommonGrp->RefNum = $this->getReferenceNumber();
+        // Conditional
+        if ($this->getOrderNum() !== null) {
+            if (!$this->validateOrderNum()) {
+                throw new InvalidRequestException("Invalid order number");
+            }
+            $data->CommonGrp->OrderNum = $this->getOrderNum();
+        }
 
-		// Conditional
-		if ($this->getOrderNumber() !== null) {
-		if (!$this->validateOrderNumber()) {
-		    throw new InvalidRequestException("Invalid order number");
-		}
-		$data->CommonGrp->OrderNum = $this->getOrderNumber();
-		}
+        // Mandatory
+        if (!$this->validateTPPID()) {
+            throw new InvalidRequestException("Invalid tpp id");
+        }
+        $data->CommonGrp->TPPID = $this->getTPPID();
 
-		// Mandatory
-		if (!$this->validateTPPID()) {
-		    throw new InvalidRequestException("Invalid tpp id");
-		}
-		$data->CommonGrp->TPPID = $this->getTPPID();
+        // Mandatory
+        if (!$this->validateTermID()) {
+            throw new InvalidRequestException("Invalid terminal id");
+        }
+        $data->CommonGrp->TermID = $this->getTermID();
 
-		// Mandatory
-		if (!$this->validateTerminalID()) {
-		    throw new InvalidRequestException("Invalid terminal id");
-		}
-		$data->CommonGrp->TermID = $this->getTerminalID();
+        // Mandatory
+        if (!$this->validateMerchID()) {
+            throw new InvalidRequestException("Invalid merchant id");
+        }
+        $data->CommonGrp->MerchID = $this->getMerchID();
 
-		// Mandatory
-		if (!$this->validateMerchantID()) {
-		    throw new InvalidRequestException("Invalid merchant id");
-		}
-		$data->CommonGrp->MerchID = $this->getMerchantID();
+        // Conditional
+        if ($this->getMerchCatCode() !== null) {
+            if (!$this->validateMerchCatCode()) {
+                throw new InvalidRequestException("Invalid merchant category code");
+            }
+            $data->CommonGrp->MerchCatCode = $this->getMerchCatCode();
+        }
 
-		// Conditional
-		if ($this->getMerchantCategoryCode() !== null) {
-		if (!$this->validateMerchantCategoryCode()) {
-		    throw new InvalidRequestException("Invalid merchant category code");
-		}
-		$data->CommonGrp->MerchCatCode = $this->getMerchantCategoryCode();
-		}
+        // Mandatory
+        if (!$this->validatePOSEntryMode()) {
+            throw new InvalidRequestException("Invalid pos entry mode");
+        }
+        $data->CommonGrp->POSEntryMode = $this->getPOSEntryMode();
 
-		// Mandatory
-		if (!$this->validatePOSEntryMode()) {
-		    throw new InvalidRequestException("Invalid pos entry mode");
-		}
-		$data->CommonGrp->POSEntryMode = $this->getPOSEntryMode();
+        // Mandatory
+        if (!$this->validatePOSCondCode()) {
+            throw new InvalidRequestException("Invalid pos condition code");
+        }
+        $data->CommonGrp->POSCondCode = $this->getPOSCondCode();
 
-		// Mandatory
-		if (!$this->validatePOSConditionCode()) {
-		    throw new InvalidRequestException("Invalid pos condition code");
-		}
-		$data->CommonGrp->POSCondCode = $this->getPOSConditionCode();
+        // Mandatory
+        if (!$this->validateTermCatCode()) {
+            throw new InvalidRequestException("Invalid terminal category code");
+        }
+        $data->CommonGrp->TermCatCode = $this->getTermCatCode();
 
-		// Mandatory
-		if (!$this->validateTerminalCategoryCode()) {
-		    throw new InvalidRequestException("Invalid terminal category code");
-		}
-		$data->CommonGrp->TermCatCode = $this->getTerminalCategoryCode();
+        // Mandatory
+        if (!$this->validateTermEntryCapablt()) {
+            throw new InvalidRequestException("Invalid terminal entry capability");
+        }
+        $data->CommonGrp->TermEntryCapablt = $this->getTermEntryCapablt();
 
-		// Mandatory
-		if (!$this->validateTerminalEntryCapability()) {
-		    throw new InvalidRequestException("Invalid terminal entry capability");
-		}
-		$data->CommonGrp->TermEntryCapablt = $this->getTerminalEntryCapability();
+        // Mandatory
+        if (!$this->validateTxnAmt()) {
+            throw new InvalidRequestException("Invalid transaction amount");
+        }
+        $data->CommonGrp->TxnAmt = $this->getTxnAmt();
 
-		// Mandatory
-		if (!$this->validateTransactionAmount()) {
-		    throw new InvalidRequestException("Invalid transaction amount");
-		}
-		$data->CommonGrp->TxnAmt = $this->getTransactionAmount();
+        // Mandatory
+        if (!$this->validateTxnCrncy()) {
+            throw new InvalidRequestException("Invalid transaction currency");
+        }
+        $data->CommonGrp->TxnCrncy = $this->getTxnCrncy();
 
-		// Mandatory
-		if (!$this->validateTransactionCurrency()) {
-		    throw new InvalidRequestException("Invalid transaction currency");
-		}
-		$data->CommonGrp->TxnCrncy = $this->getTransactionCurrency();
+        // Mandatory
+        if (!$this->validateTermLocInd()) {
+            throw new InvalidRequestException("Invalid terminal location indicator");
+        }
+        $data->CommonGrp->TermLocInd = $this->getTermLocInd();
 
-		// Mandatory
-		if (!$this->validateTerminalLocationIndicator()) {
-		    throw new InvalidRequestException("Invalid terminal location indicator");
-		}
-		$data->CommonGrp->TermLocInd = $this->getTerminalLocationIndicator();
+        // Mandatory
+        if (!$this->validateCardCaptCap()) {
+            throw new InvalidRequestException("Invalid card capture capability");
+        }
+        $data->CommonGrp->CardCaptCap = $this->getCardCaptCap();
 
-		// Mandatory
-		if (!$this->validateCardCaptureCapability()) {
-		    throw new InvalidRequestException("Invalid card capture capability");
-		}
-		$data->CommonGrp->CardCaptCap = $this->getCardCaptureCapability();
+        // Mandatory
+        if (!$this->validateGroupID()) {
+            throw new InvalidRequestException("Invalid group id");
+        }
+        $data->CommonGrp->GroupID = $this->getGroupID();
 
-		// Mandatory
-		if (!$this->validateGroupID()) {
-		    throw new InvalidRequestException("Invalid group id");
-		}
-		$data->CommonGrp->GroupID = $this->getGroupID();
+        // Conditional
+        if ($this->getPOSID() !== null) {
+            if (!$this->validatePOSID()) {
+                throw new InvalidRequestException("Invalid pos id");
+            }
+            $data->CommonGrp->POSID = $this->getPOSID();
+        }
 
-		// Conditional
-		if ($this->getPOSID() !== null) {
-		if (!$this->validatePOSID()) {
-		    throw new InvalidRequestException("Invalid pos id");
-		}
-		$data->CommonGrp->POSID = $this->getPOSID();
-		}
+        // Optional
+        if ($this->getClerkID() !== null) {
+            if (!$this->validateClerkID()) {
+                throw new InvalidRequestException("Invalid clerk id");
+            }
+            $data->CommonGrp->ClerkID = $this->getClerkID();
+        }
 
-		// Optional
-		if ($this->getClerkID() !== null) {
-		if (!$this->validateClerkID()) {
-		    throw new InvalidRequestException("Invalid clerk id");
-		}
-		$data->CommonGrp->ClerkID = $this->getClerkID();
-		}
+        // Conditional
+        if ($this->getSENum() !== null) {
+            if (!$this->validateSENum()) {
+                throw new InvalidRequestException("Invalid service entitlement number");
+            }
+            $data->CommonGrp->SENum = $this->getSENum();
+        }
 
-		// Conditional
-		if ($this->getServiceEntitlementNumber() !== null) {
-		if (!$this->validateServiceEntitlementNumber()) {
-		    throw new InvalidRequestException("Invalid service entitlement number");
-		}
-		$data->CommonGrp->SENum = $this->getServiceEntitlementNumber();
-		}
+        // Conditional
+        if ($this->getPLPOSDebitFlg() !== null) {
+            if (!$this->validatePLPOSDebitFlg()) {
+                throw new InvalidRequestException("Invalid pinless pos debit flag");
+            }
+            $data->CommonGrp->PLPOSDebitFlg = $this->getPLPOSDebitFlg();
+        }
 
-		// Conditional
-		if ($this->getPINLessPOSDebitFlag() !== null) {
-		if (!$this->validatePINLessPOSDebitFlag()) {
-		    throw new InvalidRequestException("Invalid pinless pos debit flag");
-		}
-		$data->CommonGrp->PLPOSDebitFlg = $this->getPINLessPOSDebitFlag();
-		}
+        // Optional
+        if ($this->getMerchEcho() !== null) {
+            if (!$this->validateMerchEcho()) {
+                throw new InvalidRequestException("Invalid merchant echo");
+            }
+            $data->CommonGrp->MerchEcho = $this->getMerchEcho();
+        }
 
-		// Optional
-		if ($this->getMerchantEcho() !== null) {
-		if (!$this->validateMerchantEcho()) {
-		    throw new InvalidRequestException("Invalid merchant echo");
-		}
-		$data->CommonGrp->MerchEcho = $this->getMerchantEcho();
-		}
+        // Conditional
+        if ($this->getWltID() !== null) {
+            if (!$this->validateWltID()) {
+                throw new InvalidRequestException("Invalid wallet identifier");
+            }
+            $data->CommonGrp->WltID = $this->getWltID();
+        }
 
-		// Conditional
-		if ($this->getWalletIdentifier() !== null) {
-		if (!$this->validateWalletIdentifier()) {
-		    throw new InvalidRequestException("Invalid wallet identifier");
-		}
-		$data->CommonGrp->WltID = $this->getWalletIdentifier();
-		}
+        // Conditional
+        if ($this->getNonUSMerch() !== null) {
+            if (!$this->validateNonUSMerch()) {
+                throw new InvalidRequestException("Invalid non us merchant");
+            }
+            $data->CommonGrp->NonUSMerch = $this->getNonUSMerch();
+        }
 
-		// Conditional
-		if ($this->getNonUSMerchant() !== null) {
-		if (!$this->validateNonUSMerchant()) {
-		    throw new InvalidRequestException("Invalid non us merchant");
-		}
-		$data->CommonGrp->NonUSMerch = $this->getNonUSMerchant();
-		}
+        // Conditional
+        if ($this->getDevBatchID() !== null) {
+            if (!$this->validateDevBatchID()) {
+                throw new InvalidRequestException("Invalid device batch id");
+            }
+            $data->CommonGrp->DevBatchID = $this->getDevBatchID();
+        }
 
-		// Conditional
-		if ($this->getDeviceBatchID() !== null) {
-		if (!$this->validateDeviceBatchID()) {
-		    throw new InvalidRequestException("Invalid device batch id");
-		}
-		$data->CommonGrp->DevBatchID = $this->getDeviceBatchID();
-		}
+        // Conditional
+        if ($this->getDigWltInd() !== null) {
+            if (!$this->validateDigWltInd()) {
+                throw new InvalidRequestException("Invalid digital wallet indicator");
+            }
+            $data->CommonGrp->DigWltInd = $this->getDigWltInd();
+        }
 
-		// Conditional
-		if ($this->getDigitalWalletIndicator() !== null) {
-		if (!$this->validateDigitalWalletIndicator()) {
-		    throw new InvalidRequestException("Invalid digital wallet indicator");
-		}
-		$data->CommonGrp->DigWltInd = $this->getDigitalWalletIndicator();
-		}
+        // Conditional
+        if ($this->getDigWltProgType() !== null) {
+            if (!$this->validateDigWltProgType()) {
+                throw new InvalidRequestException("Invalid digital wallet program type");
+            }
+            $data->CommonGrp->DigWltProgType = $this->getDigWltProgType();
+        }
 
-		// Conditional
-		if ($this->getDigitalWalletProgramType() !== null) {
-		if (!$this->validateDigitalWalletProgramType()) {
-		    throw new InvalidRequestException("Invalid digital wallet program type");
-		}
-		$data->CommonGrp->DigWltProgType = $this->getDigitalWalletProgramType();
-		}
-
-		// Optional
-		if ($this->getTransactionInitiation() !== null) {
-		if (!$this->validateTransactionInitiation()) {
-		    throw new InvalidRequestException("Invalid transaction initiation");
-		}
-		$data->CommonGrp->TranInit = $this->getTransactionInitiation();
-		}
-	}
+        // Optional
+        if ($this->getTranInit() !== null) {
+            if (!$this->validateTranInit()) {
+                throw new InvalidRequestException("Invalid transaction initiation");
+            }
+            $data->CommonGrp->TranInit = $this->getTranInit();
+        }
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addBillPaymentGroup(\SimpleXMLElement $data)
-	{
-		// Optional
-		if ($this->getInstallmentPaymentInvoiceNumber() !== null) {
-		if (!$this->validateInstallmentPaymentInvoiceNumber()) {
-		    throw new InvalidRequestException("Invalid installment payment invoice
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addBillPaymentGroup(\SimpleXMLElement $data)
+    {
+        // Optional
+        if ($this->getInstallInvNum() !== null) {
+            if (!$this->validateInstallInvNum()) {
+                throw new InvalidRequestException("Invalid installment payment invoice
 		number");
-		}
-		$data->BillPayGrp->InstallInvNum = $this->getInstallmentPaymentInvoiceNumber();
-		}
+            }
+            $data->BillPayGrp->InstallInvNum = $this->getInstallInvNum();
+        }
 
-		// Optional
-		if ($this->getInstallmentPaymentDescription() !== null) {
-		if (!$this->validateInstallmentPaymentDescription()) {
-		    throw new InvalidRequestException("Invalid installment payment description");
-		}
-		$data->BillPayGrp->InstallPymntDesc = $this->getInstallmentPaymentDescription();
-		}
-	}
-
-
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addCardGroup(\SimpleXMLElement $data)
-	{
-		// Conditional
-		if ($this->getAccountNumber() !== null) {
-		if (!$this->validateAccountNumber()) {
-		    throw new InvalidRequestException("Invalid account number");
-		}
-		$data->CardGrp->AcctNum = $this->getAccountNumber();
-		}
-
-		// Conditional
-		if ($this->getCardExpirationDate() !== null) {
-		if (!$this->validateCardExpirationDate()) {
-		    throw new InvalidRequestException("Invalid card expiration date");
-		}
-		$data->CardGrp->CardExpiryDate = $this->getCardExpirationDate();
-		}
-
-		// Conditional
-		if ($this->getTrackData() !== null) {
-		if (!$this->validateTrackData()) {
-		    throw new InvalidRequestException("Invalid track 1 data");
-		}
-		$data->CardGrp->Track1Data = $this->getTrackData();
-		}
-
-		// Conditional
-		if ($this->getTrackData() !== null) {
-		if (!$this->validateTrackData()) {
-		    throw new InvalidRequestException("Invalid track 2 data");
-		}
-		$data->CardGrp->Track2Data = $this->getTrackData();
-		}
-
-		// Conditional
-		if ($this->getCardType() !== null) {
-		if (!$this->validateCardType()) {
-		    throw new InvalidRequestException("Invalid card type");
-		}
-		$data->CardGrp->CardType = $this->getCardType();
-		}
-
-		// Conditional
-		if ($this->getMVVMAID() !== null) {
-		if (!$this->validateMVVMAID()) {
-		    throw new InvalidRequestException("Invalid mvv/maid");
-		}
-		$data->CardGrp->MVVMAID = $this->getMVVMAID();
-		}
-	}
+        // Optional
+        if ($this->getInstallPymntDesc() !== null) {
+            if (!$this->validateInstallPymntDesc()) {
+                throw new InvalidRequestException("Invalid installment payment description");
+            }
+            $data->BillPayGrp->InstallPymntDesc = $this->getInstallPymntDesc();
+        }
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addPinGroup(\SimpleXMLElement $data)
-	{
-		// Conditional
-		if ($this->getPINData() !== null) {
-		if (!$this->validatePINData()) {
-		    throw new InvalidRequestException("Invalid pin data");
-		}
-		$data->PINGrp->PINData = $this->getPINData();
-		}
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addCardGroup(\SimpleXMLElement $data)
+    {
+        // Conditional
+        if ($this->getAcctNum() !== null) {
+            if (!$this->validateAcctNum()) {
+                throw new InvalidRequestException("Invalid account number");
+            }
+            $data->CardGrp->AcctNum = $this->getAcctNum();
+        }
 
-		// Conditional
-		if ($this->getKeySerialNumberData() !== null) {
-		if (!$this->validateKeySerialNumberData()) {
-		    throw new InvalidRequestException("Invalid key serial number data");
-		}
-		$data->PINGrp->KeySerialNumData = $this->getKeySerialNumberData();
-		}
-	}
+        // Conditional
+        if ($this->getCardExpiryDate() !== null) {
+            if (!$this->validateCardExpiryDate()) {
+                throw new InvalidRequestException("Invalid card expiration date");
+            }
+            $data->CardGrp->CardExpiryDate = $this->getCardExpiryDate();
+        }
 
+        // Conditional
+        if ($this->getTrack1Data() !== null) {
+            if (!$this->validateTrack1Data()) {
+                throw new InvalidRequestException("Invalid track 1 data");
+            }
+            $data->CardGrp->Track1Data = $this->getTrack1Data();
+        }
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addEcommGroup(\SimpleXMLElement $data)
-	{
-		// Conditional
-		if ($this->getEcommTransactionIndicator() !== null) {
-		if (!$this->validateEcommTransactionIndicator()) {
-		    throw new InvalidRequestException("Invalid ecomm transaction indicator");
-		}
-		$data->EcommGrp->EcommTxnInd = $this->getEcommTransactionIndicator();
-		}
+        // Conditional
+        if ($this->getTrack2Data() !== null) {
+            if (!$this->validateTrack2Data()) {
+                throw new InvalidRequestException("Invalid track 2 data");
+            }
+            $data->CardGrp->Track2Data = $this->getTrack2Data();
+        }
 
-		// Conditional
-		if ($this->getCustomerServicePhoneNumber() !== null) {
-		if (!$this->validateCustomerServicePhoneNumber()) {
-		    throw new InvalidRequestException("Invalid customer service phone number");
-		}
-		$data->EcommGrp->CustSvcPhoneNumber = $this->getCustomerServicePhoneNumber();
-		}
+        // Conditional
+        if ($this->getCardType() !== null) {
+            if (!$this->validateCardType()) {
+                throw new InvalidRequestException("Invalid card type");
+            }
+            $data->CardGrp->CardType = $this->getCardType();
+        }
 
-		// Conditional
-		if ($this->getEcommURL() !== null) {
-		if (!$this->validateEcommURL()) {
-		    throw new InvalidRequestException("Invalid ecomm url");
-		}
-		$data->EcommGrp->EcommURL = $this->getEcommURL();
-		}
-	}
-
-
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addVisaGroup(\SimpleXMLElement $data)
-	{
-		// Conditional
-		if ($this->getVisaBID() !== null) {
-		if (!$this->validateVisaBID()) {
-		    throw new InvalidRequestException("Invalid visa bid");
-		}
-		$data->VisaGrp->VisaBID = $this->getVisaBID();
-		}
-
-		// Conditional
-		if ($this->getVisaAUAR() !== null) {
-		if (!$this->validateVisaAUAR()) {
-		    throw new InvalidRequestException("Invalid visa auar");
-		}
-		$data->VisaGrp->VisaAUAR = $this->getVisaAUAR();
-		}
-
-		// Conditional
-		if ($this->getAuthIndicator() !== null) {
-		if (!$this->validateAuthIndicator()) {
-		    throw new InvalidRequestException("Invalid auth indicator");
-		}
-		$data->VisaGrp->VisaAuthInd = $this->getAuthIndicator();
-		}
-
-		// Conditional
-		if ($this->getAuthIndicator() !== null) {
-		if (!$this->validateAuthIndicator()) {
-		    throw new InvalidRequestException("Invalid auth indicator");
-		}
-		$data->VisaGrp->VisaAuthInd = $this->getAuthIndicator();
-		}
-	}
+        // Conditional
+        if ($this->getMVVMAID() !== null) {
+            if (!$this->validateMVVMAID()) {
+                throw new InvalidRequestException("Invalid mvv/maid");
+            }
+            $data->CardGrp->MVVMAID = $this->getMVVMAID();
+        }
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addMastercardGroup(\SimpleXMLElement $data)
-	{
-		// Conditional
-		if ($this->getDeviceTypeIndicator() !== null) {
-		if (!$this->validateDeviceTypeIndicator()) {
-		    throw new InvalidRequestException("Invalid device type indicator");
-		}
-		$data->MCGrp->DevTypeInd = $this->getDeviceTypeIndicator();
-		}
-	}
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addPinGroup(\SimpleXMLElement $data)
+    {
+        // Conditional
+        if ($this->getPINData() !== null) {
+            if (!$this->validatePINData()) {
+                throw new InvalidRequestException("Invalid pin data");
+            }
+            $data->PINGrp->PINData = $this->getPINData();
+        }
+
+        // Conditional
+        if ($this->getKeySerialNumData() !== null) {
+            if (!$this->validateKeySerialNumData()) {
+                throw new InvalidRequestException("Invalid key serial number data");
+            }
+            $data->PINGrp->KeySerialNumData = $this->getKeySerialNumData();
+        }
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addDiscoverGroup(\SimpleXMLElement $data)
-	{
-		// Optional
-		if ($this->getMOTOIndicator() !== null) {
-		if (!$this->validateMOTOIndicator()) {
-		    throw new InvalidRequestException("Invalid moto indicator");
-		}
-		$data->DSGrp->MOTOInd = $this->getMOTOIndicator();
-		}
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addEcommGroup(\SimpleXMLElement $data)
+    {
+        // Conditional
+        if ($this->getEcommTxnInd() !== null) {
+            if (!$this->validateEcommTxnInd()) {
+                throw new InvalidRequestException("Invalid ecomm transaction indicator");
+            }
+            $data->EcommGrp->EcommTxnInd = $this->getEcommTxnInd();
+        }
 
-		// Optional
-		if ($this->getRegisteredUserIndicator() !== null) {
-		if (!$this->validateRegisteredUserIndicator()) {
-		    throw new InvalidRequestException("Invalid registered user indicator");
-		}
-		$data->DSGrp->RegUserInd = $this->getRegisteredUserIndicator();
-		}
+        // Conditional
+        if ($this->getCustSvcPhoneNumber() !== null) {
+            if (!$this->validateCustSvcPhoneNumber()) {
+                throw new InvalidRequestException("Invalid customer service phone number");
+            }
+            $data->EcommGrp->CustSvcPhoneNumber = $this->getCustSvcPhoneNumber();
+        }
 
-		// Optional
-		if ($this->getRegisteredUserProfileChangeDate() !== null) {
-		if (!$this->validateRegisteredUserProfileChangeDate()) {
-		    throw new InvalidRequestException("Invalid registered user profile change
+        // Conditional
+        if ($this->getEcommURL() !== null) {
+            if (!$this->validateEcommURL()) {
+                throw new InvalidRequestException("Invalid ecomm url");
+            }
+            $data->EcommGrp->EcommURL = $this->getEcommURL();
+        }
+    }
+
+
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addVisaGroup(\SimpleXMLElement $data)
+    {
+        // Conditional
+        if ($this->getVisaBID() !== null) {
+            if (!$this->validateVisaBID()) {
+                throw new InvalidRequestException("Invalid visa bid");
+            }
+            $data->VisaGrp->VisaBID = $this->getVisaBID();
+        }
+
+        // Conditional
+        if ($this->getVisaAUAR() !== null) {
+            if (!$this->validateVisaAUAR()) {
+                throw new InvalidRequestException("Invalid visa auar");
+            }
+            $data->VisaGrp->VisaAUAR = $this->getVisaAUAR();
+        }
+
+        // Conditional
+        if ($this->getVisaAuthInd() !== null) {
+            if (!$this->validateVisaAuthInd()) {
+                throw new InvalidRequestException("Invalid auth indicator");
+            }
+            $data->VisaGrp->VisaAuthInd = $this->getVisaAuthInd();
+        }
+
+        // Conditional
+        if ($this->getVisaAuthInd() !== null) {
+            if (!$this->validateVisaAuthInd()) {
+                throw new InvalidRequestException("Invalid auth indicator");
+            }
+            $data->VisaGrp->VisaAuthInd = $this->getVisaAuthInd();
+        }
+    }
+
+
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addMastercardGroup(\SimpleXMLElement $data)
+    {
+        // Conditional
+        if ($this->getDevTypeInd() !== null) {
+            if (!$this->validateDevTypeInd()) {
+                throw new InvalidRequestException("Invalid device type indicator");
+            }
+            $data->MCGrp->DevTypeInd = $this->getDevTypeInd();
+        }
+    }
+
+
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addDiscoverGroup(\SimpleXMLElement $data)
+    {
+        // Optional
+        if ($this->getMOTOInd() !== null) {
+            if (!$this->validateMOTOInd()) {
+                throw new InvalidRequestException("Invalid moto indicator");
+            }
+            $data->DSGrp->MOTOInd = $this->getMOTOInd();
+        }
+
+        // Optional
+        if ($this->getRegUserInd() !== null) {
+            if (!$this->validateRegUserInd()) {
+                throw new InvalidRequestException("Invalid registered user indicator");
+            }
+            $data->DSGrp->RegUserInd = $this->getRegUserInd();
+        }
+
+        // Optional
+        if ($this->getRegUserDate() !== null) {
+            if (!$this->validateRegUserDate()) {
+                throw new InvalidRequestException("Invalid registered user profile change
 		date");
-		}
-		$data->DSGrp->RegUserDate = $this->getRegisteredUserProfileChangeDate();
-		}
-	}
+            }
+            $data->DSGrp->RegUserDate = $this->getRegUserDate();
+        }
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addAmexGroup(\SimpleXMLElement $data)
-	{
-		// Conditional
-		if ($this->getGoodsSoldCode() !== null) {
-		if (!$this->validateGoodsSoldCode()) {
-		    throw new InvalidRequestException("Invalid goods sold code");
-		}
-		$data->AmexGrp->GdSoldCd = $this->getGoodsSoldCode();
-		}
-	}
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addAmexGroup(\SimpleXMLElement $data)
+    {
+        // Conditional
+        if ($this->getGdSoldCd() !== null) {
+            if (!$this->validateGdSoldCd()) {
+                throw new InvalidRequestException("Invalid goods sold code");
+            }
+            $data->AmexGrp->GdSoldCd = $this->getGdSoldCd();
+        }
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addCustomerInfoGroup(\SimpleXMLElement $data)
-	{
-	}
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addCustomerInfoGroup(\SimpleXMLElement $data)
+    {
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addOrderGroup(\SimpleXMLElement $data)
-	{
-	}
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addOrderGroup(\SimpleXMLElement $data)
+    {
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addResponseGroup(\SimpleXMLElement $data)
-	{
-	}
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addResponseGroup(\SimpleXMLElement $data)
+    {
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addOriginalAuthorizationGroup(\SimpleXMLElement $data)
-	{
-	}
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addOriginalAuthorizationGroup(\SimpleXMLElement $data)
+    {
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addProductCodeGroup(\SimpleXMLElement $data)
-	{
-		// Conditional
-		if ($this->getServiceLevel() !== null) {
-		if (!$this->validateServiceLevel()) {
-		    throw new InvalidRequestException("Invalid service level");
-		}
-		$data->ProdCodeGrp->ServLvl = $this->getServiceLevel();
-		}
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addProductCodeGroup(\SimpleXMLElement $data)
+    {
+        // Conditional
+        if ($this->getServLvl() !== null) {
+            if (!$this->validateServLvl()) {
+                throw new InvalidRequestException("Invalid service level");
+            }
+            $data->ProdCodeGrp->ServLvl = $this->getServLvl();
+        }
 
-		// Conditional
-		if ($this->getNumberofProducts() !== null) {
-		if (!$this->validateNumberofProducts()) {
-		    throw new InvalidRequestException("Invalid number of products");
-		}
-		$data->ProdCodeGrp->NumOfProds = $this->getNumberofProducts();
-		}
-	}
-
-
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addFileDownloadGroup(\SimpleXMLElement $data)
-	{
-	}
+        // Conditional
+        if ($this->getNumOfProds() !== null) {
+            if (!$this->validateNumOfProds()) {
+                throw new InvalidRequestException("Invalid number of products");
+            }
+            $data->ProdCodeGrp->NumOfProds = $this->getNumOfProds();
+        }
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addLodgingGroup(\SimpleXMLElement $data)
-	{
-	}
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addFileDownloadGroup(\SimpleXMLElement $data)
+    {
+    }
 
 
-	/**
-	 * @param \SimpleXMLElement $data
-	 */
-	public function addAutoRentalGroup(\SimpleXMLElement $data)
-	{
-	}
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addLodgingGroup(\SimpleXMLElement $data)
+    {
+    }
 
+
+    /**
+     * @param \SimpleXMLElement $data
+     */
+    public function addAutoRentalGroup(\SimpleXMLElement $data)
+    {
+    }
 }

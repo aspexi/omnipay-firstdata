@@ -2236,4 +2236,739 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
 		return in_array($value, $valid);
 	}
 
+    /**
+     * @return string
+     */
+    public function getSettleInd()
+    {
+        return $this->getParameter('SettleInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setSettleInd(string $value)
+    {
+        return $this->setParameter('SettleInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateSettleInd()
+    {
+        $value = $this->getParameter('SettleInd');
+        $valid = array('1', '2', '3');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getBillPymtTxnInd()
+    {
+        return $this->getParameter('BillPymtTxnInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setBillPymtTxnInd(string $value)
+    {
+        return $this->setParameter('BillPymtTxnInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateBillPymtTxnInd()
+    {
+        $value = $this->getParameter('BillPymtTxnInd');
+        $valid = array('Single', 'Recurring', 'Installment', 'Deferred');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTrack1Data()
+    {
+        return $this->getParameter('Track1Data');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTrack1Data(string $value)
+    {
+        return $this->setParameter('Track1Data', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateTrack1Data()
+    {
+        $value = $this->getParameter('Track1Data');
+        return strlen($value) >= 1 && strlen($value) <= 76;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTrack2Data()
+    {
+        return $this->getParameter('Track2Data');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTrack2Data(string $value)
+    {
+        return $this->setParameter('Track2Data', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateTrack2Data()
+    {
+        $value = $this->getParameter('Track2Data');
+        return strlen($value) >= 1 && strlen($value) <= 37;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCCVInd()
+    {
+        return $this->getParameter('CCVInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCCVInd(string $value)
+    {
+        return $this->setParameter('CCVInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateCCVInd()
+    {
+        $value = $this->getParameter('CCVInd');
+        $valid = array('Ntprvd', 'Prvded', 'Illegible', 'NtOnCrd');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCCVData()
+    {
+        return $this->getParameter('CCVData');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCCVData(string $value)
+    {
+        return $this->setParameter('CCVData', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateCCVData()
+    {
+        $value = $this->getParameter('CCVData');
+        if (!preg_match('/[0-9A-Za-z]{3,4}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPINData()
+    {
+        return $this->getParameter('PINData');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setPINData(string $value)
+    {
+        return $this->setParameter('PINData', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validatePINData()
+    {
+        $value = $this->getParameter('PINData');
+        if (!preg_match('/[0-9A-F]{16,16}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKeySerialNumData()
+    {
+        return $this->getParameter('KeySerialNumData');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setKeySerialNumData(string $value)
+    {
+        return $this->setParameter('KeySerialNumData', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateKeySerialNumData()
+    {
+        $value = $this->getParameter('KeySerialNumData');
+        if (!preg_match('/[0-9A-Za-z]{20,20}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @return string
+     */
+    public function getACI()
+    {
+        return $this->getParameter('ACI');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setACI(string $value)
+    {
+        return $this->setParameter('ACI', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateACI()
+    {
+        $value = $this->getParameter('ACI');
+        $valid = array('P', 'I', 'Y', 'R', 'A', 'B', 'C', 'E', 'F', 'J', 'K', 'N', 'S', 'T', 'U', 'V', 'W');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getMrktSpecificDataInd()
+    {
+        return $this->getParameter('MrktSpecificDataInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMrktSpecificDataInd(string $value)
+    {
+        return $this->setParameter('MrktSpecificDataInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateMrktSpecificDataInd()
+    {
+        $value = $this->getParameter('MrktSpecificDataInd');
+        $valid = array('BillPayment', 'Healthcare', 'Transit', 'EcomAgg', 'B2B', 'Hotel', 'AutoRental');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getExistingDebtInd()
+    {
+        return $this->getParameter('ExistingDebtInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setExistingDebtInd(string $value)
+    {
+        return $this->setParameter('ExistingDebtInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateExistingDebtInd()
+    {
+        $value = $this->getParameter('ExistingDebtInd');
+        $valid = array('1');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTransID()
+    {
+        return $this->getParameter('TransID');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTransID(string $value)
+    {
+        return $this->setParameter('TransID', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateTransID()
+    {
+        $value = $this->getParameter('TransID');
+        return strlen($value) >= 1 && strlen($value) <= 20;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTaxAmtCapablt()
+    {
+        return $this->getParameter('TaxAmtCapablt');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTaxAmtCapablt(string $value)
+    {
+        return $this->setParameter('TaxAmtCapablt', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateTaxAmtCapablt()
+    {
+        $value = $this->getParameter('TaxAmtCapablt');
+        $valid = array('0', '1', 'VB', 'VC', 'VP', 'TX', 'NA');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCheckoutInd()
+    {
+        return $this->getParameter('CheckoutInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCheckoutInd(string $value)
+    {
+        return $this->setParameter('CheckoutInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateCheckoutInd()
+    {
+        $value = $this->getParameter('CheckoutInd');
+        $valid = array('Y');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getQCI()
+    {
+        return $this->getParameter('QCI');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setQCI(string $value)
+    {
+        return $this->setParameter('QCI', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateQCI()
+    {
+        $value = $this->getParameter('QCI');
+        $valid = array('Y', 'N');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getStoredCredInd()
+    {
+        return $this->getParameter('StoredCredInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setStoredCredInd(string $value)
+    {
+        return $this->setParameter('StoredCredInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateStoredCredInd()
+    {
+        $value = $this->getParameter('StoredCredInd');
+        $valid = array('Initial', 'Subsequent');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCofSchedInd()
+    {
+        return $this->getParameter('CofSchedInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCofSchedInd(string $value)
+    {
+        return $this->setParameter('CofSchedInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateCofSchedInd()
+    {
+        $value = $this->getParameter('CofSchedInd');
+        $valid = array('Scheduled', 'Unscheduled');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getMCMSDI()
+    {
+        return $this->getParameter('MCMSDI');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMCMSDI(string $value)
+    {
+        return $this->setParameter('MCMSDI', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateMCMSDI()
+    {
+        $value = $this->getParameter('MCMSDI');
+        $valid = array('BillPayment', 'Healthcare', 'Transit', 'EcomAgg', 'B2B', 'Hotel', 'AutoRental');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getBanknetData()
+    {
+        return $this->getParameter('BanknetData');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setBanknetData(string $value)
+    {
+        return $this->setParameter('BanknetData', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateBanknetData()
+    {
+        $value = $this->getParameter('BanknetData');
+        if (!preg_match('/[0-9A-Za-z]{13,13}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMCACI()
+    {
+        return $this->getParameter('MCACI');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMCACI(string $value)
+    {
+        return $this->setParameter('MCACI', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateMCACI()
+    {
+        $value = $this->getParameter('MCACI');
+        $valid = array('P', 'I');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getMCAddData()
+    {
+        return $this->getParameter('MCAddData');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMCAddData(string $value)
+    {
+        return $this->setParameter('MCAddData', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateMCAddData()
+    {
+        $value = $this->getParameter('MCAddData');
+        if (!preg_match('/[0-9A-Za-z]{13,13}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFinAuthInd()
+    {
+        return $this->getParameter('FinAuthInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setFinAuthInd(string $value)
+    {
+        return $this->setParameter('FinAuthInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateFinAuthInd()
+    {
+        $value = $this->getParameter('FinAuthInd');
+        $valid = array('0', '1');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTranIntgClass()
+    {
+        return $this->getParameter('TranIntgClass');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTranIntgClass(string $value)
+    {
+        return $this->setParameter('TranIntgClass', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateTranIntgClass()
+    {
+        $value = $this->getParameter('TranIntgClass');
+        $valid = array('Checkout', 'Digital', 'EMV', 'Enhanced', 'Generic', 'Keyed', 'Swiped', 'Token', 'Unknown', 'UnknownCNP', 'Validated');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDiscAuthInd()
+    {
+        return $this->getParameter('DiscAuthInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDiscAuthInd(string $value)
+    {
+        return $this->setParameter('DiscAuthInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateDiscAuthInd()
+    {
+        $value = $this->getParameter('DiscAuthInd');
+        $valid = array('ReAuth');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDiscNRID()
+    {
+        return $this->getParameter('DiscNRID');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDiscNRID(string $value)
+    {
+        return $this->setParameter('DiscNRID', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateDiscNRID()
+    {
+        $value = $this->getParameter('DiscNRID');
+        if (!preg_match('/[0-9A-Za-z]{1,15}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReAuthInd()
+    {
+        return $this->getParameter('ReAuthInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setReAuthInd(string $value)
+    {
+        return $this->setParameter('ReAuthInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateReAuthInd()
+    {
+        $value = $this->getParameter('ReAuthInd');
+        $valid = array('Y');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getOrigSTAN()
+    {
+        return $this->getParameter('OrigSTAN');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setOrigSTAN(string $value)
+    {
+        return $this->setParameter('OrigSTAN', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateOrigSTAN()
+    {
+        $value = $this->getParameter('OrigSTAN');
+        if (!preg_match('/[0-9]{6,6}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProgramInd()
+    {
+        return $this->getParameter('ProgramInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setProgramInd(string $value)
+    {
+        return $this->setParameter('ProgramInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateProgramInd()
+    {
+        $value = $this->getParameter('ProgramInd');
+        $valid = array('1', '2', '3', '4', '5', '6');
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDelChrgInd()
+    {
+        return $this->getParameter('DelChrgInd');
+    }
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDelChrgInd(string $value)
+    {
+        return $this->setParameter('DelChrgInd', $value);
+    }
+    /**
+     * @return bool
+     */
+    public function validateDelChrgInd()
+    {
+        $value = $this->getParameter('DelChrgInd');
+        $valid = array('DelChrg');
+        return in_array($value, $valid);
+    }
 }

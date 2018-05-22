@@ -18,6 +18,7 @@ class RapidConnectGateway extends AbstractGateway
             'DID' => '',
             'GroupId' => '',
             'MerchID' => '',
+            'ServiceID' => '',
             'TermID' => '',
 
             'liveEndpoint' => 'https://stg.dw.us.fdcnet.biz/rc',
@@ -103,6 +104,23 @@ class RapidConnectGateway extends AbstractGateway
     public function setLiveEndpoint(string $uri)
     {
         return $this->setParameter('liveEndpoint', $uri);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getServiceID()
+    {
+        return $this->getParameter('ServiceID');
+    }
+
+    /**
+     * @param $serviceId
+     * @return RapidConnectGateway
+     */
+    public function setServiceID($serviceId)
+    {
+        return $this->setParameter('ServiceID', $serviceId);
     }
 
     /**

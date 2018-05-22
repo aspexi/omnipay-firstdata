@@ -17,14 +17,16 @@ class RapidConnectGatewayIntegrationTest extends TestCase
         $dId = getenv('RAPIDCONNECT_DID');
         $groupId = getenv('RAPIDCONNECT_GROUPID');
         $merchantId = getenv('RAPIDCONNECT_MERCHANTID');
+        $serviceId = getenv('RAPIDCONNECT_SERVICEID');
         $terminalId = getenv('RAPIDCONNECT_TERMINALID');
 
-        if ($app && $dId && $groupId && $merchantId && $terminalId) {
+        if ($app && $dId && $groupId && $merchantId && $terminalId && $serviceId) {
             $this->gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
             $this->gateway->setApp($app);
             $this->gateway->setDID($dId);
             $this->gateway->setGroupID($groupId);
             $this->gateway->setMerchID($merchantId);
+            $this->gateway->setServiceID($serviceId);
             $this->gateway->setTermID($terminalId);
         } else {
             $this->markTestSkipped('Missing credentials');
@@ -61,6 +63,7 @@ class RapidConnectGatewayIntegrationTest extends TestCase
             'TaxAmtCapabit' => '1',
         ));
         $response = $request->send();
+        $this->assertTrue($response->isSuccessful(), 'Authorization should succeed');
 
         // Capture
         $request = $this->gateway->capture(array());

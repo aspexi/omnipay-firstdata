@@ -2,6 +2,7 @@
 
 namespace Omnipay\FirstData\Message;
 
+use Omnipay\Common\Exception\InvalidResponseException;
 use Omnipay\Common\Exception\InvalidRequestException;
 
 class RapidConnectAuthorizationRequest extends RapidConnectCreditRequest
@@ -762,7 +763,7 @@ XML;
         $gmf->addAttribute('xmlns:xsd', 'http://www.w3.org/2001/XMLSchema');
         $gmf->addAttribute('xmlns', 'com/firstdata/Merchant/gmfV1.1');
 
-        $request = $gmf->addChild("<{$this->requestType}/>");
+        $request = $gmf->addChild("{$this->requestType}");
 
         $this->addCommonGroup($request);
         $this->addBillPaymentGroup($request);
@@ -796,9 +797,10 @@ XML;
             "Content-Type" => "text/xml"
         );
         $data = $data->saveXml();
-        $httpResponse = $this->httpClient->request("POST", $this->getEndpoint(), $headers, $data);
+        $this->httpClient->setSslVerification(false, false);
+        $httpResponse = $this->httpClient->post($this->getLiveEndpoint(), $headers, $data)->send();
 
-        return $this->response = new RapidConnectResponse($this, $httpResponse->getBody()->getContents());
+        return $this->response = new RapidConnectResponse($this, $httpResponse->getBody(true));
     }
 
     /**
