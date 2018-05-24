@@ -2,8 +2,29 @@
 
 namespace Omnipay\FirstData\Message;
 
+use Omnipay\FirstData\Model\RapidConnect\EntryMode;
+
 abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
+    /**
+     * @param mixed $data
+     * @return \Omnipay\Common\Message\ResponseInterface|RapidConnectResponse
+     * @throws \Omnipay\Common\Exception\InvalidResponseException
+     */
+    function sendData($data)
+    {
+        $headers = array(
+            "Connection" => "keep-alive",
+            "Cache-Control" => "no-cache",
+            "Content-Type" => "text/xml"
+        );
+        $data = $data->saveXml();
+        $this->httpClient->setSslVerification(false, false);
+        $httpResponse = $this->httpClient->post($this->getLiveEndpoint(), $headers, $data)->send();
+
+        return $this->response = new RapidConnectResponse($this, $httpResponse->getBody(true));
+    }
+
     /**
      * @return string
      */
@@ -25,14 +46,15 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
      */
     public function getAuth()
     {
-        $authKey2 = str_pad($this->getTermID(), 8, "0", STR_PAD_LEFT);
-        return "{$this->getGroupID()}{$this->getMerchID()}|{$authKey2}";
+        $authKey2 = str_pad($this->getTerminalID(), 8, "0", STR_PAD_LEFT);
+        return "{$this->getGroupID()}{$this->getMerchantID()}|{$authKey2}";
     }
-    
+
     /**
      * @return string
      */
-    public function getClientRef() {
+    public function getClientRef()
+    {
         return $this->getParameter('ClientRef');
     }
 
@@ -40,7 +62,8 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
      * @param $clientRef
      * @return \Omnipay\Common\Message\AbstractRequest
      */
-    public function setClientRef($clientRef) {
+    public function setClientRef($clientRef)
+    {
         return $this->setParameter('ClientRef');
     }
 
@@ -63,6 +86,23 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     /**
      * @return mixed
      */
+    public function getIndustry()
+    {
+        return $this->getParameter('industry');
+    }
+
+    /**
+     * @param $value
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function setIndustry($value)
+    {
+        return $this->setParameter('industry', $value);
+    }
+
+    /**
+     * @return mixed
+     */
     public function getLiveEndpoint()
     {
         return $this->getParameter('liveEndpoint');
@@ -75,33 +115,6 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     public function setLiveEndpoint($liveEndpoint)
     {
         return $this->setParameter('liveEndpoint', $liveEndpoint);
-    }
-
-    public function getNetAccInd()
-    {
-        return $this->getParameter('NetAccInd');
-    }
-
-    public function setNetAccInd($value)
-    {
-        return $this->setParameter('NetAccInd', $value);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPLPOSDebitFlg()
-    {
-        return $this->getParameter('PLPOSDebitFlg');
-    }
-
-    /**
-     * @param $value
-     * @return \Omnipay\Common\Message\AbstractRequest
-     */
-    public function setPLPOSDebitFlg($value)
-    {
-        return $this->setParameter('PLPOSDebitFlg', $value);
     }
 
     /**
@@ -121,2170 +134,1320 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     {
         return $this->setParameter('ServiceID', $serviceId);
     }
-    
+
     // -- Generated -- //
-
-    /**
-	 * @return string
-	 */
-	public function getPymtType()
-	{
-		return $this->getParameter('PymtType');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setPymtType(string $value)
-	{
-		return $this->setParameter('PymtType', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validatePymtType()
-	{
-		$value = $this->getParameter('PymtType');
-		$valid = array('AltCNP', 'Check', 'Credit', 'Debit', 'EBT', 'Fleet', 'PLDebit', 'Prepaid', 'PvtLabl');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getTxnType()
-	{
-		return $this->getParameter('TxnType');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setTxnType(string $value)
-	{
-		return $this->setParameter('TxnType', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateTxnType()
-	{
-		$value = $this->getParameter('TxnType');
-		$valid = array('Activation', 'Authorization', 'BalanceInquiry', 'BalanceLock', 'BatchSettleDetail', 'BatchSettleL3', 'CanadaKeyRequest', 'CashAdvance', 'Cashout', 'CashoutActiveStatus', 'Change', 'CloseBatch', 'Completion', 'Custom', 'DisableInternetUse', 'EchoTest', 'FileDownload', 'FraudScore', 'GenerateKey', 'History', 'HostTotals', 'InternetActivation', 'Load', 'OpenBatch', 'PCL3AddDetail', 'Redemption', 'RedemptionUnlock', 'Refund', 'Reload', 'Sale', 'TACertAuthority', 'TAKeyRequest', 'TATokenRequest', 'Verification', 'VoucherClear');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getLocalDateTime()
-	{
-		return $this->getParameter('LocalDateTime');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setLocalDateTime(string $value)
-	{
-		return $this->setParameter('LocalDateTime', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateLocalDateTime()
-	{
-		$value = $this->getParameter('LocalDateTime');
-		if (!preg_match('/[0-9]{14,14}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getTrnmsnDateTime()
-	{
-		return $this->getParameter('TrnmsnDateTime');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setTrnmsnDateTime(string $value)
-	{
-		return $this->setParameter('TrnmsnDateTime', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateTrnmsnDateTime()
-	{
-		$value = $this->getParameter('TrnmsnDateTime');
-		if (!preg_match('/[0-9]{14,14}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getSTAN()
-	{
-		return $this->getParameter('STAN');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setSTAN(string $value)
-	{
-		return $this->setParameter('STAN', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateSTAN()
-	{
-		$value = $this->getParameter('STAN');
-		if (!preg_match('/[0-9]{6,6}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRefNum()
-	{
-		return $this->getParameter('RefNum');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRefNum(string $value)
-	{
-		return $this->setParameter('RefNum', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRefNum()
-	{
-		$value = $this->getParameter('RefNum');
-		return strlen($value) >= 1 && strlen($value) <= 30;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getOrderNum()
-	{
-		return $this->getParameter('OrderNum');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setOrderNum(string $value)
-	{
-		return $this->setParameter('OrderNum', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateOrderNum()
-	{
-		$value = $this->getParameter('OrderNum');
-		if (!preg_match('/[0-9A-Z a-z]{1,15}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getTPPID()
-	{
-		return $this->getParameter('TPPID');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setTPPID(string $value)
-	{
-		return $this->setParameter('TPPID', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateTPPID()
-	{
-		$value = $this->getParameter('TPPID');
-		if (!preg_match('/[0-9A-Za-z]{6,6}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getTermID()
-	{
-		return $this->getParameter('TermID');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setTermID(string $value)
-	{
-		return $this->setParameter('TermID', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateTermID()
-	{
-		$value = $this->getParameter('TermID');
-		if (!preg_match('/[0-9A-Za-z]{1,8}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getMerchID()
-	{
-		return $this->getParameter('MerchID');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setMerchID(string $value)
-	{
-		return $this->setParameter('MerchID', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateMerchID()
-	{
-		$value = $this->getParameter('MerchID');
-		if (!preg_match('/[0-9A-Za-z]{1,16}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getMerchCatCode()
-	{
-		return $this->getParameter('MerchCatCode');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setMerchCatCode(string $value)
-	{
-		return $this->setParameter('MerchCatCode', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateMerchCatCode()
-	{
-		$value = $this->getParameter('MerchCatCode');
-		if (!preg_match('/[0-9]{4,4}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getPOSEntryMode()
-	{
-		return $this->getParameter('POSEntryMode');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setPOSEntryMode(string $value)
-	{
-		return $this->setParameter('POSEntryMode', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validatePOSEntryMode()
-	{
-		$value = $this->getParameter('POSEntryMode');
-		if (!preg_match('/[0-9]{3,3}/',$value)) {
-		    return false;
-		}
-		if (!preg_match('/[0789][0123456789][0-4]/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getPOSCondCode()
-	{
-		return $this->getParameter('POSCondCode');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setPOSCondCode(string $value)
-	{
-		return $this->setParameter('POSCondCode', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validatePOSCondCode()
-	{
-		$value = $this->getParameter('POSCondCode');
-		$valid = array('00', '01', '02', '03', '04', '05', '06', '08', '59', '71');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getTermCatCode()
-	{
-		return $this->getParameter('TermCatCode');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setTermCatCode(string $value)
-	{
-		return $this->setParameter('TermCatCode', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateTermCatCode()
-	{
-		$value = $this->getParameter('TermCatCode');
-		$valid = array('00', '01', '05', '06', '07', '08', '09', '12', '13', '17', '18');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getTermEntryCapablt()
-	{
-		return $this->getParameter('TermEntryCapablt');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setTermEntryCapablt(string $value)
-	{
-		return $this->setParameter('TermEntryCapablt', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateTermEntryCapablt()
-	{
-		$value = $this->getParameter('TermEntryCapablt');
-		$valid = array('00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getTxnAmt()
-	{
-		return $this->getParameter('TxnAmt');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setTxnAmt(string $value)
-	{
-		return $this->setParameter('TxnAmt', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateTxnAmt()
-	{
-		$value = $this->getParameter('TxnAmt');
-		if (!preg_match('/[0123456789]{1,12}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getTxnCrncy()
-	{
-		return $this->getParameter('TxnCrncy');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setTxnCrncy(string $value)
-	{
-		return $this->setParameter('TxnCrncy', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateTxnCrncy()
-	{
-		$value = $this->getParameter('TxnCrncy');
-		if (!preg_match('/[0-9]{3,3}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getTermLocInd()
-	{
-		return $this->getParameter('TermLocInd');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setTermLocInd(string $value)
-	{
-		return $this->setParameter('TermLocInd', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateTermLocInd()
-	{
-		$value = $this->getParameter('TermLocInd');
-		$valid = array('0', '1');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getCardCaptCap()
-	{
-		return $this->getParameter('CardCaptCap');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setCardCaptCap(string $value)
-	{
-		return $this->setParameter('CardCaptCap', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateCardCaptCap()
-	{
-		$value = $this->getParameter('CardCaptCap');
-		$valid = array('0', '1');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getGroupID()
-	{
-		return $this->getParameter('GroupID');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setGroupID(string $value)
-	{
-		return $this->setParameter('GroupID', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateGroupID()
-	{
-		$value = $this->getParameter('GroupID');
-		if (!preg_match('/[0-9A-Za-z]{5,13}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getPOSID()
-	{
-		return $this->getParameter('POSID');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setPOSID(string $value)
-	{
-		return $this->setParameter('POSID', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validatePOSID()
-	{
-		$value = $this->getParameter('POSID');
-		if (!preg_match('/[0-9]{1,4}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getClerkID()
-	{
-		return $this->getParameter('ClerkID');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setClerkID(string $value)
-	{
-		return $this->setParameter('ClerkID', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateClerkID()
-	{
-		$value = $this->getParameter('ClerkID');
-		return strlen($value) >= 1 && strlen($value) <= 6;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getSENum()
-	{
-		return $this->getParameter('SENum');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setSENum(string $value)
-	{
-		return $this->setParameter('SENum', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateSENum()
-	{
-		$value = $this->getParameter('SENum');
-		if (!preg_match('/[0-9A-Za-z]{1,15}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getMerchEcho()
-	{
-		return $this->getParameter('MerchEcho');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setMerchEcho(string $value)
-	{
-		return $this->setParameter('MerchEcho', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateMerchEcho()
-	{
-		$value = $this->getParameter('MerchEcho');
-		return strlen($value) >= 1 && strlen($value) <= 99;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getWltID()
-	{
-		return $this->getParameter('WltID');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setWltID(string $value)
-	{
-		return $this->setParameter('WltID', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateWltID()
-	{
-		$value = $this->getParameter('WltID');
-		if (!preg_match('/[0-9A-Za-z]{3,3}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getNonUSMerch()
-	{
-		return $this->getParameter('NonUSMerch');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setNonUSMerch(string $value)
-	{
-		return $this->setParameter('NonUSMerch', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateNonUSMerch()
-	{
-		$value = $this->getParameter('NonUSMerch');
-		$valid = array('Canadian', 'Mexican');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getDevBatchID()
-	{
-		return $this->getParameter('DevBatchID');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setDevBatchID(string $value)
-	{
-		return $this->setParameter('DevBatchID', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateDevBatchID()
-	{
-		$value = $this->getParameter('DevBatchID');
-		if (!preg_match('/[0-9A-Za-z]{1,4}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getDigWltInd()
-	{
-		return $this->getParameter('DigWltInd');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setDigWltInd(string $value)
-	{
-		return $this->setParameter('DigWltInd', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateDigWltInd()
-	{
-		$value = $this->getParameter('DigWltInd');
-		$valid = array('Staged', 'Passthru');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getDigWltProgType()
-	{
-		return $this->getParameter('DigWltProgType');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setDigWltProgType(string $value)
-	{
-		return $this->setParameter('DigWltProgType', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateDigWltProgType()
-	{
-		$value = $this->getParameter('DigWltProgType');
-		$valid = array('AndroidPay', 'ApplePay', 'MerchToken', 'PayButton', 'SamsungPay');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getTranInit()
-	{
-		return $this->getParameter('TranInit');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setTranInit(string $value)
-	{
-		return $this->setParameter('TranInit', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateTranInit()
-	{
-		$value = $this->getParameter('TranInit');
-		$valid = array('Merchant', 'Terminal', 'Customer');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getInstallInvNum()
-	{
-		return $this->getParameter('InstallInvNum');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setInstallInvNum(string $value)
-	{
-		return $this->setParameter('InstallInvNum', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateInstallInvNum()
-	{
-		$value = $this->getParameter('InstallInvNum');
-		return strlen($value) >= 1 && strlen($value) <= 12;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getInstallPymntDesc()
-	{
-		return $this->getParameter('InstallPymntDesc');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setInstallPymntDesc(string $value)
-	{
-		return $this->setParameter('InstallPymntDesc', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateInstallPymntDesc()
-	{
-		$value = $this->getParameter('InstallPymntDesc');
-		return strlen($value) >= 1 && strlen($value) <= 15;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getAcctNum()
-	{
-		return $this->getParameter('AcctNum');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setAcctNum(string $value)
-	{
-		return $this->setParameter('AcctNum', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateAcctNum()
-	{
-		$value = $this->getParameter('AcctNum');
-		if (!preg_match('/[0-9]{1,23}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getCardExpiryDate()
-	{
-		return $this->getParameter('CardExpiryDate');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setCardExpiryDate(string $value)
-	{
-		return $this->setParameter('CardExpiryDate', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateCardExpiryDate()
-	{
-		$value = $this->getParameter('CardExpiryDate');
-		if (!preg_match('/[0-9]{6,8}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getCardType()
-	{
-		return $this->getParameter('CardType');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setCardType(string $value)
-	{
-		return $this->setParameter('CardType', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateCardType()
-	{
-		$value = $this->getParameter('CardType');
-		$valid = array('Amex', 'Diners', 'Discover', 'JCB', 'MaestroInt', 'MasterCard', 'Visa', 'GiftCard', 'PPayCL', 'CarCareOne', 'CostPlus', 'Dicks', 'Exxon', 'GenProp', 'Gulf', 'Shell', 'Sinclair', 'SpeedPass', 'Sunoco', 'ValeroUCC', 'Mexican', 'BPBusiness', 'Buypass', 'EssoFleet', 'ExxonFleet', 'FleetCor', 'FleetOne', 'MCFleet', 'ValeroFlt', 'VisaFleet', 'Voyager', 'Wex', 'Paypal');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getMVVMAID()
-	{
-		return $this->getParameter('MVVMAID');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setMVVMAID(string $value)
-	{
-		return $this->setParameter('MVVMAID', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateMVVMAID()
-	{
-		$value = $this->getParameter('MVVMAID');
-		if (!preg_match('/[0-9]{1,10}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getInfoReqInd()
-	{
-		return $this->getParameter('InfoReqInd');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setInfoReqInd(string $value)
-	{
-		return $this->setParameter('InfoReqInd', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateInfoReqInd()
-	{
-		$value = $this->getParameter('InfoReqInd');
-		$valid = array('Y');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getEcommTxnInd()
-	{
-		return $this->getParameter('EcommTxnInd');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setEcommTxnInd(string $value)
-	{
-		return $this->setParameter('EcommTxnInd', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateEcommTxnInd()
-	{
-		$value = $this->getParameter('EcommTxnInd');
-		$valid = array('01', '02', '03', '04', '05', '06', '07');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getVisaAuthInd()
-	{
-		return $this->getParameter('VisaAuthInd');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setVisaAuthInd(string $value)
-	{
-		return $this->setParameter('VisaAuthInd', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateVisaAuthInd()
-	{
-		$value = $this->getParameter('VisaAuthInd');
-		$valid = array('ReAuth', 'ReSubmit', 'EstAuth', 'CrdOnFile');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getDevTypeInd()
-	{
-		return $this->getParameter('DevTypeInd');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setDevTypeInd(string $value)
-	{
-		return $this->setParameter('DevTypeInd', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateDevTypeInd()
-	{
-		$value = $this->getParameter('DevTypeInd');
-		if (!preg_match('/[0-9A-Za-z]{1,2}/',$value)) {
-		    return false;
-		}
-		if (!preg_match('/[0-9]{1,1}/',$value)) {
-		    return false;
-		}
-		if (!preg_match('/[1-9][0-9]/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getMOTOInd()
-	{
-		return $this->getParameter('MOTOInd');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setMOTOInd(string $value)
-	{
-		return $this->setParameter('MOTOInd', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateMOTOInd()
-	{
-		$value = $this->getParameter('MOTOInd');
-		$valid = array('1', '2');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRegUserInd()
-	{
-		return $this->getParameter('RegUserInd');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRegUserInd(string $value)
-	{
-		return $this->setParameter('RegUserInd', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRegUserInd()
-	{
-		$value = $this->getParameter('RegUserInd');
-		$valid = array('Y', 'N');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRegUserDate()
-	{
-		return $this->getParameter('RegUserDate');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRegUserDate(string $value)
-	{
-		return $this->setParameter('RegUserDate', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRegUserDate()
-	{
-		$value = $this->getParameter('RegUserDate');
-		if (!preg_match('/[0-9]{8,8}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getGdSoldCd()
-	{
-		return $this->getParameter('GdSoldCd');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setGdSoldCd(string $value)
-	{
-		return $this->setParameter('GdSoldCd', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateGdSoldCd()
-	{
-		$value = $this->getParameter('GdSoldCd');
-		$valid = array('1000');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getServLvl()
-	{
-		return $this->getParameter('ServLvl');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setServLvl(string $value)
-	{
-		return $this->setParameter('ServLvl', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateServLvl()
-	{
-		$value = $this->getParameter('ServLvl');
-		$valid = array('F', 'S', 'N', 'X', 'O', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getNumOfProds()
-	{
-		return $this->getParameter('NumOfProds');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setNumOfProds(string $value)
-	{
-		return $this->setParameter('NumOfProds', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateNumOfProds()
-	{
-		$value = $this->getParameter('NumOfProds');
-		$valid = array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10');
-		return in_array($value, $valid);
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getFolioNum()
-	{
-		return $this->getParameter('FolioNum');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setFolioNum(string $value)
-	{
-		return $this->setParameter('FolioNum', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateFolioNum()
-	{
-		$value = $this->getParameter('FolioNum');
-		return strlen($value) >= 1 && strlen($value) <= 12;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRoomNum()
-	{
-		return $this->getParameter('RoomNum');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRoomNum(string $value)
-	{
-		return $this->setParameter('RoomNum', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRoomNum()
-	{
-		$value = $this->getParameter('RoomNum');
-		if (!preg_match('/[0-9A-Za-z]{1,6}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getLodRefNum()
-	{
-		return $this->getParameter('LodRefNum');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setLodRefNum(string $value)
-	{
-		return $this->setParameter('LodRefNum', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateLodRefNum()
-	{
-		$value = $this->getParameter('LodRefNum');
-		if (!preg_match('/[0-9A-Za-z]{1,9}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRoomRt()
-	{
-		return $this->getParameter('RoomRt');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRoomRt(string $value)
-	{
-		return $this->setParameter('RoomRt', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRoomRt()
-	{
-		$value = $this->getParameter('RoomRt');
-		if (!preg_match('/[0-9]{1,9}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getDuration()
-	{
-		return $this->getParameter('Duration');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setDuration(string $value)
-	{
-		return $this->setParameter('Duration', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateDuration()
-	{
-		$value = $this->getParameter('Duration');
-		if (!preg_match('/[0-9]{1,2}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getExtraChrgs()
-	{
-		return $this->getParameter('ExtraChrgs');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setExtraChrgs(string $value)
-	{
-		return $this->setParameter('ExtraChrgs', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateExtraChrgs()
-	{
-		$value = $this->getParameter('ExtraChrgs');
-		if (!preg_match('/[1234567]{1,6}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRentalCity()
-	{
-		return $this->getParameter('RentalCity');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRentalCity(string $value)
-	{
-		return $this->setParameter('RentalCity', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRentalCity()
-	{
-		$value = $this->getParameter('RentalCity');
-		return strlen($value) >= 1 && strlen($value) <= 18;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRentalState()
-	{
-		return $this->getParameter('RentalState');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRentalState(string $value)
-	{
-		return $this->setParameter('RentalState', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRentalState()
-	{
-		$value = $this->getParameter('RentalState');
-		if (!preg_match('/[0-9A-Za-z]{2,2}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRentalCtry()
-	{
-		return $this->getParameter('RentalCtry');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRentalCtry(string $value)
-	{
-		return $this->setParameter('RentalCtry', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRentalCtry()
-	{
-		$value = $this->getParameter('RentalCtry');
-		if (!preg_match('/[0-9A-Za-z]{3,3}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRentalDate()
-	{
-		return $this->getParameter('RentalDate');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRentalDate(string $value)
-	{
-		return $this->setParameter('RentalDate', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRentalDate()
-	{
-		$value = $this->getParameter('RentalDate');
-		if (!preg_match('/[0-9]{8,8}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRentalTime()
-	{
-		return $this->getParameter('RentalTime');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRentalTime(string $value)
-	{
-		return $this->setParameter('RentalTime', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRentalTime()
-	{
-		$value = $this->getParameter('RentalTime');
-		if (!preg_match('/[0-9]{4,4}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getReturnCity()
-	{
-		return $this->getParameter('ReturnCity');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setReturnCity(string $value)
-	{
-		return $this->setParameter('ReturnCity', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateReturnCity()
-	{
-		$value = $this->getParameter('ReturnCity');
-		return strlen($value) >= 1 && strlen($value) <= 18;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getReturnState()
-	{
-		return $this->getParameter('ReturnState');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setReturnState(string $value)
-	{
-		return $this->setParameter('ReturnState', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateReturnState()
-	{
-		$value = $this->getParameter('ReturnState');
-		if (!preg_match('/[0-9A-Za-z]{2,2}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getReturnCtry()
-	{
-		return $this->getParameter('ReturnCtry');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setReturnCtry(string $value)
-	{
-		return $this->setParameter('ReturnCtry', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateReturnCtry()
-	{
-		$value = $this->getParameter('ReturnCtry');
-		if (!preg_match('/[0-9A-Za-z]{3,3}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getReturnDate()
-	{
-		return $this->getParameter('ReturnDate');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setReturnDate(string $value)
-	{
-		return $this->setParameter('ReturnDate', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateReturnDate()
-	{
-		$value = $this->getParameter('ReturnDate');
-		if (!preg_match('/[0-9]{8,8}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getReturnTime()
-	{
-		return $this->getParameter('ReturnTime');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setReturnTime(string $value)
-	{
-		return $this->setParameter('ReturnTime', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateReturnTime()
-	{
-		$value = $this->getParameter('ReturnTime');
-		if (!preg_match('/[0-9]{4,4}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getAmtExtraChrgs()
-	{
-		return $this->getParameter('AmtExtraChrgs');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setAmtExtraChrgs(string $value)
-	{
-		return $this->setParameter('AmtExtraChrgs', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateAmtExtraChrgs()
-	{
-		$value = $this->getParameter('AmtExtraChrgs');
-		if (!preg_match('/[0-9]{1,8}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRenterName()
-	{
-		return $this->getParameter('RenterName');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRenterName(string $value)
-	{
-		return $this->setParameter('RenterName', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRenterName()
-	{
-		$value = $this->getParameter('RenterName');
-		return strlen($value) >= 1 && strlen($value) <= 20;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getAutoAgreeNum()
-	{
-		return $this->getParameter('AutoAgreeNum');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setAutoAgreeNum(string $value)
-	{
-		return $this->setParameter('AutoAgreeNum', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateAutoAgreeNum()
-	{
-		$value = $this->getParameter('AutoAgreeNum');
-		return strlen($value) >= 1 && strlen($value) <= 12;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRentalDuration()
-	{
-		return $this->getParameter('RentalDuration');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRentalDuration(string $value)
-	{
-		return $this->setParameter('RentalDuration', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRentalDuration()
-	{
-		$value = $this->getParameter('RentalDuration');
-		if (!preg_match('/[0-9A-Za-z]{1,2}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getRentalExtraChrgs()
-	{
-		return $this->getParameter('RentalExtraChrgs');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setRentalExtraChrgs(string $value)
-	{
-		return $this->setParameter('RentalExtraChrgs', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateRentalExtraChrgs()
-	{
-		$value = $this->getParameter('RentalExtraChrgs');
-		if (!preg_match('/[012345]{1,5}/',$value)) {
-		    return false;
-		}
-		return true;
-	}
-
-
-	/**
-	 * @return string
-	 */
-	public function getAutoNoShow()
-	{
-		return $this->getParameter('AutoNoShow');
-	}
-
-
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function setAutoNoShow(string $value)
-	{
-		return $this->setParameter('AutoNoShow', $value);
-	}
-
-
-	/**
-	 * @return bool
-	 */
-	public function validateAutoNoShow()
-	{
-		$value = $this->getParameter('AutoNoShow');
-		$valid = array('1');
-		return in_array($value, $valid);
-	}
 
     /**
      * @return string
      */
-    public function getSettleInd()
+    public function getPaymentType()
     {
-        return $this->getParameter('SettleInd');
+        return $this->getParameter('PaymentType');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setSettleInd(string $value)
+    public function setPaymentType(string $value)
     {
-        return $this->setParameter('SettleInd', $value);
+        return $this->setParameter('PaymentType', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateSettleInd()
+    public function validatePaymentType()
     {
-        $value = $this->getParameter('SettleInd');
+        $value = $this->getParameter('PaymentType');
+        $valid = array('AltCNP', 'Check', 'Credit', 'Debit', 'EBT', 'Fleet', 'PLDebit', 'Prepaid', 'PvtLabl');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getReversalReasonCode()
+    {
+        return $this->getParameter('ReversalReasonCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setReversalReasonCode(string $value)
+    {
+        return $this->setParameter('ReversalReasonCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateReversalReasonCode()
+    {
+        $value = $this->getParameter('ReversalReasonCode');
+        $valid = array(
+            'Timeout',
+            'Void',
+            'VoidFr',
+            'TORVoid',
+            'Partial',
+            'EditErr',
+            'MACVeri',
+            'MACSync',
+            'EncrErr',
+            'SystErr'
+        );
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTransactionType()
+    {
+        return $this->getParameter('TransactionType');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTransactionType(string $value)
+    {
+        return $this->setParameter('TransactionType', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTransactionType()
+    {
+        $value = $this->getParameter('TransactionType');
+        $valid = array(
+            'Activation',
+            'Authorization',
+            'BalanceInquiry',
+            'BalanceLock',
+            'BatchSettleDetail',
+            'BatchSettleL3',
+            'CanadaKeyRequest',
+            'CashAdvance',
+            'Cashout',
+            'CashoutActiveStatus',
+            'Change',
+            'CloseBatch',
+            'Completion',
+            'Custom',
+            'DisableInternetUse',
+            'EchoTest',
+            'FileDownload',
+            'FraudScore',
+            'GenerateKey',
+            'History',
+            'HostTotals',
+            'InternetActivation',
+            'Load',
+            'OpenBatch',
+            'PCL3AddDetail',
+            'Redemption',
+            'RedemptionUnlock',
+            'Refund',
+            'Reload',
+            'Sale',
+            'TACertAuthority',
+            'TAKeyRequest',
+            'TATokenRequest',
+            'Verification',
+            'VoucherClear'
+        );
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getLocalDateandTime()
+    {
+        return $this->getParameter('LocalDateandTime');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setLocalDateandTime(string $value)
+    {
+        return $this->setParameter('LocalDateandTime', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateLocalDateandTime()
+    {
+        $value = $this->getParameter('LocalDateandTime');
+        if (!preg_match('/[0-9]{14,14}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTransmissionDateandTime()
+    {
+        return $this->getParameter('TransmissionDateandTime');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTransmissionDateandTime(string $value)
+    {
+        return $this->setParameter('TransmissionDateandTime', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTransmissionDateandTime()
+    {
+        $value = $this->getParameter('TransmissionDateandTime');
+        if (!preg_match('/[0-9]{14,14}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getSTAN()
+    {
+        return $this->getParameter('STAN');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setSTAN(string $value)
+    {
+        return $this->setParameter('STAN', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateSTAN()
+    {
+        $value = $this->getParameter('STAN');
+        if (!preg_match('/[0-9]{6,6}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getReferenceNumber()
+    {
+        return $this->getParameter('ReferenceNumber');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setReferenceNumber(string $value)
+    {
+        return $this->setParameter('ReferenceNumber', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateReferenceNumber()
+    {
+        $value = $this->getParameter('ReferenceNumber');
+        return strlen($value) >= 1 && strlen($value) <= 30;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getOrderNumber()
+    {
+        return $this->getParameter('OrderNumber');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setOrderNumber(string $value)
+    {
+        return $this->setParameter('OrderNumber', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateOrderNumber()
+    {
+        $value = $this->getParameter('OrderNumber');
+        if (!preg_match('/[0-9A-Z a-z]{1,15}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTPPID()
+    {
+        return $this->getParameter('TPPID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTPPID(string $value)
+    {
+        return $this->setParameter('TPPID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTPPID()
+    {
+        $value = $this->getParameter('TPPID');
+        if (!preg_match('/[0-9A-Za-z]{6,6}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTerminalID()
+    {
+        return $this->getParameter('TerminalID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTerminalID(string $value)
+    {
+        return $this->setParameter('TerminalID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTerminalID()
+    {
+        $value = $this->getParameter('TerminalID');
+        if (!preg_match('/[0-9A-Za-z]{1,8}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMerchantID()
+    {
+        return $this->getParameter('MerchantID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantID(string $value)
+    {
+        return $this->setParameter('MerchantID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantID()
+    {
+        $value = $this->getParameter('MerchantID');
+        if (!preg_match('/[0-9A-Za-z]{1,16}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMerchantCategoryCode()
+    {
+        return $this->getParameter('MerchantCategoryCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantCategoryCode(string $value)
+    {
+        return $this->setParameter('MerchantCategoryCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantCategoryCode()
+    {
+        $value = $this->getParameter('MerchantCategoryCode');
+        if (!preg_match('/[0-9]{4,4}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getPOSEntryMode()
+    {
+        return $this->getParameter('POSEntryMode');
+    }
+
+
+    /**
+     * @param EntryMode $value
+     * @return string
+     */
+    public function setPOSEntryMode($value)
+    {
+        if ($value && !$value instanceof EntryMode) {
+            $value = new EntryMode($value);
+        }
+
+        return $this->setParameter('POSEntryMode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validatePOSEntryMode()
+    {
+        $value = $this->getParameter('POSEntryMode');
+        $value->validate();
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getPOSConditionCode()
+    {
+        return $this->getParameter('POSConditionCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setPOSConditionCode(string $value)
+    {
+        return $this->setParameter('POSConditionCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validatePOSConditionCode()
+    {
+        $value = $this->getParameter('POSConditionCode');
+        $valid = array('00', '01', '02', '03', '04', '05', '06', '08', '59', '71');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTerminalCategoryCode()
+    {
+        return $this->getParameter('TerminalCategoryCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTerminalCategoryCode(string $value)
+    {
+        return $this->setParameter('TerminalCategoryCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTerminalCategoryCode()
+    {
+        $value = $this->getParameter('TerminalCategoryCode');
+        $valid = array('00', '01', '05', '06', '07', '08', '09', '12', '13', '17', '18');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTerminalEntryCapability()
+    {
+        return $this->getParameter('TerminalEntryCapability');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTerminalEntryCapability(string $value)
+    {
+        return $this->setParameter('TerminalEntryCapability', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTerminalEntryCapability()
+    {
+        $value = $this->getParameter('TerminalEntryCapability');
+        $valid = array('00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTransactionAmount()
+    {
+        return $this->getParameter('TransactionAmount');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTransactionAmount(string $value)
+    {
+        return $this->setParameter('TransactionAmount', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTransactionAmount()
+    {
+        $value = $this->getParameter('TransactionAmount');
+        if (!preg_match('/[0123456789]{1,12}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTransactionCurrency()
+    {
+        return $this->getParameter('TransactionCurrency');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTransactionCurrency(string $value)
+    {
+        return $this->setParameter('TransactionCurrency', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTransactionCurrency()
+    {
+        $value = $this->getParameter('TransactionCurrency');
+        if (!preg_match('/[0-9]{3,3}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTerminalLocationIndicator()
+    {
+        return $this->getParameter('TerminalLocationIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTerminalLocationIndicator(string $value)
+    {
+        return $this->setParameter('TerminalLocationIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTerminalLocationIndicator()
+    {
+        $value = $this->getParameter('TerminalLocationIndicator');
+        $valid = array('0', '1');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getCardCaptureCapability()
+    {
+        return $this->getParameter('CardCaptureCapability');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCardCaptureCapability(string $value)
+    {
+        return $this->setParameter('CardCaptureCapability', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateCardCaptureCapability()
+    {
+        $value = $this->getParameter('CardCaptureCapability');
+        $valid = array('0', '1');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getGroupID()
+    {
+        return $this->getParameter('GroupID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setGroupID(string $value)
+    {
+        return $this->setParameter('GroupID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateGroupID()
+    {
+        $value = $this->getParameter('GroupID');
+        if (!preg_match('/[0-9A-Za-z]{5,13}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getPOSID()
+    {
+        return $this->getParameter('POSID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setPOSID(string $value)
+    {
+        return $this->setParameter('POSID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validatePOSID()
+    {
+        $value = $this->getParameter('POSID');
+        if (!preg_match('/[0-9]{1,4}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getSettlementIndicator()
+    {
+        return $this->getParameter('SettlementIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setSettlementIndicator(string $value)
+    {
+        return $this->setParameter('SettlementIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateSettlementIndicator()
+    {
+        $value = $this->getParameter('SettlementIndicator');
         $valid = array('1', '2', '3');
         return in_array($value, $valid);
     }
 
+
     /**
      * @return string
      */
-    public function getBillPymtTxnInd()
+    public function getClerkID()
     {
-        return $this->getParameter('BillPymtTxnInd');
+        return $this->getParameter('ClerkID');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setBillPymtTxnInd(string $value)
+    public function setClerkID(string $value)
     {
-        return $this->setParameter('BillPymtTxnInd', $value);
+        return $this->setParameter('ClerkID', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateBillPymtTxnInd()
+    public function validateClerkID()
     {
-        $value = $this->getParameter('BillPymtTxnInd');
+        $value = $this->getParameter('ClerkID');
+        return strlen($value) >= 1 && strlen($value) <= 6;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getServiceEntitlementNumber()
+    {
+        return $this->getParameter('ServiceEntitlementNumber');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setServiceEntitlementNumber(string $value)
+    {
+        return $this->setParameter('ServiceEntitlementNumber', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateServiceEntitlementNumber()
+    {
+        $value = $this->getParameter('ServiceEntitlementNumber');
+        if (!preg_match('/[0-9A-Za-z]{1,15}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getPINLessPOSDebitFlag()
+    {
+        return $this->getParameter('PINLessPOSDebitFlag');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setPINLessPOSDebitFlag(string $value)
+    {
+        return $this->setParameter('PINLessPOSDebitFlag', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validatePINLessPOSDebitFlag()
+    {
+        $value = $this->getParameter('PINLessPOSDebitFlag');
+        $valid = array('1', 'C', 'D');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getNetworkAccessIndicator()
+    {
+        return $this->getParameter('NetworkAccessIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setNetworkAccessIndicator(string $value)
+    {
+        return $this->setParameter('NetworkAccessIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateNetworkAccessIndicator()
+    {
+        $value = $this->getParameter('NetworkAccessIndicator');
+        $valid = array('1', 'C');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMerchantEcho()
+    {
+        return $this->getParameter('MerchantEcho');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantEcho(string $value)
+    {
+        return $this->setParameter('MerchantEcho', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantEcho()
+    {
+        $value = $this->getParameter('MerchantEcho');
+        return strlen($value) >= 1 && strlen($value) <= 99;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getWalletIdentifier()
+    {
+        return $this->getParameter('WalletIdentifier');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setWalletIdentifier(string $value)
+    {
+        return $this->setParameter('WalletIdentifier', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateWalletIdentifier()
+    {
+        $value = $this->getParameter('WalletIdentifier');
+        if (!preg_match('/[0-9A-Za-z]{3,3}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getNonUSMerchant()
+    {
+        return $this->getParameter('NonUSMerchant');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setNonUSMerchant(string $value)
+    {
+        return $this->setParameter('NonUSMerchant', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateNonUSMerchant()
+    {
+        $value = $this->getParameter('NonUSMerchant');
+        $valid = array('Canadian', 'Mexican');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDeviceBatchID()
+    {
+        return $this->getParameter('DeviceBatchID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDeviceBatchID(string $value)
+    {
+        return $this->setParameter('DeviceBatchID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDeviceBatchID()
+    {
+        $value = $this->getParameter('DeviceBatchID');
+        if (!preg_match('/[0-9A-Za-z]{1,4}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDigitalWalletIndicator()
+    {
+        return $this->getParameter('DigitalWalletIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDigitalWalletIndicator(string $value)
+    {
+        return $this->setParameter('DigitalWalletIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDigitalWalletIndicator()
+    {
+        $value = $this->getParameter('DigitalWalletIndicator');
+        $valid = array('Staged', 'Passthru');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDigitalWalletProgramType()
+    {
+        return $this->getParameter('DigitalWalletProgramType');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDigitalWalletProgramType(string $value)
+    {
+        return $this->setParameter('DigitalWalletProgramType', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDigitalWalletProgramType()
+    {
+        $value = $this->getParameter('DigitalWalletProgramType');
+        $valid = array('AndroidPay', 'ApplePay', 'MerchToken', 'PayButton', 'SamsungPay');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTransactionInitiation()
+    {
+        return $this->getParameter('TransactionInitiation');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTransactionInitiation(string $value)
+    {
+        return $this->setParameter('TransactionInitiation', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTransactionInitiation()
+    {
+        $value = $this->getParameter('TransactionInitiation');
+        $valid = array('Merchant', 'Terminal', 'Customer');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getPaymentService()
+    {
+        return $this->getParameter('PaymentService');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setPaymentService(string $value)
+    {
+        return $this->setParameter('PaymentService', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validatePaymentService()
+    {
+        $value = $this->getParameter('PaymentService');
+        $valid = array('Incrmnt');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getBillPaymentTransactionIndicator()
+    {
+        return $this->getParameter('BillPaymentTransactionIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setBillPaymentTransactionIndicator(string $value)
+    {
+        return $this->setParameter('BillPaymentTransactionIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateBillPaymentTransactionIndicator()
+    {
+        $value = $this->getParameter('BillPaymentTransactionIndicator');
         $valid = array('Single', 'Recurring', 'Installment', 'Deferred');
         return in_array($value, $valid);
     }
+
+
+    /**
+     * @return string
+     */
+    public function getMerchantAdviceCode()
+    {
+        return $this->getParameter('MerchantAdviceCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantAdviceCode(string $value)
+    {
+        return $this->setParameter('MerchantAdviceCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantAdviceCode()
+    {
+        $value = $this->getParameter('MerchantAdviceCode');
+        if (!preg_match('/[0-9A-Za-z]{2,2}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getInstallmentPaymentInvoiceNumber()
+    {
+        return $this->getParameter('InstallmentPaymentInvoiceNumber');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setInstallmentPaymentInvoiceNumber(string $value)
+    {
+        return $this->setParameter('InstallmentPaymentInvoiceNumber', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateInstallmentPaymentInvoiceNumber()
+    {
+        $value = $this->getParameter('InstallmentPaymentInvoiceNumber');
+        return strlen($value) >= 1 && strlen($value) <= 12;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getInstallmentPaymentDescription()
+    {
+        return $this->getParameter('InstallmentPaymentDescription');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setInstallmentPaymentDescription(string $value)
+    {
+        return $this->setParameter('InstallmentPaymentDescription', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateInstallmentPaymentDescription()
+    {
+        $value = $this->getParameter('InstallmentPaymentDescription');
+        return strlen($value) >= 1 && strlen($value) <= 15;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAccountNumber()
+    {
+        return $this->getParameter('AccountNumber');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAccountNumber(string $value)
+    {
+        return $this->setParameter('AccountNumber', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAccountNumber()
+    {
+        $value = $this->getParameter('AccountNumber');
+        if (!preg_match('/[0-9]{1,23}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getCardExpirationDate()
+    {
+        return $this->getParameter('CardExpirationDate');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCardExpirationDate(string $value)
+    {
+        return $this->setParameter('CardExpirationDate', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateCardExpirationDate()
+    {
+        $value = $this->getParameter('CardExpirationDate');
+        if (!preg_match('/[0-9]{6,8}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
 
     /**
      * @return string
@@ -2293,6 +1456,8 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     {
         return $this->getParameter('Track1Data');
     }
+
+
     /**
      * @param string $value
      * @return string
@@ -2301,6 +1466,8 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     {
         return $this->setParameter('Track1Data', $value);
     }
+
+
     /**
      * @return bool
      */
@@ -2317,6 +1484,8 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     {
         return $this->getParameter('Track2Data');
     }
+
+
     /**
      * @param string $value
      * @return string
@@ -2325,6 +1494,8 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     {
         return $this->setParameter('Track2Data', $value);
     }
+
+
     /**
      * @return bool
      */
@@ -2334,30 +1505,153 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
         return strlen($value) >= 1 && strlen($value) <= 37;
     }
 
+
     /**
      * @return string
      */
-    public function getCCVInd()
+    public function getCardType()
     {
-        return $this->getParameter('CCVInd');
+        return $this->getParameter('CardType');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setCCVInd(string $value)
+    public function setCardType(string $value)
     {
-        return $this->setParameter('CCVInd', $value);
+        return $this->setParameter('CardType', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateCCVInd()
+    public function validateCardType()
     {
-        $value = $this->getParameter('CCVInd');
+        $value = $this->getParameter('CardType');
+        $valid = array(
+            'Amex',
+            'Diners',
+            'Discover',
+            'JCB',
+            'MaestroInt',
+            'MasterCard',
+            'Visa',
+            'GiftCard',
+            'PPayCL',
+            'CarCareOne',
+            'CostPlus',
+            'Dicks',
+            'Exxon',
+            'GenProp',
+            'Gulf',
+            'Shell',
+            'Sinclair',
+            'SpeedPass',
+            'Sunoco',
+            'ValeroUCC',
+            'Mexican',
+            'BPBusiness',
+            'Buypass',
+            'EssoFleet',
+            'ExxonFleet',
+            'FleetCor',
+            'FleetOne',
+            'MCFleet',
+            'ValeroFlt',
+            'VisaFleet',
+            'Voyager',
+            'Wex',
+            'Paypal'
+        );
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAVSResultCode()
+    {
+        return $this->getParameter('AVSResultCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAVSResultCode(string $value)
+    {
+        return $this->setParameter('AVSResultCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAVSResultCode()
+    {
+        $value = $this->getParameter('AVSResultCode');
+        $valid = array(
+            'A',
+            'B',
+            'C',
+            'D',
+            'E',
+            'F',
+            'G',
+            'I',
+            'K',
+            'L',
+            'M',
+            'N',
+            'O',
+            'P',
+            'R',
+            'S',
+            'T',
+            'U',
+            'W',
+            'X',
+            'Y',
+            'Z'
+        );
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getCCVIndicator()
+    {
+        return $this->getParameter('CCVIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCCVIndicator(string $value)
+    {
+        return $this->setParameter('CCVIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateCCVIndicator()
+    {
+        $value = $this->getParameter('CCVIndicator');
         $valid = array('Ntprvd', 'Prvded', 'Illegible', 'NtOnCrd');
         return in_array($value, $valid);
     }
+
 
     /**
      * @return string
@@ -2366,6 +1660,8 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     {
         return $this->getParameter('CCVData');
     }
+
+
     /**
      * @param string $value
      * @return string
@@ -2374,17 +1670,112 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     {
         return $this->setParameter('CCVData', $value);
     }
+
+
     /**
      * @return bool
      */
     public function validateCCVData()
     {
         $value = $this->getParameter('CCVData');
-        if (!preg_match('/[0-9A-Za-z]{3,4}/',$value)) {
+        if (!preg_match('/[0-9A-Za-z]{3,4}/', $value)) {
             return false;
         }
         return true;
     }
+
+
+    /**
+     * @return string
+     */
+    public function getCCVResultCode()
+    {
+        return $this->getParameter('CCVResultCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCCVResultCode(string $value)
+    {
+        return $this->setParameter('CCVResultCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateCCVResultCode()
+    {
+        $value = $this->getParameter('CCVResultCode');
+        $valid = array('Match', 'NoMtch', 'NotPrc', 'NotPrv', 'NotPrt', 'Unknwn');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMVVMAID()
+    {
+        return $this->getParameter('MVVMAID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMVVMAID(string $value)
+    {
+        return $this->setParameter('MVVMAID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMVVMAID()
+    {
+        $value = $this->getParameter('MVVMAID');
+        if (!preg_match('/[0-9]{1,10}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getCardInfoRequestIndicator()
+    {
+        return $this->getParameter('CardInfoRequestIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCardInfoRequestIndicator(string $value)
+    {
+        return $this->setParameter('CardInfoRequestIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateCardInfoRequestIndicator()
+    {
+        $value = $this->getParameter('CardInfoRequestIndicator');
+        $valid = array('Y');
+        return in_array($value, $valid);
+    }
+
 
     /**
      * @return string
@@ -2393,6 +1784,8 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     {
         return $this->getParameter('PINData');
     }
+
+
     /**
      * @param string $value
      * @return string
@@ -2401,91 +1794,263 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     {
         return $this->setParameter('PINData', $value);
     }
+
+
     /**
      * @return bool
      */
     public function validatePINData()
     {
         $value = $this->getParameter('PINData');
-        if (!preg_match('/[0-9A-F]{16,16}/',$value)) {
+        if (!preg_match('/[0-9A-F]{16,16}/', $value)) {
             return false;
         }
         return true;
     }
 
+
     /**
      * @return string
      */
-    public function getKeySerialNumData()
+    public function getKeySerialNumberData()
     {
-        return $this->getParameter('KeySerialNumData');
+        return $this->getParameter('KeySerialNumberData');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setKeySerialNumData(string $value)
+    public function setKeySerialNumberData(string $value)
     {
-        return $this->setParameter('KeySerialNumData', $value);
+        return $this->setParameter('KeySerialNumberData', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateKeySerialNumData()
+    public function validateKeySerialNumberData()
     {
-        $value = $this->getParameter('KeySerialNumData');
-        if (!preg_match('/[0-9A-Za-z]{20,20}/',$value)) {
+        $value = $this->getParameter('KeySerialNumberData');
+        if (!preg_match('/[0-9A-Za-z]{20,20}/', $value)) {
             return false;
         }
         return true;
     }
 
+
     /**
      * @return string
      */
-    public function getACI()
+    public function getEcommTransactionIndicator()
     {
-        return $this->getParameter('ACI');
+        return $this->getParameter('EcommTransactionIndicator');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setACI(string $value)
+    public function setEcommTransactionIndicator(string $value)
     {
-        return $this->setParameter('ACI', $value);
+        return $this->setParameter('EcommTransactionIndicator', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateACI()
+    public function validateEcommTransactionIndicator()
     {
-        $value = $this->getParameter('ACI');
+        $value = $this->getParameter('EcommTransactionIndicator');
+        $valid = array('01', '02', '03', '04', '05', '06', '07');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getCustomerServicePhoneNumber()
+    {
+        return $this->getParameter('CustomerServicePhoneNumber');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCustomerServicePhoneNumber(string $value)
+    {
+        return $this->setParameter('CustomerServicePhoneNumber', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateCustomerServicePhoneNumber()
+    {
+        $value = $this->getParameter('CustomerServicePhoneNumber');
+        if (!preg_match('/[0-9]{1,10}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getEcommURL()
+    {
+        return $this->getParameter('EcommURL');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setEcommURL(string $value)
+    {
+        return $this->setParameter('EcommURL', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateEcommURL()
+    {
+        $value = $this->getParameter('EcommURL');
+        return strlen($value) >= 1 && strlen($value) <= 32;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMultipleClearingSequenceNumber()
+    {
+        return $this->getParameter('MultipleClearingSequenceNumber');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMultipleClearingSequenceNumber(string $value)
+    {
+        return $this->setParameter('MultipleClearingSequenceNumber', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMultipleClearingSequenceNumber()
+    {
+        $value = $this->getParameter('MultipleClearingSequenceNumber');
+        if (!preg_match('/[0123456789]{2,2}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMultipleClearingSequenceCount()
+    {
+        return $this->getParameter('MultipleClearingSequenceCount');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMultipleClearingSequenceCount(string $value)
+    {
+        return $this->setParameter('MultipleClearingSequenceCount', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMultipleClearingSequenceCount()
+    {
+        $value = $this->getParameter('MultipleClearingSequenceCount');
+        if (!preg_match('/[0123456789]{2,2}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAuthorizationCharacteristicsIndicatorACI()
+    {
+        return $this->getParameter('AuthorizationCharacteristicsIndicatorACI');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAuthorizationCharacteristicsIndicatorACI(string $value)
+    {
+        return $this->setParameter('AuthorizationCharacteristicsIndicatorACI', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAuthorizationCharacteristicsIndicatorACI()
+    {
+        $value = $this->getParameter('AuthorizationCharacteristicsIndicatorACI');
         $valid = array('P', 'I', 'Y', 'R', 'A', 'B', 'C', 'E', 'F', 'J', 'K', 'N', 'S', 'T', 'U', 'V', 'W');
         return in_array($value, $valid);
     }
 
+
     /**
      * @return string
      */
-    public function getMrktSpecificDataInd()
+    public function getMarketSpecificDataIndicator()
     {
-        return $this->getParameter('MrktSpecificDataInd');
+        return $this->getParameter('MarketSpecificDataIndicator');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setMrktSpecificDataInd(string $value)
+    public function setMarketSpecificDataIndicator(string $value)
     {
-        return $this->setParameter('MrktSpecificDataInd', $value);
+        return $this->setParameter('MarketSpecificDataIndicator', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateMrktSpecificDataInd()
+    public function validateMarketSpecificDataIndicator()
     {
-        $value = $this->getParameter('MrktSpecificDataInd');
+        $value = $this->getParameter('MarketSpecificDataIndicator');
         $valid = array('BillPayment', 'Healthcare', 'Transit', 'EcomAgg', 'B2B', 'Hotel', 'AutoRental');
         return in_array($value, $valid);
     }
@@ -2493,481 +2058,2688 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     /**
      * @return string
      */
-    public function getExistingDebtInd()
+    public function getExistingDebtIndicator()
     {
-        return $this->getParameter('ExistingDebtInd');
+        return $this->getParameter('ExistingDebtIndicator');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setExistingDebtInd(string $value)
+    public function setExistingDebtIndicator(string $value)
     {
-        return $this->setParameter('ExistingDebtInd', $value);
+        return $this->setParameter('ExistingDebtIndicator', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateExistingDebtInd()
+    public function validateExistingDebtIndicator()
     {
-        $value = $this->getParameter('ExistingDebtInd');
+        $value = $this->getParameter('ExistingDebtIndicator');
         $valid = array('1');
         return in_array($value, $valid);
     }
 
-    /**
-     * @return string
-     */
-    public function getTransID()
-    {
-        return $this->getParameter('TransID');
-    }
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setTransID(string $value)
-    {
-        return $this->setParameter('TransID', $value);
-    }
-    /**
-     * @return bool
-     */
-    public function validateTransID()
-    {
-        $value = $this->getParameter('TransID');
-        return strlen($value) >= 1 && strlen($value) <= 20;
-    }
 
     /**
      * @return string
      */
-    public function getTaxAmtCapablt()
+    public function getCardLevelResultCode()
     {
-        return $this->getParameter('TaxAmtCapablt');
+        return $this->getParameter('CardLevelResultCode');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setTaxAmtCapablt(string $value)
+    public function setCardLevelResultCode(string $value)
     {
-        return $this->setParameter('TaxAmtCapablt', $value);
+        return $this->setParameter('CardLevelResultCode', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateTaxAmtCapablt()
+    public function validateCardLevelResultCode()
     {
-        $value = $this->getParameter('TaxAmtCapablt');
+        $value = $this->getParameter('CardLevelResultCode');
+        return strlen($value) >= 1 && strlen($value) <= 2;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getSourceReasonCode()
+    {
+        return $this->getParameter('SourceReasonCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setSourceReasonCode(string $value)
+    {
+        return $this->setParameter('SourceReasonCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateSourceReasonCode()
+    {
+        $value = $this->getParameter('SourceReasonCode');
+        if (!preg_match('/[0-9A-Za-z]{1,1}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTransactionIdentifier()
+    {
+        return $this->getParameter('TransactionIdentifier');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTransactionIdentifier(string $value)
+    {
+        return $this->setParameter('TransactionIdentifier', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTransactionIdentifier()
+    {
+        $value = $this->getParameter('TransactionIdentifier');
+        return strlen($value) >= 1 && strlen($value) <= 20;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getVisaBID()
+    {
+        return $this->getParameter('VisaBID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setVisaBID(string $value)
+    {
+        return $this->setParameter('VisaBID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateVisaBID()
+    {
+        $value = $this->getParameter('VisaBID');
+        return strlen($value) >= 1 && strlen($value) <= 10;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getVisaAUAR()
+    {
+        return $this->getParameter('VisaAUAR');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setVisaAUAR(string $value)
+    {
+        return $this->setParameter('VisaAUAR', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateVisaAUAR()
+    {
+        $value = $this->getParameter('VisaAUAR');
+        if (!preg_match('/[0-9A-F]{12,12}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTaxAmountCapability()
+    {
+        return $this->getParameter('TaxAmountCapability');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTaxAmountCapability(string $value)
+    {
+        return $this->setParameter('TaxAmountCapability', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTaxAmountCapability()
+    {
+        $value = $this->getParameter('TaxAmountCapability');
         $valid = array('0', '1', 'VB', 'VC', 'VP', 'TX', 'NA');
         return in_array($value, $valid);
     }
 
-    /**
-     * @return string
-     */
-    public function getCheckoutInd()
-    {
-        return $this->getParameter('CheckoutInd');
-    }
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCheckoutInd(string $value)
-    {
-        return $this->setParameter('CheckoutInd', $value);
-    }
-    /**
-     * @return bool
-     */
-    public function validateCheckoutInd()
-    {
-        $value = $this->getParameter('CheckoutInd');
-        $valid = array('Y');
-        return in_array($value, $valid);
-    }
 
     /**
      * @return string
      */
-    public function getQCI()
+    public function getSpendQualifiedIndicator()
     {
-        return $this->getParameter('QCI');
+        return $this->getParameter('SpendQualifiedIndicator');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setQCI(string $value)
+    public function setSpendQualifiedIndicator(string $value)
     {
-        return $this->setParameter('QCI', $value);
+        return $this->setParameter('SpendQualifiedIndicator', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateQCI()
+    public function validateSpendQualifiedIndicator()
     {
-        $value = $this->getParameter('QCI');
+        $value = $this->getParameter('SpendQualifiedIndicator');
+        if (!preg_match('/[0-9A-Za-z]{1,1}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getVisaCheckoutIndicator()
+    {
+        return $this->getParameter('VisaCheckoutIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setVisaCheckoutIndicator(string $value)
+    {
+        return $this->setParameter('VisaCheckoutIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateVisaCheckoutIndicator()
+    {
+        $value = $this->getParameter('VisaCheckoutIndicator');
+        $valid = array('Y');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getQuasiCashIndicator()
+    {
+        return $this->getParameter('QuasiCashIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setQuasiCashIndicator(string $value)
+    {
+        return $this->setParameter('QuasiCashIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateQuasiCashIndicator()
+    {
+        $value = $this->getParameter('QuasiCashIndicator');
         $valid = array('Y', 'N');
         return in_array($value, $valid);
     }
 
-    /**
-     * @return string
-     */
-    public function getStoredCredInd()
-    {
-        return $this->getParameter('StoredCredInd');
-    }
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setStoredCredInd(string $value)
-    {
-        return $this->setParameter('StoredCredInd', $value);
-    }
-    /**
-     * @return bool
-     */
-    public function validateStoredCredInd()
-    {
-        $value = $this->getParameter('StoredCredInd');
-        $valid = array('Initial', 'Subsequent');
-        return in_array($value, $valid);
-    }
 
     /**
      * @return string
      */
-    public function getCofSchedInd()
+    public function getAuthIndicator()
     {
-        return $this->getParameter('CofSchedInd');
-    }
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCofSchedInd(string $value)
-    {
-        return $this->setParameter('CofSchedInd', $value);
-    }
-    /**
-     * @return bool
-     */
-    public function validateCofSchedInd()
-    {
-        $value = $this->getParameter('CofSchedInd');
-        $valid = array('Scheduled', 'Unscheduled');
-        return in_array($value, $valid);
+        return $this->getParameter('AuthIndicator');
     }
 
-    /**
-     * @return string
-     */
-    public function getMCMSDI()
-    {
-        return $this->getParameter('MCMSDI');
-    }
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMCMSDI(string $value)
-    {
-        return $this->setParameter('MCMSDI', $value);
-    }
-    /**
-     * @return bool
-     */
-    public function validateMCMSDI()
-    {
-        $value = $this->getParameter('MCMSDI');
-        $valid = array('BillPayment', 'Healthcare', 'Transit', 'EcomAgg', 'B2B', 'Hotel', 'AutoRental');
-        return in_array($value, $valid);
-    }
 
     /**
-     * @return string
-     */
-    public function getBanknetData()
-    {
-        return $this->getParameter('BanknetData');
-    }
-    /**
      * @param string $value
      * @return string
      */
-    public function setBanknetData(string $value)
+    public function setAuthIndicator(string $value)
     {
-        return $this->setParameter('BanknetData', $value);
-    }
-    /**
-     * @return bool
-     */
-    public function validateBanknetData()
-    {
-        $value = $this->getParameter('BanknetData');
-        if (!preg_match('/[0-9A-Za-z]{13,13}/',$value)) {
-            return false;
-        }
-        return true;
+        return $this->setParameter('AuthIndicator', $value);
     }
 
-    /**
-     * @return string
-     */
-    public function getMCACI()
-    {
-        return $this->getParameter('MCACI');
-    }
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMCACI(string $value)
-    {
-        return $this->setParameter('MCACI', $value);
-    }
-    /**
-     * @return bool
-     */
-    public function validateMCACI()
-    {
-        $value = $this->getParameter('MCACI');
-        $valid = array('P', 'I');
-        return in_array($value, $valid);
-    }
 
     /**
-     * @return string
-     */
-    public function getMCAddData()
-    {
-        return $this->getParameter('MCAddData');
-    }
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMCAddData(string $value)
-    {
-        return $this->setParameter('MCAddData', $value);
-    }
-    /**
      * @return bool
      */
-    public function validateMCAddData()
+    public function validateAuthIndicator()
     {
-        $value = $this->getParameter('MCAddData');
-        if (!preg_match('/[0-9A-Za-z]{13,13}/',$value)) {
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFinAuthInd()
-    {
-        return $this->getParameter('FinAuthInd');
-    }
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setFinAuthInd(string $value)
-    {
-        return $this->setParameter('FinAuthInd', $value);
-    }
-    /**
-     * @return bool
-     */
-    public function validateFinAuthInd()
-    {
-        $value = $this->getParameter('FinAuthInd');
-        $valid = array('0', '1');
-        return in_array($value, $valid);
-    }
-
-    /**
-     * @return string
-     */
-    public function getTranIntgClass()
-    {
-        return $this->getParameter('TranIntgClass');
-    }
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setTranIntgClass(string $value)
-    {
-        return $this->setParameter('TranIntgClass', $value);
-    }
-    /**
-     * @return bool
-     */
-    public function validateTranIntgClass()
-    {
-        $value = $this->getParameter('TranIntgClass');
-        $valid = array('Checkout', 'Digital', 'EMV', 'Enhanced', 'Generic', 'Keyed', 'Swiped', 'Token', 'Unknown', 'UnknownCNP', 'Validated');
-        return in_array($value, $valid);
-    }
-
-    /**
-     * @return string
-     */
-    public function getDiscAuthInd()
-    {
-        return $this->getParameter('DiscAuthInd');
-    }
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setDiscAuthInd(string $value)
-    {
-        return $this->setParameter('DiscAuthInd', $value);
-    }
-    /**
-     * @return bool
-     */
-    public function validateDiscAuthInd()
-    {
-        $value = $this->getParameter('DiscAuthInd');
+        $value = $this->getParameter('AuthIndicator');
         $valid = array('ReAuth');
         return in_array($value, $valid);
     }
 
+
     /**
      * @return string
      */
-    public function getDiscNRID()
+    public function getStoredCredentialIndicator()
     {
-        return $this->getParameter('DiscNRID');
+        return $this->getParameter('StoredCredentialIndicator');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setDiscNRID(string $value)
+    public function setStoredCredentialIndicator(string $value)
     {
-        return $this->setParameter('DiscNRID', $value);
+        return $this->setParameter('StoredCredentialIndicator', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateDiscNRID()
+    public function validateStoredCredentialIndicator()
     {
-        $value = $this->getParameter('DiscNRID');
-        if (!preg_match('/[0-9A-Za-z]{1,15}/',$value)) {
+        $value = $this->getParameter('StoredCredentialIndicator');
+        $valid = array('Initial', 'Subsequent');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getCardOnFileScheduleIndicator()
+    {
+        return $this->getParameter('CardOnFileScheduleIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCardOnFileScheduleIndicator(string $value)
+    {
+        return $this->setParameter('CardOnFileScheduleIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateCardOnFileScheduleIndicator()
+    {
+        $value = $this->getParameter('CardOnFileScheduleIndicator');
+        $valid = array('Scheduled', 'Unscheduled');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getBankNetData()
+    {
+        return $this->getParameter('BankNetData');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setBankNetData(string $value)
+    {
+        return $this->setParameter('BankNetData', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateBankNetData()
+    {
+        $value = $this->getParameter('BankNetData');
+        if (!preg_match('/[0-9A-Za-z]{13,13}/', $value)) {
             return false;
         }
         return true;
     }
 
+
     /**
      * @return string
      */
-    public function getReAuthInd()
+    public function getCCVErrorCode()
     {
-        return $this->getParameter('ReAuthInd');
+        return $this->getParameter('CCVErrorCode');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setReAuthInd(string $value)
+    public function setCCVErrorCode(string $value)
     {
-        return $this->setParameter('ReAuthInd', $value);
+        return $this->setParameter('CCVErrorCode', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateReAuthInd()
+    public function validateCCVErrorCode()
     {
-        $value = $this->getParameter('ReAuthInd');
+        $value = $this->getParameter('CCVErrorCode');
         $valid = array('Y');
         return in_array($value, $valid);
     }
 
+
     /**
      * @return string
      */
-    public function getOrigSTAN()
+    public function getPOSEntryModeChange()
     {
-        return $this->getParameter('OrigSTAN');
+        return $this->getParameter('POSEntryModeChange');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setOrigSTAN(string $value)
+    public function setPOSEntryModeChange($value)
     {
-        return $this->setParameter('OrigSTAN', $value);
+        return $this->setParameter('POSEntryModeChange', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateOrigSTAN()
+    public function validatePOSEntryModeChange()
     {
-        $value = $this->getParameter('OrigSTAN');
-        if (!preg_match('/[0-9]{6,6}/',$value)) {
+        $value = $this->getParameter('POSEntryModeChange');
+        $valid = array('Y');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTransactionEditErrorCode()
+    {
+        return $this->getParameter('TransactionEditErrorCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTransactionEditErrorCode(string $value)
+    {
+        return $this->setParameter('TransactionEditErrorCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTransactionEditErrorCode()
+    {
+        $value = $this->getParameter('TransactionEditErrorCode');
+        if (!preg_match('/[0-9A-Za-z]{1,1}/', $value)) {
             return false;
         }
         return true;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramInd()
-    {
-        return $this->getParameter('ProgramInd');
-    }
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setProgramInd(string $value)
-    {
-        return $this->setParameter('ProgramInd', $value);
-    }
-    /**
-     * @return bool
-     */
-    public function validateProgramInd()
-    {
-        $value = $this->getParameter('ProgramInd');
-        $valid = array('1', '2', '3', '4', '5', '6');
-        return in_array($value, $valid);
-    }
 
     /**
      * @return string
      */
-    public function getDelChrgInd()
+    public function getMasterCardPOSData()
     {
-        return $this->getParameter('DelChrgInd');
+        return $this->getParameter('MasterCardPOSData');
     }
+
+
     /**
      * @param string $value
      * @return string
      */
-    public function setDelChrgInd(string $value)
+    public function setMasterCardPOSData(string $value)
     {
-        return $this->setParameter('DelChrgInd', $value);
+        return $this->setParameter('MasterCardPOSData', $value);
     }
+
+
     /**
      * @return bool
      */
-    public function validateDelChrgInd()
+    public function validateMasterCardPOSData()
     {
-        $value = $this->getParameter('DelChrgInd');
+        $value = $this->getParameter('MasterCardPOSData');
+        if (!preg_match('/[0-9A-Za-z]{12,12}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDeviceTypeIndicator()
+    {
+        return $this->getParameter('DeviceTypeIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDeviceTypeIndicator(string $value)
+    {
+        return $this->setParameter('DeviceTypeIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDeviceTypeIndicator()
+    {
+        $value = $this->getParameter('DeviceTypeIndicator');
+        if (!preg_match('/[0-9A-Za-z]{1,2}/', $value)) {
+            return false;
+        }
+        if (!preg_match('/[0-9]{1,1}/', $value)) {
+            return false;
+        }
+        if (!preg_match('/[1-9][0-9]/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMasterCardACI()
+    {
+        return $this->getParameter('MasterCardACI');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMasterCardACI(string $value)
+    {
+        return $this->setParameter('MasterCardACI', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMasterCardACI()
+    {
+        $value = $this->getParameter('MasterCardACI');
+        $valid = array('P', 'I');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMasterCardAdditionalData()
+    {
+        return $this->getParameter('MasterCardAdditionalData');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMasterCardAdditionalData(string $value)
+    {
+        return $this->setParameter('MasterCardAdditionalData', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMasterCardAdditionalData()
+    {
+        $value = $this->getParameter('MasterCardAdditionalData');
+        if (!preg_match('/[0-9A-Za-z]{13,13}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAuthorizationType()
+    {
+        return $this->getParameter('AuthorizationType');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAuthorizationType(string $value)
+    {
+        return $this->setParameter('AuthorizationType', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAuthorizationType()
+    {
+        $value = $this->getParameter('AuthorizationType');
+        $valid = array('0', '1');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTransactionIntegrityClass()
+    {
+        return $this->getParameter('TransactionIntegrityClass');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setTransactionIntegrityClass(string $value)
+    {
+        return $this->setParameter('TransactionIntegrityClass', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateTransactionIntegrityClass()
+    {
+        $value = $this->getParameter('TransactionIntegrityClass');
+        $valid = array(
+            'Checkout',
+            'Digital',
+            'EMV',
+            'Enhanced',
+            'Generic',
+            'Keyed',
+            'Swiped',
+            'Token',
+            'Unknown',
+            'UnknownCNP',
+            'Validated'
+        );
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDiscoverProcessingCode()
+    {
+        return $this->getParameter('DiscoverProcessingCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDiscoverProcessingCode(string $value)
+    {
+        return $this->setParameter('DiscoverProcessingCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDiscoverProcessingCode()
+    {
+        $value = $this->getParameter('DiscoverProcessingCode');
+        if (!preg_match('/[0-9A-Za-z]{6,6}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDiscoverPOSEntryMode()
+    {
+        return $this->getParameter('DiscoverPOSEntryMode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDiscoverPOSEntryMode(string $value)
+    {
+        return $this->setParameter('DiscoverPOSEntryMode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDiscoverPOSEntryMode()
+    {
+        $value = $this->getParameter('DiscoverPOSEntryMode');
+        if (!preg_match('/[0-9]{4,4}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDiscoverResponseCode()
+    {
+        return $this->getParameter('DiscoverResponseCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDiscoverResponseCode(string $value)
+    {
+        return $this->setParameter('DiscoverResponseCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDiscoverResponseCode()
+    {
+        $value = $this->getParameter('DiscoverResponseCode');
+        if (!preg_match('/[0-9A-Za-z]{2,2}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDiscoverPOSData()
+    {
+        return $this->getParameter('DiscoverPOSData');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDiscoverPOSData(string $value)
+    {
+        return $this->setParameter('DiscoverPOSData', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDiscoverPOSData()
+    {
+        $value = $this->getParameter('DiscoverPOSData');
+        if (!preg_match('/[0-9A-Za-z]{13,13}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDiscoverTransactionQualifier()
+    {
+        return $this->getParameter('DiscoverTransactionQualifier');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDiscoverTransactionQualifier(string $value)
+    {
+        return $this->setParameter('DiscoverTransactionQualifier', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDiscoverTransactionQualifier()
+    {
+        $value = $this->getParameter('DiscoverTransactionQualifier');
+        if (!preg_match('/[0-9A-Za-z]{2,2}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDiscoverNRID()
+    {
+        return $this->getParameter('DiscoverNRID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDiscoverNRID(string $value)
+    {
+        return $this->setParameter('DiscoverNRID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDiscoverNRID()
+    {
+        $value = $this->getParameter('DiscoverNRID');
+        if (!preg_match('/[0-9A-Za-z]{1,15}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMOTOIndicator()
+    {
+        return $this->getParameter('MOTOIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMOTOIndicator(string $value)
+    {
+        return $this->setParameter('MOTOIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMOTOIndicator()
+    {
+        $value = $this->getParameter('MOTOIndicator');
+        $valid = array('1', '2');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRegisteredUserIndicator()
+    {
+        return $this->getParameter('RegisteredUserIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRegisteredUserIndicator(string $value)
+    {
+        return $this->setParameter('RegisteredUserIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRegisteredUserIndicator()
+    {
+        $value = $this->getParameter('RegisteredUserIndicator');
+        $valid = array('Y', 'N');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRegisteredUserProfileChangeDate()
+    {
+        return $this->getParameter('RegisteredUserProfileChangeDate');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRegisteredUserProfileChangeDate(string $value)
+    {
+        return $this->setParameter('RegisteredUserProfileChangeDate', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRegisteredUserProfileChangeDate()
+    {
+        $value = $this->getParameter('RegisteredUserProfileChangeDate');
+        if (!preg_match('/[0-9]{8,8}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getPartialShipmentIndicator()
+    {
+        return $this->getParameter('PartialShipmentIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setPartialShipmentIndicator(string $value)
+    {
+        return $this->setParameter('PartialShipmentIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validatePartialShipmentIndicator()
+    {
+        $value = $this->getParameter('PartialShipmentIndicator');
+        $valid = array('Partial');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAmExPOSData()
+    {
+        return $this->getParameter('AmExPOSData');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAmExPOSData(string $value)
+    {
+        return $this->setParameter('AmExPOSData', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAmExPOSData()
+    {
+        $value = $this->getParameter('AmExPOSData');
+        if (!preg_match('/[0-9A-Za-z]{12,12}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAmExTranID()
+    {
+        return $this->getParameter('AmExTranID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAmExTranID(string $value)
+    {
+        return $this->setParameter('AmExTranID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAmExTranID()
+    {
+        $value = $this->getParameter('AmExTranID');
+        return strlen($value) >= 1 && strlen($value) <= 20;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getGoodsSoldCode()
+    {
+        return $this->getParameter('GoodsSoldCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setGoodsSoldCode(string $value)
+    {
+        return $this->setParameter('GoodsSoldCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateGoodsSoldCode()
+    {
+        $value = $this->getParameter('GoodsSoldCode');
+        $valid = array('1000');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getReAuthIndicator()
+    {
+        return $this->getParameter('ReAuthIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setReAuthIndicator(string $value)
+    {
+        return $this->setParameter('ReAuthIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateReAuthIndicator()
+    {
+        $value = $this->getParameter('ReAuthIndicator');
+        $valid = array('Y');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAVSBillingAddress()
+    {
+        return $this->getParameter('AVSBillingAddress');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAVSBillingAddress(string $value)
+    {
+        return $this->setParameter('AVSBillingAddress', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAVSBillingAddress()
+    {
+        $value = $this->getParameter('AVSBillingAddress');
+        return strlen($value) >= 1 && strlen($value) <= 30;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAVSBillingPostalCode()
+    {
+        return $this->getParameter('AVSBillingPostalCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAVSBillingPostalCode(string $value)
+    {
+        return $this->setParameter('AVSBillingPostalCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAVSBillingPostalCode()
+    {
+        $value = $this->getParameter('AVSBillingPostalCode');
+        if (!preg_match('/[0-9A-Z a-z]{1,10}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getCardHolderFirstName()
+    {
+        return $this->getParameter('CardHolderFirstName');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCardHolderFirstName(string $value)
+    {
+        return $this->setParameter('CardHolderFirstName', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateCardHolderFirstName()
+    {
+        $value = $this->getParameter('CardHolderFirstName');
+        return strlen($value) >= 1 && strlen($value) <= 35;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getCardHolderLastName()
+    {
+        return $this->getParameter('CardHolderLastName');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCardHolderLastName(string $value)
+    {
+        return $this->setParameter('CardHolderLastName', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateCardHolderLastName()
+    {
+        $value = $this->getParameter('CardHolderLastName');
+        return strlen($value) >= 1 && strlen($value) <= 35;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getCardHolderFullNameResult()
+    {
+        return $this->getParameter('CardHolderFullNameResult');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCardHolderFullNameResult(string $value)
+    {
+        return $this->setParameter('CardHolderFullNameResult', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateCardHolderFullNameResult()
+    {
+        $value = $this->getParameter('CardHolderFullNameResult');
+        $valid = array('M', 'F', 'L', 'N', 'W', 'U', 'P', 'K', 'B');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getOrderDate()
+    {
+        return $this->getParameter('OrderDate');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setOrderDate(string $value)
+    {
+        return $this->setParameter('OrderDate', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateOrderDate()
+    {
+        $value = $this->getParameter('OrderDate');
+        if (!preg_match('/[0-9]{6,6}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getResponseCode()
+    {
+        return $this->getParameter('ResponseCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setResponseCode(string $value)
+    {
+        return $this->setParameter('ResponseCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateResponseCode()
+    {
+        $value = $this->getParameter('ResponseCode');
+        if (!preg_match('/[0-9]{3,3}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAuthorizationID()
+    {
+        return $this->getParameter('AuthorizationID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAuthorizationID(string $value)
+    {
+        return $this->setParameter('AuthorizationID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAuthorizationID()
+    {
+        $value = $this->getParameter('AuthorizationID');
+        if (!preg_match('/[0-9A-Z a-z]{1,8}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAdditionalResponseData()
+    {
+        return $this->getParameter('AdditionalResponseData');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAdditionalResponseData(string $value)
+    {
+        return $this->setParameter('AdditionalResponseData', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAdditionalResponseData()
+    {
+        $value = $this->getParameter('AdditionalResponseData');
+        return strlen($value) >= 1 && strlen($value) <= 50;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getSettlementDate()
+    {
+        return $this->getParameter('SettlementDate');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setSettlementDate(string $value)
+    {
+        return $this->setParameter('SettlementDate', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateSettlementDate()
+    {
+        $value = $this->getParameter('SettlementDate');
+        if (!preg_match('/[0-9]{4,4}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAuthorizingNetworkID()
+    {
+        return $this->getParameter('AuthorizingNetworkID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAuthorizingNetworkID(string $value)
+    {
+        return $this->setParameter('AuthorizingNetworkID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAuthorizingNetworkID()
+    {
+        $value = $this->getParameter('AuthorizingNetworkID');
+        if (!preg_match('/[0-9A-Za-z]{1,3}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAuthorizingNetworkName()
+    {
+        return $this->getParameter('AuthorizingNetworkName');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAuthorizingNetworkName(string $value)
+    {
+        return $this->setParameter('AuthorizingNetworkName', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAuthorizingNetworkName()
+    {
+        $value = $this->getParameter('AuthorizingNetworkName');
+        return strlen($value) >= 1 && strlen($value) <= 10;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRoutingIndicator()
+    {
+        return $this->getParameter('RoutingIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRoutingIndicator(string $value)
+    {
+        return $this->setParameter('RoutingIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRoutingIndicator()
+    {
+        $value = $this->getParameter('RoutingIndicator');
+        if (!preg_match('/[0-9A-Za-z]{1,1}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getSignatureIndicator()
+    {
+        return $this->getParameter('SignatureIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setSignatureIndicator(string $value)
+    {
+        return $this->setParameter('SignatureIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateSignatureIndicator()
+    {
+        $value = $this->getParameter('SignatureIndicator');
+        if (!preg_match('/[0-9]{1,1}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getErrorData()
+    {
+        return $this->getParameter('ErrorData');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setErrorData(string $value)
+    {
+        return $this->setParameter('ErrorData', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateErrorData()
+    {
+        $value = $this->getParameter('ErrorData');
+        return strlen($value) >= 1 && strlen($value) <= 255;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getSettlementTransactionType()
+    {
+        return $this->getParameter('SettlementTransactionType');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setSettlementTransactionType(string $value)
+    {
+        return $this->setParameter('SettlementTransactionType', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateSettlementTransactionType()
+    {
+        $value = $this->getParameter('SettlementTransactionType');
+        if (!preg_match('/[0-9A-Za-z]{1,1}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getOriginalAuthorizationID()
+    {
+        return $this->getParameter('OriginalAuthorizationID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setOriginalAuthorizationID(string $value)
+    {
+        return $this->setParameter('OriginalAuthorizationID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateOriginalAuthorizationID()
+    {
+        $value = $this->getParameter('OriginalAuthorizationID');
+        if (!preg_match('/[0-9A-Z a-z]{1,8}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getOriginalLocalDateandTime()
+    {
+        return $this->getParameter('OriginalLocalDateandTime');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setOriginalLocalDateandTime(string $value)
+    {
+        return $this->setParameter('OriginalLocalDateandTime', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateOriginalLocalDateandTime()
+    {
+        $value = $this->getParameter('OriginalLocalDateandTime');
+        if (!preg_match('/[0-9]{14,14}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getOriginalTransmissionDateandTime()
+    {
+        return $this->getParameter('OriginalTransmissionDateandTime');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setOriginalTransmissionDateandTime(string $value)
+    {
+        return $this->setParameter('OriginalTransmissionDateandTime', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateOriginalTransmissionDateandTime()
+    {
+        $value = $this->getParameter('OriginalTransmissionDateandTime');
+        if (!preg_match('/[0-9]{14,14}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getOriginalSTAN()
+    {
+        return $this->getParameter('OriginalSTAN');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setOriginalSTAN(string $value)
+    {
+        return $this->setParameter('OriginalSTAN', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateOriginalSTAN()
+    {
+        $value = $this->getParameter('OriginalSTAN');
+        if (!preg_match('/[0-9]{6,6}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getOriginalResponseCode()
+    {
+        return $this->getParameter('OriginalResponseCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setOriginalResponseCode(string $value)
+    {
+        return $this->setParameter('OriginalResponseCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateOriginalResponseCode()
+    {
+        $value = $this->getParameter('OriginalResponseCode');
+        if (!preg_match('/[0-9]{3,3}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getOriginalAuthorizingNetworkID()
+    {
+        return $this->getParameter('OriginalAuthorizingNetworkID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setOriginalAuthorizingNetworkID(string $value)
+    {
+        return $this->setParameter('OriginalAuthorizingNetworkID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateOriginalAuthorizingNetworkID()
+    {
+        $value = $this->getParameter('OriginalAuthorizingNetworkID');
+        if (!preg_match('/[0-9A-Za-z]{1,3}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getServiceLevel()
+    {
+        return $this->getParameter('ServiceLevel');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setServiceLevel(string $value)
+    {
+        return $this->setParameter('ServiceLevel', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateServiceLevel()
+    {
+        $value = $this->getParameter('ServiceLevel');
+        $valid = array('F', 'S', 'N', 'X', 'O', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getNumberofProducts()
+    {
+        return $this->getParameter('NumberofProducts');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setNumberofProducts(string $value)
+    {
+        return $this->setParameter('NumberofProducts', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateNumberofProducts()
+    {
+        $value = $this->getParameter('NumberofProducts');
+        $valid = array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getFileType()
+    {
+        return $this->getParameter('FileType');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setFileType(string $value)
+    {
+        return $this->setParameter('FileType', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateFileType()
+    {
+        $value = $this->getParameter('FileType');
+        $valid = array(
+            'EMV2KEY',
+            'MAIL',
+            'CARDTABLE',
+            'DYNCRDTBL',
+            'SITECFG',
+            'FUELRPT',
+            'HOSTDISC',
+            'RECTXT',
+            'TABLE',
+            'TERMAIL',
+            'MEXLOCBIN',
+            'MEXPVLBIN'
+        );
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getFolioNumber()
+    {
+        return $this->getParameter('FolioNumber');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setFolioNumber(string $value)
+    {
+        return $this->setParameter('FolioNumber', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateFolioNumber()
+    {
+        $value = $this->getParameter('FolioNumber');
+        return strlen($value) >= 1 && strlen($value) <= 12;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRoomNumber()
+    {
+        return $this->getParameter('RoomNumber');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRoomNumber(string $value)
+    {
+        return $this->setParameter('RoomNumber', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRoomNumber()
+    {
+        $value = $this->getParameter('RoomNumber');
+        if (!preg_match('/[0-9A-Za-z]{1,6}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getLodgingReferenceNumber()
+    {
+        return $this->getParameter('LodgingReferenceNumber');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setLodgingReferenceNumber(string $value)
+    {
+        return $this->setParameter('LodgingReferenceNumber', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateLodgingReferenceNumber()
+    {
+        $value = $this->getParameter('LodgingReferenceNumber');
+        if (!preg_match('/[0-9A-Za-z]{1,9}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRoomRate()
+    {
+        return $this->getParameter('RoomRate');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRoomRate(string $value)
+    {
+        return $this->setParameter('RoomRate', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRoomRate()
+    {
+        $value = $this->getParameter('RoomRate');
+        if (!preg_match('/[0-9]{1,9}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getProgramIndicator()
+    {
+        return $this->getParameter('ProgramIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setProgramIndicator(string $value)
+    {
+        return $this->setParameter('ProgramIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateProgramIndicator()
+    {
+        $value = $this->getParameter('ProgramIndicator');
+        $valid = array('1', '2', '3', '4', '5', '6');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDuration()
+    {
+        return $this->getParameter('Duration');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDuration(string $value)
+    {
+        return $this->setParameter('Duration', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDuration()
+    {
+        $value = $this->getParameter('Duration');
+        if (!preg_match('/[0-9]{1,2}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getExtraCharges()
+    {
+        return $this->getParameter('ExtraCharges');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setExtraCharges(string $value)
+    {
+        return $this->setParameter('ExtraCharges', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateExtraCharges()
+    {
+        $value = $this->getParameter('ExtraCharges');
+        if (!preg_match('/[1234567]{1,6}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRentalCity()
+    {
+        return $this->getParameter('RentalCity');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRentalCity(string $value)
+    {
+        return $this->setParameter('RentalCity', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRentalCity()
+    {
+        $value = $this->getParameter('RentalCity');
+        return strlen($value) >= 1 && strlen($value) <= 18;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRentalState()
+    {
+        return $this->getParameter('RentalState');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRentalState(string $value)
+    {
+        return $this->setParameter('RentalState', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRentalState()
+    {
+        $value = $this->getParameter('RentalState');
+        if (!preg_match('/[0-9A-Za-z]{2,2}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRentalCountry()
+    {
+        return $this->getParameter('RentalCountry');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRentalCountry(string $value)
+    {
+        return $this->setParameter('RentalCountry', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRentalCountry()
+    {
+        $value = $this->getParameter('RentalCountry');
+        if (!preg_match('/[0-9A-Za-z]{3,3}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRentalDate()
+    {
+        return $this->getParameter('RentalDate');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRentalDate(string $value)
+    {
+        return $this->setParameter('RentalDate', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRentalDate()
+    {
+        $value = $this->getParameter('RentalDate');
+        if (!preg_match('/[0-9]{8,8}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRentalTime()
+    {
+        return $this->getParameter('RentalTime');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRentalTime(string $value)
+    {
+        return $this->setParameter('RentalTime', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRentalTime()
+    {
+        $value = $this->getParameter('RentalTime');
+        if (!preg_match('/[0-9]{4,4}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getReturnCity()
+    {
+        return $this->getParameter('ReturnCity');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setReturnCity(string $value)
+    {
+        return $this->setParameter('ReturnCity', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateReturnCity()
+    {
+        $value = $this->getParameter('ReturnCity');
+        return strlen($value) >= 1 && strlen($value) <= 18;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getReturnState()
+    {
+        return $this->getParameter('ReturnState');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setReturnState(string $value)
+    {
+        return $this->setParameter('ReturnState', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateReturnState()
+    {
+        $value = $this->getParameter('ReturnState');
+        if (!preg_match('/[0-9A-Za-z]{2,2}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getReturnCountry()
+    {
+        return $this->getParameter('ReturnCountry');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setReturnCountry(string $value)
+    {
+        return $this->setParameter('ReturnCountry', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateReturnCountry()
+    {
+        $value = $this->getParameter('ReturnCountry');
+        if (!preg_match('/[0-9A-Za-z]{3,3}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getReturnDate()
+    {
+        return $this->getParameter('ReturnDate');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setReturnDate(string $value)
+    {
+        return $this->setParameter('ReturnDate', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateReturnDate()
+    {
+        $value = $this->getParameter('ReturnDate');
+        if (!preg_match('/[0-9]{8,8}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getReturnTime()
+    {
+        return $this->getParameter('ReturnTime');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setReturnTime(string $value)
+    {
+        return $this->setParameter('ReturnTime', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateReturnTime()
+    {
+        $value = $this->getParameter('ReturnTime');
+        if (!preg_match('/[0-9]{4,4}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAmountExtraCharges()
+    {
+        return $this->getParameter('AmountExtraCharges');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAmountExtraCharges(string $value)
+    {
+        return $this->setParameter('AmountExtraCharges', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAmountExtraCharges()
+    {
+        $value = $this->getParameter('AmountExtraCharges');
+        if (!preg_match('/[0-9]{1,8}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRenterName()
+    {
+        return $this->getParameter('RenterName');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRenterName(string $value)
+    {
+        return $this->setParameter('RenterName', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRenterName()
+    {
+        $value = $this->getParameter('RenterName');
+        return strlen($value) >= 1 && strlen($value) <= 20;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAutoRentalAgreementNumber()
+    {
+        return $this->getParameter('AutoRentalAgreementNumber');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAutoRentalAgreementNumber(string $value)
+    {
+        return $this->setParameter('AutoRentalAgreementNumber', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAutoRentalAgreementNumber()
+    {
+        $value = $this->getParameter('AutoRentalAgreementNumber');
+        return strlen($value) >= 1 && strlen($value) <= 12;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRentalDuration()
+    {
+        return $this->getParameter('RentalDuration');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRentalDuration(string $value)
+    {
+        return $this->setParameter('RentalDuration', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRentalDuration()
+    {
+        $value = $this->getParameter('RentalDuration');
+        if (!preg_match('/[0-9A-Za-z]{1,2}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getRentalExtraCharges()
+    {
+        return $this->getParameter('RentalExtraCharges');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setRentalExtraCharges(string $value)
+    {
+        return $this->setParameter('RentalExtraCharges', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateRentalExtraCharges()
+    {
+        $value = $this->getParameter('RentalExtraCharges');
+        if (!preg_match('/[012345]{1,5}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAutoRentalNoShow()
+    {
+        return $this->getParameter('AutoRentalNoShow');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAutoRentalNoShow(string $value)
+    {
+        return $this->setParameter('AutoRentalNoShow', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAutoRentalNoShow()
+    {
+        $value = $this->getParameter('AutoRentalNoShow');
+        $valid = array('1');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDelayedChargeIndicator()
+    {
+        return $this->getParameter('DelayedChargeIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDelayedChargeIndicator(string $value)
+    {
+        return $this->setParameter('DelayedChargeIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDelayedChargeIndicator()
+    {
+        $value = $this->getParameter('DelayedChargeIndicator');
         $valid = array('DelChrg');
         return in_array($value, $valid);
     }

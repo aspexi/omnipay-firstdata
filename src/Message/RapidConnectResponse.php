@@ -32,7 +32,7 @@ class RapidConnectResponse extends AbstractResponse
     public function __construct(RequestInterface $request, $data)
     {
         libxml_use_internal_errors(true);
-        $xml = (string) $data;
+        $xml = (string)$data;
         try {
             $xml = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOWARNING);
         } catch (\Exception $e) {
@@ -51,12 +51,25 @@ class RapidConnectResponse extends AbstractResponse
     }
 
     /**
+     * Check if transaction successfully completed
+     *
      * @return bool
+     * @throws InvalidResponseException
      */
     public function isSuccessful()
     {
         return $this->getStatusCode() === static::STATUSCODE_OK &&
-            $this->getReturnCode() === static::RETURNCODE_SUCCESS;
+            $this->getReturnCode() === static::RETURNCODE_SUCCESS &&
+            !$this->isRejectResponse();
+    }
+
+    /**
+     * @return bool
+     * @throws InvalidResponseException
+     */
+    public function isRejectResponse()
+    {
+        return isset($this->getPayload()->RejectResponse);
     }
 
     /**
@@ -82,23 +95,22 @@ class RapidConnectResponse extends AbstractResponse
     }
 
     /**
-     * @return string|null
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
      */
-    public function getStatus()
+    public function getPayload()
     {
-        if(isset($this->data->Status)) {
-            return $this->data->Status->__toString();
-        }
-        return null;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getStatusCode()
-    {
-        if (isset($this->data->Status)) {
-            return $this->data->Status->attributes()['StatusCode']->__toString();
+        if (isset($this->data->TransactionResponse->Payload)) {
+            try {
+                return simplexml_load_string(
+                    htmlspecialchars_decode(
+                        $this->data->TransactionResponse->Payload->__toString(),
+                        ENT_XML1
+                    )
+                );
+            } catch (\Exception $e) {
+                throw new InvalidResponseException($e->getMessage());
+            }
         }
         return null;
     }
@@ -114,4 +126,25 @@ class RapidConnectResponse extends AbstractResponse
         return null;
     }
 
+    /**
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        if (isset($this->data->Status)) {
+            return $this->data->Status->__toString();
+        }
+        return null;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getStatusCode()
+    {
+        if (isset($this->data->Status)) {
+            return $this->data->Status->attributes()['StatusCode']->__toString();
+        }
+        return null;
+    }
 }

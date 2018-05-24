@@ -2,12 +2,26 @@
 
 namespace Omnipay\FirstData;
 
+use Omnipay\FirstData\Model\RapidConnect\BillPaymentTransactionIndicator;
+use Omnipay\FirstData\Model\RapidConnect\CardCaptureCapability;
+use Omnipay\FirstData\Model\RapidConnect\CurrencyCode;
+use Omnipay\FirstData\Model\RapidConnect\EntryMode;
+use Omnipay\FirstData\Model\RapidConnect\MarketSpecificDataIndicator;
+use Omnipay\FirstData\Model\RapidConnect\PINAuthenticationCapability;
+use Omnipay\FirstData\Model\RapidConnect\POSConditionCode;
+use Omnipay\FirstData\Model\RapidConnect\TerminalCategoryCode;
+use Omnipay\FirstData\Model\RapidConnect\TerminalEntryCapability;
+use Omnipay\FirstData\Model\RapidConnect\TerminalLocationIndicator;
 use Omnipay\Tests\TestCase;
 
 class RapidConnectGatewayIntegrationTest extends TestCase
 {
     /** @var RapidConnectGateway */
     protected $gateway;
+    /** @var string */
+    protected $merchEmail;
+    /** @var string */
+    protected $tppid;
 
     public function setUp()
     {
@@ -20,14 +34,25 @@ class RapidConnectGatewayIntegrationTest extends TestCase
         $serviceId = getenv('RAPIDCONNECT_SERVICEID');
         $terminalId = getenv('RAPIDCONNECT_TERMINALID');
 
-        if ($app && $dId && $groupId && $merchantId && $terminalId && $serviceId) {
+        $this->merchEmail = getenv('RAPIDCONNECT_MERCHEMAIL');
+        $this->tppid = getenv('RAPIDCONNECT_TPPID');
+
+        if ($app &&
+            $dId &&
+            $groupId &&
+            $merchantId &&
+            $terminalId &&
+            $serviceId &&
+            $this->merchEmail &&
+            $this->tppid
+        ) {
             $this->gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
             $this->gateway->setApp($app);
             $this->gateway->setDID($dId);
             $this->gateway->setGroupID($groupId);
-            $this->gateway->setMerchID($merchantId);
+            $this->gateway->setMerchantID($merchantId);
             $this->gateway->setServiceID($serviceId);
-            $this->gateway->setTermID($terminalId);
+            $this->gateway->setTerminalID($terminalId);
         } else {
             $this->markTestSkipped('Missing credentials');
         }
@@ -35,36 +60,40 @@ class RapidConnectGatewayIntegrationTest extends TestCase
 
     public function testAuthCaptureVoid()
     {
+        $now = new \DateTime();
+
         // Authorize
         $request = $this->gateway->authorize(array(
-            'PymtType' => 'Credit',
-            'LocalDateTime' => '20180521174243',
-            'TrnmsnDateTime' => '20180521174243',
-            'STAN' => '142114',
-            'RefNum' => '5221952458',
-            'OrderNum' => '69137870',
-            'TPPID' => 'RAR006',
-            'MerchCatCode' => '5399',
-            'POSEntryMode' => '901',
-            'POSCondCode' => '00',
-            'TermCatCode' => '01',
-            'TermEntryCapablt' => '01',
-            'TxnAmt' => '000000000100',
-            'TxnCrncy' => '840',
-            'TermLocInd' => '0',
-            'CardCaptCap' => '1',
-            'MerchEmail' => 'samlitowitz+test@arts-people.com',
-            'Track2Data' => '4264281511117771=18121011000012345678',
-            'CardType' => 'Visa',
-            'PartAuthrztnApprvlCapablt' => '1',
-            'ACI' => 'Y',
-            'VisaBID' => '56412',
-            'VisaAUAR' => '000000000000',
-            'TaxAmtCapabit' => '1',
+            'amount' => '59017',
+            'card' => array(
+                'billingAddress1' => '1307 Broad Hollow Road',
+                'billingPostcode' => '11747',
+                'cvv' => '123',
+                'number' => '4005571702222222',
+                'type' => 'visa',
+            ),
+            'currency' => CurrencyCode::USD,
+            'POSEntryMode' => array(
+                'entryMode' => EntryMode::MANUAL,
+                'pinCapability' => PINAuthenticationCapability::ENTRYCAPABILITY,
+            ),
+            'LocalDateandTime' => $now->format('Ymdhis'),
+            'STAN' => '100003',
+            'ReferenceNumber' => '15000150150',
+            'TPPID' => $this->tppid,
+            'POSConditionCode' => POSConditionCode::CARDHOLDER_NOT_PRESENT_ECOMMERCE,
+            'TerminalCategoryCode' => TerminalCategoryCode::POS,
+            'TerminalEntryCapability' => TerminalEntryCapability::TERMINAL_NOT_USED,
+            'TerminalLocationIndicator' => TerminalLocationIndicator::OFF_PREMISES,
+            'CardCaptureCapability' => CardCaptureCapability::NOT_CAPABLE,
+            'MerchantEmailAddress' => $this->merchEmail,
+            'MarketSpecificDataIndicator' => MarketSpecificDataIndicator::BILL_PAYMENT,
+            'BillPaymentTransactionIndicator' => BillPaymentTransactionIndicator::SINGLE,
         ));
         $response = $request->send();
         $this->assertTrue($response->isSuccessful(), 'Authorization should succeed');
 
+        /*
         // Capture
         $request = $this->gateway->capture(array());
         $response = $request->send();
@@ -72,6 +101,7 @@ class RapidConnectGatewayIntegrationTest extends TestCase
         // Void
         $request = $this->gateway->void(array());
         $response = $request->send();
+        */
     }
 
     public function testPurchaseRefundVoid()

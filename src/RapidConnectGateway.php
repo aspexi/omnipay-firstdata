@@ -17,10 +17,11 @@ class RapidConnectGateway extends AbstractGateway
             'App' => '',
             'DID' => '',
             'GroupId' => '',
-            'MerchID' => '',
+            'MerchantID' => '',
             'ServiceID' => '',
-            'TermID' => '',
+            'TerminalID' => '',
 
+            'industry' => '',
             'liveEndpoint' => 'https://stg.dw.us.fdcnet.biz/rc',
             'testMode' => false,
         );
@@ -75,19 +76,36 @@ class RapidConnectGateway extends AbstractGateway
     }
 
     /**
+     * @return mixed
+     */
+    public function getIndustry()
+    {
+        return $this->getParameter('industry');
+    }
+
+    /**
+     * @param $value
+     * @return RapidConnectGateway
+     */
+    public function setIndustry($value)
+    {
+        return $this->setParameter('industry', $value);
+    }
+
+    /**
      * @return string
      */
-    public function getMerchID()
+    public function getMerchantID()
     {
-        return $this->getParameter('MerchID');
+        return $this->getParameter('MerchantID');
     }
 
     /**
      * @param string $merchantId
      */
-    public function setMerchID($merchantId)
+    public function setMerchantID($merchantId)
     {
-        return $this->setParameter('MerchID', $merchantId);
+        return $this->setParameter('MerchantID', $merchantId);
     }
 
     /**
@@ -143,17 +161,17 @@ class RapidConnectGateway extends AbstractGateway
     /**
      * @return string
      */
-    public function getTermID()
+    public function getTerminalID()
     {
-        return $this->getParameter('TermID');
+        return $this->getParameter('TerminalID');
     }
 
     /**
      * @param string $terminalId
      */
-    public function setTermID($terminalId)
+    public function setTerminalID($terminalId)
     {
-        return $this->setParameter('TermID', $terminalId);
+        return $this->setParameter('TerminalID', $terminalId);
     }
 
     public function authorize(array $parameters = array())

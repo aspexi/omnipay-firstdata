@@ -20,8 +20,8 @@ class RapidConnectGatewayTest extends GatewayTestCase
         $this->gateway->setApp('123456789ABCDEF');
         $this->gateway->setDID('123456789ABCDEF');
         $this->gateway->setGroupID('10001');
-        $this->gateway->setMerchID('1054217');
-        $this->gateway->setTermID('12345');
+        $this->gateway->setMerchantID('1054217');
+        $this->gateway->setTerminalID('12345');
 
         $this->options = array();
     }
@@ -31,8 +31,8 @@ class RapidConnectGatewayTest extends GatewayTestCase
         $this->assertEquals('123456789ABCDEF', $this->gateway->getApp());
         $this->assertEquals('123456789ABCDEF', $this->gateway->getDID());
         $this->assertEquals('10001', $this->gateway->getGroupID());
-        $this->assertEquals('1054217', $this->gateway->getMerchID());
-        $this->assertEquals('12345', $this->gateway->getTermID());
+        $this->assertEquals('1054217', $this->gateway->getMerchantID());
+        $this->assertEquals('12345', $this->gateway->getTerminalID());
     }
 
     public function testPurchaseSuccess()
