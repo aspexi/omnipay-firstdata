@@ -1,0 +1,19 @@
+<?php
+
+namespace Omnipay\FirstData\Model\RapidConnect;
+
+class ReturnCode
+{
+    const RETURNCODE_SUCCESS = "000";
+    const RETURNCODE_INVALIDSESSION = "006";
+    const RETURNCODE_HOSTBUSY = "200";
+    const RETURNCODE_HOSTUNAVAILABLE = "201";
+    const RETURNCODE_HOSTCONNECTERROR = "202";
+    const RETURNCODE_HOSTDROP = "203";
+    const RETURNCODE_HOSTCOMMERROR = "204";
+    const RETURNCODE_NORESPONSE = "205";
+    const RETURNCODE_HOSTSENDERROR = "206";
+    const RETURNCODE_DATAWIRETIMEOUT = "405";
+    const RETURNCODE_NETWORKERROR1 = "505";
+    const RETURNCODE_NETWORKERROR2 = "008";
+}
