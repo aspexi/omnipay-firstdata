@@ -65,35 +65,7 @@ class RapidConnectAuthorizationRequest extends RapidConnectCreditRequest
      */
     function getData()
     {
-        $xml = <<<'XML'
-<?xml version="1.0" encoding="utf-8"?>
-<Request
-    Version="3"
-    ClientTimeout="30"
-    xmlns="http://securetransport.dw/rcservice/xml">
-    <ReqClientID>
-        <DID></DID>
-        <App></App>
-        <Auth></Auth>
-        <ClientRef></ClientRef>
-    </ReqClientID>
-    <Transaction>
-        <ServiceID></ServiceID>
-        <Payload Encoding="xml_escape"></Payload>
-    </Transaction>
-</Request>
-XML;
-        $data = new \SimpleXMLElement($xml);
-        $data->ReqClientID->DID = $this->getDID();
-        $data->ReqClientID->APP = $this->getApp();
-        $data->ReqClientID->Auth = $this->getAuth();
-        $data->ReqClientID->ClientRef = $this->getClientRef();
-        $data->Transaction->ServiceID = $this->getServiceID();
-
-        $this->setPaymentType($this->pymtType);
-        $this->setTransactionType($this->txnType);
-        $now = new \DateTime();
-        $this->setTransmissionDateandTime($now->format('Ymdhis'));
+        $data = $this->getBaseData();
 
         $gmf = <<<'XML'
 <?xml version="1.0" encoding="utf-8"?>
@@ -106,6 +78,7 @@ XML;
 
         $this->addCommonGroup($request);
         $this->addBillPaymentGroup($request);
+        $this->addAlternateMerchantNameandAddressGroup($request);
         $this->addCardGroup($request);
         $this->addPinGroup($request);
         $this->addEcommGroup($request);
@@ -122,7 +95,7 @@ XML;
         $this->addLodgingGroup($request);
         $this->addAutoRentalGroup($request);
 
-        $data->Transaction->Payload = htmlspecialchars($gmf->saveXML(), ENT_XML1, 'UTF-8');
+        $data->Transaction->Payload = $gmf->saveXML();
 
         return $data;
     }
@@ -399,6 +372,78 @@ XML;
      * @param \SimpleXMLElement $data
      * @throws InvalidRequestException
      */
+    public function addAlternateMerchantNameandAddressGroup(\SimpleXMLElement $data)
+    {
+        // Conditional
+        if ($this->getMerchantName() !== null) {
+            if (!$this->validateMerchantName()) {
+                throw new InvalidRequestException("Invalid merchant name");
+            }
+            $data->AltMerchNameAndAddrGrp->MerchName = $this->getMerchantName();
+        }
+
+        // Conditional
+        if ($this->getMerchantAddress() !== null) {
+            if (!$this->validateMerchantAddress()) {
+                throw new InvalidRequestException("Invalid merchant address");
+            }
+            $data->AltMerchNameAndAddrGrp->MerchAddr = $this->getMerchantAddress();
+        }
+
+        // Conditional
+        if ($this->getMerchantCity() !== null) {
+            if (!$this->validateMerchantCity()) {
+                throw new InvalidRequestException("Invalid merchant city");
+            }
+            $data->AltMerchNameAndAddrGrp->MerchCity = $this->getMerchantCity();
+        }
+
+        // Conditional
+        if ($this->getMerchantState() !== null) {
+            if (!$this->validateMerchantState()) {
+                throw new InvalidRequestException("Invalid merchant state");
+            }
+            $data->AltMerchNameAndAddrGrp->MerchState = $this->getMerchantState();
+        }
+
+        // Optional
+        if ($this->getMerchantCounty() !== null) {
+            if (!$this->validateMerchantCounty()) {
+                throw new InvalidRequestException("Invalid merchant county");
+            }
+            $data->AltMerchNameAndAddrGrp->MerchCnty = $this->getMerchantCounty();
+        }
+
+        // Optional
+        if ($this->getMerchantPostalCode() !== null) {
+            if (!$this->validateMerchantPostalCode()) {
+                throw new InvalidRequestException("Invalid merchant postal code");
+            }
+            $data->AltMerchNameAndAddrGrp->MerchPostalCode = $this->getMerchantPostalCode();
+        }
+
+        // Conditional
+        if ($this->getMerchantCountry() !== null) {
+            if (!$this->validateMerchantCountry()) {
+                throw new InvalidRequestException("Invalid merchant country");
+            }
+            $data->AltMerchNameAndAddrGrp->MerchCtry = $this->getMerchantCountry();
+        }
+
+        // Conditional
+        if ($this->getMerchantEmailAddress() !== null) {
+            if (!$this->validateMerchantEmailAddress()) {
+                throw new InvalidRequestException("Invalid merchant email address");
+            }
+            $data->AltMerchNameAndAddrGrp->MerchEmail = $this->getMerchantEmailAddress();
+        }
+    }
+
+
+    /**
+     * @param \SimpleXMLElement $data
+     * @throws InvalidRequestException
+     */
     public function addCardGroup(\SimpleXMLElement $data)
     {
         if ($card = $this->getCard()) {
@@ -406,6 +451,8 @@ XML;
             if ($ccv = $card->getCvv()) {
                 $this->setCCVData($ccv);
                 $this->setCCVIndicator('Prvded');
+                $this->setCardExpirationDate($card->getExpiryDate('Ym'));
+                $this->setCardType(ucfirst($card->getBrand()));
             }
         }
 

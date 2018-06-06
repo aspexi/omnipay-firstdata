@@ -12,48 +12,37 @@ class RapidConnectSaleRequest extends RapidConnectCreditRequest
 	 */
 	function getData()
 	{
-		$xml = <<<'XML'
+        $data = $this->getBaseData();
+
+        $gmf = <<<'XML'
 <?xml version="1.0" encoding="utf-8"?>
-<Request
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="3" ClientTimeout="30"
-    xmlns="http://securetransport.dw/rcservice/xml">
-    <ReqClientID>
-        <DID></DID>
-        <App></App>
-        <Auth></Auth>
-        <ClientRef></ClientRef>
-    </ReqClientID>
-    <Transaction>
-        <ServiceID></ServiceID>
-        <Payload></Payload>
-    </Transaction>
-</Request>
+<GMF xmlns="com/firstdata/Merchant/gmfV7.06"></GMF>
 XML;
-		$data = new \SimpleXMLElement($xml);
-		$data->ReqClientID->DID = $this->getDID();
-		$data->ReqClientID->APP = $this->getApp();
-		$data->ReqClientID->ClientRef = $this->getClientRef();
-		$data->Transaction->ServiceID = $this->getServiceID();
 
-		$this->addCommonGroup($data);
-		$this->addBillPaymentGroup($data);
-		$this->addCardGroup($data);
-		$this->addPinGroup($data);
-		$this->addEcommGroup($data);
-		$this->addVisaGroup($data);
-		$this->addMastercardGroup($data);
-		$this->addDiscoverGroup($data);
-		$this->addAmexGroup($data);
-		$this->addCustomerInfoGroup($data);
-		$this->addOrderGroup($data);
-		$this->addResponseGroup($data);
-		$this->addOriginalAuthorizationGroup($data);
-		$this->addProductCodeGroup($data);
-		$this->addFileDownloadGroup($data);
-		$this->addLodgingGroup($data);
-		$this->addAutoRentalGroup($data);
+        $gmf = new \SimpleXMLElement($gmf, LIBXML_NOWARNING);
 
-		return $data;
+        $request = $gmf->addChild("{$this->requestType}");
+
+		$this->addCommonGroup($request);
+		$this->addBillPaymentGroup($request);
+		$this->addCardGroup($request);
+		$this->addPinGroup($request);
+		$this->addEcommGroup($request);
+		$this->addVisaGroup($request);
+		$this->addMastercardGroup($request);
+		$this->addDiscoverGroup($request);
+		$this->addAmexGroup($request);
+		$this->addCustomerInfoGroup($request);
+		$this->addOrderGroup($request);
+		$this->addResponseGroup($request);
+		$this->addOriginalAuthorizationGroup($request);
+		$this->addProductCodeGroup($request);
+		$this->addFileDownloadGroup($request);
+		$this->addLodgingGroup($request);
+		$this->addAutoRentalGroup($request);
+
+        $data->Transaction->Payload = htmlspecialchars($gmf->saveXML(), ENT_XML1, 'UTF-8');
+
+        return $data;
 	}
 }

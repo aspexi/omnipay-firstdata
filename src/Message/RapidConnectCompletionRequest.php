@@ -13,39 +13,14 @@ class RapidConnectCompletionRequest extends RapidConnectCreditRequest
      */
     function getData()
     {
-        $xml = <<<'XML'
+        $data = $this->getBaseData();
+
+        $gmf = <<<'XML'
 <?xml version="1.0" encoding="utf-8"?>
-<Request
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="3" ClientTimeout="30"
-    xmlns="http://securetransport.dw/rcservice/xml">
-    <ReqClientID>
-        <DID></DID>
-        <App></App>
-        <Auth></Auth>
-        <ClientRef></ClientRef>
-    </ReqClientID>
-    <Transaction>
-        <ServiceID></ServiceID>
-        <Payload></Payload>
-    </Transaction>
-</Request>
+<GMF xmlns="com/firstdata/Merchant/gmfV7.06"></GMF>
 XML;
-        $data = new \SimpleXMLElement($xml);
-        $data->ReqClientID->DID = $this->getDID();
-        $data->ReqClientID->APP = $this->getApp();
-        $data->ReqClientID->ClientRef = $this->getClientRef();
-        $data->Transaction->ServiceID = $this->getServiceID();
 
-        $this->setPaymentType($this->pymtType);
-        $this->setTransactionType($this->txnType);
-        $now = new \DateTime();
-        $this->setTransmissionDateandTime($now->format('Ymdhis'));
-
-        $gmf = new \SimpleXMLElement('<GMF/>');
-        $gmf->addAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance');
-        $gmf->addAttribute('xmlns:xsd', 'http://www.w3.org/2001/XMLSchema');
-        $gmf->addAttribute('xmlns', 'com/firstdata/Merchant/gmfV1.1');
+        $gmf = new \SimpleXMLElement($gmf, LIBXML_NOWARNING);
 
         $request = $gmf->addChild("{$this->requestType}");
 
@@ -66,6 +41,8 @@ XML;
         $this->addFileDownloadGroup($request);
         $this->addLodgingGroup($request);
         $this->addAutoRentalGroup($request);
+
+        $data->Transaction->Payload = htmlspecialchars($gmf->saveXML(), ENT_XML1, 'UTF-8');
 
         return $data;
     }

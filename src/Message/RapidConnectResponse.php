@@ -5,30 +5,18 @@ namespace Omnipay\FirstData\Message;
 use Omnipay\Common\Exception\InvalidResponseException;
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
+use Omnipay\FirstData\Model\RapidConnect\ResponseCode;
+use Omnipay\FirstData\Model\RapidConnect\ReturnCode;
+use Omnipay\FirstData\Model\RapidConnect\StatusCode;
 
 class RapidConnectResponse extends AbstractResponse
 {
-    const RETURNCODE_SUCCESS = "000";
-    const RETURNCODE_INVALIDSESSION = "006";
-    const RETURNCODE_HOSTBUSY = "200";
-    const RETURNCODE_HOSTUNAVAILABLE = "201";
-    const RETURNCODE_HOSTCONNECTERROR = "202";
-    const RETURNCODE_HOSTDROP = "203";
-    const RETURNCODE_HOSTCOMMERROR = "204";
-    const RETURNCODE_NORESPONSE = "205";
-    const RETURNCODE_HOSTSENDERROR = "206";
-    const RETURNCODE_DATAWIRETIMEOUT = "405";
-    const RETURNCODE_NETWORKERROR1 = "505";
-    const RETURNCODE_NETWORKERROR2 = "008";
-
-    const STATUSCODE_OK = "OK";
-    const STATUSCODE_AUTHENTICATIONERROR = "AuthenticationError";
-    const STATUSCODE_UNKNOWNSERVCEID = "UnknownServiceID";
-    const STATUSCODE_XMLERROR = "XMLError";
-    const STATUSCODE_OTHERERROR = "OtherError";
-    const STATUSCODE_INVALIDSESSIONCONTEXT = "InvalidSessionContext";
-    const STATUSCODE_TIMEOUT = "Timeout";
-
+    /**
+     * RapidConnectResponse constructor.
+     * @param RequestInterface $request
+     * @param $data
+     * @throws InvalidResponseException
+     */
     public function __construct(RequestInterface $request, $data)
     {
         libxml_use_internal_errors(true);
@@ -58,9 +46,9 @@ class RapidConnectResponse extends AbstractResponse
      */
     public function isSuccessful()
     {
-        return $this->getStatusCode() === static::STATUSCODE_OK &&
-            $this->getReturnCode() === static::RETURNCODE_SUCCESS &&
-            !$this->isRejectResponse();
+        return $this->getStatusCode() === StatusCode::STATUSCODE_OK &&
+            $this->getReturnCode() === ReturnCode::RETURNCODE_SUCCESS &&
+            $this->getResponseCode() == ResponseCode::APPROVE;
     }
 
     /**
@@ -111,6 +99,45 @@ class RapidConnectResponse extends AbstractResponse
             } catch (\Exception $e) {
                 throw new InvalidResponseException($e->getMessage());
             }
+        }
+        return null;
+    }
+
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
+    public function getAVSResultCode()
+    {
+        $response = $this->getPayload()->children()[0];
+        if (isset($response->CardGrp->AVSResultCode)) {
+            return $response->CardGrp->AVSResultCode;
+        }
+        return null;
+    }
+
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
+    public function getCCVResultCode()
+    {
+        $response = $this->getPayload()->children()[0];
+        if (isset($response->CardGrp->CCVResultCode)) {
+            return $response->CardGrp->CCVResultCode;
+        }
+        return null;
+    }
+
+    /**
+     * @return null
+     * @throws InvalidResponseException
+     */
+    public function getResponseCode()
+    {
+        $response = $this->getPayload()->children()[0];
+        if (isset($response->RespGrp->RespCode)) {
+            return $response->RespGrp->RespCode;
         }
         return null;
     }

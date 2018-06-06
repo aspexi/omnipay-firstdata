@@ -7,6 +7,44 @@ use Omnipay\FirstData\Model\RapidConnect\EntryMode;
 abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
     /**
+     * @return \SimpleXMLElement
+     */
+    function getBaseData()
+    {
+        $xml = <<<'XML'
+<?xml version="1.0" encoding="utf-8"?>
+<Request
+    Version="3"
+    ClientTimeout="30"
+    xmlns="http://securetransport.dw/rcservice/xml">
+    <ReqClientID>
+        <DID></DID>
+        <App></App>
+        <Auth></Auth>
+        <ClientRef></ClientRef>
+    </ReqClientID>
+    <Transaction>
+        <ServiceID></ServiceID>
+        <Payload Encoding="xml_escape"></Payload>
+    </Transaction>
+</Request>
+XML;
+        $data = new \SimpleXMLElement($xml);
+        $data->ReqClientID->DID = $this->getDID();
+        $data->ReqClientID->APP = $this->getApp();
+        $data->ReqClientID->Auth = $this->getAuth();
+        $data->ReqClientID->ClientRef = $this->getClientRef();
+        $data->Transaction->ServiceID = $this->getServiceID();
+
+        $this->setPaymentType($this->pymtType);
+        $this->setTransactionType($this->txnType);
+        $now = new \DateTime();
+        $this->setTransmissionDateandTime($now->format('Ymdhis'));
+
+        return $data;
+    }
+
+    /**
      * @param mixed $data
      * @return \Omnipay\Common\Message\ResponseInterface|RapidConnectResponse
      * @throws \Omnipay\Common\Exception\InvalidResponseException
@@ -34,7 +72,8 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
     }
 
     /**
-     * @param string $app
+     * @param $app
+     * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function setApp($app)
     {
@@ -4742,5 +4781,248 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
         $value = $this->getParameter('DelayedChargeIndicator');
         $valid = array('DelChrg');
         return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getMerchantName()
+    {
+        return $this->getParameter('MerchantName');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantName(string $value)
+    {
+        return $this->setParameter('MerchantName', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantName()
+    {
+        $value = $this->getParameter('MerchantName');
+        return strlen($value) >= 1 && strlen($value) <= 38;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMerchantAddress()
+    {
+        return $this->getParameter('MerchantAddress');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantAddress(string $value)
+    {
+        return $this->setParameter('MerchantAddress', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantAddress()
+    {
+        $value = $this->getParameter('MerchantAddress');
+        return strlen($value) >= 1 && strlen($value) <= 30;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMerchantCity()
+    {
+        return $this->getParameter('MerchantCity');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantCity(string $value)
+    {
+        return $this->setParameter('MerchantCity', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantCity()
+    {
+        $value = $this->getParameter('MerchantCity');
+        return strlen($value) >= 1 && strlen($value) <= 20;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMerchantState()
+    {
+        return $this->getParameter('MerchantState');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantState(string $value)
+    {
+        return $this->setParameter('MerchantState', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantState()
+    {
+        $value = $this->getParameter('MerchantState');
+        if (!preg_match('/[0-9A-Za-z]{2,2}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMerchantCounty()
+    {
+        return $this->getParameter('MerchantCounty');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantCounty(string $value)
+    {
+        return $this->setParameter('MerchantCounty', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantCounty()
+    {
+        $value = $this->getParameter('MerchantCounty');
+        if (!preg_match('/[0-9A-Za-z]{3,3}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMerchantPostalCode()
+    {
+        return $this->getParameter('MerchantPostalCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantPostalCode(string $value)
+    {
+        return $this->setParameter('MerchantPostalCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantPostalCode()
+    {
+        $value = $this->getParameter('MerchantPostalCode');
+        if (!preg_match('/[0-9A-Z a-z]{1,9}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMerchantCountry()
+    {
+        return $this->getParameter('MerchantCountry');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantCountry(string $value)
+    {
+        return $this->setParameter('MerchantCountry', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantCountry()
+    {
+        $value = $this->getParameter('MerchantCountry');
+        if (!preg_match('/[0-9]{3,3}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMerchantEmailAddress()
+    {
+        return $this->getParameter('MerchantEmailAddress');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMerchantEmailAddress(string $value)
+    {
+        return $this->setParameter('MerchantEmailAddress', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMerchantEmailAddress()
+    {
+        $value = $this->getParameter('MerchantEmailAddress');
+        return strlen($value) >= 1 && strlen($value) <= 40;
     }
 }
