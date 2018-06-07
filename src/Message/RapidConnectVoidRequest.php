@@ -4,7 +4,7 @@ namespace Omnipay\FirstData\Message;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 
-class RapidConnectVoidRequest extends RapidConnectReversalRequest
+class RapidConnectVoidRequest extends RapidConnectAbstractRequest
 {
 	/**
 	 * @return \SimpleXMLElement

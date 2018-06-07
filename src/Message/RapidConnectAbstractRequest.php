@@ -72,6 +72,40 @@ XML;
     }
 
     /**
+     * @return mixed
+     */
+    public function getMessageType()
+    {
+        return $this->getParameter('MessageType');
+    }
+
+    /**
+     * @param $type
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function setMessageType($type)
+    {
+        return $this->setParameter('MessageType', $type);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTransactionType()
+    {
+        return $this->getParameter('TransactionType');
+    }
+
+    /**
+     * @param $type
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function setTransactionType($type)
+    {
+        return $this->setParameter('TransactionType', $type);
+    }
+
+    /**
      * @param $app
      * @return \Omnipay\Common\Message\AbstractRequest
      */

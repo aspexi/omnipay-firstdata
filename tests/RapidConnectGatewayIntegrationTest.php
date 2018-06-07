@@ -5,6 +5,7 @@ namespace Omnipay\FirstData;
 use Omnipay\FirstData\Model\RapidConnect\BillPaymentTransactionIndicator;
 use Omnipay\FirstData\Model\RapidConnect\CardCaptureCapability;
 use Omnipay\FirstData\Model\RapidConnect\CurrencyCode;
+use Omnipay\FirstData\Model\RapidConnect\EcommTransactionIndicator;
 use Omnipay\FirstData\Model\RapidConnect\EntryMode;
 use Omnipay\FirstData\Model\RapidConnect\MarketSpecificDataIndicator;
 use Omnipay\FirstData\Model\RapidConnect\PINAuthenticationCapability;
@@ -64,31 +65,46 @@ class RapidConnectGatewayIntegrationTest extends TestCase
 
         // Authorize
         $request = $this->gateway->authorize(array(
-            'amount' => '59017',
+            'amount' => '30132',
             'card' => array(
                 'billingAddress1' => '1307 Broad Hollow Road',
                 'billingPostcode' => '11747',
                 'cvv' => '123',
-                'number' => '4005571702222222',
+                'expiryMonth' => '01',
+                'expiryYear' => '2019',
+                'number' => '4005571701111111',
                 'type' => 'visa',
             ),
             'currency' => CurrencyCode::USD,
             'POSEntryMode' => array(
                 'entryMode' => EntryMode::MANUAL,
-                'pinCapability' => PINAuthenticationCapability::ENTRYCAPABILITY,
+                'pinCapability' => PINAuthenticationCapability::NOENTRYCAPABILITY,
             ),
             'LocalDateandTime' => $now->format('Ymdhis'),
-            'STAN' => '100003',
-            'ReferenceNumber' => '15000150150',
+
             'TPPID' => $this->tppid,
             'POSConditionCode' => POSConditionCode::CARDHOLDER_NOT_PRESENT_ECOMMERCE,
-            'TerminalCategoryCode' => TerminalCategoryCode::POS,
+            'TerminalCategoryCode' => TerminalCategoryCode::ECOMMERCE,
             'TerminalEntryCapability' => TerminalEntryCapability::TERMINAL_NOT_USED,
             'TerminalLocationIndicator' => TerminalLocationIndicator::OFF_PREMISES,
             'CardCaptureCapability' => CardCaptureCapability::NOT_CAPABLE,
-            'MerchantEmailAddress' => $this->merchEmail,
             'MarketSpecificDataIndicator' => MarketSpecificDataIndicator::BILL_PAYMENT,
             'BillPaymentTransactionIndicator' => BillPaymentTransactionIndicator::SINGLE,
+            'EcommTransactionIndicator' => EcommTransactionIndicator::CHANNEL_ENCRYPTED,
+
+            'STAN' => '100003',
+            'ReferenceNumber' => '15000150150',
+            'OrderNumber' => '00000001',
+
+            'MerchantName' => 'SMITH HARDWARE',
+            'MerchantAddress' => '1307 Walt Whitman Road',
+            'MerchantCity' => 'Melville',
+            'MerchantState' => 'NY',
+            'MerchantPostalCode' => '11747',
+            'MerchantEmailAddress' => 'what@ap.com',
+
+            'EcommURL' => 'google.com',
+
         ));
         $response = $request->send();
         $this->assertTrue($response->isSuccessful(), 'Authorization should succeed');

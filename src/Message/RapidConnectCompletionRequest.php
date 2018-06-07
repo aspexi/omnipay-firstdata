@@ -4,10 +4,8 @@ namespace Omnipay\FirstData\Message;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 
-class RapidConnectCompletionRequest extends RapidConnectCreditRequest
+class RapidConnectCompletionRequest extends RapidConnectAbstractRequest
 {
-    protected $txnType = 'Completion';
-
     /**
      * @return \SimpleXMLElement
      */

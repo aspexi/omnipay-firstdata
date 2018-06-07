@@ -5,10 +5,8 @@ namespace Omnipay\FirstData\Message;
 use Omnipay\Common\Exception\InvalidResponseException;
 use Omnipay\Common\Exception\InvalidRequestException;
 
-class RapidConnectAuthorizationRequest extends RapidConnectCreditRequest
+class RapidConnectAuthorizationRequest extends RapidConnectAbstractRequest
 {
-    protected $txnType = 'Authorization';
-
     /**
      * @return string
      */
