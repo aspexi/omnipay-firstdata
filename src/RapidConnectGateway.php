@@ -3,6 +3,9 @@
 namespace Omnipay\FirstData;
 
 use Omnipay\Common\AbstractGateway;
+use Omnipay\FirstData\Model\RapidConnect\MessageType;
+use Omnipay\FirstData\Model\RapidConnect\PaymentType;
+use Omnipay\FirstData\Model\RapidConnect\TransactionType;
 
 class RapidConnectGateway extends AbstractGateway
 {
@@ -176,36 +179,103 @@ class RapidConnectGateway extends AbstractGateway
 
     public function authorize(array $parameters = array())
     {
-        // TODO: Implement authorize() method.
         // MessageType: CreditRequest, TransactionType: Authorize
+        if (!array_key_exists('MessageType', $parameters)) {
+            $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
+        }
+
+        if (!array_key_exists('PaymentType', $parameters)) {
+            $parameters['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters)) {
+            $parameters['TransactionType'] = TransactionType::AUTHORIZATION;
+        }
+
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectAuthorizationRequest', $parameters);
     }
 
     public function capture(array $parameters = array())
     {
-        // TODO: Implement capture() method.
         // MessageType: CreditRequest, TransactionType: Completion
+        if (!array_key_exists('MessageType', $parameters)) {
+            $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
+        }
+
+        if (!array_key_exists('PaymentType', $parameters)) {
+            $parameters['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters)) {
+            $parameters['TransactionType'] = TransactionType::COMPLETION;
+        }
+
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectCompletionRequest', $parameters);
     }
 
     public function purchase(array $parameters = array())
     {
-        // TODO: Implement purchase() method.
         // MessageType: CreditRequest, TransactionType: Sale
+        if (!array_key_exists('MessageType', $parameters)) {
+            $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
+        }
+
+        if (!array_key_exists('PaymentType', $parameters)) {
+            $parameters['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters)) {
+            $parameters['TransactionType'] = TransactionType::SALE;
+        }
+
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectSaleRequest', $parameters);
     }
 
     public function refund(array $parameters = array())
     {
-        // TODO: Implement refund() method.
         // MessageType: CreditRequest/ReversalRequest, TransactionType: Refund
+        if (!array_key_exists('MessageType', $parameters)) {
+            $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
+        }
+
+        if (!array_key_exists('PaymentType', $parameters)) {
+            $parameters['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters)) {
+            $parameters['TransactionType'] = TransactionType::REFUND;
+        }
+
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectRefundRequest', $parameters);
+    }
+
+    public function verification(array $parameters = array())
+    {
+        // MessageType: CreditRequest, TransactionType: Verification
+        if (!array_key_exists('MessageType', $parameters)) {
+            $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters)) {
+            $parameters['TransactionType'] = TransactionType::VERIFICATION;
+        }
     }
 
     public function void(array $parameters = array())
     {
-        // TODO: Implement void() method.
         // MessageType: ReversalRequest, TransactionType: Refund
+        if (!array_key_exists('MessageType', $parameters)) {
+            $parameters['MessageType'] = MessageType::REVERSAL_REQUEST;
+        }
+
+        if (!array_key_exists('PaymentType', $parameters)) {
+            $parameters['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters)) {
+            $parameters['TransactionType'] = TransactionType::AUTHORIZATION;
+        }
+
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectVoidRequest', $parameters);
     }
 }
