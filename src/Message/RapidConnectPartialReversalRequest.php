@@ -4,37 +4,40 @@ namespace Omnipay\FirstData\Message;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 
-class RapidConnectCompletionRequest extends RapidConnectAbstractRequest
+class RapidConnectPartialReversalRequest extends RapidConnectAbstractRequest
 {
-    /**
-     * @return \SimpleXMLElement
-     */
-    function getData()
-    { $data = $this->getBaseData();
+
+	/**
+	 * @return \SimpleXMLElement
+	 */
+	function getData()
+	{
+        $data = $this->getBaseData();
         $gmf = $this->getBasePayload();
 
         $request = $gmf->{$this->getMessageType()};
 
-        $this->addCommonGroup($request);
-        $this->addBillPaymentGroup($request);
-        $this->addCardGroup($request);
-        $this->addPinGroup($request);
-        $this->addEcommGroup($request);
-        $this->addVisaGroup($request);
-        $this->addMastercardGroup($request);
-        $this->addDiscoverGroup($request);
-        $this->addAmexGroup($request);
-        $this->addCustomerInfoGroup($request);
-        $this->addOrderGroup($request);
-        $this->addResponseGroup($request);
-        $this->addOriginalAuthorizationGroup($request);
-        $this->addProductCodeGroup($request);
-        $this->addFileDownloadGroup($request);
-        $this->addLodgingGroup($request);
-        $this->addAutoRentalGroup($request);
+		$this->addCommonGroup($request);
+		$this->addAlternateMerchantNameandAddressGroup($request);
+		$this->addBillPaymentGroup($request);
+		$this->addCardGroup($request);
+		$this->addPinGroup($request);
+		$this->addEcommGroup($request);
+		$this->addVisaGroup($request);
+		$this->addMastercardGroup($request);
+		$this->addDiscoverGroup($request);
+		$this->addAmexGroup($request);
+		$this->addCustomerInfoGroup($request);
+		$this->addOrderGroup($request);
+		$this->addResponseGroup($request);
+		$this->addOriginalAuthorizationGroup($request);
+		$this->addProductCodeGroup($request);
+		$this->addFileDownloadGroup($request);
+		$this->addLodgingGroup($request);
+		$this->addAutoRentalGroup($request);
 
-        return $data;
-    }
+		return $data;
+	}
 
     /**
      * @param \SimpleXMLElement $data
@@ -961,4 +964,5 @@ class RapidConnectCompletionRequest extends RapidConnectAbstractRequest
             $data->AutoRentalGrp->DelChrgInd = $this->getDelayedChargeIndicator();
         }
     }
+
 }

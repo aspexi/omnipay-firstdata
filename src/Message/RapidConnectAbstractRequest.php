@@ -36,12 +36,22 @@ XML;
         $data->ReqClientID->ClientRef = $this->getClientRef();
         $data->Transaction->ServiceID = $this->getServiceID();
 
-        $this->setPaymentType($this->pymtType);
-        $this->setTransactionType($this->txnType);
         $now = new \DateTime();
         $this->setTransmissionDateandTime($now->format('Ymdhis'));
 
         return $data;
+    }
+
+    function getBasePayload()
+    {
+        $gmf = <<<"XML"
+<?xml version="1.0" encoding="utf-8"?>
+<GMF xmlns="com/firstdata/Merchant/gmfV7.06">
+    <{$this->getMessageType()}></{$this->getMessageType()}>
+</GMF>
+XML;
+
+        return new \SimpleXMLElement($gmf, LIBXML_NOWARNING);
     }
 
     /**
@@ -86,23 +96,6 @@ XML;
     public function setMessageType($type)
     {
         return $this->setParameter('MessageType', $type);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTransactionType()
-    {
-        return $this->getParameter('TransactionType');
-    }
-
-    /**
-     * @param $type
-     * @return \Omnipay\Common\Message\AbstractRequest
-     */
-    public function setTransactionType($type)
-    {
-        return $this->setParameter('TransactionType', $type);
     }
 
     /**
@@ -5058,5 +5051,47 @@ XML;
     {
         $value = $this->getParameter('MerchantEmailAddress');
         return strlen($value) >= 1 && strlen($value) <= 40;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAmount()
+    {
+        return $this->getTransactionAmount();
+    }
+
+    /**
+     * @param string $value
+     * @return \Omnipay\Common\Message\AbstractRequest|string
+     */
+    public function setAmount($value)
+    {
+        return $this->setTransactionAmount($value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->getTransactionCurrency();
+    }
+
+    /**
+     * @param string $value
+     * @return \Omnipay\Common\Message\AbstractRequest|string
+     */
+    public function setCurrency($value)
+    {
+        return $this->setTransactionCurrency($value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTransactionId()
+    {
+        return $this->getSTAN();
     }
 }

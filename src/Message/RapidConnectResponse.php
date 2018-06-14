@@ -109,7 +109,12 @@ class RapidConnectResponse extends AbstractResponse
      */
     public function getAVSResultCode()
     {
-        $response = $this->getPayload()->children()[0];
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+
+        $response = $payload->children()[0];
         if (isset($response->CardGrp->AVSResultCode)) {
             return $response->CardGrp->AVSResultCode;
         }
@@ -122,7 +127,11 @@ class RapidConnectResponse extends AbstractResponse
      */
     public function getCCVResultCode()
     {
-        $response = $this->getPayload()->children()[0];
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+        $response = $payload->children()[0];
         if (isset($response->CardGrp->CCVResultCode)) {
             return $response->CardGrp->CCVResultCode;
         }
@@ -135,7 +144,11 @@ class RapidConnectResponse extends AbstractResponse
      */
     public function getResponseCode()
     {
-        $response = $this->getPayload()->children()[0];
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+        $response = $payload->children()[0];
         if (isset($response->RespGrp->RespCode)) {
             return $response->RespGrp->RespCode;
         }

@@ -213,6 +213,23 @@ class RapidConnectGateway extends AbstractGateway
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectCompletionRequest', $parameters);
     }
 
+    public function partialReversal(array $parameters = array()) {
+        // MessageType: ReversalRequest, TransactionType: Authorization
+        if (!array_key_exists('MessageType', $parameters)) {
+            $parameters['MessageType'] = MessageType::REVERSAL_REQUEST;
+        }
+
+        if (!array_key_exists('PaymentType', $parameters)) {
+            $parameters['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters)) {
+            $parameters['TransactionType'] = TransactionType::AUTHORIZATION;
+        }
+
+        return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectPartialReversalRequest', $parameters);
+    }
+
     public function purchase(array $parameters = array())
     {
         // MessageType: CreditRequest, TransactionType: Sale
@@ -259,6 +276,8 @@ class RapidConnectGateway extends AbstractGateway
         if (!array_key_exists('TransactionType', $parameters)) {
             $parameters['TransactionType'] = TransactionType::VERIFICATION;
         }
+
+        return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectVerificationRequest', $parameters);
     }
 
     public function void(array $parameters = array())

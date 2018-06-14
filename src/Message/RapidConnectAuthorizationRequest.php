@@ -8,48 +8,6 @@ use Omnipay\Common\Exception\InvalidRequestException;
 class RapidConnectAuthorizationRequest extends RapidConnectAbstractRequest
 {
     /**
-     * @return string
-     */
-    public function getAmount()
-    {
-        return $this->getTransactionAmount();
-    }
-
-    /**
-     * @param string $value
-     * @return \Omnipay\Common\Message\AbstractRequest|string
-     */
-    public function setAmount($value)
-    {
-        return $this->setTransactionAmount($value);
-    }
-
-    /**
-     * @return string
-     */
-    public function getCurrency()
-    {
-        return $this->getTransactionCurrency();
-    }
-
-    /**
-     * @param string $value
-     * @return \Omnipay\Common\Message\AbstractRequest|string
-     */
-    public function setCurrency($value)
-    {
-        return $this->setTransactionCurrency($value);
-    }
-
-    /**
-     * @return string
-     */
-    public function getTransactionId()
-    {
-        return $this->getSTAN();
-    }
-
-    /**
      * @param string $value
      * @return \Omnipay\Common\Message\AbstractRequest|string
      */
@@ -64,15 +22,9 @@ class RapidConnectAuthorizationRequest extends RapidConnectAbstractRequest
     function getData()
     {
         $data = $this->getBaseData();
+        $gmf = $this->getBasePayload();
 
-        $gmf = <<<'XML'
-<?xml version="1.0" encoding="utf-8"?>
-<GMF xmlns="com/firstdata/Merchant/gmfV7.06"></GMF>
-XML;
-
-        $gmf = new \SimpleXMLElement($gmf, LIBXML_NOWARNING);
-
-        $request = $gmf->addChild("{$this->requestType}");
+        $request = $gmf->{$this->getMessageType()};
 
         $this->addCommonGroup($request);
         $this->addBillPaymentGroup($request);

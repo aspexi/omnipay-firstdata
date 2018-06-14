@@ -31,7 +31,7 @@ class RapidConnectGatewayIntegrationTest extends TestCase
         $app = getenv('RAPIDCONNECT_APP');
         $dId = getenv('RAPIDCONNECT_DID');
         $groupId = getenv('RAPIDCONNECT_GROUPID');
-        $merchantId = getenv('RAPIDCONNECT_MERCHANTID');
+        $merchantId = getenv('RAPIDCONNECT_MERCHANTID_ECOMM');
         $serviceId = getenv('RAPIDCONNECT_SERVICEID');
         $terminalId = getenv('RAPIDCONNECT_TERMINALID');
 
