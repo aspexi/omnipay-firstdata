@@ -59,7 +59,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -78,6 +78,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'amount' => '62107',
             'EcommURL' => 'google.com',
             'EcommTransactionIndicator' => '01',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDA4NDAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -86,6 +87,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -125,7 +127,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -139,6 +141,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '59017',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEwMDAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -146,6 +149,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -185,7 +189,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -199,6 +203,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '58314',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEwMTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -206,6 +211,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -245,7 +251,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -266,6 +272,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -305,7 +312,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -326,6 +333,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -362,7 +370,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -388,6 +396,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -425,7 +434,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -452,6 +461,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -488,7 +498,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -516,6 +526,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -555,7 +566,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -576,6 +587,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -615,7 +627,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -636,6 +648,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -675,7 +688,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180001234506',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -689,6 +702,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000001880010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDE4ODAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -696,6 +710,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -735,7 +750,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180001234506',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -749,6 +764,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000001900010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDE5MDAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -756,6 +772,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -792,7 +809,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180001234506',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -807,6 +824,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '7018',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDE5MDAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -814,6 +832,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -853,7 +872,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -867,6 +886,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '14126',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDI2MjAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -874,6 +894,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -913,7 +934,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -927,6 +948,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '14128',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDI2NDAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -934,6 +956,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -973,7 +996,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -994,6 +1017,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1033,7 +1057,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1054,6 +1078,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1093,7 +1118,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1114,6 +1139,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1153,7 +1179,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1174,6 +1200,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1213,7 +1240,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654000004',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1227,6 +1254,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '13550',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDMyNTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -1234,6 +1262,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1273,7 +1302,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654000004',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1287,6 +1316,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '13552',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDMyNzAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -1294,6 +1324,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1333,7 +1364,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654000004',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1354,6 +1385,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1393,7 +1425,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654000004',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1414,6 +1446,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1453,7 +1486,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654000004',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1474,6 +1507,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1513,7 +1547,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654000004',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1534,6 +1568,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1573,7 +1608,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1598,6 +1633,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1637,7 +1673,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264280001234559',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1662,6 +1698,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1701,7 +1738,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1720,6 +1757,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1756,7 +1794,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -1774,6 +1812,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1811,7 +1850,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212149',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -1836,6 +1875,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1872,7 +1912,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212149',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -1895,6 +1935,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '420011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -1933,7 +1978,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -1958,6 +2003,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -1994,7 +2040,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -2017,6 +2063,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '440011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -2055,7 +2106,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212149',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -2080,6 +2131,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2116,7 +2168,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212149',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -2139,6 +2191,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '460011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -2177,7 +2234,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212149',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -2202,6 +2259,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2238,7 +2296,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212149',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -2262,6 +2320,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2301,7 +2360,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212149',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -2326,6 +2385,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2362,7 +2422,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212149',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -2386,6 +2446,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2425,7 +2486,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4001360000000090',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -2444,6 +2505,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2480,7 +2542,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -2498,6 +2560,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2532,7 +2595,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -2550,6 +2613,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2584,7 +2648,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212149',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -2602,6 +2666,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2639,7 +2704,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -2664,6 +2729,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2703,7 +2769,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -2728,6 +2794,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2767,7 +2834,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -2792,6 +2859,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2831,7 +2899,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -2856,6 +2924,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2892,7 +2961,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -2910,6 +2979,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -2947,7 +3017,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361001684877',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -2971,6 +3041,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3010,7 +3081,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -3034,6 +3105,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3070,7 +3142,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -3088,6 +3160,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3122,7 +3195,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -3140,6 +3213,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3174,7 +3248,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -3192,6 +3266,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3226,7 +3301,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -3244,6 +3319,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3278,7 +3354,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -3296,9 +3372,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
+        $request = $gateway->balanceInquiry($requestData);
         $response = $request->send();
 
         // Assert
@@ -3332,7 +3410,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -3351,6 +3429,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3390,7 +3469,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -3409,6 +3488,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3445,7 +3525,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -3463,6 +3543,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3500,7 +3581,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -3525,6 +3606,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3561,7 +3643,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -3585,6 +3667,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '110011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -3623,7 +3710,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -3648,6 +3735,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3684,7 +3772,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -3708,6 +3796,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '130011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -3746,7 +3839,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -3771,6 +3864,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3807,7 +3901,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -3831,6 +3925,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '150011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -3869,7 +3968,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -3894,6 +3993,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3930,7 +4030,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -3954,6 +4054,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -3993,7 +4094,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4018,6 +4119,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4054,7 +4156,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4078,6 +4180,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4116,7 +4219,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089333338',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4134,6 +4237,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4172,7 +4276,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212149',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4191,6 +4295,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4227,7 +4332,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212149',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4245,6 +4350,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4284,7 +4390,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5405001111111165',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4303,6 +4409,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4339,7 +4446,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5405001111111165',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4357,6 +4464,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4393,7 +4501,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424181111112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -4411,9 +4519,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
+        $request = $gateway->balanceInquiry($requestData);
         $response = $request->send();
 
         // Assert
@@ -4444,7 +4554,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -4462,6 +4572,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4496,7 +4607,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4514,6 +4625,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4548,7 +4660,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4566,6 +4678,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4600,7 +4713,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4618,6 +4731,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4652,7 +4766,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -4670,6 +4784,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4704,7 +4819,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4722,6 +4837,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4756,7 +4872,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4774,6 +4890,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4808,7 +4925,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -4826,6 +4943,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4860,7 +4978,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -4878,6 +4996,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '140011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -4913,7 +5036,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4931,6 +5054,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -4965,7 +5089,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -4983,6 +5107,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '170011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -5018,7 +5147,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -5036,6 +5165,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5070,7 +5200,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -5088,6 +5218,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5122,7 +5253,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5140,6 +5271,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5174,7 +5306,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5192,6 +5324,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5226,7 +5359,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -5244,6 +5377,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5278,7 +5412,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -5296,6 +5430,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '260011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -5331,7 +5470,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5349,6 +5488,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5383,7 +5523,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5401,6 +5541,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '290011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -5436,7 +5581,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -5454,6 +5599,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5488,7 +5634,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -5506,6 +5652,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '320011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -5544,7 +5695,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5563,6 +5714,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5599,7 +5751,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5617,6 +5769,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5651,7 +5804,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5669,6 +5822,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5703,7 +5857,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5721,6 +5875,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5757,7 +5912,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5775,6 +5930,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5813,7 +5969,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5832,6 +5988,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5868,7 +6025,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5886,6 +6043,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '230011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -5923,7 +6085,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5942,6 +6104,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -5978,7 +6141,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -5996,6 +6159,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '250011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -6034,7 +6202,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6053,6 +6221,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6089,7 +6258,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6107,6 +6276,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '270011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -6144,7 +6318,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '3566000022222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6163,6 +6337,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6199,7 +6374,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '3566000022222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6219,6 +6394,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6258,7 +6434,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6277,6 +6453,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6313,7 +6490,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6331,6 +6508,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '310011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -6366,7 +6548,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6386,6 +6568,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6423,7 +6606,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6444,6 +6627,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6480,7 +6664,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6500,6 +6684,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6534,7 +6719,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6554,6 +6739,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6590,7 +6776,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '3566000022222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6611,6 +6797,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6647,7 +6834,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6667,6 +6854,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6703,7 +6891,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6724,6 +6912,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6760,7 +6949,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6782,6 +6971,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6821,7 +7011,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6842,6 +7032,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6878,7 +7069,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6898,6 +7089,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '680011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -6934,7 +7130,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -6955,6 +7151,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -6990,7 +7187,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7010,6 +7207,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '690011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -7047,7 +7249,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7068,6 +7270,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7104,7 +7307,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7126,6 +7329,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7164,7 +7368,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7178,6 +7382,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '13682',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3MTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -7185,6 +7390,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7224,7 +7430,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7245,6 +7451,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7281,7 +7488,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7303,6 +7510,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7342,7 +7550,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7363,6 +7571,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7399,7 +7608,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7421,6 +7630,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7459,7 +7669,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7480,6 +7690,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7516,7 +7727,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7536,6 +7747,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '770011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -7572,7 +7788,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7586,6 +7802,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15040',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3ODAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -7593,6 +7810,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7628,7 +7846,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7641,6 +7859,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15040',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3ODAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -7648,6 +7867,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '780011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -7685,7 +7909,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7699,6 +7923,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '13848',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3OTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -7706,6 +7931,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7742,7 +7968,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7757,6 +7983,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '13845',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3OTAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -7764,6 +7991,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7803,7 +8031,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7824,6 +8052,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7862,7 +8091,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7883,6 +8112,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7919,7 +8149,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7939,6 +8169,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -7974,7 +8205,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -7995,6 +8226,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8030,7 +8262,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8051,6 +8283,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8088,7 +8321,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8102,6 +8335,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '14194',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4NzAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -8109,6 +8343,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8145,7 +8380,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8158,6 +8393,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '14194',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4NzAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -8165,6 +8401,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '870011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -8201,7 +8442,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8215,6 +8456,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000138880010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4ODAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -8222,6 +8464,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8257,7 +8500,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8271,6 +8514,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '7636',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4ODAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -8278,6 +8522,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8315,7 +8560,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '3566000022222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8336,6 +8581,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8372,7 +8618,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '3566000022222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8394,6 +8640,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8432,7 +8679,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8451,6 +8698,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8489,7 +8737,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8508,6 +8756,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8546,7 +8795,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8565,6 +8814,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8603,7 +8853,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '3566000022222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8622,6 +8872,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8658,7 +8909,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -8676,6 +8927,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8710,7 +8962,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -8728,6 +8980,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '630011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -8763,7 +9020,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -8781,6 +9038,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8815,7 +9073,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -8833,6 +9091,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '750011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -8868,7 +9131,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -8886,6 +9149,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8920,7 +9184,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -8938,6 +9202,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -8972,7 +9237,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702221113',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -8990,6 +9255,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9024,7 +9290,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702221113',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9042,6 +9308,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9076,7 +9343,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -9094,6 +9361,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9128,7 +9396,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -9146,6 +9414,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '000011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -9181,7 +9454,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -9199,6 +9472,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9233,7 +9507,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -9251,6 +9525,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9286,7 +9561,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9307,6 +9582,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9342,7 +9618,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9362,6 +9638,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '170011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -9398,7 +9679,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9419,6 +9700,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9454,7 +9736,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9474,6 +9756,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '190011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -9512,7 +9799,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9531,6 +9818,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9567,7 +9855,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9585,6 +9873,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '240011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -9621,7 +9914,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9639,6 +9932,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9674,7 +9968,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9692,6 +9986,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '460011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -9728,7 +10027,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9747,6 +10046,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9782,7 +10082,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9800,6 +10100,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9835,7 +10136,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9853,6 +10154,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9888,7 +10190,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9906,6 +10208,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '830011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -9942,7 +10249,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -9960,6 +10267,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -9995,7 +10303,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10013,6 +10321,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10048,7 +10357,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4761530001115556',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -10066,6 +10375,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10101,7 +10411,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4761530001115556',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -10119,6 +10429,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10155,7 +10466,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -10174,6 +10485,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10209,7 +10521,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -10227,6 +10539,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '080011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -10263,7 +10580,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10281,6 +10598,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10316,7 +10634,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10334,6 +10652,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '240011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -10370,7 +10693,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -10388,6 +10711,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10423,7 +10747,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -10441,6 +10765,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10477,7 +10802,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10495,6 +10820,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10530,7 +10856,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10548,6 +10874,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '610011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -10584,7 +10915,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '3566000022222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10603,6 +10934,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10638,7 +10970,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10657,6 +10989,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10691,7 +11024,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10710,6 +11043,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '000011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -10745,7 +11083,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10765,6 +11103,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10799,7 +11138,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10819,6 +11158,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '020011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -10854,7 +11198,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000007770',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10872,6 +11216,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -10906,7 +11251,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000007770',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10924,6 +11269,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '040011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -10959,7 +11309,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4000020000000018',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -10978,6 +11328,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -11012,7 +11363,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4000020000000018',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11031,6 +11382,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '070011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -11066,7 +11422,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4000020000000018',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11086,6 +11442,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -11120,7 +11477,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4000020000000018',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11140,6 +11497,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '090011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -11175,7 +11537,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -11193,6 +11555,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -11227,7 +11590,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -11245,6 +11608,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '140011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -11280,7 +11648,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11299,6 +11667,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -11333,7 +11702,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11352,6 +11721,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '160011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -11387,7 +11761,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11407,6 +11781,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -11441,7 +11816,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11461,6 +11836,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '180011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -11496,7 +11876,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11514,6 +11894,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -11548,7 +11929,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11566,6 +11947,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '200011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -11601,7 +11987,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6221280005638208',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11620,6 +12006,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -11654,7 +12041,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6221280005638208',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11673,6 +12060,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '250011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -11708,7 +12100,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6221280005638208',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11728,6 +12120,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -11762,7 +12155,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6221280005638208',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11782,6 +12175,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '270011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -11817,7 +12215,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6221280005638208',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11837,6 +12235,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -11871,7 +12270,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6221280005638208',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11891,6 +12290,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '290011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -11926,7 +12330,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6221280005638208',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11944,6 +12348,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -11978,7 +12383,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6221280005638208',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -11996,6 +12401,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '300011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -12031,7 +12441,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12049,6 +12459,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -12083,7 +12494,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12101,6 +12512,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '930011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -12136,7 +12552,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -12154,6 +12570,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -12188,7 +12605,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -12206,6 +12623,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '150011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -12241,7 +12663,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -12259,6 +12681,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -12293,7 +12716,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -12311,6 +12734,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '190011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -12346,7 +12774,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -12364,6 +12792,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -12398,7 +12827,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -12416,6 +12845,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '230011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -12454,7 +12888,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12474,6 +12908,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -12510,7 +12945,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12531,6 +12966,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -12567,7 +13003,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12586,6 +13022,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -12620,7 +13057,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12639,6 +13076,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '010011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -12674,7 +13116,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12693,6 +13135,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -12729,7 +13172,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12743,6 +13186,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '7673',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMjAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -12750,6 +13194,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -12785,7 +13230,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12799,6 +13244,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '7673',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMjAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -12806,6 +13252,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '120011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -12842,7 +13293,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12857,6 +13308,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '7505',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMzAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -12864,6 +13316,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -12899,7 +13352,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12914,6 +13367,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '7505',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMzAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -12921,6 +13375,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -12956,7 +13411,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -12970,6 +13425,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '7601',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxNDAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -12977,6 +13433,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13012,7 +13469,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13034,6 +13491,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13069,7 +13527,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13090,6 +13548,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '240011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -13127,7 +13590,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13148,6 +13611,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13183,7 +13647,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13204,6 +13668,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13239,7 +13704,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005562231212123',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13260,6 +13725,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13294,7 +13760,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13314,6 +13780,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13348,7 +13815,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13368,6 +13835,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13402,7 +13870,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13415,6 +13883,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'amount' => '7605',
             'EcommURL' => 'google.com',
             'EcommTransactionIndicator' => '01',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY3NjAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -13422,6 +13891,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13456,7 +13926,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13469,6 +13939,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'amount' => '7603',
             'EcommURL' => 'google.com',
             'EcommTransactionIndicator' => '01',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY3NzAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -13476,6 +13947,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13513,7 +13985,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13534,6 +14006,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13573,7 +14046,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13587,6 +14060,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'amount' => '7615',
             'EcommURL' => 'google.com',
             'EcommTransactionIndicator' => '01',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY3OTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -13594,6 +14068,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13630,7 +14105,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13650,6 +14125,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13684,7 +14160,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13704,6 +14180,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13738,7 +14215,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13751,6 +14228,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'amount' => '7601',
             'EcommURL' => 'google.com',
             'EcommTransactionIndicator' => '01',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4NzAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -13758,6 +14236,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13792,7 +14271,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13805,6 +14284,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'amount' => '7601',
             'EcommURL' => 'google.com',
             'EcommTransactionIndicator' => '01',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4NzAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -13812,6 +14292,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13849,7 +14330,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13870,6 +14351,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13906,7 +14388,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13927,6 +14409,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -13966,7 +14449,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -13980,6 +14463,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'amount' => '7613',
             'EcommURL' => 'google.com',
             'EcommTransactionIndicator' => '01',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4OTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -13987,6 +14471,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14023,7 +14508,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701112222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14037,6 +14522,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'amount' => '7613',
             'EcommURL' => 'google.com',
             'EcommTransactionIndicator' => '01',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4OTAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -14044,6 +14530,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14080,7 +14567,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -14098,6 +14585,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14132,7 +14620,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -14150,6 +14638,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14184,7 +14673,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14202,6 +14691,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14236,7 +14726,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -14254,6 +14744,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14288,7 +14779,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14306,6 +14797,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14340,7 +14832,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14358,6 +14850,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14392,7 +14885,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14410,6 +14903,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14444,7 +14938,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -14462,6 +14956,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14496,7 +14991,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -14514,6 +15009,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14548,7 +15044,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14566,6 +15062,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14600,7 +15097,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14618,6 +15115,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14652,7 +15150,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14670,6 +15168,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14704,7 +15203,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14722,6 +15221,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '980011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -14757,7 +15261,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -14775,6 +15279,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14809,7 +15314,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -14827,6 +15332,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14861,7 +15367,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14879,6 +15385,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14913,7 +15420,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14931,6 +15438,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -14965,7 +15473,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -14983,6 +15491,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15017,7 +15526,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15035,6 +15544,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15069,7 +15579,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15087,6 +15597,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15123,7 +15634,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15142,6 +15653,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15178,7 +15690,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15196,6 +15708,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15232,7 +15745,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15251,6 +15764,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15287,7 +15801,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15307,6 +15821,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15346,7 +15861,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15365,6 +15880,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15401,7 +15917,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15419,6 +15935,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15456,7 +15973,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15475,6 +15992,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15511,7 +16029,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15531,6 +16049,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15569,7 +16088,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15588,6 +16107,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15624,7 +16144,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15642,6 +16162,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15678,7 +16199,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15697,6 +16218,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15733,7 +16255,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15753,6 +16275,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15792,7 +16315,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15811,6 +16334,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15847,7 +16371,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15865,6 +16389,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15902,7 +16427,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15921,6 +16446,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -15957,7 +16483,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -15977,6 +16503,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16015,7 +16542,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16034,6 +16561,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16070,7 +16598,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16088,6 +16616,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16124,7 +16653,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16143,6 +16672,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16179,7 +16709,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16199,6 +16729,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16238,7 +16769,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16257,6 +16788,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16293,7 +16825,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16311,6 +16843,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16348,7 +16881,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605177111118',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16367,6 +16900,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16403,7 +16937,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605177111118',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16423,6 +16957,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16461,7 +16996,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16482,6 +17017,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16521,7 +17057,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16542,6 +17078,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16580,7 +17117,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16601,6 +17138,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16639,7 +17177,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16653,6 +17191,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000524830010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ4MzAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -16660,6 +17199,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16698,7 +17238,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16712,6 +17252,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000524840010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ4NDAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -16719,6 +17260,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16758,7 +17300,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16772,6 +17314,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000524860010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ4NjAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -16779,6 +17322,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16816,7 +17360,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16830,6 +17374,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000524890010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ4OTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -16837,6 +17382,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16873,7 +17419,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16887,6 +17433,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000524900010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ5MDAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -16894,6 +17441,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16932,7 +17480,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605177111118',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -16946,6 +17494,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '115028',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ5MzAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -16953,6 +17502,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -16991,7 +17541,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17012,6 +17562,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17050,7 +17601,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17064,6 +17615,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '13858',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjUxNzAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -17071,6 +17623,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17110,7 +17663,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17124,6 +17677,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15228',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjUxOTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -17131,6 +17685,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17169,7 +17724,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17190,6 +17745,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17229,7 +17785,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17250,6 +17806,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17288,7 +17845,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17309,6 +17866,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17347,7 +17905,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17361,6 +17919,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000525980010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjU5ODAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -17368,6 +17927,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17406,7 +17966,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17420,6 +17980,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000525990010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjU5OTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -17427,6 +17988,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17466,7 +18028,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17480,6 +18042,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000526010010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjYwMTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -17487,6 +18050,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17524,7 +18088,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17538,6 +18102,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000526050010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjYwNTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -17545,6 +18110,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17581,7 +18147,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17595,6 +18161,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000526060010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjYwNjAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -17602,6 +18169,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17640,7 +18208,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17654,6 +18222,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000526080010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjYwODAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -17661,6 +18230,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17699,7 +18269,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17720,6 +18290,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17756,7 +18327,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17776,6 +18347,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17813,7 +18385,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17834,6 +18406,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17873,7 +18446,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605177111118',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17894,6 +18467,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17930,7 +18504,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605177111118',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -17951,6 +18525,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -17990,7 +18565,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605177111118',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18004,6 +18579,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '115008',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjc5ODAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -18011,6 +18587,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -18047,7 +18624,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605177111118',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18060,6 +18637,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '115008',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjc5ODAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -18067,6 +18645,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '980011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -18105,7 +18688,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18119,6 +18702,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '113526',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjc5OTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -18126,6 +18710,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -18162,7 +18747,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18175,6 +18760,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '113526',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjc5OTAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -18182,6 +18768,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '990011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -18217,7 +18808,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18237,6 +18828,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '150011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -18275,7 +18871,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18296,6 +18892,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -18332,7 +18929,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18352,6 +18949,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '160011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -18389,7 +18991,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18410,6 +19012,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -18446,7 +19049,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18466,6 +19069,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '660011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -18503,7 +19111,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18524,6 +19132,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -18560,7 +19169,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18582,6 +19191,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -18621,7 +19231,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18642,6 +19252,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -18678,7 +19289,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18698,6 +19309,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '680011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -18736,7 +19352,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18750,6 +19366,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15146',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MjAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -18757,6 +19374,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -18793,7 +19411,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18806,6 +19424,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15146',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MjAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -18813,6 +19432,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '820011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -18851,7 +19475,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18865,6 +19489,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15236',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MzAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -18872,6 +19497,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -18908,7 +19534,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18923,6 +19549,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15236',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MzAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -18930,6 +19557,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -18968,7 +19596,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -18989,6 +19617,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19025,7 +19654,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19045,6 +19674,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '950011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -19083,7 +19717,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19104,6 +19738,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19140,7 +19775,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19160,6 +19795,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '960011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -19198,7 +19838,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19212,6 +19852,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15132',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjkwMTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -19219,6 +19860,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19255,7 +19897,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19268,6 +19910,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15132',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjkwMTAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -19275,6 +19918,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '010011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -19312,7 +19960,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19333,6 +19981,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19369,7 +20018,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19391,6 +20040,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19430,7 +20080,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19451,6 +20101,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19487,7 +20138,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19507,6 +20158,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19543,7 +20195,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19564,6 +20216,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19600,7 +20253,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19620,6 +20273,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '630011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -19658,7 +20316,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19679,6 +20337,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19715,7 +20374,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19737,6 +20396,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19774,7 +20434,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19788,6 +20448,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15464',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk4OTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -19795,6 +20456,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19830,7 +20492,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19843,6 +20505,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15464',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk4OTAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -19850,6 +20513,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '890011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -19886,7 +20554,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19900,6 +20568,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15462',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MDAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -19907,6 +20576,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -19942,7 +20612,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -19956,6 +20626,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '15462',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MDAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -19963,6 +20634,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20000,7 +20672,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20014,6 +20686,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000529910010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -20021,6 +20694,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20057,7 +20731,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20070,6 +20744,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '7020',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MTAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -20077,6 +20752,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20114,7 +20790,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20128,6 +20804,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000529920010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MjAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -20135,6 +20812,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20171,7 +20849,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20184,6 +20862,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '57047',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MjAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -20191,6 +20870,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20228,7 +20908,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20242,6 +20922,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000529950010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5NTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -20249,6 +20930,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20285,7 +20967,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20298,6 +20980,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '57647',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5NTAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -20305,6 +20988,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20341,7 +21025,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20355,6 +21039,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'OrderNumber' => '000529990010',
             'currency' => '840',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5OTAwMTA=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -20362,6 +21047,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20398,7 +21084,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20413,6 +21099,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'amount' => '7018',
             'EcommURL' => 'google.com',
+            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5OTAwMTE=',
             'POSConditionCode' => '59',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '01',
@@ -20420,6 +21107,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20458,7 +21146,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20479,6 +21167,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20515,7 +21204,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20535,6 +21224,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '100011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -20573,7 +21267,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20594,6 +21288,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20630,7 +21325,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20650,6 +21345,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20687,7 +21383,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20706,6 +21402,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20745,7 +21442,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20764,6 +21461,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20802,7 +21500,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20821,6 +21519,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20859,7 +21558,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20878,6 +21577,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20916,7 +21616,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20935,6 +21635,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -20973,7 +21674,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -20992,6 +21693,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21030,7 +21732,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -21049,6 +21751,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21085,7 +21788,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -21103,6 +21806,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21137,7 +21841,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -21155,6 +21859,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '450011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -21190,7 +21899,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -21208,6 +21917,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21242,7 +21952,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -21260,6 +21970,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21294,7 +22005,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -21312,6 +22023,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21346,7 +22058,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571702222222',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -21364,6 +22076,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21398,7 +22111,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4055010000000005',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -21416,6 +22129,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21450,7 +22164,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4055010000000005',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -21468,6 +22182,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21502,7 +22217,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -21520,6 +22235,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21554,7 +22270,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511117771',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -21572,6 +22288,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21606,7 +22323,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -21624,6 +22341,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21658,7 +22376,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -21676,6 +22394,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '660011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -21711,7 +22434,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -21729,6 +22452,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21763,7 +22487,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000005550',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -21781,6 +22505,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21815,7 +22540,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -21833,6 +22558,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21867,7 +22593,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180273333333',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -21885,6 +22611,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21919,7 +22646,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5405001111111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -21937,6 +22664,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -21971,7 +22699,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5405001111111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -21989,6 +22717,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22023,7 +22752,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -22041,6 +22770,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22075,7 +22805,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -22093,6 +22823,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '860011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -22128,7 +22863,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -22146,6 +22881,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22180,7 +22916,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -22198,6 +22934,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22232,7 +22969,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -22250,6 +22987,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22284,7 +23022,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '375987654111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -22302,6 +23040,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22336,7 +23075,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -22354,6 +23093,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22388,7 +23128,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -22406,6 +23146,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '960011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -22441,7 +23186,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -22459,6 +23204,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22493,7 +23239,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -22511,6 +23257,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22546,7 +23293,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -22567,6 +23314,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22603,7 +23351,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111551',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -22624,6 +23372,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22662,7 +23411,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -22683,6 +23432,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22720,7 +23470,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -22741,6 +23491,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22777,7 +23528,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -22798,6 +23549,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22834,7 +23586,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -22853,6 +23605,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22889,7 +23642,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '3566000022222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -22908,6 +23661,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22943,7 +23697,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '3566000022222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -22961,6 +23715,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -22996,7 +23751,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -23015,6 +23770,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23050,7 +23806,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -23068,6 +23824,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '390011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -23104,7 +23865,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '3566000022222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -23123,6 +23884,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23158,7 +23920,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '3566000022222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -23177,6 +23939,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23213,7 +23976,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -23232,6 +23995,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23267,7 +24031,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -23286,6 +24050,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23322,7 +24087,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -23341,6 +24106,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23376,7 +24142,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -23394,6 +24160,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '470011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -23431,7 +24202,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281500001119',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -23449,6 +24220,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23486,7 +24258,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281555555555',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -23504,6 +24276,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23541,7 +24314,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000000007',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -23559,6 +24332,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23596,7 +24370,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180000007770',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -23614,6 +24388,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23651,7 +24426,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605175555555',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -23669,6 +24444,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23706,7 +24482,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605170000003',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -23724,6 +24500,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23761,7 +24538,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -23779,6 +24556,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23816,7 +24594,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000000000',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -23834,6 +24612,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23872,7 +24651,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281500003339',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -23893,6 +24672,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23929,7 +24709,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281500003339',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -23951,6 +24731,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -23990,7 +24771,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605175555555',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24011,6 +24792,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24047,7 +24829,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605175555555',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24069,6 +24851,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24108,7 +24891,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605177777777',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24129,6 +24912,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24165,7 +24949,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605177777777',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24187,6 +24971,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24226,7 +25011,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000000000',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24247,6 +25032,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24283,7 +25069,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000000000',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24305,6 +25091,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24344,7 +25131,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000000000',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24365,6 +25152,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24401,7 +25189,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000000000',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24423,6 +25211,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24460,7 +25249,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '378730000111118',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24481,6 +25270,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24516,7 +25306,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '378730000111118',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24537,6 +25327,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24573,7 +25364,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '378730000111118',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24594,6 +25385,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24629,7 +25421,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '378730000111118',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24650,6 +25442,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24686,7 +25479,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24707,6 +25500,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24742,7 +25536,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24763,6 +25557,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24799,7 +25594,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4055011111111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24820,6 +25615,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24855,7 +25651,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4055011111111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24876,6 +25672,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24912,7 +25709,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24933,6 +25730,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -24968,7 +25766,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -24989,6 +25787,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25025,7 +25824,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25046,6 +25845,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25081,7 +25881,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25102,6 +25902,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25138,7 +25939,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25159,6 +25960,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25194,7 +25996,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25215,6 +26017,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25251,7 +26054,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25272,6 +26075,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25307,7 +26111,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25328,6 +26132,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25364,7 +26169,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25383,6 +26188,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25418,7 +26224,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25437,6 +26243,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25473,7 +26280,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25492,6 +26299,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25527,7 +26335,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '371030089111114',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25546,6 +26354,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25582,7 +26391,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25601,6 +26410,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25636,7 +26446,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25655,6 +26465,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25691,7 +26502,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25710,6 +26521,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25745,7 +26557,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005571701111111',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25764,6 +26576,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25800,7 +26613,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5405001111111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25819,6 +26632,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25854,7 +26668,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5405001111111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25873,6 +26687,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25909,7 +26724,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5405001111111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25928,6 +26743,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -25963,7 +26779,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5405001111111116',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -25982,6 +26798,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26020,7 +26837,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26039,6 +26856,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26075,7 +26893,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26095,6 +26913,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26132,7 +26951,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26151,6 +26970,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26186,7 +27006,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26205,6 +27025,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26241,7 +27062,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26260,6 +27081,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26295,7 +27117,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26314,6 +27136,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26352,7 +27175,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26371,6 +27194,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26407,7 +27231,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208702222228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26427,6 +27251,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '0',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26464,7 +27289,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26482,6 +27307,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26518,7 +27344,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26537,6 +27363,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26572,7 +27399,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26590,6 +27417,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26625,7 +27453,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26643,6 +27471,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26679,7 +27508,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '379605176666666',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Amex',
+                'type' => 'amex',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26698,6 +27527,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26734,7 +27564,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26752,6 +27582,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26788,7 +27619,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26807,6 +27638,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26843,7 +27675,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26861,6 +27693,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26897,7 +27730,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4264281511112228',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26916,6 +27749,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -26952,7 +27786,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -26970,6 +27804,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27006,7 +27841,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27025,6 +27860,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27061,7 +27897,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27079,6 +27915,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27115,7 +27952,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27134,6 +27971,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27170,7 +28008,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27188,6 +28026,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27224,7 +28063,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27243,6 +28082,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27278,7 +28118,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27296,6 +28136,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27331,7 +28172,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27350,6 +28191,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27386,7 +28228,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27404,6 +28246,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27440,7 +28283,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6240000006438706',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -27459,6 +28302,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27494,7 +28338,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6240000006438706',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -27512,6 +28356,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+            'OriginalSTAN' => '940011',
+            'OriginalResponseCode' => '000',
         );
 
         // Act
@@ -27547,7 +28396,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27565,6 +28414,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27599,7 +28449,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27617,6 +28467,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27651,7 +28502,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27669,6 +28520,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27703,7 +28555,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27721,6 +28573,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27755,7 +28608,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27773,6 +28626,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27807,7 +28661,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27825,6 +28679,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27859,7 +28714,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701118880',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27877,6 +28732,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27911,7 +28767,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701118880',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -27929,6 +28785,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -27963,7 +28820,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -27981,6 +28838,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28015,7 +28873,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '4005578003333335',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Visa',
+                'type' => 'visa',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -28033,6 +28891,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28067,7 +28926,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -28085,6 +28944,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28119,7 +28979,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -28137,6 +28997,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28171,7 +29032,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -28189,6 +29050,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28223,7 +29085,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011361000006668',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -28241,6 +29103,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28275,7 +29138,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701118880',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -28293,6 +29156,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28327,7 +29191,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '6011208701118880',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'Discover',
+                'type' => 'discover',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -28345,6 +29209,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28380,7 +29245,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -28398,6 +29263,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28433,7 +29299,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -28451,6 +29317,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28486,7 +29353,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -28504,6 +29371,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28539,7 +29407,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '01',
@@ -28557,6 +29425,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28592,7 +29461,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -28611,6 +29480,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28646,7 +29516,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5424180011113336',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -28664,6 +29534,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28699,7 +29570,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -28718,6 +29589,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act
@@ -28753,7 +29625,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'number' => '5256977001111110',
                 'expiryMonth' => $expiryMonth,
                 'expiryYear' => $expiryYear,
-                'type' => 'MasterCard',
+                'type' => 'mastercard',
             ),
             'POSEntryMode' => array(
                 'entryMode' => '90',
@@ -28771,6 +29643,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CardCaptureCapability' => '1',
             'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
             'LocalDateandTime' => $now->format('Ymdhis'),
+            'TransmissionDateandTime' => $now->format('Ymdhis'),
         );
 
         // Act

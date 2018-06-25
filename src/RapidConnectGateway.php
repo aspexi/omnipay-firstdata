@@ -195,6 +195,25 @@ class RapidConnectGateway extends AbstractGateway
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectAuthorizationRequest', $parameters);
     }
 
+    public function balanceInquiry(array $parameters = array())
+    {
+            // MessageType: CreditRequest, TransactionType: BalanceInquiry
+        // MessageType: CreditRequest, TransactionType: Authorize
+        if (!array_key_exists('MessageType', $parameters)) {
+            $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
+        }
+
+        if (!array_key_exists('PaymentType', $parameters)) {
+            $parameters['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters)) {
+            $parameters['TransactionType'] = TransactionType::BALANCE_INQUIRY;
+        }
+
+        return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectBalanceInquiryRequest', $parameters);
+    }
+
     public function capture(array $parameters = array())
     {
         // MessageType: CreditRequest, TransactionType: Completion
@@ -271,6 +290,10 @@ class RapidConnectGateway extends AbstractGateway
         // MessageType: CreditRequest, TransactionType: Verification
         if (!array_key_exists('MessageType', $parameters)) {
             $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
+        }
+
+        if (!array_key_exists('PaymentType', $parameters)) {
+            $parameters['PaymentType'] = PaymentType::CREDIT;
         }
 
         if (!array_key_exists('TransactionType', $parameters)) {

@@ -9,4 +9,5 @@ class TransactionType
     const REFUND = "Refund";
     const SALE = "Sale";
     const VERIFICATION = "Verification";
+    const BALANCE_INQUIRY = "BalanceInquiry";
 }

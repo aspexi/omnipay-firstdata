@@ -32,6 +32,7 @@ class RapidConnectAuthorizationRequest extends RapidConnectAbstractRequest
         $this->addCardGroup($request);
         $this->addPinGroup($request);
         $this->addEcommGroup($request);
+        $this->addSecureTransactionGroup($request);
         $this->addVisaGroup($request);
         $this->addMastercardGroup($request);
         $this->addDiscoverGroup($request);
@@ -402,7 +403,11 @@ class RapidConnectAuthorizationRequest extends RapidConnectAbstractRequest
                 $this->setCCVData($ccv);
                 $this->setCCVIndicator('Prvded');
                 $this->setCardExpirationDate($card->getExpiryDate('Ym'));
-                $this->setCardType(ucfirst($card->getBrand()));
+                $brand = $card->getBrand();
+                if (array_key_exists($brand, $this->brandMap)) {
+                    $value = $this->brandMap[$brand];
+                }
+                $this->setCardType($value);
             }
         }
 
@@ -527,6 +532,76 @@ class RapidConnectAuthorizationRequest extends RapidConnectAbstractRequest
         }
     }
 
+    /**
+     * @param \SimpleXMLElement $data
+     * @throws InvalidRequestException
+     */
+    public function addSecureTransactionGroup(\SimpleXMLElement $data)
+    {
+        // Optional
+        if ($this->getVisaXID() !== null) {
+            if (!$this->validateVisaXID()) {
+                throw new InvalidRequestException("Invalid visa xid");
+            }
+            $data->SecrTxnGrp->VisaXID = $this->getVisaXID();
+        }
+
+        // Conditional
+        if ($this->getVisaSecureTransactionAuthenticationData() !== null) {
+            if (!$this->validateVisaSecureTransactionAuthenticationData()) {
+                throw new InvalidRequestException("Invalid visa secure transactionauthentication data");
+            }
+            $data->SecrTxnGrp->VisaSecrTxnAD = $this->getVisaSecureTransactionAuthenticationData();
+        }
+
+        // Optional
+        if ($this->getAmexXID() !== null) {
+            if (!$this->validateAmexXID()) {
+                throw new InvalidRequestException("Invalid amex xid");
+            }
+            $data->SecrTxnGrp->AmexXID = $this->getAmexXID();
+        }
+
+        // Conditional
+        if ($this->getAmexSecureData() !== null) {
+            if (!$this->validateAmexSecureData()) {
+                throw new InvalidRequestException("Invalid amex secure data");
+            }
+            $data->SecrTxnGrp->AmexSecrAD = $this->getAmexSecureData();
+        }
+
+        // Conditional
+        if ($this->getUCAFCollectionIndicator() !== null) {
+            if (!$this->validateUCAFCollectionIndicator()) {
+                throw new InvalidRequestException("Invalid ucaf collection indicator");
+            }
+            $data->SecrTxnGrp->UCAFCollectInd = $this->getUCAFCollectionIndicator();
+        }
+
+        // Conditional
+        if ($this->getMasterCardSecureData() !== null) {
+            if (!$this->validateMasterCardSecureData()) {
+                throw new InvalidRequestException("Invalid mastercard secure data");
+            }
+            $data->SecrTxnGrp->MCSecrAD = $this->getMasterCardSecureData();
+        }
+
+        // Conditional
+        if ($this->getDiscoverAuthenticationType() !== null) {
+            if (!$this->validateDiscoverAuthenticationType()) {
+                throw new InvalidRequestException("Invalid discover authentication type");
+            }
+            $data->SecrTxnGrp->DiscAuthType = $this->getDiscoverAuthenticationType();
+        }
+
+        // Conditional
+        if ($this->getDiscoverSecureData() !== null) {
+            if (!$this->validateDiscoverSecureData()) {
+                throw new InvalidRequestException("Invalid discover secure data");
+            }
+            $data->SecrTxnGrp->DiscSecData = $this->getDiscoverSecureData();
+        }
+    }
 
     /**
      * @param \SimpleXMLElement $data

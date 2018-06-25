@@ -12,66 +12,34 @@ class RapidConnectVerificationRequest extends RapidConnectAbstractRequest
 	 */
 	function getData()
 	{
-		$xml = <<<'XML'
-<?xml version="1.0" encoding="utf-8"?>
-<Request
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="3" ClientTimeout="30"
-    xmlns="http://securetransport.dw/rcservice/xml">
-    <ReqClientID>
-        <DID></DID>
-        <App></App>
-        <Auth></Auth>
-        <ClientRef></ClientRef>
-    </ReqClientID>
-    <Transaction>
-        <ServiceID></ServiceID>
-        <Payload></Payload>
-    </Transaction>
-</Request>
-XML;
-		$data = new \SimpleXMLElement($xml);
-		$data->ReqClientID->DID = $this->getDID();
-		$data->ReqClientID->APP = $this->getApp();
-		$data->ReqClientID->ClientRef = $this->getClientRef();
-		$data->Transaction->ServiceID = $this->getServiceID();
+        $data = $this->getBaseData();
+        $gmf = $this->getBasePayload();
 
-		$this->addCommonGroup($data);
-		$this->addAlternateMerchantNameandAddressGroup($data);
-		$this->addBillPaymentGroup($data);
-		$this->addCardGroup($data);
-		$this->addPinGroup($data);
-		$this->addEcommGroup($data);
-		$this->addVisaGroup($data);
-		$this->addMastercardGroup($data);
-		$this->addDiscoverGroup($data);
-		$this->addAmexGroup($data);
-		$this->addCustomerInfoGroup($data);
-		$this->addOrderGroup($data);
-		$this->addResponseGroup($data);
-		$this->addOriginalAuthorizationGroup($data);
-		$this->addProductCodeGroup($data);
-		$this->addFileDownloadGroup($data);
-		$this->addLodgingGroup($data);
-		$this->addAutoRentalGroup($data);
+        $request = $gmf->{$this->getMessageType()};
+        
+		$this->addCommonGroup($request);
+		$this->addAlternateMerchantNameandAddressGroup($request);
+		$this->addBillPaymentGroup($request);
+		$this->addCardGroup($request);
+		$this->addPinGroup($request);
+		$this->addEcommGroup($request);
+		$this->addVisaGroup($request);
+		$this->addMastercardGroup($request);
+		$this->addDiscoverGroup($request);
+		$this->addAmexGroup($request);
+		$this->addCustomerInfoGroup($request);
+		$this->addOrderGroup($request);
+		$this->addResponseGroup($request);
+		$this->addOriginalAuthorizationGroup($request);
+		$this->addProductCodeGroup($request);
+		$this->addFileDownloadGroup($request);
+		$this->addLodgingGroup($request);
+		$this->addAutoRentalGroup($request);
+
+        $data->Transaction->Payload = $gmf->saveXML();
 
 		return $data;
 	}
-
-
-	function sendData($data)
-	{
-		$headers = array(
-		    "Connection" => "keep-alive",
-		    "Cache-Control" => "no-cache",
-		    "Content-Type" => "text/xml"
-		);
-		$data = $data->saveXml();
-		$httpResponse = $this->httpClient->request("POST", $this->getEndpoint(), $headers, $data);
-
-		return $this->response = new RapidConnectResponse($this, $httpResponse->getBody()->getContents());
-	}
-
 
 	/**
 	 * @param \SimpleXMLElement $data
@@ -153,7 +121,7 @@ XML;
 		if (!$this->validatePOSEntryMode()) {
 		    throw new InvalidRequestException("Invalid pos entry mode");
 		}
-		$data->CommonGrp->POSEntryMode = $this->getPOSEntryMode();
+		$data->CommonGrp->POSEntryMode = $this->getPOSEntryMode()->__toString();
 
 		// Mandatory
 		if (!$this->validatePOSConditionCode()) {
@@ -389,19 +357,19 @@ XML;
 		}
 
 		// Conditional
-		if ($this->getTrackData() !== null) {
-		if (!$this->validateTrackData()) {
+		if ($this->getTrack1Data() !== null) {
+		if (!$this->validateTrack1Data()) {
 		    throw new InvalidRequestException("Invalid track 1 data");
 		}
-		$data->CardGrp->Track1Data = $this->getTrackData();
+		$data->CardGrp->Track1Data = $this->getTrack1Data();
 		}
 
 		// Conditional
-		if ($this->getTrackData() !== null) {
-		if (!$this->validateTrackData()) {
+		if ($this->getTrack2Data() !== null) {
+		if (!$this->validateTrack2Data()) {
 		    throw new InvalidRequestException("Invalid track 2 data");
 		}
-		$data->CardGrp->Track2Data = $this->getTrackData();
+		$data->CardGrp->Track2Data = $this->getTrack2Data();
 		}
 
 		// Conditional

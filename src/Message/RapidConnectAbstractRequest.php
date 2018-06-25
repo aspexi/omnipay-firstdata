@@ -2,10 +2,29 @@
 
 namespace Omnipay\FirstData\Message;
 
+use Omnipay\Common\CreditCard;
 use Omnipay\FirstData\Model\RapidConnect\EntryMode;
 
 abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
+    const BRAND_AMEX = 'Amex';
+    const BRAND_DINERS_CLUB = 'Diners';
+    const BRAND_DISCOVER = 'Discover';
+    const BRAND_JCB = 'JCB';
+    const BRAND_MAESTRO = 'MaestroInt';
+    const BRAND_MASTERCARD = 'MasterCard';
+    const BRAND_VISA = 'Visa';
+
+    protected $brandMap = array(
+        CreditCard::BRAND_AMEX => RapidConnectAbstractRequest::BRAND_AMEX,
+        CreditCard::BRAND_DINERS_CLUB => RapidConnectAbstractRequest::BRAND_DINERS_CLUB,
+        CreditCard::BRAND_DISCOVER => RapidConnectAbstractRequest::BRAND_DISCOVER,
+        CreditCard::BRAND_JCB => RapidConnectAbstractRequest::BRAND_JCB,
+        CreditCard::BRAND_MAESTRO => RapidConnectAbstractRequest::BRAND_MAESTRO,
+        CreditCard::BRAND_MASTERCARD => RapidConnectAbstractRequest::BRAND_MASTERCARD,
+        CreditCard::BRAND_VISA => RapidConnectAbstractRequest::BRAND_VISA,
+    );
+
     /**
      * @return \SimpleXMLElement
      */
@@ -1597,6 +1616,7 @@ XML;
     public function validateCardType()
     {
         $value = $this->getParameter('CardType');
+
         $valid = array(
             'Amex',
             'Diners',
@@ -2449,7 +2469,7 @@ XML;
     public function validateAuthIndicator()
     {
         $value = $this->getParameter('AuthIndicator');
-        $valid = array('ReAuth');
+        $valid = array('ReAuth', 'Resubmit', 'EstAuth', 'CrdOnFile');
         return in_array($value, $valid);
     }
 
@@ -5093,5 +5113,346 @@ XML;
     public function getTransactionId()
     {
         return $this->getSTAN();
+    }
+
+    /**
+     * @return string
+     */
+    public function getVisaXID()
+    {
+        return $this->getParameter('VisaXID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setVisaXID(string $value)
+    {
+        return $this->setParameter('VisaXID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateVisaXID()
+    {
+        $value = $this->getParameter('VisaXID');
+        if (!preg_match('/[a-zA-Z0-9=/\+]{28,28}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getVisaSecureTransactionAuthenticationData()
+    {
+        return $this->getParameter('VisaSecureTransactionAuthenticationData');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setVisaSecureTransactionAuthenticationData(string $value)
+    {
+        return $this->setParameter('VisaSecureTransactionAuthenticationData', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateVisaSecureTransactionAuthenticationData()
+    {
+        $value = $this->getParameter('VisaSecureTransactionAuthenticationData');
+        if (!preg_match('/[a-zA-Z0-9=\/\+]{28,28}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getCAVVResultCode()
+    {
+        return $this->getParameter('CAVVResultCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setCAVVResultCode(string $value)
+    {
+        return $this->setParameter('CAVVResultCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateCAVVResultCode()
+    {
+        $value = $this->getParameter('CAVVResultCode');
+        $valid = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'I', 'U');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAmexXID()
+    {
+        return $this->getParameter('AmexXID');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAmexXID(string $value)
+    {
+        return $this->setParameter('AmexXID', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAmexXID()
+    {
+        $value = $this->getParameter('AmexXID');
+        if (!preg_match('/[a-zA-Z0-9=/\+]{28,28}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAmexSecureData()
+    {
+        return $this->getParameter('AmexSecureData');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAmexSecureData(string $value)
+    {
+        return $this->setParameter('AmexSecureData', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAmexSecureData()
+    {
+        $value = $this->getParameter('AmexSecureData');
+        if (!preg_match('/[a-zA-Z0-9=/\+]{28,28}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getSafekeyResultCode()
+    {
+        return $this->getParameter('SafekeyResultCode');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setSafekeyResultCode(string $value)
+    {
+        return $this->setParameter('SafekeyResultCode', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateSafekeyResultCode()
+    {
+        $value = $this->getParameter('SafekeyResultCode');
+        $valid = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'I', 'U');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getUCAFCollectionIndicator()
+    {
+        return $this->getParameter('UCAFCollectionIndicator');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setUCAFCollectionIndicator(string $value)
+    {
+        return $this->setParameter('UCAFCollectionIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateUCAFCollectionIndicator()
+    {
+        $value = $this->getParameter('UCAFCollectionIndicator');
+        $valid = array('0', '1', '2', '3', '4', '5', '6', '7', '8');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMasterCardSecureData()
+    {
+        return $this->getParameter('MasterCardSecureData');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setMasterCardSecureData(string $value)
+    {
+        return $this->setParameter('MasterCardSecureData', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMasterCardSecureData()
+    {
+        $value = $this->getParameter('MasterCardSecureData');
+        return strlen($value) >= 28 && strlen($value) <= 32;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDiscoverAuthenticationType()
+    {
+        return $this->getParameter('DiscoverAuthenticationType');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDiscoverAuthenticationType(string $value)
+    {
+        return $this->setParameter('DiscoverAuthenticationType', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDiscoverAuthenticationType()
+    {
+        $value = $this->getParameter('DiscoverAuthenticationType');
+        $valid = array('1', '2', '3');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDiscoverSecureData()
+    {
+        return $this->getParameter('DiscoverSecureData');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setDiscoverSecureData(string $value)
+    {
+        return $this->setParameter('DiscoverSecureData', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateDiscoverSecureData()
+    {
+        $value = $this->getParameter('DiscoverSecureData');
+        if (!preg_match('/[a-zA-Z0-9=/\+]{28,28}/',$value)) {
+            return false;
+        }
+        if (!preg_match('/[a-zA-Z0-9=/\+]{56,56}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getSecureDataDowngrade()
+    {
+        return $this->getParameter('SecureDataDowngrade');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setSecureDataDowngrade(string $value)
+    {
+        return $this->setParameter('SecureDataDowngrade', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateSecureDataDowngrade()
+    {
+        $value = $this->getParameter('SecureDataDowngrade');
+        $valid = array('SecDataMissing', 'SecDataInvalid');
+        return in_array($value, $valid);
     }
 }
