@@ -364,6 +364,20 @@ class RapidConnectRefundRequest extends RapidConnectAbstractRequest
      */
     public function addCardGroup(\SimpleXMLElement $data)
     {
+        if ($card = $this->getCard()) {
+            $this->setAccountNumber($card->getNumber());
+            if ($ccv = $card->getCvv()) {
+                $this->setCCVData($ccv);
+                $this->setCCVIndicator('Prvded');
+                $this->setCardExpirationDate($card->getExpiryDate('Ym'));
+                $brand = $card->getBrand();
+                if (array_key_exists($brand, $this->brandMap)) {
+                    $value = $this->brandMap[$brand];
+                }
+                $this->setCardType($value);
+            }
+        }
+
         // Conditional
         if ($this->getAccountNumber() !== null) {
             if (!$this->validateAccountNumber()) {
