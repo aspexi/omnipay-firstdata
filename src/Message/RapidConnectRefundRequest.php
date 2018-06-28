@@ -17,25 +17,25 @@ class RapidConnectRefundRequest extends RapidConnectAbstractRequest
 
         $request = $gmf->{$this->getMessageType()};
 
-        $this->addCommonGroup($data);
-        $this->addAlternateMerchantNameandAddressGroup($data);
-        $this->addBillPaymentGroup($data);
-        $this->addCardGroup($data);
-        $this->addPinGroup($data);
-        $this->addEcommGroup($data);
-        $this->addSecureTransactionGroup($data);
-        $this->addVisaGroup($data);
-        $this->addMastercardGroup($data);
-        $this->addDiscoverGroup($data);
-        $this->addAmexGroup($data);
-        $this->addCustomerInfoGroup($data);
-        $this->addOrderGroup($data);
-        $this->addResponseGroup($data);
-        $this->addOriginalAuthorizationGroup($data);
-        $this->addProductCodeGroup($data);
-        $this->addFileDownloadGroup($data);
-        $this->addLodgingGroup($data);
-        $this->addAutoRentalGroup($data);
+        $this->addCommonGroup($request);
+        $this->addAlternateMerchantNameandAddressGroup($request);
+        $this->addBillPaymentGroup($request);
+        $this->addCardGroup($request);
+        $this->addPinGroup($request);
+        $this->addEcommGroup($request);
+        $this->addSecureTransactionGroup($request);
+        $this->addVisaGroup($request);
+        $this->addMastercardGroup($request);
+        $this->addDiscoverGroup($request);
+        $this->addAmexGroup($request);
+        $this->addCustomerInfoGroup($request);
+        $this->addOrderGroup($request);
+        $this->addResponseGroup($request);
+        $this->addOriginalAuthorizationGroup($request);
+        $this->addProductCodeGroup($request);
+        $this->addFileDownloadGroup($request);
+        $this->addLodgingGroup($request);
+        $this->addAutoRentalGroup($request);
 
         $data->Transaction->Payload = $gmf->saveXML();
 
@@ -366,15 +366,17 @@ class RapidConnectRefundRequest extends RapidConnectAbstractRequest
     {
         if ($card = $this->getCard()) {
             $this->setAccountNumber($card->getNumber());
+            $this->setCardExpirationDate($card->getExpiryDate('Ym'));
+            $brand = $card->getBrand();
+            $value = null;
+            if (array_key_exists($brand, $this->brandMap)) {
+                $value = $this->brandMap[$brand];
+            }
+            $this->setCardType($value);
+
             if ($ccv = $card->getCvv()) {
                 $this->setCCVData($ccv);
                 $this->setCCVIndicator('Prvded');
-                $this->setCardExpirationDate($card->getExpiryDate('Ym'));
-                $brand = $card->getBrand();
-                if (array_key_exists($brand, $this->brandMap)) {
-                    $value = $this->brandMap[$brand];
-                }
-                $this->setCardType($value);
             }
         }
 

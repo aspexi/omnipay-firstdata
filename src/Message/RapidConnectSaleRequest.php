@@ -818,6 +818,25 @@ class RapidConnectSaleRequest extends RapidConnectAbstractRequest
      */
     public function addCustomerInfoGroup(\SimpleXMLElement $data)
     {
+        if ($card = $this->getCard()) {
+            if ($card->getBillingAddress1() !== null || $card->getBillingAddress2() !== null) {
+                $this->setAVSBillingAddress(
+                    $card->getBillingAddress1() . "\n" . $card->getBillingAddress2()
+                );
+            }
+
+            if ($card->getBillingPostcode() !== null) {
+                $this->setAVSBillingPostalCode($card->getBillingPostcode());
+            }
+            if ($card->getFirstName() !== null) {
+                $this->setCardHolderFirstName($card->getFirstName());
+
+                if ($card->getLastName() !== null) {
+                    $this->setCardHolderLastName($card->getLastName());
+                }
+            }
+        }
+
         // Optional
         if ($this->getAVSBillingAddress() !== null) {
             if (!$this->validateAVSBillingAddress()) {

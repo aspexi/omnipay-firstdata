@@ -33,6 +33,8 @@ class RapidConnectCompletionRequest extends RapidConnectAbstractRequest
         $this->addLodgingGroup($request);
         $this->addAutoRentalGroup($request);
 
+        $data->Transaction->Payload = $gmf->saveXML();
+
         return $data;
     }
 
