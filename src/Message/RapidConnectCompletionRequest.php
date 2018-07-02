@@ -19,6 +19,7 @@ class RapidConnectCompletionRequest extends RapidConnectAbstractRequest
         $this->addBillPaymentGroup($request);
         $this->addCardGroup($request);
         $this->addPinGroup($request);
+        $this->addAdditionalAmountsGroup($request);
         $this->addEcommGroup($request);
         $this->addVisaGroup($request);
         $this->addMastercardGroup($request);
@@ -483,6 +484,45 @@ class RapidConnectCompletionRequest extends RapidConnectAbstractRequest
         }
     }
 
+    /**
+     * @param \SimpleXMLElement $data
+     * @throws InvalidRequestException
+     */
+    public function addAdditionalAmountsGroup(\SimpleXMLElement $data)
+    {
+        // Conditional
+        if ($this->getAdditionalAmount() !== null) {
+            if (!$this->validateAdditionalAmount()) {
+                throw new InvalidRequestException("Invalid additional amount");
+            }
+            $data->AddtlAmtGrp->AddAmt = $this->getAdditionalAmount();
+        }
+
+        // Conditional
+        if ($this->getAdditionalAmountCurrency() !== null) {
+            if (!$this->validateAdditionalAmountCurrency()) {
+                throw new InvalidRequestException("Invalid additional amount currency");
+            }
+            $data->AddtlAmtGrp->AddAmtCrncy = $this->getAdditionalAmountCurrency();
+        }
+
+        // Conditional
+        if ($this->getAdditionalAmountType() !== null) {
+            if (!$this->validateAdditionalAmountType()) {
+                throw new InvalidRequestException("Invalid additional amount type");
+            }
+            $data->AddtlAmtGrp->AddAmtType = $this->getAdditionalAmountType();
+        }
+
+        // Conditional
+        if ($this->getPartialAuthorizationApprovalCapability() !== null) {
+            if (!$this->validatePartialAuthorizationApprovalCapability()) {
+                throw new InvalidRequestException("Invalid partial authorization approvalcapability");
+            }
+            $data->AddtlAmtGrp->PartAuthrztnApprvlCapablt = $this->getPartialAuthorizationApprovalCapability();
+        }
+    }
+
 
     /**
      * @param \SimpleXMLElement $data
@@ -891,11 +931,43 @@ class RapidConnectCompletionRequest extends RapidConnectAbstractRequest
     public function addOriginalAuthorizationGroup(\SimpleXMLElement $data)
     {
         // Conditional
-        if ($this->getOriginalSTAN() !== null) {
-            if (!$this->validateOriginalSTAN()) {
-                throw new InvalidRequestException("Invalid original stan");
+        if ($this->getOriginalAuthorizationID() !== null) {
+            if (!$this->validateOriginalAuthorizationID()) {
+                throw new InvalidRequestException("Invalid original authorization id");
             }
-            $data->OrigAuthGrp->OrigSTAN = $this->getOriginalSTAN();
+            $data->OrigAuthGrp->OrigAuthID = $this->getOriginalAuthorizationID();
+        }
+
+        // Mandatory
+        if (!$this->validateOriginalLocalDateandTime()) {
+            throw new InvalidRequestException("Invalid original local date and time");
+        }
+        $data->OrigAuthGrp->OrigLocalDateTime = $this->getOriginalLocalDateandTime();
+
+        // Mandatory
+        if (!$this->validateOriginalTransmissionDateandTime()) {
+            throw new InvalidRequestException("Invalid original transmission date and time");
+        }
+        $data->OrigAuthGrp->OrigTranDateTime = $this->getOriginalTransmissionDateandTime();
+
+        // Mandatory
+        if (!$this->validateOriginalSTAN()) {
+            throw new InvalidRequestException("Invalid original stan");
+        }
+        $data->OrigAuthGrp->OrigSTAN = $this->getOriginalSTAN();
+
+        // Mandatory
+        if (!$this->validateOriginalResponseCode()) {
+            throw new InvalidRequestException("Invalid original response code");
+        }
+        $data->OrigAuthGrp->OrigRespCode = $this->getOriginalResponseCode();
+
+        // Conditional
+        if ($this->getOriginalAuthorizingNetworkID() !== null) {
+            if (!$this->validateOriginalAuthorizingNetworkID()) {
+                throw new InvalidRequestException("Invalid original authorizing network id");
+            }
+            $data->OrigAuthGrp->OrigAthNtwkID = $this->getOriginalAuthorizingNetworkID();
         }
     }
 

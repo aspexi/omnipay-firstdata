@@ -31,6 +31,7 @@ class RapidConnectAuthorizationRequest extends RapidConnectAbstractRequest
         $this->addAlternateMerchantNameandAddressGroup($request);
         $this->addCardGroup($request);
         $this->addPinGroup($request);
+        $this->addAdditionalAmountsGroup($request);
         $this->addEcommGroup($request);
         $this->addSecureTransactionGroup($request);
         $this->addVisaGroup($request);
@@ -497,6 +498,45 @@ class RapidConnectAuthorizationRequest extends RapidConnectAbstractRequest
                 throw new InvalidRequestException("Invalid key serial number data");
             }
             $data->PINGrp->KeySerialNumData = $this->getKeySerialNumberData();
+        }
+    }
+
+    /**
+     * @param \SimpleXMLElement $data
+     * @throws InvalidRequestException
+     */
+    public function addAdditionalAmountsGroup(\SimpleXMLElement $data)
+    {
+        // Conditional
+        if ($this->getAdditionalAmount() !== null) {
+            if (!$this->validateAdditionalAmount()) {
+                throw new InvalidRequestException("Invalid additional amount");
+            }
+            $data->AddtlAmtGrp->AddAmt = $this->getAdditionalAmount();
+        }
+
+        // Conditional
+        if ($this->getAdditionalAmountCurrency() !== null) {
+            if (!$this->validateAdditionalAmountCurrency()) {
+                throw new InvalidRequestException("Invalid additional amount currency");
+            }
+            $data->AddtlAmtGrp->AddAmtCrncy = $this->getAdditionalAmountCurrency();
+        }
+
+        // Conditional
+        if ($this->getAdditionalAmountType() !== null) {
+            if (!$this->validateAdditionalAmountType()) {
+                throw new InvalidRequestException("Invalid additional amount type");
+            }
+            $data->AddtlAmtGrp->AddAmtType = $this->getAdditionalAmountType();
+        }
+
+        // Conditional
+        if ($this->getPartialAuthorizationApprovalCapability() !== null) {
+            if (!$this->validatePartialAuthorizationApprovalCapability()) {
+                throw new InvalidRequestException("Invalid partial authorization approvalcapability");
+            }
+            $data->AddtlAmtGrp->PartAuthrztnApprvlCapablt = $this->getPartialAuthorizationApprovalCapability();
         }
     }
 

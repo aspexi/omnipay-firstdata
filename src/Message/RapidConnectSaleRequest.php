@@ -6,7 +6,6 @@ use Omnipay\Common\Exception\InvalidRequestException;
 
 class RapidConnectSaleRequest extends RapidConnectAbstractRequest
 {
-
     /**
      * @return \SimpleXMLElement
      */
@@ -17,7 +16,12 @@ class RapidConnectSaleRequest extends RapidConnectAbstractRequest
 
         $request = $gmf->{$this->getMessageType()};
 
-        $this->addCommonGroup($request);
+        $commonGroup = $this->getCommonGroup();
+        if ($commonGroup !== null) {
+            $commonGroup->addCommonGroup($request);
+        }
+
+        // $this->addCommonGroup($request);
         $this->addAlternateMerchantNameandAddressGroup($request);
         $this->addBillPaymentGroup($request);
         $this->addCardGroup($request);

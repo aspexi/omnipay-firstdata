@@ -251,17 +251,21 @@ class RapidConnectGateway extends AbstractGateway
 
     public function purchase(array $parameters = array())
     {
+        if (!array_key_exists('CommonGroup', $parameters)) {
+            $parameters['CommonGroup'] = array();
+        }
+
         // MessageType: CreditRequest, TransactionType: Sale
         if (!array_key_exists('MessageType', $parameters)) {
             $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
         }
 
-        if (!array_key_exists('PaymentType', $parameters)) {
-            $parameters['PaymentType'] = PaymentType::CREDIT;
+        if (!array_key_exists('PaymentType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['PaymentType'] = PaymentType::CREDIT;
         }
 
-        if (!array_key_exists('TransactionType', $parameters)) {
-            $parameters['TransactionType'] = TransactionType::SALE;
+        if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TransactionType'] = TransactionType::SALE;
         }
 
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectSaleRequest', $parameters);

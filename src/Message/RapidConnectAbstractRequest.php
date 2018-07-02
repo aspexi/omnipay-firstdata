@@ -4,6 +4,8 @@ namespace Omnipay\FirstData\Message;
 
 use Omnipay\Common\CreditCard;
 use Omnipay\FirstData\Model\RapidConnect\EntryMode;
+use Omnipay\FirstData\Model\RapidConnect\AlternateMerchantNameandAddressGroup;
+use Omnipay\FirstData\Model\RapidConnect\CommonGroup;
 
 abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
@@ -24,6 +26,34 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
         CreditCard::BRAND_MASTERCARD => RapidConnectAbstractRequest::BRAND_MASTERCARD,
         CreditCard::BRAND_VISA => RapidConnectAbstractRequest::BRAND_VISA,
     );
+
+    public function getAlternateMerchantNameandAddressGroup()
+    {
+        return $this->getParameter('alternateMerchantNameandAddressGroup');
+    }
+
+    public function setAlternateMerchantNameandAddressGroup($value)
+    {
+        if ($value && !$value instanceof AlternateMerchantNameandAddressGroup\Group) {
+            $value = new AlternateMerchantNameandAddressGroup\Group($value);
+        }
+
+        return $this->setParameter('alternateMerchantNameandAddressGroup', $value);
+    }
+
+    public function getCommonGroup()
+    {
+        return $this->getParameter('commonGroup');
+    }
+
+    public function setCommonGroup($value)
+    {
+        if ($value && !$value instanceof CommonGroup\Group) {
+            $value = new CommonGroup\Group($value);
+        }
+
+        return $this->setParameter('commonGroup', $value);
+    }
 
     /**
      * @return \SimpleXMLElement
@@ -54,9 +84,6 @@ XML;
         $data->ReqClientID->Auth = $this->getAuth();
         $data->ReqClientID->ClientRef = $this->getClientRef();
         $data->Transaction->ServiceID = $this->getServiceID();
-
-        $now = new \DateTime();
-        $this->setTransmissionDateandTime($now->format('Ymdhis'));
 
         return $data;
     }
@@ -396,7 +423,11 @@ XML;
      */
     public function getTransmissionDateandTime()
     {
-        return $this->getParameter('TransmissionDateandTime');
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            return null;
+        }
+        return $g->getTransmissionDateandTime();
     }
 
 
@@ -406,7 +437,17 @@ XML;
      */
     public function setTransmissionDateandTime(string $value)
     {
-        return $this->setParameter('TransmissionDateandTime', $value);
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            $g = new CommonGroup\Group([
+                'TransmissionDateandTime' => $value,
+            ]);
+
+            return $this->setCommonGroup($g);
+        }
+
+        $g->setTransactionAmount($value);
+        return $this->setCommonGroup($g);
     }
 
 
@@ -1926,6 +1967,160 @@ XML;
         return true;
     }
 
+    /**
+     * @return string
+     */
+    public function getAdditionalAmount()
+    {
+        return $this->getParameter('AdditionalAmount');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAdditionalAmount(string $value)
+    {
+        return $this->setParameter('AdditionalAmount', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAdditionalAmount()
+    {
+        $value = $this->getParameter('AdditionalAmount');
+        if (!preg_match('/[\-]{0,1}[0123456789]{1,12}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAdditionalAmountCurrency()
+    {
+        return $this->getParameter('AdditionalAmountCurrency');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAdditionalAmountCurrency(string $value)
+    {
+        return $this->setParameter('AdditionalAmountCurrency', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAdditionalAmountCurrency()
+    {
+        $value = $this->getParameter('AdditionalAmountCurrency');
+        if (!preg_match('/[0-9]{3,3}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAdditionalAmountType()
+    {
+        return $this->getParameter('AdditionalAmountType');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAdditionalAmountType(string $value)
+    {
+        return $this->setParameter('AdditionalAmountType', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAdditionalAmountType()
+    {
+        $value = $this->getParameter('AdditionalAmountType');
+        $valid = array('Cashback', 'Surchrg', 'Hltcare', 'Transit', 'RX', 'Vision', 'Clinical', 'Dental', 'Copay', 'FirstAuthAmt', 'PreAuthAmt', 'TotalAuthAmt', 'Tax', 'Fee', 'BegBal', 'EndingBal', 'AvailBal', 'LedgerBal', 'HoldBal', 'OrigReqAmt', 'OpenToBuy', 'Fuel', 'Service', 'eWICDiscount');
+        return in_array($value, $valid);
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAdditionalAmountAccountType()
+    {
+        return $this->getParameter('AdditionalAmountAccountType');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setAdditionalAmountAccountType(string $value)
+    {
+        return $this->setParameter('AdditionalAmountAccountType', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAdditionalAmountAccountType()
+    {
+        $value = $this->getParameter('AdditionalAmountAccountType');
+        if (!preg_match('/[0-9A-Za-z]{1,15}/',$value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getPartialAuthorizationApprovalCapability()
+    {
+        return $this->getParameter('PartialAuthorizationApprovalCapability');
+    }
+
+
+    /**
+     * @param string $value
+     * @return string
+     */
+    public function setPartialAuthorizationApprovalCapability(string $value)
+    {
+        return $this->setParameter('PartialAuthorizationApprovalCapability', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validatePartialAuthorizationApprovalCapability()
+    {
+        $value = $this->getParameter('PartialAuthorizationApprovalCapability');
+        $valid = array('0', '1');
+        return in_array($value, $valid);
+    }
 
     /**
      * @return string
@@ -5078,7 +5273,11 @@ XML;
      */
     public function getAmount()
     {
-        return $this->getTransactionAmount();
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            return null;
+        }
+        return $g->getTransactionAmount();
     }
 
     /**
@@ -5087,7 +5286,17 @@ XML;
      */
     public function setAmount($value)
     {
-        return $this->setTransactionAmount($value);
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            $g = new CommonGroup\Group([
+                'TransactionAmount' => $value,
+            ]);
+
+            return $this->setCommonGroup($g);
+        }
+
+        $g->setTransactionAmount($value);
+        return $this->setCommonGroup($g);
     }
 
     /**
@@ -5095,7 +5304,11 @@ XML;
      */
     public function getCurrency()
     {
-        return $this->getTransactionCurrency();
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            return null;
+        }
+        return $g->getTransactionCurrency();
     }
 
     /**
@@ -5104,7 +5317,17 @@ XML;
      */
     public function setCurrency($value)
     {
-        return $this->setTransactionCurrency($value);
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            $g = new CommonGroup\Group([
+                'TransactionCurrency' => $value,
+            ]);
+
+            return $this->setCommonGroup($g);
+        }
+
+        $g->setTransactionCurrency($value);
+        return $this->setCommonGroup($g);
     }
 
     /**
