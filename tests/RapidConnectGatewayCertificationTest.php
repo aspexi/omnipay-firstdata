@@ -2024,7 +2024,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -2157,7 +2157,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -2290,7 +2290,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -3845,7 +3845,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -3979,7 +3979,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -4113,7 +4113,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -5253,7 +5253,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -5370,7 +5370,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -5711,7 +5711,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -5828,7 +5828,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -5945,7 +5945,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -6355,7 +6355,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -6476,7 +6476,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -6598,7 +6598,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -6844,7 +6844,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -7456,7 +7456,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -7581,7 +7581,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -8161,7 +8161,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -8286,7 +8286,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -8853,7 +8853,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -9464,7 +9464,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -9581,7 +9581,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -9926,7 +9926,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -10165,7 +10165,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -10288,7 +10288,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -10410,7 +10410,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -10529,7 +10529,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -10762,7 +10762,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -11114,7 +11114,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -11233,7 +11233,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -11471,7 +11471,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -11648,7 +11648,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -11771,7 +11771,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -11888,7 +11888,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -12007,7 +12007,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -12130,7 +12130,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -12247,7 +12247,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -12366,7 +12366,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -12489,7 +12489,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -12606,7 +12606,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -12725,7 +12725,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -12848,7 +12848,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -12969,7 +12969,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -13086,7 +13086,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -13203,7 +13203,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -13320,7 +13320,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -13437,7 +13437,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -13554,7 +13554,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Refund';
+        $requestData['CommonGroup']['TransactionType'] = 'Refund';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -13800,7 +13800,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -13985,7 +13985,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -14298,7 +14298,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -16096,7 +16096,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -19700,7 +19700,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -19828,7 +19828,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -19891,7 +19891,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -20017,7 +20017,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -20142,7 +20142,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -20396,7 +20396,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -20524,7 +20524,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -20780,7 +20780,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -20906,7 +20906,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -21034,7 +21034,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -21408,7 +21408,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -21662,7 +21662,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -22411,7 +22411,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -23071,7 +23071,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -23648,7 +23648,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -24113,7 +24113,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -24462,7 +24462,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -25172,7 +25172,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Authorization';
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -25531,7 +25531,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
@@ -30009,7 +30009,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
-        $requestData['TransactionType'] = 'Sale';
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
         $response = $request->send();
 
