@@ -7,14 +7,6 @@ use Omnipay\Common\Exception\InvalidRequestException;
 
 class RapidConnectAuthorizationRequest extends RapidConnectAbstractRequest
 {
-    /**
-     * @param string $value
-     * @return \Omnipay\Common\Message\AbstractRequest|string
-     */
-    public function setTransactionId($value)
-    {
-        return $this->setSTAN($value);
-    }
 
     /**
      * @return \SimpleXMLElement
@@ -23,10 +15,13 @@ class RapidConnectAuthorizationRequest extends RapidConnectAbstractRequest
     {
         $data = $this->getBaseData();
         $gmf = $this->getBasePayload();
-
         $request = $gmf->{$this->getMessageType()};
 
-        $this->addCommonGroup($request);
+        $commonGroup = $this->getCommonGroup();
+        if ($commonGroup !== null) {
+            $commonGroup->addCommonGroup($request);
+        }
+
         $this->addBillPaymentGroup($request);
         $this->addAlternateMerchantNameandAddressGroup($request);
         $this->addCardGroup($request);

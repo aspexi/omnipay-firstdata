@@ -335,7 +335,17 @@ XML;
      */
     public function setTransactionType(string $value)
     {
-        return $this->setParameter('TransactionType', $value);
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            $g = new CommonGroup\Group([
+                'TransactionCurrency' => $value,
+            ]);
+
+            return $this->setCommonGroup($g);
+        }
+
+        $g->setTransactionCurrency($value);
+        return $this->setCommonGroup($g);
     }
 
 
@@ -594,7 +604,11 @@ XML;
      */
     public function getTerminalID()
     {
-        return $this->getParameter('TerminalID');
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            return null;
+        }
+        return $g->getTerminalID();
     }
 
 
@@ -604,6 +618,20 @@ XML;
      */
     public function setTerminalID(string $value)
     {
+        $this->setParameter('TerminalID', $value);
+
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            $g = new CommonGroup\Group([
+                'TerminalID' => $value,
+            ]);
+
+            return $this->setCommonGroup($g);
+        }
+
+        $g->setTerminalID($value);
+        return $this->setCommonGroup($g);
+
         return $this->setParameter('TerminalID', $value);
     }
 
@@ -626,7 +654,11 @@ XML;
      */
     public function getMerchantID()
     {
-        return $this->getParameter('MerchantID');
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            return null;
+        }
+        return $g->getMerchantID();
     }
 
 
@@ -636,7 +668,17 @@ XML;
      */
     public function setMerchantID(string $value)
     {
-        return $this->setParameter('MerchantID', $value);
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            $g = new CommonGroup\Group([
+                'MerchantID' => $value,
+            ]);
+
+            return $this->setCommonGroup($g);
+        }
+
+        $g->setMerchantID($value);
+        return $this->setCommonGroup($g);
     }
 
 
@@ -846,7 +888,11 @@ XML;
      */
     public function getTransactionCurrency()
     {
-        return $this->getParameter('TransactionCurrency');
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            return null;
+        }
+        return $g->getTransactionCurrency();
     }
 
 

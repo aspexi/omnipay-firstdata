@@ -3,6 +3,7 @@
 namespace Omnipay\FirstData\Model\RapidConnect\CommonGroup;
 
 use Omnipay\Common\Helper;
+use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\FirstData\Model\RapidConnect\EntryMode;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
@@ -806,6 +807,20 @@ class Group
         return true;
     }
 
+    public function getCurrency()
+    {
+        return $this->getTransactionCurrency();
+    }
+
+    public function setCurrency(string $value)
+    {
+        return $this->setTransactionCurrency($value);
+    }
+
+    public function validateCurrency()
+    {
+        return $this->validateTransactionCurrency();
+    }
 
     /**
      * @return string

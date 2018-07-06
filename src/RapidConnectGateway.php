@@ -2,10 +2,12 @@
 
 namespace Omnipay\FirstData;
 
+use Guzzle\Http\ClientInterface;
 use Omnipay\Common\AbstractGateway;
 use Omnipay\FirstData\Model\RapidConnect\MessageType;
 use Omnipay\FirstData\Model\RapidConnect\PaymentType;
 use Omnipay\FirstData\Model\RapidConnect\TransactionType;
+use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 class RapidConnectGateway extends AbstractGateway
 {
@@ -184,12 +186,31 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
         }
 
-        if (!array_key_exists('PaymentType', $parameters)) {
-            $parameters['PaymentType'] = PaymentType::CREDIT;
+        if (!array_key_exists('CommonGroup', $parameters)) {
+            $parameters['CommonGroup'] = array();
         }
 
-        if (!array_key_exists('TransactionType', $parameters)) {
-            $parameters['TransactionType'] = TransactionType::AUTHORIZATION;
+        if (!array_key_exists('PaymentType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TransactionType'] = TransactionType::AUTHORIZATION;
+        }
+
+        $groupId = $this->getGroupID();
+        if ($groupId !== null) {
+            $parameters['CommonGroup']['GroupID'] = $groupId;
+        }
+
+        $terminalId = $this->getTerminalID();
+        if ($terminalId !== null) {
+            $parameters['CommonGroup']['TerminalID'] = $terminalId;
+        }
+
+        $merchantId = $this->getMerchantID();
+        if ($merchantId !== null) {
+            $parameters['CommonGroup']['MerchantID'] = $merchantId;
         }
 
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectAuthorizationRequest', $parameters);
@@ -203,12 +224,31 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
         }
 
-        if (!array_key_exists('PaymentType', $parameters)) {
-            $parameters['PaymentType'] = PaymentType::CREDIT;
+        if (!array_key_exists('CommonGroup', $parameters)) {
+            $parameters['CommonGroup'] = array();
         }
 
-        if (!array_key_exists('TransactionType', $parameters)) {
-            $parameters['TransactionType'] = TransactionType::BALANCE_INQUIRY;
+        if (!array_key_exists('PaymentType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TransactionType'] = TransactionType::BALANCE_INQUIRY;
+        }
+
+        $groupId = $this->getGroupID();
+        if ($groupId !== null) {
+            $parameters['CommonGroup']['GroupID'] = $groupId;
+        }
+
+        $terminalId = $this->getTerminalID();
+        if ($terminalId !== null) {
+            $parameters['CommonGroup']['TerminalID'] = $terminalId;
+        }
+
+        $merchantId = $this->getMerchantID();
+        if ($merchantId !== null) {
+            $parameters['CommonGroup']['MerchantID'] = $merchantId;
         }
 
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectBalanceInquiryRequest', $parameters);
@@ -221,12 +261,31 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
         }
 
-        if (!array_key_exists('PaymentType', $parameters)) {
-            $parameters['PaymentType'] = PaymentType::CREDIT;
+        if (!array_key_exists('CommonGroup', $parameters)) {
+            $parameters['CommonGroup'] = array();
         }
 
-        if (!array_key_exists('TransactionType', $parameters)) {
-            $parameters['TransactionType'] = TransactionType::COMPLETION;
+        if (!array_key_exists('PaymentType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TransactionType'] = TransactionType::COMPLETION;
+        }
+
+        $groupId = $this->getGroupID();
+        if ($groupId !== null) {
+            $parameters['CommonGroup']['GroupID'] = $groupId;
+        }
+
+        $terminalId = $this->getTerminalID();
+        if ($terminalId !== null) {
+            $parameters['CommonGroup']['TerminalID'] = $terminalId;
+        }
+
+        $merchantId = $this->getMerchantID();
+        if ($merchantId !== null) {
+            $parameters['CommonGroup']['MerchantID'] = $merchantId;
         }
 
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectCompletionRequest', $parameters);
@@ -238,12 +297,31 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['MessageType'] = MessageType::REVERSAL_REQUEST;
         }
 
-        if (!array_key_exists('PaymentType', $parameters)) {
-            $parameters['PaymentType'] = PaymentType::CREDIT;
+        if (!array_key_exists('CommonGroup', $parameters)) {
+            $parameters['CommonGroup'] = array();
         }
 
-        if (!array_key_exists('TransactionType', $parameters)) {
-            $parameters['TransactionType'] = TransactionType::AUTHORIZATION;
+        if (!array_key_exists('PaymentType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TransactionType'] = TransactionType::AUTHORIZATION;
+        }
+
+        $groupId = $this->getGroupID();
+        if ($groupId !== null) {
+            $parameters['CommonGroup']['GroupID'] = $groupId;
+        }
+
+        $terminalId = $this->getTerminalID();
+        if ($terminalId !== null) {
+            $parameters['CommonGroup']['TerminalID'] = $terminalId;
+        }
+
+        $merchantId = $this->getMerchantID();
+        if ($merchantId !== null) {
+            $parameters['CommonGroup']['MerchantID'] = $merchantId;
         }
 
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectPartialReversalRequest', $parameters);
@@ -251,13 +329,13 @@ class RapidConnectGateway extends AbstractGateway
 
     public function purchase(array $parameters = array())
     {
-        if (!array_key_exists('CommonGroup', $parameters)) {
-            $parameters['CommonGroup'] = array();
-        }
-
         // MessageType: CreditRequest, TransactionType: Sale
         if (!array_key_exists('MessageType', $parameters)) {
             $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
+        }
+
+        if (!array_key_exists('CommonGroup', $parameters)) {
+            $parameters['CommonGroup'] = array();
         }
 
         if (!array_key_exists('PaymentType', $parameters['CommonGroup'])) {
@@ -266,6 +344,21 @@ class RapidConnectGateway extends AbstractGateway
 
         if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TransactionType'] = TransactionType::SALE;
+        }
+
+        $groupId = $this->getGroupID();
+        if ($groupId !== null) {
+            $parameters['CommonGroup']['GroupID'] = $groupId;
+        }
+
+        $terminalId = $this->getTerminalID();
+        if ($terminalId !== null) {
+            $parameters['CommonGroup']['TerminalID'] = $terminalId;
+        }
+
+        $merchantId = $this->getMerchantID();
+        if ($merchantId !== null) {
+            $parameters['CommonGroup']['MerchantID'] = $merchantId;
         }
 
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectSaleRequest', $parameters);
@@ -278,12 +371,31 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
         }
 
-        if (!array_key_exists('PaymentType', $parameters)) {
-            $parameters['PaymentType'] = PaymentType::CREDIT;
+        if (!array_key_exists('CommonGroup', $parameters)) {
+            $parameters['CommonGroup'] = array();
         }
 
-        if (!array_key_exists('TransactionType', $parameters)) {
-            $parameters['TransactionType'] = TransactionType::REFUND;
+        if (!array_key_exists('PaymentType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TransactionType'] = TransactionType::REFUND;
+        }
+
+        $groupId = $this->getGroupID();
+        if ($groupId !== null) {
+            $parameters['CommonGroup']['GroupID'] = $groupId;
+        }
+
+        $terminalId = $this->getTerminalID();
+        if ($terminalId !== null) {
+            $parameters['CommonGroup']['TerminalID'] = $terminalId;
+        }
+
+        $merchantId = $this->getMerchantID();
+        if ($merchantId !== null) {
+            $parameters['CommonGroup']['MerchantID'] = $merchantId;
         }
 
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectRefundRequest', $parameters);
@@ -296,12 +408,31 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
         }
 
-        if (!array_key_exists('PaymentType', $parameters)) {
-            $parameters['PaymentType'] = PaymentType::CREDIT;
+        if (!array_key_exists('CommonGroup', $parameters)) {
+            $parameters['CommonGroup'] = array();
         }
 
-        if (!array_key_exists('TransactionType', $parameters)) {
-            $parameters['TransactionType'] = TransactionType::VERIFICATION;
+        if (!array_key_exists('PaymentType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TransactionType'] = TransactionType::VERIFICATION;
+        }
+
+        $groupId = $this->getGroupID();
+        if ($groupId !== null) {
+            $parameters['CommonGroup']['GroupID'] = $groupId;
+        }
+
+        $terminalId = $this->getTerminalID();
+        if ($terminalId !== null) {
+            $parameters['CommonGroup']['TerminalID'] = $terminalId;
+        }
+
+        $merchantId = $this->getMerchantID();
+        if ($merchantId !== null) {
+            $parameters['CommonGroup']['MerchantID'] = $merchantId;
         }
 
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectVerificationRequest', $parameters);
@@ -314,12 +445,31 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['MessageType'] = MessageType::REVERSAL_REQUEST;
         }
 
-        if (!array_key_exists('PaymentType', $parameters)) {
-            $parameters['PaymentType'] = PaymentType::CREDIT;
+        if (!array_key_exists('CommonGroup', $parameters)) {
+            $parameters['CommonGroup'] = array();
         }
 
-        if (!array_key_exists('TransactionType', $parameters)) {
-            $parameters['TransactionType'] = TransactionType::AUTHORIZATION;
+        if (!array_key_exists('PaymentType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['PaymentType'] = PaymentType::CREDIT;
+        }
+
+        if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TransactionType'] = TransactionType::AUTHORIZATION;
+        }
+
+        $groupId = $this->getGroupID();
+        if ($groupId !== null) {
+            $parameters['CommonGroup']['GroupID'] = $groupId;
+        }
+
+        $terminalId = $this->getTerminalID();
+        if ($terminalId !== null) {
+            $parameters['CommonGroup']['TerminalID'] = $terminalId;
+        }
+
+        $merchantId = $this->getMerchantID();
+        if ($merchantId !== null) {
+            $parameters['CommonGroup']['MerchantID'] = $merchantId;
         }
 
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectVoidRequest', $parameters);

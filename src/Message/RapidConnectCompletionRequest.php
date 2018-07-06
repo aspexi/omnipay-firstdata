@@ -15,7 +15,11 @@ class RapidConnectCompletionRequest extends RapidConnectAbstractRequest
 
         $request = $gmf->{$this->getMessageType()};
 
-        $this->addCommonGroup($request);
+        $commonGroup = $this->getCommonGroup();
+        if ($commonGroup !== null) {
+            $commonGroup->addCommonGroup($request);
+        }
+
         $this->addBillPaymentGroup($request);
         $this->addCardGroup($request);
         $this->addPinGroup($request);

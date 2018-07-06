@@ -17,7 +17,11 @@ class RapidConnectVoidRequest extends RapidConnectAbstractRequest
 
         $request = $gmf->{$this->getMessageType()};
 
-        $this->addCommonGroup($request);
+        $commonGroup = $this->getCommonGroup();
+        if ($commonGroup !== null) {
+            $commonGroup->addCommonGroup($request);
+        }
+
         $this->addAlternateMerchantNameandAddressGroup($request);
         $this->addBillPaymentGroup($request);
         $this->addCardGroup($request);
