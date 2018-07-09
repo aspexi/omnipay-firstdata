@@ -3,9 +3,26 @@
 namespace Omnipay\FirstData\Message;
 
 use Omnipay\Common\CreditCard;
+
 use Omnipay\FirstData\Model\RapidConnect\EntryMode;
+
+use Omnipay\FirstData\Model\RapidConnect\AdditionalAmount;
 use Omnipay\FirstData\Model\RapidConnect\AlternateMerchantNameandAddressGroup;
-use Omnipay\FirstData\Model\RapidConnect\CommonGroup;
+use Omnipay\FirstData\Model\RapidConnect\AMEX;
+use Omnipay\FirstData\Model\RapidConnect\BillPayment;
+use Omnipay\FirstData\Model\RapidConnect\Card;
+use Omnipay\FirstData\Model\RapidConnect\Common;
+use Omnipay\FirstData\Model\RapidConnect\CustomerInfo;
+use Omnipay\FirstData\Model\RapidConnect\Discover;
+use Omnipay\FirstData\Model\RapidConnect\Ecomm;
+use Omnipay\FirstData\Model\RapidConnect\Mastercard;
+use Omnipay\FirstData\Model\RapidConnect\Order;
+use Omnipay\FirstData\Model\RapidConnect\OriginalAuthorization;
+use Omnipay\FirstData\Model\RapidConnect\PaymentFacilitator;
+use Omnipay\FirstData\Model\RapidConnect\PIN;
+use Omnipay\FirstData\Model\RapidConnect\ProductCode;
+use Omnipay\FirstData\Model\RapidConnect\SecureTransaction;
+use Omnipay\FirstData\Model\RapidConnect\Visa;
 
 abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
@@ -27,9 +44,23 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
         CreditCard::BRAND_VISA => RapidConnectAbstractRequest::BRAND_VISA,
     );
 
+    public function getAdditionalAmountGroups()
+    {
+        return $this->getParameter('AdditionalAmountGroups');
+    }
+
+    public function setAdditionalAmountGroups($value)
+    {
+        if ($value && !$value instanceof AdditionalAmount\Iterator) {
+            $value = new AdditionalAmount\Iterator($value);
+        }
+
+        return $this->setParameter('AdditionalAmountGroups', $value);
+    }
+
     public function getAlternateMerchantNameandAddressGroup()
     {
-        return $this->getParameter('alternateMerchantNameandAddressGroup');
+        return $this->getParameter('AlternateMerchantNameandAddressGroup');
     }
 
     public function setAlternateMerchantNameandAddressGroup($value)
@@ -38,21 +69,211 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
             $value = new AlternateMerchantNameandAddressGroup\Group($value);
         }
 
-        return $this->setParameter('alternateMerchantNameandAddressGroup', $value);
+        return $this->setParameter('AlternateMerchantNameandAddressGroup', $value);
+    }
+
+    public function getAMEXGroup()
+    {
+        return $this->getParameter('AMEXGroup');
+    }
+
+    public function setAMEXGroup($value)
+    {
+        if ($value && !$value instanceof AMEX\Group) {
+            $value = new AMEX\Group($value);
+        }
+        return $this->setParameter('AMEXGroup', $value);
+    }
+
+    public function getBillPaymentGroup()
+    {
+        return $this->getParameter('BillPaymentGroup');
+    }
+
+    public function setBillPaymentGroup($value)
+    {
+        if ($value && !$value instanceof BillPayment\Group) {
+            $value = new BillPayment\Group($value);
+        }
+        return $this->setParameter('BillPaymentGroup', $value);
+    }
+
+    public function getCardGroup()
+    {
+        return $this->getParameter('CardGroup');
+    }
+
+    public function setCardGroup($value)
+    {
+        if ($value && !$value instanceof Card\Group) {
+            $value = new Card\Group($value);
+        }
+
+        if ($value->getMergeWithExisting()) {
+            $cg = $this->getCardGroup();
+            if ($cg) {
+                $value = $cg->merge($value);
+            }
+        }
+
+        return $this->setParameter('CardGroup', $value);
     }
 
     public function getCommonGroup()
     {
-        return $this->getParameter('commonGroup');
+        return $this->getParameter('CommonGroup');
     }
 
     public function setCommonGroup($value)
     {
-        if ($value && !$value instanceof CommonGroup\Group) {
-            $value = new CommonGroup\Group($value);
+        if ($value && !$value instanceof Common\Group) {
+            $value = new Common\Group($value);
         }
 
-        return $this->setParameter('commonGroup', $value);
+        return $this->setParameter('CommonGroup', $value);
+    }
+
+    public function getCustomerInfoGroup()
+    {
+        return $this->getParameter('CustomerInfoGroup');
+    }
+
+    public function setCustomerInfoGroup($value)
+    {
+        if ($value && !$value instanceof CustomerInfo\Group) {
+            $value = new CustomerInfo\Group($value);
+        }
+        return $this->setParameter('CustomerInfoGroup', $value);
+    }
+
+    public function getDiscoverGroup()
+    {
+        return $this->getParameter('DiscoverGroup');
+    }
+
+    public function setDiscoverGroup($value)
+    {
+        if ($value && !$value instanceof Discover\Group) {
+            $value = new Discover\Group($value);
+        }
+        return $this->setParameter('DiscoverGroup', $value);
+    }
+
+    public function getEcommGroup()
+    {
+        return $this->getParameter('EcommGroup');
+    }
+
+    public function setEcommGroup($value)
+    {
+        if ($value && !$value instanceof Ecomm\Group) {
+            $value = new Ecomm\Group($value);
+        }
+        return $this->setParameter('EcommGroup', $value);
+    }
+
+    public function getMastercardGroup()
+    {
+        return $this->getParameter('MastercardGroup');
+    }
+
+    public function setMastercardGroup($value)
+    {
+        if ($value && !$value instanceof Mastercard\Group) {
+            $value = new Mastercard\Group($value);
+        }
+        return $this->setParameter('MastercardGroup', $value);
+    }
+
+    public function getOrderGroup()
+    {
+        return $this->getParameter('OrderGroup');
+    }
+
+    public function setOrderGroup($value)
+    {
+        if ($value && !$value instanceof Order\Group) {
+            $value = new Order\Group($value);
+        }
+        return $this->setParameter('OrderGroup', $value);
+    }
+
+    public function getOriginalAuthorizationGroup()
+    {
+        return $this->getParameter('OriginalAuthorizationGroup');
+    }
+
+    public function setOriginalAuthorizationGroup($value)
+    {
+        if ($value && !$value instanceof OriginalAuthorization\Group) {
+            $value = new OriginalAuthorization\Group($value);
+        }
+        return $this->setParameter('OriginalAuthorizationGroup', $value);
+    }
+
+    public function getPaymentFacilitatorGroup()
+    {
+        return $this->getParameter('PaymentFacilitatorGroup');
+    }
+
+    public function setPaymentFacilitatorGroup($value)
+    {
+        if ($value && !$value instanceof PaymentFacilitator\Group) {
+            $value = new PaymentFacilitator\Group($value);
+        }
+        return $this->setParameter('PaymentFacilitatorGroup', $value);
+    }
+
+    public function getPINGroup()
+    {
+        return $this->getParameter('PINGroup');
+    }
+
+    public function setPINGroup($value)
+    {
+        if ($value && !$value instanceof PIN\Group) {
+            $value = new PIN\Group($value);
+        }
+        return $this->setParameter('PINGroup', $value);
+    }
+
+    public function getProductCodeGroup()
+    {
+        return $this->getParameter('ProductCodeGroup');
+    }
+
+    public function setProductCodeGroup($value)
+    {
+        if ($value && !$value instanceof ProductCode\Group) {
+            $value = new ProductCode\Group($value);
+        }
+        return $this->setParameter('ProductCodeGroup', $value);
+    }
+
+    public function getSecureTransactionGroup()
+    {
+        return $this->getParameter('SecureTransactionGroup');
+    }
+
+    public function setSecureTransactionGroup($value)
+    {
+        if ($value && !$value instanceof SecureTransaction\Group) {
+            $value = new SecureTransaction\Group($value);
+        }
+        return $this->setParameter('SecureTransactionGroup', $value);
+    }
+
+    public function getVisaGroup()
+    {
+        return $this->getParameter('VisaGroup');
+    }
+
+    public function setVisaGroup($value)
+    {
+        if ($value && !$value instanceof Visa\Group) {
+            $value = new Visa\Group($value);
+        }
+        return $this->setParameter('Visa', $value);
     }
 
     /**
@@ -98,6 +319,102 @@ XML;
 XML;
 
         return new \SimpleXMLElement($gmf, LIBXML_NOWARNING);
+    }
+
+    function getData()
+    {
+        $data = $this->getBaseData();
+        $gmf = $this->getBasePayload();
+        $request = $gmf->{$this->getMessageType()};
+
+        $commonGroup = $this->getCommonGroup();
+        if ($commonGroup !== null) {
+            $commonGroup->addCommonGroup($request);
+        }
+
+        $billPaymentGroup = $this->getBillPaymentGroup();
+        if ($billPaymentGroup !== null) {
+            $billPaymentGroup->addBillPaymentGroup($request);
+        }
+
+        $altMerchNameAndAddrGroup = $this->getAlternateMerchantNameandAddressGroup();
+        if ($altMerchNameAndAddrGroup !== null) {
+            $altMerchNameAndAddrGroup->addAlternateMerchantNameandAddressGroup($request);
+        }
+
+        $paymentFacilitatorGroup = $this->getPaymentFacilitatorGroup();
+        if ($paymentFacilitatorGroup !== null) {
+            $paymentFacilitatorGroup->addPaymentFacilitatorGroup($request);
+        }
+
+        $cardGroup = $this->getCardGroup();
+        if ($cardGroup !== null) {
+            $cardGroup->addCardGroup($request);
+        }
+
+        $pinGroup = $this->getPINGroup();
+        if ($pinGroup !== null) {
+            $pinGroup->addPINGroup($request);
+        }
+
+        $additionalAmountGroups = $this->getAdditionalAmountGroups();
+        if ($additionalAmountGroups !== null) {
+            $additionalAmountGroups->addAdditionalAmountGroups($request);
+        }
+
+        $ecommGroup = $this->getEcommGroup();
+        if ($ecommGroup !== null) {
+            $ecommGroup->addEcommGroup($request);
+        }
+
+        $secureTransactionGroup = $this->getSecureTransactionGroup();
+        if ($secureTransactionGroup !== null) {
+            $secureTransactionGroup->addSecureTransactionGroup($request);
+        }
+
+        $visaGroup = $this->getVisaGroup();
+        if ($visaGroup !== null) {
+            $visaGroup->addVisaGroup($request);
+        }
+
+        $mastercardGroup = $this->getMastercardGroup();
+        if ($mastercardGroup !== null) {
+            $mastercardGroup->addMastercardGroup($request);
+        }
+
+        $discoverGroup = $this->getDiscoverGroup();
+        if ($discoverGroup !== null) {
+            $discoverGroup->addDiscoverGroup($request);
+        }
+
+        $amexGroup = $this->getAMEXGroup();
+        if ($amexGroup !== null) {
+            $amexGroup->addAMEXGroup($request);
+        }
+
+        $customerInfoGroup = $this->getCustomerInfoGroup();
+        if ($customerInfoGroup !== null) {
+            $customerInfoGroup->addCustomerInfoGroup($request);
+        }
+
+        $orderGroup = $this->getOrderGroup();
+        if ($orderGroup !== null) {
+            $orderGroup->addOrderGroup($request);
+        }
+
+        $originalAuthorizationGroup = $this->getOriginalAuthorizationGroup();
+        if ($originalAuthorizationGroup !== null) {
+            $originalAuthorizationGroup->addOriginalAuthorizationGroup($request);
+        }
+
+        $productCodeGroup = $this->getProductCodeGroup();
+        if ($productCodeGroup !== null) {
+            $productCodeGroup->addProductCodeGroup($request);
+        }
+
+        $data->Transaction->Payload = $gmf->saveXML();
+
+        return $data;
     }
 
     /**
@@ -337,7 +654,7 @@ XML;
     {
         $g = $this->getCommonGroup();
         if ($g === null) {
-            $g = new CommonGroup\Group([
+            $g = new Common\Group([
                 'TransactionCurrency' => $value,
             ]);
 
@@ -449,7 +766,7 @@ XML;
     {
         $g = $this->getCommonGroup();
         if ($g === null) {
-            $g = new CommonGroup\Group([
+            $g = new Common\Group([
                 'TransmissionDateandTime' => $value,
             ]);
 
@@ -538,38 +855,6 @@ XML;
     /**
      * @return string
      */
-    public function getOrderNumber()
-    {
-        return $this->getParameter('OrderNumber');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setOrderNumber(string $value)
-    {
-        return $this->setParameter('OrderNumber', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateOrderNumber()
-    {
-        $value = $this->getParameter('OrderNumber');
-        if (!preg_match('/[0-9A-Z a-z]{1,15}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
     public function getTPPID()
     {
         return $this->getParameter('TPPID');
@@ -622,7 +907,7 @@ XML;
 
         $g = $this->getCommonGroup();
         if ($g === null) {
-            $g = new CommonGroup\Group([
+            $g = new Common\Group([
                 'TerminalID' => $value,
             ]);
 
@@ -670,7 +955,7 @@ XML;
     {
         $g = $this->getCommonGroup();
         if ($g === null) {
-            $g = new CommonGroup\Group([
+            $g = new Common\Group([
                 'MerchantID' => $value,
             ]);
 
@@ -1436,583 +1721,6 @@ XML;
         return in_array($value, $valid);
     }
 
-
-    /**
-     * @return string
-     */
-    public function getBillPaymentTransactionIndicator()
-    {
-        return $this->getParameter('BillPaymentTransactionIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setBillPaymentTransactionIndicator(string $value)
-    {
-        return $this->setParameter('BillPaymentTransactionIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateBillPaymentTransactionIndicator()
-    {
-        $value = $this->getParameter('BillPaymentTransactionIndicator');
-        $valid = array('Single', 'Recurring', 'Installment', 'Deferred');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getMerchantAdviceCode()
-    {
-        return $this->getParameter('MerchantAdviceCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMerchantAdviceCode(string $value)
-    {
-        return $this->setParameter('MerchantAdviceCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateMerchantAdviceCode()
-    {
-        $value = $this->getParameter('MerchantAdviceCode');
-        if (!preg_match('/[0-9A-Za-z]{2,2}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getInstallmentPaymentInvoiceNumber()
-    {
-        return $this->getParameter('InstallmentPaymentInvoiceNumber');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setInstallmentPaymentInvoiceNumber(string $value)
-    {
-        return $this->setParameter('InstallmentPaymentInvoiceNumber', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateInstallmentPaymentInvoiceNumber()
-    {
-        $value = $this->getParameter('InstallmentPaymentInvoiceNumber');
-        return strlen($value) >= 1 && strlen($value) <= 12;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getInstallmentPaymentDescription()
-    {
-        return $this->getParameter('InstallmentPaymentDescription');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setInstallmentPaymentDescription(string $value)
-    {
-        return $this->setParameter('InstallmentPaymentDescription', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateInstallmentPaymentDescription()
-    {
-        $value = $this->getParameter('InstallmentPaymentDescription');
-        return strlen($value) >= 1 && strlen($value) <= 15;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAccountNumber()
-    {
-        return $this->getParameter('AccountNumber');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAccountNumber(string $value)
-    {
-        return $this->setParameter('AccountNumber', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAccountNumber()
-    {
-        $value = $this->getParameter('AccountNumber');
-        if (!preg_match('/[0-9]{1,23}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCardExpirationDate()
-    {
-        return $this->getParameter('CardExpirationDate');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCardExpirationDate(string $value)
-    {
-        return $this->setParameter('CardExpirationDate', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCardExpirationDate()
-    {
-        $value = $this->getParameter('CardExpirationDate');
-        if (!preg_match('/[0-9]{6,8}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getTrack1Data()
-    {
-        return $this->getParameter('Track1Data');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setTrack1Data(string $value)
-    {
-        return $this->setParameter('Track1Data', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateTrack1Data()
-    {
-        $value = $this->getParameter('Track1Data');
-        return strlen($value) >= 1 && strlen($value) <= 76;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTrack2Data()
-    {
-        return $this->getParameter('Track2Data');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setTrack2Data(string $value)
-    {
-        return $this->setParameter('Track2Data', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateTrack2Data()
-    {
-        $value = $this->getParameter('Track2Data');
-        return strlen($value) >= 1 && strlen($value) <= 37;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCardType()
-    {
-        return $this->getParameter('CardType');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCardType(string $value)
-    {
-        return $this->setParameter('CardType', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCardType()
-    {
-        $value = $this->getParameter('CardType');
-
-        $valid = array(
-            'Amex',
-            'Diners',
-            'Discover',
-            'JCB',
-            'MaestroInt',
-            'MasterCard',
-            'Visa',
-            'GiftCard',
-            'PPayCL',
-            'CarCareOne',
-            'CostPlus',
-            'Dicks',
-            'Exxon',
-            'GenProp',
-            'Gulf',
-            'Shell',
-            'Sinclair',
-            'SpeedPass',
-            'Sunoco',
-            'ValeroUCC',
-            'Mexican',
-            'BPBusiness',
-            'Buypass',
-            'EssoFleet',
-            'ExxonFleet',
-            'FleetCor',
-            'FleetOne',
-            'MCFleet',
-            'ValeroFlt',
-            'VisaFleet',
-            'Voyager',
-            'Wex',
-            'Paypal'
-        );
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAVSResultCode()
-    {
-        return $this->getParameter('AVSResultCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAVSResultCode(string $value)
-    {
-        return $this->setParameter('AVSResultCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAVSResultCode()
-    {
-        $value = $this->getParameter('AVSResultCode');
-        $valid = array(
-            'A',
-            'B',
-            'C',
-            'D',
-            'E',
-            'F',
-            'G',
-            'I',
-            'K',
-            'L',
-            'M',
-            'N',
-            'O',
-            'P',
-            'R',
-            'S',
-            'T',
-            'U',
-            'W',
-            'X',
-            'Y',
-            'Z'
-        );
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCCVIndicator()
-    {
-        return $this->getParameter('CCVIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCCVIndicator(string $value)
-    {
-        return $this->setParameter('CCVIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCCVIndicator()
-    {
-        $value = $this->getParameter('CCVIndicator');
-        $valid = array('Ntprvd', 'Prvded', 'Illegible', 'NtOnCrd');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCCVData()
-    {
-        return $this->getParameter('CCVData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCCVData(string $value)
-    {
-        return $this->setParameter('CCVData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCCVData()
-    {
-        $value = $this->getParameter('CCVData');
-        if (!preg_match('/[0-9A-Za-z]{3,4}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCCVResultCode()
-    {
-        return $this->getParameter('CCVResultCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCCVResultCode(string $value)
-    {
-        return $this->setParameter('CCVResultCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCCVResultCode()
-    {
-        $value = $this->getParameter('CCVResultCode');
-        $valid = array('Match', 'NoMtch', 'NotPrc', 'NotPrv', 'NotPrt', 'Unknwn');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getMVVMAID()
-    {
-        return $this->getParameter('MVVMAID');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMVVMAID(string $value)
-    {
-        return $this->setParameter('MVVMAID', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateMVVMAID()
-    {
-        $value = $this->getParameter('MVVMAID');
-        if (!preg_match('/[0-9]{1,10}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCardInfoRequestIndicator()
-    {
-        return $this->getParameter('CardInfoRequestIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCardInfoRequestIndicator(string $value)
-    {
-        return $this->setParameter('CardInfoRequestIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCardInfoRequestIndicator()
-    {
-        $value = $this->getParameter('CardInfoRequestIndicator');
-        $valid = array('Y');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getPINData()
-    {
-        return $this->getParameter('PINData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setPINData(string $value)
-    {
-        return $this->setParameter('PINData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validatePINData()
-    {
-        $value = $this->getParameter('PINData');
-        if (!preg_match('/[0-9A-F]{16,16}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getKeySerialNumberData()
-    {
-        return $this->getParameter('KeySerialNumberData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setKeySerialNumberData(string $value)
-    {
-        return $this->setParameter('KeySerialNumberData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateKeySerialNumberData()
-    {
-        $value = $this->getParameter('KeySerialNumberData');
-        if (!preg_match('/[0-9A-Za-z]{20,20}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
     /**
      * @return string
      */
@@ -2038,7 +1746,7 @@ XML;
     public function validateAdditionalAmount()
     {
         $value = $this->getParameter('AdditionalAmount');
-        if (!preg_match('/[\-]{0,1}[0123456789]{1,12}/',$value)) {
+        if (!preg_match('/[\-]{0,1}[0123456789]{1,12}/', $value)) {
             return false;
         }
         return true;
@@ -2070,1620 +1778,10 @@ XML;
     public function validateAdditionalAmountCurrency()
     {
         $value = $this->getParameter('AdditionalAmountCurrency');
-        if (!preg_match('/[0-9]{3,3}/',$value)) {
+        if (!preg_match('/[0-9]{3,3}/', $value)) {
             return false;
         }
         return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAdditionalAmountType()
-    {
-        return $this->getParameter('AdditionalAmountType');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAdditionalAmountType(string $value)
-    {
-        return $this->setParameter('AdditionalAmountType', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAdditionalAmountType()
-    {
-        $value = $this->getParameter('AdditionalAmountType');
-        $valid = array('Cashback', 'Surchrg', 'Hltcare', 'Transit', 'RX', 'Vision', 'Clinical', 'Dental', 'Copay', 'FirstAuthAmt', 'PreAuthAmt', 'TotalAuthAmt', 'Tax', 'Fee', 'BegBal', 'EndingBal', 'AvailBal', 'LedgerBal', 'HoldBal', 'OrigReqAmt', 'OpenToBuy', 'Fuel', 'Service', 'eWICDiscount');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAdditionalAmountAccountType()
-    {
-        return $this->getParameter('AdditionalAmountAccountType');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAdditionalAmountAccountType(string $value)
-    {
-        return $this->setParameter('AdditionalAmountAccountType', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAdditionalAmountAccountType()
-    {
-        $value = $this->getParameter('AdditionalAmountAccountType');
-        if (!preg_match('/[0-9A-Za-z]{1,15}/',$value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getPartialAuthorizationApprovalCapability()
-    {
-        return $this->getParameter('PartialAuthorizationApprovalCapability');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setPartialAuthorizationApprovalCapability(string $value)
-    {
-        return $this->setParameter('PartialAuthorizationApprovalCapability', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validatePartialAuthorizationApprovalCapability()
-    {
-        $value = $this->getParameter('PartialAuthorizationApprovalCapability');
-        $valid = array('0', '1');
-        return in_array($value, $valid);
-    }
-
-    /**
-     * @return string
-     */
-    public function getEcommTransactionIndicator()
-    {
-        return $this->getParameter('EcommTransactionIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setEcommTransactionIndicator(string $value)
-    {
-        return $this->setParameter('EcommTransactionIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateEcommTransactionIndicator()
-    {
-        $value = $this->getParameter('EcommTransactionIndicator');
-        $valid = array('01', '02', '03', '04', '05', '06', '07');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCustomerServicePhoneNumber()
-    {
-        return $this->getParameter('CustomerServicePhoneNumber');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCustomerServicePhoneNumber(string $value)
-    {
-        return $this->setParameter('CustomerServicePhoneNumber', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCustomerServicePhoneNumber()
-    {
-        $value = $this->getParameter('CustomerServicePhoneNumber');
-        if (!preg_match('/[0-9]{1,10}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getEcommURL()
-    {
-        return $this->getParameter('EcommURL');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setEcommURL(string $value)
-    {
-        return $this->setParameter('EcommURL', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateEcommURL()
-    {
-        $value = $this->getParameter('EcommURL');
-        return strlen($value) >= 1 && strlen($value) <= 32;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getMultipleClearingSequenceNumber()
-    {
-        return $this->getParameter('MultipleClearingSequenceNumber');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMultipleClearingSequenceNumber(string $value)
-    {
-        return $this->setParameter('MultipleClearingSequenceNumber', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateMultipleClearingSequenceNumber()
-    {
-        $value = $this->getParameter('MultipleClearingSequenceNumber');
-        if (!preg_match('/[0123456789]{2,2}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getMultipleClearingSequenceCount()
-    {
-        return $this->getParameter('MultipleClearingSequenceCount');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMultipleClearingSequenceCount(string $value)
-    {
-        return $this->setParameter('MultipleClearingSequenceCount', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateMultipleClearingSequenceCount()
-    {
-        $value = $this->getParameter('MultipleClearingSequenceCount');
-        if (!preg_match('/[0123456789]{2,2}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAuthorizationCharacteristicsIndicatorACI()
-    {
-        return $this->getParameter('AuthorizationCharacteristicsIndicatorACI');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAuthorizationCharacteristicsIndicatorACI(string $value)
-    {
-        return $this->setParameter('AuthorizationCharacteristicsIndicatorACI', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAuthorizationCharacteristicsIndicatorACI()
-    {
-        $value = $this->getParameter('AuthorizationCharacteristicsIndicatorACI');
-        $valid = array('P', 'I', 'Y', 'R', 'A', 'B', 'C', 'E', 'F', 'J', 'K', 'N', 'S', 'T', 'U', 'V', 'W');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getMarketSpecificDataIndicator()
-    {
-        return $this->getParameter('MarketSpecificDataIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMarketSpecificDataIndicator(string $value)
-    {
-        return $this->setParameter('MarketSpecificDataIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateMarketSpecificDataIndicator()
-    {
-        $value = $this->getParameter('MarketSpecificDataIndicator');
-        $valid = array('BillPayment', 'Healthcare', 'Transit', 'EcomAgg', 'B2B', 'Hotel', 'AutoRental');
-        return in_array($value, $valid);
-    }
-
-    /**
-     * @return string
-     */
-    public function getExistingDebtIndicator()
-    {
-        return $this->getParameter('ExistingDebtIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setExistingDebtIndicator(string $value)
-    {
-        return $this->setParameter('ExistingDebtIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateExistingDebtIndicator()
-    {
-        $value = $this->getParameter('ExistingDebtIndicator');
-        $valid = array('1');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCardLevelResultCode()
-    {
-        return $this->getParameter('CardLevelResultCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCardLevelResultCode(string $value)
-    {
-        return $this->setParameter('CardLevelResultCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCardLevelResultCode()
-    {
-        $value = $this->getParameter('CardLevelResultCode');
-        return strlen($value) >= 1 && strlen($value) <= 2;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getSourceReasonCode()
-    {
-        return $this->getParameter('SourceReasonCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setSourceReasonCode(string $value)
-    {
-        return $this->setParameter('SourceReasonCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateSourceReasonCode()
-    {
-        $value = $this->getParameter('SourceReasonCode');
-        if (!preg_match('/[0-9A-Za-z]{1,1}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getTransactionIdentifier()
-    {
-        return $this->getParameter('TransactionIdentifier');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setTransactionIdentifier(string $value)
-    {
-        return $this->setParameter('TransactionIdentifier', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateTransactionIdentifier()
-    {
-        $value = $this->getParameter('TransactionIdentifier');
-        return strlen($value) >= 1 && strlen($value) <= 20;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getVisaBID()
-    {
-        return $this->getParameter('VisaBID');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setVisaBID(string $value)
-    {
-        return $this->setParameter('VisaBID', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateVisaBID()
-    {
-        $value = $this->getParameter('VisaBID');
-        return strlen($value) >= 1 && strlen($value) <= 10;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getVisaAUAR()
-    {
-        return $this->getParameter('VisaAUAR');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setVisaAUAR(string $value)
-    {
-        return $this->setParameter('VisaAUAR', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateVisaAUAR()
-    {
-        $value = $this->getParameter('VisaAUAR');
-        if (!preg_match('/[0-9A-F]{12,12}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getTaxAmountCapability()
-    {
-        return $this->getParameter('TaxAmountCapability');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setTaxAmountCapability(string $value)
-    {
-        return $this->setParameter('TaxAmountCapability', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateTaxAmountCapability()
-    {
-        $value = $this->getParameter('TaxAmountCapability');
-        $valid = array('0', '1', 'VB', 'VC', 'VP', 'TX', 'NA');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getSpendQualifiedIndicator()
-    {
-        return $this->getParameter('SpendQualifiedIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setSpendQualifiedIndicator(string $value)
-    {
-        return $this->setParameter('SpendQualifiedIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateSpendQualifiedIndicator()
-    {
-        $value = $this->getParameter('SpendQualifiedIndicator');
-        if (!preg_match('/[0-9A-Za-z]{1,1}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getVisaCheckoutIndicator()
-    {
-        return $this->getParameter('VisaCheckoutIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setVisaCheckoutIndicator(string $value)
-    {
-        return $this->setParameter('VisaCheckoutIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateVisaCheckoutIndicator()
-    {
-        $value = $this->getParameter('VisaCheckoutIndicator');
-        $valid = array('Y');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getQuasiCashIndicator()
-    {
-        return $this->getParameter('QuasiCashIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setQuasiCashIndicator(string $value)
-    {
-        return $this->setParameter('QuasiCashIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateQuasiCashIndicator()
-    {
-        $value = $this->getParameter('QuasiCashIndicator');
-        $valid = array('Y', 'N');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAuthIndicator()
-    {
-        return $this->getParameter('AuthIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAuthIndicator(string $value)
-    {
-        return $this->setParameter('AuthIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAuthIndicator()
-    {
-        $value = $this->getParameter('AuthIndicator');
-        $valid = array('ReAuth', 'Resubmit', 'EstAuth', 'CrdOnFile');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getStoredCredentialIndicator()
-    {
-        return $this->getParameter('StoredCredentialIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setStoredCredentialIndicator(string $value)
-    {
-        return $this->setParameter('StoredCredentialIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateStoredCredentialIndicator()
-    {
-        $value = $this->getParameter('StoredCredentialIndicator');
-        $valid = array('Initial', 'Subsequent');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCardOnFileScheduleIndicator()
-    {
-        return $this->getParameter('CardOnFileScheduleIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCardOnFileScheduleIndicator(string $value)
-    {
-        return $this->setParameter('CardOnFileScheduleIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCardOnFileScheduleIndicator()
-    {
-        $value = $this->getParameter('CardOnFileScheduleIndicator');
-        $valid = array('Scheduled', 'Unscheduled');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getBankNetData()
-    {
-        return $this->getParameter('BankNetData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setBankNetData(string $value)
-    {
-        return $this->setParameter('BankNetData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateBankNetData()
-    {
-        $value = $this->getParameter('BankNetData');
-        if (!preg_match('/[0-9A-Za-z]{13,13}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCCVErrorCode()
-    {
-        return $this->getParameter('CCVErrorCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCCVErrorCode(string $value)
-    {
-        return $this->setParameter('CCVErrorCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCCVErrorCode()
-    {
-        $value = $this->getParameter('CCVErrorCode');
-        $valid = array('Y');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getPOSEntryModeChange()
-    {
-        return $this->getParameter('POSEntryModeChange');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setPOSEntryModeChange($value)
-    {
-        return $this->setParameter('POSEntryModeChange', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validatePOSEntryModeChange()
-    {
-        $value = $this->getParameter('POSEntryModeChange');
-        $valid = array('Y');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getTransactionEditErrorCode()
-    {
-        return $this->getParameter('TransactionEditErrorCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setTransactionEditErrorCode(string $value)
-    {
-        return $this->setParameter('TransactionEditErrorCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateTransactionEditErrorCode()
-    {
-        $value = $this->getParameter('TransactionEditErrorCode');
-        if (!preg_match('/[0-9A-Za-z]{1,1}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getMasterCardPOSData()
-    {
-        return $this->getParameter('MasterCardPOSData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMasterCardPOSData(string $value)
-    {
-        return $this->setParameter('MasterCardPOSData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateMasterCardPOSData()
-    {
-        $value = $this->getParameter('MasterCardPOSData');
-        if (!preg_match('/[0-9A-Za-z]{12,12}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getDeviceTypeIndicator()
-    {
-        return $this->getParameter('DeviceTypeIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setDeviceTypeIndicator(string $value)
-    {
-        return $this->setParameter('DeviceTypeIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateDeviceTypeIndicator()
-    {
-        $value = $this->getParameter('DeviceTypeIndicator');
-        if (!preg_match('/[0-9A-Za-z]{1,2}/', $value)) {
-            return false;
-        }
-        if (!preg_match('/[0-9]{1,1}/', $value)) {
-            return false;
-        }
-        if (!preg_match('/[1-9][0-9]/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getMasterCardACI()
-    {
-        return $this->getParameter('MasterCardACI');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMasterCardACI(string $value)
-    {
-        return $this->setParameter('MasterCardACI', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateMasterCardACI()
-    {
-        $value = $this->getParameter('MasterCardACI');
-        $valid = array('P', 'I');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getMasterCardAdditionalData()
-    {
-        return $this->getParameter('MasterCardAdditionalData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMasterCardAdditionalData(string $value)
-    {
-        return $this->setParameter('MasterCardAdditionalData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateMasterCardAdditionalData()
-    {
-        $value = $this->getParameter('MasterCardAdditionalData');
-        if (!preg_match('/[0-9A-Za-z]{13,13}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAuthorizationType()
-    {
-        return $this->getParameter('AuthorizationType');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAuthorizationType(string $value)
-    {
-        return $this->setParameter('AuthorizationType', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAuthorizationType()
-    {
-        $value = $this->getParameter('AuthorizationType');
-        $valid = array('0', '1');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getTransactionIntegrityClass()
-    {
-        return $this->getParameter('TransactionIntegrityClass');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setTransactionIntegrityClass(string $value)
-    {
-        return $this->setParameter('TransactionIntegrityClass', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateTransactionIntegrityClass()
-    {
-        $value = $this->getParameter('TransactionIntegrityClass');
-        $valid = array(
-            'Checkout',
-            'Digital',
-            'EMV',
-            'Enhanced',
-            'Generic',
-            'Keyed',
-            'Swiped',
-            'Token',
-            'Unknown',
-            'UnknownCNP',
-            'Validated'
-        );
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getDiscoverProcessingCode()
-    {
-        return $this->getParameter('DiscoverProcessingCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setDiscoverProcessingCode(string $value)
-    {
-        return $this->setParameter('DiscoverProcessingCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateDiscoverProcessingCode()
-    {
-        $value = $this->getParameter('DiscoverProcessingCode');
-        if (!preg_match('/[0-9A-Za-z]{6,6}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getDiscoverPOSEntryMode()
-    {
-        return $this->getParameter('DiscoverPOSEntryMode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setDiscoverPOSEntryMode(string $value)
-    {
-        return $this->setParameter('DiscoverPOSEntryMode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateDiscoverPOSEntryMode()
-    {
-        $value = $this->getParameter('DiscoverPOSEntryMode');
-        if (!preg_match('/[0-9]{4,4}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getDiscoverResponseCode()
-    {
-        return $this->getParameter('DiscoverResponseCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setDiscoverResponseCode(string $value)
-    {
-        return $this->setParameter('DiscoverResponseCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateDiscoverResponseCode()
-    {
-        $value = $this->getParameter('DiscoverResponseCode');
-        if (!preg_match('/[0-9A-Za-z]{2,2}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getDiscoverPOSData()
-    {
-        return $this->getParameter('DiscoverPOSData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setDiscoverPOSData(string $value)
-    {
-        return $this->setParameter('DiscoverPOSData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateDiscoverPOSData()
-    {
-        $value = $this->getParameter('DiscoverPOSData');
-        if (!preg_match('/[0-9A-Za-z]{13,13}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getDiscoverTransactionQualifier()
-    {
-        return $this->getParameter('DiscoverTransactionQualifier');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setDiscoverTransactionQualifier(string $value)
-    {
-        return $this->setParameter('DiscoverTransactionQualifier', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateDiscoverTransactionQualifier()
-    {
-        $value = $this->getParameter('DiscoverTransactionQualifier');
-        if (!preg_match('/[0-9A-Za-z]{2,2}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getDiscoverNRID()
-    {
-        return $this->getParameter('DiscoverNRID');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setDiscoverNRID(string $value)
-    {
-        return $this->setParameter('DiscoverNRID', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateDiscoverNRID()
-    {
-        $value = $this->getParameter('DiscoverNRID');
-        if (!preg_match('/[0-9A-Za-z]{1,15}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getMOTOIndicator()
-    {
-        return $this->getParameter('MOTOIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMOTOIndicator(string $value)
-    {
-        return $this->setParameter('MOTOIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateMOTOIndicator()
-    {
-        $value = $this->getParameter('MOTOIndicator');
-        $valid = array('1', '2');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getRegisteredUserIndicator()
-    {
-        return $this->getParameter('RegisteredUserIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setRegisteredUserIndicator(string $value)
-    {
-        return $this->setParameter('RegisteredUserIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateRegisteredUserIndicator()
-    {
-        $value = $this->getParameter('RegisteredUserIndicator');
-        $valid = array('Y', 'N');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getRegisteredUserProfileChangeDate()
-    {
-        return $this->getParameter('RegisteredUserProfileChangeDate');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setRegisteredUserProfileChangeDate(string $value)
-    {
-        return $this->setParameter('RegisteredUserProfileChangeDate', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateRegisteredUserProfileChangeDate()
-    {
-        $value = $this->getParameter('RegisteredUserProfileChangeDate');
-        if (!preg_match('/[0-9]{8,8}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getPartialShipmentIndicator()
-    {
-        return $this->getParameter('PartialShipmentIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setPartialShipmentIndicator(string $value)
-    {
-        return $this->setParameter('PartialShipmentIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validatePartialShipmentIndicator()
-    {
-        $value = $this->getParameter('PartialShipmentIndicator');
-        $valid = array('Partial');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAmExPOSData()
-    {
-        return $this->getParameter('AmExPOSData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAmExPOSData(string $value)
-    {
-        return $this->setParameter('AmExPOSData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAmExPOSData()
-    {
-        $value = $this->getParameter('AmExPOSData');
-        if (!preg_match('/[0-9A-Za-z]{12,12}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAmExTranID()
-    {
-        return $this->getParameter('AmExTranID');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAmExTranID(string $value)
-    {
-        return $this->setParameter('AmExTranID', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAmExTranID()
-    {
-        $value = $this->getParameter('AmExTranID');
-        return strlen($value) >= 1 && strlen($value) <= 20;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getGoodsSoldCode()
-    {
-        return $this->getParameter('GoodsSoldCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setGoodsSoldCode(string $value)
-    {
-        return $this->setParameter('GoodsSoldCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateGoodsSoldCode()
-    {
-        $value = $this->getParameter('GoodsSoldCode');
-        $valid = array('1000');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getReAuthIndicator()
-    {
-        return $this->getParameter('ReAuthIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setReAuthIndicator(string $value)
-    {
-        return $this->setParameter('ReAuthIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateReAuthIndicator()
-    {
-        $value = $this->getParameter('ReAuthIndicator');
-        $valid = array('Y');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAVSBillingAddress()
-    {
-        return $this->getParameter('AVSBillingAddress');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAVSBillingAddress(string $value)
-    {
-        return $this->setParameter('AVSBillingAddress', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAVSBillingAddress()
-    {
-        $value = $this->getParameter('AVSBillingAddress');
-        return strlen($value) >= 1 && strlen($value) <= 30;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAVSBillingPostalCode()
-    {
-        return $this->getParameter('AVSBillingPostalCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAVSBillingPostalCode(string $value)
-    {
-        return $this->setParameter('AVSBillingPostalCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAVSBillingPostalCode()
-    {
-        $value = $this->getParameter('AVSBillingPostalCode');
-        if (!preg_match('/[0-9A-Z a-z]{1,10}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCardHolderFirstName()
-    {
-        return $this->getParameter('CardHolderFirstName');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCardHolderFirstName(string $value)
-    {
-        return $this->setParameter('CardHolderFirstName', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCardHolderFirstName()
-    {
-        $value = $this->getParameter('CardHolderFirstName');
-        return strlen($value) >= 1 && strlen($value) <= 35;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCardHolderLastName()
-    {
-        return $this->getParameter('CardHolderLastName');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCardHolderLastName(string $value)
-    {
-        return $this->setParameter('CardHolderLastName', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCardHolderLastName()
-    {
-        $value = $this->getParameter('CardHolderLastName');
-        return strlen($value) >= 1 && strlen($value) <= 35;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCardHolderFullNameResult()
-    {
-        return $this->getParameter('CardHolderFullNameResult');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCardHolderFullNameResult(string $value)
-    {
-        return $this->setParameter('CardHolderFullNameResult', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCardHolderFullNameResult()
-    {
-        $value = $this->getParameter('CardHolderFullNameResult');
-        $valid = array('M', 'F', 'L', 'N', 'W', 'U', 'P', 'K', 'B');
-        return in_array($value, $valid);
     }
 
 
@@ -4030,256 +2128,7 @@ XML;
     }
 
 
-    /**
-     * @return string
-     */
-    public function getOriginalAuthorizationID()
-    {
-        return $this->getParameter('OriginalAuthorizationID');
-    }
 
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setOriginalAuthorizationID(string $value)
-    {
-        return $this->setParameter('OriginalAuthorizationID', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateOriginalAuthorizationID()
-    {
-        $value = $this->getParameter('OriginalAuthorizationID');
-        if (!preg_match('/[0-9A-Z a-z]{1,8}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getOriginalLocalDateandTime()
-    {
-        return $this->getParameter('OriginalLocalDateandTime');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setOriginalLocalDateandTime(string $value)
-    {
-        return $this->setParameter('OriginalLocalDateandTime', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateOriginalLocalDateandTime()
-    {
-        $value = $this->getParameter('OriginalLocalDateandTime');
-        if (!preg_match('/[0-9]{14,14}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getOriginalTransmissionDateandTime()
-    {
-        return $this->getParameter('OriginalTransmissionDateandTime');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setOriginalTransmissionDateandTime(string $value)
-    {
-        return $this->setParameter('OriginalTransmissionDateandTime', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateOriginalTransmissionDateandTime()
-    {
-        $value = $this->getParameter('OriginalTransmissionDateandTime');
-        if (!preg_match('/[0-9]{14,14}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getOriginalSTAN()
-    {
-        return $this->getParameter('OriginalSTAN');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setOriginalSTAN(string $value)
-    {
-        return $this->setParameter('OriginalSTAN', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateOriginalSTAN()
-    {
-        $value = $this->getParameter('OriginalSTAN');
-        if (!preg_match('/[0-9]{6,6}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getOriginalResponseCode()
-    {
-        return $this->getParameter('OriginalResponseCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setOriginalResponseCode(string $value)
-    {
-        return $this->setParameter('OriginalResponseCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateOriginalResponseCode()
-    {
-        $value = $this->getParameter('OriginalResponseCode');
-        if (!preg_match('/[0-9]{3,3}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getOriginalAuthorizingNetworkID()
-    {
-        return $this->getParameter('OriginalAuthorizingNetworkID');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setOriginalAuthorizingNetworkID(string $value)
-    {
-        return $this->setParameter('OriginalAuthorizingNetworkID', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateOriginalAuthorizingNetworkID()
-    {
-        $value = $this->getParameter('OriginalAuthorizingNetworkID');
-        if (!preg_match('/[0-9A-Za-z]{1,3}/', $value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getServiceLevel()
-    {
-        return $this->getParameter('ServiceLevel');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setServiceLevel(string $value)
-    {
-        return $this->setParameter('ServiceLevel', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateServiceLevel()
-    {
-        $value = $this->getParameter('ServiceLevel');
-        $valid = array('F', 'S', 'N', 'X', 'O', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getNumberofProducts()
-    {
-        return $this->getParameter('NumberofProducts');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setNumberofProducts(string $value)
-    {
-        return $this->setParameter('NumberofProducts', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateNumberofProducts()
-    {
-        $value = $this->getParameter('NumberofProducts');
-        $valid = array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10');
-        return in_array($value, $valid);
-    }
 
 
     /**
@@ -5183,7 +3032,7 @@ XML;
     public function validateMerchantState()
     {
         $value = $this->getParameter('MerchantState');
-        if (!preg_match('/[0-9A-Za-z]{2,2}/',$value)) {
+        if (!preg_match('/[0-9A-Za-z]{2,2}/', $value)) {
             return false;
         }
         return true;
@@ -5215,7 +3064,7 @@ XML;
     public function validateMerchantCounty()
     {
         $value = $this->getParameter('MerchantCounty');
-        if (!preg_match('/[0-9A-Za-z]{3,3}/',$value)) {
+        if (!preg_match('/[0-9A-Za-z]{3,3}/', $value)) {
             return false;
         }
         return true;
@@ -5247,7 +3096,7 @@ XML;
     public function validateMerchantPostalCode()
     {
         $value = $this->getParameter('MerchantPostalCode');
-        if (!preg_match('/[0-9A-Z a-z]{1,9}/',$value)) {
+        if (!preg_match('/[0-9A-Z a-z]{1,9}/', $value)) {
             return false;
         }
         return true;
@@ -5279,7 +3128,7 @@ XML;
     public function validateMerchantCountry()
     {
         $value = $this->getParameter('MerchantCountry');
-        if (!preg_match('/[0-9]{3,3}/',$value)) {
+        if (!preg_match('/[0-9]{3,3}/', $value)) {
             return false;
         }
         return true;
@@ -5334,7 +3183,7 @@ XML;
     {
         $g = $this->getCommonGroup();
         if ($g === null) {
-            $g = new CommonGroup\Group([
+            $g = new Common\Group([
                 'TransactionAmount' => $value,
             ]);
 
@@ -5365,7 +3214,7 @@ XML;
     {
         $g = $this->getCommonGroup();
         if ($g === null) {
-            $g = new CommonGroup\Group([
+            $g = new Common\Group([
                 'TransactionCurrency' => $value,
             ]);
 
@@ -5384,344 +3233,27 @@ XML;
         return $this->getSTAN();
     }
 
-    /**
-     * @return string
-     */
-    public function getVisaXID()
+    public function setCard($value)
     {
-        return $this->getParameter('VisaXID');
-    }
+        parent::setCard($value);
 
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setVisaXID(string $value)
-    {
-        return $this->setParameter('VisaXID', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateVisaXID()
-    {
-        $value = $this->getParameter('VisaXID');
-        if (!preg_match('/[a-zA-Z0-9=/\+]{28,28}/',$value)) {
-            return false;
+        // Card Group
+        $cg = $this->getCardGroup();
+        if (!$cg) {
+            $cg = new Card\Group(array());
         }
-        return true;
-    }
+        $cg->setCard($value);
 
-
-    /**
-     * @return string
-     */
-    public function getVisaSecureTransactionAuthenticationData()
-    {
-        return $this->getParameter('VisaSecureTransactionAuthenticationData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setVisaSecureTransactionAuthenticationData(string $value)
-    {
-        return $this->setParameter('VisaSecureTransactionAuthenticationData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateVisaSecureTransactionAuthenticationData()
-    {
-        $value = $this->getParameter('VisaSecureTransactionAuthenticationData');
-        if (!preg_match('/[a-zA-Z0-9=\/\+]{28,28}/',$value)) {
-            return false;
+        // Customer Information Group
+        $cig = $this->getCustomerInfoGroup();
+        if (!$cig) {
+            $cig = new CustomerInfo\Group(array());
         }
-        return true;
-    }
+        $cig->setCard($value);
+
+        $this->setCustomerInfoGroup($cig);
 
 
-    /**
-     * @return string
-     */
-    public function getCAVVResultCode()
-    {
-        return $this->getParameter('CAVVResultCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setCAVVResultCode(string $value)
-    {
-        return $this->setParameter('CAVVResultCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateCAVVResultCode()
-    {
-        $value = $this->getParameter('CAVVResultCode');
-        $valid = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'I', 'U');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAmexXID()
-    {
-        return $this->getParameter('AmexXID');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAmexXID(string $value)
-    {
-        return $this->setParameter('AmexXID', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAmexXID()
-    {
-        $value = $this->getParameter('AmexXID');
-        if (!preg_match('/[a-zA-Z0-9=/\+]{28,28}/',$value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAmexSecureData()
-    {
-        return $this->getParameter('AmexSecureData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setAmexSecureData(string $value)
-    {
-        return $this->setParameter('AmexSecureData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateAmexSecureData()
-    {
-        $value = $this->getParameter('AmexSecureData');
-        if (!preg_match('/[a-zA-Z0-9=/\+]{28,28}/',$value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getSafekeyResultCode()
-    {
-        return $this->getParameter('SafekeyResultCode');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setSafekeyResultCode(string $value)
-    {
-        return $this->setParameter('SafekeyResultCode', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateSafekeyResultCode()
-    {
-        $value = $this->getParameter('SafekeyResultCode');
-        $valid = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'I', 'U');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getUCAFCollectionIndicator()
-    {
-        return $this->getParameter('UCAFCollectionIndicator');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setUCAFCollectionIndicator(string $value)
-    {
-        return $this->setParameter('UCAFCollectionIndicator', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateUCAFCollectionIndicator()
-    {
-        $value = $this->getParameter('UCAFCollectionIndicator');
-        $valid = array('0', '1', '2', '3', '4', '5', '6', '7', '8');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getMasterCardSecureData()
-    {
-        return $this->getParameter('MasterCardSecureData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setMasterCardSecureData(string $value)
-    {
-        return $this->setParameter('MasterCardSecureData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateMasterCardSecureData()
-    {
-        $value = $this->getParameter('MasterCardSecureData');
-        return strlen($value) >= 28 && strlen($value) <= 32;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getDiscoverAuthenticationType()
-    {
-        return $this->getParameter('DiscoverAuthenticationType');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setDiscoverAuthenticationType(string $value)
-    {
-        return $this->setParameter('DiscoverAuthenticationType', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateDiscoverAuthenticationType()
-    {
-        $value = $this->getParameter('DiscoverAuthenticationType');
-        $valid = array('1', '2', '3');
-        return in_array($value, $valid);
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getDiscoverSecureData()
-    {
-        return $this->getParameter('DiscoverSecureData');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setDiscoverSecureData(string $value)
-    {
-        return $this->setParameter('DiscoverSecureData', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateDiscoverSecureData()
-    {
-        $value = $this->getParameter('DiscoverSecureData');
-        if (!preg_match('/[a-zA-Z0-9=/\+]{28,28}/',$value)) {
-            return false;
-        }
-        if (!preg_match('/[a-zA-Z0-9=/\+]{56,56}/',$value)) {
-            return false;
-        }
-        return true;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getSecureDataDowngrade()
-    {
-        return $this->getParameter('SecureDataDowngrade');
-    }
-
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    public function setSecureDataDowngrade(string $value)
-    {
-        return $this->setParameter('SecureDataDowngrade', $value);
-    }
-
-
-    /**
-     * @return bool
-     */
-    public function validateSecureDataDowngrade()
-    {
-        $value = $this->getParameter('SecureDataDowngrade');
-        $valid = array('SecDataMissing', 'SecDataInvalid');
-        return in_array($value, $valid);
+        return $this->setCardGroup($cg);
     }
 }

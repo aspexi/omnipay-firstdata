@@ -1,21 +1,12 @@
 <?php
 
-namespace Omnipay\FirstData\Model\RapidConnect\CommonGroup;
+namespace Omnipay\FirstData\Model\RapidConnect\Common;
 
-use Omnipay\Common\Helper;
 use Omnipay\Common\Exception\InvalidRequestException;
-use Omnipay\FirstData\Model\RapidConnect\EntryMode;
-use Symfony\Component\HttpFoundation\ParameterBag;
+use Omnipay\FirstData\Model\RapidConnect\BaseGroup;
 
-class Group
+class Group extends BaseGroup
 {
-    use \Omnipay\FirstData\Model\RapidConnect\ParametersTrait;
-
-    public function __construct($parameters = null)
-    {
-        $this->initialize($parameters);
-    }
-
     public function addCommonGroup(\SimpleXMLElement $data)
     {
         if ($this->getPaymentType() !== null) {
@@ -662,13 +653,13 @@ class Group
 
 
     /**
-     * @param EntryMode $value
+     * @param POSEntryMode $value
      * @return string
      */
     public function setPOSEntryMode($value)
     {
-        if ($value && !$value instanceof EntryMode) {
-            $value = new EntryMode($value);
+        if ($value && !$value instanceof POSEntryMode) {
+            $value = new POSEntryMode($value);
         }
 
         return $this->setParameter('POSEntryMode', $value);

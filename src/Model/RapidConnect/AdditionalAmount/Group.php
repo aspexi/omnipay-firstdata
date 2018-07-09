@@ -1,26 +1,45 @@
 <?php
 
-namespace Omnipay\FirstData\Model\RapidConnect\AdditionalAmountGroup;
+namespace Omnipay\FirstData\Model\RapidConnect\AdditionalAmount;
 
-use Omnipay\Common\Helper;
-use Symfony\Component\HttpFoundation\ParameterBag;
+use Omnipay\Common\Exception\InvalidRequestException;
+use Omnipay\FirstData\Model\RapidConnect\BaseGroup;
 
-class Group
+class Group extends BaseGroup
 {
-    use Omnipay\Common\ParameterTrait;
 
-    public  function __construct($parameters = null)
+    public function addAdditionalAmountGroup(\SimpleXMLElement $data)
     {
-        $this->initialize($parameters);
-    }
-
-    public function initialize(array $parameters = null)
-    {
-        $this->parameters = new ParameterBag;
-
-        Helper::Initialize($this, $parameters);
-
-        return $this;
+        if ($this->getAdditionalAmount() !== null) {
+            if (!$this->validateAdditionalAmount()) {
+                throw new InvalidRequestException("Invalid additional amount");
+            }
+            $data->AddAmt = $this->getAdditionalAmount();
+        }
+        if ($this->getAdditionalAmountCurrency() !== null) {
+            if (!$this->validateAdditionalAmountCurrency()) {
+                throw new InvalidRequestException("Invalid additional amount currency");
+            }
+            $data->AddAmtCrncy = $this->getAdditionalAmountCurrency();
+        }
+        if ($this->getAdditionalAmountType() !== null) {
+            if (!$this->validateAdditionalAmountType()) {
+                throw new InvalidRequestException("Invalid additional amount type");
+            }
+            $data->AddAmtType = $this->getAdditionalAmountType();
+        }
+        if ($this->getAdditionalAmountAccountType() !== null) {
+            if (!$this->validateAdditionalAmountAccountType()) {
+                throw new InvalidRequestException("Invalid additional amount account type");
+            }
+            $data->AddAmtAcctType = $this->getAdditionalAmountAccountType();
+        }
+        if ($this->getPartialAuthorizationApprovalCapability() !== null) {
+            if (!$this->validatePartialAuthorizationApprovalCapability()) {
+                throw new InvalidRequestException("Invalid partial authorization approvalcapability");
+            }
+            $data->PartAuthrztnApprvlCapablt = $this->getPartialAuthorizationApprovalCapability();
+        }
     }
 
     /**

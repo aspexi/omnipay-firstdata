@@ -142,15 +142,92 @@ class RapidConnectResponse extends AbstractResponse
      * @return null
      * @throws InvalidResponseException
      */
-    public function getResponseCode()
+    public function getAuthorizationID()
+    {
+        $responseGroup = $this->getResponseGroup();
+        if ($responseGroup !== null && isset ($responseGroup->AuthID)) {
+            return $responseGroup->AuthID;
+        }
+        return null;
+    }
+
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
+    public function getLocalDateandTime()
     {
         $payload = $this->getPayload();
         if ($payload === false || $payload === null) {
             return null;
         }
         $response = $payload->children()[0];
-        if (isset($response->RespGrp->RespCode)) {
-            return $response->RespGrp->RespCode;
+        if (isset($response->CommonGrp->LocalDateTime)) {
+            return $response->CommonGrp->LocalDateTime;
+        }
+        return null;
+    }
+
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
+    public function getTransmissionDateandTime()
+    {
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+        $response = $payload->children()[0];
+        if (isset($response->CommonGrp->TrnmsnDateTime)) {
+            return $response->CommonGrp->TrnmsnDateTime;
+        }
+        return null;
+    }
+
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
+    public function getSTAN()
+    {
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+        $response = $payload->children()[0];
+        if (isset($response->CommonGrp->STAN)) {
+            return $response->CommonGrp->STAN;
+        }
+        return null;
+    }
+
+    /**
+     * @return null
+     * @throws InvalidResponseException
+     */
+    public function getResponseCode()
+    {
+        $responseGroup = $this->getResponseGroup();
+        if ($responseGroup !== null && isset($responseGroup->RespCode)) {
+            return $responseGroup->RespCode;
+        }
+        return null;
+    }
+
+    /**
+     * @return null
+     * @throws InvalidResponseException
+     */
+    public function getResponseGroup()
+    {
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+        $response = $payload->children()[0];
+        if (isset($response->RespGrp)) {
+            return $response->RespGrp;
         }
         return null;
     }

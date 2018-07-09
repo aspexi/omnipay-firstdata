@@ -1,12 +1,12 @@
 <?php
 
-namespace Omnipay\FirstData\Model\RapidConnect;
+namespace Omnipay\FirstData\Model\RapidConnect\Common;
 
 use Omnipay\Common\Helper;
 use Omnipay\FirstData\Exception\RapidConnect\InvalidEntryModeException;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
-class EntryMode
+class POSEntryMode
 {
     use \Omnipay\FirstData\Model\RapidConnect\ParametersTrait;
 
@@ -59,7 +59,7 @@ class EntryMode
 
     /**
      * @param $value
-     * @return EntryMode
+     * @return POSEntryMode
      */
     public function setEntryMode($value)
     {

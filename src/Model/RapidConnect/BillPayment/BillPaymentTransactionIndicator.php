@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\FirstData\Model\RapidConnect;
+namespace Omnipay\FirstData\Model\RapidConnect\BillPayment;
 
 class BillPaymentTransactionIndicator
 {

@@ -4,7 +4,7 @@ namespace Omnipay\FirstData;
 
 use Omnipay\FirstData\Model\RapidConnect\BillPaymentTransactionIndicator;
 use Omnipay\FirstData\Model\RapidConnect\CardCaptureCapability;
-use Omnipay\FirstData\Model\RapidConnect\CurrencyCode;
+use Omnipay\FirstData\Model\RapidConnect\TransactionCurrency;
 use Omnipay\FirstData\Model\RapidConnect\EcommTransactionIndicator;
 use Omnipay\FirstData\Model\RapidConnect\EntryMode;
 use Omnipay\FirstData\Model\RapidConnect\MarketSpecificDataIndicator;
@@ -75,7 +75,7 @@ class RapidConnectGatewayIntegrationTest extends TestCase
                 'number' => '4005571701111111',
                 'type' => 'visa',
             ),
-            'currency' => CurrencyCode::USD,
+            'currency' => TransactionCurrency::USD,
             'POSEntryMode' => array(
                 'entryMode' => EntryMode::MANUAL,
                 'pinCapability' => PINAuthenticationCapability::NOENTRYCAPABILITY,

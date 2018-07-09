@@ -2,15 +2,11 @@
 
 namespace Omnipay\FirstData\Model\RapidConnect\AlternateMerchantNameandAddressGroup;
 
-class Group
+use Omnipay\Common\Exception\InvalidRequestException;
+use Omnipay\FirstData\Model\RapidConnect\BaseGroup;
+
+class Group extends BaseGroup
 {
-    use \Omnipay\FirstData\Model\RapidConnect\ParametersTrait;
-
-    public function __construct($parameters = null)
-    {
-        $this->initialize($parameters);
-    }
-
     public function addAlternateMerchantNameandAddressGroup(\SimpleXMLElement $data)
     {
         if ($this->getMerchantName() !== null) {

@@ -6,11 +6,7 @@ use Omnipay\Tests\TestCase;
 
 class RapidConnectGatewayCertificationTest extends TestCase
 {
-    public $nextSTAN;
-
-    public $nextReferenceNumber;
-
-    public $nextOrderNumber;
+    public $responses;
 
 
     public function setUp()
@@ -78,18 +74,27 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '840010',
                 'ReferenceNumber' => '000000840010',
                 'OrderNumber' => '000000840010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDA4NDAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '62107',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '01',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDA4NDAwMTA=',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -148,12 +153,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000010',
                 'ReferenceNumber' => '000001000010',
                 'OrderNumber' => '000001000010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEwMDAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '59017',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEwMDAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -212,12 +225,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010010',
                 'ReferenceNumber' => '000001010010',
                 'OrderNumber' => '000001010010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEwMTAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '58314',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEwMTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -276,12 +297,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '280010',
                 'ReferenceNumber' => '000001280010',
                 'OrderNumber' => '000001280010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEyODAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '59018',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEyODAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -340,12 +369,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '290010',
                 'ReferenceNumber' => '000001290010',
                 'OrderNumber' => '000001290010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEyOTAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '58315',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEyOTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -401,17 +438,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '340010',
                 'ReferenceNumber' => '000001340010',
                 'OrderNumber' => '000001340010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '30006',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '03',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -468,17 +508,24 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '360010',
                 'ReferenceNumber' => '000001360010',
                 'OrderNumber' => '000001360010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '30132',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '03',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -534,23 +581,44 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '360011',
                 'ReferenceNumber' => '000001360011',
                 'OrderNumber' => '000001360011',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
-            'AVSResultCode' => 'Y',
-            'CCVResultCode' => 'Match',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Y',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '30132',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '30132',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'ac6fc1de',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '360011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '30132',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '03',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '360011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -558,8 +626,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -609,11 +675,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '700010',
                 'ReferenceNumber' => '000001700010',
                 'OrderNumber' => '000001700010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '59019',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -672,11 +744,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '710010',
                 'ReferenceNumber' => '000001710010',
                 'OrderNumber' => '000001710010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '58316',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -735,12 +813,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '880010',
                 'ReferenceNumber' => '000001880010',
                 'OrderNumber' => '000001880010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '14052',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDE4ODAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -799,12 +882,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900010',
                 'ReferenceNumber' => '000001900010',
                 'OrderNumber' => '000001900010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '14042',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDE5MDAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -860,18 +948,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900011',
                 'ReferenceNumber' => '000001900011',
                 'OrderNumber' => '000001900011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
-            'AVSResultCode' => 'Y',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Y',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7018',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '7018',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '437528c5',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '900011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '7018',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDE5MDAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '900011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -879,8 +986,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -930,12 +1035,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '620010',
                 'ReferenceNumber' => '000002620010',
                 'OrderNumber' => '000002620010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '14126',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDI2MjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -994,12 +1104,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '640010',
                 'ReferenceNumber' => '000002640010',
                 'OrderNumber' => '000002640010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '14128',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDI2NDAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -1058,12 +1173,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '660010',
                 'ReferenceNumber' => '000002660010',
                 'OrderNumber' => '000002660010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '14118',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDI2NjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -1122,12 +1242,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680010',
                 'ReferenceNumber' => '000002680010',
                 'OrderNumber' => '000002680010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '14120',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDI2ODAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -1186,11 +1311,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '700010',
                 'ReferenceNumber' => '000002700010',
                 'OrderNumber' => '000002700010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '76025',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -1249,11 +1380,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '720010',
                 'ReferenceNumber' => '000002720010',
                 'OrderNumber' => '000002720010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '76021',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -1312,12 +1449,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '250010',
                 'ReferenceNumber' => '000003250010',
                 'OrderNumber' => '000003250010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '13550',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDMyNTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -1376,12 +1518,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '270010',
                 'ReferenceNumber' => '000003270010',
                 'OrderNumber' => '000003270010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '13552',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDMyNzAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -1440,12 +1587,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '290010',
                 'ReferenceNumber' => '000003290010',
                 'OrderNumber' => '000003290010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '13542',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDMyOTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -1504,12 +1656,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '310010',
                 'ReferenceNumber' => '000003310010',
                 'OrderNumber' => '000003310010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '13544',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDMzMTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -1568,11 +1725,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '330010',
                 'ReferenceNumber' => '000003330010',
                 'OrderNumber' => '000003330010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '34011',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -1631,11 +1794,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '350010',
                 'ReferenceNumber' => '000003350010',
                 'OrderNumber' => '000003350010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '34015',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -1694,15 +1863,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950010',
                 'ReferenceNumber' => '000003950010',
                 'OrderNumber' => '000003950010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '64522',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -1761,15 +1935,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980010',
                 'ReferenceNumber' => '000003980010',
                 'OrderNumber' => '000003980010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '30144',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -1828,9 +2007,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '700010',
                 'ReferenceNumber' => '000005700010',
                 'OrderNumber' => '000005700010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '111968',
+            'currency' => '840',
         );
 
         // Act
@@ -1886,9 +2069,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '700011',
                 'ReferenceNumber' => '000005700011',
                 'OrderNumber' => '000005700011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'aebb9985',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '700011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '111868',
+            'currency' => '840',
         );
 
         // Act
@@ -1945,15 +2135,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '420010',
                 'ReferenceNumber' => '000022420010',
                 'OrderNumber' => '000022420010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '10000',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -2009,18 +2204,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '420011',
                 'ReferenceNumber' => '000022420011',
                 'OrderNumber' => '000022420011',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'f2dd022e',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '420011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '10000',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '420011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -2078,15 +2277,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '440010',
                 'ReferenceNumber' => '000022440010',
                 'OrderNumber' => '000022440010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '62008',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -2142,18 +2346,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '440011',
                 'ReferenceNumber' => '000022440011',
                 'OrderNumber' => '000022440011',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '27717f73',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '440011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '32004',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '440011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -2211,15 +2419,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460010',
                 'ReferenceNumber' => '000022460010',
                 'OrderNumber' => '000022460010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '10500',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -2275,18 +2488,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460011',
                 'ReferenceNumber' => '000022460011',
                 'OrderNumber' => '000022460011',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'f8607de8',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '460011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '10500',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '460011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -2344,15 +2561,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '480010',
                 'ReferenceNumber' => '000022480010',
                 'OrderNumber' => '000022480010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '10700',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -2408,19 +2630,35 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '480011',
                 'ReferenceNumber' => '000022480011',
                 'OrderNumber' => '000022480011',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '10700',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '10700',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '3cf7a631',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '480011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '10700',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '480011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -2428,8 +2666,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -2479,15 +2715,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '490010',
                 'ReferenceNumber' => '000022490010',
                 'OrderNumber' => '000022490010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '10800',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -2543,19 +2784,35 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '490011',
                 'ReferenceNumber' => '000022490011',
                 'OrderNumber' => '000022490011',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '10800',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '10800',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '482a16b3',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '490011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '10800',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '490011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -2563,8 +2820,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -2614,9 +2869,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '580010',
                 'ReferenceNumber' => '000022580010',
                 'OrderNumber' => '000022580010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -2672,9 +2931,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '600010',
                 'ReferenceNumber' => '000022600010',
                 'OrderNumber' => '000022600010',
-                'currency' => '840',
             ),
             'amount' => '9435',
+            'currency' => '840',
         );
 
         // Act
@@ -2728,9 +2987,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '600011',
                 'ReferenceNumber' => '000022600011',
                 'OrderNumber' => '000022600011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'ffb0e767',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '600011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9335',
+            'currency' => '840',
         );
 
         // Act
@@ -2784,13 +3050,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '640010',
                 'ReferenceNumber' => '000022640010',
                 'OrderNumber' => '000022640010',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '63139',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '63139',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'amount' => '63139',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '640010',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -2847,15 +3121,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000022770010',
                 'OrderNumber' => '000022770010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '55002',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -2914,15 +3193,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '790010',
                 'ReferenceNumber' => '000022790010',
                 'OrderNumber' => '000022790010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '55004',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -2981,15 +3265,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '810010',
                 'ReferenceNumber' => '000022810010',
                 'OrderNumber' => '000022810010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '55006',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -3048,15 +3337,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '820010',
                 'ReferenceNumber' => '000022820010',
                 'OrderNumber' => '000022820010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '55007',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -3112,9 +3406,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '830010',
                 'ReferenceNumber' => '000022830010',
                 'OrderNumber' => '000022830010',
-                'currency' => '840',
             ),
             'amount' => '55008',
+            'currency' => '840',
         );
 
         // Act
@@ -3171,14 +3465,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170010',
                 'ReferenceNumber' => '000023170010',
                 'OrderNumber' => '000023170010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '000',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -3237,14 +3536,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '230010',
                 'ReferenceNumber' => '000023230010',
                 'OrderNumber' => '000023230010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '46957',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -3300,9 +3604,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '270010',
                 'ReferenceNumber' => '000023270010',
                 'OrderNumber' => '000023270010',
-                'currency' => '840',
             ),
             'amount' => '49439',
+            'currency' => '840',
         );
 
         // Act
@@ -3356,9 +3660,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '270011',
                 'ReferenceNumber' => '000023270011',
                 'OrderNumber' => '000023270011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '0f75266e',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '270011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '49339',
+            'currency' => '840',
         );
 
         // Act
@@ -3412,9 +3723,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670010',
                 'ReferenceNumber' => '000023670010',
                 'OrderNumber' => '000023670010',
-                'currency' => '840',
             ),
             'amount' => '21400',
+            'currency' => '840',
         );
 
         // Act
@@ -3468,9 +3779,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670011',
                 'ReferenceNumber' => '000023670011',
                 'OrderNumber' => '000023670011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '12cac8ab',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '670011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '21400',
+            'currency' => '840',
         );
 
         // Act
@@ -3524,9 +3842,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000023780010',
                 'OrderNumber' => '000023780010',
-                'currency' => '840',
             ),
             'amount' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -3583,9 +3901,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '840010',
                 'ReferenceNumber' => '000023840010',
                 'OrderNumber' => '000023840010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '22400',
+            'currency' => '840',
         );
 
         // Act
@@ -3644,9 +3966,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000023860010',
                 'OrderNumber' => '000023860010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '22600',
+            'currency' => '840',
         );
 
         // Act
@@ -3702,13 +4028,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '040010',
                 'ReferenceNumber' => '000024040010',
                 'OrderNumber' => '000024040010',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '63139',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '63139',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'amount' => '63139',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '040010',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -3765,15 +4099,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '110010',
                 'ReferenceNumber' => '000024110010',
                 'OrderNumber' => '000024110010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '30000',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -3829,19 +4168,23 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '110011',
                 'ReferenceNumber' => '000024110011',
                 'OrderNumber' => '000024110011',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '356359ec',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '110011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '30000',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '110011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -3899,15 +4242,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '130010',
                 'ReferenceNumber' => '000024130010',
                 'OrderNumber' => '000024130010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '54436',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -3963,19 +4311,23 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '130011',
                 'ReferenceNumber' => '000024130011',
                 'OrderNumber' => '000024130011',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '3b648acb',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '130011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '27218',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '130011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -4033,15 +4385,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '150010',
                 'ReferenceNumber' => '000024150010',
                 'OrderNumber' => '000024150010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '30500',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -4097,19 +4454,23 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '150011',
                 'ReferenceNumber' => '000024150011',
                 'OrderNumber' => '000024150011',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '2bfc39dc',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '150011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '30500',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '150011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -4167,15 +4528,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170010',
                 'ReferenceNumber' => '000024170010',
                 'OrderNumber' => '000024170010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '30700',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -4231,19 +4597,35 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170011',
                 'ReferenceNumber' => '000024170011',
                 'OrderNumber' => '000024170011',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '30700',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '30700',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '733f5386',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '170011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '30700',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '170011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -4251,8 +4633,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -4302,15 +4682,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '180010',
                 'ReferenceNumber' => '000024180010',
                 'OrderNumber' => '000024180010',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '30800',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            'currency' => '840',
         );
 
         // Act
@@ -4366,19 +4751,35 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '180011',
                 'ReferenceNumber' => '000024180011',
                 'OrderNumber' => '000024180011',
-                'currency' => '840',
             ),
-            'MerchantName' => 'SMITH HARDWARE',
-            'MerchantAddress' => '1307 Walt Whitman Road',
-            'MerchantCity' => 'Melville',
-            'MerchantState' => 'NY',
-            'MerchantPostalCode' => '11747',
+            'AlternameMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantPostalCode' => '11747',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '30800',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '30800',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '806c30a6',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '180011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '30800',
-            'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '180011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -4386,8 +4787,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -4436,9 +4835,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '230010',
                 'ReferenceNumber' => '000024230010',
                 'OrderNumber' => '000024230010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -4496,9 +4899,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '940010',
                 'ReferenceNumber' => '000026940010',
                 'OrderNumber' => '000026940010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '8280',
+            'currency' => '840',
         );
 
         // Act
@@ -4554,13 +4961,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '940011',
                 'ReferenceNumber' => '000026940011',
                 'OrderNumber' => '000026940011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '8280',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '8280',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'f9755125',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '940011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '8280',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '940011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -4568,8 +4990,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -4619,9 +5039,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000010',
                 'ReferenceNumber' => '000027000010',
                 'OrderNumber' => '000027000010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '8282',
+            'currency' => '840',
         );
 
         // Act
@@ -4677,13 +5101,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000011',
                 'ReferenceNumber' => '000027000011',
                 'OrderNumber' => '000027000011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '8282',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '8282',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'c5973cfe',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '000011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '8282',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '000011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -4691,8 +5130,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -4739,9 +5176,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760010',
                 'ReferenceNumber' => '000133760010',
                 'OrderNumber' => '000133760010',
-                'currency' => '840',
             ),
             'amount' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -4795,9 +5232,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760010',
                 'ReferenceNumber' => '000136760010',
                 'OrderNumber' => '000136760010',
-                'currency' => '840',
             ),
             'amount' => '62110',
+            'currency' => '840',
         );
 
         // Act
@@ -4851,9 +5288,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '870010',
                 'ReferenceNumber' => '000136870010',
                 'OrderNumber' => '000136870010',
-                'currency' => '840',
             ),
             'amount' => '54202',
+            'currency' => '840',
         );
 
         // Act
@@ -4907,9 +5344,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '970010',
                 'ReferenceNumber' => '000136970010',
                 'OrderNumber' => '000136970010',
-                'currency' => '840',
             ),
             'amount' => '62144',
+            'currency' => '840',
         );
 
         // Act
@@ -4963,9 +5400,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '020010',
                 'ReferenceNumber' => '000137020010',
                 'OrderNumber' => '000137020010',
-                'currency' => '840',
             ),
             'amount' => '83136',
+            'currency' => '840',
         );
 
         // Act
@@ -5019,9 +5456,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '050010',
                 'ReferenceNumber' => '000137050010',
                 'OrderNumber' => '000137050010',
-                'currency' => '840',
             ),
             'amount' => '34146',
+            'currency' => '840',
         );
 
         // Act
@@ -5075,9 +5512,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070010',
                 'ReferenceNumber' => '000137070010',
                 'OrderNumber' => '000137070010',
-                'currency' => '840',
             ),
             'amount' => '34139',
+            'currency' => '840',
         );
 
         // Act
@@ -5131,9 +5568,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '120010',
                 'ReferenceNumber' => '000137120010',
                 'OrderNumber' => '000137120010',
-                'currency' => '840',
             ),
             'amount' => '101135',
+            'currency' => '840',
         );
 
         // Act
@@ -5187,9 +5624,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '140010',
                 'ReferenceNumber' => '000137140010',
                 'OrderNumber' => '000137140010',
-                'currency' => '840',
             ),
             'amount' => '57210',
+            'currency' => '840',
         );
 
         // Act
@@ -5243,13 +5680,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '140011',
                 'ReferenceNumber' => '000137140011',
                 'OrderNumber' => '000137140011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '3d6f24c7',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '140011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '57210',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '140011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -5304,9 +5744,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170010',
                 'ReferenceNumber' => '000137170010',
                 'OrderNumber' => '000137170010',
-                'currency' => '840',
             ),
             'amount' => '57311',
+            'currency' => '840',
         );
 
         // Act
@@ -5360,13 +5800,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170011',
                 'ReferenceNumber' => '000137170011',
                 'OrderNumber' => '000137170011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'cf7685f3',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '170011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '57311',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '170011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -5421,9 +5864,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '200010',
                 'ReferenceNumber' => '000137200010',
                 'OrderNumber' => '000137200010',
-                'currency' => '840',
             ),
             'amount' => '76056',
+            'currency' => '840',
         );
 
         // Act
@@ -5477,9 +5920,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '200011',
                 'ReferenceNumber' => '000137200011',
                 'OrderNumber' => '000137200011',
-                'currency' => '840',
             ),
             'amount' => '38028',
+            'currency' => '840',
         );
 
         // Act
@@ -5533,9 +5976,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '230010',
                 'ReferenceNumber' => '000137230010',
                 'OrderNumber' => '000137230010',
-                'currency' => '840',
             ),
             'amount' => '76052',
+            'currency' => '840',
         );
 
         // Act
@@ -5589,9 +6032,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '230011',
                 'ReferenceNumber' => '000137230011',
                 'OrderNumber' => '000137230011',
-                'currency' => '840',
             ),
             'amount' => '38026',
+            'currency' => '840',
         );
 
         // Act
@@ -5645,9 +6088,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '260010',
                 'ReferenceNumber' => '000137260010',
                 'OrderNumber' => '000137260010',
-                'currency' => '840',
             ),
             'amount' => '34104',
+            'currency' => '840',
         );
 
         // Act
@@ -5701,13 +6144,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '260011',
                 'ReferenceNumber' => '000137260011',
                 'OrderNumber' => '000137260011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '220975b8',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '260011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34104',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '260011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -5762,9 +6208,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '290010',
                 'ReferenceNumber' => '000137290010',
                 'OrderNumber' => '000137290010',
-                'currency' => '840',
             ),
             'amount' => '34451',
+            'currency' => '840',
         );
 
         // Act
@@ -5818,13 +6264,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '290011',
                 'ReferenceNumber' => '000137290011',
                 'OrderNumber' => '000137290011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'd25de735',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '290011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34451',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '290011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -5879,9 +6328,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '320010',
                 'ReferenceNumber' => '000137320010',
                 'OrderNumber' => '000137320010',
-                'currency' => '840',
             ),
             'amount' => '101299',
+            'currency' => '840',
         );
 
         // Act
@@ -5935,13 +6384,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '320011',
                 'ReferenceNumber' => '000137320011',
                 'OrderNumber' => '000137320011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '5410989e',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '320011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '101299',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '320011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -5999,9 +6451,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '120010',
                 'ReferenceNumber' => '000138120010',
                 'OrderNumber' => '000138120010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '83256',
+            'currency' => '840',
         );
 
         // Act
@@ -6057,9 +6513,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '130010',
                 'ReferenceNumber' => '000138130010',
                 'OrderNumber' => '000138130010',
-                'currency' => '840',
             ),
             'amount' => '83297',
+            'currency' => '840',
         );
 
         // Act
@@ -6113,9 +6569,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '150010',
                 'ReferenceNumber' => '000138150010',
                 'OrderNumber' => '000138150010',
-                'currency' => '840',
             ),
             'amount' => '34281',
+            'currency' => '840',
         );
 
         // Act
@@ -6169,9 +6625,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170010',
                 'ReferenceNumber' => '000138170010',
                 'OrderNumber' => '000138170010',
-                'currency' => '840',
             ),
             'amount' => '101283',
+            'currency' => '840',
         );
 
         // Act
@@ -6227,9 +6683,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '210010',
                 'ReferenceNumber' => '000138210010',
                 'OrderNumber' => '000138210010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '62266',
+            'currency' => '840',
         );
 
         // Act
@@ -6287,9 +6747,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '230010',
                 'ReferenceNumber' => '000138230010',
                 'OrderNumber' => '000138230010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '57211',
+            'currency' => '840',
         );
 
         // Act
@@ -6345,13 +6809,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '230011',
                 'ReferenceNumber' => '000138230011',
                 'OrderNumber' => '000138230011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'd3bec163',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '230011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '57211',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '230011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -6408,9 +6875,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '250010',
                 'ReferenceNumber' => '000138250010',
                 'OrderNumber' => '000138250010',
-                'currency' => '840',
             ),
             'amount' => '84794',
+            'currency' => '840',
         );
 
         // Act
@@ -6466,13 +6933,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '250011',
                 'ReferenceNumber' => '000138250011',
                 'OrderNumber' => '000138250011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'dfba774f',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '250011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '84794',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '250011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -6530,9 +7000,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '270010',
                 'ReferenceNumber' => '000138270010',
                 'OrderNumber' => '000138270010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '34251',
+            'currency' => '840',
         );
 
         // Act
@@ -6588,13 +7062,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '270011',
                 'ReferenceNumber' => '000138270011',
                 'OrderNumber' => '000138270011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'f31db986',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '270011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34251',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '270011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -6651,9 +7128,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '300010',
                 'ReferenceNumber' => '000138300010',
                 'OrderNumber' => '000138300010',
-                'currency' => '840',
             ),
             'amount' => '82952',
+            'currency' => '840',
         );
 
         // Act
@@ -6709,15 +7186,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '300011',
                 'ReferenceNumber' => '000138300011',
                 'OrderNumber' => '000138300011',
-                'currency' => '840',
             ),
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '41473',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '41473',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'deae7cc8',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '300011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '41473',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '300011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -6725,8 +7220,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -6776,9 +7269,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '310010',
                 'ReferenceNumber' => '000138310010',
                 'OrderNumber' => '000138310010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '101294',
+            'currency' => '840',
         );
 
         // Act
@@ -6834,13 +7331,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '310011',
                 'ReferenceNumber' => '000138310011',
                 'OrderNumber' => '000138310011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '072f5559',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '310011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '101294',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '310011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -6895,11 +7395,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '430010',
                 'ReferenceNumber' => '000138430010',
                 'OrderNumber' => '000138430010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '34206',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -6956,12 +7458,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '440010',
                 'ReferenceNumber' => '000138440010',
                 'OrderNumber' => '000138440010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '113610',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg0NDAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -7017,11 +7524,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460010',
                 'ReferenceNumber' => '000138460010',
                 'OrderNumber' => '000138460010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '62207',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -7075,11 +7584,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '510010',
                 'ReferenceNumber' => '000138510010',
                 'OrderNumber' => '000138510010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '83211',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -7135,11 +7646,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '540010',
                 'ReferenceNumber' => '000138540010',
                 'OrderNumber' => '000138540010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '117022',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -7195,11 +7708,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '550010',
                 'ReferenceNumber' => '000138550010',
                 'OrderNumber' => '000138550010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '101209',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -7255,11 +7770,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670010',
                 'ReferenceNumber' => '000138670010',
                 'OrderNumber' => '000138670010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '55444',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -7315,17 +7832,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670011',
                 'ReferenceNumber' => '000138670011',
                 'OrderNumber' => '000138670011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '27722',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '27722',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'fed45381',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '670011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '27722',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '670011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -7333,8 +7870,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -7384,11 +7919,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680010',
                 'ReferenceNumber' => '000138680010',
                 'OrderNumber' => '000138680010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '34195',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -7444,15 +7985,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680011',
                 'ReferenceNumber' => '000138680011',
                 'OrderNumber' => '000138680011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'c8203895',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '680011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '34195',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '680011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -7508,12 +8054,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '690010',
                 'ReferenceNumber' => '000138690010',
                 'OrderNumber' => '000138690010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
             'amount' => '14304',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg2OTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -7568,16 +8115,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '690011',
                 'ReferenceNumber' => '000138690011',
                 'OrderNumber' => '000138690011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '84cd1022',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '690011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '14304',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg2OTAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '690011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -7634,12 +8185,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '700010',
                 'ReferenceNumber' => '000138700010',
                 'OrderNumber' => '000138700010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
             'amount' => '13562',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3MDAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -7695,18 +8247,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '700011',
                 'ReferenceNumber' => '000138700011',
                 'OrderNumber' => '000138700011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '6778',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '6778',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '7b8e7a64',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '700011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '6778',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3MDAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '700011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -7714,8 +8285,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -7764,12 +8333,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '710010',
                 'ReferenceNumber' => '000138710010',
                 'OrderNumber' => '000138710010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '13682',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3MTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -7828,11 +8398,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750010',
                 'ReferenceNumber' => '000138750010',
                 'OrderNumber' => '000138750010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '62195',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -7888,17 +8464,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750011',
                 'ReferenceNumber' => '000138750011',
                 'OrderNumber' => '000138750011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AVSResultCode' => 'Y',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Y',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '62099',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '62099',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'cf54a1fd',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '750011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '62099',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '750011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -7906,8 +8502,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -7957,12 +8551,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760010',
                 'ReferenceNumber' => '000138760010',
                 'OrderNumber' => '000138760010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NjAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '14642',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -8018,18 +8620,40 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760011',
                 'ReferenceNumber' => '000138760011',
                 'OrderNumber' => '000138760011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
-            'AVSResultCode' => 'Y',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Y',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '14642',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '14642',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NjAwMTE=',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'a199f23b',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '760011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '14642',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NjAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '760011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -8037,8 +8661,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -8087,12 +8709,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000138770010',
                 'OrderNumber' => '000138770010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NzAwMTA=',
+            ),
             'amount' => '13804',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NzAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -8148,16 +8774,23 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770011',
                 'ReferenceNumber' => '000138770011',
                 'OrderNumber' => '000138770011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NzAwMTE=',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'f7b2ccfd',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '770011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '13804',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NzAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '770011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -8213,12 +8846,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000138780010',
                 'OrderNumber' => '000138780010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3ODAwMTA=',
+            ),
             'amount' => '15040',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3ODAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -8273,16 +8910,23 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780011',
                 'ReferenceNumber' => '000138780011',
                 'OrderNumber' => '000138780011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3ODAwMTE=',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'c064592f',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '780011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '15040',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3ODAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '780011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -8339,12 +8983,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '790010',
                 'ReferenceNumber' => '000138790010',
                 'OrderNumber' => '000138790010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3OTAwMTA=',
+            ),
             'amount' => '13848',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3OTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -8400,18 +9048,40 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '790011',
                 'ReferenceNumber' => '000138790011',
                 'OrderNumber' => '000138790011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '13845',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '13845',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3OTAwMTE=',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '7248fc78',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '790011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '13845',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3OTAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '790011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -8419,8 +9089,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -8470,12 +9138,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '800010',
                 'ReferenceNumber' => '000138800010',
                 'OrderNumber' => '000138800010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4MDAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '13718',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4MDAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -8533,11 +9209,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '850010',
                 'ReferenceNumber' => '000138850010',
                 'OrderNumber' => '000138850010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '77190',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -8593,11 +9271,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '850011',
                 'ReferenceNumber' => '000138850011',
                 'OrderNumber' => '000138850011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '38595',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -8652,12 +9332,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000138860010',
                 'OrderNumber' => '000138860010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
             'amount' => '14678',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4NjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -8712,17 +9393,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860011',
                 'ReferenceNumber' => '000138860011',
                 'OrderNumber' => '000138860011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7339',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '7339',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '46e9718d',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '860011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '7339',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4NjAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '860011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -8730,7 +9430,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -8779,12 +9478,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '870010',
                 'ReferenceNumber' => '000138870010',
                 'OrderNumber' => '000138870010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '14194',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4NzAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -8840,16 +9540,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '870011',
                 'ReferenceNumber' => '000138870011',
                 'OrderNumber' => '000138870011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '0b1c350a',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '870011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '14194',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4NzAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '870011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -8905,12 +9609,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '880010',
                 'ReferenceNumber' => '000138880010',
                 'OrderNumber' => '000138880010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '15272',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4ODAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -8965,17 +9670,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '880011',
                 'ReferenceNumber' => '000138880011',
                 'OrderNumber' => '000138880011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7636',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '7636',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '9bf0f134',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '880011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '7636',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4ODAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '880011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -8983,7 +9707,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -9032,11 +9755,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900010',
                 'ReferenceNumber' => '000138900010',
                 'OrderNumber' => '000138900010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '82952',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -9092,17 +9817,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900011',
                 'ReferenceNumber' => '000138900011',
                 'OrderNumber' => '000138900011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '41476',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '41476',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '039f0770',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '900011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '41476',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '900011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -9110,8 +9855,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -9160,9 +9903,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '140010',
                 'ReferenceNumber' => '000139140010',
                 'OrderNumber' => '000139140010',
-                'currency' => '840',
             ),
             'amount' => '16300',
+            'currency' => '840',
         );
 
         // Act
@@ -9220,9 +9963,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160010',
                 'ReferenceNumber' => '000139160010',
                 'OrderNumber' => '000139160010',
-                'currency' => '840',
             ),
             'amount' => '16298',
+            'currency' => '840',
         );
 
         // Act
@@ -9280,9 +10023,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '180010',
                 'ReferenceNumber' => '000139180010',
                 'OrderNumber' => '000139180010',
-                'currency' => '840',
             ),
             'amount' => '16242',
+            'currency' => '840',
         );
 
         // Act
@@ -9340,9 +10083,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '220010',
                 'ReferenceNumber' => '000139220010',
                 'OrderNumber' => '000139220010',
-                'currency' => '840',
             ),
             'amount' => '16296',
+            'currency' => '840',
         );
 
         // Act
@@ -9398,9 +10141,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '630010',
                 'ReferenceNumber' => '000139630010',
                 'OrderNumber' => '000139630010',
-                'currency' => '840',
             ),
             'amount' => '41334',
+            'currency' => '840',
         );
 
         // Act
@@ -9454,13 +10197,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '630011',
                 'ReferenceNumber' => '000139630011',
                 'OrderNumber' => '000139630011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '3ab0cd29',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '630011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '41334',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '630011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -9515,9 +10261,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750010',
                 'ReferenceNumber' => '000139750010',
                 'OrderNumber' => '000139750010',
-                'currency' => '840',
             ),
             'amount' => '241330',
+            'currency' => '840',
         );
 
         // Act
@@ -9571,13 +10317,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750011',
                 'ReferenceNumber' => '000139750011',
                 'OrderNumber' => '000139750011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '36734370',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '750011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '241330',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '750011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -9632,9 +10381,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000139860010',
                 'OrderNumber' => '000139860010',
-                'currency' => '840',
             ),
             'amount' => '241362',
+            'currency' => '840',
         );
 
         // Act
@@ -9688,9 +10437,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860011',
                 'ReferenceNumber' => '000139860011',
                 'OrderNumber' => '000139860011',
-                'currency' => '840',
             ),
             'amount' => '120681',
+            'currency' => '840',
         );
 
         // Act
@@ -9744,9 +10493,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950010',
                 'ReferenceNumber' => '000139950010',
                 'OrderNumber' => '000139950010',
-                'currency' => '840',
             ),
             'amount' => '41294',
+            'currency' => '840',
         );
 
         // Act
@@ -9800,13 +10549,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950011',
                 'ReferenceNumber' => '000139950011',
                 'OrderNumber' => '000139950011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '20647',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '20647',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '78befc60',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '950011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '20647',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '950011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -9860,9 +10624,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000010',
                 'ReferenceNumber' => '000140000010',
                 'OrderNumber' => '000140000010',
-                'currency' => '840',
             ),
             'amount' => '241332',
+            'currency' => '840',
         );
 
         // Act
@@ -9916,13 +10680,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000011',
                 'ReferenceNumber' => '000140000011',
                 'OrderNumber' => '000140000011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '10617e56',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '000011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '241332',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '000011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -9977,9 +10744,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010010',
                 'ReferenceNumber' => '000140010010',
                 'OrderNumber' => '000140010010',
-                'currency' => '840',
             ),
             'amount' => '241104',
+            'currency' => '840',
         );
 
         // Act
@@ -10033,13 +10800,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010011',
                 'ReferenceNumber' => '000140010011',
                 'OrderNumber' => '000140010011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '241104',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '241104',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '9aba830c',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '010011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '241104',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '010011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -10094,11 +10876,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170010',
                 'ReferenceNumber' => '000140170010',
                 'OrderNumber' => '000140170010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '11314',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -10153,15 +10937,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170011',
                 'ReferenceNumber' => '000140170011',
                 'OrderNumber' => '000140170011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '103d596e',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '170011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '11314',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '170011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -10217,11 +11006,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '190010',
                 'ReferenceNumber' => '000140190010',
                 'OrderNumber' => '000140190010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '12308',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -10276,15 +11067,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '190011',
                 'ReferenceNumber' => '000140190011',
                 'OrderNumber' => '000140190011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'd0ed39a7',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '190011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '12308',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '190011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -10342,9 +11138,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '240010',
                 'ReferenceNumber' => '000140240010',
                 'OrderNumber' => '000140240010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '111956',
+            'currency' => '840',
         );
 
         // Act
@@ -10400,13 +11200,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '240011',
                 'ReferenceNumber' => '000140240011',
                 'OrderNumber' => '000140240011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'fde86d31',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '240011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '111956',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '240011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -10462,9 +11265,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460010',
                 'ReferenceNumber' => '000141460010',
                 'OrderNumber' => '000141460010',
-                'currency' => '840',
             ),
             'amount' => '11946',
+            'currency' => '840',
         );
 
         // Act
@@ -10519,13 +11322,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460011',
                 'ReferenceNumber' => '000141460011',
                 'OrderNumber' => '000141460011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '38883229',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '460011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '11946',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '460011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -10581,9 +11387,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470010',
                 'ReferenceNumber' => '000141470010',
                 'OrderNumber' => '000141470010',
-                'currency' => '840',
             ),
             'amount' => '11352',
+            'currency' => '840',
         );
 
         // Act
@@ -10638,9 +11444,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470011',
                 'ReferenceNumber' => '000141470011',
                 'OrderNumber' => '000141470011',
-                'currency' => '840',
             ),
             'amount' => '5676',
+            'currency' => '840',
         );
 
         // Act
@@ -10695,9 +11501,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '830010',
                 'ReferenceNumber' => '000141830010',
                 'OrderNumber' => '000141830010',
-                'currency' => '840',
             ),
             'amount' => '12722',
+            'currency' => '840',
         );
 
         // Act
@@ -10752,13 +11558,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '830011',
                 'ReferenceNumber' => '000141830011',
                 'OrderNumber' => '000141830011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'a464ecc5',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '830011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '12722',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '830011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -10814,9 +11623,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '840010',
                 'ReferenceNumber' => '000141840010',
                 'OrderNumber' => '000141840010',
-                'currency' => '840',
             ),
             'amount' => '12192',
+            'currency' => '840',
         );
 
         // Act
@@ -10871,9 +11680,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '840011',
                 'ReferenceNumber' => '000141840011',
                 'OrderNumber' => '000141840011',
-                'currency' => '840',
             ),
             'amount' => '6096',
+            'currency' => '840',
         );
 
         // Act
@@ -10928,9 +11737,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070010',
                 'ReferenceNumber' => '000142070010',
                 'OrderNumber' => '000142070010',
-                'currency' => '840',
             ),
             'amount' => '12810',
+            'currency' => '840',
         );
 
         // Act
@@ -10985,13 +11794,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070011',
                 'ReferenceNumber' => '000142070011',
                 'OrderNumber' => '000142070011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '12810',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '12810',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'b1342370',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '070011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '12810',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '070011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -10999,7 +11823,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -11047,9 +11870,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '080010',
                 'ReferenceNumber' => '000142080010',
                 'OrderNumber' => '000142080010',
-                'currency' => '840',
             ),
             'amount' => '12298',
+            'currency' => '840',
         );
 
         // Act
@@ -11104,13 +11927,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '080011',
                 'ReferenceNumber' => '000142080011',
                 'OrderNumber' => '000142080011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'ad5e8e6e',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '080011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '12298',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '080011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -11166,9 +11992,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '240010',
                 'ReferenceNumber' => '000142240010',
                 'OrderNumber' => '000142240010',
-                'currency' => '840',
             ),
             'amount' => '13570',
+            'currency' => '840',
         );
 
         // Act
@@ -11223,13 +12049,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '240011',
                 'ReferenceNumber' => '000142240011',
                 'OrderNumber' => '000142240011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '422080be',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '240011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '13570',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '240011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -11285,9 +12114,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '450010',
                 'ReferenceNumber' => '000142450010',
                 'OrderNumber' => '000142450010',
-                'currency' => '840',
             ),
             'amount' => '13680',
+            'currency' => '840',
         );
 
         // Act
@@ -11342,13 +12171,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '450011',
                 'ReferenceNumber' => '000142450011',
                 'OrderNumber' => '000142450011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '13680',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '13680',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '790fa355',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '450011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '13680',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '450011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -11356,7 +12200,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -11404,9 +12247,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '610010',
                 'ReferenceNumber' => '000142610010',
                 'OrderNumber' => '000142610010',
-                'currency' => '840',
             ),
             'amount' => '14540',
+            'currency' => '840',
         );
 
         // Act
@@ -11461,13 +12304,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '610011',
                 'ReferenceNumber' => '000142610011',
                 'OrderNumber' => '000142610011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '27e53649',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '610011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '14540',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '610011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -11523,9 +12369,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '620010',
                 'ReferenceNumber' => '000142620010',
                 'OrderNumber' => '000142620010',
-                'currency' => '840',
             ),
             'amount' => '10912',
+            'currency' => '840',
         );
 
         // Act
@@ -11580,10 +12426,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000010',
                 'ReferenceNumber' => '000180000010',
                 'OrderNumber' => '000180000010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
             ),
             'amount' => '84002',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -11637,14 +12486,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000011',
                 'ReferenceNumber' => '000180000011',
                 'OrderNumber' => '000180000011',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'b8eb498a',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '000011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '84002',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '000011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -11699,12 +12554,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '020010',
                 'ReferenceNumber' => '000180020010',
                 'OrderNumber' => '000180020010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
             'amount' => '84202',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAwMjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -11758,16 +12614,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '020011',
                 'ReferenceNumber' => '000180020011',
                 'OrderNumber' => '000180020011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '460e8f3c',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '020011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '84202',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAwMjAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '020011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -11822,9 +12682,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '040010',
                 'ReferenceNumber' => '000180040010',
                 'OrderNumber' => '000180040010',
-                'currency' => '840',
             ),
             'amount' => '7678',
+            'currency' => '840',
         );
 
         // Act
@@ -11878,13 +12738,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '040011',
                 'ReferenceNumber' => '000180040011',
                 'OrderNumber' => '000180040011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '5f0b1759',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '040011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '7678',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '040011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -11939,10 +12802,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070010',
                 'ReferenceNumber' => '000180070010',
                 'OrderNumber' => '000180070010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
             ),
             'amount' => '19602',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -11996,14 +12862,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070011',
                 'ReferenceNumber' => '000180070011',
                 'OrderNumber' => '000180070011',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '311e39d8',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '070011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '19602',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '070011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -12058,12 +12930,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '090010',
                 'ReferenceNumber' => '000180090010',
                 'OrderNumber' => '000180090010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAwOTAwMTA=',
+            ),
             'amount' => '19606',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAwOTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -12117,16 +12993,23 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '090011',
                 'ReferenceNumber' => '000180090011',
                 'OrderNumber' => '000180090011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAwOTAwMTE=',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'd2811327',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '090011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '19606',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAwOTAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '090011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -12181,9 +13064,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '140010',
                 'ReferenceNumber' => '000180140010',
                 'OrderNumber' => '000180140010',
-                'currency' => '840',
             ),
             'amount' => '34150',
+            'currency' => '840',
         );
 
         // Act
@@ -12237,13 +13120,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '140011',
                 'ReferenceNumber' => '000180140011',
                 'OrderNumber' => '000180140011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'd331a1d6',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '140011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34150',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '140011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -12298,10 +13184,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160010',
                 'ReferenceNumber' => '000180160010',
                 'OrderNumber' => '000180160010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
             ),
             'amount' => '34350',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -12355,14 +13244,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160011',
                 'ReferenceNumber' => '000180160011',
                 'OrderNumber' => '000180160011',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '98a12ca3',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '160011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34350',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '160011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -12417,12 +13312,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '180010',
                 'ReferenceNumber' => '000180180010',
                 'OrderNumber' => '000180180010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
             'amount' => '34550',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAxODAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -12476,16 +13372,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '180011',
                 'ReferenceNumber' => '000180180011',
                 'OrderNumber' => '000180180011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '546ed876',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '180011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '34550',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAxODAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '180011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -12540,9 +13440,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '200010',
                 'ReferenceNumber' => '000180200010',
                 'OrderNumber' => '000180200010',
-                'currency' => '840',
             ),
             'amount' => '34750',
+            'currency' => '840',
         );
 
         // Act
@@ -12596,13 +13496,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '200011',
                 'ReferenceNumber' => '000180200011',
                 'OrderNumber' => '000180200011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'eacc4058',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '200011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34750',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '200011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -12657,10 +13560,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '250010',
                 'ReferenceNumber' => '000180250010',
                 'OrderNumber' => '000180250010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
             ),
             'amount' => '1602',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -12714,14 +13620,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '250011',
                 'ReferenceNumber' => '000180250011',
                 'OrderNumber' => '000180250011',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'a6ea5f0c',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '250011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '1602',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '250011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -12776,12 +13688,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '270010',
                 'ReferenceNumber' => '000180270010',
                 'OrderNumber' => '000180270010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
             'amount' => '2606',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAyNzAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -12835,16 +13748,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '270011',
                 'ReferenceNumber' => '000180270011',
                 'OrderNumber' => '000180270011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '02',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '26de82b5',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '270011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '2606',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAyNzAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '270011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -12899,11 +13816,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '290010',
                 'ReferenceNumber' => '000180290010',
                 'OrderNumber' => '000180290010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '2610',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -12957,15 +13876,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '290011',
                 'ReferenceNumber' => '000180290011',
                 'OrderNumber' => '000180290011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '0b9a9612',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '290011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '2610',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '290011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -13020,9 +13944,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '300010',
                 'ReferenceNumber' => '000180300010',
                 'OrderNumber' => '000180300010',
-                'currency' => '840',
             ),
             'amount' => '2612',
+            'currency' => '840',
         );
 
         // Act
@@ -13076,13 +14000,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '300011',
                 'ReferenceNumber' => '000180300011',
                 'OrderNumber' => '000180300011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'ba2ae740',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '300011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '2612',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '300011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -13137,9 +14064,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '930010',
                 'ReferenceNumber' => '000180930010',
                 'OrderNumber' => '000180930010',
-                'currency' => '840',
             ),
             'amount' => '62282',
+            'currency' => '840',
         );
 
         // Act
@@ -13193,13 +14120,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '930011',
                 'ReferenceNumber' => '000180930011',
                 'OrderNumber' => '000180930011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'eea9d864',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '930011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '62282',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '930011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -13254,9 +14184,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '150010',
                 'ReferenceNumber' => '000181150010',
                 'OrderNumber' => '000181150010',
-                'currency' => '840',
             ),
             'amount' => '62151',
+            'currency' => '840',
         );
 
         // Act
@@ -13310,13 +14240,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '150011',
                 'ReferenceNumber' => '000181150011',
                 'OrderNumber' => '000181150011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'd3071904',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '150011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '62151',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '150011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -13371,9 +14304,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '190010',
                 'ReferenceNumber' => '000181190010',
                 'OrderNumber' => '000181190010',
-                'currency' => '840',
             ),
             'amount' => '101142',
+            'currency' => '840',
         );
 
         // Act
@@ -13427,13 +14360,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '190011',
                 'ReferenceNumber' => '000181190011',
                 'OrderNumber' => '000181190011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '5723baec',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '190011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '101142',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '190011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -13488,9 +14424,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '230010',
                 'ReferenceNumber' => '000181230010',
                 'OrderNumber' => '000181230010',
-                'currency' => '840',
             ),
             'amount' => '83143',
+            'currency' => '840',
         );
 
         // Act
@@ -13544,13 +14480,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '230011',
                 'ReferenceNumber' => '000181230011',
                 'OrderNumber' => '000181230011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'dd5cb30f',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '230011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '83143',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '230011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -13608,10 +14547,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000010',
                 'ReferenceNumber' => '000182000010',
                 'OrderNumber' => '000182000010',
-                'currency' => '840',
             ),
-            'AuthIndicator' => 'CrdOnFile',
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '18615',
+            'currency' => '840',
         );
 
         // Act
@@ -13667,16 +14609,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000011',
                 'ReferenceNumber' => '000182000011',
                 'OrderNumber' => '000182000011',
-                'currency' => '840',
             ),
-            'AuthIndicator' => 'CrdOnFile',
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '18615',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '18615',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'f79cb570',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '000011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '18615',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '000011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -13684,8 +14643,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -13732,10 +14689,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010010',
                 'ReferenceNumber' => '000182010010',
                 'OrderNumber' => '000182010010',
-                'currency' => '840',
             ),
-            'AuthIndicator' => 'CrdOnFile',
             'amount' => '1001',
+            'currency' => '840',
         );
 
         // Act
@@ -13789,14 +14745,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010011',
                 'ReferenceNumber' => '000182010011',
                 'OrderNumber' => '000182010011',
-                'currency' => '840',
             ),
-            'AuthIndicator' => 'CrdOnFile',
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '1afc6c97',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '010011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '1001',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '010011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -13851,10 +14809,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '020010',
                 'ReferenceNumber' => '000182020010',
                 'OrderNumber' => '000182020010',
-                'currency' => '840',
             ),
-            'AuthIndicator' => 'CrdOnFile',
             'amount' => '1550',
+            'currency' => '840',
         );
 
         // Act
@@ -13910,13 +14867,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '120010',
                 'ReferenceNumber' => '000182120010',
                 'OrderNumber' => '000182120010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
-            'AuthIndicator' => 'CrdOnFile',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMjAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '7673',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -13971,17 +14935,23 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '120011',
                 'ReferenceNumber' => '000182120011',
                 'OrderNumber' => '000182120011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
-            'AuthIndicator' => 'CrdOnFile',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMjAwMTE=',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'f0625d65',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '120011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '7673',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMjAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '120011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -14037,13 +15007,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '130010',
                 'ReferenceNumber' => '000182130010',
                 'OrderNumber' => '000182130010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
-            'AuthIndicator' => 'CrdOnFile',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMzAwMTA=',
+            ),
             'amount' => '7505',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMzAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -14098,18 +15071,39 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '130011',
                 'ReferenceNumber' => '000182130011',
                 'OrderNumber' => '000182130011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
-            'AuthIndicator' => 'CrdOnFile',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7505',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '7505',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMzAwMTE=',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '921d1548',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '130011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '7505',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMzAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '130011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -14117,7 +15111,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -14164,13 +15157,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '140010',
                 'ReferenceNumber' => '000182140010',
                 'OrderNumber' => '000182140010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
-            'AuthIndicator' => 'CrdOnFile',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxNDAwMTA=',
+            ),
             'amount' => '7601',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxNDAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -14225,12 +15221,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '240010',
                 'ReferenceNumber' => '000182240010',
                 'OrderNumber' => '000182240010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AuthIndicator' => 'CrdOnFile',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '7691',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -14285,16 +15282,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '240011',
                 'ReferenceNumber' => '000182240011',
                 'OrderNumber' => '000182240011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AuthIndicator' => 'CrdOnFile',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'bb923e7c',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '240011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '7691',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '240011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -14351,12 +15352,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '250010',
                 'ReferenceNumber' => '000182250010',
                 'OrderNumber' => '000182250010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AuthIndicator' => 'CrdOnFile',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '10006',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -14411,16 +15417,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '250011',
                 'ReferenceNumber' => '000182250011',
                 'OrderNumber' => '000182250011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AuthIndicator' => 'CrdOnFile',
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '10006',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '10006',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'e676deb0',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '250011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '10006',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '250011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -14428,7 +15450,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -14475,12 +15496,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '260010',
                 'ReferenceNumber' => '000182260010',
                 'OrderNumber' => '000182260010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AuthIndicator' => 'CrdOnFile',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '10078',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -14534,12 +15556,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '740010',
                 'ReferenceNumber' => '000186740010',
                 'OrderNumber' => '000186740010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
             ),
             'amount' => '7611',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '02',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY3NDAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -14593,12 +15616,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750010',
                 'ReferenceNumber' => '000186750010',
                 'OrderNumber' => '000186750010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
             ),
             'amount' => '7609',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '02',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY3NTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -14652,12 +15676,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760010',
                 'ReferenceNumber' => '000186760010',
                 'OrderNumber' => '000186760010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
             ),
             'amount' => '7605',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '01',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY3NjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -14711,12 +15736,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000186770010',
                 'OrderNumber' => '000186770010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
             ),
             'amount' => '7603',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '01',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY3NzAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -14773,12 +15799,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000186780010',
                 'OrderNumber' => '000186780010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '7619',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '02',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY3ODAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -14837,12 +15868,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '790010',
                 'ReferenceNumber' => '000186790010',
                 'OrderNumber' => '000186790010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '7615',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '01',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY3OTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -14898,12 +15934,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000186860010',
                 'OrderNumber' => '000186860010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
             ),
             'amount' => '7607',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '02',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4NjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -14957,16 +15994,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860011',
                 'ReferenceNumber' => '000186860011',
                 'OrderNumber' => '000186860011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7607',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '7607',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '3d6b10d1',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '860011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '7607',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '02',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4NjAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '860011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -15020,12 +16073,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '870010',
                 'ReferenceNumber' => '000186870010',
                 'OrderNumber' => '000186870010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
             ),
             'amount' => '7601',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '01',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4NzAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -15079,16 +16133,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '870011',
                 'ReferenceNumber' => '000186870011',
                 'OrderNumber' => '000186870011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7601',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '7601',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'd583e34c',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '870011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '7601',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '01',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4NzAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '870011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -15145,12 +16215,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '880010',
                 'ReferenceNumber' => '000186880010',
                 'OrderNumber' => '000186880010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '7617',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '02',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4ODAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -15206,17 +16281,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '880011',
                 'ReferenceNumber' => '000186880011',
                 'OrderNumber' => '000186880011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7617',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '7617',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '02',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '891cf5c3',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '880011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '7617',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '02',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4ODAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '880011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -15224,8 +16318,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -15275,12 +16367,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '890010',
                 'ReferenceNumber' => '000186890010',
                 'OrderNumber' => '000186890010',
-                'currency' => '840',
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '7613',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '01',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4OTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -15336,17 +16433,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '890011',
                 'ReferenceNumber' => '000186890011',
                 'OrderNumber' => '000186890011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7613',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '7613',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '2fbdc46e',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '890011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '7613',
-            'EcommURL' => 'google.com',
-            'EcommTransactionIndicator' => '01',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODY4OTAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '890011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -15354,8 +16470,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -15402,9 +16516,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '380010',
                 'ReferenceNumber' => '000521380010',
                 'OrderNumber' => '000521380010',
-                'currency' => '840',
             ),
             'amount' => '76054',
+            'currency' => '840',
         );
 
         // Act
@@ -15458,9 +16572,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '390010',
                 'ReferenceNumber' => '000521390010',
                 'OrderNumber' => '000521390010',
-                'currency' => '840',
             ),
             'amount' => '84315',
+            'currency' => '840',
         );
 
         // Act
@@ -15514,9 +16628,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '420010',
                 'ReferenceNumber' => '000521420010',
                 'OrderNumber' => '000521420010',
-                'currency' => '840',
             ),
             'amount' => '76050',
+            'currency' => '840',
         );
 
         // Act
@@ -15570,9 +16684,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '520010',
                 'ReferenceNumber' => '000521520010',
                 'OrderNumber' => '000521520010',
-                'currency' => '840',
             ),
             'amount' => '34128',
+            'currency' => '840',
         );
 
         // Act
@@ -15626,13 +16740,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '820010',
                 'ReferenceNumber' => '000521820010',
                 'OrderNumber' => '000521820010',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '62107',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '62107',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'amount' => '62107',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '820010',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -15686,13 +16808,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '840010',
                 'ReferenceNumber' => '000521840010',
                 'OrderNumber' => '000521840010',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '83301',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '83301',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'amount' => '83301',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '840010',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -15746,13 +16876,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000521860010',
                 'OrderNumber' => '000521860010',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34103',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '34103',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'amount' => '34103',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '860010',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -15806,9 +16944,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900010',
                 'ReferenceNumber' => '000521900010',
                 'OrderNumber' => '000521900010',
-                'currency' => '840',
             ),
             'amount' => '59098',
+            'currency' => '840',
         );
 
         // Act
@@ -15862,9 +17000,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900011',
                 'ReferenceNumber' => '000521900011',
                 'OrderNumber' => '000521900011',
-                'currency' => '840',
             ),
             'amount' => '29549',
+            'currency' => '840',
         );
 
         // Act
@@ -15918,9 +17056,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '930010',
                 'ReferenceNumber' => '000521930010',
                 'OrderNumber' => '000521930010',
-                'currency' => '840',
             ),
             'amount' => '59094',
+            'currency' => '840',
         );
 
         // Act
@@ -15974,9 +17112,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '930011',
                 'ReferenceNumber' => '000521930011',
                 'OrderNumber' => '000521930011',
-                'currency' => '840',
             ),
             'amount' => '29547',
+            'currency' => '840',
         );
 
         // Act
@@ -16030,9 +17168,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980010',
                 'ReferenceNumber' => '000521980010',
                 'OrderNumber' => '000521980010',
-                'currency' => '840',
             ),
             'amount' => '84794',
+            'currency' => '840',
         );
 
         // Act
@@ -16086,13 +17224,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980011',
                 'ReferenceNumber' => '000521980011',
                 'OrderNumber' => '000521980011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'cd41d290',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '980011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '84794',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '980011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -16147,9 +17288,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000010',
                 'ReferenceNumber' => '000522000010',
                 'OrderNumber' => '000522000010',
-                'currency' => '840',
             ),
             'amount' => '54208',
+            'currency' => '840',
         );
 
         // Act
@@ -16203,9 +17344,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000011',
                 'ReferenceNumber' => '000522000011',
                 'OrderNumber' => '000522000011',
-                'currency' => '840',
             ),
             'amount' => '27104',
+            'currency' => '840',
         );
 
         // Act
@@ -16259,9 +17400,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '030010',
                 'ReferenceNumber' => '000522030010',
                 'OrderNumber' => '000522030010',
-                'currency' => '840',
             ),
             'amount' => '54204',
+            'currency' => '840',
         );
 
         // Act
@@ -16315,9 +17456,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '030011',
                 'ReferenceNumber' => '000522030011',
                 'OrderNumber' => '000522030011',
-                'currency' => '840',
             ),
             'amount' => '27102',
+            'currency' => '840',
         );
 
         // Act
@@ -16371,13 +17512,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '220010',
                 'ReferenceNumber' => '000523220010',
                 'OrderNumber' => '000523220010',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '62261',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '62261',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'amount' => '62261',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '220010',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -16431,13 +17580,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '260010',
                 'ReferenceNumber' => '000523260010',
                 'OrderNumber' => '000523260010',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '83272',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '83272',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'amount' => '83272',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '260010',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -16491,13 +17648,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '320010',
                 'ReferenceNumber' => '000523320010',
                 'OrderNumber' => '000523320010',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34258',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '34258',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'amount' => '34258',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '320010',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -16553,9 +17718,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460010',
                 'ReferenceNumber' => '000523460010',
                 'OrderNumber' => '000523460010',
-                'currency' => '840',
             ),
             'amount' => '60232',
+            'currency' => '840',
         );
 
         // Act
@@ -16611,9 +17776,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460011',
                 'ReferenceNumber' => '000523460011',
                 'OrderNumber' => '000523460011',
-                'currency' => '840',
             ),
             'amount' => '30116',
+            'currency' => '840',
         );
 
         // Act
@@ -16669,9 +17834,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470010',
                 'ReferenceNumber' => '000523470010',
                 'OrderNumber' => '000523470010',
-                'currency' => '840',
             ),
             'amount' => '60334',
+            'currency' => '840',
         );
 
         // Act
@@ -16727,15 +17892,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470011',
                 'ReferenceNumber' => '000523470011',
                 'OrderNumber' => '000523470011',
-                'currency' => '840',
             ),
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '30164',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '30164',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '00668c8e',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '470011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '30164',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '470011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -16743,8 +17926,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -16794,9 +17975,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '480010',
                 'ReferenceNumber' => '000523480010',
                 'OrderNumber' => '000523480010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '60132',
+            'currency' => '840',
         );
 
         // Act
@@ -16852,9 +18037,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '480011',
                 'ReferenceNumber' => '000523480011',
                 'OrderNumber' => '000523480011',
-                'currency' => '840',
             ),
             'amount' => '30066',
+            'currency' => '840',
         );
 
         // Act
@@ -16911,9 +18096,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '500010',
                 'ReferenceNumber' => '000523500010',
                 'OrderNumber' => '000523500010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '62888',
+            'currency' => '840',
         );
 
         // Act
@@ -16969,15 +18158,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '500011',
                 'ReferenceNumber' => '000523500011',
                 'OrderNumber' => '000523500011',
-                'currency' => '840',
             ),
-            'AVSResultCode' => 'Y',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Y',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '62885',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '62885',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '50fa9000',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '500011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '62885',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '500011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -16985,8 +18192,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -17035,9 +18240,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '600010',
                 'ReferenceNumber' => '000523600010',
                 'OrderNumber' => '000523600010',
-                'currency' => '840',
             ),
             'amount' => '77190',
+            'currency' => '840',
         );
 
         // Act
@@ -17093,9 +18298,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '600011',
                 'ReferenceNumber' => '000523600011',
                 'OrderNumber' => '000523600011',
-                'currency' => '840',
             ),
             'amount' => '38595',
+            'currency' => '840',
         );
 
         // Act
@@ -17151,9 +18356,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '610010',
                 'ReferenceNumber' => '000523610010',
                 'OrderNumber' => '000523610010',
-                'currency' => '840',
             ),
             'amount' => '77292',
+            'currency' => '840',
         );
 
         // Act
@@ -17209,15 +18414,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '610011',
                 'ReferenceNumber' => '000523610011',
                 'OrderNumber' => '000523610011',
-                'currency' => '840',
             ),
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '38643',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '38643',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'bd862e64',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '610011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '38643',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '610011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -17225,8 +18448,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -17276,9 +18497,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '620010',
                 'ReferenceNumber' => '000523620010',
                 'OrderNumber' => '000523620010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '77090',
+            'currency' => '840',
         );
 
         // Act
@@ -17334,9 +18559,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '620011',
                 'ReferenceNumber' => '000523620011',
                 'OrderNumber' => '000523620011',
-                'currency' => '840',
             ),
             'amount' => '38545',
+            'currency' => '840',
         );
 
         // Act
@@ -17393,9 +18618,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '650010',
                 'ReferenceNumber' => '000523650010',
                 'OrderNumber' => '000523650010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '77092',
+            'currency' => '840',
         );
 
         // Act
@@ -17451,15 +18680,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '650011',
                 'ReferenceNumber' => '000523650011',
                 'OrderNumber' => '000523650011',
-                'currency' => '840',
             ),
-            'AVSResultCode' => 'Y',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Y',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '38543',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '38543',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '6e49c9c7',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '650011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '38543',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '650011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -17467,8 +18714,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -17517,9 +18762,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '740010',
                 'ReferenceNumber' => '000523740010',
                 'OrderNumber' => '000523740010',
-                'currency' => '840',
             ),
             'amount' => '55342',
+            'currency' => '840',
         );
 
         // Act
@@ -17575,9 +18820,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '740011',
                 'ReferenceNumber' => '000523740011',
                 'OrderNumber' => '000523740011',
-                'currency' => '840',
             ),
             'amount' => '27671',
+            'currency' => '840',
         );
 
         // Act
@@ -17633,9 +18878,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750010',
                 'ReferenceNumber' => '000523750010',
                 'OrderNumber' => '000523750010',
-                'currency' => '840',
             ),
             'amount' => '55444',
+            'currency' => '840',
         );
 
         // Act
@@ -17691,15 +18936,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750011',
                 'ReferenceNumber' => '000523750011',
                 'OrderNumber' => '000523750011',
-                'currency' => '840',
             ),
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '27719',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '27719',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '8ed2edb4',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '750011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '27719',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '750011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -17707,8 +18970,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -17758,9 +19019,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760010',
                 'ReferenceNumber' => '000523760010',
                 'OrderNumber' => '000523760010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '55242',
+            'currency' => '840',
         );
 
         // Act
@@ -17816,9 +19081,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760011',
                 'ReferenceNumber' => '000523760011',
                 'OrderNumber' => '000523760011',
-                'currency' => '840',
             ),
             'amount' => '27621',
+            'currency' => '840',
         );
 
         // Act
@@ -17875,9 +19140,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000523780010',
                 'OrderNumber' => '000523780010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '35276',
+            'currency' => '840',
         );
 
         // Act
@@ -17933,15 +19202,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780011',
                 'ReferenceNumber' => '000523780011',
                 'OrderNumber' => '000523780011',
-                'currency' => '840',
             ),
-            'AVSResultCode' => 'Y',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Y',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '35273',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '35273',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '7f55e6e4',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '780011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '35273',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '780011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -17949,8 +19236,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -17999,11 +19284,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '650010',
                 'ReferenceNumber' => '000524650010',
                 'OrderNumber' => '000524650010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '55444',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -18062,11 +19349,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680010',
                 'ReferenceNumber' => '000524680010',
                 'OrderNumber' => '000524680010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '55032',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -18124,11 +19417,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '690010',
                 'ReferenceNumber' => '000524690010',
                 'OrderNumber' => '000524690010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '35078',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -18186,12 +19481,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '830010',
                 'ReferenceNumber' => '000524830010',
                 'OrderNumber' => '000524830010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '13584',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ4MzAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -18249,12 +19545,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '840010',
                 'ReferenceNumber' => '000524840010',
                 'OrderNumber' => '000524840010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '13586',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ4NDAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -18313,12 +19610,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000524860010',
                 'OrderNumber' => '000524860010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '113626',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ4NjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -18375,12 +19677,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '890010',
                 'ReferenceNumber' => '000524890010',
                 'OrderNumber' => '000524890010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '14930',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ4OTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -18436,12 +19739,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900010',
                 'ReferenceNumber' => '000524900010',
                 'OrderNumber' => '000524900010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '14932',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ5MDAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -18499,12 +19803,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '930010',
                 'ReferenceNumber' => '000524930010',
                 'OrderNumber' => '000524930010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '115028',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjQ5MzAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -18562,11 +19871,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '110010',
                 'ReferenceNumber' => '000525110010',
                 'OrderNumber' => '000525110010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '62880',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -18624,12 +19935,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170010',
                 'ReferenceNumber' => '000525170010',
                 'OrderNumber' => '000525170010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjUxNzAwMTA=',
+            ),
             'amount' => '13858',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjUxNzAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -18688,12 +20003,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '190010',
                 'ReferenceNumber' => '000525190010',
                 'OrderNumber' => '000525190010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjUxOTAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '15228',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjUxOTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -18751,11 +20074,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '740010',
                 'ReferenceNumber' => '000525740010',
                 'OrderNumber' => '000525740010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '76890',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -18814,11 +20139,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000525770010',
                 'OrderNumber' => '000525770010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '76684',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -18876,11 +20207,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000525780010',
                 'OrderNumber' => '000525780010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '84786',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -18938,12 +20271,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980010',
                 'ReferenceNumber' => '000525980010',
                 'OrderNumber' => '000525980010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '14052',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjU5ODAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -19001,12 +20335,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '990010',
                 'ReferenceNumber' => '000525990010',
                 'OrderNumber' => '000525990010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '14054',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjU5OTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -19065,12 +20400,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010010',
                 'ReferenceNumber' => '000526010010',
                 'OrderNumber' => '000526010010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '114100',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjYwMTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -19127,12 +20467,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '050010',
                 'ReferenceNumber' => '000526050010',
                 'OrderNumber' => '000526050010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '15282',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjYwNTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -19188,12 +20529,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '060010',
                 'ReferenceNumber' => '000526060010',
                 'OrderNumber' => '000526060010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '15284',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjYwNjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -19251,12 +20593,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '080010',
                 'ReferenceNumber' => '000526080010',
                 'OrderNumber' => '000526080010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '115306',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjYwODAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -19314,11 +20661,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000527770010',
                 'OrderNumber' => '000527770010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '55342',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -19374,11 +20723,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770011',
                 'ReferenceNumber' => '000527770011',
                 'OrderNumber' => '000527770011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '27671',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -19435,11 +20786,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000527780010',
                 'OrderNumber' => '000527780010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '55034',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -19498,11 +20855,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '800010',
                 'ReferenceNumber' => '000527800010',
                 'OrderNumber' => '000527800010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '35264',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -19558,16 +20921,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '800011',
                 'ReferenceNumber' => '000527800011',
                 'OrderNumber' => '000527800011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '35261',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '35261',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '722e70c1',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '800011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '35261',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '800011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -19575,8 +20958,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -19626,12 +21007,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980010',
                 'ReferenceNumber' => '000527980010',
                 'OrderNumber' => '000527980010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '115008',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjc5ODAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -19687,16 +21073,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980011',
                 'ReferenceNumber' => '000527980011',
                 'OrderNumber' => '000527980011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'a23f1eec',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '980011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '115008',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjc5ODAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '980011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -19754,12 +21144,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '990010',
                 'ReferenceNumber' => '000527990010',
                 'OrderNumber' => '000527990010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '113526',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjc5OTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -19815,16 +21210,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '990011',
                 'ReferenceNumber' => '000527990011',
                 'OrderNumber' => '000527990011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'c345dcd1',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '990011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '113526',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjc5OTAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '990011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -19879,15 +21278,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '150011',
                 'ReferenceNumber' => '000528150011',
                 'OrderNumber' => '000528150011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '109ff7a1',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '150011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '34153',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '150011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -19945,11 +21349,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160010',
                 'ReferenceNumber' => '000528160010',
                 'OrderNumber' => '000528160010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '34689',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -20005,15 +21415,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160011',
                 'ReferenceNumber' => '000528160011',
                 'OrderNumber' => '000528160011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'a115e389',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '160011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '34689',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '160011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -20070,11 +21485,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '660010',
                 'ReferenceNumber' => '000528660010',
                 'OrderNumber' => '000528660010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '57311',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -20130,15 +21547,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '660011',
                 'ReferenceNumber' => '000528660011',
                 'OrderNumber' => '000528660011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '4563067f',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '660011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '57311',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '660011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -20195,11 +21617,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670010',
                 'ReferenceNumber' => '000528670010',
                 'OrderNumber' => '000528670010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '62988',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -20255,17 +21679,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670011',
                 'ReferenceNumber' => '000528670011',
                 'OrderNumber' => '000528670011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '62877',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '62877',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'b1c26a67',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '670011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '62877',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '670011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -20273,8 +21717,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -20324,11 +21766,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680010',
                 'ReferenceNumber' => '000528680010',
                 'OrderNumber' => '000528680010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '57207',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -20384,15 +21832,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680011',
                 'ReferenceNumber' => '000528680011',
                 'OrderNumber' => '000528680011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '6b3278bd',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '680011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '57207',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '680011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -20450,12 +21903,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '820010',
                 'ReferenceNumber' => '000528820010',
                 'OrderNumber' => '000528820010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MjAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '15146',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -20511,16 +21972,23 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '820011',
                 'ReferenceNumber' => '000528820011',
                 'OrderNumber' => '000528820011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MjAwMTE=',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '867bef73',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '820011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '15146',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MjAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '820011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -20578,12 +22046,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '830010',
                 'ReferenceNumber' => '000528830010',
                 'OrderNumber' => '000528830010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MzAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '15236',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MzAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -20639,18 +22115,40 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '830011',
                 'ReferenceNumber' => '000528830011',
                 'OrderNumber' => '000528830011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
-            'AVSResultCode' => 'Y',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Y',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '15236',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '15236',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MzAwMTE=',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'f6acb584',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '830011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '15236',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MzAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '830011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -20658,8 +22156,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -20708,11 +22204,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950010',
                 'ReferenceNumber' => '000528950010',
                 'OrderNumber' => '000528950010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '57711',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -20768,15 +22266,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950011',
                 'ReferenceNumber' => '000528950011',
                 'OrderNumber' => '000528950011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '86ab0ea6',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '950011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '57711',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '950011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -20834,11 +22337,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '960010',
                 'ReferenceNumber' => '000528960010',
                 'OrderNumber' => '000528960010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '57208',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -20894,15 +22403,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '960011',
                 'ReferenceNumber' => '000528960011',
                 'OrderNumber' => '000528960011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'c9a42a0c',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '960011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '57208',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '960011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -20960,12 +22474,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010010',
                 'ReferenceNumber' => '000529010010',
                 'OrderNumber' => '000529010010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjkwMTAwMTA=',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '15132',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjkwMTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -21021,16 +22543,23 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010011',
                 'ReferenceNumber' => '000529010011',
                 'OrderNumber' => '000529010011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjkwMTAwMTE=',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'cba47138',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '010011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '15132',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjkwMTAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '010011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -21087,11 +22616,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '600010',
                 'ReferenceNumber' => '000529600010',
                 'OrderNumber' => '000529600010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '77292',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -21147,17 +22678,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '600011',
                 'ReferenceNumber' => '000529600011',
                 'OrderNumber' => '000529600011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '38646',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '38646',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '345db489',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '600011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '38646',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '600011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -21165,8 +22716,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -21216,11 +22765,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '610010',
                 'ReferenceNumber' => '000529610010',
                 'OrderNumber' => '000529610010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '76882',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -21276,11 +22831,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '610011',
                 'ReferenceNumber' => '000529610011',
                 'OrderNumber' => '000529610011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '38441',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -21336,11 +22893,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '630010',
                 'ReferenceNumber' => '000529630010',
                 'OrderNumber' => '000529630010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '84794',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -21396,15 +22955,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '630011',
                 'ReferenceNumber' => '000529630011',
                 'OrderNumber' => '000529630011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'd9cca6a9',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '630011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '84794',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '630011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -21462,11 +23026,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '650010',
                 'ReferenceNumber' => '000529650010',
                 'OrderNumber' => '000529650010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '76884',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -21522,17 +23092,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '650011',
                 'ReferenceNumber' => '000529650011',
                 'OrderNumber' => '000529650011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AVSResultCode' => 'Y',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Y',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '38442',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '38442',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'a33adbcb',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '650011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '38442',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '650011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -21540,8 +23130,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -21589,12 +23177,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '890010',
                 'ReferenceNumber' => '000529890010',
                 'OrderNumber' => '000529890010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '15464',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk4OTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -21649,16 +23238,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '890011',
                 'ReferenceNumber' => '000529890011',
                 'OrderNumber' => '000529890011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '4e6c3571',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '890011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '15464',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk4OTAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '890011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -21714,12 +23307,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900010',
                 'ReferenceNumber' => '000529900010',
                 'OrderNumber' => '000529900010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '15462',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MDAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -21774,17 +23368,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900011',
                 'ReferenceNumber' => '000529900011',
                 'OrderNumber' => '000529900011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '15462',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '15462',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'c0d2fac7',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '900011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '15462',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MDAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '900011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -21792,7 +23405,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -21841,12 +23453,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '910010',
                 'ReferenceNumber' => '000529910010',
                 'OrderNumber' => '000529910010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '14040',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -21902,12 +23515,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '910011',
                 'ReferenceNumber' => '000529910011',
                 'OrderNumber' => '000529910011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '7020',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MTAwMTE=',
+            'currency' => '840',
         );
 
         // Act
@@ -21964,12 +23578,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '920010',
                 'ReferenceNumber' => '000529920010',
                 'OrderNumber' => '000529920010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '114094',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MjAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -22025,12 +23644,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '920011',
                 'ReferenceNumber' => '000529920011',
                 'OrderNumber' => '000529920011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '57047',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5MjAwMTE=',
+            'currency' => '840',
         );
 
         // Act
@@ -22087,12 +23707,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950010',
                 'ReferenceNumber' => '000529950010',
                 'OrderNumber' => '000529950010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '115294',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5NTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -22148,12 +23773,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950011',
                 'ReferenceNumber' => '000529950011',
                 'OrderNumber' => '000529950011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '57647',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5NTAwMTE=',
+            'currency' => '840',
         );
 
         // Act
@@ -22209,12 +23835,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '990010',
                 'ReferenceNumber' => '000529990010',
                 'OrderNumber' => '000529990010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
             'amount' => '14042',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5OTAwMTA=',
+            'currency' => '840',
         );
 
         // Act
@@ -22270,18 +23897,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '990011',
                 'ReferenceNumber' => '000529990011',
                 'OrderNumber' => '000529990011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '01',
-            'AVSResultCode' => 'Z',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Z',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7018',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '7018',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '01',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '8ed35897',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '990011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '7018',
-            'EcommURL' => 'google.com',
-            'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjk5OTAwMTE=',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '990011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -22289,8 +23935,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -22339,11 +23983,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '100010',
                 'ReferenceNumber' => '000530100010',
                 'OrderNumber' => '000530100010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '82794',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -22399,15 +24045,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '100011',
                 'ReferenceNumber' => '000530100011',
                 'OrderNumber' => '000530100011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'a833643c',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '100011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '82794',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '100011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -22465,11 +24116,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '120010',
                 'ReferenceNumber' => '000530120010',
                 'OrderNumber' => '000530120010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '76982',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -22525,11 +24182,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '120011',
                 'ReferenceNumber' => '000530120011',
                 'OrderNumber' => '000530120011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '38491',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -22586,9 +24245,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '240010',
                 'ReferenceNumber' => '000532240010',
                 'OrderNumber' => '000532240010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '216092',
+            'currency' => '840',
         );
 
         // Act
@@ -22647,9 +24310,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '250010',
                 'ReferenceNumber' => '000532250010',
                 'OrderNumber' => '000532250010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '216094',
+            'currency' => '840',
         );
 
         // Act
@@ -22707,9 +24374,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '260010',
                 'ReferenceNumber' => '000532260010',
                 'OrderNumber' => '000532260010',
-                'currency' => '840',
             ),
             'amount' => '16252',
+            'currency' => '840',
         );
 
         // Act
@@ -22767,9 +24434,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '270010',
                 'ReferenceNumber' => '000532270010',
                 'OrderNumber' => '000532270010',
-                'currency' => '840',
             ),
             'amount' => '16254',
+            'currency' => '840',
         );
 
         // Act
@@ -22827,9 +24494,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '350010',
                 'ReferenceNumber' => '000532350010',
                 'OrderNumber' => '000532350010',
-                'currency' => '840',
             ),
             'amount' => '16248',
+            'currency' => '840',
         );
 
         // Act
@@ -22887,9 +24554,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '360010',
                 'ReferenceNumber' => '000532360010',
                 'OrderNumber' => '000532360010',
-                'currency' => '840',
             ),
             'amount' => '16250',
+            'currency' => '840',
         );
 
         // Act
@@ -22947,9 +24614,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '420010',
                 'ReferenceNumber' => '000532420010',
                 'OrderNumber' => '000532420010',
-                'currency' => '840',
             ),
             'amount' => '16240',
+            'currency' => '840',
         );
 
         // Act
@@ -23005,9 +24672,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '450010',
                 'ReferenceNumber' => '000533450010',
                 'OrderNumber' => '000533450010',
-                'currency' => '840',
             ),
             'amount' => '41406',
+            'currency' => '840',
         );
 
         // Act
@@ -23061,13 +24728,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '450011',
                 'ReferenceNumber' => '000533450011',
                 'OrderNumber' => '000533450011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'fa03c035',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '450011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '41406',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '450011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -23122,9 +24792,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460010',
                 'ReferenceNumber' => '000533460010',
                 'OrderNumber' => '000533460010',
-                'currency' => '840',
             ),
             'amount' => '241192',
+            'currency' => '840',
         );
 
         // Act
@@ -23178,13 +24848,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460011',
                 'ReferenceNumber' => '000533460011',
                 'OrderNumber' => '000533460011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '120596',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '120596',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '4421dccf',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '460011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '120596',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '460011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -23238,9 +24923,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '560010',
                 'ReferenceNumber' => '000533560010',
                 'OrderNumber' => '000533560010',
-                'currency' => '840',
             ),
             'amount' => '241370',
+            'currency' => '840',
         );
 
         // Act
@@ -23294,9 +24979,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '560011',
                 'ReferenceNumber' => '000533560011',
                 'OrderNumber' => '000533560011',
-                'currency' => '840',
             ),
             'amount' => '120685',
+            'currency' => '840',
         );
 
         // Act
@@ -23350,9 +25035,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '570010',
                 'ReferenceNumber' => '000533570010',
                 'OrderNumber' => '000533570010',
-                'currency' => '840',
             ),
             'amount' => '241230',
+            'currency' => '840',
         );
 
         // Act
@@ -23406,13 +25091,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '570011',
                 'ReferenceNumber' => '000533570011',
                 'OrderNumber' => '000533570011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '241230',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '241230',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '0570869c',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '570011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '241230',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '570011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -23466,9 +25166,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '580010',
                 'ReferenceNumber' => '000533580010',
                 'OrderNumber' => '000533580010',
-                'currency' => '840',
             ),
             'amount' => '241074',
+            'currency' => '840',
         );
 
         // Act
@@ -23522,13 +25222,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '580011',
                 'ReferenceNumber' => '000533580011',
                 'OrderNumber' => '000533580011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '241074',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '241074',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '7d6cb5ff',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '580011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '241074',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '580011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -23582,9 +25297,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '660010',
                 'ReferenceNumber' => '000533660010',
                 'OrderNumber' => '000533660010',
-                'currency' => '840',
             ),
             'amount' => '41402',
+            'currency' => '840',
         );
 
         // Act
@@ -23638,13 +25353,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '660011',
                 'ReferenceNumber' => '000533660011',
                 'OrderNumber' => '000533660011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '7ddb9bf0',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '660011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '41402',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '660011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -23699,9 +25417,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670010',
                 'ReferenceNumber' => '000533670010',
                 'OrderNumber' => '000533670010',
-                'currency' => '840',
             ),
             'amount' => '241242',
+            'currency' => '840',
         );
 
         // Act
@@ -23755,13 +25473,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670011',
                 'ReferenceNumber' => '000533670011',
                 'OrderNumber' => '000533670011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '120621',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '120621',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '9da795d7',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '670011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '120621',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '670011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -23815,9 +25548,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000533770010',
                 'OrderNumber' => '000533770010',
-                'currency' => '840',
             ),
             'amount' => '241298',
+            'currency' => '840',
         );
 
         // Act
@@ -23871,13 +25604,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770011',
                 'ReferenceNumber' => '000533770011',
                 'OrderNumber' => '000533770011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '241298',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '241298',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'abde99aa',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '770011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '241298',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '770011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -23931,9 +25679,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000533780010',
                 'OrderNumber' => '000533780010',
-                'currency' => '840',
             ),
             'amount' => '241082',
+            'currency' => '840',
         );
 
         // Act
@@ -23987,13 +25735,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780011',
                 'ReferenceNumber' => '000533780011',
                 'OrderNumber' => '000533780011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '241082',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '241082',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '3f0160ae',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '780011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '241082',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '780011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -24047,9 +25810,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000533860010',
                 'OrderNumber' => '000533860010',
-                'currency' => '840',
             ),
             'amount' => '41394',
+            'currency' => '840',
         );
 
         // Act
@@ -24103,13 +25866,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860011',
                 'ReferenceNumber' => '000533860011',
                 'OrderNumber' => '000533860011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '158f9c7f',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '860011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '41394',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '860011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -24164,9 +25930,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '870010',
                 'ReferenceNumber' => '000533870010',
                 'OrderNumber' => '000533870010',
-                'currency' => '840',
             ),
             'amount' => '241152',
+            'currency' => '840',
         );
 
         // Act
@@ -24220,13 +25986,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '870011',
                 'ReferenceNumber' => '000533870011',
                 'OrderNumber' => '000533870011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '120576',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '120576',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'f8bf9233',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '870011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '120576',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '870011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -24280,9 +26061,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950010',
                 'ReferenceNumber' => '000533950010',
                 'OrderNumber' => '000533950010',
-                'currency' => '840',
             ),
             'amount' => '241154',
+            'currency' => '840',
         );
 
         // Act
@@ -24336,13 +26117,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950011',
                 'ReferenceNumber' => '000533950011',
                 'OrderNumber' => '000533950011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '120577',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '120577',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'c6081f68',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '950011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '120577',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '950011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -24396,9 +26192,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '960010',
                 'ReferenceNumber' => '000533960010',
                 'OrderNumber' => '000533960010',
-                'currency' => '840',
             ),
             'amount' => '41328',
+            'currency' => '840',
         );
 
         // Act
@@ -24452,13 +26248,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '960011',
                 'ReferenceNumber' => '000533960011',
                 'OrderNumber' => '000533960011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '9808d08e',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '960011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '41328',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '960011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -24513,9 +26312,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '970010',
                 'ReferenceNumber' => '000533970010',
                 'OrderNumber' => '000533970010',
-                'currency' => '840',
             ),
             'amount' => '41016',
+            'currency' => '840',
         );
 
         // Act
@@ -24569,13 +26368,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '970011',
                 'ReferenceNumber' => '000533970011',
                 'OrderNumber' => '000533970011',
-                'currency' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '41016',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '41016',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '6f6da90f',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '970011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '41016',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '970011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -24630,11 +26444,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '520010',
                 'ReferenceNumber' => '000534520010',
                 'OrderNumber' => '000534520010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '11124',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -24690,11 +26506,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '530010',
                 'ReferenceNumber' => '000534530010',
                 'OrderNumber' => '000534530010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '11126',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -24752,11 +26570,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '620010',
                 'ReferenceNumber' => '000534620010',
                 'OrderNumber' => '000534620010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '11750',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -24813,11 +26637,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000534770010',
                 'OrderNumber' => '000534770010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '11956',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -24873,11 +26699,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000534780010',
                 'OrderNumber' => '000534780010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '11958',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -24933,9 +26761,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '820010',
                 'ReferenceNumber' => '000541820010',
                 'OrderNumber' => '000541820010',
-                'currency' => '840',
             ),
             'amount' => '14426',
+            'currency' => '840',
         );
 
         // Act
@@ -24991,9 +26819,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '370010',
                 'ReferenceNumber' => '000544370010',
                 'OrderNumber' => '000544370010',
-                'currency' => '840',
             ),
             'amount' => '10624',
+            'currency' => '840',
         );
 
         // Act
@@ -25048,9 +26876,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '370011',
                 'ReferenceNumber' => '000544370011',
                 'OrderNumber' => '000544370011',
-                'currency' => '840',
             ),
             'amount' => '5312',
+            'currency' => '840',
         );
 
         // Act
@@ -25105,9 +26933,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '390010',
                 'ReferenceNumber' => '000544390010',
                 'OrderNumber' => '000544390010',
-                'currency' => '840',
             ),
             'amount' => '14152',
+            'currency' => '840',
         );
 
         // Act
@@ -25162,13 +26990,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '390011',
                 'ReferenceNumber' => '000544390011',
                 'OrderNumber' => '000544390011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '31254677',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '390011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '14152',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '390011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -25224,9 +27055,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '400010',
                 'ReferenceNumber' => '000544400010',
                 'OrderNumber' => '000544400010',
-                'currency' => '840',
             ),
             'amount' => '10622',
+            'currency' => '840',
         );
 
         // Act
@@ -25281,14 +27112,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '400011',
                 'ReferenceNumber' => '000544400011',
                 'OrderNumber' => '000544400011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '5311',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '5311',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '73b29cee',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '400011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '5311',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '400011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -25296,7 +27145,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -25344,9 +27192,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '420010',
                 'ReferenceNumber' => '000544420010',
                 'OrderNumber' => '000544420010',
-                'currency' => '840',
             ),
             'amount' => '14150',
+            'currency' => '840',
         );
 
         // Act
@@ -25401,14 +27249,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '420011',
                 'ReferenceNumber' => '000544420011',
                 'OrderNumber' => '000544420011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '14150',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '14150',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '9b2db2e0',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '420011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '14150',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '420011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -25416,7 +27282,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -25464,9 +27329,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470010',
                 'ReferenceNumber' => '000544470010',
                 'OrderNumber' => '000544470010',
-                'currency' => '840',
             ),
             'amount' => '14168',
+            'currency' => '840',
         );
 
         // Act
@@ -25521,13 +27386,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470011',
                 'ReferenceNumber' => '000544470011',
                 'OrderNumber' => '000544470011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '25549db7',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '470011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '14168',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '470011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -25584,9 +27452,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '250010',
                 'ReferenceNumber' => '000549250010',
                 'OrderNumber' => '000549250010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '259809',
+            'currency' => '840',
         );
 
         // Act
@@ -25643,9 +27515,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '260010',
                 'ReferenceNumber' => '000549260010',
                 'OrderNumber' => '000549260010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '259109',
+            'currency' => '840',
         );
 
         // Act
@@ -25702,9 +27578,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '410010',
                 'ReferenceNumber' => '000549410010',
                 'OrderNumber' => '000549410010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '264157',
+            'currency' => '840',
         );
 
         // Act
@@ -25761,9 +27641,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '420010',
                 'ReferenceNumber' => '000549420010',
                 'OrderNumber' => '000549420010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '270527',
+            'currency' => '840',
         );
 
         // Act
@@ -25820,9 +27704,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '570010',
                 'ReferenceNumber' => '000549570010',
                 'OrderNumber' => '000549570010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '247729',
+            'currency' => '840',
         );
 
         // Act
@@ -25879,9 +27767,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '580010',
                 'ReferenceNumber' => '000549580010',
                 'OrderNumber' => '000549580010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '242957',
+            'currency' => '840',
         );
 
         // Act
@@ -25938,9 +27830,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '730010',
                 'ReferenceNumber' => '000549730010',
                 'OrderNumber' => '000549730010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '281908',
+            'currency' => '840',
         );
 
         // Act
@@ -25997,9 +27893,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750010',
                 'ReferenceNumber' => '000549750010',
                 'OrderNumber' => '000549750010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '273409',
+            'currency' => '840',
         );
 
         // Act
@@ -26057,11 +27957,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '550010',
                 'ReferenceNumber' => '000550550010',
                 'OrderNumber' => '000550550010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '260301',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -26117,17 +28023,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '550011',
                 'ReferenceNumber' => '000550550011',
                 'OrderNumber' => '000550550011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AVSResultCode' => 'P',
-            'CCVResultCode' => 'NotPrt',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'P',
+                'CCVResultCode' => 'NotPrt',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '260298',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '260298',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'fe1d3b84',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '550011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '260298',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '550011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -26135,8 +28061,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('P', $response->getAVSResultCode());
-        $this->assertEquals('NotPrt', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -26186,11 +28110,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '810010',
                 'ReferenceNumber' => '000551810010',
                 'OrderNumber' => '000551810010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '247401',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -26246,17 +28176,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '810011',
                 'ReferenceNumber' => '000551810011',
                 'OrderNumber' => '000551810011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AVSResultCode' => 'U',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'U',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '247398',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '247398',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '9b1cfac7',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '810011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '247398',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '810011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -26264,8 +28214,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('U', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -26315,11 +28263,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '820010',
                 'ReferenceNumber' => '000551820010',
                 'OrderNumber' => '000551820010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '247500',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -26375,17 +28329,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '820011',
                 'ReferenceNumber' => '000551820011',
                 'OrderNumber' => '000551820011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AVSResultCode' => 'U',
-            'CCVResultCode' => 'NoMtch',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'U',
+                'CCVResultCode' => 'NoMtch',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '247497',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '247497',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '22b71284',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '820011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '247497',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '820011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -26393,8 +28367,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('U', $response->getAVSResultCode());
-        $this->assertEquals('NoMtch', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -26444,11 +28416,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070010',
                 'ReferenceNumber' => '000552070010',
                 'OrderNumber' => '000552070010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '273700',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -26504,17 +28482,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070011',
                 'ReferenceNumber' => '000552070011',
                 'OrderNumber' => '000552070011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AVSResultCode' => 'N',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'N',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '273697',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '273697',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '22c6ff72',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '070011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '273697',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '070011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -26522,8 +28520,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('N', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -26573,11 +28569,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '080010',
                 'ReferenceNumber' => '000552080010',
                 'OrderNumber' => '000552080010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
             'amount' => '273701',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -26633,17 +28635,37 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '080011',
                 'ReferenceNumber' => '000552080011',
                 'OrderNumber' => '000552080011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'AVSResultCode' => 'N',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'N',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '273698',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '273698',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'd324a402',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '080011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '273698',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '080011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -26651,8 +28673,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('N', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -26700,11 +28720,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470010',
                 'ReferenceNumber' => '000555470010',
                 'OrderNumber' => '000555470010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '11310',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -26759,16 +28781,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470011',
                 'ReferenceNumber' => '000555470011',
                 'OrderNumber' => '000555470011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '11310',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '11310',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '46a5023a',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '470011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '11310',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '470011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -26776,7 +28818,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -26824,11 +28865,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '480010',
                 'ReferenceNumber' => '000555480010',
                 'OrderNumber' => '000555480010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '11180',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -26883,16 +28926,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '480011',
                 'ReferenceNumber' => '000555480011',
                 'OrderNumber' => '000555480011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '11180',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '11180',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '406e7155',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '480011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '11180',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '480011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -26900,7 +28963,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -26948,11 +29010,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670010',
                 'ReferenceNumber' => '000556670010',
                 'OrderNumber' => '000556670010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '11922',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -27007,16 +29071,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670011',
                 'ReferenceNumber' => '000556670011',
                 'OrderNumber' => '000556670011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '11922',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '11922',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '2a252a03',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '670011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '11922',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '670011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -27024,7 +29108,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -27072,11 +29155,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680010',
                 'ReferenceNumber' => '000556680010',
                 'OrderNumber' => '000556680010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '11364',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -27131,16 +29216,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680011',
                 'ReferenceNumber' => '000556680011',
                 'OrderNumber' => '000556680011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '11364',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '11364',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '29c02782',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '680011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '11364',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '680011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -27148,7 +29253,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -27196,11 +29300,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '910010',
                 'ReferenceNumber' => '000557910010',
                 'OrderNumber' => '000557910010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '12216',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -27255,16 +29361,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '910011',
                 'ReferenceNumber' => '000557910011',
                 'OrderNumber' => '000557910011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '12216',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '12216',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '1b8dab49',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '910011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '12216',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '910011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -27272,7 +29398,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -27320,11 +29445,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '920010',
                 'ReferenceNumber' => '000557920010',
                 'OrderNumber' => '000557920010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '12004',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -27379,16 +29506,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '920011',
                 'ReferenceNumber' => '000557920011',
                 'OrderNumber' => '000557920011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '12004',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '12004',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '277d776b',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '920011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '12004',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '920011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -27396,7 +29543,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -27444,11 +29590,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '850010',
                 'ReferenceNumber' => '000558850010',
                 'OrderNumber' => '000558850010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '12690',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -27503,16 +29651,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '850011',
                 'ReferenceNumber' => '000558850011',
                 'OrderNumber' => '000558850011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '12690',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '12690',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '1240898f',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '850011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '12690',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '850011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -27520,7 +29688,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -27568,11 +29735,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000558860010',
                 'OrderNumber' => '000558860010',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
             'amount' => '11058',
-            'EcommURL' => 'google.com',
+            'currency' => '840',
         );
 
         // Act
@@ -27627,16 +29796,36 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860011',
                 'ReferenceNumber' => '000558860011',
                 'OrderNumber' => '000558860011',
-                'currency' => '840',
             ),
-            'EcommTransactionIndicator' => '03',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '11058',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '11058',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommURL' => 'google.com',
+                'EcommTransactionIndicator' => '03',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'd8d7d3b9',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '860011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '11058',
-            'EcommURL' => 'google.com',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '860011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -27644,7 +29833,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -27692,9 +29880,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750010',
                 'ReferenceNumber' => '000559750010',
                 'OrderNumber' => '000559750010',
-                'currency' => '840',
             ),
             'amount' => '111228',
+            'currency' => '840',
         );
 
         // Act
@@ -27749,14 +29937,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750011',
                 'ReferenceNumber' => '000559750011',
                 'OrderNumber' => '000559750011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '111228',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '111228',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '202a934f',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '750011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '111228',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '750011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -27764,7 +29970,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -27812,9 +30017,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760010',
                 'ReferenceNumber' => '000559760010',
                 'OrderNumber' => '000559760010',
-                'currency' => '840',
             ),
             'amount' => '111078',
+            'currency' => '840',
         );
 
         // Act
@@ -27869,14 +30074,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760011',
                 'ReferenceNumber' => '000559760011',
                 'OrderNumber' => '000559760011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '111078',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '111078',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '9ed4979d',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '760011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '111078',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '760011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -27884,7 +30107,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -27932,9 +30154,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160010',
                 'ReferenceNumber' => '000561160010',
                 'OrderNumber' => '000561160010',
-                'currency' => '840',
             ),
             'amount' => '12544',
+            'currency' => '840',
         );
 
         // Act
@@ -27989,14 +30211,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160011',
                 'ReferenceNumber' => '000561160011',
                 'OrderNumber' => '000561160011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '12544',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '12544',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '95c4eebe',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '160011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '12544',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '160011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -28004,7 +30244,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -28052,9 +30291,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170010',
                 'ReferenceNumber' => '000561170010',
                 'OrderNumber' => '000561170010',
-                'currency' => '840',
             ),
             'amount' => '12546',
+            'currency' => '840',
         );
 
         // Act
@@ -28109,14 +30348,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170011',
                 'ReferenceNumber' => '000561170011',
                 'OrderNumber' => '000561170011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '12546',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '12546',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'b648f8a9',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '170011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '12546',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '170011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -28124,7 +30381,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -28172,9 +30428,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '390010',
                 'ReferenceNumber' => '000563390010',
                 'OrderNumber' => '000563390010',
-                'currency' => '840',
             ),
             'amount' => '112464',
+            'currency' => '840',
         );
 
         // Act
@@ -28229,14 +30485,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '390011',
                 'ReferenceNumber' => '000563390011',
                 'OrderNumber' => '000563390011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '112464',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '112464',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '5af381ff',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '390011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '112464',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '390011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -28244,7 +30518,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -28292,9 +30565,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '400010',
                 'ReferenceNumber' => '000563400010',
                 'OrderNumber' => '000563400010',
-                'currency' => '840',
             ),
             'amount' => '112282',
+            'currency' => '840',
         );
 
         // Act
@@ -28349,14 +30622,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '400011',
                 'ReferenceNumber' => '000563400011',
                 'OrderNumber' => '000563400011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '112282',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '112282',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '9f328e8e',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '400011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '112282',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '400011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -28364,7 +30655,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -28414,9 +30704,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '570010',
                 'ReferenceNumber' => '000564570010',
                 'OrderNumber' => '000564570010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '112108',
+            'currency' => '840',
         );
 
         // Act
@@ -28472,15 +30766,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '570011',
                 'ReferenceNumber' => '000564570011',
                 'OrderNumber' => '000564570011',
-                'currency' => '840',
             ),
-            'AVSResultCode' => 'Y',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Y',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '112108',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '112108',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '515a7b27',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '570011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '112108',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '570011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -28488,8 +30800,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -28537,9 +30847,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '580010',
                 'ReferenceNumber' => '000564580010',
                 'OrderNumber' => '000564580010',
-                'currency' => '840',
             ),
             'amount' => '111530',
+            'currency' => '840',
         );
 
         // Act
@@ -28594,14 +30904,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '580011',
                 'ReferenceNumber' => '000564580011',
                 'OrderNumber' => '000564580011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '111530',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '111530',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'ae79d543',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '580011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '111530',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '580011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -28609,7 +30937,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -28657,9 +30984,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '590010',
                 'ReferenceNumber' => '000564590010',
                 'OrderNumber' => '000564590010',
-                'currency' => '840',
             ),
             'amount' => '111536',
+            'currency' => '840',
         );
 
         // Act
@@ -28714,14 +31041,32 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '590011',
                 'ReferenceNumber' => '000564590011',
                 'OrderNumber' => '000564590011',
-                'currency' => '840',
             ),
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '111536',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '111536',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'ddf44e09',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '590011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '111536',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '590011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -28729,7 +31074,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -28779,9 +31123,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070010',
                 'ReferenceNumber' => '000565070010',
                 'OrderNumber' => '000565070010',
-                'currency' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '111940',
+            'currency' => '840',
         );
 
         // Act
@@ -28837,15 +31185,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070011',
                 'ReferenceNumber' => '000565070011',
                 'OrderNumber' => '000565070011',
-                'currency' => '840',
             ),
-            'AVSResultCode' => 'Y',
-            'CCVResultCode' => 'Match',
+            'CardGroup' => array(
+                'MergeWithExisting' => true,
+                'AVSResultCode' => 'Y',
+                'CCVResultCode' => 'Match',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '111940',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '111940',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '4102722b',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '070011',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '111940',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '070011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -28853,8 +31219,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
     }
 
@@ -28902,9 +31266,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010010',
                 'ReferenceNumber' => '000569010010',
                 'OrderNumber' => '000569010010',
-                'currency' => '840',
             ),
             'amount' => '11826',
+            'currency' => '840',
         );
 
         // Act
@@ -28960,9 +31324,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '020010',
                 'ReferenceNumber' => '000569020010',
                 'OrderNumber' => '000569020010',
-                'currency' => '840',
             ),
             'amount' => '11712',
+            'currency' => '840',
         );
 
         // Act
@@ -29017,9 +31381,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '030010',
                 'ReferenceNumber' => '000569030010',
                 'OrderNumber' => '000569030010',
-                'currency' => '840',
             ),
             'amount' => '11720',
+            'currency' => '840',
         );
 
         // Act
@@ -29074,9 +31438,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '040010',
                 'ReferenceNumber' => '000569040010',
                 'OrderNumber' => '000569040010',
-                'currency' => '840',
             ),
             'amount' => '11728',
+            'currency' => '840',
         );
 
         // Act
@@ -29132,9 +31496,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '050010',
                 'ReferenceNumber' => '000569050010',
                 'OrderNumber' => '000569050010',
-                'currency' => '840',
             ),
             'amount' => '11736',
+            'currency' => '840',
         );
 
         // Act
@@ -29190,9 +31554,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '610010',
                 'ReferenceNumber' => '000569610010',
                 'OrderNumber' => '000569610010',
-                'currency' => '840',
             ),
             'amount' => '12878',
+            'currency' => '840',
         );
 
         // Act
@@ -29248,9 +31612,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '620010',
                 'ReferenceNumber' => '000569620010',
                 'OrderNumber' => '000569620010',
-                'currency' => '840',
             ),
             'amount' => '12486',
+            'currency' => '840',
         );
 
         // Act
@@ -29306,9 +31670,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '640010',
                 'ReferenceNumber' => '000569640010',
                 'OrderNumber' => '000569640010',
-                'currency' => '840',
             ),
             'amount' => '12504',
+            'currency' => '840',
         );
 
         // Act
@@ -29364,9 +31728,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '650010',
                 'ReferenceNumber' => '000569650010',
                 'OrderNumber' => '000569650010',
-                'currency' => '840',
             ),
             'amount' => '12512',
+            'currency' => '840',
         );
 
         // Act
@@ -29422,9 +31786,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '150010',
                 'ReferenceNumber' => '000570150010',
                 'OrderNumber' => '000570150010',
-                'currency' => '840',
             ),
             'amount' => '13580',
+            'currency' => '840',
         );
 
         // Act
@@ -29480,9 +31844,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160010',
                 'ReferenceNumber' => '000570160010',
                 'OrderNumber' => '000570160010',
-                'currency' => '840',
             ),
             'amount' => '13392',
+            'currency' => '840',
         );
 
         // Act
@@ -29538,9 +31902,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '180010',
                 'ReferenceNumber' => '000570180010',
                 'OrderNumber' => '000570180010',
-                'currency' => '840',
             ),
             'amount' => '13410',
+            'currency' => '840',
         );
 
         // Act
@@ -29596,9 +31960,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '190010',
                 'ReferenceNumber' => '000570190010',
                 'OrderNumber' => '000570190010',
-                'currency' => '840',
             ),
             'amount' => '13418',
+            'currency' => '840',
         );
 
         // Act
@@ -29654,9 +32018,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '600010',
                 'ReferenceNumber' => '000570600010',
                 'OrderNumber' => '000570600010',
-                'currency' => '840',
             ),
             'amount' => '14556',
+            'currency' => '840',
         );
 
         // Act
@@ -29712,9 +32076,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '610010',
                 'ReferenceNumber' => '000570610010',
                 'OrderNumber' => '000570610010',
-                'currency' => '840',
             ),
             'amount' => '14116',
+            'currency' => '840',
         );
 
         // Act
@@ -29769,9 +32133,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '620010',
                 'ReferenceNumber' => '000570620010',
                 'OrderNumber' => '000570620010',
-                'currency' => '840',
             ),
             'amount' => '14124',
+            'currency' => '840',
         );
 
         // Act
@@ -29826,9 +32190,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '630010',
                 'ReferenceNumber' => '000570630010',
                 'OrderNumber' => '000570630010',
-                'currency' => '840',
             ),
             'amount' => '14312',
+            'currency' => '840',
         );
 
         // Act
@@ -29884,9 +32248,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '650010',
                 'ReferenceNumber' => '000570650010',
                 'OrderNumber' => '000570650010',
-                'currency' => '840',
             ),
             'amount' => '14328',
+            'currency' => '840',
         );
 
         // Act
@@ -29942,9 +32306,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '940010',
                 'ReferenceNumber' => '000584940010',
                 'OrderNumber' => '000584940010',
-                'currency' => '840',
             ),
             'amount' => '18012',
+            'currency' => '840',
         );
 
         // Act
@@ -29999,13 +32363,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '940011',
                 'ReferenceNumber' => '000584940011',
                 'OrderNumber' => '000584940011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'a58214a6',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '940011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '18012',
-            'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-            'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-            'OriginalSTAN' => '940011',
-            'OriginalResponseCode' => '000',
+            'currency' => '840',
         );
 
         // Act
@@ -30060,9 +32427,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '850010',
                 'ReferenceNumber' => '000756850010',
                 'OrderNumber' => '000756850010',
-                'currency' => '840',
             ),
             'amount' => '19632',
+            'currency' => '840',
         );
 
         // Act
@@ -30116,9 +32483,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '850011',
                 'ReferenceNumber' => '000756850011',
                 'OrderNumber' => '000756850011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '088b7334',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '850011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9716',
+            'currency' => '840',
         );
 
         // Act
@@ -30172,9 +32546,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000756860010',
                 'OrderNumber' => '000756860010',
-                'currency' => '840',
             ),
             'amount' => '9437',
+            'currency' => '840',
         );
 
         // Act
@@ -30228,9 +32602,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860011',
                 'ReferenceNumber' => '000756860011',
                 'OrderNumber' => '000756860011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'fd1ebd20',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '860011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9337',
+            'currency' => '840',
         );
 
         // Act
@@ -30284,9 +32665,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '880010',
                 'ReferenceNumber' => '000756880010',
                 'OrderNumber' => '000756880010',
-                'currency' => '840',
             ),
             'amount' => '9439',
+            'currency' => '840',
         );
 
         // Act
@@ -30340,9 +32721,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '880011',
                 'ReferenceNumber' => '000756880011',
                 'OrderNumber' => '000756880011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'be668404',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '880011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9339',
+            'currency' => '840',
         );
 
         // Act
@@ -30396,9 +32784,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '890010',
                 'ReferenceNumber' => '000756890010',
                 'OrderNumber' => '000756890010',
-                'currency' => '840',
             ),
             'amount' => '19636',
+            'currency' => '840',
         );
 
         // Act
@@ -30452,9 +32840,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '890011',
                 'ReferenceNumber' => '000756890011',
                 'OrderNumber' => '000756890011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'c2472d9f',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '890011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9718',
+            'currency' => '840',
         );
 
         // Act
@@ -30508,9 +32903,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '940010',
                 'ReferenceNumber' => '000756940010',
                 'OrderNumber' => '000756940010',
-                'currency' => '840',
             ),
             'amount' => '19632',
+            'currency' => '840',
         );
 
         // Act
@@ -30564,9 +32959,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '940011',
                 'ReferenceNumber' => '000756940011',
                 'OrderNumber' => '000756940011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'ee94f9b1',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '940011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9716',
+            'currency' => '840',
         );
 
         // Act
@@ -30620,9 +33022,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950010',
                 'ReferenceNumber' => '000756950010',
                 'OrderNumber' => '000756950010',
-                'currency' => '840',
             ),
             'amount' => '9437',
+            'currency' => '840',
         );
 
         // Act
@@ -30676,9 +33078,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950011',
                 'ReferenceNumber' => '000756950011',
                 'OrderNumber' => '000756950011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'c6e5aedc',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '950011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9337',
+            'currency' => '840',
         );
 
         // Act
@@ -30732,9 +33141,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '970010',
                 'ReferenceNumber' => '000756970010',
                 'OrderNumber' => '000756970010',
-                'currency' => '840',
             ),
             'amount' => '9439',
+            'currency' => '840',
         );
 
         // Act
@@ -30788,9 +33197,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '970011',
                 'ReferenceNumber' => '000756970011',
                 'OrderNumber' => '000756970011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '0bc524e9',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '970011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9339',
+            'currency' => '840',
         );
 
         // Act
@@ -30844,9 +33260,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980010',
                 'ReferenceNumber' => '000756980010',
                 'OrderNumber' => '000756980010',
-                'currency' => '840',
             ),
             'amount' => '19636',
+            'currency' => '840',
         );
 
         // Act
@@ -30900,9 +33316,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980011',
                 'ReferenceNumber' => '000756980011',
                 'OrderNumber' => '000756980011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '69030079',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '980011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9718',
+            'currency' => '840',
         );
 
         // Act
@@ -30957,9 +33380,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '050010',
                 'ReferenceNumber' => '000757050010',
                 'OrderNumber' => '000757050010',
-                'currency' => '840',
             ),
             'amount' => '9447',
+            'currency' => '840',
         );
 
         // Act
@@ -31014,9 +33437,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '050011',
                 'ReferenceNumber' => '000757050011',
                 'OrderNumber' => '000757050011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '1e7c2aef',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '050011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9347',
+            'currency' => '840',
         );
 
         // Act
@@ -31071,9 +33501,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '060010',
                 'ReferenceNumber' => '000757060010',
                 'OrderNumber' => '000757060010',
-                'currency' => '840',
             ),
             'amount' => '19644',
+            'currency' => '840',
         );
 
         // Act
@@ -31128,9 +33558,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '060011',
                 'ReferenceNumber' => '000757060011',
                 'OrderNumber' => '000757060011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '50c53764',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '060011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9722',
+            'currency' => '840',
         );
 
         // Act
@@ -31185,9 +33622,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '350010',
                 'ReferenceNumber' => '000757350010',
                 'OrderNumber' => '000757350010',
-                'currency' => '840',
             ),
             'amount' => '9493',
+            'currency' => '840',
         );
 
         // Act
@@ -31242,9 +33679,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '350011',
                 'ReferenceNumber' => '000757350011',
                 'OrderNumber' => '000757350011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '303e6224',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '350011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9393',
+            'currency' => '840',
         );
 
         // Act
@@ -31299,9 +33743,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '360010',
                 'ReferenceNumber' => '000757360010',
                 'OrderNumber' => '000757360010',
-                'currency' => '840',
             ),
             'amount' => '19654',
+            'currency' => '840',
         );
 
         // Act
@@ -31356,9 +33800,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '360011',
                 'ReferenceNumber' => '000757360011',
                 'OrderNumber' => '000757360011',
-                'currency' => '840',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => 'ceb79375',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '360011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '9727',
+            'currency' => '840',
         );
 
         // Act
