@@ -57,10 +57,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setOriginalAuthorizationID(string $value)
+    public function setOriginalAuthorizationID($value)
     {
         return $this->setParameter('OriginalAuthorizationID', $value);
     }
@@ -89,10 +89,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setOriginalLocalDateandTime(string $value)
+    public function setOriginalLocalDateandTime($value)
     {
         return $this->setParameter('OriginalLocalDateandTime', $value);
     }
@@ -121,10 +121,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setOriginalTransmissionDateandTime(string $value)
+    public function setOriginalTransmissionDateandTime($value)
     {
         return $this->setParameter('OriginalTransmissionDateandTime', $value);
     }
@@ -153,10 +153,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setOriginalSTAN(string $value)
+    public function setOriginalSTAN($value)
     {
         return $this->setParameter('OriginalSTAN', $value);
     }
@@ -185,10 +185,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setOriginalResponseCode(string $value)
+    public function setOriginalResponseCode($value)
     {
         return $this->setParameter('OriginalResponseCode', $value);
     }
@@ -217,10 +217,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setOriginalAuthorizingNetworkID(string $value)
+    public function setOriginalAuthorizingNetworkID($value)
     {
         return $this->setParameter('OriginalAuthorizingNetworkID', $value);
     }

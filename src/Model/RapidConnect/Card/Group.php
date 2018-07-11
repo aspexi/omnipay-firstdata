@@ -108,10 +108,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAccountNumber(string $value)
+    public function setAccountNumber($value)
     {
         return $this->setParameter('AccountNumber', $value);
     }
@@ -170,10 +170,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCardExpirationDate(string $value)
+    public function setCardExpirationDate($value)
     {
         return $this->setParameter('CardExpirationDate', $value);
     }
@@ -202,10 +202,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTrack1Data(string $value)
+    public function setTrack1Data($value)
     {
         return $this->setParameter('Track1Data', $value);
     }
@@ -230,10 +230,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTrack2Data(string $value)
+    public function setTrack2Data($value)
     {
         return $this->setParameter('Track2Data', $value);
     }
@@ -259,10 +259,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCardType(string $value)
+    public function setCardType($value)
     {
         return $this->setParameter('CardType', $value);
     }
@@ -324,10 +324,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAVSResultCode(string $value)
+    public function setAVSResultCode($value)
     {
         return $this->setParameter('AVSResultCode', $value);
     }
@@ -377,10 +377,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCCVIndicator(string $value)
+    public function setCCVIndicator($value)
     {
         return $this->setParameter('CCVIndicator', $value);
     }
@@ -407,10 +407,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCCVData(string $value)
+    public function setCCVData($value)
     {
         return $this->setParameter('CCVData', $value);
     }
@@ -439,10 +439,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCCVResultCode(string $value)
+    public function setCCVResultCode($value)
     {
         return $this->setParameter('CCVResultCode', $value);
     }
@@ -469,10 +469,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMVVMAID(string $value)
+    public function setMVVMAID($value)
     {
         return $this->setParameter('MVVMAID', $value);
     }
@@ -501,10 +501,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCardInfoRequestIndicator(string $value)
+    public function setCardInfoRequestIndicator($value)
     {
         return $this->setParameter('CardInfoRequestIndicator', $value);
     }

@@ -45,10 +45,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAmExPOSData(string $value)
+    public function setAmExPOSData($value)
     {
         return $this->setParameter('AmExPOSData', $value);
     }
@@ -77,10 +77,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAmExTranID(string $value)
+    public function setAmExTranID($value)
     {
         return $this->setParameter('AmExTranID', $value);
     }
@@ -106,10 +106,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setGoodsSoldCode(string $value)
+    public function setGoodsSoldCode($value)
     {
         return $this->setParameter('GoodsSoldCode', $value);
     }
@@ -136,10 +136,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setReAuthIndicator(string $value)
+    public function setReAuthIndicator($value)
     {
         return $this->setParameter('ReAuthIndicator', $value);
     }

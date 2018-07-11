@@ -33,10 +33,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setServiceLevel(string $value)
+    public function setServiceLevel($value)
     {
         return $this->setParameter('ServiceLevel', $value);
     }
@@ -63,10 +63,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setNumberofProducts(string $value)
+    public function setNumberofProducts($value)
     {
         return $this->setParameter('NumberofProducts', $value);
     }

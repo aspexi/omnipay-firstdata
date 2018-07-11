@@ -231,10 +231,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setPaymentType(string $value)
+    public function setPaymentType($value)
     {
         return $this->setParameter('PaymentType', $value);
     }
@@ -261,10 +261,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setReversalReasonCode(string $value)
+    public function setReversalReasonCode($value)
     {
         return $this->setParameter('ReversalReasonCode', $value);
     }
@@ -302,10 +302,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTransactionType(string $value)
+    public function setTransactionType($value)
     {
         return $this->setParameter('TransactionType', $value);
     }
@@ -368,10 +368,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setLocalDateandTime(string $value)
+    public function setLocalDateandTime($value)
     {
         return $this->setParameter('LocalDateandTime', $value);
     }
@@ -400,10 +400,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTransmissionDateandTime(string $value)
+    public function setTransmissionDateandTime($value)
     {
         return $this->setParameter('TransmissionDateandTime', $value);
     }
@@ -432,10 +432,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setSTAN(string $value)
+    public function setSTAN($value)
     {
         return $this->setParameter('STAN', $value);
     }
@@ -464,10 +464,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setReferenceNumber(string $value)
+    public function setReferenceNumber($value)
     {
         return $this->setParameter('ReferenceNumber', $value);
     }
@@ -493,10 +493,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setOrderNumber(string $value)
+    public function setOrderNumber($value)
     {
         return $this->setParameter('OrderNumber', $value);
     }
@@ -525,10 +525,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTPPID(string $value)
+    public function setTPPID($value)
     {
         return $this->setParameter('TPPID', $value);
     }
@@ -557,10 +557,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTerminalID(string $value)
+    public function setTerminalID($value)
     {
         return $this->setParameter('TerminalID', $value);
     }
@@ -589,10 +589,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantID(string $value)
+    public function setMerchantID($value)
     {
         return $this->setParameter('MerchantID', $value);
     }
@@ -621,10 +621,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantCategoryCode(string $value)
+    public function setMerchantCategoryCode($value)
     {
         return $this->setParameter('MerchantCategoryCode', $value);
     }
@@ -687,10 +687,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setPOSConditionCode(string $value)
+    public function setPOSConditionCode($value)
     {
         return $this->setParameter('POSConditionCode', $value);
     }
@@ -717,10 +717,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTerminalCategoryCode(string $value)
+    public function setTerminalCategoryCode($value)
     {
         return $this->setParameter('TerminalCategoryCode', $value);
     }
@@ -747,10 +747,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTerminalEntryCapability(string $value)
+    public function setTerminalEntryCapability($value)
     {
         return $this->setParameter('TerminalEntryCapability', $value);
     }
@@ -777,10 +777,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTransactionAmount(string $value)
+    public function setTransactionAmount($value)
     {
         return $this->setParameter('TransactionAmount', $value);
     }
@@ -803,7 +803,7 @@ class Group extends BaseGroup
         return $this->getTransactionCurrency();
     }
 
-    public function setCurrency(string $value)
+    public function setCurrency($value)
     {
         return $this->setTransactionCurrency($value);
     }
@@ -823,10 +823,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTransactionCurrency(string $value)
+    public function setTransactionCurrency($value)
     {
         return $this->setParameter('TransactionCurrency', $value);
     }
@@ -855,10 +855,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTerminalLocationIndicator(string $value)
+    public function setTerminalLocationIndicator($value)
     {
         return $this->setParameter('TerminalLocationIndicator', $value);
     }
@@ -885,10 +885,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCardCaptureCapability(string $value)
+    public function setCardCaptureCapability($value)
     {
         return $this->setParameter('CardCaptureCapability', $value);
     }
@@ -915,10 +915,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setGroupID(string $value)
+    public function setGroupID($value)
     {
         return $this->setParameter('GroupID', $value);
     }
@@ -947,10 +947,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setPOSID(string $value)
+    public function setPOSID($value)
     {
         return $this->setParameter('POSID', $value);
     }
@@ -979,10 +979,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setSettlementIndicator(string $value)
+    public function setSettlementIndicator($value)
     {
         return $this->setParameter('SettlementIndicator', $value);
     }
@@ -1009,10 +1009,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setClerkID(string $value)
+    public function setClerkID($value)
     {
         return $this->setParameter('ClerkID', $value);
     }
@@ -1038,10 +1038,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setServiceEntitlementNumber(string $value)
+    public function setServiceEntitlementNumber($value)
     {
         return $this->setParameter('ServiceEntitlementNumber', $value);
     }
@@ -1070,10 +1070,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setPINLessPOSDebitFlag(string $value)
+    public function setPINLessPOSDebitFlag($value)
     {
         return $this->setParameter('PINLessPOSDebitFlag', $value);
     }
@@ -1100,10 +1100,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setNetworkAccessIndicator(string $value)
+    public function setNetworkAccessIndicator($value)
     {
         return $this->setParameter('NetworkAccessIndicator', $value);
     }
@@ -1130,10 +1130,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantEcho(string $value)
+    public function setMerchantEcho($value)
     {
         return $this->setParameter('MerchantEcho', $value);
     }
@@ -1159,10 +1159,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setWalletIdentifier(string $value)
+    public function setWalletIdentifier($value)
     {
         return $this->setParameter('WalletIdentifier', $value);
     }
@@ -1191,10 +1191,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setNonUSMerchant(string $value)
+    public function setNonUSMerchant($value)
     {
         return $this->setParameter('NonUSMerchant', $value);
     }
@@ -1221,10 +1221,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDeviceBatchID(string $value)
+    public function setDeviceBatchID($value)
     {
         return $this->setParameter('DeviceBatchID', $value);
     }
@@ -1253,10 +1253,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDigitalWalletIndicator(string $value)
+    public function setDigitalWalletIndicator($value)
     {
         return $this->setParameter('DigitalWalletIndicator', $value);
     }
@@ -1283,10 +1283,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDigitalWalletProgramType(string $value)
+    public function setDigitalWalletProgramType($value)
     {
         return $this->setParameter('DigitalWalletProgramType', $value);
     }
@@ -1313,10 +1313,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTransactionInitiation(string $value)
+    public function setTransactionInitiation($value)
     {
         return $this->setParameter('TransactionInitiation', $value);
     }
@@ -1343,10 +1343,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setPaymentService(string $value)
+    public function setPaymentService($value)
     {
         return $this->setParameter('PaymentService', $value);
     }

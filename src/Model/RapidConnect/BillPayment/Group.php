@@ -45,10 +45,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setBillPaymentTransactionIndicator(string $value)
+    public function setBillPaymentTransactionIndicator($value)
     {
         return $this->setParameter('BillPaymentTransactionIndicator', $value);
     }
@@ -75,10 +75,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantAdviceCode(string $value)
+    public function setMerchantAdviceCode($value)
     {
         return $this->setParameter('MerchantAdviceCode', $value);
     }
@@ -107,10 +107,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setInstallmentPaymentInvoiceNumber(string $value)
+    public function setInstallmentPaymentInvoiceNumber($value)
     {
         return $this->setParameter('InstallmentPaymentInvoiceNumber', $value);
     }
@@ -136,10 +136,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setInstallmentPaymentDescription(string $value)
+    public function setInstallmentPaymentDescription($value)
     {
         return $this->setParameter('InstallmentPaymentDescription', $value);
     }

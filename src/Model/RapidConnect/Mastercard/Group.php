@@ -87,10 +87,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setBankNetData(string $value)
+    public function setBankNetData($value)
     {
         return $this->setParameter('BankNetData', $value);
     }
@@ -119,10 +119,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCCVErrorCode(string $value)
+    public function setCCVErrorCode($value)
     {
         return $this->setParameter('CCVErrorCode', $value);
     }
@@ -149,7 +149,7 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
     public function setPOSEntryModeChange($value)
@@ -179,10 +179,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTransactionEditErrorCode(string $value)
+    public function setTransactionEditErrorCode($value)
     {
         return $this->setParameter('TransactionEditErrorCode', $value);
     }
@@ -211,10 +211,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMasterCardPOSData(string $value)
+    public function setMasterCardPOSData($value)
     {
         return $this->setParameter('MasterCardPOSData', $value);
     }
@@ -243,10 +243,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDeviceTypeIndicator(string $value)
+    public function setDeviceTypeIndicator($value)
     {
         return $this->setParameter('DeviceTypeIndicator', $value);
     }
@@ -281,10 +281,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMasterCardACI(string $value)
+    public function setMasterCardACI($value)
     {
         return $this->setParameter('MasterCardACI', $value);
     }
@@ -311,10 +311,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMasterCardAdditionalData(string $value)
+    public function setMasterCardAdditionalData($value)
     {
         return $this->setParameter('MasterCardAdditionalData', $value);
     }
@@ -343,10 +343,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAuthorizationType(string $value)
+    public function setAuthorizationType($value)
     {
         return $this->setParameter('AuthorizationType', $value);
     }
@@ -373,10 +373,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTransactionIntegrityClass(string $value)
+    public function setTransactionIntegrityClass($value)
     {
         return $this->setParameter('TransactionIntegrityClass', $value);
     }
@@ -401,6 +401,35 @@ class Group extends BaseGroup
             'UnknownCNP',
             'Validated'
         );
+        return in_array($value, $valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getMarketSpecificDataIndicator()
+    {
+        return $this->getParameter('MarketSpecificDataIndicator');
+    }
+
+
+    /**
+     * @param $value
+     * @return string
+     */
+    public function setMarketSpecificDataIndicator($value)
+    {
+        return $this->setParameter('MarketSpecificDataIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateMarketSpecificDataIndicator()
+    {
+        $value = $this->getParameter('MarketSpecificDataIndicator');
+        $valid = array('BillPaymentGroup', 'Healthcare', 'Transit', 'EcomAgg', 'B2B', 'Hotel', 'AutoRental');
         return in_array($value, $valid);
     }
 }

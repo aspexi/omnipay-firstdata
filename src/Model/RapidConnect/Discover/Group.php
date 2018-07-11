@@ -87,10 +87,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDiscoverProcessingCode(string $value)
+    public function setDiscoverProcessingCode($value)
     {
         return $this->setParameter('DiscoverProcessingCode', $value);
     }
@@ -119,10 +119,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDiscoverPOSEntryMode(string $value)
+    public function setDiscoverPOSEntryMode($value)
     {
         return $this->setParameter('DiscoverPOSEntryMode', $value);
     }
@@ -151,10 +151,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDiscoverResponseCode(string $value)
+    public function setDiscoverResponseCode($value)
     {
         return $this->setParameter('DiscoverResponseCode', $value);
     }
@@ -183,10 +183,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDiscoverPOSData(string $value)
+    public function setDiscoverPOSData($value)
     {
         return $this->setParameter('DiscoverPOSData', $value);
     }
@@ -215,10 +215,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDiscoverTransactionQualifier(string $value)
+    public function setDiscoverTransactionQualifier($value)
     {
         return $this->setParameter('DiscoverTransactionQualifier', $value);
     }
@@ -247,10 +247,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDiscoverNRID(string $value)
+    public function setDiscoverNRID($value)
     {
         return $this->setParameter('DiscoverNRID', $value);
     }
@@ -279,10 +279,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMOTOIndicator(string $value)
+    public function setMOTOIndicator($value)
     {
         return $this->setParameter('MOTOIndicator', $value);
     }
@@ -309,10 +309,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setRegisteredUserIndicator(string $value)
+    public function setRegisteredUserIndicator($value)
     {
         return $this->setParameter('RegisteredUserIndicator', $value);
     }
@@ -339,10 +339,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setRegisteredUserProfileChangeDate(string $value)
+    public function setRegisteredUserProfileChangeDate($value)
     {
         return $this->setParameter('RegisteredUserProfileChangeDate', $value);
     }
@@ -371,10 +371,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setPartialShipmentIndicator(string $value)
+    public function setPartialShipmentIndicator($value)
     {
         return $this->setParameter('PartialShipmentIndicator', $value);
     }

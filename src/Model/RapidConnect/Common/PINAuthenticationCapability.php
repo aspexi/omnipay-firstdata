@@ -32,10 +32,10 @@ class PINAuthenticationCapability
     }
 
     /**
-     * @param string $value
+     * @param $value
      * @return bool
      */
-    public static function IsValidPAC(string $value)
+    public static function IsValidPAC($value)
     {
         return in_array($value, self::GetValidPACs());
     }

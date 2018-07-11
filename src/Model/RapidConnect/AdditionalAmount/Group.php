@@ -52,10 +52,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAdditionalAmount(string $value)
+    public function setAdditionalAmount($value)
     {
         return $this->setParameter('AdditionalAmount', $value);
     }
@@ -84,10 +84,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAdditionalAmountCurrency(string $value)
+    public function setAdditionalAmountCurrency($value)
     {
         return $this->setParameter('AdditionalAmountCurrency', $value);
     }
@@ -116,10 +116,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAdditionalAmountType(string $value)
+    public function setAdditionalAmountType($value)
     {
         return $this->setParameter('AdditionalAmountType', $value);
     }
@@ -146,10 +146,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAdditionalAmountAccountType(string $value)
+    public function setAdditionalAmountAccountType($value)
     {
         return $this->setParameter('AdditionalAmountAccountType', $value);
     }
@@ -178,10 +178,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setPartialAuthorizationApprovalCapability(string $value)
+    public function setPartialAuthorizationApprovalCapability($value)
     {
         return $this->setParameter('PartialAuthorizationApprovalCapability', $value);
     }

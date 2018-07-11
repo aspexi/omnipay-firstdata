@@ -87,10 +87,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setVisaXID(string $value)
+    public function setVisaXID($value)
     {
         return $this->setParameter('VisaXID', $value);
     }
@@ -119,10 +119,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setVisaSecureTransactionAuthenticationData(string $value)
+    public function setVisaSecureTransactionAuthenticationData($value)
     {
         return $this->setParameter('VisaSecureTransactionAuthenticationData', $value);
     }
@@ -151,10 +151,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCAVVResultCode(string $value)
+    public function setCAVVResultCode($value)
     {
         return $this->setParameter('CAVVResultCode', $value);
     }
@@ -181,10 +181,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAmexXID(string $value)
+    public function setAmexXID($value)
     {
         return $this->setParameter('AmexXID', $value);
     }
@@ -213,10 +213,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAmexSecureData(string $value)
+    public function setAmexSecureData($value)
     {
         return $this->setParameter('AmexSecureData', $value);
     }
@@ -245,10 +245,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setSafekeyResultCode(string $value)
+    public function setSafekeyResultCode($value)
     {
         return $this->setParameter('SafekeyResultCode', $value);
     }
@@ -275,10 +275,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setUCAFCollectionIndicator(string $value)
+    public function setUCAFCollectionIndicator($value)
     {
         return $this->setParameter('UCAFCollectionIndicator', $value);
     }
@@ -305,10 +305,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMasterCardSecureData(string $value)
+    public function setMasterCardSecureData($value)
     {
         return $this->setParameter('MasterCardSecureData', $value);
     }
@@ -334,10 +334,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDiscoverAuthenticationType(string $value)
+    public function setDiscoverAuthenticationType($value)
     {
         return $this->setParameter('DiscoverAuthenticationType', $value);
     }
@@ -364,10 +364,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setDiscoverSecureData(string $value)
+    public function setDiscoverSecureData($value)
     {
         return $this->setParameter('DiscoverSecureData', $value);
     }
@@ -399,10 +399,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setSecureDataDowngrade(string $value)
+    public function setSecureDataDowngrade($value)
     {
         return $this->setParameter('SecureDataDowngrade', $value);
     }

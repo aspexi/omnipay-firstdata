@@ -27,10 +27,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setOrderNumber(string $value)
+    public function setOrderNumber($value)
     {
         return $this->setParameter('OrderNumber', $value);
     }

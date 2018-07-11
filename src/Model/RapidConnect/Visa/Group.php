@@ -111,10 +111,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAuthorizationCharacteristicsIndicatorACI(string $value)
+    public function setAuthorizationCharacteristicsIndicatorACI($value)
     {
         return $this->setParameter('AuthorizationCharacteristicsIndicatorACI', $value);
     }
@@ -141,10 +141,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMarketSpecificDataIndicator(string $value)
+    public function setMarketSpecificDataIndicator($value)
     {
         return $this->setParameter('MarketSpecificDataIndicator', $value);
     }
@@ -170,10 +170,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setExistingDebtIndicator(string $value)
+    public function setExistingDebtIndicator($value)
     {
         return $this->setParameter('ExistingDebtIndicator', $value);
     }
@@ -200,10 +200,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCardLevelResultCode(string $value)
+    public function setCardLevelResultCode($value)
     {
         return $this->setParameter('CardLevelResultCode', $value);
     }
@@ -229,10 +229,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setSourceReasonCode(string $value)
+    public function setSourceReasonCode($value)
     {
         return $this->setParameter('SourceReasonCode', $value);
     }
@@ -261,10 +261,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTransactionIdentifier(string $value)
+    public function setTransactionIdentifier($value)
     {
         return $this->setParameter('TransactionIdentifier', $value);
     }
@@ -290,10 +290,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setVisaBID(string $value)
+    public function setVisaBID($value)
     {
         return $this->setParameter('VisaBID', $value);
     }
@@ -319,10 +319,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setVisaAUAR(string $value)
+    public function setVisaAUAR($value)
     {
         return $this->setParameter('VisaAUAR', $value);
     }
@@ -351,10 +351,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setTaxAmountCapability(string $value)
+    public function setTaxAmountCapability($value)
     {
         return $this->setParameter('TaxAmountCapability', $value);
     }
@@ -381,10 +381,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setSpendQualifiedIndicator(string $value)
+    public function setSpendQualifiedIndicator($value)
     {
         return $this->setParameter('SpendQualifiedIndicator', $value);
     }
@@ -413,10 +413,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setVisaCheckoutIndicator(string $value)
+    public function setVisaCheckoutIndicator($value)
     {
         return $this->setParameter('VisaCheckoutIndicator', $value);
     }
@@ -443,10 +443,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setQuasiCashIndicator(string $value)
+    public function setQuasiCashIndicator($value)
     {
         return $this->setParameter('QuasiCashIndicator', $value);
     }
@@ -473,10 +473,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAuthIndicator(string $value)
+    public function setAuthIndicator($value)
     {
         return $this->setParameter('AuthIndicator', $value);
     }
@@ -503,10 +503,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setStoredCredentialIndicator(string $value)
+    public function setStoredCredentialIndicator($value)
     {
         return $this->setParameter('StoredCredentialIndicator', $value);
     }
@@ -533,10 +533,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCardOnFileScheduleIndicator(string $value)
+    public function setCardOnFileScheduleIndicator($value)
     {
         return $this->setParameter('CardOnFileScheduleIndicator', $value);
     }

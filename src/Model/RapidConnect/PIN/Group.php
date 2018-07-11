@@ -33,10 +33,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setPINData(string $value)
+    public function setPINData($value)
     {
         return $this->setParameter('PINData', $value);
     }
@@ -65,10 +65,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setKeySerialNumberData(string $value)
+    public function setKeySerialNumberData($value)
     {
         return $this->setParameter('KeySerialNumberData', $value);
     }

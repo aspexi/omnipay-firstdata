@@ -51,10 +51,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setEcommTransactionIndicator(string $value)
+    public function setEcommTransactionIndicator($value)
     {
         return $this->setParameter('EcommTransactionIndicator', $value);
     }
@@ -81,10 +81,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCustomerServicePhoneNumber(string $value)
+    public function setCustomerServicePhoneNumber($value)
     {
         return $this->setParameter('CustomerServicePhoneNumber', $value);
     }
@@ -113,10 +113,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setEcommURL(string $value)
+    public function setEcommURL($value)
     {
         return $this->setParameter('EcommURL', $value);
     }
@@ -142,10 +142,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMultipleClearingSequenceNumber(string $value)
+    public function setMultipleClearingSequenceNumber($value)
     {
         return $this->setParameter('MultipleClearingSequenceNumber', $value);
     }
@@ -174,10 +174,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMultipleClearingSequenceCount(string $value)
+    public function setMultipleClearingSequenceCount($value)
     {
         return $this->setParameter('MultipleClearingSequenceCount', $value);
     }

@@ -53,10 +53,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAVSBillingAddress(string $value)
+    public function setAVSBillingAddress($value)
     {
         return $this->setParameter('AVSBillingAddress', $value);
     }
@@ -82,10 +82,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setAVSBillingPostalCode(string $value)
+    public function setAVSBillingPostalCode($value)
     {
         return $this->setParameter('AVSBillingPostalCode', $value);
     }
@@ -150,10 +150,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCardHolderFirstName(string $value)
+    public function setCardHolderFirstName($value)
     {
         return $this->setParameter('CardHolderFirstName', $value);
     }
@@ -179,10 +179,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCardHolderLastName(string $value)
+    public function setCardHolderLastName($value)
     {
         return $this->setParameter('CardHolderLastName', $value);
     }
@@ -208,10 +208,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setCardHolderFullNameResult(string $value)
+    public function setCardHolderFullNameResult($value)
     {
         return $this->setParameter('CardHolderFullNameResult', $value);
     }

@@ -69,10 +69,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantName(string $value)
+    public function setMerchantName($value)
     {
         return $this->setParameter('MerchantName', $value);
     }
@@ -98,10 +98,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantAddress(string $value)
+    public function setMerchantAddress($value)
     {
         return $this->setParameter('MerchantAddress', $value);
     }
@@ -127,10 +127,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantCity(string $value)
+    public function setMerchantCity($value)
     {
         return $this->setParameter('MerchantCity', $value);
     }
@@ -156,10 +156,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantState(string $value)
+    public function setMerchantState($value)
     {
         return $this->setParameter('MerchantState', $value);
     }
@@ -188,10 +188,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantCounty(string $value)
+    public function setMerchantCounty($value)
     {
         return $this->setParameter('MerchantCounty', $value);
     }
@@ -220,10 +220,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantPostalCode(string $value)
+    public function setMerchantPostalCode($value)
     {
         return $this->setParameter('MerchantPostalCode', $value);
     }
@@ -252,10 +252,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantCountry(string $value)
+    public function setMerchantCountry($value)
     {
         return $this->setParameter('MerchantCountry', $value);
     }
@@ -284,10 +284,10 @@ class Group extends BaseGroup
 
 
     /**
-     * @param string $value
+     * @param $value
      * @return string
      */
-    public function setMerchantEmailAddress(string $value)
+    public function setMerchantEmailAddress($value)
     {
         return $this->setParameter('MerchantEmailAddress', $value);
     }
