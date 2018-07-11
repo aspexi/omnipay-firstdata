@@ -463,7 +463,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000001360010()
+    public function testCaseNumber000001360010And000001360011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -536,27 +536,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000001360011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -611,11 +593,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'ac6fc1de',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '360011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '30132',
             'currency' => '840',
@@ -818,6 +800,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -837,7 +822,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000001900010()
+    public function testCaseNumber000001900010And000001900011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -887,6 +872,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -903,27 +891,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000001900011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180001234506',
@@ -970,12 +940,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '437528c5',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '900011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7018',
             'currency' => '840',
@@ -1039,6 +1012,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1109,6 +1085,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -1177,6 +1156,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1247,6 +1229,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -1316,6 +1301,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -1384,6 +1372,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1962,7 +1953,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000005700010()
+    public function testCaseNumber000005700010And000005700011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -2024,27 +2015,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000005700011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702222228',
@@ -2071,11 +2044,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000005700011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'aebb9985',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '700011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '111868',
             'currency' => '840',
@@ -2090,7 +2063,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000022420010()
+    public function testCaseNumber000022420010And000022420011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -2159,27 +2132,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000022420011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212149',
@@ -2212,11 +2167,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'f2dd022e',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '420011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '10000',
             'currency' => '840',
@@ -2232,7 +2187,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000022440010()
+    public function testCaseNumber000022440010And000022440011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -2301,27 +2256,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000022440011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571702222222',
@@ -2354,11 +2291,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '27717f73',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '440011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '32004',
             'currency' => '840',
@@ -2374,7 +2311,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000022460010()
+    public function testCaseNumber000022460010And000022460011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -2443,27 +2380,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000022460011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212149',
@@ -2496,11 +2415,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'f8607de8',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '460011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '10500',
             'currency' => '840',
@@ -2516,7 +2435,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000022480010()
+    public function testCaseNumber000022480010And000022480011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -2585,27 +2504,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000022480011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212149',
@@ -2651,11 +2552,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '3cf7a631',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '480011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '10700',
             'currency' => '840',
@@ -2670,7 +2571,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000022490010()
+    public function testCaseNumber000022490010And000022490011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -2739,27 +2640,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000022490011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212149',
@@ -2805,11 +2688,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '482a16b3',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '490011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '10800',
             'currency' => '840',
@@ -2889,7 +2772,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000022600010()
+    public function testCaseNumber000022600010And000022600011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -2942,27 +2825,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000022600011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511112228',
@@ -2989,11 +2854,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000022600011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'ffb0e767',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '600011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9335',
             'currency' => '840',
@@ -3562,7 +3427,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000023270010()
+    public function testCaseNumber000023270010And000023270011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -3615,27 +3480,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000023270011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011361000006668',
@@ -3662,11 +3509,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000023270011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '0f75266e',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '270011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '49339',
             'currency' => '840',
@@ -3681,7 +3528,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000023670010()
+    public function testCaseNumber000023670010And000023670011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -3724,6 +3571,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000023670010',
                 'OrderNumber' => '000023670010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '21400',
             'currency' => '840',
         );
@@ -3734,27 +3584,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000023670011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -3780,12 +3612,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000023670011',
                 'OrderNumber' => '000023670011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '12cac8ab',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '670011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '21400',
             'currency' => '840',
@@ -3842,6 +3677,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000023780010',
                 'OrderNumber' => '000023780010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '000',
             'currency' => '840',
@@ -3901,6 +3739,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '840010',
                 'ReferenceNumber' => '000023840010',
                 'OrderNumber' => '000023840010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3966,6 +3807,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000023860010',
                 'OrderNumber' => '000023860010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4041,6 +3885,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '63139',
             'currency' => '840',
         );
@@ -4054,7 +3901,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000024110010()
+    public function testCaseNumber000024110010And000024110011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -4123,27 +3970,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000024110011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '375987654111116',
@@ -4177,11 +4006,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantPostalCode' => '11747',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '356359ec',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '110011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '30000',
             'currency' => '840',
@@ -4197,7 +4026,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000024130010()
+    public function testCaseNumber000024130010And000024130011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -4266,27 +4095,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000024130011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '375987654111116',
@@ -4320,11 +4131,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantPostalCode' => '11747',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '3b648acb',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '130011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '27218',
             'currency' => '840',
@@ -4340,7 +4151,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000024150010()
+    public function testCaseNumber000024150010And000024150011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -4409,27 +4220,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000024150011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '375987654111116',
@@ -4463,11 +4256,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantPostalCode' => '11747',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '2bfc39dc',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '150011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '30500',
             'currency' => '840',
@@ -4483,7 +4276,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000024170010()
+    public function testCaseNumber000024170010And000024170011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -4552,27 +4345,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000024170011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '375987654111116',
@@ -4618,11 +4393,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '733f5386',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '170011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '30700',
             'currency' => '840',
@@ -4637,7 +4412,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000024180010()
+    public function testCaseNumber000024180010And000024180011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -4706,27 +4481,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000024180011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '375987654111116',
@@ -4772,11 +4529,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '806c30a6',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '180011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '30800',
             'currency' => '840',
@@ -4854,7 +4611,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000026940010()
+    public function testCaseNumber000026940010And000026940011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -4916,27 +4673,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000026940011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212149',
@@ -4975,11 +4714,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'f9755125',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '940011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '8280',
             'currency' => '840',
@@ -4994,7 +4733,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000027000010()
+    public function testCaseNumber000027000010And000027000011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -5040,6 +4779,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000027000010',
                 'OrderNumber' => '000027000010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -5056,27 +4798,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000027000011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5405001111111165',
@@ -5114,12 +4838,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'c5973cfe',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '000011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '8282',
             'currency' => '840',
@@ -5176,6 +4903,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760010',
                 'ReferenceNumber' => '000133760010',
                 'OrderNumber' => '000133760010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '000',
             'currency' => '840',
@@ -5401,6 +5131,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137020010',
                 'OrderNumber' => '000137020010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '83136',
             'currency' => '840',
         );
@@ -5582,7 +5315,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000137140010()
+    public function testCaseNumber000137140010And000137140011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -5635,27 +5368,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000137140011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -5682,11 +5397,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000137140011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '3d6f24c7',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '140011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '57210',
             'currency' => '840',
@@ -5702,7 +5417,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000137170010()
+    public function testCaseNumber000137170010And000137170011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -5755,27 +5470,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000137170011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511112228',
@@ -5802,11 +5499,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000137170011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'cf7685f3',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '170011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '57311',
             'currency' => '840',
@@ -5822,7 +5519,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000137200010()
+    public function testCaseNumber000137200010And000137200011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -5865,6 +5562,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137200010',
                 'OrderNumber' => '000137200010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '76056',
             'currency' => '840',
         );
@@ -5875,27 +5575,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000137200011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180000005550',
@@ -5921,6 +5603,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137200011',
                 'OrderNumber' => '000137200011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '38028',
             'currency' => '840',
         );
@@ -5934,7 +5619,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000137230010()
+    public function testCaseNumber000137230010And000137230011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -5977,6 +5662,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137230010',
                 'OrderNumber' => '000137230010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '76052',
             'currency' => '840',
         );
@@ -5987,27 +5675,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000137230011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180000005550',
@@ -6033,6 +5703,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137230011',
                 'OrderNumber' => '000137230011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '38026',
             'currency' => '840',
         );
@@ -6046,7 +5719,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000137260010()
+    public function testCaseNumber000137260010And000137260011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -6099,27 +5772,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000137260011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -6146,11 +5801,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000137260011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '220975b8',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '260011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '34104',
             'currency' => '840',
@@ -6166,7 +5821,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000137290010()
+    public function testCaseNumber000137290010And000137290011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -6219,27 +5874,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000137290011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '379605176666666',
@@ -6266,11 +5903,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000137290011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'd25de735',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '290011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '34451',
             'currency' => '840',
@@ -6286,7 +5923,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000137320010()
+    public function testCaseNumber000137320010And000137320011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -6339,27 +5976,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000137320011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702222228',
@@ -6386,11 +6005,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000137320011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '5410989e',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '320011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '101299',
             'currency' => '840',
@@ -6451,6 +6070,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '120010',
                 'ReferenceNumber' => '000138120010',
                 'OrderNumber' => '000138120010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -6513,6 +6135,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '130010',
                 'ReferenceNumber' => '000138130010',
                 'OrderNumber' => '000138130010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '83297',
             'currency' => '840',
@@ -6702,7 +6327,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138230010()
+    public function testCaseNumber000138230010And000138230011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -6764,27 +6389,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138230011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -6811,11 +6418,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138230011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'd3bec163',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '230011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '57211',
             'currency' => '840',
@@ -6831,7 +6438,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138250010()
+    public function testCaseNumber000138250010And000138250011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -6876,6 +6483,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138250010',
                 'OrderNumber' => '000138250010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '84794',
             'currency' => '840',
         );
@@ -6888,27 +6498,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138250011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -6934,12 +6526,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138250011',
                 'OrderNumber' => '000138250011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'dfba774f',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '250011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '84794',
             'currency' => '840',
@@ -6955,7 +6550,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138270010()
+    public function testCaseNumber000138270010And000138270011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -7017,27 +6612,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138270011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -7064,11 +6641,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138270011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'f31db986',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '270011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '34251',
             'currency' => '840',
@@ -7084,7 +6661,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138300010()
+    public function testCaseNumber000138300010And000138300011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -7141,27 +6718,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138300011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '3566000022222228',
@@ -7205,11 +6764,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'deae7cc8',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '300011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '41473',
             'currency' => '840',
@@ -7224,7 +6783,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138310010()
+    public function testCaseNumber000138310010And000138310011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -7286,27 +6845,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138310011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702222228',
@@ -7333,11 +6874,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138310011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '072f5559',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '310011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '101294',
             'currency' => '840',
@@ -7589,6 +7130,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '83211',
             'currency' => '840',
         );
@@ -7726,7 +7270,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138670010()
+    public function testCaseNumber000138670010And000138670011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -7787,27 +7331,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138670011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111551',
@@ -7855,11 +7381,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'fed45381',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '670011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '27722',
             'currency' => '840',
@@ -7874,7 +7400,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138680010()
+    public function testCaseNumber000138680010And000138680011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -7940,27 +7466,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138680011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -7991,11 +7499,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'c8203895',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '680011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '34195',
             'currency' => '840',
@@ -8011,7 +7519,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138690010()
+    public function testCaseNumber000138690010And000138690011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -8070,27 +7578,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138690011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '379605176666666',
@@ -8121,11 +7611,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '84cd1022',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '690011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '14304',
             'currency' => '840',
@@ -8141,7 +7631,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138700010()
+    public function testCaseNumber000138700010And000138700011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -8202,27 +7692,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138700011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111551',
@@ -8270,11 +7742,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '7b8e7a64',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '700011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '6778',
             'currency' => '840',
@@ -8353,7 +7825,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138750010()
+    public function testCaseNumber000138750010And000138750011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -8419,27 +7891,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138750011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511117771',
@@ -8487,11 +7941,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'cf54a1fd',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '750011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '62099',
             'currency' => '840',
@@ -8506,7 +7960,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138760010()
+    public function testCaseNumber000138760010And000138760011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -8575,27 +8029,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138760011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -8646,11 +8082,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NjAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'a199f23b',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '760011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '14642',
             'currency' => '840',
@@ -8665,7 +8101,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138770010()
+    public function testCaseNumber000138770010And000138770011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -8729,27 +8165,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138770011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511112228',
@@ -8783,11 +8201,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NzAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'f7b2ccfd',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '770011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '13804',
             'currency' => '840',
@@ -8803,7 +8221,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138780010()
+    public function testCaseNumber000138780010And000138780011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -8865,27 +8283,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138780011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -8919,11 +8319,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3ODAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'c064592f',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '780011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '15040',
             'currency' => '840',
@@ -8939,7 +8339,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138790010()
+    public function testCaseNumber000138790010And000138790011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -9003,27 +8403,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138790011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511112228',
@@ -9074,11 +8456,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3OTAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '7248fc78',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '790011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '13845',
             'currency' => '840',
@@ -9165,7 +8547,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138850010()
+    public function testCaseNumber000138850010And000138850011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -9214,6 +8596,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '77190',
             'currency' => '840',
         );
@@ -9226,27 +8611,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138850011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5256977001111110',
@@ -9276,6 +8643,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '38595',
             'currency' => '840',
         );
@@ -9289,7 +8659,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138860010()
+    public function testCaseNumber000138860010And000138860011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -9337,6 +8707,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '14678',
             'currency' => '840',
         );
@@ -9348,27 +8721,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138860011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5256977001111110',
@@ -9414,12 +8769,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '46e9718d',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '860011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7339',
             'currency' => '840',
@@ -9434,7 +8792,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138870010()
+    public function testCaseNumber000138870010And000138870011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -9483,6 +8841,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '14194',
             'currency' => '840',
         );
@@ -9495,27 +8856,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138870011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -9545,12 +8888,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '0b1c350a',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '870011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '14194',
             'currency' => '840',
@@ -9566,7 +8912,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138880010()
+    public function testCaseNumber000138880010And000138880011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -9614,6 +8960,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '15272',
             'currency' => '840',
         );
@@ -9625,27 +8974,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138880011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5256977001111110',
@@ -9691,12 +9022,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '9bf0f134',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '880011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7636',
             'currency' => '840',
@@ -9711,7 +9045,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000138900010()
+    public function testCaseNumber000138900010And000138900011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -9772,27 +9106,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000138900011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '3566000022222228',
@@ -9840,11 +9156,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '039f0770',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '900011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '41476',
             'currency' => '840',
@@ -9963,6 +9279,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160010',
                 'ReferenceNumber' => '000139160010',
                 'OrderNumber' => '000139160010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '16298',
             'currency' => '840',
@@ -10099,7 +9418,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000139630010()
+    public function testCaseNumber000139630010And000139630011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -10152,27 +9471,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000139630011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -10199,11 +9500,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000139630011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '3ab0cd29',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '630011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '41334',
             'currency' => '840',
@@ -10219,7 +9520,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000139750010()
+    public function testCaseNumber000139750010And000139750011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -10262,6 +9563,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000139750010',
                 'OrderNumber' => '000139750010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '241330',
             'currency' => '840',
         );
@@ -10272,27 +9576,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000139750011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180273333333',
@@ -10318,12 +9604,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000139750011',
                 'OrderNumber' => '000139750011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '36734370',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '750011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '241330',
             'currency' => '840',
@@ -10339,7 +9628,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000139860010()
+    public function testCaseNumber000139860010And000139860011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -10392,27 +9681,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000139860011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '375987654111116',
@@ -10451,7 +9722,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000139950010()
+    public function testCaseNumber000139950010And000139950011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -10504,27 +9775,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000139950011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702221113',
@@ -10563,11 +9816,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '78befc60',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '950011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '20647',
             'currency' => '840',
@@ -10582,7 +9835,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000140000010()
+    public function testCaseNumber000140000010And000140000011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -10635,27 +9888,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000140000011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702222228',
@@ -10682,11 +9917,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000140000011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '10617e56',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '000011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '241332',
             'currency' => '840',
@@ -10702,7 +9937,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000140010010()
+    public function testCaseNumber000140010010And000140010011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -10755,27 +9990,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000140010011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702222228',
@@ -10814,11 +10031,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '9aba830c',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '010011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '241104',
             'currency' => '840',
@@ -10833,7 +10050,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000140170010()
+    public function testCaseNumber000140170010And000140170011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -10892,27 +10109,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000140170011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -10943,11 +10142,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '103d596e',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '170011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '11314',
             'currency' => '840',
@@ -10963,7 +10162,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000140190010()
+    public function testCaseNumber000140190010And000140190011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -11022,27 +10221,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000140190011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208701112222',
@@ -11073,11 +10254,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'd0ed39a7',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '190011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '12308',
             'currency' => '840',
@@ -11093,7 +10274,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000140240010()
+    public function testCaseNumber000140240010And000140240011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -11155,27 +10336,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000140240011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702222228',
@@ -11202,11 +10365,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000140240011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'fde86d31',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '240011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '111956',
             'currency' => '840',
@@ -11222,7 +10385,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000141460010()
+    public function testCaseNumber000141460010And000141460011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -11277,27 +10440,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000141460011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '379605176666666',
@@ -11324,11 +10469,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000141460011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '38883229',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '460011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '11946',
             'currency' => '840',
@@ -11344,7 +10489,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000141470010()
+    public function testCaseNumber000141470010And000141470011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -11399,27 +10544,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000141470011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111551',
@@ -11458,7 +10585,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000141830010()
+    public function testCaseNumber000141830010And000141830011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -11513,27 +10640,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000141830011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511112228',
@@ -11560,11 +10669,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000141830011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'a464ecc5',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '830011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '12722',
             'currency' => '840',
@@ -11580,7 +10689,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000141840010()
+    public function testCaseNumber000141840010And000141840011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -11635,27 +10744,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000141840011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005578003333335',
@@ -11694,7 +10785,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000142070010()
+    public function testCaseNumber000142070010And000142070011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -11749,27 +10840,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000142070011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4761530001115556',
@@ -11808,11 +10881,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'b1342370',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '070011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '12810',
             'currency' => '840',
@@ -11827,7 +10900,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000142080010()
+    public function testCaseNumber000142080010And000142080011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -11882,27 +10955,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000142080011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511112228',
@@ -11929,11 +10984,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000142080011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'ad5e8e6e',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '080011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '12298',
             'currency' => '840',
@@ -11949,7 +11004,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000142240010()
+    public function testCaseNumber000142240010And000142240011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -11993,6 +11048,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000142240010',
                 'OrderNumber' => '000142240010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '13570',
             'currency' => '840',
         );
@@ -12004,27 +11062,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000142240011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -12050,12 +11090,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000142240011',
                 'OrderNumber' => '000142240011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '422080be',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '240011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '13570',
             'currency' => '840',
@@ -12071,7 +11114,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000142450010()
+    public function testCaseNumber000142450010And000142450011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -12115,6 +11158,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000142450010',
                 'OrderNumber' => '000142450010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '13680',
             'currency' => '840',
         );
@@ -12126,27 +11172,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000142450011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -12184,12 +11212,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '790fa355',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '450011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '13680',
             'currency' => '840',
@@ -12204,7 +11235,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000142610010()
+    public function testCaseNumber000142610010And000142610011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -12259,27 +11290,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000142610011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208701112222',
@@ -12306,11 +11319,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000142610011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '27e53649',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '610011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '14540',
             'currency' => '840',
@@ -12384,7 +11397,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180000010()
+    public function testCaseNumber000180000010And000180000011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -12431,6 +11444,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '84002',
             'currency' => '840',
         );
@@ -12441,27 +11457,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180000011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180273333333',
@@ -12491,12 +11489,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'b8eb498a',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '000011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '84002',
             'currency' => '840',
@@ -12512,7 +11513,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180020010()
+    public function testCaseNumber000180020010And000180020011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -12559,6 +11560,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '84202',
             'currency' => '840',
         );
@@ -12569,27 +11573,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180020011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180273333333',
@@ -12619,12 +11605,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '460e8f3c',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '020011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '84202',
             'currency' => '840',
@@ -12640,7 +11629,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180040010()
+    public function testCaseNumber000180040010And000180040011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -12683,6 +11672,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180040010',
                 'OrderNumber' => '000180040010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '7678',
             'currency' => '840',
         );
@@ -12693,27 +11685,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180040011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180000007770',
@@ -12739,12 +11713,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180040011',
                 'OrderNumber' => '000180040011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '5f0b1759',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '040011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7678',
             'currency' => '840',
@@ -12760,7 +11737,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180070010()
+    public function testCaseNumber000180070010And000180070011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -12817,27 +11794,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180070011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4000020000000018',
@@ -12868,11 +11827,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '311e39d8',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '070011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '19602',
             'currency' => '840',
@@ -12888,7 +11847,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180090010()
+    public function testCaseNumber000180090010And000180090011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -12948,27 +11907,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180090011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4000020000000018',
@@ -13002,11 +11943,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAwOTAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'd2811327',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '090011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '19606',
             'currency' => '840',
@@ -13022,7 +11963,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180140010()
+    public function testCaseNumber000180140010And000180140011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -13075,27 +12016,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180140011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -13122,11 +12045,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180140011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'd331a1d6',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '140011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '34150',
             'currency' => '840',
@@ -13142,7 +12065,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180160010()
+    public function testCaseNumber000180160010And000180160011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -13199,27 +12122,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180160011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -13250,11 +12155,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '98a12ca3',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '160011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '34350',
             'currency' => '840',
@@ -13270,7 +12175,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180180010()
+    public function testCaseNumber000180180010And000180180011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -13327,27 +12232,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180180011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -13378,11 +12265,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '546ed876',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '180011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '34550',
             'currency' => '840',
@@ -13398,7 +12285,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180200010()
+    public function testCaseNumber000180200010And000180200011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -13451,27 +12338,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180200011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -13498,11 +12367,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180200011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'eacc4058',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '200011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '34750',
             'currency' => '840',
@@ -13518,7 +12387,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180250010()
+    public function testCaseNumber000180250010And000180250011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -13575,27 +12444,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180250011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6221280005638208',
@@ -13626,11 +12477,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'a6ea5f0c',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '250011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '1602',
             'currency' => '840',
@@ -13646,7 +12497,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180270010()
+    public function testCaseNumber000180270010And000180270011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -13703,27 +12554,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180270011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6221280005638208',
@@ -13754,11 +12587,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '26de82b5',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '270011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '2606',
             'currency' => '840',
@@ -13774,7 +12607,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180290010()
+    public function testCaseNumber000180290010And000180290011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -13831,27 +12664,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180290011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6221280005638208',
@@ -13882,11 +12697,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '0b9a9612',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '290011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '2610',
             'currency' => '840',
@@ -13902,7 +12717,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180300010()
+    public function testCaseNumber000180300010And000180300011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -13955,27 +12770,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180300011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6221280005638208',
@@ -14002,11 +12799,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180300011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'ba2ae740',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '300011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '2612',
             'currency' => '840',
@@ -14022,7 +12819,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000180930010()
+    public function testCaseNumber000180930010And000180930011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -14075,27 +12872,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000180930011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511117771',
@@ -14122,11 +12901,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180930011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'eea9d864',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '930011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '62282',
             'currency' => '840',
@@ -14142,7 +12921,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000181150010()
+    public function testCaseNumber000181150010And000181150011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -14195,27 +12974,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000181150011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511117771',
@@ -14242,11 +13003,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000181150011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'd3071904',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '150011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '62151',
             'currency' => '840',
@@ -14262,7 +13023,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000181190010()
+    public function testCaseNumber000181190010And000181190011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -14315,27 +13076,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000181190011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702222228',
@@ -14362,11 +13105,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000181190011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '5723baec',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '190011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '101142',
             'currency' => '840',
@@ -14382,7 +13125,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000181230010()
+    public function testCaseNumber000181230010And000181230011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -14425,6 +13168,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000181230010',
                 'OrderNumber' => '000181230010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '83143',
             'currency' => '840',
         );
@@ -14435,27 +13181,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000181230011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180273333333',
@@ -14481,12 +13209,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000181230011',
                 'OrderNumber' => '000181230011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'dd5cb30f',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '230011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '83143',
             'currency' => '840',
@@ -14502,7 +13233,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000182000010()
+    public function testCaseNumber000182000010And000182000011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -14564,27 +13295,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000182000011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212123',
@@ -14628,11 +13341,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'f79cb570',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '000011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '18615',
             'currency' => '840',
@@ -14647,7 +13360,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000182010010()
+    public function testCaseNumber000182010010And000182010011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -14700,27 +13413,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000182010011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212123',
@@ -14747,11 +13442,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000182010011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '1afc6c97',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '010011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '1001',
             'currency' => '840',
@@ -14823,7 +13518,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000182120010()
+    public function testCaseNumber000182120010And000182120011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -14890,27 +13585,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000182120011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212123',
@@ -14944,11 +13621,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMjAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'f0625d65',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '120011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7673',
             'currency' => '840',
@@ -14964,7 +13641,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000182130010()
+    public function testCaseNumber000182130010And000182130011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -15026,27 +13703,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000182130011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212123',
@@ -15096,11 +13755,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMzAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '921d1548',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '130011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7505',
             'currency' => '840',
@@ -15178,7 +13837,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000182240010()
+    public function testCaseNumber000182240010And000182240011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -15237,27 +13896,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000182240011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212123',
@@ -15288,11 +13929,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'bb923e7c',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '240011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7691',
             'currency' => '840',
@@ -15308,7 +13949,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000182250010()
+    public function testCaseNumber000182250010And000182250011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -15372,27 +14013,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000182250011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212123',
@@ -15435,11 +14058,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'e676deb0',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '250011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '10006',
             'currency' => '840',
@@ -15892,7 +14515,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000186860010()
+    public function testCaseNumber000186860010And000186860011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -15949,27 +14572,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000186860011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208701112222',
@@ -16012,11 +14617,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '3d6b10d1',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '860011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7607',
             'currency' => '840',
@@ -16031,7 +14636,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000186870010()
+    public function testCaseNumber000186870010And000186870011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -16088,27 +14693,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000186870011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208701112222',
@@ -16151,11 +14738,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'd583e34c',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '870011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7601',
             'currency' => '840',
@@ -16170,7 +14757,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000186880010()
+    public function testCaseNumber000186880010And000186880011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -16236,27 +14823,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000186880011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208701112222',
@@ -16303,11 +14872,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '891cf5c3',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '880011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7617',
             'currency' => '840',
@@ -16322,7 +14891,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000186890010()
+    public function testCaseNumber000186890010And000186890011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -16388,27 +14957,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000186890011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208701112222',
@@ -16455,11 +15006,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '2fbdc46e',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '890011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7613',
             'currency' => '840',
@@ -16517,6 +15068,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000521380010',
                 'OrderNumber' => '000521380010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '76054',
             'currency' => '840',
         );
@@ -16573,6 +15127,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000521390010',
                 'OrderNumber' => '000521390010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '84315',
             'currency' => '840',
         );
@@ -16628,6 +15185,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '420010',
                 'ReferenceNumber' => '000521420010',
                 'OrderNumber' => '000521420010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '76050',
             'currency' => '840',
@@ -16821,6 +15381,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '83301',
             'currency' => '840',
         );
@@ -16902,7 +15465,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000521900010()
+    public function testCaseNumber000521900010And000521900011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -16955,27 +15518,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000521900011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571702222222',
@@ -17014,7 +15559,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000521930010()
+    public function testCaseNumber000521930010And000521930011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -17067,27 +15612,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000521930011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571702222222',
@@ -17126,7 +15653,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000521980010()
+    public function testCaseNumber000521980010And000521980011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -17169,6 +15696,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000521980010',
                 'OrderNumber' => '000521980010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '84794',
             'currency' => '840',
         );
@@ -17179,27 +15709,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000521980011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -17225,12 +15737,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000521980011',
                 'OrderNumber' => '000521980011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'cd41d290',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '980011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '84794',
             'currency' => '840',
@@ -17246,7 +15761,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000522000010()
+    public function testCaseNumber000522000010And000522000011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -17299,27 +15814,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000522000011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '375987654111116',
@@ -17358,7 +15855,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000522030010()
+    public function testCaseNumber000522030010And000522030011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -17411,27 +15908,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000522030011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '375987654111116',
@@ -17593,6 +16072,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '83272',
             'currency' => '840',
         );
@@ -17674,7 +16156,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523460010()
+    public function testCaseNumber000523460010And000523460011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -17731,27 +16213,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523460011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005578003333335',
@@ -17790,7 +16254,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523470010()
+    public function testCaseNumber000523470010And000523470011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -17847,27 +16311,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523470011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005578003333335',
@@ -17911,11 +16357,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '00668c8e',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '470011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '30164',
             'currency' => '840',
@@ -17930,7 +16376,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523480010()
+    public function testCaseNumber000523480010And000523480011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -17992,27 +16438,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523480011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571702222222',
@@ -18051,7 +16479,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523500010()
+    public function testCaseNumber000523500010And000523500011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -18113,27 +16541,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523500011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511117771',
@@ -18177,11 +16587,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '50fa9000',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '500011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '62885',
             'currency' => '840',
@@ -18196,7 +16606,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523600010()
+    public function testCaseNumber000523600010And000523600011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -18241,6 +16651,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523600010',
                 'OrderNumber' => '000523600010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '77190',
             'currency' => '840',
         );
@@ -18253,27 +16666,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523600011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5256977001111110',
@@ -18299,6 +16694,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523600011',
                 'OrderNumber' => '000523600011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '38595',
             'currency' => '840',
         );
@@ -18312,7 +16710,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523610010()
+    public function testCaseNumber000523610010And000523610011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -18357,6 +16755,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523610010',
                 'OrderNumber' => '000523610010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '77292',
             'currency' => '840',
         );
@@ -18369,27 +16770,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523610011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5256977001111110',
@@ -18432,12 +16815,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'bd862e64',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '610011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '38643',
             'currency' => '840',
@@ -18452,7 +16838,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523620010()
+    public function testCaseNumber000523620010And000523620011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -18498,6 +16884,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523620010',
                 'OrderNumber' => '000523620010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -18514,27 +16903,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523620011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180000005550',
@@ -18560,6 +16931,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523620011',
                 'OrderNumber' => '000523620011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '38545',
             'currency' => '840',
         );
@@ -18573,7 +16947,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523650010()
+    public function testCaseNumber000523650010And000523650011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -18619,6 +16993,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523650010',
                 'OrderNumber' => '000523650010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -18635,27 +17012,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523650011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180000005550',
@@ -18698,12 +17057,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '6e49c9c7',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '650011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '38543',
             'currency' => '840',
@@ -18718,7 +17080,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523740010()
+    public function testCaseNumber000523740010And000523740011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -18775,27 +17137,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523740011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111551',
@@ -18834,7 +17178,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523750010()
+    public function testCaseNumber000523750010And000523750011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -18891,27 +17235,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523750011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111551',
@@ -18955,11 +17281,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '8ed2edb4',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '750011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '27719',
             'currency' => '840',
@@ -18974,7 +17300,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523760010()
+    public function testCaseNumber000523760010And000523760011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -19036,27 +17362,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523760011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '375987654111116',
@@ -19095,7 +17403,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000523780010()
+    public function testCaseNumber000523780010And000523780011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -19157,27 +17465,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000523780011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '379605177111118',
@@ -19221,11 +17511,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '7f55e6e4',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '780011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '35273',
             'currency' => '840',
@@ -20079,6 +18369,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '76890',
             'currency' => '840',
         );
@@ -20143,6 +18436,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -20212,6 +18508,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '84786',
             'currency' => '840',
         );
@@ -20275,6 +18574,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '14052',
             'currency' => '840',
@@ -20340,6 +18642,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '14054',
             'currency' => '840',
         );
@@ -20404,6 +18709,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -20472,6 +18780,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '15282',
             'currency' => '840',
         );
@@ -20533,6 +18844,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '15284',
             'currency' => '840',
@@ -20598,6 +18912,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -20617,7 +18934,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000527770010()
+    public function testCaseNumber000527770010And000527770011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -20678,27 +18995,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000527770011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111551',
@@ -20810,7 +19109,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000527800010()
+    public function testCaseNumber000527800010And000527800011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -20876,27 +19175,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000527800011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '379605177111118',
@@ -20943,11 +19224,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '722e70c1',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '800011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '35261',
             'currency' => '840',
@@ -20962,7 +19243,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000527980010()
+    public function testCaseNumber000527980010And000527980011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -21028,27 +19309,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000527980011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '379605177111118',
@@ -21079,11 +19342,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'a23f1eec',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '980011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '115008',
             'currency' => '840',
@@ -21099,7 +19362,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000527990010()
+    public function testCaseNumber000527990010And000527990011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -21165,27 +19428,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000527990011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -21216,11 +19461,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'c345dcd1',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '990011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '113526',
             'currency' => '840',
@@ -21283,13 +19528,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
-            'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '109ff7a1',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '150011',
-                'OriginalResponseCode' => '000',
-            ),
             'amount' => '34153',
             'currency' => '840',
         );
@@ -21304,7 +19542,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000528160010()
+    public function testCaseNumber000528160010And000528160011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -21370,27 +19608,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000528160011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -21421,11 +19641,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'a115e389',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '160011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '34689',
             'currency' => '840',
@@ -21441,7 +19661,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000528660010()
+    public function testCaseNumber000528660010And000528660011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -21502,27 +19722,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000528660011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511112228',
@@ -21553,11 +19755,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '4563067f',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '660011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '57311',
             'currency' => '840',
@@ -21573,7 +19775,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000528670010()
+    public function testCaseNumber000528670010And000528670011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -21634,27 +19836,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000528670011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511112228',
@@ -21702,11 +19886,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'b1c26a67',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '670011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '62877',
             'currency' => '840',
@@ -21721,7 +19905,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000528680010()
+    public function testCaseNumber000528680010And000528680011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -21787,27 +19971,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000528680011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -21838,11 +20004,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '6b3278bd',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '680011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '57207',
             'currency' => '840',
@@ -21858,7 +20024,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000528820010()
+    public function testCaseNumber000528820010And000528820011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -21927,27 +20093,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000528820011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -21981,11 +20129,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MjAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '867bef73',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '820011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '15146',
             'currency' => '840',
@@ -22001,7 +20149,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000528830010()
+    public function testCaseNumber000528830010And000528830011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -22070,27 +20218,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000528830011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -22141,11 +20271,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MzAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'f6acb584',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '830011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '15236',
             'currency' => '840',
@@ -22160,7 +20290,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000528950010()
+    public function testCaseNumber000528950010And000528950011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -22221,27 +20351,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000528950011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511112228',
@@ -22272,11 +20384,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '86ab0ea6',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '950011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '57711',
             'currency' => '840',
@@ -22292,7 +20404,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000528960010()
+    public function testCaseNumber000528960010And000528960011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -22358,27 +20470,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000528960011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -22409,11 +20503,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'c9a42a0c',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '960011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '57208',
             'currency' => '840',
@@ -22429,7 +20523,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000529010010()
+    public function testCaseNumber000529010010And000529010011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -22498,27 +20592,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000529010011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -22552,11 +20628,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjkwMTAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'cba47138',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '010011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '15132',
             'currency' => '840',
@@ -22572,7 +20648,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000529600010()
+    public function testCaseNumber000529600010And000529600011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -22621,6 +20697,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '77292',
             'currency' => '840',
         );
@@ -22633,27 +20712,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000529600011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5256977001111110',
@@ -22700,12 +20761,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '345db489',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '600011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '38646',
             'currency' => '840',
@@ -22720,7 +20784,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000529610010()
+    public function testCaseNumber000529610010And000529610011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -22770,6 +20834,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -22786,27 +20853,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000529610011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180000005550',
@@ -22836,6 +20885,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '38441',
             'currency' => '840',
         );
@@ -22849,7 +20901,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000529630010()
+    public function testCaseNumber000529630010And000529630011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -22898,6 +20950,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '84794',
             'currency' => '840',
         );
@@ -22910,27 +20965,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000529630011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -22960,12 +20997,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'd9cca6a9',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '630011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '84794',
             'currency' => '840',
@@ -22981,7 +21021,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000529650010()
+    public function testCaseNumber000529650010And000529650011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -23031,6 +21071,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -23047,27 +21090,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000529650011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180000005550',
@@ -23114,12 +21139,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'a33adbcb',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '650011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '38442',
             'currency' => '840',
@@ -23134,7 +21162,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000529890010()
+    public function testCaseNumber000529890010And000529890011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -23182,6 +21210,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '15464',
             'currency' => '840',
         );
@@ -23193,27 +21224,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000529890011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -23243,12 +21256,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '4e6c3571',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '890011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '15464',
             'currency' => '840',
@@ -23264,7 +21280,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000529900010()
+    public function testCaseNumber000529900010And000529900011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -23312,6 +21328,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '15462',
             'currency' => '840',
         );
@@ -23323,27 +21342,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000529900011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -23389,12 +21390,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'c0d2fac7',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '900011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '15462',
             'currency' => '840',
@@ -23409,7 +21413,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000529910010()
+    public function testCaseNumber000529910010And000529910011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -23458,6 +21462,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '14040',
             'currency' => '840',
         );
@@ -23470,27 +21477,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000529910011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5256977001111110',
@@ -23520,6 +21509,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '7020',
             'currency' => '840',
         );
@@ -23533,7 +21525,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000529920010()
+    public function testCaseNumber000529920010And000529920011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -23583,6 +21575,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -23599,27 +21594,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000529920011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180000005550',
@@ -23649,6 +21626,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '57047',
             'currency' => '840',
         );
@@ -23662,7 +21642,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000529950010()
+    public function testCaseNumber000529950010And000529950011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -23712,6 +21692,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -23728,27 +21711,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000529950011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180000005550',
@@ -23778,6 +21743,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '57647',
             'currency' => '840',
         );
@@ -23791,7 +21759,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000529990010()
+    public function testCaseNumber000529990010And000529990011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -23840,6 +21808,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '14042',
             'currency' => '840',
         );
@@ -23852,27 +21823,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000529990011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5256977001111110',
@@ -23919,12 +21872,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '8ed35897',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '990011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '7018',
             'currency' => '840',
@@ -23939,7 +21895,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000530100010()
+    public function testCaseNumber000530100010And000530100011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -23988,6 +21944,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '82794',
             'currency' => '840',
         );
@@ -24000,27 +21959,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000530100011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -24050,12 +21991,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'a833643c',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '100011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '82794',
             'currency' => '840',
@@ -24071,7 +22015,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000530120010()
+    public function testCaseNumber000530120010And000530120011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -24121,6 +22065,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -24137,27 +22084,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000530120011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180000005550',
@@ -24186,6 +22115,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '38491',
             'currency' => '840',
@@ -24495,6 +22427,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000532350010',
                 'OrderNumber' => '000532350010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '16248',
             'currency' => '840',
         );
@@ -24554,6 +22489,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '360010',
                 'ReferenceNumber' => '000532360010',
                 'OrderNumber' => '000532360010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '16250',
             'currency' => '840',
@@ -24630,7 +22568,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533450010()
+    public function testCaseNumber000533450010And000533450011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -24683,27 +22621,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533450011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511112228',
@@ -24730,11 +22650,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000533450011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'fa03c035',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '450011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '41406',
             'currency' => '840',
@@ -24750,7 +22670,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533460010()
+    public function testCaseNumber000533460010And000533460011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -24803,27 +22723,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533460011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571702222222',
@@ -24862,11 +22764,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '4421dccf',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '460011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '120596',
             'currency' => '840',
@@ -24881,7 +22783,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533560010()
+    public function testCaseNumber000533560010And000533560011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -24934,27 +22836,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533560011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571702222222',
@@ -24993,7 +22877,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533570010()
+    public function testCaseNumber000533570010And000533570011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -25046,27 +22930,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533570011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4055010000000005',
@@ -25105,11 +22971,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '0570869c',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '570011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '241230',
             'currency' => '840',
@@ -25124,7 +22990,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533580010()
+    public function testCaseNumber000533580010And000533580011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -25177,27 +23043,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533580011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511117771',
@@ -25236,11 +23084,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '7d6cb5ff',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '580011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '241074',
             'currency' => '840',
@@ -25255,7 +23103,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533660010()
+    public function testCaseNumber000533660010And000533660011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -25298,6 +23146,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533660010',
                 'OrderNumber' => '000533660010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '41402',
             'currency' => '840',
         );
@@ -25308,27 +23159,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533660011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -25354,12 +23187,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533660011',
                 'OrderNumber' => '000533660011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '7ddb9bf0',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '660011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '41402',
             'currency' => '840',
@@ -25375,7 +23211,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533670010()
+    public function testCaseNumber000533670010And000533670011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -25418,6 +23254,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533670010',
                 'OrderNumber' => '000533670010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '241242',
             'currency' => '840',
         );
@@ -25428,27 +23267,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533670011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180000005550',
@@ -25486,12 +23307,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '9da795d7',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '670011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '120621',
             'currency' => '840',
@@ -25506,7 +23330,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533770010()
+    public function testCaseNumber000533770010And000533770011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -25549,6 +23373,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533770010',
                 'OrderNumber' => '000533770010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '241298',
             'currency' => '840',
         );
@@ -25559,27 +23386,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533770011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180273333333',
@@ -25617,12 +23426,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'abde99aa',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '770011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '241298',
             'currency' => '840',
@@ -25637,7 +23449,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533780010()
+    public function testCaseNumber000533780010And000533780011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -25680,6 +23492,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533780010',
                 'OrderNumber' => '000533780010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '241082',
             'currency' => '840',
         );
@@ -25690,27 +23505,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533780011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5405001111111116',
@@ -25748,12 +23545,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '3f0160ae',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '780011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '241082',
             'currency' => '840',
@@ -25768,7 +23568,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533860010()
+    public function testCaseNumber000533860010And000533860011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -25821,27 +23621,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533860011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '379605176666666',
@@ -25868,11 +23650,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000533860011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '158f9c7f',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '860011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '41394',
             'currency' => '840',
@@ -25888,7 +23670,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533870010()
+    public function testCaseNumber000533870010And000533870011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -25941,27 +23723,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533870011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '375987654111116',
@@ -26000,11 +23764,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'f8bf9233',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '870011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '120576',
             'currency' => '840',
@@ -26019,7 +23783,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533950010()
+    public function testCaseNumber000533950010And000533950011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -26072,27 +23836,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533950011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '375987654111116',
@@ -26131,11 +23877,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'c6081f68',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '950011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '120577',
             'currency' => '840',
@@ -26150,7 +23896,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533960010()
+    public function testCaseNumber000533960010And000533960011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -26203,27 +23949,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533960011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -26250,11 +23978,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000533960011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '9808d08e',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '960011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '41328',
             'currency' => '840',
@@ -26270,7 +23998,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000533970010()
+    public function testCaseNumber000533970010And000533970011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -26323,27 +24051,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000533970011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -26382,11 +24092,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '6f6da90f',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '970011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '41016',
             'currency' => '840',
@@ -26642,6 +24352,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '11956',
             'currency' => '840',
         );
@@ -26703,6 +24416,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '11958',
             'currency' => '840',
@@ -26776,7 +24492,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000544370010()
+    public function testCaseNumber000544370010And000544370011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -26831,27 +24547,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000544370011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '3566000022222228',
@@ -26890,7 +24588,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000544390010()
+    public function testCaseNumber000544390010And000544390011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -26945,27 +24643,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000544390011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011361000006668',
@@ -26992,11 +24672,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000544390011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '31254677',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '390011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '14152',
             'currency' => '840',
@@ -27012,7 +24692,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000544400010()
+    public function testCaseNumber000544400010And000544400011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -27067,27 +24747,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000544400011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '3566000022222228',
@@ -27130,11 +24792,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '73b29cee',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '400011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '5311',
             'currency' => '840',
@@ -27149,7 +24811,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000544420010()
+    public function testCaseNumber000544420010And000544420011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -27204,27 +24866,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000544420011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011361000006668',
@@ -27267,11 +24911,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '9b2db2e0',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '420011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '14150',
             'currency' => '840',
@@ -27286,7 +24930,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000544470010()
+    public function testCaseNumber000544470010And000544470011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -27341,27 +24985,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000544470011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011361000006668',
@@ -27388,11 +25014,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000544470011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '25549db7',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '470011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '14168',
             'currency' => '840',
@@ -27579,6 +25205,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000549410010',
                 'OrderNumber' => '000549410010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -27641,6 +25270,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '420010',
                 'ReferenceNumber' => '000549420010',
                 'OrderNumber' => '000549420010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -27912,7 +25544,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000550550010()
+    public function testCaseNumber000550550010And000550550011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -27978,27 +25610,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('P', $response->getAVSResultCode());
         $this->assertEquals('NotPrt', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000550550011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281500003339',
@@ -28046,11 +25660,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'fe1d3b84',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '550011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '260298',
             'currency' => '840',
@@ -28065,7 +25679,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000551810010()
+    public function testCaseNumber000551810010And000551810011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -28131,27 +25745,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('U', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000551810011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '379605175555555',
@@ -28199,11 +25795,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '9b1cfac7',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '810011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '247398',
             'currency' => '840',
@@ -28218,7 +25814,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000551820010()
+    public function testCaseNumber000551820010And000551820011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -28284,27 +25880,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('U', $response->getAVSResultCode());
         $this->assertEquals('NoMtch', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000551820011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '379605177777777',
@@ -28352,11 +25930,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '22b71284',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '820011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '247497',
             'currency' => '840',
@@ -28371,7 +25949,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000552070010()
+    public function testCaseNumber000552070010And000552070011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -28437,27 +26015,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('N', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000552070011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011361000000000',
@@ -28505,11 +26065,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '22c6ff72',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '070011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '273697',
             'currency' => '840',
@@ -28524,7 +26084,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000552080010()
+    public function testCaseNumber000552080010And000552080011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -28590,27 +26150,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('N', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000552080011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011361000000000',
@@ -28658,11 +26200,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'd324a402',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '080011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '273698',
             'currency' => '840',
@@ -28677,7 +26219,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000555470010()
+    public function testCaseNumber000555470010And000555470011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -28736,27 +26278,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000555470011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '378730000111118',
@@ -28803,11 +26327,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '46a5023a',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '470011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '11310',
             'currency' => '840',
@@ -28822,7 +26346,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000555480010()
+    public function testCaseNumber000555480010And000555480011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -28881,27 +26405,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000555480011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '378730000111118',
@@ -28948,11 +26454,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '406e7155',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '480011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '11180',
             'currency' => '840',
@@ -28967,7 +26473,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000556670010()
+    public function testCaseNumber000556670010And000556670011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -29026,27 +26532,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000556670011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4264281511112228',
@@ -29093,11 +26581,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '2a252a03',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '670011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '11922',
             'currency' => '840',
@@ -29112,7 +26600,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000556680010()
+    public function testCaseNumber000556680010And000556680011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -29171,27 +26659,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000556680011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4055011111111111',
@@ -29238,11 +26708,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '29c02782',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '680011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '11364',
             'currency' => '840',
@@ -29257,7 +26727,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000557910010()
+    public function testCaseNumber000557910010And000557910011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -29305,6 +26775,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '12216',
             'currency' => '840',
         );
@@ -29316,27 +26789,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000557910011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -29382,12 +26837,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '1b8dab49',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '910011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '12216',
             'currency' => '840',
@@ -29402,7 +26860,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000557920010()
+    public function testCaseNumber000557920010And000557920011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -29450,6 +26908,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '12004',
             'currency' => '840',
         );
@@ -29461,27 +26922,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000557920011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -29527,12 +26970,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '277d776b',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '920011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '12004',
             'currency' => '840',
@@ -29547,7 +26993,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000558850010()
+    public function testCaseNumber000558850010And000558850011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -29606,27 +27052,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000558850011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011361000006668',
@@ -29673,11 +27101,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '1240898f',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '850011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '12690',
             'currency' => '840',
@@ -29692,7 +27120,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000558860010()
+    public function testCaseNumber000558860010And000558860011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -29751,27 +27179,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000558860011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011361000006668',
@@ -29818,11 +27228,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'd8d7d3b9',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '860011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '11058',
             'currency' => '840',
@@ -29837,7 +27247,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000559750010()
+    public function testCaseNumber000559750010And000559750011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -29892,27 +27302,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000559750011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -29955,11 +27347,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '202a934f',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '750011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '111228',
             'currency' => '840',
@@ -29974,7 +27366,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000559760010()
+    public function testCaseNumber000559760010And000559760011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -30029,27 +27421,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000559760011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '371030089111114',
@@ -30092,11 +27466,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '9ed4979d',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '760011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '111078',
             'currency' => '840',
@@ -30111,7 +27485,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000561160010()
+    public function testCaseNumber000561160010And000561160011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -30166,27 +27540,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000561160011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -30229,11 +27585,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '95c4eebe',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '160011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '12544',
             'currency' => '840',
@@ -30248,7 +27604,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000561170010()
+    public function testCaseNumber000561170010And000561170011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -30303,27 +27659,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000561170011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -30366,11 +27704,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'b648f8a9',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '170011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '12546',
             'currency' => '840',
@@ -30385,7 +27723,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000563390010()
+    public function testCaseNumber000563390010And000563390011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -30429,6 +27767,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000563390010',
                 'OrderNumber' => '000563390010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '112464',
             'currency' => '840',
         );
@@ -30440,27 +27781,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000563390011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5405001111111116',
@@ -30502,12 +27825,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '5af381ff',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '390011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '112464',
             'currency' => '840',
@@ -30522,7 +27848,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000563400010()
+    public function testCaseNumber000563400010And000563400011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -30566,6 +27892,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000563400010',
                 'OrderNumber' => '000563400010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '112282',
             'currency' => '840',
         );
@@ -30577,27 +27906,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000563400011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5405001111111116',
@@ -30639,12 +27950,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '9f328e8e',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '400011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '112282',
             'currency' => '840',
@@ -30659,7 +27973,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000564570010()
+    public function testCaseNumber000564570010And000564570011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -30721,27 +28035,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000564570011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702222228',
@@ -30785,11 +28081,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '515a7b27',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '570011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '112108',
             'currency' => '840',
@@ -30804,7 +28100,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000564580010()
+    public function testCaseNumber000564580010And000564580011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -30859,27 +28155,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000564580011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702222228',
@@ -30922,11 +28200,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'ae79d543',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '580011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '111530',
             'currency' => '840',
@@ -30941,7 +28219,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000564590010()
+    public function testCaseNumber000564590010And000564590011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -30996,27 +28274,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000564590011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702222228',
@@ -31059,11 +28319,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'ddf44e09',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '590011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '111536',
             'currency' => '840',
@@ -31078,7 +28338,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000565070010()
+    public function testCaseNumber000565070010And000565070011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -31140,27 +28400,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->assertEquals('Y', $response->getAVSResultCode());
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000565070011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208702222228',
@@ -31204,11 +28446,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '4102722b',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '070011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '111940',
             'currency' => '840',
@@ -31787,6 +29029,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000570150010',
                 'OrderNumber' => '000570150010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '13580',
             'currency' => '840',
         );
@@ -31844,6 +29089,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160010',
                 'ReferenceNumber' => '000570160010',
                 'OrderNumber' => '000570160010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '13392',
             'currency' => '840',
@@ -31903,6 +29151,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000570180010',
                 'OrderNumber' => '000570180010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '13410',
             'currency' => '840',
         );
@@ -31960,6 +29211,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '190010',
                 'ReferenceNumber' => '000570190010',
                 'OrderNumber' => '000570190010',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
             ),
             'amount' => '13418',
             'currency' => '840',
@@ -32263,7 +29517,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000584940010()
+    public function testCaseNumber000584940010And000584940011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -32318,27 +29572,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000584940011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6240000006438706',
@@ -32365,11 +29601,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000584940011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'a58214a6',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '940011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '18012',
             'currency' => '840',
@@ -32385,7 +29621,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000756850010()
+    public function testCaseNumber000756850010And000756850011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -32438,27 +29674,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000756850011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005578003333335',
@@ -32485,11 +29703,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000756850011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '088b7334',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '850011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9716',
             'currency' => '840',
@@ -32504,7 +29722,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000756860010()
+    public function testCaseNumber000756860010And000756860011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -32547,6 +29765,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756860010',
                 'OrderNumber' => '000756860010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '9437',
             'currency' => '840',
         );
@@ -32557,27 +29778,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000756860011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -32603,12 +29806,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756860011',
                 'OrderNumber' => '000756860011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'fd1ebd20',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '860011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9337',
             'currency' => '840',
@@ -32623,7 +29829,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000756880010()
+    public function testCaseNumber000756880010And000756880011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -32676,27 +29882,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000756880011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011361000006668',
@@ -32723,11 +29911,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000756880011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'be668404',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '880011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9339',
             'currency' => '840',
@@ -32742,7 +29930,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000756890010()
+    public function testCaseNumber000756890010And000756890011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -32795,27 +29983,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000756890011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208701118880',
@@ -32842,11 +30012,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000756890011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'c2472d9f',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '890011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9718',
             'currency' => '840',
@@ -32861,7 +30031,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000756940010()
+    public function testCaseNumber000756940010And000756940011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -32914,27 +30084,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000756940011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '4005578003333335',
@@ -32961,11 +30113,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000756940011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'ee94f9b1',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '940011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9716',
             'currency' => '840',
@@ -32980,7 +30132,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000756950010()
+    public function testCaseNumber000756950010And000756950011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -33023,6 +30175,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756950010',
                 'OrderNumber' => '000756950010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '9437',
             'currency' => '840',
         );
@@ -33033,27 +30188,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000756950011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -33079,12 +30216,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756950011',
                 'OrderNumber' => '000756950011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'c6e5aedc',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '950011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9337',
             'currency' => '840',
@@ -33099,7 +30239,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000756970010()
+    public function testCaseNumber000756970010And000756970011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -33152,27 +30292,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000756970011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011361000006668',
@@ -33199,11 +30321,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000756970011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '0bc524e9',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '970011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9339',
             'currency' => '840',
@@ -33218,7 +30340,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000756980010()
+    public function testCaseNumber000756980010And000756980011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -33271,27 +30393,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         // Assert
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000756980011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '6011208701118880',
@@ -33318,11 +30422,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000756980011',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '69030079',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '980011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9718',
             'currency' => '840',
@@ -33337,7 +30441,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000757050010()
+    public function testCaseNumber000757050010And000757050011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -33381,6 +30485,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000757050010',
                 'OrderNumber' => '000757050010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '9447',
             'currency' => '840',
         );
@@ -33392,27 +30499,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000757050011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -33438,12 +30527,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000757050011',
                 'OrderNumber' => '000757050011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '1e7c2aef',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '050011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9347',
             'currency' => '840',
@@ -33458,7 +30550,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000757060010()
+    public function testCaseNumber000757060010And000757060011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -33502,6 +30594,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000757060010',
                 'OrderNumber' => '000757060010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '19644',
             'currency' => '840',
         );
@@ -33513,27 +30608,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Z', $response->getAVSResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000757060011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5256977001111110',
@@ -33559,12 +30636,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000757060011',
                 'OrderNumber' => '000757060011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '50c53764',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '060011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9722',
             'currency' => '840',
@@ -33579,7 +30659,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000757350010()
+    public function testCaseNumber000757350010And000757350011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -33623,6 +30703,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000757350010',
                 'OrderNumber' => '000757350010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '9493',
             'currency' => '840',
         );
@@ -33634,27 +30717,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('000', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000757350011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -33680,12 +30745,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000757350011',
                 'OrderNumber' => '000757350011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '303e6224',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '350011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9393',
             'currency' => '840',
@@ -33700,7 +30768,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-    public function testCaseNumber000757360010()
+    public function testCaseNumber000757360010And000757360011()
     {
         // Arrange
         $expirationDate = new \DateTime();
@@ -33744,6 +30812,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000757360010',
                 'OrderNumber' => '000757360010',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'amount' => '19654',
             'currency' => '840',
         );
@@ -33755,27 +30826,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         // Assert
         $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
-    }
 
 
-    public function testCaseNumber000757360011()
-    {
         // Arrange
-        $expirationDate = new \DateTime();
-        $expirationDate->add(new \DateInterval('P1Y'));
-        $expiryMonth = $expirationDate->format('m');
-        $expiryYear = $expirationDate->format('Y');
-
-        $now = new \DateTime();
-
-        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-
         $requestData = array(
             'card' => array(
                 'number' => '5256977001111110',
@@ -33801,12 +30854,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000757360011',
                 'OrderNumber' => '000757360011',
             ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '0',
+            ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => 'ceb79375',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
-                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '360011',
-                'OriginalResponseCode' => '000',
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
             ),
             'amount' => '9727',
             'currency' => '840',
