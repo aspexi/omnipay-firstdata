@@ -14,7 +14,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
         parent::setUp();
 
         if (!getenv('RAPIDCONNECT_APP') ||
-            !getenv('RAPIDCONNECT_DID') ||
+            !getenv('RAPIDCONNECT_DID_ECOMM') ||
+            !getenv('RAPIDCONNECT_DID_MOTO') ||
+            !getenv('RAPIDCONNECT_DID_RETAIL') ||
             !getenv('RAPIDCONNECT_GROUPID') ||
             !getenv('RAPIDCONNECT_MERCHANTID_ECOMM') ||
             !getenv('RAPIDCONNECT_MERCHANTID_MOTO') ||
@@ -41,10 +43,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -71,16 +73,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '840010',
                 'ReferenceNumber' => '000000840010',
                 'OrderNumber' => '000000840010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -95,6 +99,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62107',
             'currency' => '840',
+            'ClientRef' => '000000840010',
         );
 
         // Act
@@ -120,10 +125,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -150,6 +155,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '000010',
                 'ReferenceNumber' => '000001000010',
                 'OrderNumber' => '000001000010',
@@ -167,6 +173,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '59017',
             'currency' => '840',
+            'ClientRef' => '000001000010',
         );
 
         // Act
@@ -192,10 +199,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -222,6 +229,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '010010',
                 'ReferenceNumber' => '000001010010',
                 'OrderNumber' => '000001010010',
@@ -239,6 +247,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '58314',
             'currency' => '840',
+            'ClientRef' => '000001010010',
         );
 
         // Act
@@ -264,10 +273,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -294,6 +303,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '280010',
                 'ReferenceNumber' => '000001280010',
                 'OrderNumber' => '000001280010',
@@ -311,6 +321,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '59018',
             'currency' => '840',
+            'ClientRef' => '000001280010',
         );
 
         // Act
@@ -336,10 +347,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -366,6 +377,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '290010',
                 'ReferenceNumber' => '000001290010',
                 'OrderNumber' => '000001290010',
@@ -383,6 +395,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '58315',
             'currency' => '840',
+            'ClientRef' => '000001290010',
         );
 
         // Act
@@ -408,10 +421,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -435,16 +448,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '340010',
                 'ReferenceNumber' => '000001340010',
                 'OrderNumber' => '000001340010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -452,6 +467,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30006',
             'currency' => '840',
+            'ClientRef' => '000001340010',
         );
 
         // Act
@@ -475,10 +491,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -505,16 +521,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '360010',
                 'ReferenceNumber' => '000001360010',
                 'OrderNumber' => '000001360010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -526,6 +544,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30132',
             'currency' => '840',
+            'ClientRef' => '000001360010',
         );
 
         // Act
@@ -560,16 +579,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '360011',
                 'ReferenceNumber' => '000001360011',
                 'OrderNumber' => '000001360011',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -601,6 +622,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30132',
             'currency' => '840',
+            'ClientRef' => '000001360011',
         );
 
         // Act
@@ -624,10 +646,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -654,6 +676,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '700010',
                 'ReferenceNumber' => '000001700010',
                 'OrderNumber' => '000001700010',
@@ -668,6 +691,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '59019',
             'currency' => '840',
+            'ClientRef' => '000001700010',
         );
 
         // Act
@@ -693,10 +717,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -723,6 +747,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '710010',
                 'ReferenceNumber' => '000001710010',
                 'OrderNumber' => '000001710010',
@@ -737,6 +762,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '58316',
             'currency' => '840',
+            'ClientRef' => '000001710010',
         );
 
         // Act
@@ -762,10 +788,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -792,9 +818,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '880010',
                 'ReferenceNumber' => '000001880010',
                 'OrderNumber' => '000001880010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -809,6 +841,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14052',
             'currency' => '840',
+            'ClientRef' => '000001880010',
         );
 
         // Act
@@ -834,10 +867,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -864,9 +897,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '900010',
                 'ReferenceNumber' => '000001900010',
                 'OrderNumber' => '000001900010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -881,6 +920,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14042',
             'currency' => '840',
+            'ClientRef' => '000001900010',
         );
 
         // Act
@@ -915,6 +955,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '900011',
                 'ReferenceNumber' => '000001900011',
                 'OrderNumber' => '000001900011',
@@ -952,6 +993,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7018',
             'currency' => '840',
+            'ClientRef' => '000001900011',
         );
 
         // Act
@@ -975,10 +1017,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1005,6 +1047,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '620010',
                 'ReferenceNumber' => '000002620010',
                 'OrderNumber' => '000002620010',
@@ -1022,6 +1065,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14126',
             'currency' => '840',
+            'ClientRef' => '000002620010',
         );
 
         // Act
@@ -1047,10 +1091,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1077,6 +1121,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '640010',
                 'ReferenceNumber' => '000002640010',
                 'OrderNumber' => '000002640010',
@@ -1094,6 +1139,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14128',
             'currency' => '840',
+            'ClientRef' => '000002640010',
         );
 
         // Act
@@ -1119,10 +1165,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1149,6 +1195,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '660010',
                 'ReferenceNumber' => '000002660010',
                 'OrderNumber' => '000002660010',
@@ -1166,6 +1213,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14118',
             'currency' => '840',
+            'ClientRef' => '000002660010',
         );
 
         // Act
@@ -1191,10 +1239,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1221,6 +1269,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '680010',
                 'ReferenceNumber' => '000002680010',
                 'OrderNumber' => '000002680010',
@@ -1238,6 +1287,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14120',
             'currency' => '840',
+            'ClientRef' => '000002680010',
         );
 
         // Act
@@ -1263,10 +1313,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1293,6 +1343,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '700010',
                 'ReferenceNumber' => '000002700010',
                 'OrderNumber' => '000002700010',
@@ -1310,6 +1361,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '76025',
             'currency' => '840',
+            'ClientRef' => '000002700010',
         );
 
         // Act
@@ -1335,10 +1387,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1365,6 +1417,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '720010',
                 'ReferenceNumber' => '000002720010',
                 'OrderNumber' => '000002720010',
@@ -1382,6 +1435,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '76021',
             'currency' => '840',
+            'ClientRef' => '000002720010',
         );
 
         // Act
@@ -1407,10 +1461,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1437,6 +1491,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                // 'MerchantCategoryCode' => '5965',
                 'STAN' => '250010',
                 'ReferenceNumber' => '000003250010',
                 'OrderNumber' => '000003250010',
@@ -1445,12 +1500,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDAwMDMyNTAwMTA=',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '13550',
             'currency' => '840',
+            'ClientRef' => '000003250010',
         );
 
         // Act
@@ -1476,10 +1535,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1506,6 +1565,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '270010',
                 'ReferenceNumber' => '000003270010',
                 'OrderNumber' => '000003270010',
@@ -1514,12 +1574,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDAwMDMyNzAwMTA=',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '13552',
             'currency' => '840',
+            'ClientRef' => '000003270010',
         );
 
         // Act
@@ -1545,10 +1609,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1575,6 +1639,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '290010',
                 'ReferenceNumber' => '000003290010',
                 'OrderNumber' => '000003290010',
@@ -1589,6 +1654,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13542',
             'currency' => '840',
+            'ClientRef' => '000003290010',
         );
 
         // Act
@@ -1614,10 +1680,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1644,6 +1710,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '310010',
                 'ReferenceNumber' => '000003310010',
                 'OrderNumber' => '000003310010',
@@ -1658,6 +1725,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13544',
             'currency' => '840',
+            'ClientRef' => '000003310010',
         );
 
         // Act
@@ -1683,10 +1751,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1713,6 +1781,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '330010',
                 'ReferenceNumber' => '000003330010',
                 'OrderNumber' => '000003330010',
@@ -1727,6 +1796,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34011',
             'currency' => '840',
+            'ClientRef' => '000003330010',
         );
 
         // Act
@@ -1752,10 +1822,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -1782,6 +1852,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '350010',
                 'ReferenceNumber' => '000003350010',
                 'OrderNumber' => '000003350010',
@@ -1796,6 +1867,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34015',
             'currency' => '840',
+            'ClientRef' => '000003350010',
         );
 
         // Act
@@ -1821,10 +1893,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -1851,16 +1923,26 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '950010',
                 'ReferenceNumber' => '000003950010',
                 'OrderNumber' => '000003950010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1868,6 +1950,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '64522',
             'currency' => '840',
+            'ClientRef' => '000003950010',
         );
 
         // Act
@@ -1893,10 +1976,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -1923,16 +2006,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '980010',
                 'ReferenceNumber' => '000003980010',
                 'OrderNumber' => '000003980010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1940,6 +2028,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30144',
             'currency' => '840',
+            'ClientRef' => '000003980010',
         );
 
         // Act
@@ -1965,10 +2054,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -1995,9 +2084,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '700010',
                 'ReferenceNumber' => '000005700010',
                 'OrderNumber' => '000005700010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2005,6 +2098,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '111968',
             'currency' => '840',
+            'ClientRef' => '000005700010',
         );
 
         // Act
@@ -2039,9 +2133,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '700011',
                 'ReferenceNumber' => '000005700011',
                 'OrderNumber' => '000005700011',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -2052,6 +2150,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '111868',
             'currency' => '840',
+            'ClientRef' => '000005700011',
         );
 
         // Act
@@ -2075,10 +2174,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -2105,16 +2204,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '420010',
                 'ReferenceNumber' => '000022420010',
                 'OrderNumber' => '000022420010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2122,6 +2223,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '10000',
             'currency' => '840',
+            'ClientRef' => '000022420010',
         );
 
         // Act
@@ -2156,15 +2258,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '420011',
                 'ReferenceNumber' => '000022420011',
                 'OrderNumber' => '000022420011',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
+                'MerchantCountry' => '840',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -2175,6 +2279,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '10000',
             'currency' => '840',
+            'ClientRef' => '000022420011',
         );
 
         // Act
@@ -2199,10 +2304,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -2229,16 +2334,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '440010',
                 'ReferenceNumber' => '000022440010',
                 'OrderNumber' => '000022440010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2246,6 +2353,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62008',
             'currency' => '840',
+            'ClientRef' => '000022440010',
         );
 
         // Act
@@ -2280,25 +2388,29 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '440011',
                 'ReferenceNumber' => '000022440011',
                 'OrderNumber' => '000022440011',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
+                'MerchantCountry' => '840',
             ),
-            'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
-                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
-                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '32004',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'amount' => '32004',
             'currency' => '840',
+            'ClientRef' => '000022440011',
         );
 
         // Act
@@ -2323,10 +2435,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -2353,16 +2465,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '460010',
                 'ReferenceNumber' => '000022460010',
                 'OrderNumber' => '000022460010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2370,6 +2484,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '10500',
             'currency' => '840',
+            'ClientRef' => '000022460010',
         );
 
         // Act
@@ -2404,15 +2519,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '460011',
                 'ReferenceNumber' => '000022460011',
                 'OrderNumber' => '000022460011',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
+                'MerchantCountry' => '840',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -2423,6 +2540,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '10500',
             'currency' => '840',
+            'ClientRef' => '000022460011',
         );
 
         // Act
@@ -2447,10 +2565,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -2477,16 +2595,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '480010',
                 'ReferenceNumber' => '000022480010',
                 'OrderNumber' => '000022480010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2494,6 +2614,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '10700',
             'currency' => '840',
+            'ClientRef' => '000022480010',
         );
 
         // Act
@@ -2528,16 +2649,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '480011',
                 'ReferenceNumber' => '000022480011',
                 'OrderNumber' => '000022480011',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -2560,6 +2683,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '10700',
             'currency' => '840',
+            'ClientRef' => '000022480011',
         );
 
         // Act
@@ -2583,10 +2707,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -2613,16 +2737,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '490010',
                 'ReferenceNumber' => '000022490010',
                 'OrderNumber' => '000022490010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2630,6 +2756,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '10800',
             'currency' => '840',
+            'ClientRef' => '000022490010',
         );
 
         // Act
@@ -2664,16 +2791,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '490011',
                 'ReferenceNumber' => '000022490011',
                 'OrderNumber' => '000022490011',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -2696,6 +2825,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '10800',
             'currency' => '840',
+            'ClientRef' => '000022490011',
         );
 
         // Act
@@ -2719,10 +2849,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -2749,6 +2879,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '580010',
                 'ReferenceNumber' => '000022580010',
                 'OrderNumber' => '000022580010',
@@ -2759,6 +2890,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '000',
             'currency' => '840',
+            'ClientRef' => '000022580010',
         );
 
         // Act
@@ -2784,10 +2916,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -2811,12 +2943,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '600010',
                 'ReferenceNumber' => '000022600010',
                 'OrderNumber' => '000022600010',
             ),
             'amount' => '9435',
             'currency' => '840',
+            'ClientRef' => '000022600010',
         );
 
         // Act
@@ -2849,6 +2983,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '600011',
                 'ReferenceNumber' => '000022600011',
                 'OrderNumber' => '000022600011',
@@ -2862,6 +2997,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9335',
             'currency' => '840',
+            'ClientRef' => '000022600011',
         );
 
         // Act
@@ -2885,10 +3021,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -2912,6 +3048,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '640010',
                 'ReferenceNumber' => '000022640010',
                 'OrderNumber' => '000022640010',
@@ -2930,6 +3067,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '63139',
             'currency' => '840',
+            'ClientRef' => '000022640010',
         );
 
         // Act
@@ -2953,10 +3091,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -2983,16 +3121,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '770010',
                 'ReferenceNumber' => '000022770010',
                 'OrderNumber' => '000022770010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3000,6 +3140,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '55002',
             'currency' => '840',
+            'ClientRef' => '000022770010',
         );
 
         // Act
@@ -3025,10 +3166,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3055,16 +3196,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '790010',
                 'ReferenceNumber' => '000022790010',
                 'OrderNumber' => '000022790010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3072,6 +3215,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '55004',
             'currency' => '840',
+            'ClientRef' => '000022790010',
         );
 
         // Act
@@ -3097,10 +3241,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3127,16 +3271,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '810010',
                 'ReferenceNumber' => '000022810010',
                 'OrderNumber' => '000022810010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3144,6 +3290,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '55006',
             'currency' => '840',
+            'ClientRef' => '000022810010',
         );
 
         // Act
@@ -3169,10 +3316,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3199,16 +3346,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '820010',
                 'ReferenceNumber' => '000022820010',
                 'OrderNumber' => '000022820010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3216,6 +3365,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '55007',
             'currency' => '840',
+            'ClientRef' => '000022820010',
         );
 
         // Act
@@ -3241,10 +3391,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3268,12 +3418,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '830010',
                 'ReferenceNumber' => '000022830010',
                 'OrderNumber' => '000022830010',
             ),
             'amount' => '55008',
             'currency' => '840',
+            'ClientRef' => '000022830010',
         );
 
         // Act
@@ -3297,10 +3449,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3327,15 +3479,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '170010',
                 'ReferenceNumber' => '000023170010',
                 'OrderNumber' => '000023170010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3343,6 +3497,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '000',
             'currency' => '840',
+            'ClientRef' => '000023170010',
         );
 
         // Act
@@ -3368,10 +3523,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3398,15 +3553,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '230010',
                 'ReferenceNumber' => '000023230010',
                 'OrderNumber' => '000023230010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3414,6 +3571,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '46957',
             'currency' => '840',
+            'ClientRef' => '000023230010',
         );
 
         // Act
@@ -3439,10 +3597,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3466,12 +3624,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '270010',
                 'ReferenceNumber' => '000023270010',
                 'OrderNumber' => '000023270010',
             ),
             'amount' => '49439',
             'currency' => '840',
+            'ClientRef' => '000023270010',
         );
 
         // Act
@@ -3504,6 +3664,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '270011',
                 'ReferenceNumber' => '000023270011',
                 'OrderNumber' => '000023270011',
@@ -3517,6 +3678,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '49339',
             'currency' => '840',
+            'ClientRef' => '000023270011',
         );
 
         // Act
@@ -3540,10 +3702,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3567,6 +3729,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '670010',
                 'ReferenceNumber' => '000023670010',
                 'OrderNumber' => '000023670010',
@@ -3576,6 +3739,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '21400',
             'currency' => '840',
+            'ClientRef' => '000023670010',
         );
 
         // Act
@@ -3608,6 +3772,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '670011',
                 'ReferenceNumber' => '000023670011',
                 'OrderNumber' => '000023670011',
@@ -3624,6 +3789,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '21400',
             'currency' => '840',
+            'ClientRef' => '000023670011',
         );
 
         // Act
@@ -3647,10 +3813,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3674,6 +3840,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '780010',
                 'ReferenceNumber' => '000023780010',
                 'OrderNumber' => '000023780010',
@@ -3683,6 +3850,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '000',
             'currency' => '840',
+            'ClientRef' => '000023780010',
         );
 
         // Act
@@ -3706,10 +3874,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3736,9 +3904,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '840010',
                 'ReferenceNumber' => '000023840010',
                 'OrderNumber' => '000023840010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -3749,6 +3925,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '22400',
             'currency' => '840',
+            'ClientRef' => '000023840010',
         );
 
         // Act
@@ -3774,10 +3951,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3804,9 +3981,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000023860010',
                 'OrderNumber' => '000023860010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -3817,6 +4002,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '22600',
             'currency' => '840',
+            'ClientRef' => '000023860010',
         );
 
         // Act
@@ -3842,10 +4028,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3869,6 +4055,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '040010',
                 'ReferenceNumber' => '000024040010',
                 'OrderNumber' => '000024040010',
@@ -3890,6 +4077,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '63139',
             'currency' => '840',
+            'ClientRef' => '000024040010',
         );
 
         // Act
@@ -3913,10 +4101,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -3943,16 +4131,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '110010',
                 'ReferenceNumber' => '000024110010',
                 'OrderNumber' => '000024110010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3960,6 +4150,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30000',
             'currency' => '840',
+            'ClientRef' => '000024110010',
         );
 
         // Act
@@ -3994,16 +4185,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '110011',
                 'ReferenceNumber' => '000024110011',
                 'OrderNumber' => '000024110011',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4014,6 +4207,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30000',
             'currency' => '840',
+            'ClientRef' => '000024110011',
         );
 
         // Act
@@ -4038,10 +4232,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -4068,16 +4262,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '130010',
                 'ReferenceNumber' => '000024130010',
                 'OrderNumber' => '000024130010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4085,6 +4281,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '54436',
             'currency' => '840',
+            'ClientRef' => '000024130010',
         );
 
         // Act
@@ -4119,16 +4316,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '130011',
                 'ReferenceNumber' => '000024130011',
                 'OrderNumber' => '000024130011',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4139,6 +4338,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '27218',
             'currency' => '840',
+            'ClientRef' => '000024130011',
         );
 
         // Act
@@ -4163,10 +4363,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -4193,16 +4393,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '150010',
                 'ReferenceNumber' => '000024150010',
                 'OrderNumber' => '000024150010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4210,6 +4412,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30500',
             'currency' => '840',
+            'ClientRef' => '000024150010',
         );
 
         // Act
@@ -4244,16 +4447,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '150011',
                 'ReferenceNumber' => '000024150011',
                 'OrderNumber' => '000024150011',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4264,6 +4469,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30500',
             'currency' => '840',
+            'ClientRef' => '000024150011',
         );
 
         // Act
@@ -4288,10 +4494,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -4318,16 +4524,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '170010',
                 'ReferenceNumber' => '000024170010',
                 'OrderNumber' => '000024170010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4335,6 +4543,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30700',
             'currency' => '840',
+            'ClientRef' => '000024170010',
         );
 
         // Act
@@ -4369,16 +4578,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '170011',
                 'ReferenceNumber' => '000024170011',
                 'OrderNumber' => '000024170011',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -4401,6 +4612,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30700',
             'currency' => '840',
+            'ClientRef' => '000024170011',
         );
 
         // Act
@@ -4424,10 +4636,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -4454,16 +4666,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '180010',
                 'ReferenceNumber' => '000024180010',
                 'OrderNumber' => '000024180010',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4471,6 +4685,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30800',
             'currency' => '840',
+            'ClientRef' => '000024180010',
         );
 
         // Act
@@ -4505,16 +4720,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '180011',
                 'ReferenceNumber' => '000024180011',
                 'OrderNumber' => '000024180011',
             ),
-            'AlternameMerchantNameandAddressGroup' => array(
+            'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
                 'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -4537,6 +4754,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30800',
             'currency' => '840',
+            'ClientRef' => '000024180011',
         );
 
         // Act
@@ -4560,10 +4778,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -4589,6 +4807,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '230010',
                 'ReferenceNumber' => '000024230010',
                 'OrderNumber' => '000024230010',
@@ -4599,6 +4818,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '000',
             'currency' => '840',
+            'ClientRef' => '000024230010',
         );
 
         // Act
@@ -4623,10 +4843,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -4653,9 +4873,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '940010',
                 'ReferenceNumber' => '000026940010',
                 'OrderNumber' => '000026940010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4663,6 +4887,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '8280',
             'currency' => '840',
+            'ClientRef' => '000026940010',
         );
 
         // Act
@@ -4697,6 +4922,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '940011',
                 'ReferenceNumber' => '000026940011',
                 'OrderNumber' => '000026940011',
@@ -4713,6 +4939,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -4722,6 +4951,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '8280',
             'currency' => '840',
+            'ClientRef' => '000026940011',
         );
 
         // Act
@@ -4745,10 +4975,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -4775,9 +5005,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '000010',
                 'ReferenceNumber' => '000027000010',
                 'OrderNumber' => '000027000010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -4788,6 +5022,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '8282',
             'currency' => '840',
+            'ClientRef' => '000027000010',
         );
 
         // Act
@@ -4822,6 +5057,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '000011',
                 'ReferenceNumber' => '000027000011',
                 'OrderNumber' => '000027000011',
@@ -4838,6 +5074,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -4850,6 +5089,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '8282',
             'currency' => '840',
+            'ClientRef' => '000027000011',
         );
 
         // Act
@@ -4873,10 +5113,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -4900,6 +5140,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '760010',
                 'ReferenceNumber' => '000133760010',
                 'OrderNumber' => '000133760010',
@@ -4909,6 +5150,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '000',
             'currency' => '840',
+            'ClientRef' => '000133760010',
         );
 
         // Act
@@ -4932,10 +5174,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -4959,12 +5201,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '760010',
                 'ReferenceNumber' => '000136760010',
                 'OrderNumber' => '000136760010',
             ),
             'amount' => '62110',
             'currency' => '840',
+            'ClientRef' => '000136760010',
         );
 
         // Act
@@ -4988,10 +5232,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5015,12 +5259,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '870010',
                 'ReferenceNumber' => '000136870010',
                 'OrderNumber' => '000136870010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '54202',
             'currency' => '840',
+            'ClientRef' => '000136870010',
         );
 
         // Act
@@ -5044,10 +5295,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5071,12 +5322,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '970010',
                 'ReferenceNumber' => '000136970010',
                 'OrderNumber' => '000136970010',
             ),
             'amount' => '62144',
             'currency' => '840',
+            'ClientRef' => '000136970010',
         );
 
         // Act
@@ -5100,10 +5353,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5127,6 +5380,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '020010',
                 'ReferenceNumber' => '000137020010',
                 'OrderNumber' => '000137020010',
@@ -5136,6 +5390,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '83136',
             'currency' => '840',
+            'ClientRef' => '000137020010',
         );
 
         // Act
@@ -5159,10 +5414,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5186,12 +5441,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '050010',
                 'ReferenceNumber' => '000137050010',
                 'OrderNumber' => '000137050010',
             ),
             'amount' => '34146',
             'currency' => '840',
+            'ClientRef' => '000137050010',
         );
 
         // Act
@@ -5215,10 +5472,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5242,12 +5499,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '070010',
                 'ReferenceNumber' => '000137070010',
                 'OrderNumber' => '000137070010',
             ),
             'amount' => '34139',
             'currency' => '840',
+            'ClientRef' => '000137070010',
         );
 
         // Act
@@ -5271,10 +5530,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5298,12 +5557,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '120010',
                 'ReferenceNumber' => '000137120010',
                 'OrderNumber' => '000137120010',
             ),
             'amount' => '101135',
             'currency' => '840',
+            'ClientRef' => '000137120010',
         );
 
         // Act
@@ -5327,10 +5588,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5354,12 +5615,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '140010',
                 'ReferenceNumber' => '000137140010',
                 'OrderNumber' => '000137140010',
             ),
             'amount' => '57210',
             'currency' => '840',
+            'ClientRef' => '000137140010',
         );
 
         // Act
@@ -5392,6 +5655,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '140011',
                 'ReferenceNumber' => '000137140011',
                 'OrderNumber' => '000137140011',
@@ -5405,6 +5669,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57210',
             'currency' => '840',
+            'ClientRef' => '000137140011',
         );
 
         // Act
@@ -5429,10 +5694,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5456,12 +5721,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '170010',
                 'ReferenceNumber' => '000137170010',
                 'OrderNumber' => '000137170010',
             ),
             'amount' => '57311',
             'currency' => '840',
+            'ClientRef' => '000137170010',
         );
 
         // Act
@@ -5494,6 +5761,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '170011',
                 'ReferenceNumber' => '000137170011',
                 'OrderNumber' => '000137170011',
@@ -5507,6 +5775,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57311',
             'currency' => '840',
+            'ClientRef' => '000137170011',
         );
 
         // Act
@@ -5531,10 +5800,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5558,15 +5827,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '200010',
                 'ReferenceNumber' => '000137200010',
                 'OrderNumber' => '000137200010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '76056',
             'currency' => '840',
+            'ClientRef' => '000137200010',
         );
 
         // Act
@@ -5599,19 +5875,30 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '200011',
                 'ReferenceNumber' => '000137200011',
                 'OrderNumber' => '000137200011',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '38028',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '38028',
             'currency' => '840',
+            'ClientRef' => '000137200011',
         );
 
         // Act
-        $request = $gateway->purchase($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -5631,10 +5918,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5658,15 +5945,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '230010',
                 'ReferenceNumber' => '000137230010',
                 'OrderNumber' => '000137230010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '76052',
             'currency' => '840',
+            'ClientRef' => '000137230010',
         );
 
         // Act
@@ -5699,19 +5993,30 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '230011',
                 'ReferenceNumber' => '000137230011',
                 'OrderNumber' => '000137230011',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '38026',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '38026',
             'currency' => '840',
+            'ClientRef' => '000137230011',
         );
 
         // Act
-        $request = $gateway->purchase($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -5731,10 +6036,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5758,12 +6063,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '260010',
                 'ReferenceNumber' => '000137260010',
                 'OrderNumber' => '000137260010',
             ),
             'amount' => '34104',
             'currency' => '840',
+            'ClientRef' => '000137260010',
         );
 
         // Act
@@ -5796,6 +6103,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '260011',
                 'ReferenceNumber' => '000137260011',
                 'OrderNumber' => '000137260011',
@@ -5809,6 +6117,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34104',
             'currency' => '840',
+            'ClientRef' => '000137260011',
         );
 
         // Act
@@ -5833,10 +6142,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5860,12 +6169,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '290010',
                 'ReferenceNumber' => '000137290010',
                 'OrderNumber' => '000137290010',
             ),
             'amount' => '34451',
             'currency' => '840',
+            'ClientRef' => '000137290010',
         );
 
         // Act
@@ -5898,6 +6209,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '290011',
                 'ReferenceNumber' => '000137290011',
                 'OrderNumber' => '000137290011',
@@ -5911,6 +6223,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34451',
             'currency' => '840',
+            'ClientRef' => '000137290011',
         );
 
         // Act
@@ -5935,10 +6248,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -5962,12 +6275,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '320010',
                 'ReferenceNumber' => '000137320010',
                 'OrderNumber' => '000137320010',
             ),
             'amount' => '101299',
             'currency' => '840',
+            'ClientRef' => '000137320010',
         );
 
         // Act
@@ -6000,6 +6315,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '320011',
                 'ReferenceNumber' => '000137320011',
                 'OrderNumber' => '000137320011',
@@ -6013,6 +6329,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '101299',
             'currency' => '840',
+            'ClientRef' => '000137320011',
         );
 
         // Act
@@ -6037,10 +6354,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -6067,9 +6384,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '120010',
                 'ReferenceNumber' => '000138120010',
                 'OrderNumber' => '000138120010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -6080,6 +6401,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '83256',
             'currency' => '840',
+            'ClientRef' => '000138120010',
         );
 
         // Act
@@ -6105,10 +6427,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -6132,15 +6454,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '130010',
                 'ReferenceNumber' => '000138130010',
                 'OrderNumber' => '000138130010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '83297',
             'currency' => '840',
+            'ClientRef' => '000138130010',
         );
 
         // Act
@@ -6164,10 +6491,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -6191,12 +6518,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '150010',
                 'ReferenceNumber' => '000138150010',
                 'OrderNumber' => '000138150010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '34281',
             'currency' => '840',
+            'ClientRef' => '000138150010',
         );
 
         // Act
@@ -6220,10 +6552,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -6247,12 +6579,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '170010',
                 'ReferenceNumber' => '000138170010',
                 'OrderNumber' => '000138170010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '101283',
             'currency' => '840',
+            'ClientRef' => '000138170010',
         );
 
         // Act
@@ -6276,10 +6613,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -6305,9 +6642,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '210010',
                 'ReferenceNumber' => '000138210010',
                 'OrderNumber' => '000138210010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -6315,6 +6656,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62266',
             'currency' => '840',
+            'ClientRef' => '000138210010',
         );
 
         // Act
@@ -6339,10 +6681,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -6369,9 +6711,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '230010',
                 'ReferenceNumber' => '000138230010',
                 'OrderNumber' => '000138230010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -6379,6 +6725,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57211',
             'currency' => '840',
+            'ClientRef' => '000138230010',
         );
 
         // Act
@@ -6413,9 +6760,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '230011',
                 'ReferenceNumber' => '000138230011',
                 'OrderNumber' => '000138230011',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -6426,6 +6777,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57211',
             'currency' => '840',
+            'ClientRef' => '000138230011',
         );
 
         // Act
@@ -6450,10 +6802,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -6479,15 +6831,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '250010',
                 'ReferenceNumber' => '000138250010',
                 'OrderNumber' => '000138250010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '84794',
             'currency' => '840',
+            'ClientRef' => '000138250010',
         );
 
         // Act
@@ -6522,9 +6879,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '250011',
                 'ReferenceNumber' => '000138250011',
                 'OrderNumber' => '000138250011',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -6538,6 +6899,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '84794',
             'currency' => '840',
+            'ClientRef' => '000138250011',
         );
 
         // Act
@@ -6562,10 +6924,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -6592,9 +6954,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '270010',
                 'ReferenceNumber' => '000138270010',
                 'OrderNumber' => '000138270010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -6602,6 +6968,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34251',
             'currency' => '840',
+            'ClientRef' => '000138270010',
         );
 
         // Act
@@ -6636,9 +7003,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '270011',
                 'ReferenceNumber' => '000138270011',
                 'OrderNumber' => '000138270011',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -6649,6 +7020,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34251',
             'currency' => '840',
+            'ClientRef' => '000138270011',
         );
 
         // Act
@@ -6673,10 +7045,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -6702,12 +7074,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '300010',
                 'ReferenceNumber' => '000138300010',
                 'OrderNumber' => '000138300010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '82952',
             'currency' => '840',
+            'ClientRef' => '000138300010',
         );
 
         // Act
@@ -6742,6 +7124,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '300011',
                 'ReferenceNumber' => '000138300011',
                 'OrderNumber' => '000138300011',
@@ -6763,6 +7146,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -6772,6 +7158,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '41473',
             'currency' => '840',
+            'ClientRef' => '000138300011',
         );
 
         // Act
@@ -6795,10 +7182,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -6825,9 +7212,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '310010',
                 'ReferenceNumber' => '000138310010',
                 'OrderNumber' => '000138310010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -6835,6 +7226,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '101294',
             'currency' => '840',
+            'ClientRef' => '000138310010',
         );
 
         // Act
@@ -6869,9 +7261,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '310011',
                 'ReferenceNumber' => '000138310011',
                 'OrderNumber' => '000138310011',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -6882,6 +7278,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '101294',
             'currency' => '840',
+            'ClientRef' => '000138310011',
         );
 
         // Act
@@ -6906,10 +7303,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -6933,6 +7330,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '430010',
                 'ReferenceNumber' => '000138430010',
                 'OrderNumber' => '000138430010',
@@ -6943,6 +7341,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34206',
             'currency' => '840',
+            'ClientRef' => '000138430010',
         );
 
         // Act
@@ -6966,10 +7365,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -6996,9 +7395,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '440010',
                 'ReferenceNumber' => '000138440010',
                 'OrderNumber' => '000138440010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -7010,6 +7415,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '113610',
             'currency' => '840',
+            'ClientRef' => '000138440010',
         );
 
         // Act
@@ -7035,10 +7441,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -7062,6 +7468,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '460010',
                 'ReferenceNumber' => '000138460010',
                 'OrderNumber' => '000138460010',
@@ -7072,6 +7479,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62207',
             'currency' => '840',
+            'ClientRef' => '000138460010',
         );
 
         // Act
@@ -7095,10 +7503,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -7122,6 +7530,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '510010',
                 'ReferenceNumber' => '000138510010',
                 'OrderNumber' => '000138510010',
@@ -7135,6 +7544,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '83211',
             'currency' => '840',
+            'ClientRef' => '000138510010',
         );
 
         // Act
@@ -7158,10 +7568,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -7187,9 +7597,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '540010',
                 'ReferenceNumber' => '000138540010',
                 'OrderNumber' => '000138540010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -7197,6 +7613,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '117022',
             'currency' => '840',
+            'ClientRef' => '000138540010',
         );
 
         // Act
@@ -7222,10 +7639,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -7249,6 +7666,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '550010',
                 'ReferenceNumber' => '000138550010',
                 'OrderNumber' => '000138550010',
@@ -7259,6 +7677,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '101209',
             'currency' => '840',
+            'ClientRef' => '000138550010',
         );
 
         // Act
@@ -7282,10 +7701,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -7311,9 +7730,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '670010',
                 'ReferenceNumber' => '000138670010',
                 'OrderNumber' => '000138670010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -7321,6 +7746,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '55444',
             'currency' => '840',
+            'ClientRef' => '000138670010',
         );
 
         // Act
@@ -7355,6 +7781,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '670011',
                 'ReferenceNumber' => '000138670011',
                 'OrderNumber' => '000138670011',
@@ -7389,6 +7816,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '27722',
             'currency' => '840',
+            'ClientRef' => '000138670011',
         );
 
         // Act
@@ -7412,10 +7840,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -7442,6 +7870,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '680010',
                 'ReferenceNumber' => '000138680010',
                 'OrderNumber' => '000138680010',
@@ -7456,6 +7885,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34195',
             'currency' => '840',
+            'ClientRef' => '000138680010',
         );
 
         // Act
@@ -7490,6 +7920,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '680011',
                 'ReferenceNumber' => '000138680011',
                 'OrderNumber' => '000138680011',
@@ -7507,6 +7938,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34195',
             'currency' => '840',
+            'ClientRef' => '000138680011',
         );
 
         // Act
@@ -7531,10 +7963,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -7559,6 +7991,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '690010',
                 'ReferenceNumber' => '000138690010',
                 'OrderNumber' => '000138690010',
@@ -7569,6 +8002,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14304',
             'currency' => '840',
+            'ClientRef' => '000138690010',
         );
 
         // Act
@@ -7602,6 +8036,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '690011',
                 'ReferenceNumber' => '000138690011',
                 'OrderNumber' => '000138690011',
@@ -7619,6 +8054,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14304',
             'currency' => '840',
+            'ClientRef' => '000138690011',
         );
 
         // Act
@@ -7643,10 +8079,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -7672,9 +8108,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '700010',
                 'ReferenceNumber' => '000138700010',
                 'OrderNumber' => '000138700010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -7682,6 +8124,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13562',
             'currency' => '840',
+            'ClientRef' => '000138700010',
         );
 
         // Act
@@ -7716,6 +8159,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '700011',
                 'ReferenceNumber' => '000138700011',
                 'OrderNumber' => '000138700011',
@@ -7750,6 +8194,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '6778',
             'currency' => '840',
+            'ClientRef' => '000138700011',
         );
 
         // Act
@@ -7773,10 +8218,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -7802,6 +8247,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '710010',
                 'ReferenceNumber' => '000138710010',
                 'OrderNumber' => '000138710010',
@@ -7810,8 +8256,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDAxMzg3MTAwMTA=',
+            ),
             'amount' => '13682',
             'currency' => '840',
+            'ClientRef' => '000138710010',
         );
 
         // Act
@@ -7837,10 +8287,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -7867,6 +8317,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '750010',
                 'ReferenceNumber' => '000138750010',
                 'OrderNumber' => '000138750010',
@@ -7881,6 +8332,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62195',
             'currency' => '840',
+            'ClientRef' => '000138750010',
         );
 
         // Act
@@ -7915,6 +8367,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '750011',
                 'ReferenceNumber' => '000138750011',
                 'OrderNumber' => '000138750011',
@@ -7949,6 +8402,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62099',
             'currency' => '840',
+            'ClientRef' => '000138750011',
         );
 
         // Act
@@ -7972,10 +8426,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -8002,6 +8456,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '760010',
                 'ReferenceNumber' => '000138760010',
                 'OrderNumber' => '000138760010',
@@ -8019,6 +8474,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14642',
             'currency' => '840',
+            'ClientRef' => '000138760010',
         );
 
         // Act
@@ -8053,6 +8509,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '760011',
                 'ReferenceNumber' => '000138760011',
                 'OrderNumber' => '000138760011',
@@ -8090,6 +8547,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14642',
             'currency' => '840',
+            'ClientRef' => '000138760011',
         );
 
         // Act
@@ -8113,10 +8571,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -8142,6 +8600,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '770010',
                 'ReferenceNumber' => '000138770010',
                 'OrderNumber' => '000138770010',
@@ -8155,6 +8614,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13804',
             'currency' => '840',
+            'ClientRef' => '000138770010',
         );
 
         // Act
@@ -8189,6 +8649,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '770011',
                 'ReferenceNumber' => '000138770011',
                 'OrderNumber' => '000138770011',
@@ -8209,6 +8670,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13804',
             'currency' => '840',
+            'ClientRef' => '000138770011',
         );
 
         // Act
@@ -8233,10 +8695,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -8261,6 +8723,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '780010',
                 'ReferenceNumber' => '000138780010',
                 'OrderNumber' => '000138780010',
@@ -8274,6 +8737,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15040',
             'currency' => '840',
+            'ClientRef' => '000138780010',
         );
 
         // Act
@@ -8307,6 +8771,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '780011',
                 'ReferenceNumber' => '000138780011',
                 'OrderNumber' => '000138780011',
@@ -8327,6 +8792,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15040',
             'currency' => '840',
+            'ClientRef' => '000138780011',
         );
 
         // Act
@@ -8351,10 +8817,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -8380,6 +8846,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '790010',
                 'ReferenceNumber' => '000138790010',
                 'OrderNumber' => '000138790010',
@@ -8393,6 +8860,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13848',
             'currency' => '840',
+            'ClientRef' => '000138790010',
         );
 
         // Act
@@ -8427,6 +8895,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '790011',
                 'ReferenceNumber' => '000138790011',
                 'OrderNumber' => '000138790011',
@@ -8464,6 +8933,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13845',
             'currency' => '840',
+            'ClientRef' => '000138790011',
         );
 
         // Act
@@ -8487,10 +8957,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -8517,6 +8987,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '800010',
                 'ReferenceNumber' => '000138800010',
                 'OrderNumber' => '000138800010',
@@ -8534,6 +9005,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13718',
             'currency' => '840',
+            'ClientRef' => '000138800010',
         );
 
         // Act
@@ -8559,10 +9031,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -8588,9 +9060,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '850010',
                 'ReferenceNumber' => '000138850010',
                 'OrderNumber' => '000138850010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -8601,6 +9079,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '77190',
             'currency' => '840',
+            'ClientRef' => '000138850010',
         );
 
         // Act
@@ -8635,9 +9114,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '850011',
                 'ReferenceNumber' => '000138850011',
                 'OrderNumber' => '000138850011',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '38595',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -8648,6 +9136,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '38595',
             'currency' => '840',
+            'ClientRef' => '000138850011',
         );
 
         // Act
@@ -8671,10 +9160,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -8699,9 +9188,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000138860010',
                 'OrderNumber' => '000138860010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -8712,6 +9207,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14678',
             'currency' => '840',
+            'ClientRef' => '000138860010',
         );
 
         // Act
@@ -8745,6 +9241,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '860011',
                 'ReferenceNumber' => '000138860011',
                 'OrderNumber' => '000138860011',
@@ -8781,6 +9278,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7339',
             'currency' => '840',
+            'ClientRef' => '000138860011',
         );
 
         // Act
@@ -8804,10 +9302,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -8833,6 +9331,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '870010',
                 'ReferenceNumber' => '000138870010',
                 'OrderNumber' => '000138870010',
@@ -8846,6 +9345,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14194',
             'currency' => '840',
+            'ClientRef' => '000138870010',
         );
 
         // Act
@@ -8880,6 +9380,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '870011',
                 'ReferenceNumber' => '000138870011',
                 'OrderNumber' => '000138870011',
@@ -8900,6 +9401,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14194',
             'currency' => '840',
+            'ClientRef' => '000138870011',
         );
 
         // Act
@@ -8924,10 +9426,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -8952,9 +9454,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '880010',
                 'ReferenceNumber' => '000138880010',
                 'OrderNumber' => '000138880010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -8965,6 +9473,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15272',
             'currency' => '840',
+            'ClientRef' => '000138880010',
         );
 
         // Act
@@ -8998,6 +9507,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '880011',
                 'ReferenceNumber' => '000138880011',
                 'OrderNumber' => '000138880011',
@@ -9034,6 +9544,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7636',
             'currency' => '840',
+            'ClientRef' => '000138880011',
         );
 
         // Act
@@ -9057,10 +9568,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -9086,9 +9597,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '900010',
                 'ReferenceNumber' => '000138900010',
                 'OrderNumber' => '000138900010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -9096,6 +9613,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '82952',
             'currency' => '840',
+            'ClientRef' => '000138900010',
         );
 
         // Act
@@ -9130,6 +9648,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '900011',
                 'ReferenceNumber' => '000138900011',
                 'OrderNumber' => '000138900011',
@@ -9164,6 +9683,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '41476',
             'currency' => '840',
+            'ClientRef' => '000138900011',
         );
 
         // Act
@@ -9187,10 +9707,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -9216,12 +9736,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '140010',
                 'ReferenceNumber' => '000139140010',
                 'OrderNumber' => '000139140010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '16300',
             'currency' => '840',
+            'ClientRef' => '000139140010',
         );
 
         // Act
@@ -9247,10 +9777,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -9276,15 +9806,25 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '160010',
                 'ReferenceNumber' => '000139160010',
                 'OrderNumber' => '000139160010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '16298',
             'currency' => '840',
+            'ClientRef' => '000139160010',
         );
 
         // Act
@@ -9310,10 +9850,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -9339,12 +9879,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '180010',
                 'ReferenceNumber' => '000139180010',
                 'OrderNumber' => '000139180010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '16242',
             'currency' => '840',
+            'ClientRef' => '000139180010',
         );
 
         // Act
@@ -9370,10 +9920,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -9399,12 +9949,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '220010',
                 'ReferenceNumber' => '000139220010',
                 'OrderNumber' => '000139220010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '16296',
             'currency' => '840',
+            'ClientRef' => '000139220010',
         );
 
         // Act
@@ -9430,10 +9990,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -9457,12 +10017,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '630010',
                 'ReferenceNumber' => '000139630010',
                 'OrderNumber' => '000139630010',
             ),
             'amount' => '41334',
             'currency' => '840',
+            'ClientRef' => '000139630010',
         );
 
         // Act
@@ -9495,6 +10057,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '630011',
                 'ReferenceNumber' => '000139630011',
                 'OrderNumber' => '000139630011',
@@ -9508,6 +10071,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '41334',
             'currency' => '840',
+            'ClientRef' => '000139630011',
         );
 
         // Act
@@ -9532,10 +10096,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -9559,6 +10123,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '750010',
                 'ReferenceNumber' => '000139750010',
                 'OrderNumber' => '000139750010',
@@ -9568,6 +10133,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '241330',
             'currency' => '840',
+            'ClientRef' => '000139750010',
         );
 
         // Act
@@ -9600,6 +10166,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '750011',
                 'ReferenceNumber' => '000139750011',
                 'OrderNumber' => '000139750011',
@@ -9616,6 +10183,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '241330',
             'currency' => '840',
+            'ClientRef' => '000139750011',
         );
 
         // Act
@@ -9640,10 +10208,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -9667,12 +10235,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000139860010',
                 'OrderNumber' => '000139860010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '241362',
             'currency' => '840',
+            'ClientRef' => '000139860010',
         );
 
         // Act
@@ -9705,16 +10280,27 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '860011',
                 'ReferenceNumber' => '000139860011',
                 'OrderNumber' => '000139860011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '120681',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '120681',
             'currency' => '840',
+            'ClientRef' => '000139860011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -9734,10 +10320,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -9761,12 +10347,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '950010',
                 'ReferenceNumber' => '000139950010',
                 'OrderNumber' => '000139950010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '41294',
             'currency' => '840',
+            'ClientRef' => '000139950010',
         );
 
         // Act
@@ -9799,6 +10392,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '950011',
                 'ReferenceNumber' => '000139950011',
                 'OrderNumber' => '000139950011',
@@ -9824,6 +10418,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '20647',
             'currency' => '840',
+            'ClientRef' => '000139950011',
         );
 
         // Act
@@ -9847,10 +10442,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -9874,12 +10469,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '000010',
                 'ReferenceNumber' => '000140000010',
                 'OrderNumber' => '000140000010',
             ),
             'amount' => '241332',
             'currency' => '840',
+            'ClientRef' => '000140000010',
         );
 
         // Act
@@ -9912,6 +10509,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '000011',
                 'ReferenceNumber' => '000140000011',
                 'OrderNumber' => '000140000011',
@@ -9925,6 +10523,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '241332',
             'currency' => '840',
+            'ClientRef' => '000140000011',
         );
 
         // Act
@@ -9949,10 +10548,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -9976,12 +10575,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '010010',
                 'ReferenceNumber' => '000140010010',
                 'OrderNumber' => '000140010010',
             ),
             'amount' => '241104',
             'currency' => '840',
+            'ClientRef' => '000140010010',
         );
 
         // Act
@@ -10014,6 +10615,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '010011',
                 'ReferenceNumber' => '000140010011',
                 'OrderNumber' => '000140010011',
@@ -10039,6 +10641,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '241104',
             'currency' => '840',
+            'ClientRef' => '000140010011',
         );
 
         // Act
@@ -10062,10 +10665,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -10090,6 +10693,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '170010',
                 'ReferenceNumber' => '000140170010',
                 'OrderNumber' => '000140170010',
@@ -10100,6 +10704,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11314',
             'currency' => '840',
+            'ClientRef' => '000140170010',
         );
 
         // Act
@@ -10133,6 +10738,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '170011',
                 'ReferenceNumber' => '000140170011',
                 'OrderNumber' => '000140170011',
@@ -10150,6 +10756,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11314',
             'currency' => '840',
+            'ClientRef' => '000140170011',
         );
 
         // Act
@@ -10174,10 +10781,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -10202,6 +10809,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '190010',
                 'ReferenceNumber' => '000140190010',
                 'OrderNumber' => '000140190010',
@@ -10212,6 +10820,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12308',
             'currency' => '840',
+            'ClientRef' => '000140190010',
         );
 
         // Act
@@ -10245,6 +10854,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '190011',
                 'ReferenceNumber' => '000140190011',
                 'OrderNumber' => '000140190011',
@@ -10262,6 +10872,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12308',
             'currency' => '840',
+            'ClientRef' => '000140190011',
         );
 
         // Act
@@ -10286,10 +10897,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -10316,9 +10927,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '240010',
                 'ReferenceNumber' => '000140240010',
                 'OrderNumber' => '000140240010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -10326,6 +10941,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '111956',
             'currency' => '840',
+            'ClientRef' => '000140240010',
         );
 
         // Act
@@ -10360,9 +10976,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '240011',
                 'ReferenceNumber' => '000140240011',
                 'OrderNumber' => '000140240011',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -10373,6 +10993,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '111956',
             'currency' => '840',
+            'ClientRef' => '000140240011',
         );
 
         // Act
@@ -10397,10 +11018,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -10425,12 +11046,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '460010',
                 'ReferenceNumber' => '000141460010',
                 'OrderNumber' => '000141460010',
             ),
             'amount' => '11946',
             'currency' => '840',
+            'ClientRef' => '000141460010',
         );
 
         // Act
@@ -10464,6 +11087,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '460011',
                 'ReferenceNumber' => '000141460011',
                 'OrderNumber' => '000141460011',
@@ -10477,6 +11101,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11946',
             'currency' => '840',
+            'ClientRef' => '000141460011',
         );
 
         // Act
@@ -10501,10 +11126,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -10529,12 +11154,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '470010',
                 'ReferenceNumber' => '000141470010',
                 'OrderNumber' => '000141470010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '11352',
             'currency' => '840',
+            'ClientRef' => '000141470010',
         );
 
         // Act
@@ -10568,16 +11200,27 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '470011',
                 'ReferenceNumber' => '000141470011',
                 'OrderNumber' => '000141470011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '5676',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '5676',
             'currency' => '840',
+            'ClientRef' => '000141470011',
         );
 
         // Act
-        $request = $gateway->purchase($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -10597,10 +11240,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -10625,12 +11268,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '830010',
                 'ReferenceNumber' => '000141830010',
                 'OrderNumber' => '000141830010',
             ),
             'amount' => '12722',
             'currency' => '840',
+            'ClientRef' => '000141830010',
         );
 
         // Act
@@ -10664,6 +11309,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '830011',
                 'ReferenceNumber' => '000141830011',
                 'OrderNumber' => '000141830011',
@@ -10677,6 +11323,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12722',
             'currency' => '840',
+            'ClientRef' => '000141830011',
         );
 
         // Act
@@ -10701,10 +11348,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -10729,12 +11376,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '840010',
                 'ReferenceNumber' => '000141840010',
                 'OrderNumber' => '000141840010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '12192',
             'currency' => '840',
+            'ClientRef' => '000141840010',
         );
 
         // Act
@@ -10768,16 +11422,27 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '840011',
                 'ReferenceNumber' => '000141840011',
                 'OrderNumber' => '000141840011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '6096',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '6096',
             'currency' => '840',
+            'ClientRef' => '000141840011',
         );
 
         // Act
-        $request = $gateway->purchase($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -10797,10 +11462,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -10825,12 +11490,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '070010',
                 'ReferenceNumber' => '000142070010',
                 'OrderNumber' => '000142070010',
             ),
             'amount' => '12810',
             'currency' => '840',
+            'ClientRef' => '000142070010',
         );
 
         // Act
@@ -10864,6 +11531,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '070011',
                 'ReferenceNumber' => '000142070011',
                 'OrderNumber' => '000142070011',
@@ -10889,6 +11557,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12810',
             'currency' => '840',
+            'ClientRef' => '000142070011',
         );
 
         // Act
@@ -10912,10 +11581,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -10940,12 +11609,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '080010',
                 'ReferenceNumber' => '000142080010',
                 'OrderNumber' => '000142080010',
             ),
             'amount' => '12298',
             'currency' => '840',
+            'ClientRef' => '000142080010',
         );
 
         // Act
@@ -10979,6 +11650,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '080011',
                 'ReferenceNumber' => '000142080011',
                 'OrderNumber' => '000142080011',
@@ -10992,6 +11664,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12298',
             'currency' => '840',
+            'ClientRef' => '000142080011',
         );
 
         // Act
@@ -11016,10 +11689,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -11044,6 +11717,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '240010',
                 'ReferenceNumber' => '000142240010',
                 'OrderNumber' => '000142240010',
@@ -11053,6 +11727,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13570',
             'currency' => '840',
+            'ClientRef' => '000142240010',
         );
 
         // Act
@@ -11086,6 +11761,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '240011',
                 'ReferenceNumber' => '000142240011',
                 'OrderNumber' => '000142240011',
@@ -11102,6 +11778,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13570',
             'currency' => '840',
+            'ClientRef' => '000142240011',
         );
 
         // Act
@@ -11126,10 +11803,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -11154,6 +11831,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '450010',
                 'ReferenceNumber' => '000142450010',
                 'OrderNumber' => '000142450010',
@@ -11163,6 +11841,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13680',
             'currency' => '840',
+            'ClientRef' => '000142450010',
         );
 
         // Act
@@ -11196,6 +11875,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '450011',
                 'ReferenceNumber' => '000142450011',
                 'OrderNumber' => '000142450011',
@@ -11224,6 +11904,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13680',
             'currency' => '840',
+            'ClientRef' => '000142450011',
         );
 
         // Act
@@ -11247,10 +11928,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -11275,12 +11956,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '610010',
                 'ReferenceNumber' => '000142610010',
                 'OrderNumber' => '000142610010',
             ),
             'amount' => '14540',
             'currency' => '840',
+            'ClientRef' => '000142610010',
         );
 
         // Act
@@ -11314,6 +11997,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '610011',
                 'ReferenceNumber' => '000142610011',
                 'OrderNumber' => '000142610011',
@@ -11327,6 +12011,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14540',
             'currency' => '840',
+            'ClientRef' => '000142610011',
         );
 
         // Act
@@ -11351,10 +12036,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -11379,12 +12064,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '620010',
                 'ReferenceNumber' => '000142620010',
                 'OrderNumber' => '000142620010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '10912',
             'currency' => '840',
+            'ClientRef' => '000142620010',
         );
 
         // Act
@@ -11409,10 +12101,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -11436,6 +12128,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '000010',
                 'ReferenceNumber' => '000180000010',
                 'OrderNumber' => '000180000010',
@@ -11449,6 +12142,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '84002',
             'currency' => '840',
+            'ClientRef' => '000180000010',
         );
 
         // Act
@@ -11481,6 +12175,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '000011',
                 'ReferenceNumber' => '000180000011',
                 'OrderNumber' => '000180000011',
@@ -11501,6 +12196,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '84002',
             'currency' => '840',
+            'ClientRef' => '000180000011',
         );
 
         // Act
@@ -11525,10 +12221,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -11552,6 +12248,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '020010',
                 'ReferenceNumber' => '000180020010',
                 'OrderNumber' => '000180020010',
@@ -11565,6 +12262,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '84202',
             'currency' => '840',
+            'ClientRef' => '000180020010',
         );
 
         // Act
@@ -11597,6 +12295,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '020011',
                 'ReferenceNumber' => '000180020011',
                 'OrderNumber' => '000180020011',
@@ -11617,6 +12316,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '84202',
             'currency' => '840',
+            'ClientRef' => '000180020011',
         );
 
         // Act
@@ -11641,10 +12341,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -11668,15 +12368,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '040010',
                 'ReferenceNumber' => '000180040010',
                 'OrderNumber' => '000180040010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '7678',
             'currency' => '840',
+            'ClientRef' => '000180040010',
         );
 
         // Act
@@ -11709,9 +12414,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '040011',
                 'ReferenceNumber' => '000180040011',
                 'OrderNumber' => '000180040011',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -11725,6 +12434,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7678',
             'currency' => '840',
+            'ClientRef' => '000180040011',
         );
 
         // Act
@@ -11749,10 +12459,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -11776,6 +12486,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '070010',
                 'ReferenceNumber' => '000180070010',
                 'OrderNumber' => '000180070010',
@@ -11786,6 +12497,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '19602',
             'currency' => '840',
+            'ClientRef' => '000180070010',
         );
 
         // Act
@@ -11818,6 +12530,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '070011',
                 'ReferenceNumber' => '000180070011',
                 'OrderNumber' => '000180070011',
@@ -11835,6 +12548,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '19602',
             'currency' => '840',
+            'ClientRef' => '000180070011',
         );
 
         // Act
@@ -11859,10 +12573,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -11886,6 +12600,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '090010',
                 'ReferenceNumber' => '000180090010',
                 'OrderNumber' => '000180090010',
@@ -11899,6 +12614,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '19606',
             'currency' => '840',
+            'ClientRef' => '000180090010',
         );
 
         // Act
@@ -11931,6 +12647,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '090011',
                 'ReferenceNumber' => '000180090011',
                 'OrderNumber' => '000180090011',
@@ -11951,6 +12668,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '19606',
             'currency' => '840',
+            'ClientRef' => '000180090011',
         );
 
         // Act
@@ -11975,10 +12693,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -12002,12 +12720,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '140010',
                 'ReferenceNumber' => '000180140010',
                 'OrderNumber' => '000180140010',
             ),
             'amount' => '34150',
             'currency' => '840',
+            'ClientRef' => '000180140010',
         );
 
         // Act
@@ -12040,6 +12760,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '140011',
                 'ReferenceNumber' => '000180140011',
                 'OrderNumber' => '000180140011',
@@ -12053,6 +12774,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34150',
             'currency' => '840',
+            'ClientRef' => '000180140011',
         );
 
         // Act
@@ -12077,10 +12799,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -12104,6 +12826,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '160010',
                 'ReferenceNumber' => '000180160010',
                 'OrderNumber' => '000180160010',
@@ -12114,6 +12837,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34350',
             'currency' => '840',
+            'ClientRef' => '000180160010',
         );
 
         // Act
@@ -12146,6 +12870,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '160011',
                 'ReferenceNumber' => '000180160011',
                 'OrderNumber' => '000180160011',
@@ -12163,6 +12888,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34350',
             'currency' => '840',
+            'ClientRef' => '000180160011',
         );
 
         // Act
@@ -12187,10 +12913,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -12214,6 +12940,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '180010',
                 'ReferenceNumber' => '000180180010',
                 'OrderNumber' => '000180180010',
@@ -12224,6 +12951,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34550',
             'currency' => '840',
+            'ClientRef' => '000180180010',
         );
 
         // Act
@@ -12256,6 +12984,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '180011',
                 'ReferenceNumber' => '000180180011',
                 'OrderNumber' => '000180180011',
@@ -12273,6 +13002,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34550',
             'currency' => '840',
+            'ClientRef' => '000180180011',
         );
 
         // Act
@@ -12297,10 +13027,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -12324,12 +13054,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '200010',
                 'ReferenceNumber' => '000180200010',
                 'OrderNumber' => '000180200010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '34750',
             'currency' => '840',
+            'ClientRef' => '000180200010',
         );
 
         // Act
@@ -12362,9 +13097,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '200011',
                 'ReferenceNumber' => '000180200011',
                 'OrderNumber' => '000180200011',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12375,6 +13114,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34750',
             'currency' => '840',
+            'ClientRef' => '000180200011',
         );
 
         // Act
@@ -12399,10 +13139,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -12426,6 +13166,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '250010',
                 'ReferenceNumber' => '000180250010',
                 'OrderNumber' => '000180250010',
@@ -12436,6 +13177,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '1602',
             'currency' => '840',
+            'ClientRef' => '000180250010',
         );
 
         // Act
@@ -12468,6 +13210,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '250011',
                 'ReferenceNumber' => '000180250011',
                 'OrderNumber' => '000180250011',
@@ -12485,6 +13228,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '1602',
             'currency' => '840',
+            'ClientRef' => '000180250011',
         );
 
         // Act
@@ -12509,10 +13253,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -12536,6 +13280,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '270010',
                 'ReferenceNumber' => '000180270010',
                 'OrderNumber' => '000180270010',
@@ -12546,6 +13291,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '2606',
             'currency' => '840',
+            'ClientRef' => '000180270010',
         );
 
         // Act
@@ -12578,6 +13324,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '270011',
                 'ReferenceNumber' => '000180270011',
                 'OrderNumber' => '000180270011',
@@ -12595,6 +13342,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '2606',
             'currency' => '840',
+            'ClientRef' => '000180270011',
         );
 
         // Act
@@ -12619,10 +13367,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -12646,6 +13394,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '290010',
                 'ReferenceNumber' => '000180290010',
                 'OrderNumber' => '000180290010',
@@ -12656,6 +13405,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '2610',
             'currency' => '840',
+            'ClientRef' => '000180290010',
         );
 
         // Act
@@ -12688,6 +13438,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '290011',
                 'ReferenceNumber' => '000180290011',
                 'OrderNumber' => '000180290011',
@@ -12705,6 +13456,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '2610',
             'currency' => '840',
+            'ClientRef' => '000180290011',
         );
 
         // Act
@@ -12729,10 +13481,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -12756,12 +13508,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '300010',
                 'ReferenceNumber' => '000180300010',
                 'OrderNumber' => '000180300010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '2612',
             'currency' => '840',
+            'ClientRef' => '000180300010',
         );
 
         // Act
@@ -12794,9 +13551,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '300011',
                 'ReferenceNumber' => '000180300011',
                 'OrderNumber' => '000180300011',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12807,6 +13568,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '2612',
             'currency' => '840',
+            'ClientRef' => '000180300011',
         );
 
         // Act
@@ -12831,10 +13593,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -12858,12 +13620,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '930010',
                 'ReferenceNumber' => '000180930010',
                 'OrderNumber' => '000180930010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '62282',
             'currency' => '840',
+            'ClientRef' => '000180930010',
         );
 
         // Act
@@ -12896,9 +13663,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '930011',
                 'ReferenceNumber' => '000180930011',
                 'OrderNumber' => '000180930011',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12909,6 +13680,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62282',
             'currency' => '840',
+            'ClientRef' => '000180930011',
         );
 
         // Act
@@ -12933,10 +13705,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -12960,12 +13732,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '150010',
                 'ReferenceNumber' => '000181150010',
                 'OrderNumber' => '000181150010',
             ),
             'amount' => '62151',
             'currency' => '840',
+            'ClientRef' => '000181150010',
         );
 
         // Act
@@ -12998,6 +13772,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '150011',
                 'ReferenceNumber' => '000181150011',
                 'OrderNumber' => '000181150011',
@@ -13011,6 +13786,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62151',
             'currency' => '840',
+            'ClientRef' => '000181150011',
         );
 
         // Act
@@ -13035,10 +13811,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -13062,12 +13838,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '190010',
                 'ReferenceNumber' => '000181190010',
                 'OrderNumber' => '000181190010',
             ),
             'amount' => '101142',
             'currency' => '840',
+            'ClientRef' => '000181190010',
         );
 
         // Act
@@ -13100,6 +13878,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '190011',
                 'ReferenceNumber' => '000181190011',
                 'OrderNumber' => '000181190011',
@@ -13113,6 +13892,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '101142',
             'currency' => '840',
+            'ClientRef' => '000181190011',
         );
 
         // Act
@@ -13137,10 +13917,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -13164,6 +13944,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '230010',
                 'ReferenceNumber' => '000181230010',
                 'OrderNumber' => '000181230010',
@@ -13173,6 +13954,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '83143',
             'currency' => '840',
+            'ClientRef' => '000181230010',
         );
 
         // Act
@@ -13205,6 +13987,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '230011',
                 'ReferenceNumber' => '000181230011',
                 'OrderNumber' => '000181230011',
@@ -13221,6 +14004,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '83143',
             'currency' => '840',
+            'ClientRef' => '000181230011',
         );
 
         // Act
@@ -13245,10 +14029,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -13275,9 +14059,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '000010',
                 'ReferenceNumber' => '000182000010',
                 'OrderNumber' => '000182000010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -13285,6 +14073,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '18615',
             'currency' => '840',
+            'ClientRef' => '000182000010',
         );
 
         // Act
@@ -13319,6 +14108,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '000011',
                 'ReferenceNumber' => '000182000011',
                 'OrderNumber' => '000182000011',
@@ -13340,6 +14130,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -13349,6 +14142,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '18615',
             'currency' => '840',
+            'ClientRef' => '000182000011',
         );
 
         // Act
@@ -13372,10 +14166,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -13399,12 +14193,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '010010',
                 'ReferenceNumber' => '000182010010',
                 'OrderNumber' => '000182010010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '1001',
             'currency' => '840',
+            'ClientRef' => '000182010010',
         );
 
         // Act
@@ -13437,9 +14236,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '010011',
                 'ReferenceNumber' => '000182010011',
                 'OrderNumber' => '000182010011',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -13450,6 +14253,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '1001',
             'currency' => '840',
+            'ClientRef' => '000182010011',
         );
 
         // Act
@@ -13474,10 +14278,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -13501,12 +14305,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '020010',
                 'ReferenceNumber' => '000182020010',
                 'OrderNumber' => '000182020010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '1550',
             'currency' => '840',
+            'ClientRef' => '000182020010',
         );
 
         // Act
@@ -13530,10 +14339,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -13559,6 +14368,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '120010',
                 'ReferenceNumber' => '000182120010',
                 'OrderNumber' => '000182120010',
@@ -13576,6 +14386,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7673',
             'currency' => '840',
+            'ClientRef' => '000182120010',
         );
 
         // Act
@@ -13609,6 +14420,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '120011',
                 'ReferenceNumber' => '000182120011',
                 'OrderNumber' => '000182120011',
@@ -13629,6 +14441,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7673',
             'currency' => '840',
+            'ClientRef' => '000182120011',
         );
 
         // Act
@@ -13653,10 +14466,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -13681,6 +14494,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '130010',
                 'ReferenceNumber' => '000182130010',
                 'OrderNumber' => '000182130010',
@@ -13694,6 +14508,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7505',
             'currency' => '840',
+            'ClientRef' => '000182130010',
         );
 
         // Act
@@ -13727,6 +14542,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '130011',
                 'ReferenceNumber' => '000182130011',
                 'OrderNumber' => '000182130011',
@@ -13763,6 +14579,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7505',
             'currency' => '840',
+            'ClientRef' => '000182130011',
         );
 
         // Act
@@ -13786,10 +14603,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -13813,6 +14630,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '140010',
                 'ReferenceNumber' => '000182140010',
                 'OrderNumber' => '000182140010',
@@ -13826,6 +14644,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7601',
             'currency' => '840',
+            'ClientRef' => '000182140010',
         );
 
         // Act
@@ -13849,10 +14668,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -13877,6 +14696,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '240010',
                 'ReferenceNumber' => '000182240010',
                 'OrderNumber' => '000182240010',
@@ -13887,6 +14707,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7691',
             'currency' => '840',
+            'ClientRef' => '000182240010',
         );
 
         // Act
@@ -13920,6 +14741,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '240011',
                 'ReferenceNumber' => '000182240011',
                 'OrderNumber' => '000182240011',
@@ -13937,6 +14759,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7691',
             'currency' => '840',
+            'ClientRef' => '000182240011',
         );
 
         // Act
@@ -13961,10 +14784,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -13990,6 +14813,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '250010',
                 'ReferenceNumber' => '000182250010',
                 'OrderNumber' => '000182250010',
@@ -14004,6 +14828,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '10006',
             'currency' => '840',
+            'ClientRef' => '000182250010',
         );
 
         // Act
@@ -14037,6 +14862,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '250011',
                 'ReferenceNumber' => '000182250011',
                 'OrderNumber' => '000182250011',
@@ -14066,6 +14892,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '10006',
             'currency' => '840',
+            'ClientRef' => '000182250011',
         );
 
         // Act
@@ -14089,10 +14916,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -14116,6 +14943,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '260010',
                 'ReferenceNumber' => '000182260010',
                 'OrderNumber' => '000182260010',
@@ -14126,6 +14954,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '10078',
             'currency' => '840',
+            'ClientRef' => '000182260010',
         );
 
         // Act
@@ -14149,10 +14978,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -14176,6 +15005,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '740010',
                 'ReferenceNumber' => '000186740010',
                 'OrderNumber' => '000186740010',
@@ -14186,6 +15016,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7611',
             'currency' => '840',
+            'ClientRef' => '000186740010',
         );
 
         // Act
@@ -14209,10 +15040,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -14236,6 +15067,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '750010',
                 'ReferenceNumber' => '000186750010',
                 'OrderNumber' => '000186750010',
@@ -14246,6 +15078,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7609',
             'currency' => '840',
+            'ClientRef' => '000186750010',
         );
 
         // Act
@@ -14269,10 +15102,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -14296,6 +15129,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '760010',
                 'ReferenceNumber' => '000186760010',
                 'OrderNumber' => '000186760010',
@@ -14306,6 +15140,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7605',
             'currency' => '840',
+            'ClientRef' => '000186760010',
         );
 
         // Act
@@ -14329,10 +15164,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -14356,6 +15191,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '770010',
                 'ReferenceNumber' => '000186770010',
                 'OrderNumber' => '000186770010',
@@ -14366,6 +15202,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7603',
             'currency' => '840',
+            'ClientRef' => '000186770010',
         );
 
         // Act
@@ -14389,10 +15226,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -14419,6 +15256,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '780010',
                 'ReferenceNumber' => '000186780010',
                 'OrderNumber' => '000186780010',
@@ -14433,6 +15271,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7619',
             'currency' => '840',
+            'ClientRef' => '000186780010',
         );
 
         // Act
@@ -14458,10 +15297,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -14488,6 +15327,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '790010',
                 'ReferenceNumber' => '000186790010',
                 'OrderNumber' => '000186790010',
@@ -14502,6 +15342,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7615',
             'currency' => '840',
+            'ClientRef' => '000186790010',
         );
 
         // Act
@@ -14527,10 +15368,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -14554,6 +15395,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000186860010',
                 'OrderNumber' => '000186860010',
@@ -14564,6 +15406,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7607',
             'currency' => '840',
+            'ClientRef' => '000186860010',
         );
 
         // Act
@@ -14596,6 +15439,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '860011',
                 'ReferenceNumber' => '000186860011',
                 'OrderNumber' => '000186860011',
@@ -14625,6 +15469,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7607',
             'currency' => '840',
+            'ClientRef' => '000186860011',
         );
 
         // Act
@@ -14648,10 +15493,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -14675,6 +15520,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '870010',
                 'ReferenceNumber' => '000186870010',
                 'OrderNumber' => '000186870010',
@@ -14685,6 +15531,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7601',
             'currency' => '840',
+            'ClientRef' => '000186870010',
         );
 
         // Act
@@ -14717,6 +15564,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '870011',
                 'ReferenceNumber' => '000186870011',
                 'OrderNumber' => '000186870011',
@@ -14746,6 +15594,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7601',
             'currency' => '840',
+            'ClientRef' => '000186870011',
         );
 
         // Act
@@ -14769,10 +15618,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -14799,6 +15648,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '880010',
                 'ReferenceNumber' => '000186880010',
                 'OrderNumber' => '000186880010',
@@ -14813,6 +15663,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7617',
             'currency' => '840',
+            'ClientRef' => '000186880010',
         );
 
         // Act
@@ -14847,6 +15698,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '880011',
                 'ReferenceNumber' => '000186880011',
                 'OrderNumber' => '000186880011',
@@ -14880,6 +15732,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7617',
             'currency' => '840',
+            'ClientRef' => '000186880011',
         );
 
         // Act
@@ -14903,10 +15756,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -14933,6 +15786,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '890010',
                 'ReferenceNumber' => '000186890010',
                 'OrderNumber' => '000186890010',
@@ -14947,6 +15801,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7613',
             'currency' => '840',
+            'ClientRef' => '000186890010',
         );
 
         // Act
@@ -14981,6 +15836,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '890011',
                 'ReferenceNumber' => '000186890011',
                 'OrderNumber' => '000186890011',
@@ -15014,6 +15870,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7613',
             'currency' => '840',
+            'ClientRef' => '000186890011',
         );
 
         // Act
@@ -15037,10 +15894,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15064,15 +15921,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '380010',
                 'ReferenceNumber' => '000521380010',
                 'OrderNumber' => '000521380010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '76054',
             'currency' => '840',
+            'ClientRef' => '000521380010',
         );
 
         // Act
@@ -15096,10 +15960,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15123,6 +15987,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '390010',
                 'ReferenceNumber' => '000521390010',
                 'OrderNumber' => '000521390010',
@@ -15132,6 +15997,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '84315',
             'currency' => '840',
+            'ClientRef' => '000521390010',
         );
 
         // Act
@@ -15155,10 +16021,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15182,15 +16048,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '420010',
                 'ReferenceNumber' => '000521420010',
                 'OrderNumber' => '000521420010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '76050',
             'currency' => '840',
+            'ClientRef' => '000521420010',
         );
 
         // Act
@@ -15214,10 +16087,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15241,12 +16114,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '520010',
                 'ReferenceNumber' => '000521520010',
                 'OrderNumber' => '000521520010',
             ),
             'amount' => '34128',
             'currency' => '840',
+            'ClientRef' => '000521520010',
         );
 
         // Act
@@ -15270,10 +16145,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15297,6 +16172,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '820010',
                 'ReferenceNumber' => '000521820010',
                 'OrderNumber' => '000521820010',
@@ -15315,6 +16191,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62107',
             'currency' => '840',
+            'ClientRef' => '000521820010',
         );
 
         // Act
@@ -15338,10 +16215,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15365,6 +16242,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '840010',
                 'ReferenceNumber' => '000521840010',
                 'OrderNumber' => '000521840010',
@@ -15386,6 +16264,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '83301',
             'currency' => '840',
+            'ClientRef' => '000521840010',
         );
 
         // Act
@@ -15409,10 +16288,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15436,6 +16315,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000521860010',
                 'OrderNumber' => '000521860010',
@@ -15454,6 +16334,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34103',
             'currency' => '840',
+            'ClientRef' => '000521860010',
         );
 
         // Act
@@ -15477,10 +16358,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15504,12 +16385,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '900010',
                 'ReferenceNumber' => '000521900010',
                 'OrderNumber' => '000521900010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '59098',
             'currency' => '840',
+            'ClientRef' => '000521900010',
         );
 
         // Act
@@ -15542,16 +16430,27 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '900011',
                 'ReferenceNumber' => '000521900011',
                 'OrderNumber' => '000521900011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '29549',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '29549',
             'currency' => '840',
+            'ClientRef' => '000521900011',
         );
 
         // Act
-        $request = $gateway->purchase($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -15571,10 +16470,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15598,12 +16497,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '930010',
                 'ReferenceNumber' => '000521930010',
                 'OrderNumber' => '000521930010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '59094',
             'currency' => '840',
+            'ClientRef' => '000521930010',
         );
 
         // Act
@@ -15636,16 +16542,27 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '930011',
                 'ReferenceNumber' => '000521930011',
                 'OrderNumber' => '000521930011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '29547',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '29547',
             'currency' => '840',
+            'ClientRef' => '000521930011',
         );
 
         // Act
-        $request = $gateway->purchase($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -15665,10 +16582,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15692,6 +16609,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '980010',
                 'ReferenceNumber' => '000521980010',
                 'OrderNumber' => '000521980010',
@@ -15701,6 +16619,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '84794',
             'currency' => '840',
+            'ClientRef' => '000521980010',
         );
 
         // Act
@@ -15733,6 +16652,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '980011',
                 'ReferenceNumber' => '000521980011',
                 'OrderNumber' => '000521980011',
@@ -15749,6 +16669,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '84794',
             'currency' => '840',
+            'ClientRef' => '000521980011',
         );
 
         // Act
@@ -15773,10 +16694,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15800,12 +16721,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '000010',
                 'ReferenceNumber' => '000522000010',
                 'OrderNumber' => '000522000010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '54208',
             'currency' => '840',
+            'ClientRef' => '000522000010',
         );
 
         // Act
@@ -15838,16 +16766,27 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '000011',
                 'ReferenceNumber' => '000522000011',
                 'OrderNumber' => '000522000011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '27104',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '27104',
             'currency' => '840',
+            'ClientRef' => '000522000011',
         );
 
         // Act
-        $request = $gateway->purchase($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -15867,10 +16806,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -15894,12 +16833,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '030010',
                 'ReferenceNumber' => '000522030010',
                 'OrderNumber' => '000522030010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '54204',
             'currency' => '840',
+            'ClientRef' => '000522030010',
         );
 
         // Act
@@ -15932,16 +16878,27 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '030011',
                 'ReferenceNumber' => '000522030011',
                 'OrderNumber' => '000522030011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '27102',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '27102',
             'currency' => '840',
+            'ClientRef' => '000522030011',
         );
 
         // Act
-        $request = $gateway->purchase($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -15961,10 +16918,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -15988,6 +16945,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '220010',
                 'ReferenceNumber' => '000523220010',
                 'OrderNumber' => '000523220010',
@@ -16004,8 +16962,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '62261',
             'currency' => '840',
+            'ClientRef' => '000523220010',
         );
 
         // Act
@@ -16029,10 +16991,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -16056,6 +17018,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '260010',
                 'ReferenceNumber' => '000523260010',
                 'OrderNumber' => '000523260010',
@@ -16072,11 +17035,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '83272',
             'currency' => '840',
+            'ClientRef' => '000523260010',
         );
 
         // Act
@@ -16100,10 +17067,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -16127,6 +17094,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '320010',
                 'ReferenceNumber' => '000523320010',
                 'OrderNumber' => '000523320010',
@@ -16143,8 +17111,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '34258',
             'currency' => '840',
+            'ClientRef' => '000523320010',
         );
 
         // Act
@@ -16168,10 +17140,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -16197,12 +17169,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '460010',
                 'ReferenceNumber' => '000523460010',
                 'OrderNumber' => '000523460010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '60232',
             'currency' => '840',
+            'ClientRef' => '000523460010',
         );
 
         // Act
@@ -16237,16 +17219,30 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '460011',
                 'ReferenceNumber' => '000523460011',
                 'OrderNumber' => '000523460011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '30116',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '30116',
             'currency' => '840',
+            'ClientRef' => '000523460011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -16266,10 +17262,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -16295,12 +17291,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '470010',
                 'ReferenceNumber' => '000523470010',
                 'OrderNumber' => '000523470010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '60334',
             'currency' => '840',
+            'ClientRef' => '000523470010',
         );
 
         // Act
@@ -16335,6 +17341,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '470011',
                 'ReferenceNumber' => '000523470011',
                 'OrderNumber' => '000523470011',
@@ -16356,6 +17363,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -16365,6 +17375,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '30164',
             'currency' => '840',
+            'ClientRef' => '000523470011',
         );
 
         // Act
@@ -16388,10 +17399,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -16418,9 +17429,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '480010',
                 'ReferenceNumber' => '000523480010',
                 'OrderNumber' => '000523480010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -16428,6 +17448,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '60132',
             'currency' => '840',
+            'ClientRef' => '000523480010',
         );
 
         // Act
@@ -16462,16 +17483,30 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '480011',
                 'ReferenceNumber' => '000523480011',
                 'OrderNumber' => '000523480011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '30066',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '30066',
             'currency' => '840',
+            'ClientRef' => '000523480011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -16491,10 +17526,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -16521,9 +17556,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '500010',
                 'ReferenceNumber' => '000523500010',
                 'OrderNumber' => '000523500010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -16531,6 +17570,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62888',
             'currency' => '840',
+            'ClientRef' => '000523500010',
         );
 
         // Act
@@ -16565,6 +17605,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '500011',
                 'ReferenceNumber' => '000523500011',
                 'OrderNumber' => '000523500011',
@@ -16586,6 +17627,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -16595,6 +17639,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62885',
             'currency' => '840',
+            'ClientRef' => '000523500011',
         );
 
         // Act
@@ -16618,10 +17663,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -16647,15 +17692,25 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '600010',
                 'ReferenceNumber' => '000523600010',
                 'OrderNumber' => '000523600010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '77190',
             'currency' => '840',
+            'ClientRef' => '000523600010',
         );
 
         // Act
@@ -16690,19 +17745,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '600011',
                 'ReferenceNumber' => '000523600011',
                 'OrderNumber' => '000523600011',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '38595',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '38595',
             'currency' => '840',
+            'ClientRef' => '000523600011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -16722,10 +17791,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -16751,15 +17820,25 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '610010',
                 'ReferenceNumber' => '000523610010',
                 'OrderNumber' => '000523610010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '77292',
             'currency' => '840',
+            'ClientRef' => '000523610010',
         );
 
         // Act
@@ -16794,6 +17873,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '610011',
                 'ReferenceNumber' => '000523610011',
                 'OrderNumber' => '000523610011',
@@ -16815,6 +17895,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -16827,6 +17910,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '38643',
             'currency' => '840',
+            'ClientRef' => '000523610011',
         );
 
         // Act
@@ -16850,10 +17934,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -16880,9 +17964,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '620010',
                 'ReferenceNumber' => '000523620010',
                 'OrderNumber' => '000523620010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -16893,6 +17986,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '77090',
             'currency' => '840',
+            'ClientRef' => '000523620010',
         );
 
         // Act
@@ -16927,19 +18021,33 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '620011',
                 'ReferenceNumber' => '000523620011',
                 'OrderNumber' => '000523620011',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '38545',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '38545',
             'currency' => '840',
+            'ClientRef' => '000523620011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -16959,10 +18067,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -16989,9 +18097,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '650010',
                 'ReferenceNumber' => '000523650010',
                 'OrderNumber' => '000523650010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -17002,6 +18119,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '77092',
             'currency' => '840',
+            'ClientRef' => '000523650010',
         );
 
         // Act
@@ -17036,6 +18154,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '650011',
                 'ReferenceNumber' => '000523650011',
                 'OrderNumber' => '000523650011',
@@ -17057,6 +18176,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -17069,6 +18191,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '38543',
             'currency' => '840',
+            'ClientRef' => '000523650011',
         );
 
         // Act
@@ -17092,10 +18215,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -17121,12 +18244,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '740010',
                 'ReferenceNumber' => '000523740010',
                 'OrderNumber' => '000523740010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '55342',
             'currency' => '840',
+            'ClientRef' => '000523740010',
         );
 
         // Act
@@ -17161,16 +18294,30 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '740011',
                 'ReferenceNumber' => '000523740011',
                 'OrderNumber' => '000523740011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '27671',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '27671',
             'currency' => '840',
+            'ClientRef' => '000523740011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -17190,10 +18337,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -17219,12 +18366,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '750010',
                 'ReferenceNumber' => '000523750010',
                 'OrderNumber' => '000523750010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '55444',
             'currency' => '840',
+            'ClientRef' => '000523750010',
         );
 
         // Act
@@ -17259,6 +18416,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '750011',
                 'ReferenceNumber' => '000523750011',
                 'OrderNumber' => '000523750011',
@@ -17280,6 +18438,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -17289,6 +18450,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '27719',
             'currency' => '840',
+            'ClientRef' => '000523750011',
         );
 
         // Act
@@ -17312,10 +18474,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -17342,9 +18504,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '760010',
                 'ReferenceNumber' => '000523760010',
                 'OrderNumber' => '000523760010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -17352,6 +18523,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '55242',
             'currency' => '840',
+            'ClientRef' => '000523760010',
         );
 
         // Act
@@ -17386,16 +18558,30 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '760011',
                 'ReferenceNumber' => '000523760011',
                 'OrderNumber' => '000523760011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '27621',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '27621',
             'currency' => '840',
+            'ClientRef' => '000523760011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -17415,10 +18601,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -17445,9 +18631,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '780010',
                 'ReferenceNumber' => '000523780010',
                 'OrderNumber' => '000523780010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -17455,6 +18645,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '35276',
             'currency' => '840',
+            'ClientRef' => '000523780010',
         );
 
         // Act
@@ -17489,6 +18680,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '780011',
                 'ReferenceNumber' => '000523780011',
                 'OrderNumber' => '000523780011',
@@ -17510,6 +18702,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -17519,6 +18714,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '35273',
             'currency' => '840',
+            'ClientRef' => '000523780011',
         );
 
         // Act
@@ -17542,10 +18738,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -17571,9 +18767,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '650010',
                 'ReferenceNumber' => '000524650010',
                 'OrderNumber' => '000524650010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -17581,6 +18783,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '55444',
             'currency' => '840',
+            'ClientRef' => '000524650010',
         );
 
         // Act
@@ -17606,10 +18809,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -17636,9 +18839,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '680010',
                 'ReferenceNumber' => '000524680010',
                 'OrderNumber' => '000524680010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -17650,6 +18859,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '55032',
             'currency' => '840',
+            'ClientRef' => '000524680010',
         );
 
         // Act
@@ -17675,10 +18885,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -17704,6 +18914,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '690010',
                 'ReferenceNumber' => '000524690010',
                 'OrderNumber' => '000524690010',
@@ -17714,6 +18925,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '35078',
             'currency' => '840',
+            'ClientRef' => '000524690010',
         );
 
         // Act
@@ -17739,10 +18951,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -17768,16 +18980,26 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '830010',
                 'ReferenceNumber' => '000524830010',
                 'OrderNumber' => '000524830010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ4MzAwMTA=',
+            ),
             'amount' => '13584',
             'currency' => '840',
+            'ClientRef' => '000524830010',
         );
 
         // Act
@@ -17803,10 +19025,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -17832,16 +19054,26 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '840010',
                 'ReferenceNumber' => '000524840010',
                 'OrderNumber' => '000524840010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ4NDAwMTA=',
+            ),
             'amount' => '13586',
             'currency' => '840',
+            'ClientRef' => '000524840010',
         );
 
         // Act
@@ -17867,10 +19099,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -17897,13 +19129,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000524860010',
                 'OrderNumber' => '000524860010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ4NjAwMTA=',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -17911,6 +19152,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '113626',
             'currency' => '840',
+            'ClientRef' => '000524860010',
         );
 
         // Act
@@ -17936,10 +19178,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -17964,16 +19206,26 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '890010',
                 'ReferenceNumber' => '000524890010',
                 'OrderNumber' => '000524890010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ4OTAwMTA=',
+            ),
             'amount' => '14930',
             'currency' => '840',
+            'ClientRef' => '000524890010',
         );
 
         // Act
@@ -17998,10 +19250,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18026,16 +19278,26 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '900010',
                 'ReferenceNumber' => '000524900010',
                 'OrderNumber' => '000524900010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ5MDAwMTA=',
+            ),
             'amount' => '14932',
             'currency' => '840',
+            'ClientRef' => '000524900010',
         );
 
         // Act
@@ -18060,10 +19322,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18090,6 +19352,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '930010',
                 'ReferenceNumber' => '000524930010',
                 'OrderNumber' => '000524930010',
@@ -18098,12 +19361,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ5MzAwMTA=',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '115028',
             'currency' => '840',
+            'ClientRef' => '000524930010',
         );
 
         // Act
@@ -18129,10 +19396,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18158,6 +19425,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '110010',
                 'ReferenceNumber' => '000525110010',
                 'OrderNumber' => '000525110010',
@@ -18168,6 +19436,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62880',
             'currency' => '840',
+            'ClientRef' => '000525110010',
         );
 
         // Act
@@ -18193,10 +19462,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18222,6 +19491,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '170010',
                 'ReferenceNumber' => '000525170010',
                 'OrderNumber' => '000525170010',
@@ -18235,6 +19505,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13858',
             'currency' => '840',
+            'ClientRef' => '000525170010',
         );
 
         // Act
@@ -18260,10 +19531,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18290,6 +19561,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '190010',
                 'ReferenceNumber' => '000525190010',
                 'OrderNumber' => '000525190010',
@@ -18307,6 +19579,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15228',
             'currency' => '840',
+            'ClientRef' => '000525190010',
         );
 
         // Act
@@ -18332,10 +19605,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18361,9 +19634,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '740010',
                 'ReferenceNumber' => '000525740010',
                 'OrderNumber' => '000525740010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -18374,6 +19653,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '76890',
             'currency' => '840',
+            'ClientRef' => '000525740010',
         );
 
         // Act
@@ -18399,10 +19679,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18429,9 +19709,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '770010',
                 'ReferenceNumber' => '000525770010',
                 'OrderNumber' => '000525770010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -18446,6 +19732,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '76684',
             'currency' => '840',
+            'ClientRef' => '000525770010',
         );
 
         // Act
@@ -18471,10 +19758,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18500,6 +19787,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '780010',
                 'ReferenceNumber' => '000525780010',
                 'OrderNumber' => '000525780010',
@@ -18513,6 +19801,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '84786',
             'currency' => '840',
+            'ClientRef' => '000525780010',
         );
 
         // Act
@@ -18538,10 +19827,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18567,9 +19856,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '980010',
                 'ReferenceNumber' => '000525980010',
                 'OrderNumber' => '000525980010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -18580,6 +19875,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14052',
             'currency' => '840',
+            'ClientRef' => '000525980010',
         );
 
         // Act
@@ -18605,10 +19901,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18634,9 +19930,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '990010',
                 'ReferenceNumber' => '000525990010',
                 'OrderNumber' => '000525990010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -18647,6 +19949,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14054',
             'currency' => '840',
+            'ClientRef' => '000525990010',
         );
 
         // Act
@@ -18672,10 +19975,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18702,9 +20005,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '010010',
                 'ReferenceNumber' => '000526010010',
                 'OrderNumber' => '000526010010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -18719,6 +20028,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '114100',
             'currency' => '840',
+            'ClientRef' => '000526010010',
         );
 
         // Act
@@ -18744,10 +20054,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18772,9 +20082,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '050010',
                 'ReferenceNumber' => '000526050010',
                 'OrderNumber' => '000526050010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -18785,6 +20101,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15282',
             'currency' => '840',
+            'ClientRef' => '000526050010',
         );
 
         // Act
@@ -18809,10 +20126,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18837,9 +20154,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '060010',
                 'ReferenceNumber' => '000526060010',
                 'OrderNumber' => '000526060010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -18850,6 +20173,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15284',
             'currency' => '840',
+            'ClientRef' => '000526060010',
         );
 
         // Act
@@ -18874,10 +20198,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18904,9 +20228,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '080010',
                 'ReferenceNumber' => '000526080010',
                 'OrderNumber' => '000526080010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -18921,6 +20251,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '115306',
             'currency' => '840',
+            'ClientRef' => '000526080010',
         );
 
         // Act
@@ -18946,10 +20277,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -18975,9 +20306,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '770010',
                 'ReferenceNumber' => '000527770010',
                 'OrderNumber' => '000527770010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -18985,6 +20322,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '55342',
             'currency' => '840',
+            'ClientRef' => '000527770010',
         );
 
         // Act
@@ -19019,9 +20357,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '770011',
                 'ReferenceNumber' => '000527770011',
                 'OrderNumber' => '000527770011',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '27671',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -19029,6 +20376,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '27671',
             'currency' => '840',
+            'ClientRef' => '000527770011',
         );
 
         // Act
@@ -19052,10 +20400,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -19082,9 +20430,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '780010',
                 'ReferenceNumber' => '000527780010',
                 'OrderNumber' => '000527780010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -19096,6 +20450,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '55034',
             'currency' => '840',
+            'ClientRef' => '000527780010',
         );
 
         // Act
@@ -19121,10 +20476,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -19151,6 +20506,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '800010',
                 'ReferenceNumber' => '000527800010',
                 'OrderNumber' => '000527800010',
@@ -19165,6 +20521,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '35264',
             'currency' => '840',
+            'ClientRef' => '000527800010',
         );
 
         // Act
@@ -19199,6 +20556,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '800011',
                 'ReferenceNumber' => '000527800011',
                 'OrderNumber' => '000527800011',
@@ -19232,6 +20590,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '35261',
             'currency' => '840',
+            'ClientRef' => '000527800011',
         );
 
         // Act
@@ -19255,10 +20614,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -19285,6 +20644,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '980010',
                 'ReferenceNumber' => '000527980010',
                 'OrderNumber' => '000527980010',
@@ -19293,12 +20653,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDA1Mjc5ODAwMTA=',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '115008',
             'currency' => '840',
+            'ClientRef' => '000527980010',
         );
 
         // Act
@@ -19333,6 +20697,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '980011',
                 'ReferenceNumber' => '000527980011',
                 'OrderNumber' => '000527980011',
@@ -19340,6 +20705,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDA1Mjc5ODAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -19350,6 +20718,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '115008',
             'currency' => '840',
+            'ClientRef' => '000527980011',
         );
 
         // Act
@@ -19374,10 +20743,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -19404,6 +20773,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '990010',
                 'ReferenceNumber' => '000527990010',
                 'OrderNumber' => '000527990010',
@@ -19412,12 +20782,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDA1Mjc5OTAwMTA=',
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
             ),
             'amount' => '113526',
             'currency' => '840',
+            'ClientRef' => '000527990010',
         );
 
         // Act
@@ -19452,6 +20826,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '990011',
                 'ReferenceNumber' => '000527990011',
                 'OrderNumber' => '000527990011',
@@ -19459,6 +20834,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+            ),
+            'SecureTransactionGroup' => array(
+                'AmexSecureData' => 'MDAwMDAwMDAwMDA1Mjc5OTAwMTE=',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -19469,6 +20847,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '113526',
             'currency' => '840',
+            'ClientRef' => '000527990011',
         );
 
         // Act
@@ -19493,10 +20872,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -19520,6 +20899,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '150011',
                 'ReferenceNumber' => '000528150011',
                 'OrderNumber' => '000528150011',
@@ -19528,8 +20908,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '34153',
             'currency' => '840',
+            'ClientRef' => '000528150011',
         );
 
         // Act
@@ -19554,10 +20942,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -19584,6 +20972,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '160010',
                 'ReferenceNumber' => '000528160010',
                 'OrderNumber' => '000528160010',
@@ -19598,6 +20987,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34689',
             'currency' => '840',
+            'ClientRef' => '000528160010',
         );
 
         // Act
@@ -19632,6 +21022,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '160011',
                 'ReferenceNumber' => '000528160011',
                 'OrderNumber' => '000528160011',
@@ -19649,6 +21040,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '34689',
             'currency' => '840',
+            'ClientRef' => '000528160011',
         );
 
         // Act
@@ -19673,10 +21065,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -19702,6 +21094,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '660010',
                 'ReferenceNumber' => '000528660010',
                 'OrderNumber' => '000528660010',
@@ -19712,6 +21105,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57311',
             'currency' => '840',
+            'ClientRef' => '000528660010',
         );
 
         // Act
@@ -19746,6 +21140,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '660011',
                 'ReferenceNumber' => '000528660011',
                 'OrderNumber' => '000528660011',
@@ -19763,6 +21158,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57311',
             'currency' => '840',
+            'ClientRef' => '000528660011',
         );
 
         // Act
@@ -19787,10 +21183,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -19816,6 +21212,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '670010',
                 'ReferenceNumber' => '000528670010',
                 'OrderNumber' => '000528670010',
@@ -19826,6 +21223,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62988',
             'currency' => '840',
+            'ClientRef' => '000528670010',
         );
 
         // Act
@@ -19860,6 +21258,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '670011',
                 'ReferenceNumber' => '000528670011',
                 'OrderNumber' => '000528670011',
@@ -19894,6 +21293,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '62877',
             'currency' => '840',
+            'ClientRef' => '000528670011',
         );
 
         // Act
@@ -19917,10 +21317,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -19947,6 +21347,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '680010',
                 'ReferenceNumber' => '000528680010',
                 'OrderNumber' => '000528680010',
@@ -19961,6 +21362,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57207',
             'currency' => '840',
+            'ClientRef' => '000528680010',
         );
 
         // Act
@@ -19995,6 +21397,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '680011',
                 'ReferenceNumber' => '000528680011',
                 'OrderNumber' => '000528680011',
@@ -20012,6 +21415,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57207',
             'currency' => '840',
+            'ClientRef' => '000528680011',
         );
 
         // Act
@@ -20036,10 +21440,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -20066,6 +21470,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '820010',
                 'ReferenceNumber' => '000528820010',
                 'OrderNumber' => '000528820010',
@@ -20083,6 +21488,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15146',
             'currency' => '840',
+            'ClientRef' => '000528820010',
         );
 
         // Act
@@ -20117,6 +21523,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '820011',
                 'ReferenceNumber' => '000528820011',
                 'OrderNumber' => '000528820011',
@@ -20137,6 +21544,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15146',
             'currency' => '840',
+            'ClientRef' => '000528820011',
         );
 
         // Act
@@ -20161,10 +21569,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -20191,6 +21599,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '830010',
                 'ReferenceNumber' => '000528830010',
                 'OrderNumber' => '000528830010',
@@ -20208,6 +21617,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15236',
             'currency' => '840',
+            'ClientRef' => '000528830010',
         );
 
         // Act
@@ -20242,6 +21652,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '830011',
                 'ReferenceNumber' => '000528830011',
                 'OrderNumber' => '000528830011',
@@ -20279,6 +21690,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15236',
             'currency' => '840',
+            'ClientRef' => '000528830011',
         );
 
         // Act
@@ -20302,10 +21714,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -20331,6 +21743,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '950010',
                 'ReferenceNumber' => '000528950010',
                 'OrderNumber' => '000528950010',
@@ -20341,6 +21754,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57711',
             'currency' => '840',
+            'ClientRef' => '000528950010',
         );
 
         // Act
@@ -20375,6 +21789,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '950011',
                 'ReferenceNumber' => '000528950011',
                 'OrderNumber' => '000528950011',
@@ -20392,6 +21807,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57711',
             'currency' => '840',
+            'ClientRef' => '000528950011',
         );
 
         // Act
@@ -20416,10 +21832,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -20446,6 +21862,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '960010',
                 'ReferenceNumber' => '000528960010',
                 'OrderNumber' => '000528960010',
@@ -20460,6 +21877,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57208',
             'currency' => '840',
+            'ClientRef' => '000528960010',
         );
 
         // Act
@@ -20494,6 +21912,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '960011',
                 'ReferenceNumber' => '000528960011',
                 'OrderNumber' => '000528960011',
@@ -20511,6 +21930,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57208',
             'currency' => '840',
+            'ClientRef' => '000528960011',
         );
 
         // Act
@@ -20535,10 +21955,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -20565,6 +21985,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '010010',
                 'ReferenceNumber' => '000529010010',
                 'OrderNumber' => '000529010010',
@@ -20582,6 +22003,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15132',
             'currency' => '840',
+            'ClientRef' => '000529010010',
         );
 
         // Act
@@ -20616,6 +22038,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '010011',
                 'ReferenceNumber' => '000529010011',
                 'OrderNumber' => '000529010011',
@@ -20636,6 +22059,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15132',
             'currency' => '840',
+            'ClientRef' => '000529010011',
         );
 
         // Act
@@ -20660,10 +22084,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -20689,9 +22113,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '600010',
                 'ReferenceNumber' => '000529600010',
                 'OrderNumber' => '000529600010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -20702,6 +22132,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '77292',
             'currency' => '840',
+            'ClientRef' => '000529600010',
         );
 
         // Act
@@ -20736,6 +22167,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '600011',
                 'ReferenceNumber' => '000529600011',
                 'OrderNumber' => '000529600011',
@@ -20773,6 +22205,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '38646',
             'currency' => '840',
+            'ClientRef' => '000529600011',
         );
 
         // Act
@@ -20796,10 +22229,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -20826,9 +22259,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '610010',
                 'ReferenceNumber' => '000529610010',
                 'OrderNumber' => '000529610010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -20843,6 +22282,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '76882',
             'currency' => '840',
+            'ClientRef' => '000529610010',
         );
 
         // Act
@@ -20877,9 +22317,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '610011',
                 'ReferenceNumber' => '000529610011',
                 'OrderNumber' => '000529610011',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '38441',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -20890,6 +22339,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '38441',
             'currency' => '840',
+            'ClientRef' => '000529610011',
         );
 
         // Act
@@ -20913,10 +22363,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -20942,6 +22392,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '630010',
                 'ReferenceNumber' => '000529630010',
                 'OrderNumber' => '000529630010',
@@ -20955,6 +22406,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '84794',
             'currency' => '840',
+            'ClientRef' => '000529630010',
         );
 
         // Act
@@ -20989,6 +22441,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '630011',
                 'ReferenceNumber' => '000529630011',
                 'OrderNumber' => '000529630011',
@@ -21009,6 +22462,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '84794',
             'currency' => '840',
+            'ClientRef' => '000529630011',
         );
 
         // Act
@@ -21033,10 +22487,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -21063,9 +22517,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '650010',
                 'ReferenceNumber' => '000529650010',
                 'OrderNumber' => '000529650010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21080,6 +22540,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '76884',
             'currency' => '840',
+            'ClientRef' => '000529650010',
         );
 
         // Act
@@ -21114,6 +22575,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '650011',
                 'ReferenceNumber' => '000529650011',
                 'OrderNumber' => '000529650011',
@@ -21151,6 +22613,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '38442',
             'currency' => '840',
+            'ClientRef' => '000529650011',
         );
 
         // Act
@@ -21174,10 +22637,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -21202,6 +22665,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '890010',
                 'ReferenceNumber' => '000529890010',
                 'OrderNumber' => '000529890010',
@@ -21215,6 +22679,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15464',
             'currency' => '840',
+            'ClientRef' => '000529890010',
         );
 
         // Act
@@ -21248,6 +22713,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '890011',
                 'ReferenceNumber' => '000529890011',
                 'OrderNumber' => '000529890011',
@@ -21268,6 +22734,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15464',
             'currency' => '840',
+            'ClientRef' => '000529890011',
         );
 
         // Act
@@ -21292,10 +22759,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -21320,6 +22787,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '900010',
                 'ReferenceNumber' => '000529900010',
                 'OrderNumber' => '000529900010',
@@ -21333,6 +22801,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15462',
             'currency' => '840',
+            'ClientRef' => '000529900010',
         );
 
         // Act
@@ -21366,6 +22835,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '900011',
                 'ReferenceNumber' => '000529900011',
                 'OrderNumber' => '000529900011',
@@ -21402,6 +22872,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '15462',
             'currency' => '840',
+            'ClientRef' => '000529900011',
         );
 
         // Act
@@ -21425,10 +22896,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -21454,9 +22925,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '910010',
                 'ReferenceNumber' => '000529910010',
                 'OrderNumber' => '000529910010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21467,6 +22944,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14040',
             'currency' => '840',
+            'ClientRef' => '000529910010',
         );
 
         // Act
@@ -21501,9 +22979,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '910011',
                 'ReferenceNumber' => '000529910011',
                 'OrderNumber' => '000529910011',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7020',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21514,6 +23001,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7020',
             'currency' => '840',
+            'ClientRef' => '000529910011',
         );
 
         // Act
@@ -21537,10 +23025,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -21567,9 +23055,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '920010',
                 'ReferenceNumber' => '000529920010',
                 'OrderNumber' => '000529920010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21584,6 +23078,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '114094',
             'currency' => '840',
+            'ClientRef' => '000529920010',
         );
 
         // Act
@@ -21618,9 +23113,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '920011',
                 'ReferenceNumber' => '000529920011',
                 'OrderNumber' => '000529920011',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '57047',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21631,6 +23135,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57047',
             'currency' => '840',
+            'ClientRef' => '000529920011',
         );
 
         // Act
@@ -21654,10 +23159,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -21684,9 +23189,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '950010',
                 'ReferenceNumber' => '000529950010',
                 'OrderNumber' => '000529950010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21701,6 +23212,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '115294',
             'currency' => '840',
+            'ClientRef' => '000529950010',
         );
 
         // Act
@@ -21735,9 +23247,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '950011',
                 'ReferenceNumber' => '000529950011',
                 'OrderNumber' => '000529950011',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '57647',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21748,6 +23269,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '57647',
             'currency' => '840',
+            'ClientRef' => '000529950011',
         );
 
         // Act
@@ -21771,10 +23293,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -21800,9 +23322,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '990010',
                 'ReferenceNumber' => '000529990010',
                 'OrderNumber' => '000529990010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21813,6 +23341,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14042',
             'currency' => '840',
+            'ClientRef' => '000529990010',
         );
 
         // Act
@@ -21847,6 +23376,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '990011',
                 'ReferenceNumber' => '000529990011',
                 'OrderNumber' => '000529990011',
@@ -21884,6 +23414,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '7018',
             'currency' => '840',
+            'ClientRef' => '000529990011',
         );
 
         // Act
@@ -21907,10 +23438,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -21936,6 +23467,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '100010',
                 'ReferenceNumber' => '000530100010',
                 'OrderNumber' => '000530100010',
@@ -21949,6 +23481,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '82794',
             'currency' => '840',
+            'ClientRef' => '000530100010',
         );
 
         // Act
@@ -21983,6 +23516,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '100011',
                 'ReferenceNumber' => '000530100011',
                 'OrderNumber' => '000530100011',
@@ -22003,6 +23537,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '82794',
             'currency' => '840',
+            'ClientRef' => '000530100011',
         );
 
         // Act
@@ -22027,10 +23562,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -22057,9 +23592,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '120010',
                 'ReferenceNumber' => '000530120010',
                 'OrderNumber' => '000530120010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -22074,6 +23615,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '76982',
             'currency' => '840',
+            'ClientRef' => '000530120010',
         );
 
         // Act
@@ -22108,9 +23650,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '120011',
                 'ReferenceNumber' => '000530120011',
                 'OrderNumber' => '000530120011',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '38491',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -22121,6 +23672,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '38491',
             'currency' => '840',
+            'ClientRef' => '000530120011',
         );
 
         // Act
@@ -22144,10 +23696,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -22174,9 +23726,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '240010',
                 'ReferenceNumber' => '000532240010',
                 'OrderNumber' => '000532240010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -22184,6 +23745,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '216092',
             'currency' => '840',
+            'ClientRef' => '000532240010',
         );
 
         // Act
@@ -22209,10 +23771,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -22239,9 +23801,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '250010',
                 'ReferenceNumber' => '000532250010',
                 'OrderNumber' => '000532250010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -22249,6 +23820,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '216094',
             'currency' => '840',
+            'ClientRef' => '000532250010',
         );
 
         // Act
@@ -22274,10 +23846,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -22303,12 +23875,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '260010',
                 'ReferenceNumber' => '000532260010',
                 'OrderNumber' => '000532260010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '16252',
             'currency' => '840',
+            'ClientRef' => '000532260010',
         );
 
         // Act
@@ -22334,10 +23916,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -22363,12 +23945,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '270010',
                 'ReferenceNumber' => '000532270010',
                 'OrderNumber' => '000532270010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '16254',
             'currency' => '840',
+            'ClientRef' => '000532270010',
         );
 
         // Act
@@ -22394,10 +23986,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -22423,15 +24015,25 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '350010',
                 'ReferenceNumber' => '000532350010',
                 'OrderNumber' => '000532350010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '16248',
             'currency' => '840',
+            'ClientRef' => '000532350010',
         );
 
         // Act
@@ -22457,10 +24059,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -22486,15 +24088,25 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '360010',
                 'ReferenceNumber' => '000532360010',
                 'OrderNumber' => '000532360010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '16250',
             'currency' => '840',
+            'ClientRef' => '000532360010',
         );
 
         // Act
@@ -22520,10 +24132,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -22549,12 +24161,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '420010',
                 'ReferenceNumber' => '000532420010',
                 'OrderNumber' => '000532420010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '16240',
             'currency' => '840',
+            'ClientRef' => '000532420010',
         );
 
         // Act
@@ -22580,10 +24202,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -22607,12 +24229,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '450010',
                 'ReferenceNumber' => '000533450010',
                 'OrderNumber' => '000533450010',
             ),
             'amount' => '41406',
             'currency' => '840',
+            'ClientRef' => '000533450010',
         );
 
         // Act
@@ -22645,6 +24269,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '450011',
                 'ReferenceNumber' => '000533450011',
                 'OrderNumber' => '000533450011',
@@ -22658,6 +24283,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '41406',
             'currency' => '840',
+            'ClientRef' => '000533450011',
         );
 
         // Act
@@ -22682,10 +24308,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -22709,12 +24335,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '460010',
                 'ReferenceNumber' => '000533460010',
                 'OrderNumber' => '000533460010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '241192',
             'currency' => '840',
+            'ClientRef' => '000533460010',
         );
 
         // Act
@@ -22747,6 +24380,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '460011',
                 'ReferenceNumber' => '000533460011',
                 'OrderNumber' => '000533460011',
@@ -22772,6 +24406,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '120596',
             'currency' => '840',
+            'ClientRef' => '000533460011',
         );
 
         // Act
@@ -22795,10 +24430,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -22822,12 +24457,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '560010',
                 'ReferenceNumber' => '000533560010',
                 'OrderNumber' => '000533560010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '241370',
             'currency' => '840',
+            'ClientRef' => '000533560010',
         );
 
         // Act
@@ -22860,16 +24502,27 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '560011',
                 'ReferenceNumber' => '000533560011',
                 'OrderNumber' => '000533560011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '120685',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '120685',
             'currency' => '840',
+            'ClientRef' => '000533560011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -22889,10 +24542,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -22916,12 +24569,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '570010',
                 'ReferenceNumber' => '000533570010',
                 'OrderNumber' => '000533570010',
             ),
             'amount' => '241230',
             'currency' => '840',
+            'ClientRef' => '000533570010',
         );
 
         // Act
@@ -22954,6 +24609,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '570011',
                 'ReferenceNumber' => '000533570011',
                 'OrderNumber' => '000533570011',
@@ -22979,6 +24635,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '241230',
             'currency' => '840',
+            'ClientRef' => '000533570011',
         );
 
         // Act
@@ -23002,10 +24659,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -23029,12 +24686,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '580010',
                 'ReferenceNumber' => '000533580010',
                 'OrderNumber' => '000533580010',
             ),
             'amount' => '241074',
             'currency' => '840',
+            'ClientRef' => '000533580010',
         );
 
         // Act
@@ -23067,6 +24726,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '580011',
                 'ReferenceNumber' => '000533580011',
                 'OrderNumber' => '000533580011',
@@ -23092,6 +24752,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '241074',
             'currency' => '840',
+            'ClientRef' => '000533580011',
         );
 
         // Act
@@ -23115,10 +24776,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -23142,6 +24803,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '660010',
                 'ReferenceNumber' => '000533660010',
                 'OrderNumber' => '000533660010',
@@ -23151,6 +24813,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '41402',
             'currency' => '840',
+            'ClientRef' => '000533660010',
         );
 
         // Act
@@ -23183,6 +24846,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '660011',
                 'ReferenceNumber' => '000533660011',
                 'OrderNumber' => '000533660011',
@@ -23199,6 +24863,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '41402',
             'currency' => '840',
+            'ClientRef' => '000533660011',
         );
 
         // Act
@@ -23223,10 +24888,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -23250,15 +24915,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '670010',
                 'ReferenceNumber' => '000533670010',
                 'OrderNumber' => '000533670010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '241242',
             'currency' => '840',
+            'ClientRef' => '000533670010',
         );
 
         // Act
@@ -23291,6 +24963,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '670011',
                 'ReferenceNumber' => '000533670011',
                 'OrderNumber' => '000533670011',
@@ -23319,6 +24992,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '120621',
             'currency' => '840',
+            'ClientRef' => '000533670011',
         );
 
         // Act
@@ -23342,10 +25016,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -23369,6 +25043,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '770010',
                 'ReferenceNumber' => '000533770010',
                 'OrderNumber' => '000533770010',
@@ -23378,6 +25053,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '241298',
             'currency' => '840',
+            'ClientRef' => '000533770010',
         );
 
         // Act
@@ -23410,6 +25086,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '770011',
                 'ReferenceNumber' => '000533770011',
                 'OrderNumber' => '000533770011',
@@ -23438,6 +25115,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '241298',
             'currency' => '840',
+            'ClientRef' => '000533770011',
         );
 
         // Act
@@ -23461,10 +25139,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -23488,6 +25166,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '780010',
                 'ReferenceNumber' => '000533780010',
                 'OrderNumber' => '000533780010',
@@ -23497,6 +25176,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '241082',
             'currency' => '840',
+            'ClientRef' => '000533780010',
         );
 
         // Act
@@ -23529,6 +25209,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '780011',
                 'ReferenceNumber' => '000533780011',
                 'OrderNumber' => '000533780011',
@@ -23557,6 +25238,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '241082',
             'currency' => '840',
+            'ClientRef' => '000533780011',
         );
 
         // Act
@@ -23580,10 +25262,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -23607,12 +25289,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000533860010',
                 'OrderNumber' => '000533860010',
             ),
             'amount' => '41394',
             'currency' => '840',
+            'ClientRef' => '000533860010',
         );
 
         // Act
@@ -23645,6 +25329,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '860011',
                 'ReferenceNumber' => '000533860011',
                 'OrderNumber' => '000533860011',
@@ -23658,6 +25343,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '41394',
             'currency' => '840',
+            'ClientRef' => '000533860011',
         );
 
         // Act
@@ -23682,10 +25368,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -23709,12 +25395,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '870010',
                 'ReferenceNumber' => '000533870010',
                 'OrderNumber' => '000533870010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '241152',
             'currency' => '840',
+            'ClientRef' => '000533870010',
         );
 
         // Act
@@ -23747,6 +25440,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '870011',
                 'ReferenceNumber' => '000533870011',
                 'OrderNumber' => '000533870011',
@@ -23772,6 +25466,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '120576',
             'currency' => '840',
+            'ClientRef' => '000533870011',
         );
 
         // Act
@@ -23795,10 +25490,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -23822,12 +25517,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '950010',
                 'ReferenceNumber' => '000533950010',
                 'OrderNumber' => '000533950010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '241154',
             'currency' => '840',
+            'ClientRef' => '000533950010',
         );
 
         // Act
@@ -23860,6 +25562,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '950011',
                 'ReferenceNumber' => '000533950011',
                 'OrderNumber' => '000533950011',
@@ -23885,6 +25588,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '120577',
             'currency' => '840',
+            'ClientRef' => '000533950011',
         );
 
         // Act
@@ -23908,10 +25612,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -23935,12 +25639,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '960010',
                 'ReferenceNumber' => '000533960010',
                 'OrderNumber' => '000533960010',
             ),
             'amount' => '41328',
             'currency' => '840',
+            'ClientRef' => '000533960010',
         );
 
         // Act
@@ -23973,6 +25679,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '960011',
                 'ReferenceNumber' => '000533960011',
                 'OrderNumber' => '000533960011',
@@ -23986,6 +25693,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '41328',
             'currency' => '840',
+            'ClientRef' => '000533960011',
         );
 
         // Act
@@ -24010,10 +25718,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -24037,12 +25745,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '970010',
                 'ReferenceNumber' => '000533970010',
                 'OrderNumber' => '000533970010',
             ),
             'amount' => '41016',
             'currency' => '840',
+            'ClientRef' => '000533970010',
         );
 
         // Act
@@ -24075,6 +25785,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '970011',
                 'ReferenceNumber' => '000533970011',
                 'OrderNumber' => '000533970011',
@@ -24100,6 +25811,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '41016',
             'currency' => '840',
+            'ClientRef' => '000533970011',
         );
 
         // Act
@@ -24123,10 +25835,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -24151,9 +25863,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '520010',
                 'ReferenceNumber' => '000534520010',
                 'OrderNumber' => '000534520010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -24161,6 +25879,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11124',
             'currency' => '840',
+            'ClientRef' => '000534520010',
         );
 
         // Act
@@ -24185,10 +25904,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -24213,9 +25932,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '530010',
                 'ReferenceNumber' => '000534530010',
                 'OrderNumber' => '000534530010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -24223,6 +25948,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11126',
             'currency' => '840',
+            'ClientRef' => '000534530010',
         );
 
         // Act
@@ -24247,10 +25973,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -24277,6 +26003,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '620010',
                 'ReferenceNumber' => '000534620010',
                 'OrderNumber' => '000534620010',
@@ -24291,6 +26018,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11750',
             'currency' => '840',
+            'ClientRef' => '000534620010',
         );
 
         // Act
@@ -24316,10 +26044,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -24344,9 +26072,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '770010',
                 'ReferenceNumber' => '000534770010',
                 'OrderNumber' => '000534770010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -24357,6 +26091,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11956',
             'currency' => '840',
+            'ClientRef' => '000534770010',
         );
 
         // Act
@@ -24381,10 +26116,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -24409,9 +26144,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '780010',
                 'ReferenceNumber' => '000534780010',
                 'OrderNumber' => '000534780010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -24422,6 +26163,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11958',
             'currency' => '840',
+            'ClientRef' => '000534780010',
         );
 
         // Act
@@ -24446,10 +26188,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -24474,12 +26216,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '820010',
                 'ReferenceNumber' => '000541820010',
                 'OrderNumber' => '000541820010',
             ),
             'amount' => '14426',
             'currency' => '840',
+            'ClientRef' => '000541820010',
         );
 
         // Act
@@ -24504,10 +26248,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -24532,12 +26276,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '370010',
                 'ReferenceNumber' => '000544370010',
                 'OrderNumber' => '000544370010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '10624',
             'currency' => '840',
+            'ClientRef' => '000544370010',
         );
 
         // Act
@@ -24571,16 +26322,27 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '370011',
                 'ReferenceNumber' => '000544370011',
                 'OrderNumber' => '000544370011',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '5312',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '5312',
             'currency' => '840',
+            'ClientRef' => '000544370011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
@@ -24600,10 +26362,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -24628,12 +26390,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '390010',
                 'ReferenceNumber' => '000544390010',
                 'OrderNumber' => '000544390010',
             ),
             'amount' => '14152',
             'currency' => '840',
+            'ClientRef' => '000544390010',
         );
 
         // Act
@@ -24667,6 +26431,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '390011',
                 'ReferenceNumber' => '000544390011',
                 'OrderNumber' => '000544390011',
@@ -24680,6 +26445,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14152',
             'currency' => '840',
+            'ClientRef' => '000544390011',
         );
 
         // Act
@@ -24704,10 +26470,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -24732,12 +26498,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '400010',
                 'ReferenceNumber' => '000544400010',
                 'OrderNumber' => '000544400010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '10622',
             'currency' => '840',
+            'ClientRef' => '000544400010',
         );
 
         // Act
@@ -24771,6 +26544,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '400011',
                 'ReferenceNumber' => '000544400011',
                 'OrderNumber' => '000544400011',
@@ -24800,6 +26574,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '5311',
             'currency' => '840',
+            'ClientRef' => '000544400011',
         );
 
         // Act
@@ -24823,10 +26598,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -24851,12 +26626,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '420010',
                 'ReferenceNumber' => '000544420010',
                 'OrderNumber' => '000544420010',
             ),
             'amount' => '14150',
             'currency' => '840',
+            'ClientRef' => '000544420010',
         );
 
         // Act
@@ -24890,6 +26667,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '420011',
                 'ReferenceNumber' => '000544420011',
                 'OrderNumber' => '000544420011',
@@ -24919,6 +26697,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14150',
             'currency' => '840',
+            'ClientRef' => '000544420011',
         );
 
         // Act
@@ -24942,10 +26721,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -24970,12 +26749,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '470010',
                 'ReferenceNumber' => '000544470010',
                 'OrderNumber' => '000544470010',
             ),
             'amount' => '14168',
             'currency' => '840',
+            'ClientRef' => '000544470010',
         );
 
         // Act
@@ -25009,6 +26790,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '470011',
                 'ReferenceNumber' => '000544470011',
                 'OrderNumber' => '000544470011',
@@ -25022,6 +26804,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '14168',
             'currency' => '840',
+            'ClientRef' => '000544470011',
         );
 
         // Act
@@ -25046,10 +26829,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -25075,6 +26858,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '250010',
                 'ReferenceNumber' => '000549250010',
                 'OrderNumber' => '000549250010',
@@ -25085,6 +26869,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '259809',
             'currency' => '840',
+            'ClientRef' => '000549250010',
         );
 
         // Act
@@ -25109,10 +26894,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -25138,6 +26923,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '260010',
                 'ReferenceNumber' => '000549260010',
                 'OrderNumber' => '000549260010',
@@ -25148,6 +26934,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '259109',
             'currency' => '840',
+            'ClientRef' => '000549260010',
         );
 
         // Act
@@ -25172,10 +26959,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -25201,6 +26988,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '410010',
                 'ReferenceNumber' => '000549410010',
                 'OrderNumber' => '000549410010',
@@ -25214,6 +27002,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '264157',
             'currency' => '840',
+            'ClientRef' => '000549410010',
         );
 
         // Act
@@ -25238,10 +27027,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -25267,6 +27056,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '420010',
                 'ReferenceNumber' => '000549420010',
                 'OrderNumber' => '000549420010',
@@ -25280,6 +27070,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '270527',
             'currency' => '840',
+            'ClientRef' => '000549420010',
         );
 
         // Act
@@ -25304,10 +27095,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -25333,6 +27124,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '570010',
                 'ReferenceNumber' => '000549570010',
                 'OrderNumber' => '000549570010',
@@ -25343,6 +27135,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '247729',
             'currency' => '840',
+            'ClientRef' => '000549570010',
         );
 
         // Act
@@ -25367,10 +27160,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -25396,6 +27189,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '580010',
                 'ReferenceNumber' => '000549580010',
                 'OrderNumber' => '000549580010',
@@ -25406,6 +27200,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '242957',
             'currency' => '840',
+            'ClientRef' => '000549580010',
         );
 
         // Act
@@ -25430,10 +27225,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -25459,6 +27254,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '730010',
                 'ReferenceNumber' => '000549730010',
                 'OrderNumber' => '000549730010',
@@ -25469,6 +27265,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '281908',
             'currency' => '840',
+            'ClientRef' => '000549730010',
         );
 
         // Act
@@ -25493,10 +27290,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -25522,6 +27319,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '750010',
                 'ReferenceNumber' => '000549750010',
                 'OrderNumber' => '000549750010',
@@ -25532,6 +27330,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '273409',
             'currency' => '840',
+            'ClientRef' => '000549750010',
         );
 
         // Act
@@ -25556,10 +27355,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -25586,6 +27385,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '550010',
                 'ReferenceNumber' => '000550550010',
                 'OrderNumber' => '000550550010',
@@ -25600,6 +27400,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '260301',
             'currency' => '840',
+            'ClientRef' => '000550550010',
         );
 
         // Act
@@ -25634,6 +27435,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '550011',
                 'ReferenceNumber' => '000550550011',
                 'OrderNumber' => '000550550011',
@@ -25668,6 +27470,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '260298',
             'currency' => '840',
+            'ClientRef' => '000550550011',
         );
 
         // Act
@@ -25691,10 +27494,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -25721,6 +27524,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '810010',
                 'ReferenceNumber' => '000551810010',
                 'OrderNumber' => '000551810010',
@@ -25735,6 +27539,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '247401',
             'currency' => '840',
+            'ClientRef' => '000551810010',
         );
 
         // Act
@@ -25769,6 +27574,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '810011',
                 'ReferenceNumber' => '000551810011',
                 'OrderNumber' => '000551810011',
@@ -25803,6 +27609,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '247398',
             'currency' => '840',
+            'ClientRef' => '000551810011',
         );
 
         // Act
@@ -25826,10 +27633,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -25856,6 +27663,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '820010',
                 'ReferenceNumber' => '000551820010',
                 'OrderNumber' => '000551820010',
@@ -25870,6 +27678,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '247500',
             'currency' => '840',
+            'ClientRef' => '000551820010',
         );
 
         // Act
@@ -25904,6 +27713,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '820011',
                 'ReferenceNumber' => '000551820011',
                 'OrderNumber' => '000551820011',
@@ -25938,6 +27748,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '247497',
             'currency' => '840',
+            'ClientRef' => '000551820011',
         );
 
         // Act
@@ -25961,10 +27772,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -25991,6 +27802,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '070010',
                 'ReferenceNumber' => '000552070010',
                 'OrderNumber' => '000552070010',
@@ -26005,6 +27817,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '273700',
             'currency' => '840',
+            'ClientRef' => '000552070010',
         );
 
         // Act
@@ -26039,6 +27852,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '070011',
                 'ReferenceNumber' => '000552070011',
                 'OrderNumber' => '000552070011',
@@ -26073,6 +27887,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '273697',
             'currency' => '840',
+            'ClientRef' => '000552070011',
         );
 
         // Act
@@ -26096,10 +27911,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -26126,6 +27941,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '080010',
                 'ReferenceNumber' => '000552080010',
                 'OrderNumber' => '000552080010',
@@ -26140,6 +27956,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '273701',
             'currency' => '840',
+            'ClientRef' => '000552080010',
         );
 
         // Act
@@ -26174,6 +27991,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '080011',
                 'ReferenceNumber' => '000552080011',
                 'OrderNumber' => '000552080011',
@@ -26208,6 +28026,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '273698',
             'currency' => '840',
+            'ClientRef' => '000552080011',
         );
 
         // Act
@@ -26231,10 +28050,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -26259,6 +28078,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '470010',
                 'ReferenceNumber' => '000555470010',
                 'OrderNumber' => '000555470010',
@@ -26269,6 +28089,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11310',
             'currency' => '840',
+            'ClientRef' => '000555470010',
         );
 
         // Act
@@ -26302,6 +28123,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '470011',
                 'ReferenceNumber' => '000555470011',
                 'OrderNumber' => '000555470011',
@@ -26335,6 +28157,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11310',
             'currency' => '840',
+            'ClientRef' => '000555470011',
         );
 
         // Act
@@ -26358,10 +28181,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -26386,6 +28209,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '480010',
                 'ReferenceNumber' => '000555480010',
                 'OrderNumber' => '000555480010',
@@ -26396,6 +28220,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11180',
             'currency' => '840',
+            'ClientRef' => '000555480010',
         );
 
         // Act
@@ -26429,6 +28254,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '480011',
                 'ReferenceNumber' => '000555480011',
                 'OrderNumber' => '000555480011',
@@ -26462,6 +28288,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11180',
             'currency' => '840',
+            'ClientRef' => '000555480011',
         );
 
         // Act
@@ -26485,10 +28312,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -26513,6 +28340,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '670010',
                 'ReferenceNumber' => '000556670010',
                 'OrderNumber' => '000556670010',
@@ -26523,6 +28351,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11922',
             'currency' => '840',
+            'ClientRef' => '000556670010',
         );
 
         // Act
@@ -26556,6 +28385,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '670011',
                 'ReferenceNumber' => '000556670011',
                 'OrderNumber' => '000556670011',
@@ -26589,6 +28419,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11922',
             'currency' => '840',
+            'ClientRef' => '000556670011',
         );
 
         // Act
@@ -26612,10 +28443,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -26640,6 +28471,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '680010',
                 'ReferenceNumber' => '000556680010',
                 'OrderNumber' => '000556680010',
@@ -26650,6 +28482,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11364',
             'currency' => '840',
+            'ClientRef' => '000556680010',
         );
 
         // Act
@@ -26683,6 +28516,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '680011',
                 'ReferenceNumber' => '000556680011',
                 'OrderNumber' => '000556680011',
@@ -26716,6 +28550,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11364',
             'currency' => '840',
+            'ClientRef' => '000556680011',
         );
 
         // Act
@@ -26739,10 +28574,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -26767,6 +28602,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '910010',
                 'ReferenceNumber' => '000557910010',
                 'OrderNumber' => '000557910010',
@@ -26780,6 +28616,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12216',
             'currency' => '840',
+            'ClientRef' => '000557910010',
         );
 
         // Act
@@ -26813,6 +28650,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '910011',
                 'ReferenceNumber' => '000557910011',
                 'OrderNumber' => '000557910011',
@@ -26849,6 +28687,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12216',
             'currency' => '840',
+            'ClientRef' => '000557910011',
         );
 
         // Act
@@ -26872,10 +28711,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -26900,6 +28739,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '920010',
                 'ReferenceNumber' => '000557920010',
                 'OrderNumber' => '000557920010',
@@ -26913,6 +28753,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12004',
             'currency' => '840',
+            'ClientRef' => '000557920010',
         );
 
         // Act
@@ -26946,6 +28787,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '920011',
                 'ReferenceNumber' => '000557920011',
                 'OrderNumber' => '000557920011',
@@ -26982,6 +28824,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12004',
             'currency' => '840',
+            'ClientRef' => '000557920011',
         );
 
         // Act
@@ -27005,10 +28848,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -27033,6 +28876,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '850010',
                 'ReferenceNumber' => '000558850010',
                 'OrderNumber' => '000558850010',
@@ -27043,6 +28887,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12690',
             'currency' => '840',
+            'ClientRef' => '000558850010',
         );
 
         // Act
@@ -27076,6 +28921,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '850011',
                 'ReferenceNumber' => '000558850011',
                 'OrderNumber' => '000558850011',
@@ -27109,6 +28955,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12690',
             'currency' => '840',
+            'ClientRef' => '000558850011',
         );
 
         // Act
@@ -27132,10 +28979,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
@@ -27160,6 +29007,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000558860010',
                 'OrderNumber' => '000558860010',
@@ -27170,6 +29018,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11058',
             'currency' => '840',
+            'ClientRef' => '000558860010',
         );
 
         // Act
@@ -27203,6 +29052,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '860011',
                 'ReferenceNumber' => '000558860011',
                 'OrderNumber' => '000558860011',
@@ -27236,6 +29086,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '11058',
             'currency' => '840',
+            'ClientRef' => '000558860011',
         );
 
         // Act
@@ -27259,10 +29110,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -27287,12 +29138,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '750010',
                 'ReferenceNumber' => '000559750010',
                 'OrderNumber' => '000559750010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '111228',
             'currency' => '840',
+            'ClientRef' => '000559750010',
         );
 
         // Act
@@ -27326,6 +29182,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '750011',
                 'ReferenceNumber' => '000559750011',
                 'OrderNumber' => '000559750011',
@@ -27346,6 +29203,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -27355,6 +29215,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '111228',
             'currency' => '840',
+            'ClientRef' => '000559750011',
         );
 
         // Act
@@ -27378,10 +29239,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -27406,12 +29267,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '760010',
                 'ReferenceNumber' => '000559760010',
                 'OrderNumber' => '000559760010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '111078',
             'currency' => '840',
+            'ClientRef' => '000559760010',
         );
 
         // Act
@@ -27445,6 +29311,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '760011',
                 'ReferenceNumber' => '000559760011',
                 'OrderNumber' => '000559760011',
@@ -27465,6 +29332,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -27474,6 +29344,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '111078',
             'currency' => '840',
+            'ClientRef' => '000559760011',
         );
 
         // Act
@@ -27497,10 +29368,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -27525,12 +29396,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '160010',
                 'ReferenceNumber' => '000561160010',
                 'OrderNumber' => '000561160010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '12544',
             'currency' => '840',
+            'ClientRef' => '000561160010',
         );
 
         // Act
@@ -27564,6 +29440,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '160011',
                 'ReferenceNumber' => '000561160011',
                 'OrderNumber' => '000561160011',
@@ -27584,6 +29461,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -27593,6 +29473,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12544',
             'currency' => '840',
+            'ClientRef' => '000561160011',
         );
 
         // Act
@@ -27616,10 +29497,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -27644,12 +29525,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '170010',
                 'ReferenceNumber' => '000561170010',
                 'OrderNumber' => '000561170010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '12546',
             'currency' => '840',
+            'ClientRef' => '000561170010',
         );
 
         // Act
@@ -27683,6 +29569,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '170011',
                 'ReferenceNumber' => '000561170011',
                 'OrderNumber' => '000561170011',
@@ -27703,6 +29590,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -27712,6 +29602,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '12546',
             'currency' => '840',
+            'ClientRef' => '000561170011',
         );
 
         // Act
@@ -27735,10 +29626,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -27763,15 +29654,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '390010',
                 'ReferenceNumber' => '000563390010',
                 'OrderNumber' => '000563390010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '112464',
             'currency' => '840',
+            'ClientRef' => '000563390010',
         );
 
         // Act
@@ -27805,6 +29701,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '390011',
                 'ReferenceNumber' => '000563390011',
                 'OrderNumber' => '000563390011',
@@ -27825,6 +29722,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -27837,6 +29737,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '112464',
             'currency' => '840',
+            'ClientRef' => '000563390011',
         );
 
         // Act
@@ -27860,10 +29761,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -27888,15 +29789,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '400010',
                 'ReferenceNumber' => '000563400010',
                 'OrderNumber' => '000563400010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '112282',
             'currency' => '840',
+            'ClientRef' => '000563400010',
         );
 
         // Act
@@ -27930,6 +29836,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '400011',
                 'ReferenceNumber' => '000563400011',
                 'OrderNumber' => '000563400011',
@@ -27950,6 +29857,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -27962,6 +29872,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '112282',
             'currency' => '840',
+            'ClientRef' => '000563400011',
         );
 
         // Act
@@ -27985,10 +29896,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -28015,9 +29926,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '570010',
                 'ReferenceNumber' => '000564570010',
                 'OrderNumber' => '000564570010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -28025,6 +29940,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '112108',
             'currency' => '840',
+            'ClientRef' => '000564570010',
         );
 
         // Act
@@ -28059,6 +29975,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '570011',
                 'ReferenceNumber' => '000564570011',
                 'OrderNumber' => '000564570011',
@@ -28080,6 +29997,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -28089,6 +30009,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '112108',
             'currency' => '840',
+            'ClientRef' => '000564570011',
         );
 
         // Act
@@ -28112,10 +30033,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -28140,12 +30061,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '580010',
                 'ReferenceNumber' => '000564580010',
                 'OrderNumber' => '000564580010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '111530',
             'currency' => '840',
+            'ClientRef' => '000564580010',
         );
 
         // Act
@@ -28179,6 +30105,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '580011',
                 'ReferenceNumber' => '000564580011',
                 'OrderNumber' => '000564580011',
@@ -28199,6 +30126,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -28208,6 +30138,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '111530',
             'currency' => '840',
+            'ClientRef' => '000564580011',
         );
 
         // Act
@@ -28231,10 +30162,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -28259,12 +30190,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '590010',
                 'ReferenceNumber' => '000564590010',
                 'OrderNumber' => '000564590010',
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'amount' => '111536',
             'currency' => '840',
+            'ClientRef' => '000564590010',
         );
 
         // Act
@@ -28298,6 +30234,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '590011',
                 'ReferenceNumber' => '000564590011',
                 'OrderNumber' => '000564590011',
@@ -28318,6 +30255,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -28327,6 +30267,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '111536',
             'currency' => '840',
+            'ClientRef' => '000564590011',
         );
 
         // Act
@@ -28350,10 +30291,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
         $requestData = array(
@@ -28380,9 +30321,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '070010',
                 'ReferenceNumber' => '000565070010',
                 'OrderNumber' => '000565070010',
+            ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -28390,6 +30335,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '111940',
             'currency' => '840',
+            'ClientRef' => '000565070010',
         );
 
         // Act
@@ -28424,6 +30370,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5967',
                 'STAN' => '070011',
                 'ReferenceNumber' => '000565070011',
                 'OrderNumber' => '000565070011',
@@ -28445,6 +30392,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'EcommGroup' => array(
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -28454,6 +30404,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '111940',
             'currency' => '840',
+            'ClientRef' => '000565070011',
         );
 
         // Act
@@ -28477,10 +30428,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -28505,12 +30456,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '010010',
                 'ReferenceNumber' => '000569010010',
                 'OrderNumber' => '000569010010',
             ),
             'amount' => '11826',
             'currency' => '840',
+            'ClientRef' => '000569010010',
         );
 
         // Act
@@ -28535,10 +30488,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -28563,12 +30516,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '020010',
                 'ReferenceNumber' => '000569020010',
                 'OrderNumber' => '000569020010',
             ),
             'amount' => '11712',
             'currency' => '840',
+            'ClientRef' => '000569020010',
         );
 
         // Act
@@ -28593,10 +30548,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -28620,12 +30575,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '030010',
                 'ReferenceNumber' => '000569030010',
                 'OrderNumber' => '000569030010',
             ),
             'amount' => '11720',
             'currency' => '840',
+            'ClientRef' => '000569030010',
         );
 
         // Act
@@ -28649,10 +30606,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -28677,12 +30634,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '040010',
                 'ReferenceNumber' => '000569040010',
                 'OrderNumber' => '000569040010',
             ),
             'amount' => '11728',
             'currency' => '840',
+            'ClientRef' => '000569040010',
         );
 
         // Act
@@ -28707,10 +30666,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -28735,12 +30694,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '050010',
                 'ReferenceNumber' => '000569050010',
                 'OrderNumber' => '000569050010',
             ),
             'amount' => '11736',
             'currency' => '840',
+            'ClientRef' => '000569050010',
         );
 
         // Act
@@ -28765,10 +30726,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -28793,12 +30754,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '610010',
                 'ReferenceNumber' => '000569610010',
                 'OrderNumber' => '000569610010',
             ),
             'amount' => '12878',
             'currency' => '840',
+            'ClientRef' => '000569610010',
         );
 
         // Act
@@ -28823,10 +30786,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -28851,12 +30814,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '620010',
                 'ReferenceNumber' => '000569620010',
                 'OrderNumber' => '000569620010',
             ),
             'amount' => '12486',
             'currency' => '840',
+            'ClientRef' => '000569620010',
         );
 
         // Act
@@ -28881,10 +30846,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -28909,12 +30874,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '640010',
                 'ReferenceNumber' => '000569640010',
                 'OrderNumber' => '000569640010',
             ),
             'amount' => '12504',
             'currency' => '840',
+            'ClientRef' => '000569640010',
         );
 
         // Act
@@ -28939,10 +30906,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -28967,12 +30934,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '650010',
                 'ReferenceNumber' => '000569650010',
                 'OrderNumber' => '000569650010',
             ),
             'amount' => '12512',
             'currency' => '840',
+            'ClientRef' => '000569650010',
         );
 
         // Act
@@ -28997,10 +30966,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29025,6 +30994,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '150010',
                 'ReferenceNumber' => '000570150010',
                 'OrderNumber' => '000570150010',
@@ -29034,6 +31004,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13580',
             'currency' => '840',
+            'ClientRef' => '000570150010',
         );
 
         // Act
@@ -29058,10 +31029,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29086,6 +31057,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '160010',
                 'ReferenceNumber' => '000570160010',
                 'OrderNumber' => '000570160010',
@@ -29095,6 +31067,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13392',
             'currency' => '840',
+            'ClientRef' => '000570160010',
         );
 
         // Act
@@ -29119,10 +31092,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29147,6 +31120,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '180010',
                 'ReferenceNumber' => '000570180010',
                 'OrderNumber' => '000570180010',
@@ -29156,6 +31130,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13410',
             'currency' => '840',
+            'ClientRef' => '000570180010',
         );
 
         // Act
@@ -29180,10 +31155,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29208,6 +31183,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '190010',
                 'ReferenceNumber' => '000570190010',
                 'OrderNumber' => '000570190010',
@@ -29217,6 +31193,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '13418',
             'currency' => '840',
+            'ClientRef' => '000570190010',
         );
 
         // Act
@@ -29241,10 +31218,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29269,12 +31246,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '600010',
                 'ReferenceNumber' => '000570600010',
                 'OrderNumber' => '000570600010',
             ),
             'amount' => '14556',
             'currency' => '840',
+            'ClientRef' => '000570600010',
         );
 
         // Act
@@ -29299,10 +31278,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29327,12 +31306,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '610010',
                 'ReferenceNumber' => '000570610010',
                 'OrderNumber' => '000570610010',
             ),
             'amount' => '14116',
             'currency' => '840',
+            'ClientRef' => '000570610010',
         );
 
         // Act
@@ -29357,10 +31338,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29384,12 +31365,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '620010',
                 'ReferenceNumber' => '000570620010',
                 'OrderNumber' => '000570620010',
             ),
             'amount' => '14124',
             'currency' => '840',
+            'ClientRef' => '000570620010',
         );
 
         // Act
@@ -29413,10 +31396,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29441,12 +31424,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '630010',
                 'ReferenceNumber' => '000570630010',
                 'OrderNumber' => '000570630010',
             ),
             'amount' => '14312',
             'currency' => '840',
+            'ClientRef' => '000570630010',
         );
 
         // Act
@@ -29471,10 +31456,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29499,12 +31484,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '650010',
                 'ReferenceNumber' => '000570650010',
                 'OrderNumber' => '000570650010',
             ),
             'amount' => '14328',
             'currency' => '840',
+            'ClientRef' => '000570650010',
         );
 
         // Act
@@ -29529,10 +31516,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29557,12 +31544,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '940010',
                 'ReferenceNumber' => '000584940010',
                 'OrderNumber' => '000584940010',
             ),
             'amount' => '18012',
             'currency' => '840',
+            'ClientRef' => '000584940010',
         );
 
         // Act
@@ -29596,6 +31585,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '940011',
                 'ReferenceNumber' => '000584940011',
                 'OrderNumber' => '000584940011',
@@ -29609,6 +31599,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '18012',
             'currency' => '840',
+            'ClientRef' => '000584940011',
         );
 
         // Act
@@ -29633,10 +31624,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29660,12 +31651,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '850010',
                 'ReferenceNumber' => '000756850010',
                 'OrderNumber' => '000756850010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '19632',
             'currency' => '840',
+            'ClientRef' => '000756850010',
         );
 
         // Act
@@ -29698,6 +31696,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '850011',
                 'ReferenceNumber' => '000756850011',
                 'OrderNumber' => '000756850011',
@@ -29711,6 +31710,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9716',
             'currency' => '840',
+            'ClientRef' => '000756850011',
         );
 
         // Act
@@ -29734,10 +31734,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29761,6 +31761,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000756860010',
                 'OrderNumber' => '000756860010',
@@ -29770,6 +31771,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9437',
             'currency' => '840',
+            'ClientRef' => '000756860010',
         );
 
         // Act
@@ -29802,6 +31804,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '860011',
                 'ReferenceNumber' => '000756860011',
                 'OrderNumber' => '000756860011',
@@ -29818,6 +31821,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9337',
             'currency' => '840',
+            'ClientRef' => '000756860011',
         );
 
         // Act
@@ -29841,10 +31845,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29868,12 +31872,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '880010',
                 'ReferenceNumber' => '000756880010',
                 'OrderNumber' => '000756880010',
             ),
             'amount' => '9439',
             'currency' => '840',
+            'ClientRef' => '000756880010',
         );
 
         // Act
@@ -29906,6 +31912,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '880011',
                 'ReferenceNumber' => '000756880011',
                 'OrderNumber' => '000756880011',
@@ -29919,6 +31926,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9339',
             'currency' => '840',
+            'ClientRef' => '000756880011',
         );
 
         // Act
@@ -29942,10 +31950,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -29969,12 +31977,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '890010',
                 'ReferenceNumber' => '000756890010',
                 'OrderNumber' => '000756890010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '19636',
             'currency' => '840',
+            'ClientRef' => '000756890010',
         );
 
         // Act
@@ -30007,6 +32022,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '890011',
                 'ReferenceNumber' => '000756890011',
                 'OrderNumber' => '000756890011',
@@ -30020,6 +32036,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9718',
             'currency' => '840',
+            'ClientRef' => '000756890011',
         );
 
         // Act
@@ -30043,10 +32060,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -30070,12 +32087,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '940010',
                 'ReferenceNumber' => '000756940010',
                 'OrderNumber' => '000756940010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '19632',
             'currency' => '840',
+            'ClientRef' => '000756940010',
         );
 
         // Act
@@ -30108,6 +32132,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '940011',
                 'ReferenceNumber' => '000756940011',
                 'OrderNumber' => '000756940011',
@@ -30121,6 +32146,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9716',
             'currency' => '840',
+            'ClientRef' => '000756940011',
         );
 
         // Act
@@ -30144,10 +32170,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -30171,6 +32197,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '950010',
                 'ReferenceNumber' => '000756950010',
                 'OrderNumber' => '000756950010',
@@ -30180,6 +32207,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9437',
             'currency' => '840',
+            'ClientRef' => '000756950010',
         );
 
         // Act
@@ -30212,6 +32240,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '950011',
                 'ReferenceNumber' => '000756950011',
                 'OrderNumber' => '000756950011',
@@ -30228,6 +32257,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9337',
             'currency' => '840',
+            'ClientRef' => '000756950011',
         );
 
         // Act
@@ -30251,10 +32281,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -30278,12 +32308,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '970010',
                 'ReferenceNumber' => '000756970010',
                 'OrderNumber' => '000756970010',
             ),
             'amount' => '9439',
             'currency' => '840',
+            'ClientRef' => '000756970010',
         );
 
         // Act
@@ -30316,6 +32348,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '970011',
                 'ReferenceNumber' => '000756970011',
                 'OrderNumber' => '000756970011',
@@ -30329,6 +32362,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9339',
             'currency' => '840',
+            'ClientRef' => '000756970011',
         );
 
         // Act
@@ -30352,10 +32386,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -30379,12 +32413,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '980010',
                 'ReferenceNumber' => '000756980010',
                 'OrderNumber' => '000756980010',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '19636',
             'currency' => '840',
+            'ClientRef' => '000756980010',
         );
 
         // Act
@@ -30417,6 +32458,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '980011',
                 'ReferenceNumber' => '000756980011',
                 'OrderNumber' => '000756980011',
@@ -30430,6 +32472,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9718',
             'currency' => '840',
+            'ClientRef' => '000756980011',
         );
 
         // Act
@@ -30453,10 +32496,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -30481,6 +32524,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '050010',
                 'ReferenceNumber' => '000757050010',
                 'OrderNumber' => '000757050010',
@@ -30490,6 +32534,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9447',
             'currency' => '840',
+            'ClientRef' => '000757050010',
         );
 
         // Act
@@ -30523,6 +32568,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '050011',
                 'ReferenceNumber' => '000757050011',
                 'OrderNumber' => '000757050011',
@@ -30539,6 +32585,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9347',
             'currency' => '840',
+            'ClientRef' => '000757050011',
         );
 
         // Act
@@ -30562,10 +32609,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -30590,15 +32637,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '060010',
                 'ReferenceNumber' => '000757060010',
                 'OrderNumber' => '000757060010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '19644',
             'currency' => '840',
+            'ClientRef' => '000757060010',
         );
 
         // Act
@@ -30632,6 +32686,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '060011',
                 'ReferenceNumber' => '000757060011',
                 'OrderNumber' => '000757060011',
@@ -30648,6 +32703,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9722',
             'currency' => '840',
+            'ClientRef' => '000757060011',
         );
 
         // Act
@@ -30671,10 +32727,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -30699,6 +32755,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '350010',
                 'ReferenceNumber' => '000757350010',
                 'OrderNumber' => '000757350010',
@@ -30708,6 +32765,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9493',
             'currency' => '840',
+            'ClientRef' => '000757350010',
         );
 
         // Act
@@ -30741,6 +32799,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '350011',
                 'ReferenceNumber' => '000757350011',
                 'OrderNumber' => '000757350011',
@@ -30757,6 +32816,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9393',
             'currency' => '840',
+            'ClientRef' => '000757350011',
         );
 
         // Act
@@ -30780,10 +32840,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
         $requestData = array(
@@ -30808,15 +32868,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '360010',
                 'ReferenceNumber' => '000757360010',
                 'OrderNumber' => '000757360010',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
             'amount' => '19654',
             'currency' => '840',
+            'ClientRef' => '000757360010',
         );
 
         // Act
@@ -30850,6 +32917,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '03',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
                 'STAN' => '360011',
                 'ReferenceNumber' => '000757360011',
                 'OrderNumber' => '000757360011',
@@ -30866,6 +32934,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'amount' => '9727',
             'currency' => '840',
+            'ClientRef' => '000757360011',
         );
 
         // Act
