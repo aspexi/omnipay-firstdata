@@ -228,7 +228,7 @@ class Group extends BaseGroup
     public function validateAmexSecureData()
     {
         $value = $this->getParameter('AmexSecureData');
-        if (!preg_match('/[a-zA-Z0-9=/\+]{28,28}/',$value)) {
+        if (!preg_match('/[a-zA-Z0-9=\/\+]{28,28}/',$value)) {
             return false;
         }
         return true;

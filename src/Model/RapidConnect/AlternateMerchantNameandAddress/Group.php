@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\FirstData\Model\RapidConnect\AlternateMerchantNameandAddressGroup;
+namespace Omnipay\FirstData\Model\RapidConnect\AlternateMerchantNameandAddress;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\FirstData\Model\RapidConnect\BaseGroup;

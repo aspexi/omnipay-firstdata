@@ -7,7 +7,7 @@ use Omnipay\Common\CreditCard;
 use Omnipay\FirstData\Model\RapidConnect\EntryMode;
 
 use Omnipay\FirstData\Model\RapidConnect\AdditionalAmount;
-use Omnipay\FirstData\Model\RapidConnect\AlternateMerchantNameandAddressGroup;
+use Omnipay\FirstData\Model\RapidConnect\AlternateMerchantNameandAddress;
 use Omnipay\FirstData\Model\RapidConnect\AMEX;
 use Omnipay\FirstData\Model\RapidConnect\BillPayment;
 use Omnipay\FirstData\Model\RapidConnect\Card;
@@ -65,8 +65,8 @@ abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\Abstr
 
     public function setAlternateMerchantNameandAddressGroup($value)
     {
-        if ($value && !$value instanceof AlternateMerchantNameandAddressGroup\Group) {
-            $value = new AlternateMerchantNameandAddressGroup\Group($value);
+        if ($value && !$value instanceof AlternateMerchantNameandAddress\Group) {
+            $value = new AlternateMerchantNameandAddress\Group($value);
         }
 
         return $this->setParameter('AlternateMerchantNameandAddressGroup', $value);
@@ -493,7 +493,7 @@ XML;
      */
     public function setClientRef($clientRef)
     {
-        return $this->setParameter('ClientRef');
+        return $this->setParameter('ClientRef', $clientRef);
     }
 
     /**

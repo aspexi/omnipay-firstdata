@@ -4,6 +4,7 @@ namespace Omnipay\FirstData;
 
 use Guzzle\Http\ClientInterface;
 use Omnipay\Common\AbstractGateway;
+use Omnipay\FirstData\Model\RapidConnect\Common\ReversalReasonCode;
 use Omnipay\FirstData\Model\RapidConnect\MessageType;
 use Omnipay\FirstData\Model\RapidConnect\PaymentType;
 use Omnipay\FirstData\Model\RapidConnect\TransactionType;
@@ -455,6 +456,10 @@ class RapidConnectGateway extends AbstractGateway
 
         if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TransactionType'] = TransactionType::AUTHORIZATION;
+        }
+
+        if (!array_key_exists('ReversalReasonCode', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['ReversalReasonCode'] = ReversalReasonCode::VOID;
         }
 
         $groupId = $this->getGroupID();
