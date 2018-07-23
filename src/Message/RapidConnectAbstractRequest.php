@@ -3,6 +3,7 @@
 namespace Omnipay\FirstData\Message;
 
 use Omnipay\Common\CreditCard;
+use \Omnipay\Common\Message\AbstractRequest;
 
 use Omnipay\FirstData\Model\RapidConnect\EntryMode;
 
@@ -24,7 +25,7 @@ use Omnipay\FirstData\Model\RapidConnect\ProductCode;
 use Omnipay\FirstData\Model\RapidConnect\SecureTransaction;
 use Omnipay\FirstData\Model\RapidConnect\Visa;
 
-abstract class RapidConnectAbstractRequest extends \Omnipay\Common\Message\AbstractRequest
+abstract class RapidConnectAbstractRequest extends AbstractRequest
 {
     const BRAND_AMEX = 'Amex';
     const BRAND_DINERS_CLUB = 'Diners';
