@@ -40,6 +40,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -85,6 +86,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -122,6 +124,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -160,6 +163,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000001000010',
                 'OrderNumber' => '000001000010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -196,6 +203,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -234,6 +242,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000001010010',
                 'OrderNumber' => '000001010010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -270,6 +282,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -308,6 +321,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000001280010',
                 'OrderNumber' => '000001280010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
@@ -344,6 +361,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -382,6 +400,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000001290010',
                 'OrderNumber' => '000001290010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
@@ -418,6 +440,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -460,6 +483,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -488,6 +512,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -533,6 +558,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -591,6 +617,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -643,6 +670,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -681,6 +709,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000001700010',
                 'OrderNumber' => '000001700010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -714,6 +746,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -752,6 +785,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000001710010',
                 'OrderNumber' => '000001710010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -785,6 +822,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -822,6 +860,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '880010',
                 'ReferenceNumber' => '000001880010',
                 'OrderNumber' => '000001880010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -864,6 +906,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -901,6 +944,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900010',
                 'ReferenceNumber' => '000001900010',
                 'OrderNumber' => '000001900010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -960,6 +1007,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000001900011',
                 'OrderNumber' => '000001900011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Y',
@@ -1014,6 +1065,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1052,6 +1104,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000002620010',
                 'OrderNumber' => '000002620010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -1088,6 +1144,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1126,6 +1183,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000002640010',
                 'OrderNumber' => '000002640010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -1162,6 +1223,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1200,6 +1262,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000002660010',
                 'OrderNumber' => '000002660010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
@@ -1236,6 +1302,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1274,6 +1341,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000002680010',
                 'OrderNumber' => '000002680010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
@@ -1310,6 +1381,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1348,6 +1420,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000002700010',
                 'OrderNumber' => '000002700010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -1384,6 +1460,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1422,6 +1499,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000002720010',
                 'OrderNumber' => '000002720010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -1458,6 +1539,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1491,10 +1573,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
-                // 'MerchantCategoryCode' => '5965',
+                'MerchantCategoryCode' => '5965',
                 'STAN' => '250010',
                 'ReferenceNumber' => '000003250010',
                 'OrderNumber' => '000003250010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -1532,6 +1618,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1570,6 +1657,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000003270010',
                 'OrderNumber' => '000003270010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -1606,6 +1697,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1644,6 +1736,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000003290010',
                 'OrderNumber' => '000003290010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
@@ -1677,6 +1773,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1715,6 +1812,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000003310010',
                 'OrderNumber' => '000003310010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
@@ -1748,6 +1849,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1786,6 +1888,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000003330010',
                 'OrderNumber' => '000003330010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -1819,6 +1925,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1857,6 +1964,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000003350010',
                 'OrderNumber' => '000003350010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -1890,6 +2001,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -1935,6 +2047,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -1973,6 +2086,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -2018,6 +2132,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -2051,6 +2166,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -2088,6 +2204,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '700010',
                 'ReferenceNumber' => '000005700010',
                 'OrderNumber' => '000005700010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -2138,6 +2258,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000005700011',
                 'OrderNumber' => '000005700011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -2171,6 +2295,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -2216,6 +2341,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2269,6 +2395,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '10000',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -2301,6 +2435,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -2346,6 +2481,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2399,13 +2535,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '32004',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '32004',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'amount' => '32004',
@@ -2432,6 +2573,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -2477,6 +2619,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2530,6 +2673,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '10500',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -2562,6 +2713,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -2607,6 +2759,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2661,6 +2814,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -2704,6 +2858,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -2749,6 +2904,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2803,6 +2959,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -2846,6 +3003,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -2884,6 +3042,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000022580010',
                 'OrderNumber' => '000022580010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -2913,6 +3075,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -2947,6 +3110,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '600010',
                 'ReferenceNumber' => '000022600010',
                 'OrderNumber' => '000022600010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '9435',
             'currency' => '840',
@@ -2988,6 +3155,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000022600011',
                 'OrderNumber' => '000022600011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -3018,6 +3189,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3052,6 +3224,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '640010',
                 'ReferenceNumber' => '000022640010',
                 'OrderNumber' => '000022640010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -3088,6 +3264,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3133,6 +3310,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3163,6 +3341,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3208,6 +3387,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3238,6 +3418,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3283,6 +3464,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3313,6 +3495,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3358,6 +3541,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3388,6 +3572,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3423,6 +3608,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000022830010',
                 'OrderNumber' => '000022830010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '55008',
             'currency' => '840',
             'ClientRef' => '000022830010',
@@ -3446,6 +3635,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3490,6 +3680,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3520,6 +3711,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3564,6 +3756,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -3594,6 +3787,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3628,6 +3822,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '270010',
                 'ReferenceNumber' => '000023270010',
                 'OrderNumber' => '000023270010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '49439',
             'currency' => '840',
@@ -3669,6 +3867,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000023270011',
                 'OrderNumber' => '000023270011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -3699,6 +3901,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3733,6 +3936,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670010',
                 'ReferenceNumber' => '000023670010',
                 'OrderNumber' => '000023670010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -3777,6 +3984,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000023670011',
                 'OrderNumber' => '000023670011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -3810,6 +4021,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3845,6 +4057,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000023780010',
                 'OrderNumber' => '000023780010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -3871,6 +4087,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3915,6 +4132,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -3948,6 +4166,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -3992,6 +4211,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -4025,6 +4245,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -4059,6 +4280,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '040010',
                 'ReferenceNumber' => '000024040010',
                 'OrderNumber' => '000024040010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -4098,6 +4323,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -4143,6 +4369,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4197,6 +4424,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '30000',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4229,6 +4464,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -4274,6 +4510,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4328,6 +4565,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '27218',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4360,6 +4605,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -4405,6 +4651,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4459,6 +4706,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '30500',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4491,6 +4746,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -4536,6 +4792,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4590,6 +4847,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -4633,6 +4891,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -4678,6 +4937,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4732,6 +4992,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -4775,6 +5036,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -4812,6 +5074,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000024230010',
                 'OrderNumber' => '000024230010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -4840,6 +5106,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -4877,6 +5144,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '940010',
                 'ReferenceNumber' => '000026940010',
                 'OrderNumber' => '000026940010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -4927,6 +5198,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000026940011',
                 'OrderNumber' => '000026940011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '8280',
@@ -4972,6 +5247,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5009,6 +5285,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000010',
                 'ReferenceNumber' => '000027000010',
                 'OrderNumber' => '000027000010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -5062,6 +5342,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000027000011',
                 'OrderNumber' => '000027000011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '8282',
@@ -5110,6 +5394,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5145,6 +5430,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000133760010',
                 'OrderNumber' => '000133760010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -5171,6 +5460,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5206,6 +5496,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000136760010',
                 'OrderNumber' => '000136760010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '62110',
             'currency' => '840',
             'ClientRef' => '000136760010',
@@ -5229,6 +5523,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5264,6 +5559,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000136870010',
                 'OrderNumber' => '000136870010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -5292,6 +5591,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5327,6 +5627,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000136970010',
                 'OrderNumber' => '000136970010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '62144',
             'currency' => '840',
             'ClientRef' => '000136970010',
@@ -5350,6 +5654,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5385,8 +5690,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137020010',
                 'OrderNumber' => '000137020010',
             ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '83136',
             'currency' => '840',
@@ -5411,6 +5717,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5446,6 +5753,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137050010',
                 'OrderNumber' => '000137050010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '34146',
             'currency' => '840',
             'ClientRef' => '000137050010',
@@ -5469,6 +5780,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5504,6 +5816,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137070010',
                 'OrderNumber' => '000137070010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '34139',
             'currency' => '840',
             'ClientRef' => '000137070010',
@@ -5527,6 +5843,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5562,6 +5879,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137120010',
                 'OrderNumber' => '000137120010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '101135',
             'currency' => '840',
             'ClientRef' => '000137120010',
@@ -5585,6 +5906,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5619,6 +5941,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '140010',
                 'ReferenceNumber' => '000137140010',
                 'OrderNumber' => '000137140010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '57210',
             'currency' => '840',
@@ -5660,6 +5986,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137140011',
                 'OrderNumber' => '000137140011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '57210',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -5691,6 +6028,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5725,6 +6063,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170010',
                 'ReferenceNumber' => '000137170010',
                 'OrderNumber' => '000137170010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '57311',
             'currency' => '840',
@@ -5766,6 +6108,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137170011',
                 'OrderNumber' => '000137170011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '57311',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -5797,6 +6150,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5831,6 +6185,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '200010',
                 'ReferenceNumber' => '000137200010',
                 'OrderNumber' => '000137200010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -5880,12 +6238,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137200011',
                 'OrderNumber' => '000137200011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '38028',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '38028',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'MastercardGroup' => array(
@@ -5915,6 +6281,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -5949,6 +6316,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '230010',
                 'ReferenceNumber' => '000137230010',
                 'OrderNumber' => '000137230010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -5998,12 +6369,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137230011',
                 'OrderNumber' => '000137230011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '38026',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '38026',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'MastercardGroup' => array(
@@ -6033,6 +6412,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -6067,6 +6447,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '260010',
                 'ReferenceNumber' => '000137260010',
                 'OrderNumber' => '000137260010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '34104',
             'currency' => '840',
@@ -6108,6 +6492,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137260011',
                 'OrderNumber' => '000137260011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34104',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -6139,6 +6534,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -6173,6 +6569,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '290010',
                 'ReferenceNumber' => '000137290010',
                 'OrderNumber' => '000137290010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '34451',
             'currency' => '840',
@@ -6214,6 +6614,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137290011',
                 'OrderNumber' => '000137290011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34451',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -6245,6 +6656,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -6279,6 +6691,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '320010',
                 'ReferenceNumber' => '000137320010',
                 'OrderNumber' => '000137320010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '101299',
             'currency' => '840',
@@ -6320,6 +6736,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000137320011',
                 'OrderNumber' => '000137320011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '101299',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -6351,6 +6778,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -6389,6 +6817,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138120010',
                 'OrderNumber' => '000138120010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -6424,6 +6856,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -6459,11 +6892,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138130010',
                 'OrderNumber' => '000138130010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
             ),
             'amount' => '83297',
             'currency' => '840',
@@ -6488,6 +6922,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -6523,8 +6958,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138150010',
                 'OrderNumber' => '000138150010',
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '34281',
             'currency' => '840',
@@ -6549,6 +6985,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -6584,6 +7021,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138170010',
                 'OrderNumber' => '000138170010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -6610,6 +7051,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -6647,6 +7089,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138210010',
                 'OrderNumber' => '000138210010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -6678,6 +7124,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -6715,6 +7162,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '230010',
                 'ReferenceNumber' => '000138230010',
                 'OrderNumber' => '000138230010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -6765,6 +7216,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138230011',
                 'OrderNumber' => '000138230011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '57211',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -6799,6 +7261,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -6835,6 +7298,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '250010',
                 'ReferenceNumber' => '000138250010',
                 'OrderNumber' => '000138250010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -6884,6 +7351,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138250011',
                 'OrderNumber' => '000138250011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '84794',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -6921,6 +7399,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -6959,8 +7438,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138270010',
                 'OrderNumber' => '000138270010',
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -7008,8 +7488,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138270011',
                 'OrderNumber' => '000138270011',
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34251',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -7042,6 +7530,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -7078,6 +7567,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '300010',
                 'ReferenceNumber' => '000138300010',
                 'OrderNumber' => '000138300010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -7129,6 +7622,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138300011',
                 'OrderNumber' => '000138300011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Z',
@@ -7179,6 +7676,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -7216,6 +7714,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '310010',
                 'ReferenceNumber' => '000138310010',
                 'OrderNumber' => '000138310010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -7266,6 +7768,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138310011',
                 'OrderNumber' => '000138310011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '101294',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -7300,6 +7813,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -7335,6 +7849,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138430010',
                 'OrderNumber' => '000138430010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -7362,6 +7880,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -7399,6 +7918,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '440010',
                 'ReferenceNumber' => '000138440010',
                 'OrderNumber' => '000138440010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -7438,6 +7961,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -7473,6 +7997,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138460010',
                 'OrderNumber' => '000138460010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -7500,6 +8028,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -7535,12 +8064,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138510010',
                 'OrderNumber' => '000138510010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
-            ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
             ),
             'amount' => '83211',
             'currency' => '840',
@@ -7565,6 +8095,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -7602,6 +8133,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138540010',
                 'OrderNumber' => '000138540010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -7636,6 +8171,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -7671,6 +8207,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138550010',
                 'OrderNumber' => '000138550010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -7698,6 +8238,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -7734,6 +8275,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670010',
                 'ReferenceNumber' => '000138670010',
                 'OrderNumber' => '000138670010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -7786,6 +8331,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138670011',
                 'OrderNumber' => '000138670011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Z',
@@ -7837,6 +8386,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -7874,6 +8424,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680010',
                 'ReferenceNumber' => '000138680010',
                 'OrderNumber' => '000138680010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -7925,8 +8479,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138680011',
                 'OrderNumber' => '000138680011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34195',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -7960,6 +8524,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -7995,6 +8560,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '690010',
                 'ReferenceNumber' => '000138690010',
                 'OrderNumber' => '000138690010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -8041,8 +8610,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138690011',
                 'OrderNumber' => '000138690011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '14304',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -8076,6 +8655,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -8112,6 +8692,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '700010',
                 'ReferenceNumber' => '000138700010',
                 'OrderNumber' => '000138700010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -8164,6 +8748,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138700011',
                 'OrderNumber' => '000138700011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Z',
@@ -8215,6 +8803,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -8252,6 +8841,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138710010',
                 'OrderNumber' => '000138710010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -8284,6 +8877,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -8321,6 +8915,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750010',
                 'ReferenceNumber' => '000138750010',
                 'OrderNumber' => '000138750010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -8371,6 +8969,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750011',
                 'ReferenceNumber' => '000138750011',
                 'OrderNumber' => '000138750011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -8423,6 +9025,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -8460,6 +9063,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760010',
                 'ReferenceNumber' => '000138760010',
                 'OrderNumber' => '000138760010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -8513,6 +9120,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '760011',
                 'ReferenceNumber' => '000138760011',
                 'OrderNumber' => '000138760011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -8568,6 +9179,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -8604,6 +9216,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000138770010',
                 'OrderNumber' => '000138770010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -8654,8 +9270,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138770011',
                 'OrderNumber' => '000138770011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '13804',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
             ),
             'SecureTransactionGroup' => array(
@@ -8692,6 +9318,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -8727,6 +9354,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000138780010',
                 'OrderNumber' => '000138780010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -8776,8 +9407,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138780011',
                 'OrderNumber' => '000138780011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '15040',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
             'SecureTransactionGroup' => array(
@@ -8814,6 +9455,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -8850,6 +9492,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '790010',
                 'ReferenceNumber' => '000138790010',
                 'OrderNumber' => '000138790010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -8899,6 +9545,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '790011',
                 'ReferenceNumber' => '000138790011',
                 'OrderNumber' => '000138790011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -8954,6 +9604,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -8992,6 +9643,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138800010',
                 'OrderNumber' => '000138800010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
@@ -9028,6 +9683,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -9064,6 +9720,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '850010',
                 'ReferenceNumber' => '000138850010',
                 'OrderNumber' => '000138850010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -9119,12 +9779,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138850011',
                 'OrderNumber' => '000138850011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '38595',
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'EcommGroup' => array(
@@ -9157,6 +9820,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -9192,6 +9856,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000138860010',
                 'OrderNumber' => '000138860010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -9246,6 +9914,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138860011',
                 'OrderNumber' => '000138860011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'CCVResultCode' => 'Match',
@@ -9299,6 +9971,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -9335,6 +10008,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '870010',
                 'ReferenceNumber' => '000138870010',
                 'OrderNumber' => '000138870010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -9385,8 +10062,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138870011',
                 'OrderNumber' => '000138870011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '14194',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
             'MastercardGroup' => array(
@@ -9423,6 +10110,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -9458,6 +10146,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '880010',
                 'ReferenceNumber' => '000138880010',
                 'OrderNumber' => '000138880010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -9512,6 +10204,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138880011',
                 'OrderNumber' => '000138880011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'CCVResultCode' => 'Match',
@@ -9565,6 +10261,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -9601,6 +10298,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900010',
                 'ReferenceNumber' => '000138900010',
                 'OrderNumber' => '000138900010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -9653,6 +10354,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000138900011',
                 'OrderNumber' => '000138900011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Z',
@@ -9704,6 +10409,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -9741,6 +10447,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000139140010',
                 'OrderNumber' => '000139140010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -9774,6 +10484,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -9811,6 +10522,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000139160010',
                 'OrderNumber' => '000139160010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -9847,6 +10562,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -9884,13 +10600,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000139180010',
                 'OrderNumber' => '000139180010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '16242',
             'currency' => '840',
@@ -9917,6 +10634,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -9954,6 +10672,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000139220010',
                 'OrderNumber' => '000139220010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -9987,6 +10709,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -10021,6 +10744,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '630010',
                 'ReferenceNumber' => '000139630010',
                 'OrderNumber' => '000139630010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '41334',
             'currency' => '840',
@@ -10062,6 +10789,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000139630011',
                 'OrderNumber' => '000139630011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '41334',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -10093,6 +10831,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -10127,6 +10866,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '750010',
                 'ReferenceNumber' => '000139750010',
                 'OrderNumber' => '000139750010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -10171,6 +10914,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000139750011',
                 'OrderNumber' => '000139750011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '241330',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -10205,6 +10959,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -10239,6 +10994,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000139860010',
                 'OrderNumber' => '000139860010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -10285,12 +11044,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000139860011',
                 'OrderNumber' => '000139860011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '120681',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '120681',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'amount' => '120681',
@@ -10317,6 +11084,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -10351,6 +11119,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950010',
                 'ReferenceNumber' => '000139950010',
                 'OrderNumber' => '000139950010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -10397,6 +11169,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000139950011',
                 'OrderNumber' => '000139950011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '20647',
@@ -10439,6 +11215,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -10473,6 +11250,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000010',
                 'ReferenceNumber' => '000140000010',
                 'OrderNumber' => '000140000010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '241332',
             'currency' => '840',
@@ -10514,6 +11295,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000140000011',
                 'OrderNumber' => '000140000011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '241332',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -10545,6 +11337,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -10579,6 +11372,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010010',
                 'ReferenceNumber' => '000140010010',
                 'OrderNumber' => '000140010010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '241104',
             'currency' => '840',
@@ -10619,6 +11416,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010011',
                 'ReferenceNumber' => '000140010011',
                 'OrderNumber' => '000140010011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -10662,6 +11463,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -10697,6 +11499,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170010',
                 'ReferenceNumber' => '000140170010',
                 'OrderNumber' => '000140170010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -10743,8 +11549,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000140170011',
                 'OrderNumber' => '000140170011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '11314',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -10778,6 +11594,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -10813,6 +11630,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '190010',
                 'ReferenceNumber' => '000140190010',
                 'OrderNumber' => '000140190010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -10859,8 +11680,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000140190011',
                 'OrderNumber' => '000140190011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '12308',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -10894,6 +11725,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -10931,6 +11763,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '240010',
                 'ReferenceNumber' => '000140240010',
                 'OrderNumber' => '000140240010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -10981,6 +11817,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000140240011',
                 'OrderNumber' => '000140240011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '111956',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -11015,6 +11862,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -11050,6 +11898,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460010',
                 'ReferenceNumber' => '000141460010',
                 'OrderNumber' => '000141460010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '11946',
             'currency' => '840',
@@ -11092,6 +11944,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000141460011',
                 'OrderNumber' => '000141460011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '11946',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -11123,6 +11986,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -11158,6 +12022,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470010',
                 'ReferenceNumber' => '000141470010',
                 'OrderNumber' => '000141470010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -11205,12 +12073,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000141470011',
                 'OrderNumber' => '000141470011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '5676',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '5676',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'amount' => '5676',
@@ -11237,6 +12113,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -11272,6 +12149,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '830010',
                 'ReferenceNumber' => '000141830010',
                 'OrderNumber' => '000141830010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '12722',
             'currency' => '840',
@@ -11314,6 +12195,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000141830011',
                 'OrderNumber' => '000141830011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '12722',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -11345,6 +12237,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -11380,6 +12273,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '840010',
                 'ReferenceNumber' => '000141840010',
                 'OrderNumber' => '000141840010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -11427,12 +12324,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000141840011',
                 'OrderNumber' => '000141840011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '6096',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '6096',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'amount' => '6096',
@@ -11459,6 +12364,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -11494,6 +12400,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070010',
                 'ReferenceNumber' => '000142070010',
                 'OrderNumber' => '000142070010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '12810',
             'currency' => '840',
@@ -11535,6 +12445,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070011',
                 'ReferenceNumber' => '000142070011',
                 'OrderNumber' => '000142070011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -11578,6 +12492,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -11613,6 +12528,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '080010',
                 'ReferenceNumber' => '000142080010',
                 'OrderNumber' => '000142080010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '12298',
             'currency' => '840',
@@ -11655,6 +12574,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000142080011',
                 'OrderNumber' => '000142080011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '12298',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -11686,6 +12616,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -11721,6 +12652,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '240010',
                 'ReferenceNumber' => '000142240010',
                 'OrderNumber' => '000142240010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -11766,6 +12701,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000142240011',
                 'OrderNumber' => '000142240011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '13570',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -11800,6 +12746,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -11835,6 +12782,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '450010',
                 'ReferenceNumber' => '000142450010',
                 'OrderNumber' => '000142450010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -11879,6 +12830,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '450011',
                 'ReferenceNumber' => '000142450011',
                 'OrderNumber' => '000142450011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -11925,6 +12880,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -11960,6 +12916,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '610010',
                 'ReferenceNumber' => '000142610010',
                 'OrderNumber' => '000142610010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '14540',
             'currency' => '840',
@@ -12002,6 +12962,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000142610011',
                 'OrderNumber' => '000142610011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '14540',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -12033,6 +13004,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -12069,6 +13041,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000142620010',
                 'OrderNumber' => '000142620010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -12098,6 +13074,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -12133,12 +13110,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180000010',
                 'OrderNumber' => '000180000010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
-                'EcommTransactionIndicator' => '03',
-            ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
+                'EcommTransactionIndicator' => '01',
             ),
             'amount' => '84002',
             'currency' => '840',
@@ -12180,12 +13158,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180000011',
                 'OrderNumber' => '000180000011',
             ),
-            'EcommGroup' => array(
-                'EcommURL' => 'google.com',
-                'EcommTransactionIndicator' => '03',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '84002',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12218,6 +13203,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -12253,12 +13239,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180020010',
                 'OrderNumber' => '000180020010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
-            ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
             ),
             'amount' => '84202',
             'currency' => '840',
@@ -12300,12 +13287,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180020011',
                 'OrderNumber' => '000180020011',
             ),
-            'EcommGroup' => array(
-                'EcommURL' => 'google.com',
-                'EcommTransactionIndicator' => '02',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '84202',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12338,6 +13332,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -12373,11 +13368,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180040010',
                 'OrderNumber' => '000180040010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
             ),
             'amount' => '7678',
             'currency' => '840',
@@ -12419,11 +13415,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180040011',
                 'OrderNumber' => '000180040011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7678',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12456,6 +13460,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -12491,9 +13496,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180070010',
                 'OrderNumber' => '000180070010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
-                'EcommTransactionIndicator' => '03',
+                'EcommTransactionIndicator' => '01',
             ),
             'amount' => '19602',
             'currency' => '840',
@@ -12535,9 +13544,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180070011',
                 'OrderNumber' => '000180070011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '19602',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
-                'EcommTransactionIndicator' => '03',
+                'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12570,6 +13589,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -12604,6 +13624,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '090010',
                 'ReferenceNumber' => '000180090010',
                 'OrderNumber' => '000180090010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -12652,8 +13676,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180090011',
                 'OrderNumber' => '000180090011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '19606',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
             ),
             'SecureTransactionGroup' => array(
@@ -12690,6 +13724,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -12724,6 +13759,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '140010',
                 'ReferenceNumber' => '000180140010',
                 'OrderNumber' => '000180140010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '34150',
             'currency' => '840',
@@ -12765,6 +13804,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180140011',
                 'OrderNumber' => '000180140011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34150',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -12796,6 +13846,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -12831,9 +13882,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180160010',
                 'OrderNumber' => '000180160010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
-                'EcommTransactionIndicator' => '03',
+                'EcommTransactionIndicator' => '01',
             ),
             'amount' => '34350',
             'currency' => '840',
@@ -12875,9 +13930,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180160011',
                 'OrderNumber' => '000180160011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34350',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
-                'EcommTransactionIndicator' => '03',
+                'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12910,6 +13975,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -12944,6 +14010,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '180010',
                 'ReferenceNumber' => '000180180010',
                 'OrderNumber' => '000180180010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -12989,8 +14059,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180180011',
                 'OrderNumber' => '000180180011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34550',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -13024,6 +14104,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -13059,8 +14140,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180200010',
                 'OrderNumber' => '000180200010',
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '34750',
             'currency' => '840',
@@ -13102,8 +14184,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180200011',
                 'OrderNumber' => '000180200011',
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34750',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -13136,6 +14226,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -13171,9 +14262,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180250010',
                 'OrderNumber' => '000180250010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
-                'EcommTransactionIndicator' => '03',
+                'EcommTransactionIndicator' => '01',
             ),
             'amount' => '1602',
             'currency' => '840',
@@ -13215,9 +14310,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180250011',
                 'OrderNumber' => '000180250011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '1602',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
-                'EcommTransactionIndicator' => '03',
+                'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -13250,6 +14355,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -13284,6 +14390,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '270010',
                 'ReferenceNumber' => '000180270010',
                 'OrderNumber' => '000180270010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -13329,8 +14439,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180270011',
                 'OrderNumber' => '000180270011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '2606',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -13364,6 +14484,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -13398,6 +14519,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '290010',
                 'ReferenceNumber' => '000180290010',
                 'OrderNumber' => '000180290010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -13443,8 +14568,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180290011',
                 'OrderNumber' => '000180290011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '2610',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -13478,6 +14613,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -13512,6 +14648,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '300010',
                 'ReferenceNumber' => '000180300010',
                 'OrderNumber' => '000180300010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -13556,6 +14696,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180300011',
                 'OrderNumber' => '000180300011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '2612',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -13590,6 +14741,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -13624,6 +14776,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '930010',
                 'ReferenceNumber' => '000180930010',
                 'OrderNumber' => '000180930010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -13668,6 +14824,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000180930011',
                 'OrderNumber' => '000180930011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '62282',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -13702,6 +14869,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -13736,6 +14904,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '150010',
                 'ReferenceNumber' => '000181150010',
                 'OrderNumber' => '000181150010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '62151',
             'currency' => '840',
@@ -13777,6 +14949,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000181150011',
                 'OrderNumber' => '000181150011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '62151',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -13808,6 +14991,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -13842,6 +15026,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '190010',
                 'ReferenceNumber' => '000181190010',
                 'OrderNumber' => '000181190010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '101142',
             'currency' => '840',
@@ -13883,6 +15071,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000181190011',
                 'OrderNumber' => '000181190011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '101142',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -13914,6 +15113,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -13949,8 +15149,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000181230010',
                 'OrderNumber' => '000181230010',
             ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '83143',
             'currency' => '840',
@@ -13992,8 +15193,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000181230011',
                 'OrderNumber' => '000181230011',
             ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '83143',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -14026,6 +15235,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -14063,6 +15273,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000010',
                 'ReferenceNumber' => '000182000010',
                 'OrderNumber' => '000182000010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -14112,6 +15326,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000011',
                 'ReferenceNumber' => '000182000011',
                 'OrderNumber' => '000182000011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -14163,6 +15381,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -14197,6 +15416,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010010',
                 'ReferenceNumber' => '000182010010',
                 'OrderNumber' => '000182010010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -14241,6 +15464,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000182010011',
                 'OrderNumber' => '000182010011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '1001',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -14275,6 +15509,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -14310,6 +15545,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000182020010',
                 'OrderNumber' => '000182020010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
@@ -14336,6 +15575,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -14372,6 +15612,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '120010',
                 'ReferenceNumber' => '000182120010',
                 'OrderNumber' => '000182120010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -14425,8 +15669,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000182120011',
                 'OrderNumber' => '000182120011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7673',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
             'SecureTransactionGroup' => array(
@@ -14463,6 +15717,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -14498,6 +15753,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '130010',
                 'ReferenceNumber' => '000182130010',
                 'OrderNumber' => '000182130010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -14546,6 +15805,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '130011',
                 'ReferenceNumber' => '000182130011',
                 'OrderNumber' => '000182130011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -14600,6 +15863,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -14635,6 +15899,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000182140010',
                 'OrderNumber' => '000182140010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -14665,6 +15933,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -14700,6 +15969,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '240010',
                 'ReferenceNumber' => '000182240010',
                 'OrderNumber' => '000182240010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -14746,8 +16019,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000182240011',
                 'OrderNumber' => '000182240011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '7691',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -14781,6 +16064,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -14817,6 +16101,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '250010',
                 'ReferenceNumber' => '000182250010',
                 'OrderNumber' => '000182250010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -14867,6 +16155,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000182250011',
                 'OrderNumber' => '000182250011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '10006',
@@ -14913,6 +16205,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -14948,6 +16241,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000182260010',
                 'OrderNumber' => '000182260010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -14975,6 +16272,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15010,6 +16308,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000186740010',
                 'OrderNumber' => '000186740010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
@@ -15037,6 +16339,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15072,6 +16375,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000186750010',
                 'OrderNumber' => '000186750010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
@@ -15099,6 +16406,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15134,6 +16442,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000186760010',
                 'OrderNumber' => '000186760010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -15161,6 +16473,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15196,6 +16509,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000186770010',
                 'OrderNumber' => '000186770010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -15223,6 +16540,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15261,6 +16579,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000186780010',
                 'OrderNumber' => '000186780010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
@@ -15294,6 +16616,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15332,6 +16655,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000186790010',
                 'OrderNumber' => '000186790010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -15365,6 +16692,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15399,6 +16727,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000186860010',
                 'OrderNumber' => '000186860010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -15443,6 +16775,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860011',
                 'ReferenceNumber' => '000186860011',
                 'OrderNumber' => '000186860011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -15490,6 +16826,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15524,6 +16861,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '870010',
                 'ReferenceNumber' => '000186870010',
                 'OrderNumber' => '000186870010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -15568,6 +16909,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '870011',
                 'ReferenceNumber' => '000186870011',
                 'OrderNumber' => '000186870011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -15615,6 +16960,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15652,6 +16998,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '880010',
                 'ReferenceNumber' => '000186880010',
                 'OrderNumber' => '000186880010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -15703,6 +17053,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000186880011',
                 'OrderNumber' => '000186880011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'CCVResultCode' => 'Match',
@@ -15753,6 +17107,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15790,6 +17145,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '890010',
                 'ReferenceNumber' => '000186890010',
                 'OrderNumber' => '000186890010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -15841,6 +17200,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000186890011',
                 'OrderNumber' => '000186890011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'CCVResultCode' => 'Match',
@@ -15891,6 +17254,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15926,6 +17290,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000521380010',
                 'OrderNumber' => '000521380010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -15957,6 +17325,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -15992,6 +17361,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000521390010',
                 'OrderNumber' => '000521390010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -16018,6 +17391,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -16053,6 +17427,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000521420010',
                 'OrderNumber' => '000521420010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -16084,6 +17462,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -16119,6 +17498,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000521520010',
                 'OrderNumber' => '000521520010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '34128',
             'currency' => '840',
             'ClientRef' => '000521520010',
@@ -16142,6 +17525,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -16176,6 +17560,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '820010',
                 'ReferenceNumber' => '000521820010',
                 'OrderNumber' => '000521820010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -16212,6 +17600,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -16246,6 +17635,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '840010',
                 'ReferenceNumber' => '000521840010',
                 'OrderNumber' => '000521840010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -16285,6 +17678,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -16319,6 +17713,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000521860010',
                 'OrderNumber' => '000521860010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -16355,6 +17753,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -16389,6 +17788,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900010',
                 'ReferenceNumber' => '000521900010',
                 'OrderNumber' => '000521900010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -16435,12 +17838,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000521900011',
                 'OrderNumber' => '000521900011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '29549',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '29549',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'amount' => '29549',
@@ -16467,6 +17878,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -16501,6 +17913,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '930010',
                 'ReferenceNumber' => '000521930010',
                 'OrderNumber' => '000521930010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -16547,12 +17963,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000521930011',
                 'OrderNumber' => '000521930011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '29547',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '29547',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'amount' => '29547',
@@ -16579,6 +18003,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -16613,6 +18038,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980010',
                 'ReferenceNumber' => '000521980010',
                 'OrderNumber' => '000521980010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -16657,6 +18086,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000521980011',
                 'OrderNumber' => '000521980011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '84794',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -16691,6 +18131,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -16725,6 +18166,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '000010',
                 'ReferenceNumber' => '000522000010',
                 'OrderNumber' => '000522000010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -16771,12 +18216,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000522000011',
                 'OrderNumber' => '000522000011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '27104',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '27104',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'amount' => '27104',
@@ -16803,6 +18256,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -16837,6 +18291,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '030010',
                 'ReferenceNumber' => '000522030010',
                 'OrderNumber' => '000522030010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -16883,12 +18341,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000522030011',
                 'OrderNumber' => '000522030011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '27102',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '27102',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'amount' => '27102',
@@ -16915,6 +18381,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -16949,6 +18416,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '220010',
                 'ReferenceNumber' => '000523220010',
                 'OrderNumber' => '000523220010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -16988,6 +18459,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -17022,6 +18494,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '260010',
                 'ReferenceNumber' => '000523260010',
                 'OrderNumber' => '000523260010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -17064,6 +18540,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -17099,6 +18576,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523320010',
                 'OrderNumber' => '000523320010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '34258',
@@ -17110,9 +18591,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '34258',
             'currency' => '840',
@@ -17137,6 +18615,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -17173,6 +18652,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460010',
                 'ReferenceNumber' => '000523460010',
                 'OrderNumber' => '000523460010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -17224,12 +18707,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523460011',
                 'OrderNumber' => '000523460011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '30116',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '30116',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'EcommGroup' => array(
@@ -17259,6 +18750,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -17295,6 +18787,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470010',
                 'ReferenceNumber' => '000523470010',
                 'OrderNumber' => '000523470010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -17346,6 +18842,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523470011',
                 'OrderNumber' => '000523470011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Z',
@@ -17396,6 +18896,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -17433,6 +18934,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '480010',
                 'ReferenceNumber' => '000523480010',
                 'OrderNumber' => '000523480010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -17488,12 +18993,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523480011',
                 'OrderNumber' => '000523480011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '30066',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '30066',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'EcommGroup' => array(
@@ -17523,6 +19036,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -17560,6 +19074,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '500010',
                 'ReferenceNumber' => '000523500010',
                 'OrderNumber' => '000523500010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -17609,6 +19127,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '500011',
                 'ReferenceNumber' => '000523500011',
                 'OrderNumber' => '000523500011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -17660,6 +19182,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -17696,6 +19219,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '600010',
                 'ReferenceNumber' => '000523600010',
                 'OrderNumber' => '000523600010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -17750,12 +19277,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523600011',
                 'OrderNumber' => '000523600011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '38595',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '38595',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'EcommGroup' => array(
@@ -17788,6 +19323,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -17824,6 +19360,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '610010',
                 'ReferenceNumber' => '000523610010',
                 'OrderNumber' => '000523610010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -17878,6 +19418,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523610011',
                 'OrderNumber' => '000523610011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Z',
@@ -17931,6 +19475,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -17968,6 +19513,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '620010',
                 'ReferenceNumber' => '000523620010',
                 'OrderNumber' => '000523620010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -18026,12 +19575,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523620011',
                 'OrderNumber' => '000523620011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '38545',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '38545',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'EcommGroup' => array(
@@ -18064,6 +19621,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -18101,6 +19659,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '650010',
                 'ReferenceNumber' => '000523650010',
                 'OrderNumber' => '000523650010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -18159,6 +19721,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523650011',
                 'OrderNumber' => '000523650011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Y',
@@ -18212,6 +19778,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -18249,13 +19816,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523740010',
                 'OrderNumber' => '000523740010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '55342',
             'currency' => '840',
@@ -18299,16 +19867,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523740011',
                 'OrderNumber' => '000523740011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '27671',
                     'AdditionalAmountCurrency' => '840',
-                    'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
+                array(
+                    'AdditionalAmount' => '27671',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
             ),
             'amount' => '27671',
             'currency' => '840',
@@ -18334,6 +19907,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -18371,13 +19945,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523750010',
                 'OrderNumber' => '000523750010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '55444',
             'currency' => '840',
@@ -18421,6 +19996,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523750011',
                 'OrderNumber' => '000523750011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Z',
@@ -18437,9 +20016,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -18471,6 +20047,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -18509,13 +20086,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523760010',
                 'OrderNumber' => '000523760010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -18563,16 +20141,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523760011',
                 'OrderNumber' => '000523760011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '27621',
                     'AdditionalAmountCurrency' => '840',
-                    'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
+                array(
+                    'AdditionalAmount' => '27621',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
             ),
             'amount' => '27621',
             'currency' => '840',
@@ -18598,6 +20181,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -18636,8 +20220,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523780010',
                 'OrderNumber' => '000523780010',
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -18685,6 +20270,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000523780011',
                 'OrderNumber' => '000523780011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Y',
@@ -18701,9 +20290,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -18735,6 +20321,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -18772,6 +20359,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000524650010',
                 'OrderNumber' => '000524650010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -18806,6 +20397,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -18843,6 +20435,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680010',
                 'ReferenceNumber' => '000524680010',
                 'OrderNumber' => '000524680010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -18882,6 +20478,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -18919,6 +20516,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000524690010',
                 'OrderNumber' => '000524690010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -18948,6 +20549,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -18984,6 +20586,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '830010',
                 'ReferenceNumber' => '000524830010',
                 'OrderNumber' => '000524830010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -19022,6 +20628,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19058,6 +20665,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '840010',
                 'ReferenceNumber' => '000524840010',
                 'OrderNumber' => '000524840010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -19096,6 +20707,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19133,6 +20745,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000524860010',
                 'OrderNumber' => '000524860010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -19175,6 +20791,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19210,6 +20827,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '890010',
                 'ReferenceNumber' => '000524890010',
                 'OrderNumber' => '000524890010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -19247,6 +20868,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19282,6 +20904,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900010',
                 'ReferenceNumber' => '000524900010',
                 'OrderNumber' => '000524900010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -19319,6 +20945,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19357,6 +20984,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000524930010',
                 'OrderNumber' => '000524930010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -19393,6 +21024,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19430,6 +21062,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000525110010',
                 'OrderNumber' => '000525110010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -19459,6 +21095,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19496,6 +21133,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000525170010',
                 'OrderNumber' => '000525170010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -19528,6 +21169,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19566,6 +21208,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000525190010',
                 'OrderNumber' => '000525190010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
@@ -19602,6 +21248,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19638,6 +21285,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '740010',
                 'ReferenceNumber' => '000525740010',
                 'OrderNumber' => '000525740010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -19676,6 +21327,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19713,6 +21365,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000525770010',
                 'OrderNumber' => '000525770010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -19755,6 +21411,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19792,6 +21449,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000525780010',
                 'OrderNumber' => '000525780010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -19824,6 +21485,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19860,6 +21522,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980010',
                 'ReferenceNumber' => '000525980010',
                 'OrderNumber' => '000525980010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -19898,6 +21564,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -19934,6 +21601,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '990010',
                 'ReferenceNumber' => '000525990010',
                 'OrderNumber' => '000525990010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -19972,6 +21643,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -20009,6 +21681,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010010',
                 'ReferenceNumber' => '000526010010',
                 'OrderNumber' => '000526010010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -20051,6 +21727,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -20086,6 +21763,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '050010',
                 'ReferenceNumber' => '000526050010',
                 'OrderNumber' => '000526050010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -20123,6 +21804,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -20158,6 +21840,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '060010',
                 'ReferenceNumber' => '000526060010',
                 'OrderNumber' => '000526060010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -20195,6 +21881,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -20232,6 +21919,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '080010',
                 'ReferenceNumber' => '000526080010',
                 'OrderNumber' => '000526080010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -20274,6 +21965,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -20310,6 +22002,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000527770010',
                 'OrderNumber' => '000527770010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -20362,12 +22058,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000527770011',
                 'OrderNumber' => '000527770011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '27671',
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'EcommGroup' => array(
@@ -20397,6 +22096,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -20434,6 +22134,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000527780010',
                 'OrderNumber' => '000527780010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -20473,6 +22177,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -20510,6 +22215,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '800010',
                 'ReferenceNumber' => '000527800010',
                 'OrderNumber' => '000527800010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -20561,6 +22270,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000527800011',
                 'OrderNumber' => '000527800011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'CCVResultCode' => 'Match',
@@ -20611,6 +22324,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -20648,6 +22362,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980010',
                 'ReferenceNumber' => '000527980010',
                 'OrderNumber' => '000527980010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -20702,8 +22420,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000527980011',
                 'OrderNumber' => '000527980011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '115008',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
             'SecureTransactionGroup' => array(
@@ -20740,6 +22468,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -20777,6 +22506,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '990010',
                 'ReferenceNumber' => '000527990010',
                 'OrderNumber' => '000527990010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -20831,8 +22564,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000527990011',
                 'OrderNumber' => '000527990011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '113526',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
             'SecureTransactionGroup' => array(
@@ -20869,6 +22612,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -20904,8 +22648,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000528150011',
                 'OrderNumber' => '000528150011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34153',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -20939,6 +22693,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -20976,6 +22731,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160010',
                 'ReferenceNumber' => '000528160010',
                 'OrderNumber' => '000528160010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21027,8 +22786,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000528160011',
                 'OrderNumber' => '000528160011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34689',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -21062,6 +22831,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -21098,6 +22868,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '660010',
                 'ReferenceNumber' => '000528660010',
                 'OrderNumber' => '000528660010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21145,8 +22919,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000528660011',
                 'OrderNumber' => '000528660011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '57311',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -21180,6 +22964,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -21216,6 +23001,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670010',
                 'ReferenceNumber' => '000528670010',
                 'OrderNumber' => '000528670010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21262,6 +23051,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670011',
                 'ReferenceNumber' => '000528670011',
                 'OrderNumber' => '000528670011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -21314,6 +23107,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -21351,6 +23145,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680010',
                 'ReferenceNumber' => '000528680010',
                 'OrderNumber' => '000528680010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21402,8 +23200,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000528680011',
                 'OrderNumber' => '000528680011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '57207',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -21437,6 +23245,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -21474,6 +23283,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '820010',
                 'ReferenceNumber' => '000528820010',
                 'OrderNumber' => '000528820010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21528,8 +23341,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000528820011',
                 'OrderNumber' => '000528820011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '15146',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
             'SecureTransactionGroup' => array(
@@ -21566,6 +23389,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -21603,6 +23427,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '830010',
                 'ReferenceNumber' => '000528830010',
                 'OrderNumber' => '000528830010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21656,6 +23484,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '830011',
                 'ReferenceNumber' => '000528830011',
                 'OrderNumber' => '000528830011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -21711,6 +23543,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -21747,6 +23580,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950010',
                 'ReferenceNumber' => '000528950010',
                 'OrderNumber' => '000528950010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21794,8 +23631,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000528950011',
                 'OrderNumber' => '000528950011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '57711',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -21829,6 +23676,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -21866,6 +23714,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '960010',
                 'ReferenceNumber' => '000528960010',
                 'OrderNumber' => '000528960010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -21917,8 +23769,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000528960011',
                 'OrderNumber' => '000528960011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '57208',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -21952,6 +23814,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -21989,6 +23852,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '010010',
                 'ReferenceNumber' => '000529010010',
                 'OrderNumber' => '000529010010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -22043,8 +23910,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000529010011',
                 'OrderNumber' => '000529010011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '15132',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
             'SecureTransactionGroup' => array(
@@ -22081,6 +23958,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -22117,6 +23995,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '600010',
                 'ReferenceNumber' => '000529600010',
                 'OrderNumber' => '000529600010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -22172,6 +24054,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000529600011',
                 'OrderNumber' => '000529600011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Z',
@@ -22226,6 +24112,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -22263,6 +24150,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '610010',
                 'ReferenceNumber' => '000529610010',
                 'OrderNumber' => '000529610010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -22322,12 +24213,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000529610011',
                 'OrderNumber' => '000529610011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '38441',
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'EcommGroup' => array(
@@ -22360,6 +24254,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -22396,6 +24291,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '630010',
                 'ReferenceNumber' => '000529630010',
                 'OrderNumber' => '000529630010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -22446,8 +24345,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000529630011',
                 'OrderNumber' => '000529630011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '84794',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'MastercardGroup' => array(
@@ -22484,6 +24393,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -22521,6 +24431,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '650010',
                 'ReferenceNumber' => '000529650010',
                 'OrderNumber' => '000529650010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -22580,6 +24494,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000529650011',
                 'OrderNumber' => '000529650011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Y',
@@ -22634,6 +24552,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -22669,6 +24588,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '890010',
                 'ReferenceNumber' => '000529890010',
                 'OrderNumber' => '000529890010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -22718,8 +24641,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000529890011',
                 'OrderNumber' => '000529890011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '15464',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
             ),
             'MastercardGroup' => array(
@@ -22756,6 +24689,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -22791,6 +24725,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900010',
                 'ReferenceNumber' => '000529900010',
                 'OrderNumber' => '000529900010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -22839,6 +24777,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '900011',
                 'ReferenceNumber' => '000529900011',
                 'OrderNumber' => '000529900011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -22893,6 +24835,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -22929,6 +24872,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '910010',
                 'ReferenceNumber' => '000529910010',
                 'OrderNumber' => '000529910010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -22984,12 +24931,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000529910011',
                 'OrderNumber' => '000529910011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '7020',
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'EcommGroup' => array(
@@ -23022,6 +24972,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -23059,6 +25010,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '920010',
                 'ReferenceNumber' => '000529920010',
                 'OrderNumber' => '000529920010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -23118,12 +25073,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000529920011',
                 'OrderNumber' => '000529920011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '57047',
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'EcommGroup' => array(
@@ -23156,6 +25114,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -23193,6 +25152,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950010',
                 'ReferenceNumber' => '000529950010',
                 'OrderNumber' => '000529950010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -23252,12 +25215,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000529950011',
                 'OrderNumber' => '000529950011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '57647',
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'EcommGroup' => array(
@@ -23290,6 +25256,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -23326,6 +25293,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '990010',
                 'ReferenceNumber' => '000529990010',
                 'OrderNumber' => '000529990010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -23381,6 +25352,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000529990011',
                 'OrderNumber' => '000529990011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'AVSResultCode' => 'Z',
@@ -23435,6 +25410,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -23471,6 +25447,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '100010',
                 'ReferenceNumber' => '000530100010',
                 'OrderNumber' => '000530100010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -23521,8 +25501,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000530100011',
                 'OrderNumber' => '000530100011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '82794',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
             ),
             'MastercardGroup' => array(
@@ -23559,6 +25549,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -23596,6 +25587,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '120010',
                 'ReferenceNumber' => '000530120010',
                 'OrderNumber' => '000530120010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -23655,12 +25650,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000530120011',
                 'OrderNumber' => '000530120011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '38491',
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'EcommGroup' => array(
@@ -23693,6 +25691,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -23731,6 +25730,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000532240010',
                 'OrderNumber' => '000532240010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -23768,6 +25771,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -23806,6 +25810,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000532250010',
                 'OrderNumber' => '000532250010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -23843,6 +25851,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -23880,6 +25889,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000532260010',
                 'OrderNumber' => '000532260010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -23913,6 +25926,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -23950,6 +25964,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000532270010',
                 'OrderNumber' => '000532270010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -23983,6 +26001,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -24020,6 +26039,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000532350010',
                 'OrderNumber' => '000532350010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -24056,6 +26079,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -24093,6 +26117,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000532360010',
                 'OrderNumber' => '000532360010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -24129,6 +26157,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -24166,13 +26195,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000532420010',
                 'OrderNumber' => '000532420010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '16240',
             'currency' => '840',
@@ -24199,6 +26229,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -24233,6 +26264,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '450010',
                 'ReferenceNumber' => '000533450010',
                 'OrderNumber' => '000533450010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '41406',
             'currency' => '840',
@@ -24274,6 +26309,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533450011',
                 'OrderNumber' => '000533450011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '41406',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -24305,6 +26351,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -24339,6 +26386,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '460010',
                 'ReferenceNumber' => '000533460010',
                 'OrderNumber' => '000533460010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -24385,6 +26436,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533460011',
                 'OrderNumber' => '000533460011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '120596',
@@ -24427,6 +26482,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -24461,6 +26517,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '560010',
                 'ReferenceNumber' => '000533560010',
                 'OrderNumber' => '000533560010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -24507,12 +26567,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533560011',
                 'OrderNumber' => '000533560011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '120685',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '120685',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'amount' => '120685',
@@ -24539,6 +26607,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -24573,6 +26642,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '570010',
                 'ReferenceNumber' => '000533570010',
                 'OrderNumber' => '000533570010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '241230',
             'currency' => '840',
@@ -24613,6 +26686,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '570011',
                 'ReferenceNumber' => '000533570011',
                 'OrderNumber' => '000533570011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -24656,6 +26733,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -24690,6 +26768,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '580010',
                 'ReferenceNumber' => '000533580010',
                 'OrderNumber' => '000533580010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '241074',
             'currency' => '840',
@@ -24730,6 +26812,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '580011',
                 'ReferenceNumber' => '000533580011',
                 'OrderNumber' => '000533580011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -24773,6 +26859,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -24807,6 +26894,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '660010',
                 'ReferenceNumber' => '000533660010',
                 'OrderNumber' => '000533660010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24851,6 +26942,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533660011',
                 'OrderNumber' => '000533660011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '41402',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -24885,6 +26987,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -24919,6 +27022,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670010',
                 'ReferenceNumber' => '000533670010',
                 'OrderNumber' => '000533670010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -24968,6 +27075,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533670011',
                 'OrderNumber' => '000533670011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '120621',
@@ -25013,6 +27124,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -25047,6 +27159,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000533770010',
                 'OrderNumber' => '000533770010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25090,6 +27206,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770011',
                 'ReferenceNumber' => '000533770011',
                 'OrderNumber' => '000533770011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -25136,6 +27256,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -25170,6 +27291,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000533780010',
                 'OrderNumber' => '000533780010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25213,6 +27338,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780011',
                 'ReferenceNumber' => '000533780011',
                 'OrderNumber' => '000533780011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -25259,6 +27388,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -25293,6 +27423,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000533860010',
                 'OrderNumber' => '000533860010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '41394',
             'currency' => '840',
@@ -25334,6 +27468,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533860011',
                 'OrderNumber' => '000533860011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '41394',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -25365,6 +27510,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -25399,6 +27545,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '870010',
                 'ReferenceNumber' => '000533870010',
                 'OrderNumber' => '000533870010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -25445,6 +27595,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533870011',
                 'OrderNumber' => '000533870011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '120576',
@@ -25487,6 +27641,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -25521,6 +27676,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950010',
                 'ReferenceNumber' => '000533950010',
                 'OrderNumber' => '000533950010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -25567,6 +27726,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533950011',
                 'OrderNumber' => '000533950011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '120577',
@@ -25609,6 +27772,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -25643,6 +27807,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '960010',
                 'ReferenceNumber' => '000533960010',
                 'OrderNumber' => '000533960010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '41328',
             'currency' => '840',
@@ -25684,6 +27852,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000533960011',
                 'OrderNumber' => '000533960011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '41328',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -25715,6 +27894,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -25749,6 +27929,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '970010',
                 'ReferenceNumber' => '000533970010',
                 'OrderNumber' => '000533970010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '41016',
             'currency' => '840',
@@ -25789,6 +27973,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '970011',
                 'ReferenceNumber' => '000533970011',
                 'OrderNumber' => '000533970011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -25832,6 +28020,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -25868,6 +28057,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000534520010',
                 'OrderNumber' => '000534520010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -25901,6 +28094,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -25937,6 +28131,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000534530010',
                 'OrderNumber' => '000534530010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
@@ -25970,6 +28168,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26008,6 +28207,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000534620010',
                 'OrderNumber' => '000534620010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
@@ -26041,6 +28244,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26076,6 +28280,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '770010',
                 'ReferenceNumber' => '000534770010',
                 'OrderNumber' => '000534770010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -26113,6 +28321,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26148,6 +28357,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '780010',
                 'ReferenceNumber' => '000534780010',
                 'OrderNumber' => '000534780010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -26185,6 +28398,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26221,6 +28435,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000541820010',
                 'OrderNumber' => '000541820010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '14426',
             'currency' => '840',
             'ClientRef' => '000541820010',
@@ -26245,6 +28463,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26280,6 +28499,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '370010',
                 'ReferenceNumber' => '000544370010',
                 'OrderNumber' => '000544370010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -26327,12 +28550,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000544370011',
                 'OrderNumber' => '000544370011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'AdditionalAmountGroups' => array(
                 array(
                     'AdditionalAmount' => '5312',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '5312',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
-                    'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
             'amount' => '5312',
@@ -26359,6 +28590,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26394,6 +28626,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '390010',
                 'ReferenceNumber' => '000544390010',
                 'OrderNumber' => '000544390010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '14152',
             'currency' => '840',
@@ -26436,6 +28672,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000544390011',
                 'OrderNumber' => '000544390011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '14152',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -26467,6 +28714,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26502,6 +28750,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '400010',
                 'ReferenceNumber' => '000544400010',
                 'OrderNumber' => '000544400010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -26549,6 +28801,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000544400011',
                 'OrderNumber' => '000544400011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'CCVResultCode' => 'Match',
@@ -26595,6 +28851,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26630,6 +28887,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '420010',
                 'ReferenceNumber' => '000544420010',
                 'OrderNumber' => '000544420010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '14150',
             'currency' => '840',
@@ -26671,6 +28932,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '420011',
                 'ReferenceNumber' => '000544420011',
                 'OrderNumber' => '000544420011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -26718,6 +28983,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26753,6 +29019,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470010',
                 'ReferenceNumber' => '000544470010',
                 'OrderNumber' => '000544470010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '14168',
             'currency' => '840',
@@ -26795,6 +29065,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000544470011',
                 'OrderNumber' => '000544470011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '14168',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -26826,6 +29107,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26863,6 +29145,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000549250010',
                 'OrderNumber' => '000549250010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -26891,6 +29177,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26928,6 +29215,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000549260010',
                 'OrderNumber' => '000549260010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -26956,6 +29247,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -26993,6 +29285,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000549410010',
                 'OrderNumber' => '000549410010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -27024,6 +29320,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -27061,6 +29358,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000549420010',
                 'OrderNumber' => '000549420010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -27092,6 +29393,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -27129,6 +29431,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000549570010',
                 'OrderNumber' => '000549570010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -27157,6 +29463,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -27194,6 +29501,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000549580010',
                 'OrderNumber' => '000549580010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -27222,6 +29533,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -27259,6 +29571,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000549730010',
                 'OrderNumber' => '000549730010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -27287,6 +29603,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -27324,6 +29641,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000549750010',
                 'OrderNumber' => '000549750010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -27352,6 +29673,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -27389,6 +29711,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '550010',
                 'ReferenceNumber' => '000550550010',
                 'OrderNumber' => '000550550010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -27439,6 +29765,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '550011',
                 'ReferenceNumber' => '000550550011',
                 'OrderNumber' => '000550550011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -27491,6 +29821,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -27528,6 +29859,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '810010',
                 'ReferenceNumber' => '000551810010',
                 'OrderNumber' => '000551810010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -27578,6 +29913,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '810011',
                 'ReferenceNumber' => '000551810011',
                 'OrderNumber' => '000551810011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -27630,6 +29969,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -27667,6 +30007,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '820010',
                 'ReferenceNumber' => '000551820010',
                 'OrderNumber' => '000551820010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -27717,6 +30061,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '820011',
                 'ReferenceNumber' => '000551820011',
                 'OrderNumber' => '000551820011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -27769,6 +30117,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -27806,6 +30155,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070010',
                 'ReferenceNumber' => '000552070010',
                 'OrderNumber' => '000552070010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -27856,6 +30209,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070011',
                 'ReferenceNumber' => '000552070011',
                 'OrderNumber' => '000552070011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -27908,6 +30265,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -27945,6 +30303,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '080010',
                 'ReferenceNumber' => '000552080010',
                 'OrderNumber' => '000552080010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -27995,6 +30357,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '080011',
                 'ReferenceNumber' => '000552080011',
                 'OrderNumber' => '000552080011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -28047,6 +30413,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -28082,6 +30449,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470010',
                 'ReferenceNumber' => '000555470010',
                 'OrderNumber' => '000555470010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -28127,6 +30498,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '470011',
                 'ReferenceNumber' => '000555470011',
                 'OrderNumber' => '000555470011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -28178,6 +30553,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -28213,6 +30589,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '480010',
                 'ReferenceNumber' => '000555480010',
                 'OrderNumber' => '000555480010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -28258,6 +30638,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '480011',
                 'ReferenceNumber' => '000555480011',
                 'OrderNumber' => '000555480011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -28309,6 +30693,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -28344,6 +30729,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670010',
                 'ReferenceNumber' => '000556670010',
                 'OrderNumber' => '000556670010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -28389,6 +30778,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '670011',
                 'ReferenceNumber' => '000556670011',
                 'OrderNumber' => '000556670011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -28440,6 +30833,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -28475,6 +30869,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680010',
                 'ReferenceNumber' => '000556680010',
                 'OrderNumber' => '000556680010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -28520,6 +30918,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '680011',
                 'ReferenceNumber' => '000556680011',
                 'OrderNumber' => '000556680011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -28571,6 +30973,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -28606,6 +31009,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '910010',
                 'ReferenceNumber' => '000557910010',
                 'OrderNumber' => '000557910010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -28654,6 +31061,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '910011',
                 'ReferenceNumber' => '000557910011',
                 'OrderNumber' => '000557910011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -28708,6 +31119,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -28743,6 +31155,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '920010',
                 'ReferenceNumber' => '000557920010',
                 'OrderNumber' => '000557920010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -28791,6 +31207,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '920011',
                 'ReferenceNumber' => '000557920011',
                 'OrderNumber' => '000557920011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -28845,6 +31265,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -28880,6 +31301,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '850010',
                 'ReferenceNumber' => '000558850010',
                 'OrderNumber' => '000558850010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -28925,6 +31350,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '850011',
                 'ReferenceNumber' => '000558850011',
                 'OrderNumber' => '000558850011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -28976,6 +31405,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -29011,6 +31441,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000558860010',
                 'OrderNumber' => '000558860010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'EcommURL' => 'google.com',
@@ -29056,6 +31490,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860011',
                 'ReferenceNumber' => '000558860011',
                 'OrderNumber' => '000558860011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -29107,6 +31545,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -29143,8 +31582,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000559750010',
                 'OrderNumber' => '000559750010',
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '111228',
             'currency' => '840',
@@ -29187,6 +31627,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000559750011',
                 'OrderNumber' => '000559750011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'CCVResultCode' => 'Match',
@@ -29202,9 +31646,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -29236,6 +31677,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -29272,8 +31714,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000559760010',
                 'OrderNumber' => '000559760010',
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '111078',
             'currency' => '840',
@@ -29316,6 +31759,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000559760011',
                 'OrderNumber' => '000559760011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
                 'CCVResultCode' => 'Match',
@@ -29331,9 +31778,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -29365,6 +31809,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -29400,6 +31845,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160010',
                 'ReferenceNumber' => '000561160010',
                 'OrderNumber' => '000561160010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -29444,6 +31893,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '160011',
                 'ReferenceNumber' => '000561160011',
                 'OrderNumber' => '000561160011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -29494,6 +31947,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -29529,6 +31983,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170010',
                 'ReferenceNumber' => '000561170010',
                 'OrderNumber' => '000561170010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -29573,6 +32031,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '170011',
                 'ReferenceNumber' => '000561170011',
                 'OrderNumber' => '000561170011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -29623,6 +32085,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -29658,6 +32121,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '390010',
                 'ReferenceNumber' => '000563390010',
                 'OrderNumber' => '000563390010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -29705,6 +32172,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '390011',
                 'ReferenceNumber' => '000563390011',
                 'OrderNumber' => '000563390011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -29758,6 +32229,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -29793,6 +32265,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '400010',
                 'ReferenceNumber' => '000563400010',
                 'OrderNumber' => '000563400010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -29840,6 +32316,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '400011',
                 'ReferenceNumber' => '000563400011',
                 'OrderNumber' => '000563400011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -29893,6 +32373,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -29930,6 +32411,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '570010',
                 'ReferenceNumber' => '000564570010',
                 'OrderNumber' => '000564570010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -29979,6 +32464,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '570011',
                 'ReferenceNumber' => '000564570011',
                 'OrderNumber' => '000564570011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -30030,6 +32519,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30065,6 +32555,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '580010',
                 'ReferenceNumber' => '000564580010',
                 'OrderNumber' => '000564580010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -30109,6 +32603,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '580011',
                 'ReferenceNumber' => '000564580011',
                 'OrderNumber' => '000564580011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -30159,6 +32657,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30194,6 +32693,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '590010',
                 'ReferenceNumber' => '000564590010',
                 'OrderNumber' => '000564590010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -30238,6 +32741,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '590011',
                 'ReferenceNumber' => '000564590011',
                 'OrderNumber' => '000564590011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -30288,6 +32795,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30325,6 +32833,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070010',
                 'ReferenceNumber' => '000565070010',
                 'OrderNumber' => '000565070010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
                 'CustomerServicePhoneNumber' => '1234567890',
@@ -30374,6 +32886,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '070011',
                 'ReferenceNumber' => '000565070011',
                 'OrderNumber' => '000565070011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'CardGroup' => array(
                 'MergeWithExisting' => true,
@@ -30425,6 +32941,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30461,6 +32978,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000569010010',
                 'OrderNumber' => '000569010010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '11826',
             'currency' => '840',
             'ClientRef' => '000569010010',
@@ -30485,6 +33006,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30521,6 +33043,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000569020010',
                 'OrderNumber' => '000569020010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '11712',
             'currency' => '840',
             'ClientRef' => '000569020010',
@@ -30545,6 +33071,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30580,6 +33107,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000569030010',
                 'OrderNumber' => '000569030010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '11720',
             'currency' => '840',
             'ClientRef' => '000569030010',
@@ -30603,6 +33134,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30639,6 +33171,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000569040010',
                 'OrderNumber' => '000569040010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '11728',
             'currency' => '840',
             'ClientRef' => '000569040010',
@@ -30663,6 +33199,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30699,6 +33236,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000569050010',
                 'OrderNumber' => '000569050010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '11736',
             'currency' => '840',
             'ClientRef' => '000569050010',
@@ -30723,6 +33264,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30759,6 +33301,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000569610010',
                 'OrderNumber' => '000569610010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '12878',
             'currency' => '840',
             'ClientRef' => '000569610010',
@@ -30783,6 +33329,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30819,6 +33366,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000569620010',
                 'OrderNumber' => '000569620010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '12486',
             'currency' => '840',
             'ClientRef' => '000569620010',
@@ -30843,6 +33394,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30879,6 +33431,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000569640010',
                 'OrderNumber' => '000569640010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '12504',
             'currency' => '840',
             'ClientRef' => '000569640010',
@@ -30903,6 +33459,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30939,6 +33496,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000569650010',
                 'OrderNumber' => '000569650010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '12512',
             'currency' => '840',
             'ClientRef' => '000569650010',
@@ -30963,6 +33524,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -30999,6 +33561,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000570150010',
                 'OrderNumber' => '000570150010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -31026,6 +33592,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31062,6 +33629,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000570160010',
                 'OrderNumber' => '000570160010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -31089,6 +33660,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31125,6 +33697,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000570180010',
                 'OrderNumber' => '000570180010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -31152,6 +33728,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31188,6 +33765,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000570190010',
                 'OrderNumber' => '000570190010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -31215,6 +33796,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31251,6 +33833,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000570600010',
                 'OrderNumber' => '000570600010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '14556',
             'currency' => '840',
             'ClientRef' => '000570600010',
@@ -31275,6 +33861,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31311,6 +33898,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000570610010',
                 'OrderNumber' => '000570610010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '14116',
             'currency' => '840',
             'ClientRef' => '000570610010',
@@ -31335,6 +33926,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31370,6 +33962,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000570620010',
                 'OrderNumber' => '000570620010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '14124',
             'currency' => '840',
             'ClientRef' => '000570620010',
@@ -31393,6 +33989,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31429,6 +34026,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000570630010',
                 'OrderNumber' => '000570630010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '14312',
             'currency' => '840',
             'ClientRef' => '000570630010',
@@ -31453,6 +34054,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31489,6 +34091,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000570650010',
                 'OrderNumber' => '000570650010',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'amount' => '14328',
             'currency' => '840',
             'ClientRef' => '000570650010',
@@ -31513,6 +34119,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31548,6 +34155,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '940010',
                 'ReferenceNumber' => '000584940010',
                 'OrderNumber' => '000584940010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '18012',
             'currency' => '840',
@@ -31590,6 +34201,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000584940011',
                 'OrderNumber' => '000584940011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '18012',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -31621,6 +34243,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31655,6 +34278,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '850010',
                 'ReferenceNumber' => '000756850010',
                 'OrderNumber' => '000756850010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -31701,6 +34328,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756850011',
                 'OrderNumber' => '000756850011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -31731,6 +34362,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31765,6 +34397,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '860010',
                 'ReferenceNumber' => '000756860010',
                 'OrderNumber' => '000756860010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -31809,6 +34445,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756860011',
                 'OrderNumber' => '000756860011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -31842,6 +34482,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31876,6 +34517,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '880010',
                 'ReferenceNumber' => '000756880010',
                 'OrderNumber' => '000756880010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '9439',
             'currency' => '840',
@@ -31917,6 +34562,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756880011',
                 'OrderNumber' => '000756880011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -31947,6 +34596,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -31981,6 +34631,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '890010',
                 'ReferenceNumber' => '000756890010',
                 'OrderNumber' => '000756890010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -32027,6 +34681,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756890011',
                 'OrderNumber' => '000756890011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -32057,6 +34715,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -32091,6 +34750,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '940010',
                 'ReferenceNumber' => '000756940010',
                 'OrderNumber' => '000756940010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -32137,6 +34800,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756940011',
                 'OrderNumber' => '000756940011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -32167,6 +34834,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -32201,6 +34869,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '950010',
                 'ReferenceNumber' => '000756950010',
                 'OrderNumber' => '000756950010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -32245,6 +34917,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756950011',
                 'OrderNumber' => '000756950011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -32278,6 +34954,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -32312,6 +34989,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '970010',
                 'ReferenceNumber' => '000756970010',
                 'OrderNumber' => '000756970010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'amount' => '9439',
             'currency' => '840',
@@ -32353,6 +35034,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756970011',
                 'OrderNumber' => '000756970011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -32383,6 +35068,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -32417,6 +35103,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '980010',
                 'ReferenceNumber' => '000756980010',
                 'OrderNumber' => '000756980010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -32463,6 +35153,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756980011',
                 'OrderNumber' => '000756980011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -32493,6 +35187,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -32528,6 +35223,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '050010',
                 'ReferenceNumber' => '000757050010',
                 'OrderNumber' => '000757050010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -32573,6 +35272,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000757050011',
                 'OrderNumber' => '000757050011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -32606,6 +35309,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -32641,6 +35345,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '060010',
                 'ReferenceNumber' => '000757060010',
                 'OrderNumber' => '000757060010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -32691,6 +35399,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000757060011',
                 'OrderNumber' => '000757060011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -32724,6 +35436,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -32759,6 +35472,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '350010',
                 'ReferenceNumber' => '000757350010',
                 'OrderNumber' => '000757350010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -32804,6 +35521,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000757350011',
                 'OrderNumber' => '000757350011',
             ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
@@ -32837,6 +35558,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryYear = $expirationDate->format('Y');
 
         $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -32872,6 +35594,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '360010',
                 'ReferenceNumber' => '000757360010',
                 'OrderNumber' => '000757360010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
                 array(
@@ -32921,6 +35647,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '360011',
                 'ReferenceNumber' => '000757360011',
                 'OrderNumber' => '000757360011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
