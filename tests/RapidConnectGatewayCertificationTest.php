@@ -7227,9 +7227,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -7361,9 +7358,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -7778,9 +7772,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -11828,9 +11819,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -13426,9 +13414,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -14707,9 +14692,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -14834,9 +14816,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -15474,9 +15453,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -18723,9 +18699,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
-            ),
             'amount' => '30116',
             'currency' => '840',
             'ClientRef' => '000523460011',
@@ -19009,9 +18982,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
-            ),
             'amount' => '30066',
             'currency' => '840',
             'ClientRef' => '000523480011',
@@ -19292,9 +19262,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -19590,9 +19557,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
-            ),
-            'EcommGroup' => array(
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
