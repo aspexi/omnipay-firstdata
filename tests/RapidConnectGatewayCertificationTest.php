@@ -81,7 +81,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -89,8 +88,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDA4NDAwMTA=',
@@ -168,8 +167,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEwMDAwMTA=',
@@ -247,8 +246,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEwMTAwMTA=',
@@ -326,11 +325,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
-            ),
-            'SecureTransactionGroup' => array(
-                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEyODAwMTA=',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -405,11 +401,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
-            ),
-            'SecureTransactionGroup' => array(
-                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEyOTAwMTA=',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -478,7 +471,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -486,8 +478,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '30006',
             'currency' => '840',
@@ -553,7 +545,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -561,8 +552,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -612,7 +603,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -637,8 +627,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -714,8 +704,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -790,8 +780,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -871,8 +861,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -955,8 +945,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -1029,8 +1019,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -1109,8 +1099,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -1188,8 +1178,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -1267,8 +1257,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -1346,8 +1336,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -1425,8 +1415,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -1504,8 +1494,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -1583,8 +1573,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDAwMDMyNTAwMTA=',
@@ -1662,8 +1652,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDAwMDMyNzAwMTA=',
@@ -1741,8 +1731,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1817,8 +1807,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1893,8 +1883,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1969,8 +1959,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -2055,6 +2045,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -2135,6 +2126,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -2206,10 +2198,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000005700010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -2259,10 +2253,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000005700011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -2336,7 +2332,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -2391,7 +2386,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
@@ -2476,7 +2470,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -2531,7 +2524,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
@@ -2614,7 +2606,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -2669,7 +2660,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
@@ -2754,7 +2744,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -2809,7 +2798,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -2899,7 +2887,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -2954,7 +2941,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -3241,6 +3227,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '64001000',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '12345A',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '63139',
             'currency' => '840',
             'ClientRef' => '000022640010',
@@ -3305,7 +3298,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -3382,7 +3374,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -3459,7 +3450,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -3536,7 +3526,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -3676,7 +3665,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
@@ -3752,7 +3740,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
@@ -4061,9 +4048,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-            ),
             'amount' => '000',
             'currency' => '840',
             'ClientRef' => '000023780010',
@@ -4128,7 +4112,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
@@ -4207,7 +4190,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantCountry' => '840',
@@ -4300,6 +4282,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '04001000',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '12345A',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '63139',
             'currency' => '840',
             'ClientRef' => '000024040010',
@@ -4364,7 +4353,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -4419,7 +4407,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -4505,7 +4492,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -4560,7 +4546,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -4646,7 +4631,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -4701,7 +4685,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -4787,7 +4770,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -4842,7 +4824,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -4932,7 +4913,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -4987,7 +4967,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantName' => 'SMITH HARDWARE',
-                'MerchantAddress' => '1307 Walt Whitman Road',
                 'MerchantCity' => 'Melville',
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
@@ -5146,10 +5125,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000026940010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -5199,6 +5180,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000026940011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -5215,6 +5197,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -5287,10 +5270,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000027000010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -5343,6 +5328,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000027000011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -5359,6 +5345,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -5433,9 +5420,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-            ),
-            'MastercardGroup' => array(
-                'AuthorizationType' => '0',
             ),
             'amount' => '000',
             'currency' => '840',
@@ -6818,10 +6802,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138120010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -6893,10 +6879,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138130010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '83297',
@@ -6959,8 +6947,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138150010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '34281',
             'currency' => '840',
@@ -7022,10 +7015,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138170010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '101283',
@@ -7090,10 +7085,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138210010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -7164,10 +7161,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138230010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -7217,6 +7216,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138230011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -7226,6 +7226,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -7297,10 +7301,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138250010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -7349,6 +7355,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138250011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -7358,6 +7365,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -7433,8 +7444,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138270010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -7483,6 +7499,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138270011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -7492,6 +7509,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -7563,6 +7584,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138300010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -7572,6 +7594,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '82952',
@@ -7617,6 +7640,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138300011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -7638,6 +7662,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -7710,10 +7735,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138310010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -7763,6 +7790,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000138310011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -7772,6 +7800,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -7845,8 +7877,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '34206',
             'currency' => '840',
@@ -7920,8 +7952,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -7993,8 +8025,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '62207',
             'currency' => '840',
@@ -8060,8 +8092,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '83211',
             'currency' => '840',
@@ -8134,8 +8166,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '117022',
             'currency' => '840',
@@ -8203,8 +8235,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '101209',
             'currency' => '840',
@@ -8277,8 +8309,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '55444',
             'currency' => '840',
@@ -8344,8 +8376,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -8421,8 +8453,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -8483,6 +8515,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -8557,8 +8590,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '14304',
             'currency' => '840',
@@ -8614,6 +8647,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -8694,8 +8728,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '13562',
             'currency' => '840',
@@ -8761,8 +8795,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -8837,8 +8871,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDAxMzg3MTAwMTA=',
@@ -8912,8 +8946,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -8983,8 +9017,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -9060,11 +9094,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
-            ),
-            'SecureTransactionGroup' => array(
-                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NjAwMTA=',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -9134,11 +9165,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
-            ),
-            'SecureTransactionGroup' => array(
-                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NjAwMTE=',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -9213,11 +9241,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
-            ),
-            'SecureTransactionGroup' => array(
-                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NzAwMTA=',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '13804',
             'currency' => '840',
@@ -9274,9 +9299,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '02',
-            ),
-            'SecureTransactionGroup' => array(
-                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NzAwMTE=',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -9351,8 +9374,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3ODAwMTA=',
@@ -9411,6 +9434,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3ODAwMTE=',
@@ -9489,8 +9513,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3OTAwMTA=',
@@ -9559,8 +9583,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3OTAwMTE=',
@@ -9639,11 +9663,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
-            ),
-            'SecureTransactionGroup' => array(
-                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4MDAwMTA=',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -9722,8 +9743,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -9782,8 +9803,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -9858,8 +9879,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -9926,8 +9947,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -10005,8 +10026,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -10066,6 +10087,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -10148,8 +10170,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -10216,8 +10238,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -10300,8 +10322,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '82952',
             'currency' => '840',
@@ -10367,8 +10389,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -10439,6 +10461,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000139140010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -10448,6 +10471,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '16300',
@@ -10514,6 +10538,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000139160010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -10523,6 +10548,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -10592,6 +10618,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000139180010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -10599,6 +10626,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '16242',
             'currency' => '840',
@@ -10664,6 +10695,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000139220010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -10673,6 +10705,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '16296',
@@ -11496,8 +11529,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '11314',
             'currency' => '840',
@@ -11553,6 +11586,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -11627,8 +11661,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '12308',
             'currency' => '840',
@@ -11684,6 +11718,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -11756,10 +11791,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000140240010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -11809,6 +11846,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000140240011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -11818,6 +11856,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -13103,8 +13145,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '84002',
             'currency' => '840',
@@ -13159,6 +13201,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -13232,8 +13275,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '84202',
             'currency' => '840',
@@ -13288,6 +13331,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -13357,10 +13401,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180040010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '7678',
@@ -13404,6 +13450,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180040011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -13413,6 +13460,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -13486,8 +13537,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '19602',
             'currency' => '840',
@@ -13542,6 +13593,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -13615,11 +13667,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
-            ),
-            'SecureTransactionGroup' => array(
-                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAwOTAwMTA=',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '19606',
             'currency' => '840',
@@ -13674,9 +13723,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '02',
-            ),
-            'SecureTransactionGroup' => array(
-                'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAwOTAwMTE=',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -13872,8 +13919,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '34350',
             'currency' => '840',
@@ -13928,6 +13975,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -14001,8 +14049,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '34550',
             'currency' => '840',
@@ -14057,6 +14105,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -14126,8 +14175,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180200010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '34750',
             'currency' => '840',
@@ -14170,6 +14224,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180200011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -14179,6 +14234,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -14252,8 +14311,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '1602',
             'currency' => '840',
@@ -14308,6 +14367,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -14381,8 +14441,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '2606',
             'currency' => '840',
@@ -14437,6 +14497,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -14510,8 +14571,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '2610',
             'currency' => '840',
@@ -14566,6 +14627,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -14635,10 +14697,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180300010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '2612',
@@ -14682,6 +14746,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180300011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -14691,6 +14756,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -14760,10 +14829,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180930010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '62282',
@@ -14807,6 +14878,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000180930011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -14816,6 +14888,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -15254,10 +15330,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000182000010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -15307,6 +15385,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000182000011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -15328,6 +15407,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -15397,10 +15477,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000182010010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '1001',
@@ -15444,6 +15526,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000182010011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -15453,6 +15536,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -15522,10 +15609,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000182020010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '1550',
@@ -15594,8 +15683,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMjAwMTA=',
@@ -15658,6 +15747,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMjAwMTE=',
@@ -15735,8 +15825,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMzAwMTA=',
@@ -15803,8 +15893,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxMzAwMTE=',
@@ -15880,8 +15970,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODIxNDAwMTA=',
@@ -15951,8 +16041,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '7691',
             'currency' => '840',
@@ -16008,6 +16098,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -16083,8 +16174,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -16148,8 +16239,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -16222,8 +16313,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '10078',
             'currency' => '840',
@@ -16289,8 +16380,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '7611',
             'currency' => '840',
@@ -16356,8 +16447,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '7609',
             'currency' => '840',
@@ -16423,8 +16514,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '7605',
             'currency' => '840',
@@ -16490,8 +16581,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '7603',
             'currency' => '840',
@@ -16560,8 +16651,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -16636,8 +16727,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -16709,8 +16800,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '7607',
             'currency' => '840',
@@ -16769,8 +16860,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -16843,8 +16934,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '7601',
             'currency' => '840',
@@ -16903,8 +16994,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -16980,8 +17071,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -17050,8 +17141,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '02',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -17127,8 +17218,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -17197,8 +17288,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -17553,6 +17644,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '82001000',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '12345A',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '62107',
             'currency' => '840',
             'ClientRef' => '000521820010',
@@ -17631,6 +17729,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '84001000',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '12345A',
+                'OriginalResponseCode' => '000',
+            ),
             'amount' => '83301',
             'currency' => '840',
             'ClientRef' => '000521840010',
@@ -17705,6 +17810,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '86001000',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '12345A',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34103',
             'currency' => '840',
@@ -18394,6 +18506,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523220010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -18410,7 +18523,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '22001000',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '12345A',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '62261',
             'currency' => '840',
@@ -18472,6 +18593,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523260010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -18488,10 +18610,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '26001000',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '12345A',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '83272',
             'currency' => '840',
@@ -18553,6 +18683,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523320010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -18567,6 +18698,17 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => '32001000',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '12345A',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34258',
             'currency' => '840',
@@ -18630,6 +18772,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523460010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -18639,6 +18782,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '60232',
@@ -18684,6 +18828,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523460011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -18698,6 +18843,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '30116',
             'currency' => '840',
@@ -18762,6 +18911,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523470010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -18771,6 +18921,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '60334',
@@ -18816,6 +18967,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523470011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -18837,6 +18989,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -18909,6 +19062,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523480010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -18918,6 +19072,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -18967,6 +19122,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523480011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -18981,6 +19137,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '30066',
             'currency' => '840',
@@ -19046,10 +19206,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523500010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -19099,6 +19261,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523500011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19120,6 +19283,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -19191,6 +19355,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523600010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19200,6 +19365,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -19248,6 +19414,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523600011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19262,6 +19429,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -19329,6 +19500,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523610010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19338,6 +19510,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -19386,6 +19559,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523610011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19407,6 +19581,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -19482,6 +19657,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523620010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19491,6 +19667,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -19543,6 +19720,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523620011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19557,6 +19735,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -19625,6 +19807,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523650010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19634,6 +19817,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -19686,6 +19870,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523650011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19707,6 +19892,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -19781,6 +19967,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523740010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19788,6 +19975,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '55342',
             'currency' => '840',
@@ -19832,6 +20023,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523740011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19846,6 +20038,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '27671',
             'currency' => '840',
@@ -19910,6 +20106,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523750010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19917,6 +20114,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '55444',
             'currency' => '840',
@@ -19961,6 +20162,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523750011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -19980,6 +20182,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -20051,6 +20257,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523760010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -20058,6 +20265,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -20106,6 +20317,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523760011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -20120,6 +20332,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '27621',
             'currency' => '840',
@@ -20185,8 +20401,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523780010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -20235,6 +20456,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000523780011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -20254,6 +20476,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -20333,8 +20559,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '55444',
             'currency' => '840',
@@ -20410,8 +20636,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -20485,8 +20711,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '35078',
             'currency' => '840',
@@ -20561,8 +20787,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ4MzAwMTA=',
@@ -20640,8 +20866,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ4NDAwMTA=',
@@ -20720,8 +20946,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ4NjAwMTA=',
@@ -20802,8 +21028,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ4OTAwMTA=',
@@ -20879,8 +21105,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ5MDAwMTA=',
@@ -20953,8 +21179,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDA1MjQ5MzAwMTA=',
@@ -21031,8 +21257,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '62880',
             'currency' => '840',
@@ -21102,8 +21328,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjUxNzAwMTA=',
@@ -21177,8 +21403,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjUxOTAwMTA=',
@@ -21260,8 +21486,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -21340,8 +21566,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -21418,8 +21644,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -21497,8 +21723,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -21576,8 +21802,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -21656,8 +21882,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -21738,8 +21964,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -21815,8 +22041,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -21894,8 +22120,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -21977,8 +22203,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '55342',
             'currency' => '840',
@@ -22034,8 +22260,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '27671',
             'currency' => '840',
@@ -22109,8 +22335,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -22185,8 +22411,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -22255,8 +22481,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -22332,8 +22558,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDA1Mjc5ODAwMTA=',
@@ -22397,6 +22623,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDA1Mjc5ODAwMTE=',
@@ -22476,8 +22703,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDA1Mjc5OTAwMTA=',
@@ -22541,6 +22768,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'AmexSecureData' => 'MDAwMDAwMDAwMDA1Mjc5OTAwMTE=',
@@ -22625,13 +22853,14 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
-                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
-                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalAuthorizationID' => '15001100',
+                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
+                'OriginalSTAN' => '150011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34153',
             'currency' => '840',
@@ -22701,8 +22930,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -22763,6 +22992,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -22838,8 +23068,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '57311',
             'currency' => '840',
@@ -22896,6 +23126,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -22971,8 +23202,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '62988',
             'currency' => '840',
@@ -23038,8 +23269,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -23115,8 +23346,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -23177,6 +23408,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -23253,8 +23485,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MjAwMTA=',
@@ -23318,6 +23550,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MjAwMTE=',
@@ -23397,8 +23630,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MzAwMTA=',
@@ -23471,8 +23704,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MzAwMTE=',
@@ -23550,8 +23783,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '57711',
             'currency' => '840',
@@ -23608,6 +23841,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -23684,8 +23918,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -23746,6 +23980,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -23822,8 +24057,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjkwMTAwMTA=',
@@ -23887,6 +24122,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjkwMTAwMTE=',
@@ -23970,8 +24206,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24040,8 +24276,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24125,8 +24361,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24189,8 +24425,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24261,8 +24497,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24322,6 +24558,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24406,8 +24643,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24480,8 +24717,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24558,8 +24795,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24618,6 +24855,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24695,8 +24933,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24763,8 +25001,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24847,8 +25085,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24907,8 +25145,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -24985,8 +25223,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25049,8 +25287,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25127,8 +25365,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25191,8 +25429,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25268,8 +25506,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25338,8 +25576,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '01',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25417,8 +25655,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25478,6 +25716,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25562,8 +25801,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25626,8 +25865,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -25695,6 +25934,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000532240010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -25704,6 +25944,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -25775,6 +26016,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000532250010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -25784,6 +26026,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -25854,6 +26097,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000532260010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -25863,6 +26107,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '16252',
@@ -25929,6 +26174,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000532270010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -25938,6 +26184,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '16254',
@@ -26004,6 +26251,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000532350010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -26013,6 +26261,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -26082,6 +26331,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000532360010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -26091,6 +26341,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -26160,6 +26411,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000532420010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -26167,6 +26419,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '16240',
             'currency' => '840',
@@ -28031,8 +28287,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '11124',
             'currency' => '840',
@@ -28105,8 +28361,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '11126',
             'currency' => '840',
@@ -28176,8 +28432,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -28255,8 +28511,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -28332,8 +28588,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -29681,8 +29937,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -29752,8 +30008,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -29829,8 +30085,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -29900,8 +30156,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -29977,8 +30233,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -30048,8 +30304,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -30125,8 +30381,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -30196,8 +30452,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -30273,8 +30529,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -30344,8 +30600,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -30419,8 +30675,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '11310',
             'currency' => '840',
@@ -30484,8 +30740,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -30559,8 +30815,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '11180',
             'currency' => '840',
@@ -30624,8 +30880,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -30699,8 +30955,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '11922',
             'currency' => '840',
@@ -30764,8 +31020,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -30839,8 +31095,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '11364',
             'currency' => '840',
@@ -30904,8 +31160,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -30979,8 +31235,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -31047,8 +31303,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -31125,8 +31381,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -31193,8 +31449,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -31271,8 +31527,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '12690',
             'currency' => '840',
@@ -31336,8 +31592,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -31411,8 +31667,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'amount' => '11058',
             'currency' => '840',
@@ -31476,8 +31732,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
-                'EcommURL' => 'google.com',
                 'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -31547,8 +31803,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000559750010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '111228',
             'currency' => '840',
@@ -31592,6 +31853,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000559750011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -31610,6 +31872,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -31679,8 +31945,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000559760010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '111078',
             'currency' => '840',
@@ -31724,6 +31995,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000559760011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -31742,6 +32014,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -31811,10 +32087,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000561160010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '12544',
@@ -31859,6 +32137,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000561160011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -31879,6 +32158,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -31949,10 +32229,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000561170010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '12546',
@@ -31997,6 +32279,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000561170011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -32017,6 +32300,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -32087,10 +32371,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000563390010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -32138,6 +32424,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000563390011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -32158,6 +32445,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -32231,10 +32519,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000563400010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -32282,6 +32572,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000563400011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -32302,6 +32593,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
@@ -32377,10 +32669,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000564570010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -32430,6 +32724,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000564570011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -32451,6 +32746,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -32521,10 +32817,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000564580010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '111530',
@@ -32569,6 +32867,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000564580011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -32589,6 +32888,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -32659,10 +32959,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000564590010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'amount' => '111536',
@@ -32707,6 +33009,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000564590011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -32727,6 +33030,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -32799,10 +33103,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000565070010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
@@ -32852,6 +33158,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000565070011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
@@ -32873,6 +33180,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
