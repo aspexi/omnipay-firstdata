@@ -108,9 +108,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -187,9 +200,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -266,9 +292,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -342,9 +381,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -418,9 +470,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -491,7 +556,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -569,9 +647,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -647,7 +738,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -721,9 +825,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -797,9 +914,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -881,9 +1011,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -965,9 +1108,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -1042,7 +1198,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1119,9 +1288,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1198,9 +1380,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1277,9 +1472,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1356,9 +1564,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1435,9 +1656,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1514,9 +1748,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1593,9 +1840,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1672,9 +1932,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1748,9 +2021,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1824,9 +2110,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1900,9 +2199,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -1976,9 +2288,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -2062,9 +2387,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -2143,9 +2481,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -2220,9 +2571,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -2278,7 +2642,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -2352,9 +2729,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -2416,7 +2806,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -2490,9 +2893,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -2541,6 +2957,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '32004',
             'currency' => '840',
             'ClientRef' => '000022440011',
@@ -2552,7 +2975,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -2626,9 +3062,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -2690,7 +3139,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -2764,9 +3226,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -2833,7 +3308,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -2907,9 +3395,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -2976,7 +3477,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3046,9 +3560,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3111,7 +3638,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -3162,7 +3702,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3231,7 +3784,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OriginalAuthorizationID' => '64001000',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '12345A',
+                'OriginalSTAN' => '640010',
                 'OriginalResponseCode' => '000',
             ),
             'amount' => '63139',
@@ -3244,7 +3797,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3318,9 +3884,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3394,9 +3973,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3470,9 +4062,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3546,9 +4151,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3611,7 +4229,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3684,9 +4315,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3759,9 +4403,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3824,7 +4481,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -3875,7 +4545,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -3941,7 +4624,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -3995,7 +4691,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -4058,7 +4767,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -4134,9 +4856,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -4212,9 +4947,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('500', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('500', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -4286,7 +5034,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OriginalAuthorizationID' => '04001000',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '12345A',
+                'OriginalSTAN' => '040010',
                 'OriginalResponseCode' => '000',
             ),
             'amount' => '63139',
@@ -4299,7 +5047,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -4373,9 +5134,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -4438,7 +5212,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -4512,9 +5299,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -4577,7 +5377,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -4651,9 +5464,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -4716,7 +5542,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -4790,9 +5629,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -4859,7 +5711,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -4933,9 +5798,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -5002,7 +5880,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5071,8 +5962,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5147,9 +6051,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -5217,7 +6134,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5295,9 +6225,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -5368,7 +6311,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5431,7 +6387,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5494,7 +6463,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5562,7 +6544,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5625,7 +6620,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5688,7 +6696,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5751,7 +6772,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5814,7 +6848,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5877,7 +6924,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -5940,7 +7000,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -5999,7 +7072,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -6062,7 +7148,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -6121,7 +7220,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -6192,7 +7304,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -6241,6 +7366,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '38028',
             'currency' => '840',
             'ClientRef' => '000137200011',
@@ -6252,7 +7384,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -6323,7 +7468,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -6372,6 +7530,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '38026',
             'currency' => '840',
             'ClientRef' => '000137230011',
@@ -6383,7 +7548,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -6446,7 +7624,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -6505,7 +7696,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -6568,7 +7772,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -6627,7 +7844,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -6690,7 +7920,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -6749,7 +7992,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -6827,9 +8083,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('N', $response->getAVSResultCode());
-        $this->assertEquals('NoMtch', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('N', $response->getAVSResultCode());
+            $this->assertEquals('NoMtch', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -6897,7 +8166,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -6965,7 +8247,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -7033,7 +8328,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -7107,8 +8415,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -7183,9 +8504,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -7249,7 +8583,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -7322,9 +8669,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -7391,7 +8751,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -7466,9 +8839,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -7532,7 +8918,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -7607,9 +9006,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -7682,7 +9094,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -7757,9 +9182,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -7823,7 +9261,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -7890,7 +9341,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -7969,9 +9433,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -8038,7 +9515,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -8105,7 +9595,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -8179,9 +9682,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -8248,7 +9764,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -8322,9 +9851,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -8396,7 +9938,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -8470,9 +10025,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -8535,7 +10103,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -8603,8 +10184,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -8667,7 +10261,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -8741,9 +10348,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -8815,7 +10435,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -8887,9 +10520,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -8963,9 +10609,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -9037,7 +10696,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -9111,9 +10783,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -9185,7 +10870,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -9254,9 +10952,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -9319,7 +11030,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -9390,8 +11114,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -9457,7 +11194,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -9529,9 +11279,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -9606,7 +11369,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -9680,9 +11456,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -9759,9 +11548,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -9799,6 +11601,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'AdditionalAmount' => '38595',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '38595',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
@@ -9809,17 +11616,38 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '38595',
             'currency' => '840',
             'ClientRef' => '000138850011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -9895,8 +11723,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -9970,7 +11811,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -10042,9 +11896,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -10110,7 +11977,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -10186,8 +12066,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -10261,7 +12154,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -10335,9 +12241,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -10409,7 +12328,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -10484,9 +12416,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -10564,9 +12509,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -10641,9 +12599,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -10718,9 +12689,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -10783,7 +12767,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -10842,7 +12839,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -10908,7 +12918,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -10970,7 +12993,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -11038,7 +13074,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -11084,6 +13133,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '120681',
             'currency' => '840',
             'ClientRef' => '000139860011',
@@ -11095,7 +13151,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -11163,7 +13232,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -11226,7 +13308,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -11289,7 +13384,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -11348,7 +13456,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -11411,7 +13532,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -11474,7 +13608,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -11542,8 +13689,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -11606,7 +13766,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -11674,8 +13847,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -11738,7 +13924,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -11813,9 +14012,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -11879,7 +14091,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -11943,8 +14168,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -12003,7 +14241,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -12072,8 +14323,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -12119,6 +14383,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '5676',
             'currency' => '840',
             'ClientRef' => '000141470011',
@@ -12130,7 +14401,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -12194,8 +14478,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -12254,7 +14551,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -12323,8 +14633,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -12370,6 +14693,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '6096',
             'currency' => '840',
             'ClientRef' => '000141840011',
@@ -12381,7 +14711,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -12445,8 +14788,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -12509,7 +14865,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -12573,8 +14942,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -12633,7 +15015,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -12700,8 +15095,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -12763,7 +15171,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -12830,8 +15251,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -12897,7 +15331,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -12961,8 +15408,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -13021,7 +15481,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -13090,8 +15563,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -13158,7 +15644,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -13221,7 +15720,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -13288,7 +15800,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -13351,7 +15876,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -13419,7 +15957,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -13483,7 +16034,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -13550,7 +16114,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -13613,7 +16190,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -13680,7 +16270,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -13743,7 +16346,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -13806,7 +16422,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -13865,7 +16494,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -13932,7 +16574,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -13995,7 +16650,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -14062,7 +16730,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -14125,7 +16806,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -14193,7 +16887,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -14257,7 +16964,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -14324,7 +17044,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -14387,7 +17120,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -14454,7 +17200,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -14517,7 +17276,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -14584,7 +17356,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -14647,7 +17432,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -14715,7 +17513,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -14779,7 +17590,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -14847,7 +17671,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -14911,7 +17748,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -14974,7 +17824,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -15033,7 +17896,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -15096,7 +17972,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -15155,7 +18044,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -15218,7 +18120,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -15277,7 +18192,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -15352,9 +18280,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -15427,7 +18368,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -15495,7 +18449,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -15559,7 +18526,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -15627,7 +18607,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -15703,8 +18696,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -15770,7 +18776,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -15841,8 +18860,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -15916,7 +18948,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -15986,7 +19031,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -16054,8 +19112,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -16118,7 +19189,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -16191,8 +19275,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -16259,7 +19356,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -16326,7 +19436,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -16393,7 +19516,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -16460,7 +19596,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -16527,7 +19676,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -16594,7 +19756,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -16668,9 +19843,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -16744,9 +19932,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -16813,7 +20014,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -16880,7 +20094,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -16947,7 +20174,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -17014,7 +20254,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -17088,9 +20341,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -17161,7 +20427,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -17235,9 +20514,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -17308,7 +20600,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -17379,7 +20684,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -17445,7 +20763,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -17516,7 +20847,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -17579,7 +20923,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -17648,7 +21005,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OriginalAuthorizationID' => '82001000',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '12345A',
+                'OriginalSTAN' => '820010',
                 'OriginalResponseCode' => '000',
             ),
             'amount' => '62107',
@@ -17661,7 +21018,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -17733,7 +21103,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OriginalAuthorizationID' => '84001000',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '12345A',
+                'OriginalSTAN' => '840010',
                 'OriginalResponseCode' => '000',
             ),
             'amount' => '83301',
@@ -17746,7 +21116,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -17815,7 +21198,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OriginalAuthorizationID' => '86001000',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '12345A',
+                'OriginalSTAN' => '860010',
                 'OriginalResponseCode' => '000',
             ),
             'amount' => '34103',
@@ -17828,7 +21211,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -17896,7 +21292,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -17942,6 +21351,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '29549',
             'currency' => '840',
             'ClientRef' => '000521900011',
@@ -17953,7 +21369,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -18021,7 +21450,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -18067,6 +21509,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '29547',
             'currency' => '840',
             'ClientRef' => '000521930011',
@@ -18078,7 +21527,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -18144,7 +21606,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -18206,7 +21681,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -18274,7 +21762,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -18320,6 +21821,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '27104',
             'currency' => '840',
             'ClientRef' => '000522000011',
@@ -18331,7 +21839,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -18399,7 +21920,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -18445,6 +21979,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '27102',
             'currency' => '840',
             'ClientRef' => '000522030011',
@@ -18456,7 +21997,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -18530,7 +22084,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OriginalAuthorizationID' => '22001000',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '12345A',
+                'OriginalSTAN' => '220010',
                 'OriginalResponseCode' => '000',
             ),
             'amount' => '62261',
@@ -18543,7 +22097,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -18620,7 +22187,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OriginalAuthorizationID' => '26001000',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '12345A',
+                'OriginalSTAN' => '260010',
                 'OriginalResponseCode' => '000',
             ),
             'amount' => '83272',
@@ -18633,7 +22200,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -18707,7 +22287,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OriginalAuthorizationID' => '32001000',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
-                'OriginalSTAN' => '12345A',
+                'OriginalSTAN' => '320010',
                 'OriginalResponseCode' => '000',
             ),
             'amount' => '34258',
@@ -18720,7 +22300,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -18795,9 +22388,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -18848,6 +22454,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '30116',
             'currency' => '840',
             'ClientRef' => '000523460011',
@@ -18859,7 +22472,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -18934,9 +22560,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -19009,7 +22648,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -19089,9 +22741,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -19142,6 +22807,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '30066',
             'currency' => '840',
             'ClientRef' => '000523480011',
@@ -19153,7 +22825,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -19228,9 +22913,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -19303,7 +23001,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -19381,9 +23092,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -19437,6 +23161,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '38595',
             'currency' => '840',
             'ClientRef' => '000523600011',
@@ -19448,7 +23179,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -19526,9 +23270,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -19604,7 +23361,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -19687,9 +23457,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -19743,6 +23526,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '38545',
             'currency' => '840',
             'ClientRef' => '000523620011',
@@ -19754,7 +23544,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -19837,9 +23640,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -19915,7 +23731,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -19990,9 +23819,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -20043,6 +23885,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '27671',
             'currency' => '840',
             'ClientRef' => '000523740011',
@@ -20054,7 +23903,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -20129,9 +23991,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -20204,7 +24079,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -20284,9 +24172,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -20337,6 +24238,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '27621',
             'currency' => '840',
             'ClientRef' => '000523760011',
@@ -20348,7 +24256,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -20423,9 +24344,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -20498,7 +24432,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -20572,9 +24519,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -20653,9 +24613,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -20724,9 +24697,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -20803,9 +24789,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -20882,9 +24881,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -20966,9 +24978,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21044,8 +25069,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21121,8 +25159,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21199,9 +25250,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21270,9 +25334,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21344,9 +25421,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21423,9 +25513,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21502,9 +25605,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21586,9 +25702,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21660,9 +25789,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21739,9 +25881,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21818,9 +25973,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21902,9 +26070,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -21980,8 +26161,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -22057,8 +26251,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -22140,9 +26347,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -22216,9 +26436,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -22256,6 +26489,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'AdditionalAmount' => '27671',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '27671',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
@@ -22263,17 +26501,38 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '27671',
             'currency' => '840',
             'ClientRef' => '000527770011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -22352,9 +26611,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -22428,9 +26700,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -22501,7 +26786,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -22578,9 +26876,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -22646,7 +26957,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -22723,9 +27047,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -22791,7 +27128,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -22873,7 +27223,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -22947,9 +27310,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -23012,7 +27388,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -23081,9 +27470,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -23146,7 +27548,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -23215,9 +27630,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -23289,7 +27717,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -23363,9 +27804,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -23428,7 +27882,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -23505,9 +27972,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -23573,7 +28053,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -23650,9 +28143,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -23727,7 +28233,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -23796,9 +28315,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -23861,7 +28393,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -23935,9 +28480,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -24000,7 +28558,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -24077,9 +28648,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -24145,7 +28729,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -24222,9 +28819,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -24299,7 +28909,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -24381,9 +29004,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -24421,6 +29057,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'AdditionalAmount' => '38441',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '38441',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
@@ -24431,17 +29072,38 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '38441',
             'currency' => '840',
             'ClientRef' => '000529610011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -24513,9 +29175,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -24581,7 +29256,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -24663,9 +29351,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -24740,7 +29441,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -24811,8 +29525,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -24878,7 +29605,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -24949,8 +29689,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -25024,7 +29777,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -25101,9 +29867,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -25141,6 +29920,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'AdditionalAmount' => '7020',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '7020',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
@@ -25151,17 +29935,38 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '7020',
             'currency' => '840',
             'ClientRef' => '000529910011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -25243,9 +30048,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -25283,6 +30101,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'AdditionalAmount' => '57047',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '57047',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
@@ -25293,17 +30116,38 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '57047',
             'currency' => '840',
             'ClientRef' => '000529920011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -25385,9 +30229,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -25425,6 +30282,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'AdditionalAmount' => '57647',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '57647',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
@@ -25435,17 +30297,38 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '57647',
             'currency' => '840',
             'ClientRef' => '000529950011',
         );
 
         // Act
-        $request = $gateway->authorize($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Authorization';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -25522,9 +30405,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -25599,7 +30495,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -25671,9 +30580,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -25739,7 +30661,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -25821,9 +30756,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -25861,6 +30809,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 array(
                     'AdditionalAmount' => '38491',
                     'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '38491',
+                    'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
@@ -25871,17 +30824,38 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '38491',
             'currency' => '840',
             'ClientRef' => '000530120011',
         );
 
         // Act
-        $request = $gateway->purchase($requestData);
+        $requestData['CommonGroup']['TransactionType'] = 'Sale';
+        $request = $gateway->void($requestData);
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -25961,9 +30935,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -26043,9 +31030,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -26120,9 +31120,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -26197,9 +31210,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -26277,9 +31303,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -26357,9 +31396,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -26434,9 +31486,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -26499,7 +31564,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -26558,7 +31636,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -26626,7 +31717,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -26689,7 +31793,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -26757,7 +31874,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -26803,6 +31933,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '120685',
             'currency' => '840',
             'ClientRef' => '000533560011',
@@ -26814,7 +31951,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -26877,7 +32027,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -26940,7 +32103,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -27003,7 +32179,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -27066,7 +32255,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -27132,7 +32334,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -27194,7 +32409,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -27265,7 +32493,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -27331,7 +32572,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -27397,7 +32651,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -27463,7 +32730,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -27529,7 +32809,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -27595,7 +32888,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -27658,7 +32964,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -27717,7 +33036,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -27785,7 +33117,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -27848,7 +33193,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -27916,7 +33274,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -27979,7 +33350,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -28042,7 +33426,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -28101,7 +33498,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -28164,7 +33574,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -28227,7 +33650,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -28300,8 +33736,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -28374,8 +33823,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -28449,9 +33911,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -28527,8 +34002,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -28604,8 +34092,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -28669,8 +34170,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -28739,8 +34253,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -28786,6 +34313,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
             'amount' => '5312',
             'currency' => '840',
             'ClientRef' => '000544370011',
@@ -28797,7 +34331,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -28861,8 +34408,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -28921,7 +34481,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -28990,8 +34563,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -29058,7 +34644,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -29122,8 +34721,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -29190,7 +34802,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -29254,8 +34879,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -29314,7 +34952,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -29383,8 +35034,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('P', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('P', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -29453,8 +35117,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('N', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('N', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -29526,8 +35203,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('N', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('N', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -29599,8 +35289,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -29669,8 +35372,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('U', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('U', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -29739,8 +35455,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('A', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('A', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -29809,8 +35538,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -29879,8 +35621,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('N', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('N', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -29954,9 +35709,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('P', $response->getAVSResultCode());
-        $this->assertEquals('NotPrt', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('P', $response->getAVSResultCode());
+            $this->assertEquals('NotPrt', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -30028,7 +35796,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -30102,9 +35883,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('U', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('U', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -30176,7 +35970,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -30250,9 +36057,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('U', $response->getAVSResultCode());
-        $this->assertEquals('NoMtch', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('U', $response->getAVSResultCode());
+            $this->assertEquals('NoMtch', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -30324,7 +36144,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -30398,9 +36231,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('N', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('N', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -30472,7 +36318,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -30546,9 +36405,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('N', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('N', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -30620,7 +36492,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -30688,8 +36573,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -30760,7 +36658,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -30828,8 +36739,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -30900,7 +36824,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -30968,8 +36905,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -31040,7 +36990,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -31108,8 +37071,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -31180,7 +37156,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -31251,8 +37240,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -31326,7 +37328,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -31397,8 +37412,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -31472,7 +37500,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -31540,8 +37581,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -31612,7 +37666,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -31680,8 +37747,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -31752,7 +37832,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -31821,8 +37914,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -31894,7 +38000,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -31963,8 +38082,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -32036,7 +38168,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -32105,8 +38250,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -32178,7 +38336,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -32247,8 +38418,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -32320,7 +38504,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -32392,8 +38589,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -32468,7 +38678,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -32540,8 +38763,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -32616,7 +38852,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -32691,9 +38940,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -32766,7 +39028,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -32835,8 +39110,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -32908,7 +39196,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -32977,8 +39278,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -33050,7 +39364,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33125,9 +39452,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Y', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -33200,7 +39540,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33264,8 +39617,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33329,8 +39695,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33393,7 +39772,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33457,8 +39849,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33522,8 +39927,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33587,8 +40005,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33652,8 +40083,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33717,8 +40161,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33782,8 +40239,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33850,8 +40320,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33918,8 +40401,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -33986,8 +40482,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -34054,8 +40563,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -34119,8 +40641,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -34184,8 +40719,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -34248,7 +40796,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -34312,8 +40873,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -34377,8 +40951,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -34442,8 +41029,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -34502,7 +41102,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -34570,7 +41183,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -34621,7 +41247,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -34687,7 +41326,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -34741,7 +41393,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -34804,7 +41469,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -34855,7 +41533,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -34923,7 +41614,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -34974,7 +41678,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -35042,7 +41759,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -35093,7 +41823,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -35159,7 +41902,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -35213,7 +41969,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -35276,7 +42045,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -35327,7 +42109,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -35395,7 +42190,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -35446,7 +42254,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -35513,8 +42334,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -35568,7 +42402,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -35640,8 +42487,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Z', $response->getAVSResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -35695,7 +42555,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -35762,8 +42635,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -35817,7 +42703,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 
@@ -35889,8 +42788,21 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('Match', $response->getCCVResultCode());
-        $this->assertEquals('002', $response->getResponseCode());
+        try {
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('002', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
 
 
         // Arrange
@@ -35944,7 +42856,20 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $response = $request->send();
 
         // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
     }
 
 }

@@ -206,6 +206,19 @@ class RapidConnectResponse extends AbstractResponse
      * @return null
      * @throws InvalidResponseException
      */
+    public function getErrorData()
+    {
+        $responseGroup = $this->getResponseGroup();
+        if ($responseGroup !== null && isset($responseGroup->RespCode)) {
+            return $responseGroup->ErrorData;
+        }
+        return null;
+    }
+
+    /**
+     * @return null
+     * @throws InvalidResponseException
+     */
     public function getResponseCode()
     {
         $responseGroup = $this->getResponseGroup();
