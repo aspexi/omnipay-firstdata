@@ -14213,7 +14213,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'OrderNumber' => '000141460011',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
-                'MerchantCountry' => '840',
+                'Me
+                rchantCountry' => '840',
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
             ),
             'AdditionalAmountGroups' => array(
