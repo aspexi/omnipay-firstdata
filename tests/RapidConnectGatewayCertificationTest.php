@@ -1099,6 +1099,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '900010',
+            ),
             'amount' => '14042',
             'currency' => '840',
             'ClientRef' => '000001900010',
@@ -4539,6 +4542,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '850010',
+            ),
             'amount' => '77190',
             'currency' => '840',
             'ClientRef' => '000138850010',
@@ -4716,6 +4722,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '860010',
             ),
             'amount' => '14678',
             'currency' => '840',
@@ -5063,6 +5072,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '880010',
             ),
             'amount' => '15272',
             'currency' => '840',
@@ -17719,6 +17731,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '600010',
+            ),
             'amount' => '77292',
             'currency' => '840',
             'ClientRef' => '000529600010',
@@ -17904,6 +17919,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '610010',
             ),
             'amount' => '76882',
             'currency' => '840',
@@ -18257,6 +18275,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '650010',
             ),
             'amount' => '76884',
             'currency' => '840',
@@ -18779,6 +18800,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '910010',
+            ),
             'amount' => '14040',
             'currency' => '840',
             'ClientRef' => '000529910010',
@@ -18962,6 +18986,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '920010',
             ),
             'amount' => '114094',
             'currency' => '840',
@@ -19147,6 +19174,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '950010',
+            ),
             'amount' => '115294',
             'currency' => '840',
             'ClientRef' => '000529950010',
@@ -19325,6 +19355,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '990010',
             ),
             'amount' => '14042',
             'currency' => '840',
@@ -23655,7 +23688,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -23822,7 +23854,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -23992,7 +24023,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -24331,7 +24361,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -24855,7 +24884,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -25011,7 +25039,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -25167,7 +25194,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -25323,7 +25349,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -25479,7 +25504,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -27025,7 +27049,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -27359,7 +27382,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -27759,7 +27781,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -28079,7 +28100,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -28549,7 +28569,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -28898,7 +28917,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -29175,6 +29193,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '600010',
+            ),
             'amount' => '77190',
             'currency' => '840',
             'ClientRef' => '000523600010',
@@ -29249,7 +29270,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -29356,6 +29376,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '610010',
             ),
             'amount' => '77292',
             'currency' => '840',
@@ -29545,6 +29568,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '620010',
+            ),
             'amount' => '77090',
             'currency' => '840',
             'ClientRef' => '000523620010',
@@ -29619,7 +29645,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
@@ -29731,6 +29756,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '650010',
             ),
             'amount' => '77092',
             'currency' => '840',
@@ -29982,7 +30010,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -30331,7 +30358,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -44604,6 +44630,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '670010',
+            ),
             'amount' => '241242',
             'currency' => '840',
             'ClientRef' => '000533670010',
@@ -50191,6 +50220,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
             ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '060010',
+            ),
             'amount' => '19644',
             'currency' => '840',
             'ClientRef' => '000757060010',
@@ -50499,6 +50531,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '360010',
             ),
             'amount' => '19654',
             'currency' => '840',
