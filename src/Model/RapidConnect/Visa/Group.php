@@ -9,11 +9,11 @@ class Group extends BaseGroup
 {
     public function addVisaGroup(\SimpleXMLElement $data)
     {
-        if ($this->getAuthorizationCharacteristicsIndicatorACI() !== null) {
-            if (!$this->validateAuthorizationCharacteristicsIndicatorACI()) {
+        if ($this->getAuthorizationCharacteristicsIndicator() !== null) {
+            if (!$this->validateAuthorizationCharacteristicsIndicator()) {
                 throw new InvalidRequestException("Invalid authorization characteristicsindicator aci");
             }
-            $data->VisaGrp->ACI = $this->getAuthorizationCharacteristicsIndicatorACI();
+            $data->VisaGrp->ACI = $this->getAuthorizationCharacteristicsIndicator();
         }
         if ($this->getMarketSpecificDataIndicator() !== null) {
             if (!$this->validateMarketSpecificDataIndicator()) {
@@ -104,9 +104,9 @@ class Group extends BaseGroup
     /**
      * @return string
      */
-    public function getAuthorizationCharacteristicsIndicatorACI()
+    public function getAuthorizationCharacteristicsIndicator()
     {
-        return $this->getParameter('AuthorizationCharacteristicsIndicatorACI');
+        return $this->getParameter('AuthorizationCharacteristicsIndicator');
     }
 
 
@@ -114,18 +114,18 @@ class Group extends BaseGroup
      * @param $value
      * @return string
      */
-    public function setAuthorizationCharacteristicsIndicatorACI($value)
+    public function setAuthorizationCharacteristicsIndicator($value)
     {
-        return $this->setParameter('AuthorizationCharacteristicsIndicatorACI', $value);
+        return $this->setParameter('AuthorizationCharacteristicsIndicator', $value);
     }
 
 
     /**
      * @return bool
      */
-    public function validateAuthorizationCharacteristicsIndicatorACI()
+    public function validateAuthorizationCharacteristicsIndicator()
     {
-        $value = $this->getParameter('AuthorizationCharacteristicsIndicatorACI');
+        $value = $this->getParameter('AuthorizationCharacteristicsIndicator');
         $valid = array('P', 'I', 'Y', 'R', 'A', 'B', 'C', 'E', 'F', 'J', 'K', 'N', 'S', 'T', 'U', 'V', 'W');
         return in_array($value, $valid);
     }
