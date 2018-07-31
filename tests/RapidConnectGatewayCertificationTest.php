@@ -94,9 +94,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDA4NDAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -187,9 +184,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEwMDAwMTA=',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -282,9 +276,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEwMTAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -375,9 +366,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEyODAwMTA=',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -470,9 +458,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAwMDEyOTAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -563,9 +548,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '30006',
             'currency' => '840',
             'ClientRef' => '000001340010',
@@ -652,9 +634,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -743,9 +722,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -836,9 +812,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -926,9 +899,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1024,7 +994,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -1104,6 +1073,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '900010',
                 'ReferenceNumber' => '000001900010',
                 'OrderNumber' => '000001900010',
@@ -1121,9 +1091,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1209,7 +1179,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -1290,6 +1259,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '620010',
                 'ReferenceNumber' => '000002620010',
                 'OrderNumber' => '000002620010',
@@ -1302,9 +1272,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1395,7 +1365,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -1475,6 +1444,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '660010',
                 'ReferenceNumber' => '000002660010',
                 'OrderNumber' => '000002660010',
@@ -1487,9 +1457,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1580,7 +1550,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -1660,6 +1629,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '700010',
                 'ReferenceNumber' => '000002700010',
                 'OrderNumber' => '000002700010',
@@ -1672,9 +1642,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1765,7 +1735,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -2559,9 +2528,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '62207',
             'currency' => '840',
             'ClientRef' => '000138460010',
@@ -2640,9 +2606,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
-            ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
             ),
             'amount' => '83211',
             'currency' => '840',
@@ -3640,9 +3603,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -3725,9 +3685,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -3821,9 +3778,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NjAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -3906,9 +3860,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '02',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4001,9 +3952,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3NzAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '13804',
             'currency' => '840',
             'ClientRef' => '000138770010',
@@ -4071,9 +4019,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '02',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4166,9 +4111,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3ODAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '15040',
             'currency' => '840',
             'ClientRef' => '000138780010',
@@ -4235,9 +4177,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4331,9 +4270,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg3OTAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '13848',
             'currency' => '840',
             'ClientRef' => '000138790010',
@@ -4412,9 +4348,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4508,9 +4441,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxMzg4MDAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -4587,6 +4517,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '850010',
                 'ReferenceNumber' => '000138850010',
                 'OrderNumber' => '000138850010',
@@ -4604,9 +4535,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '77190',
             'currency' => '840',
@@ -4659,6 +4590,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '850011',
                 'ReferenceNumber' => '000138850011',
                 'OrderNumber' => '000138850011',
@@ -4682,9 +4614,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4763,6 +4695,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000138860010',
                 'OrderNumber' => '000138860010',
@@ -4780,9 +4713,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '14678',
             'currency' => '840',
@@ -4862,7 +4795,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -4942,6 +4874,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '870010',
                 'ReferenceNumber' => '000138870010',
                 'OrderNumber' => '000138870010',
@@ -4954,9 +4887,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '14194',
             'currency' => '840',
@@ -5009,6 +4942,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '870011',
                 'ReferenceNumber' => '000138870011',
                 'OrderNumber' => '000138870011',
@@ -5027,9 +4961,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -5108,6 +5042,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '880010',
                 'ReferenceNumber' => '000138880010',
                 'OrderNumber' => '000138880010',
@@ -5125,9 +5060,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '15272',
             'currency' => '840',
@@ -5207,7 +5142,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -5469,9 +5403,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '11314',
             'currency' => '840',
             'ClientRef' => '000140170010',
@@ -5538,9 +5469,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -5784,9 +5712,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
                 'EcommURL' => 'google.com',
             ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
-            ),
             'amount' => '84002',
             'currency' => '840',
             'ClientRef' => '000180000010',
@@ -5852,9 +5777,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
-            ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -5943,9 +5865,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
                 'EcommURL' => 'google.com',
             ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
-            ),
             'amount' => '84202',
             'currency' => '840',
             'ClientRef' => '000180020010',
@@ -6011,9 +5930,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '02',
-            ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -6102,9 +6018,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '19602',
             'currency' => '840',
             'ClientRef' => '000180070010',
@@ -6170,9 +6083,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -6264,9 +6174,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAxODAwOTAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '19606',
             'currency' => '840',
             'ClientRef' => '000180090010',
@@ -6332,9 +6239,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '02',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -8344,9 +8248,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyMzUxMjAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -8417,7 +8318,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyMzUxMjAwMTE=',
             ),
             'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
+                'AuthorizationCharacteristicsIndicator' => 'I',
             ),
             'amount' => '119',
             'currency' => '840',
@@ -8515,9 +8416,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '12001200',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -8609,9 +8507,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyMzUxNDAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -8681,7 +8576,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyMzUxNDAwMTE=',
             ),
             'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
+                'AuthorizationCharacteristicsIndicator' => 'I',
             ),
             'amount' => '121',
             'currency' => '840',
@@ -8777,9 +8672,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyMzUxNDAwMTI=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '14001200',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -8869,9 +8761,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -8939,7 +8828,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
+                'AuthorizationCharacteristicsIndicator' => 'I',
             ),
             'amount' => '319',
             'currency' => '840',
@@ -9037,9 +8926,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '32001200',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -9128,9 +9014,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -9197,7 +9080,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
+                'AuthorizationCharacteristicsIndicator' => 'I',
             ),
             'amount' => '322',
             'currency' => '840',
@@ -9290,9 +9173,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '34001200',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -9371,6 +9251,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '020010',
                 'ReferenceNumber' => '000236020010',
                 'OrderNumber' => '000236020010',
@@ -9383,9 +9264,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -9442,6 +9323,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '020011',
                 'ReferenceNumber' => '000236020011',
                 'OrderNumber' => '000236020011',
@@ -9454,9 +9336,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '119',
             'currency' => '840',
@@ -9555,7 +9437,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -9635,6 +9516,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '040010',
                 'ReferenceNumber' => '000236040010',
                 'OrderNumber' => '000236040010',
@@ -9647,9 +9529,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -9705,6 +9587,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '040011',
                 'ReferenceNumber' => '000236040011',
                 'OrderNumber' => '000236040011',
@@ -9717,9 +9600,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '121',
             'currency' => '840',
@@ -9813,7 +9696,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -9894,6 +9776,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '220010',
                 'ReferenceNumber' => '000236220010',
                 'OrderNumber' => '000236220010',
@@ -9906,9 +9789,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -9965,6 +9848,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '220011',
                 'ReferenceNumber' => '000236220011',
                 'OrderNumber' => '000236220011',
@@ -9977,9 +9861,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '319',
             'currency' => '840',
@@ -10078,7 +9962,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -10158,6 +10041,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '240010',
                 'ReferenceNumber' => '000236240010',
                 'OrderNumber' => '000236240010',
@@ -10170,9 +10054,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -10228,6 +10112,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '240011',
                 'ReferenceNumber' => '000236240011',
                 'OrderNumber' => '000236240011',
@@ -10240,9 +10125,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '322',
             'currency' => '840',
@@ -10336,7 +10221,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -10431,9 +10315,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY1MjAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -10444,6 +10325,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
+        $request = $gateway->verification($requestData);
         $response = $request->send();
 
         // Assert
@@ -10523,9 +10405,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY1MzAwMTA=',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -10609,9 +10488,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -10702,9 +10578,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY1NDAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21001',
             'currency' => '840',
             'ClientRef' => '000246540010',
@@ -10790,9 +10663,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY1NTAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -10864,9 +10734,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -10961,9 +10828,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY1NzAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -11052,9 +10916,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY1ODAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21005',
             'currency' => '840',
             'ClientRef' => '000246580010',
@@ -11140,9 +11001,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY1OTAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -11214,9 +11072,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -11309,9 +11164,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY2NjAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21013',
             'currency' => '840',
             'ClientRef' => '000246660010',
@@ -11387,9 +11239,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY2NjAwMTE=',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -11480,9 +11329,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY2NzAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21014',
             'currency' => '840',
             'ClientRef' => '000246670010',
@@ -11566,9 +11412,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY2ODAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21015',
             'currency' => '840',
             'ClientRef' => '000246680010',
@@ -11635,9 +11478,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -11730,9 +11570,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY3MDAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21017',
             'currency' => '840',
             'ClientRef' => '000246700010',
@@ -11815,9 +11652,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY3MTAwMTA=',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'amount' => '21017',
             'currency' => '840',
@@ -11902,9 +11736,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDAyNDY3MjAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21018',
             'currency' => '840',
             'ClientRef' => '000246720010',
@@ -11971,9 +11802,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12065,9 +11893,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -12150,9 +11975,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12240,9 +12062,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21026',
             'currency' => '840',
             'ClientRef' => '000247080010',
@@ -12325,9 +12144,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -12399,9 +12215,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12493,9 +12306,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -12581,9 +12391,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21030',
             'currency' => '840',
             'ClientRef' => '000247120010',
@@ -12666,9 +12473,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -12740,9 +12544,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12832,9 +12633,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21038',
             'currency' => '840',
             'ClientRef' => '000247200010',
@@ -12907,9 +12705,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -12997,9 +12792,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21039',
             'currency' => '840',
             'ClientRef' => '000247210010',
@@ -13080,9 +12872,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21040',
             'currency' => '840',
             'ClientRef' => '000247220010',
@@ -13149,9 +12938,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -13241,9 +13027,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21042',
             'currency' => '840',
             'ClientRef' => '000247240010',
@@ -13323,9 +13106,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'amount' => '21043',
             'currency' => '840',
@@ -13407,9 +13187,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21044',
             'currency' => '840',
             'ClientRef' => '000247260010',
@@ -13476,9 +13253,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -14380,9 +14154,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '62880',
             'currency' => '840',
             'ClientRef' => '000525110010',
@@ -14468,9 +14239,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjUxNzAwMTA=',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'amount' => '13858',
             'currency' => '840',
@@ -14558,9 +14326,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjUxOTAwMTA=',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -14655,7 +14420,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '76890',
@@ -14748,7 +14512,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -14839,7 +14602,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '84786',
@@ -14931,7 +14693,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '14052',
@@ -15023,7 +14784,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '14054',
@@ -15116,7 +14876,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -15211,7 +14970,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '15282',
@@ -15301,7 +15059,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '15284',
@@ -15393,7 +15150,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -16642,9 +16398,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '57311',
             'currency' => '840',
             'ClientRef' => '000528660010',
@@ -16712,9 +16465,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -16805,9 +16555,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '62988',
             'currency' => '840',
             'ClientRef' => '000528670010',
@@ -16886,9 +16633,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -16979,9 +16723,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -17053,9 +16794,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -17150,9 +16888,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MjAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -17224,9 +16959,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -17321,9 +17053,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1Mjg4MzAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -17406,9 +17135,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -17498,9 +17224,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '57711',
             'currency' => '840',
             'ClientRef' => '000528950010',
@@ -17568,9 +17291,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -17662,9 +17382,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -17736,9 +17453,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -17833,9 +17547,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'SecureTransactionGroup' => array(
                 'VisaSecureTransactionAuthenticationData' => 'MDAwMDAwMDAwMDA1MjkwMTAwMTA=',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -17907,9 +17618,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -17989,6 +17697,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '600010',
                 'ReferenceNumber' => '000529600010',
                 'OrderNumber' => '000529600010',
@@ -18006,9 +17715,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '77292',
             'currency' => '840',
@@ -18090,7 +17799,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -18171,6 +17879,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '610010',
                 'ReferenceNumber' => '000529610010',
                 'OrderNumber' => '000529610010',
@@ -18188,9 +17897,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -18247,6 +17956,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '610011',
                 'ReferenceNumber' => '000529610011',
                 'OrderNumber' => '000529610011',
@@ -18270,9 +17980,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -18352,6 +18062,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '630010',
                 'ReferenceNumber' => '000529630010',
                 'OrderNumber' => '000529630010',
@@ -18364,9 +18075,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '84794',
             'currency' => '840',
@@ -18419,6 +18130,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '630011',
                 'ReferenceNumber' => '000529630011',
                 'OrderNumber' => '000529630011',
@@ -18437,9 +18149,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -18520,6 +18232,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '650010',
                 'ReferenceNumber' => '000529650010',
                 'OrderNumber' => '000529650010',
@@ -18537,9 +18250,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -18625,7 +18338,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -18704,6 +18416,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '890010',
                 'ReferenceNumber' => '000529890010',
                 'OrderNumber' => '000529890010',
@@ -18716,9 +18429,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '15464',
             'currency' => '840',
@@ -18770,6 +18483,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '890011',
                 'ReferenceNumber' => '000529890011',
                 'OrderNumber' => '000529890011',
@@ -18788,9 +18502,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -18869,6 +18583,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '900010',
                 'ReferenceNumber' => '000529900010',
                 'OrderNumber' => '000529900010',
@@ -18881,9 +18596,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '15462',
             'currency' => '840',
@@ -18963,7 +18678,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -19043,6 +18757,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '910010',
                 'ReferenceNumber' => '000529910010',
                 'OrderNumber' => '000529910010',
@@ -19060,9 +18775,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '14040',
             'currency' => '840',
@@ -19115,6 +18830,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '910011',
                 'ReferenceNumber' => '000529910011',
                 'OrderNumber' => '000529910011',
@@ -19138,9 +18854,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -19221,6 +18937,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '920010',
                 'ReferenceNumber' => '000529920010',
                 'OrderNumber' => '000529920010',
@@ -19238,9 +18955,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -19297,6 +19014,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '920011',
                 'ReferenceNumber' => '000529920011',
                 'OrderNumber' => '000529920011',
@@ -19320,9 +19038,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -19403,6 +19121,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '950010',
                 'ReferenceNumber' => '000529950010',
                 'OrderNumber' => '000529950010',
@@ -19420,9 +19139,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -19479,6 +19198,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '950011',
                 'ReferenceNumber' => '000529950011',
                 'OrderNumber' => '000529950011',
@@ -19502,9 +19222,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -19584,6 +19304,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '990010',
                 'ReferenceNumber' => '000529990010',
                 'OrderNumber' => '000529990010',
@@ -19601,9 +19322,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '14042',
             'currency' => '840',
@@ -19685,7 +19406,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -19777,7 +19497,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '82794',
@@ -19849,7 +19568,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -19948,7 +19666,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -20029,7 +19746,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -20294,9 +20010,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -20389,7 +20102,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '11956',
@@ -20479,7 +20191,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '11958',
@@ -20565,9 +20276,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -20650,9 +20358,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -21757,9 +21462,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '11922',
             'currency' => '840',
             'ClientRef' => '000556670010',
@@ -21836,9 +21538,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -21927,9 +21626,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '11364',
             'currency' => '840',
             'ClientRef' => '000556680010',
@@ -22007,9 +21703,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -22086,6 +21779,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '910010',
                 'ReferenceNumber' => '000557910010',
                 'OrderNumber' => '000557910010',
@@ -22098,9 +21792,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '12216',
             'currency' => '840',
@@ -22180,7 +21874,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -22259,6 +21952,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '920010',
                 'ReferenceNumber' => '000557920010',
                 'OrderNumber' => '000557920010',
@@ -22271,9 +21965,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '12004',
             'currency' => '840',
@@ -22353,7 +22047,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -22784,9 +22477,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -22880,9 +22570,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -23130,9 +22817,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -23212,9 +22896,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -23293,6 +22974,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '000010',
                 'ReferenceNumber' => '000027000010',
                 'OrderNumber' => '000027000010',
@@ -23306,9 +22988,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -23390,7 +23072,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -23484,7 +23165,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -23572,9 +23252,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
             ),
             'amount' => '83297',
             'currency' => '840',
@@ -23818,9 +23495,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -23909,9 +23583,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -23985,9 +23656,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -24067,6 +23735,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '250010',
                 'ReferenceNumber' => '000138250010',
                 'OrderNumber' => '000138250010',
@@ -24080,9 +23749,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '84794',
             'currency' => '840',
@@ -24135,6 +23804,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '250011',
                 'ReferenceNumber' => '000138250011',
                 'OrderNumber' => '000138250011',
@@ -24155,9 +23825,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -24758,9 +24428,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '16300',
             'currency' => '840',
             'ClientRef' => '000139140010',
@@ -24851,7 +24518,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '16298',
@@ -25279,9 +24945,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
-            ),
             'amount' => '7678',
             'currency' => '840',
             'ClientRef' => '000180040010',
@@ -25349,9 +25012,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -25753,9 +25413,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '62282',
             'currency' => '840',
             'ClientRef' => '000180930010',
@@ -25823,9 +25480,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -25918,9 +25572,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -25989,7 +25640,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
+                'AuthorizationCharacteristicsIndicator' => 'I',
             ),
             'amount' => '119',
             'currency' => '840',
@@ -26088,9 +25739,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '92001200',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -26180,9 +25828,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -26250,7 +25895,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
+                'AuthorizationCharacteristicsIndicator' => 'I',
             ),
             'amount' => '121',
             'currency' => '840',
@@ -26344,9 +25989,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '94001200',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -26425,6 +26067,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '820010',
                 'ReferenceNumber' => '000235820010',
                 'OrderNumber' => '000235820010',
@@ -26438,9 +26081,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -26497,6 +26140,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '820011',
                 'ReferenceNumber' => '000235820011',
                 'OrderNumber' => '000235820011',
@@ -26510,9 +26154,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '119',
             'currency' => '840',
@@ -26612,7 +26256,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -26692,6 +26335,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '840010',
                 'ReferenceNumber' => '000235840010',
                 'OrderNumber' => '000235840010',
@@ -26705,9 +26349,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -26763,6 +26407,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '840011',
                 'ReferenceNumber' => '000235840011',
                 'OrderNumber' => '000235840011',
@@ -26776,9 +26421,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '121',
             'currency' => '840',
@@ -26873,7 +26518,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -26966,9 +26610,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -26979,6 +26620,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         );
 
         // Act
+        $request = $gateway->verification($requestData);
         $response = $request->send();
 
         // Assert
@@ -27056,9 +26698,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -27143,9 +26782,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -27234,9 +26870,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21001',
             'currency' => '840',
             'ClientRef' => '000246000010',
@@ -27320,9 +26953,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -27396,9 +27026,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -27491,9 +27118,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -27580,9 +27204,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21005',
             'currency' => '840',
             'ClientRef' => '000246040010',
@@ -27666,9 +27287,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -27742,9 +27360,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -27835,9 +27450,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21013',
             'currency' => '840',
             'ClientRef' => '000246120010',
@@ -27911,9 +27523,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -28002,9 +27611,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21014',
             'currency' => '840',
             'ClientRef' => '000246130010',
@@ -28086,9 +27692,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21015',
             'currency' => '840',
             'ClientRef' => '000246140010',
@@ -28157,9 +27760,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -28250,9 +27850,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21017',
             'currency' => '840',
             'ClientRef' => '000246160010',
@@ -28333,9 +27930,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'amount' => '21017',
             'currency' => '840',
@@ -28418,9 +28012,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '21018',
             'currency' => '840',
             'ClientRef' => '000246180010',
@@ -28489,9 +28080,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -28593,9 +28181,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '22001000',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -28696,7 +28281,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -28892,9 +28476,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '60232',
             'currency' => '840',
             'ClientRef' => '000523460010',
@@ -28969,9 +28550,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -29068,9 +28646,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '60334',
             'currency' => '840',
             'ClientRef' => '000523470010',
@@ -29150,9 +28725,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -29249,9 +28821,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -29330,9 +28899,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -29425,9 +28991,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -29512,9 +29075,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -29592,6 +29152,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '600010',
                 'ReferenceNumber' => '000523600010',
                 'OrderNumber' => '000523600010',
@@ -29610,9 +29171,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '77190',
             'currency' => '840',
@@ -29665,6 +29226,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '600011',
                 'ReferenceNumber' => '000523600011',
                 'OrderNumber' => '000523600011',
@@ -29690,9 +29252,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -29772,6 +29334,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '610010',
                 'ReferenceNumber' => '000523610010',
                 'OrderNumber' => '000523610010',
@@ -29790,9 +29353,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '77292',
             'currency' => '840',
@@ -29875,7 +29438,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -29956,6 +29518,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '620010',
                 'ReferenceNumber' => '000523620010',
                 'OrderNumber' => '000523620010',
@@ -29974,9 +29537,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -30033,6 +29596,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '620011',
                 'ReferenceNumber' => '000523620011',
                 'OrderNumber' => '000523620011',
@@ -30058,9 +29622,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -30141,6 +29705,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '650010',
                 'ReferenceNumber' => '000523650010',
                 'OrderNumber' => '000523650010',
@@ -30159,9 +29724,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -30248,7 +29813,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -31039,9 +30603,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -31136,9 +30697,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -31232,9 +30790,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '16252',
             'currency' => '840',
             'ClientRef' => '000532260010',
@@ -31323,9 +30878,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'amount' => '16254',
             'currency' => '840',
@@ -31417,7 +30969,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '16248',
@@ -31510,7 +31061,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '16250',
@@ -32017,9 +31567,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '12544',
             'currency' => '840',
             'ClientRef' => '000561160010',
@@ -32097,9 +31644,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -32189,9 +31733,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '12546',
             'currency' => '840',
             'ClientRef' => '000561170010',
@@ -32270,9 +31811,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -32349,6 +31887,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '390010',
                 'ReferenceNumber' => '000563390010',
                 'OrderNumber' => '000563390010',
@@ -32362,9 +31901,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '112464',
             'currency' => '840',
@@ -32445,7 +31984,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -32524,6 +32062,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '400010',
                 'ReferenceNumber' => '000563400010',
                 'OrderNumber' => '000563400010',
@@ -32537,9 +32076,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '112282',
             'currency' => '840',
@@ -32620,7 +32159,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -33393,9 +32931,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -33468,9 +33003,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -33563,9 +33095,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -33643,9 +33172,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -33738,9 +33264,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -33813,9 +33336,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -33908,9 +33428,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -33989,9 +33506,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -34083,9 +33597,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -34164,9 +33675,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -34253,9 +33761,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -34337,9 +33842,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '9435',
             'currency' => '840',
             'ClientRef' => '000022600010',
@@ -34395,9 +33897,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -34493,9 +33992,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '64001000',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -34586,9 +34082,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -34677,9 +34170,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantState' => 'NY',
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -34770,9 +34260,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -34862,9 +34349,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantPostalCode' => '11747',
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -34945,9 +34429,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'amount' => '55008',
             'currency' => '840',
@@ -35331,6 +34812,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '670010',
                 'ReferenceNumber' => '000023670010',
                 'OrderNumber' => '000023670010',
@@ -35339,9 +34821,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '21400',
             'currency' => '840',
@@ -35392,6 +34874,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '670011',
                 'ReferenceNumber' => '000023670011',
                 'OrderNumber' => '000023670011',
@@ -35400,9 +34883,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -35485,9 +34968,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
-            ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
             ),
             'amount' => '000',
             'currency' => '840',
@@ -35572,7 +35052,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -35652,6 +35131,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000023860010',
                 'OrderNumber' => '000023860010',
@@ -35664,9 +35144,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -35762,7 +35242,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -36762,9 +36241,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
-            ),
             'amount' => '000',
             'currency' => '840',
             'ClientRef' => '000133760010',
@@ -36839,9 +36315,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'amount' => '62110',
             'currency' => '840',
@@ -36998,9 +36471,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '62144',
             'currency' => '840',
             'ClientRef' => '000136970010',
@@ -37075,9 +36545,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
-            ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
             ),
             'amount' => '83136',
             'currency' => '840',
@@ -37379,9 +36846,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '57210',
             'currency' => '840',
             'ClientRef' => '000137140010',
@@ -37444,9 +36908,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -37531,9 +36992,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '57311',
             'currency' => '840',
             'ClientRef' => '000137170010',
@@ -37596,9 +37054,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -37689,7 +37144,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '76056',
@@ -37761,7 +37215,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -37853,7 +37306,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '76052',
@@ -37925,7 +37377,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -38449,9 +37900,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '41334',
             'currency' => '840',
             'ClientRef' => '000139630010',
@@ -38514,9 +37962,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -38594,6 +38039,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '750010',
                 'ReferenceNumber' => '000139750010',
                 'OrderNumber' => '000139750010',
@@ -38602,9 +38048,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '241330',
             'currency' => '840',
@@ -38655,6 +38101,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '750011',
                 'ReferenceNumber' => '000139750011',
                 'OrderNumber' => '000139750011',
@@ -38670,9 +38117,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -39671,9 +39118,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '12722',
             'currency' => '840',
             'ClientRef' => '000141830010',
@@ -39737,9 +39181,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -39830,9 +39271,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '12192',
             'currency' => '840',
             'ClientRef' => '000141840010',
@@ -39901,9 +39339,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -39989,9 +39424,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '12810',
             'currency' => '840',
             'ClientRef' => '000142070010',
@@ -40060,9 +39492,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -40147,9 +39576,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '12298',
             'currency' => '840',
             'ClientRef' => '000142080010',
@@ -40213,9 +39639,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -40302,7 +39725,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '13570',
@@ -40370,7 +39792,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -40450,6 +39871,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '450010',
                 'ReferenceNumber' => '000142450010',
                 'OrderNumber' => '000142450010',
@@ -40458,9 +39880,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '13680',
             'currency' => '840',
@@ -40532,7 +39954,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -40993,9 +40414,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '62151',
             'currency' => '840',
             'ClientRef' => '000181150010',
@@ -41058,9 +40476,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -41291,9 +40706,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
-            ),
             'amount' => '83143',
             'currency' => '840',
             'ClientRef' => '000181230010',
@@ -41356,9 +40768,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -41446,9 +40855,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -41512,7 +40918,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
+                'AuthorizationCharacteristicsIndicator' => 'I',
             ),
             'amount' => '811',
             'currency' => '840',
@@ -41606,9 +41012,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '62001200',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -41691,9 +41094,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '12252',
             'currency' => '840',
             'ClientRef' => '000234640010',
@@ -41751,7 +41151,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
+                'AuthorizationCharacteristicsIndicator' => 'I',
             ),
             'amount' => '812',
             'currency' => '840',
@@ -41840,9 +41240,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '64001200',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -41927,9 +41324,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -41992,7 +41386,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
+                'AuthorizationCharacteristicsIndicator' => 'I',
             ),
             'amount' => '1246',
             'currency' => '840',
@@ -42081,9 +41475,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '66001200',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -42162,6 +41553,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '520010',
                 'ReferenceNumber' => '000235520010',
                 'OrderNumber' => '000235520010',
@@ -42170,9 +41562,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -42229,6 +41621,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '520011',
                 'ReferenceNumber' => '000235520011',
                 'OrderNumber' => '000235520011',
@@ -42237,9 +41630,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '812',
             'currency' => '840',
@@ -42334,7 +41727,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -42412,6 +41804,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '540010',
                 'ReferenceNumber' => '000235540010',
                 'OrderNumber' => '000235540010',
@@ -42420,9 +41813,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '12252',
             'currency' => '840',
@@ -42473,6 +41866,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '540011',
                 'ReferenceNumber' => '000235540011',
                 'OrderNumber' => '000235540011',
@@ -42481,9 +41875,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '812',
             'currency' => '840',
@@ -42573,7 +41967,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -42653,6 +42046,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '560010',
                 'ReferenceNumber' => '000235560010',
                 'OrderNumber' => '000235560010',
@@ -42661,9 +42055,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -42719,6 +42113,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '560011',
                 'ReferenceNumber' => '000235560011',
                 'OrderNumber' => '000235560011',
@@ -42727,9 +42122,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '1246',
             'currency' => '840',
@@ -42819,7 +42214,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -42910,7 +42304,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '76054',
@@ -42989,7 +42382,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '84315',
@@ -43073,7 +42465,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '76050',
@@ -43238,9 +42629,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '82001000',
                 'OriginalLocalDateandTime' => $now->format('Ymdhis'),
@@ -43336,7 +42724,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -43520,9 +42907,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '59098',
             'currency' => '840',
             'ClientRef' => '000521900010',
@@ -43590,9 +42974,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -43682,9 +43063,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '59094',
             'currency' => '840',
             'ClientRef' => '000521930010',
@@ -43752,9 +43130,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -43840,7 +43215,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '84794',
@@ -43907,7 +43281,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -44305,9 +43678,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '41406',
             'currency' => '840',
             'ClientRef' => '000533450010',
@@ -44370,9 +43740,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -44462,9 +43829,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '241192',
             'currency' => '840',
             'ClientRef' => '000533460010',
@@ -44532,9 +43896,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -44623,9 +43984,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '241370',
             'currency' => '840',
             'ClientRef' => '000533560010',
@@ -44693,9 +44051,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'FirstAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -44780,9 +44135,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '241230',
             'currency' => '840',
             'ClientRef' => '000533570010',
@@ -44850,9 +44202,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -44936,9 +44285,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '241074',
             'currency' => '840',
             'ClientRef' => '000533580010',
@@ -45006,9 +44352,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -45085,6 +44428,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '660010',
                 'ReferenceNumber' => '000533660010',
                 'OrderNumber' => '000533660010',
@@ -45093,9 +44437,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '41402',
             'currency' => '840',
@@ -45146,6 +44490,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '660011',
                 'ReferenceNumber' => '000533660011',
                 'OrderNumber' => '000533660011',
@@ -45161,9 +44506,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -45241,6 +44586,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '670010',
                 'ReferenceNumber' => '000533670010',
                 'OrderNumber' => '000533670010',
@@ -45254,9 +44600,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '241242',
             'currency' => '840',
@@ -45327,7 +44673,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -45405,6 +44750,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '770010',
                 'ReferenceNumber' => '000533770010',
                 'OrderNumber' => '000533770010',
@@ -45413,9 +44759,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '241298',
             'currency' => '840',
@@ -45486,7 +44832,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -45564,6 +44909,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '780010',
                 'ReferenceNumber' => '000533780010',
                 'OrderNumber' => '000533780010',
@@ -45572,9 +44918,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '241082',
             'currency' => '840',
@@ -45645,7 +44991,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
@@ -47332,9 +46677,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
@@ -47416,9 +46758,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -47503,7 +46842,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -47589,7 +46927,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'CustomerInformationGroup' => array(
@@ -48384,9 +47721,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '12878',
             'currency' => '840',
             'ClientRef' => '000569610010',
@@ -48463,9 +47797,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'amount' => '12486',
             'currency' => '840',
@@ -48544,9 +47875,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '12504',
             'currency' => '840',
             'ClientRef' => '000569640010',
@@ -48623,9 +47951,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'amount' => '12512',
             'currency' => '840',
@@ -48705,7 +48030,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '13580',
@@ -48786,7 +48110,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '13392',
@@ -48867,7 +48190,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '13410',
@@ -48948,7 +48270,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
             ),
             'amount' => '13418',
@@ -49563,9 +48884,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '19632',
             'currency' => '840',
             'ClientRef' => '000756850010',
@@ -49621,9 +48939,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -49700,6 +49015,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '860010',
                 'ReferenceNumber' => '000756860010',
                 'OrderNumber' => '000756860010',
@@ -49708,9 +49024,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '9437',
             'currency' => '840',
@@ -49761,6 +49077,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '860011',
                 'ReferenceNumber' => '000756860011',
                 'OrderNumber' => '000756860011',
@@ -49769,9 +49086,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -50141,9 +49458,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'PartialAuthorizationApprovalCapability' => '1',
                 ),
             ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
-            ),
             'amount' => '19632',
             'currency' => '840',
             'ClientRef' => '000756940010',
@@ -50199,9 +49513,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
-            ),
-            'VisaGroup' => array(
-                'AuthorizationCharacteristicsIndicator' => '',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -50278,6 +49589,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '950010',
                 'ReferenceNumber' => '000756950010',
                 'OrderNumber' => '000756950010',
@@ -50286,9 +49598,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '9437',
             'currency' => '840',
@@ -50339,6 +49651,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '950011',
                 'ReferenceNumber' => '000756950011',
                 'OrderNumber' => '000756950011',
@@ -50347,9 +49660,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -50708,6 +50021,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '050010',
                 'ReferenceNumber' => '000757050010',
                 'OrderNumber' => '000757050010',
@@ -50716,9 +50030,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '9447',
             'currency' => '840',
@@ -50770,6 +50084,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '050011',
                 'ReferenceNumber' => '000757050011',
                 'OrderNumber' => '000757050011',
@@ -50778,9 +50093,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -50858,6 +50173,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '060010',
                 'ReferenceNumber' => '000757060010',
                 'OrderNumber' => '000757060010',
@@ -50871,9 +50187,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '19644',
             'currency' => '840',
@@ -50925,6 +50241,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '060011',
                 'ReferenceNumber' => '000757060011',
                 'OrderNumber' => '000757060011',
@@ -50933,9 +50250,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -51013,6 +50330,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '350010',
                 'ReferenceNumber' => '000757350010',
                 'OrderNumber' => '000757350010',
@@ -51021,9 +50339,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '9493',
             'currency' => '840',
@@ -51075,6 +50393,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '350011',
                 'ReferenceNumber' => '000757350011',
                 'OrderNumber' => '000757350011',
@@ -51083,9 +50402,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -51163,6 +50482,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '360010',
                 'ReferenceNumber' => '000757360010',
                 'OrderNumber' => '000757360010',
@@ -51176,9 +50496,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'amount' => '19654',
             'currency' => '840',
@@ -51230,6 +50550,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
                 'STAN' => '360011',
                 'ReferenceNumber' => '000757360011',
                 'OrderNumber' => '000757360011',
@@ -51238,9 +50559,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'MasterCardACI' => 'I',
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
+                'MasterCardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
