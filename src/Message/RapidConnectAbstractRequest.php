@@ -274,7 +274,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         if ($value && !$value instanceof Visa\Group) {
             $value = new Visa\Group($value);
         }
-        return $this->setParameter('Visa', $value);
+        return $this->setParameter('VisaGroup', $value);
     }
 
     /**
