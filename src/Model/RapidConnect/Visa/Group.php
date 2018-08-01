@@ -11,7 +11,7 @@ class Group extends BaseGroup
     {
         if ($this->getAuthorizationCharacteristicsIndicator() !== null) {
             if (!$this->validateAuthorizationCharacteristicsIndicator()) {
-                throw new InvalidRequestException("Invalid authorization characteristicsindicator aci");
+                throw new InvalidRequestException("Invalid authorization characteristics indicator");
             }
             $data->VisaGrp->ACI = $this->getAuthorizationCharacteristicsIndicator();
         }
