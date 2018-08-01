@@ -26632,7 +26632,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
