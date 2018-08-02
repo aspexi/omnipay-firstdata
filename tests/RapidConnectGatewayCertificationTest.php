@@ -8321,6 +8321,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'POSConditionCode' => '59',
                 'TerminalCategoryCode' => '00',
                 'TerminalEntryCapability' => '01',
+                'TransactionInitiation' => 'Merchant',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
@@ -8331,6 +8332,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '119',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
                 'EcommURL' => 'google.com',
@@ -8340,6 +8348,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'VisaGroup' => array(
                 'AuthorizationCharacteristicsIndicator' => 'I',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '120011',
             ),
             'amount' => '119',
             'currency' => '840',
@@ -8579,6 +8590,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'POSConditionCode' => '59',
                 'TerminalCategoryCode' => '00',
                 'TerminalEntryCapability' => '01',
+                'TransactionInitiation' => 'Merchant',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
@@ -8589,6 +8601,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '121',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '01',
                 'EcommURL' => 'google.com',
@@ -8598,6 +8617,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'VisaGroup' => array(
                 'AuthorizationCharacteristicsIndicator' => 'I',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '140011',
             ),
             'amount' => '121',
             'currency' => '840',
@@ -8831,6 +8853,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'POSConditionCode' => '59',
                 'TerminalCategoryCode' => '00',
                 'TerminalEntryCapability' => '01',
+                'TransactionInitiation' => 'Merchant',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
@@ -8841,12 +8864,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '319',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
             'VisaGroup' => array(
                 'AuthorizationCharacteristicsIndicator' => 'I',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '320011',
             ),
             'amount' => '319',
             'currency' => '840',
@@ -9083,6 +9116,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'POSConditionCode' => '59',
                 'TerminalCategoryCode' => '00',
                 'TerminalEntryCapability' => '01',
+                'TransactionInitiation' => 'Merchant',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
@@ -9093,12 +9127,22 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '322',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
             ),
             'VisaGroup' => array(
                 'AuthorizationCharacteristicsIndicator' => 'I',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '340011',
             ),
             'amount' => '322',
             'currency' => '840',
@@ -22774,10 +22818,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
                 'MerchantCountry' => '840',
             ),
-            'EcommGroup' => array(
-                'EcommTransactionIndicator' => '03',
-                'CustomerServicePhoneNumber' => '1234567890',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -25672,6 +25712,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'POSConditionCode' => '08',
                 'TerminalCategoryCode' => '00',
                 'TerminalEntryCapability' => '01',
+                'TransactionInitiation' => 'Merchant',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
@@ -25696,6 +25737,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'VisaGroup' => array(
                 'AuthorizationCharacteristicsIndicator' => 'I',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '920011',
             ),
             'amount' => '119',
             'currency' => '840',
@@ -25934,6 +25978,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'POSConditionCode' => '08',
                 'TerminalCategoryCode' => '00',
                 'TerminalEntryCapability' => '01',
+                'TransactionInitiation' => 'Merchant',
                 'TerminalLocationIndicator' => '1',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5967',
@@ -25958,6 +26003,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'VisaGroup' => array(
                 'AuthorizationCharacteristicsIndicator' => 'I',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '940011',
             ),
             'amount' => '121',
             'currency' => '840',
@@ -33970,9 +34018,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000022600011',
                 'OrderNumber' => '000022600011',
             ),
-            'AlternateMerchantNameandAddressGroup' => array(
-                'MerchantCountry' => '840',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -34808,9 +34853,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '270011',
                 'ReferenceNumber' => '000023270011',
                 'OrderNumber' => '000023270011',
-            ),
-            'AlternateMerchantNameandAddressGroup' => array(
-                'MerchantCountry' => '840',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -40994,6 +41036,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'POSConditionCode' => '00',
                 'TerminalCategoryCode' => '00',
                 'TerminalEntryCapability' => '03',
+                'TransactionInitiation' => 'Merchant',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
@@ -41237,6 +41280,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'POSConditionCode' => '00',
                 'TerminalCategoryCode' => '00',
                 'TerminalEntryCapability' => '03',
+                'TransactionInitiation' => 'Merchant',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
@@ -41482,6 +41526,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'POSConditionCode' => '00',
                 'TerminalCategoryCode' => '00',
                 'TerminalEntryCapability' => '03',
+                'TransactionInitiation' => 'Merchant',
                 'TerminalLocationIndicator' => '0',
                 'CardCaptureCapability' => '1',
                 'MerchantCategoryCode' => '5399',
@@ -49075,9 +49120,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756850011',
                 'OrderNumber' => '000756850011',
             ),
-            'AlternateMerchantNameandAddressGroup' => array(
-                'MerchantCountry' => '840',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -49366,9 +49408,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000756880011',
                 'OrderNumber' => '000756880011',
             ),
-            'AlternateMerchantNameandAddressGroup' => array(
-                'MerchantCountry' => '840',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
@@ -49651,9 +49690,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '940011',
                 'ReferenceNumber' => '000756940011',
                 'OrderNumber' => '000756940011',
-            ),
-            'AlternateMerchantNameandAddressGroup' => array(
-                'MerchantCountry' => '840',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -49942,9 +49978,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'STAN' => '970011',
                 'ReferenceNumber' => '000756970011',
                 'OrderNumber' => '000756970011',
-            ),
-            'AlternateMerchantNameandAddressGroup' => array(
-                'MerchantCountry' => '840',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
