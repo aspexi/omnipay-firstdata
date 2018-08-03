@@ -22814,10 +22814,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'ReferenceNumber' => '000005700011',
                 'OrderNumber' => '000005700011',
             ),
-            'AlternateMerchantNameandAddressGroup' => array(
-                'MerchantEmailAddress' => getenv('RAPIDCONNECT_MERCHANT_EMAIL'),
-                'MerchantCountry' => '840',
-            ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
