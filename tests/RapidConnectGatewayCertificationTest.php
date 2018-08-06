@@ -125,7 +125,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
     }
-/*
+
 
     public function testCaseNumber000001000010()
     {
@@ -22698,7 +22698,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         }
     }
 
-*/
+
 	public function testCaseNumber000005700010And000005700011()
 	{
 		// Arrange
@@ -22831,7 +22831,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
 		$this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
 		}
 	}
-/*
+
 
     public function testCaseNumber000026940010And000026940011()
     {
