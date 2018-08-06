@@ -33203,6 +33203,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
             'amount' => '62008',
             'currency' => '840',
             'ClientRef' => '000022440010',
@@ -35578,6 +35583,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
                 'AVSBillingPostalCode' => '11747',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
             ),
             'amount' => '54436',
             'currency' => '840',
