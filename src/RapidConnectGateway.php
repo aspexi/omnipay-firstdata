@@ -310,6 +310,10 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['CommonGroup']['TransactionType'] = TransactionType::AUTHORIZATION;
         }
 
+        if (!array_key_exists('ReversalReasonCode', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['ReversalReasonCode'] = 'Partial';
+        }
+
         $groupId = $this->getGroupID();
         if ($groupId !== null) {
             $parameters['CommonGroup']['GroupID'] = $groupId;
