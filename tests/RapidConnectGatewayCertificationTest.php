@@ -5065,9 +5065,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '880010',
@@ -9383,9 +9381,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '020011',
@@ -9651,9 +9647,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '040011',
@@ -9916,9 +9910,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '220011',
@@ -10184,9 +10176,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '240011',
@@ -26241,9 +26231,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '820011',
@@ -26512,9 +26500,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '840011',
@@ -41803,9 +41789,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '520011',
@@ -42052,9 +42036,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '540011',
@@ -42303,9 +42285,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '560011',
