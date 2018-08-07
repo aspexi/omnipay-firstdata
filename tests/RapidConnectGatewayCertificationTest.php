@@ -1091,9 +1091,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1275,9 +1273,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1463,9 +1459,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -1651,9 +1645,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -4547,9 +4539,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '850010',
@@ -4629,9 +4619,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -4728,9 +4716,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '860010',
@@ -4905,9 +4891,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1000138880010',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '870010',
@@ -9326,9 +9310,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -9404,6 +9386,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '020011',
             ),
             'amount' => '119',
             'currency' => '840',
@@ -9594,9 +9579,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -9671,6 +9654,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '040011',
             ),
             'amount' => '121',
             'currency' => '840',
@@ -9857,9 +9843,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -9935,6 +9919,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '220011',
             ),
             'amount' => '319',
             'currency' => '840',
@@ -10125,9 +10112,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -10202,6 +10187,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '240011',
             ),
             'amount' => '322',
             'currency' => '840',
@@ -17774,9 +17762,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '600010',
@@ -17959,9 +17945,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -18140,9 +18124,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '630010',
@@ -18318,9 +18300,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -18500,9 +18480,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '890010',
@@ -18670,9 +18648,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '900010',
@@ -18852,9 +18828,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '910010',
@@ -19035,9 +19009,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -19222,9 +19194,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -19408,9 +19378,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '990010',
@@ -21881,9 +21849,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '910010',
@@ -22057,9 +22023,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '920010',
@@ -23095,9 +23059,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -23858,9 +23820,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '250010',
@@ -26207,9 +26167,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -26286,6 +26244,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '820011',
             ),
             'amount' => '119',
             'currency' => '840',
@@ -26478,9 +26439,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -26556,6 +26515,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '840011',
             ),
             'amount' => '121',
             'currency' => '840',
@@ -29296,9 +29258,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '600010',
@@ -29480,9 +29440,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '610010',
@@ -29667,9 +29625,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -29856,9 +29812,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -32034,9 +31988,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '390010',
@@ -32212,9 +32164,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'CustomerServicePhoneNumber' => '1234567890',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '400010',
@@ -34989,9 +34939,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '670010',
@@ -35053,26 +35001,38 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '21400',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'FirstAuthAmt',
+                ),
+                array(
+                    'AdditionalAmount' => '000',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+                ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
             ),
-            'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
-                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
-                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
-            ),
-            'amount' => '21400',
-            'currency' => '840',
-            'ClientRef' => '000023670011',
-        );
+                'OriginalAuthorizationGroup' => array(
+                    'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                    'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                    'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                    'OriginalSTAN' => $response->getSTAN(),
+                    'OriginalResponseCode' => $response->getResponseCode(),
+                ),
+                'amount' => '21400',
+                'currency' => '840',
+                'ClientRef' => '000023670011',
+            );
 
-        // Act
-        $request = $gateway->partialReversal($requestData);
-        $response = $request->send();
+            // Act
+            $request = $gateway->partialReversal($requestData);
+            $response = $request->send();
 
         // Assert
         try {
@@ -35315,9 +35275,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -38227,9 +38185,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '750010',
@@ -40062,9 +40018,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '450010',
@@ -41780,9 +41734,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -41854,6 +41806,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '520011',
             ),
             'amount' => '812',
             'currency' => '840',
@@ -42034,9 +41989,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '540010',
@@ -42102,6 +42055,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '540011',
             ),
             'amount' => '812',
             'currency' => '840',
@@ -42279,9 +42235,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'CustomerInformationGroup' => array(
                 'AVSBillingAddress' => '1307 Broad Hollow Road',
@@ -42352,6 +42306,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'AuthorizationType' => '0',
                 'MasterCardACI' => 'I',
                 'MasterCardAdditionalData' => '0000000000000',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '560011',
             ),
             'amount' => '1246',
             'currency' => '840',
@@ -44664,9 +44621,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '660010',
@@ -44830,9 +44785,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '670010',
@@ -44992,9 +44945,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '770010',
@@ -45154,9 +45105,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'MerchantCountry' => '840',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'AuthorizationType' => '1',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '780010',
