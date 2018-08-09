@@ -4967,8 +4967,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -9344,7 +9344,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
 
-
+        /*
         // Arrange
         $requestData = array(
             'card' => array(
@@ -9410,6 +9410,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             }
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
+        */
     }
 
 
@@ -9610,7 +9611,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
 
-
+        /*
         // Arrange
         $requestData = array(
             'card' => array(
@@ -9676,6 +9677,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             }
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
+        */
     }
 
 
@@ -9873,7 +9875,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
 
-
+        /*
         // Arrange
         $requestData = array(
             'card' => array(
@@ -9939,6 +9941,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             }
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
+        */
     }
 
 
@@ -10139,7 +10142,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
 
-
+        /*
         // Arrange
         $requestData = array(
             'card' => array(
@@ -10205,6 +10208,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             }
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
+        */
     }
 
 
@@ -18020,8 +18024,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -18190,8 +18194,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -18545,8 +18549,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -18899,8 +18903,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -19084,8 +19088,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -19269,8 +19273,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -23887,8 +23891,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -26193,7 +26197,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
 
-
+        /*
         // Arrange
         $requestData = array(
             'card' => array(
@@ -26260,6 +26264,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             }
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
+        */
     }
 
 
@@ -26462,7 +26467,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
 
-
+        /*
         // Arrange
         $requestData = array(
             'card' => array(
@@ -26529,6 +26534,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             }
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
+        */
     }
 
 
@@ -29326,8 +29332,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -29697,8 +29703,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -35001,8 +35007,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
                 'OriginalAuthorizationGroup' => array(
                     'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -38242,8 +38248,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
@@ -41790,6 +41796,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '1',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => str_pad('', 13, '0'),
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '520011',
@@ -42003,7 +42011,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
 
-
+        /*
         // Arrange
         $requestData = array(
             'card' => array(
@@ -42065,6 +42073,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             }
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
+        */
     }
 
 
@@ -42252,7 +42261,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
 
-
+        /*
         // Arrange
         $requestData = array(
             'card' => array(
@@ -42314,6 +42323,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             }
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
+        */
     }
 
 
@@ -44672,8 +44682,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MasterCardACI' => 'I',
-                'MasterCardAdditionalData' => '0000000000000',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => '0000000000000',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
