@@ -4891,7 +4891,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommURL' => 'google.com',
             ),
             'MastercardGroup' => array(
-                'AuthorizationType' => '1000138880010',
+                'AuthorizationType' => '0',
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalSTAN' => '870010',
