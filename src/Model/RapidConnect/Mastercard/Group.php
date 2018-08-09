@@ -39,11 +39,11 @@ class Group extends BaseGroup
             }
             $data->MCGrp->TranEditErrCode = $this->getTransactionEditErrorCode();
         }
-        if ($this->getMasterCardPOSData() !== null) {
-            if (!$this->validateMasterCardPOSData()) {
+        if ($this->getMastercardPOSData() !== null) {
+            if (!$this->validateMastercardPOSData()) {
                 throw new InvalidRequestException("Invalid mastercard pos data");
             }
-            $data->MCGrp->MCPOSData = $this->getMasterCardPOSData();
+            $data->MCGrp->MCPOSData = $this->getMastercardPOSData();
         }
         if ($this->getDeviceTypeIndicator() !== null) {
             if (!$this->validateDeviceTypeIndicator()) {
@@ -51,17 +51,17 @@ class Group extends BaseGroup
             }
             $data->MCGrp->DevTypeInd = $this->getDeviceTypeIndicator();
         }
-        if ($this->getMasterCardACI() !== null) {
-            if (!$this->validateMasterCardACI()) {
+        if ($this->getMastercardACI() !== null) {
+            if (!$this->validateMastercardACI()) {
                 throw new InvalidRequestException("Invalid mastercard aci");
             }
-            $data->MCGrp->MCACI = $this->getMasterCardACI();
+            $data->MCGrp->MCACI = $this->getMastercardACI();
         }
-        if ($this->getMasterCardAdditionalData() !== null) {
-            if (!$this->validateMasterCardAdditionalData()) {
+        if ($this->getMastercardAdditionalData() !== null) {
+            if (!$this->validateMastercardAdditionalData()) {
                 throw new InvalidRequestException("Invalid mastercard additional data");
             }
-            $data->MCGrp->MCAddData = $this->getMasterCardAdditionalData();
+            $data->MCGrp->MCAddData = $this->getMastercardAdditionalData();
         }
         if ($this->getAuthorizationType() !== null) {
             if (!$this->validateAuthorizationType()) {
@@ -204,9 +204,9 @@ class Group extends BaseGroup
     /**
      * @return string
      */
-    public function getMasterCardPOSData()
+    public function getMastercardPOSData()
     {
-        return $this->getParameter('MasterCardPOSData');
+        return $this->getParameter('MastercardPOSData');
     }
 
 
@@ -214,18 +214,18 @@ class Group extends BaseGroup
      * @param $value
      * @return string
      */
-    public function setMasterCardPOSData($value)
+    public function setMastercardPOSData($value)
     {
-        return $this->setParameter('MasterCardPOSData', $value);
+        return $this->setParameter('MastercardPOSData', $value);
     }
 
 
     /**
      * @return bool
      */
-    public function validateMasterCardPOSData()
+    public function validateMastercardPOSData()
     {
-        $value = $this->getParameter('MasterCardPOSData');
+        $value = $this->getParameter('MastercardPOSData');
         if (!preg_match('/[0-9A-Za-z]{12,12}/', $value)) {
             return false;
         }
@@ -274,9 +274,9 @@ class Group extends BaseGroup
     /**
      * @return string
      */
-    public function getMasterCardACI()
+    public function getMastercardACI()
     {
-        return $this->getParameter('MasterCardACI');
+        return $this->getParameter('MastercardACI');
     }
 
 
@@ -284,18 +284,18 @@ class Group extends BaseGroup
      * @param $value
      * @return string
      */
-    public function setMasterCardACI($value)
+    public function setMastercardACI($value)
     {
-        return $this->setParameter('MasterCardACI', $value);
+        return $this->setParameter('MastercardACI', $value);
     }
 
 
     /**
      * @return bool
      */
-    public function validateMasterCardACI()
+    public function validateMastercardACI()
     {
-        $value = $this->getParameter('MasterCardACI');
+        $value = $this->getParameter('MastercardACI');
         $valid = array('P', 'I');
         return in_array($value, $valid);
     }
@@ -304,9 +304,9 @@ class Group extends BaseGroup
     /**
      * @return string
      */
-    public function getMasterCardAdditionalData()
+    public function getMastercardAdditionalData()
     {
-        return $this->getParameter('MasterCardAdditionalData');
+        return $this->getParameter('MastercardAdditionalData');
     }
 
 
@@ -314,18 +314,18 @@ class Group extends BaseGroup
      * @param $value
      * @return string
      */
-    public function setMasterCardAdditionalData($value)
+    public function setMastercardAdditionalData($value)
     {
-        return $this->setParameter('MasterCardAdditionalData', $value);
+        return $this->setParameter('MastercardAdditionalData', $value);
     }
 
 
     /**
      * @return bool
      */
-    public function validateMasterCardAdditionalData()
+    public function validateMastercardAdditionalData()
     {
-        $value = $this->getParameter('MasterCardAdditionalData');
+        $value = $this->getParameter('MastercardAdditionalData');
         if (!preg_match('/[0-9A-Za-z]{13,13}/', $value)) {
             return false;
         }
