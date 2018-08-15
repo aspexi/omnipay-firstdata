@@ -65,7 +65,7 @@ class Group extends BaseGroup
         }
         if ($this->getAuthorizationType() !== null) {
             if (!$this->validateAuthorizationType()) {
-                throw new InvalidRequestException("Invalid authorization type");
+                throw new InvalidRequestException("Invalid authorization type: " . $this->getAuthorizationType());
             }
             $data->MCGrp->FinAuthInd = $this->getAuthorizationType();
         }

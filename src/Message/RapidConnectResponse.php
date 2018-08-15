@@ -34,6 +34,11 @@ class RapidConnectResponse extends AbstractResponse
             }
             throw new InvalidResponseException();
         }
+$output = simplexml_load_string($xml->TransactionResponse->Payload, 'SimpleXMLElement', LIBXML_NOWARNING);//+++++
+$logfile = fopen('/tmp/rc.log', 'a');//+++++
+fwrite($logfile, "\n********** Response\n" . print_r($output, TRUE));//+++++
+//fwrite($logfile, "\n********** Response\n" . $xml->TransactionResponse->Payload);//+++++
+fclose($logfile);//+++++
 
         parent::__construct($request, $xml);
     }
@@ -241,6 +246,32 @@ class RapidConnectResponse extends AbstractResponse
         $mastercardGroup = $this->getMastercardGroup();
         if ($mastercardGroup !== null && isset($mastercardGroup->MCAddData)) {
             return $mastercardGroup->MCAddData;
+        }
+        return null;
+    }
+
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
+    public function getBankNetData()
+    {
+        $mastercardGroup = $this->getMastercardGroup();
+        if ($mastercardGroup !== null && isset($mastercardGroup->BanknetData)) {
+            return $mastercardGroup->BanknetData;
+        }
+        return null;
+    }
+
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
+    public function getTransactionIntegrityClass()
+    {
+        $mastercardGroup = $this->getMastercardGroup();
+        if ($mastercardGroup !== null && isset($mastercardGroup->TranIntgClass)) {
+            return $mastercardGroup->TranIntgClass;
         }
         return null;
     }
