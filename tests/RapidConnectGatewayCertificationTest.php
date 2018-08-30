@@ -8,7 +8,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
 {
     public $responses;
 
-
     public function setUp()
     {
         parent::setUp();
@@ -5785,11 +5784,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '000011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '000011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '84002',
             'currency' => '840',
@@ -5938,11 +5937,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '020011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '020011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '84202',
             'currency' => '840',
@@ -6244,11 +6243,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '090011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '090011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '19606',
             'currency' => '840',
@@ -6397,11 +6396,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '160011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '160011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34350',
             'currency' => '840',
@@ -6550,11 +6549,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '180011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '180011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34550',
             'currency' => '840',
@@ -6703,11 +6702,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '250011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '250011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '1602',
             'currency' => '840',
@@ -7009,11 +7008,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '290011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '290011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '2610',
             'currency' => '840',
@@ -12587,11 +12586,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '130011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '130011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '21031',
             'currency' => '840',
@@ -13296,11 +13295,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '260011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '260011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '21044',
             'currency' => '840',
@@ -17334,11 +17333,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '950011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '950011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '57711',
             'currency' => '840',
@@ -17496,11 +17495,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '960011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '960011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '57208',
             'currency' => '840',
@@ -25075,11 +25074,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '040011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '040011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '7678',
             'currency' => '840',
@@ -25230,11 +25229,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '200011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '200011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34750',
             'currency' => '840',
@@ -25385,11 +25384,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '300011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '300011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '2612',
             'currency' => '840',
@@ -35063,13 +35062,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
+        $track1 = "%B5424180011113336^YATES^" .
+            $expirationDate->format('ym') .
+            "1011";
+        $track1 .= str_pad($track1, 79-strlen($track1), "0");
+        $track2 = "5424180011113336=" .
+            $expirationDate->format('ym') .
+            "1011";
+        $track2 = str_pad($track2, 40-strlen($track2)-1, "0");
+
         $requestData = array(
-            'card' => array(
-                'number' => '5424180011113336',
-                'expiryMonth' => $expiryMonth,
-                'expiryYear' => $expiryYear,
-                'type' => 'mastercard',
-            ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
                 'LocalDateandTime' => $now->format('Ymdhis'),
@@ -35092,6 +35094,12 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
+            'CardGroup' => array(
+                'Track2Data' => $track2,
+                'CardType' => 'MasterCard',
+                'MergeWithExisting' => false,
+            ),
+
             'amount' => '000',
             'currency' => '840',
             'ClientRef' => '000023780010',
@@ -36341,13 +36349,16 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
+        $track1 = "%B5424181111112228^YATES^" .
+            $expirationDate->format('ym') .
+            "1011";
+        $track1 .= str_pad($track1, 79-strlen($track1), "0");
+        $track2 = "5424181111112228=" .
+            $expirationDate->format('ym') .
+            "1011";
+        $track2 = str_pad($track2, 40-strlen($track2)-1, "0");
+
         $requestData = array(
-            'card' => array(
-                'number' => '5424181111112228',
-                'expiryMonth' => $expiryMonth,
-                'expiryYear' => $expiryYear,
-                'type' => 'mastercard',
-            ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
                 'LocalDateandTime' => $now->format('Ymdhis'),
@@ -36369,6 +36380,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
+            ),
+            'CardGroup' => array(
+                'Track2Data' => $track2,
+                'CardType' => 'MasterCard',
+                'MergeWithExisting' => false,
             ),
             'amount' => '000',
             'currency' => '840',
@@ -39313,11 +39329,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '830011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '830011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '12722',
             'currency' => '840',
@@ -39471,11 +39487,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '840011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '840011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '6096',
             'currency' => '840',
@@ -40463,11 +40479,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '140011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '140011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34150',
             'currency' => '840',
@@ -40755,11 +40771,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '190011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '190011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '101142',
             'currency' => '840',
