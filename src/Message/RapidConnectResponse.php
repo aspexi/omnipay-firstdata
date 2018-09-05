@@ -246,6 +246,32 @@ class RapidConnectResponse extends AbstractResponse
     }
 
     /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
+    public function getBankNetData()
+    {
+        $mastercardGroup = $this->getMastercardGroup();
+        if ($mastercardGroup !== null && isset($mastercardGroup->BanknetData)) {
+            return $mastercardGroup->BanknetData;
+        }
+        return null;
+    }
+
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
+    public function getTransactionIntegrityClass()
+    {
+        $mastercardGroup = $this->getMastercardGroup();
+        if ($mastercardGroup !== null && isset($mastercardGroup->TranIntgClass)) {
+            return $mastercardGroup->TranIntgClass;
+        }
+        return null;
+    }
+
+    /**
      * @return null
      * @throws InvalidResponseException
      */
