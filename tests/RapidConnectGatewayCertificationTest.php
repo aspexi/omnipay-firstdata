@@ -38259,8 +38259,9 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
-                'MastercardACI' => 'I',
                 'MastercardAdditionalData' => '0000000000000',
+                'BankNetData' => $response->getBankNetData(),
+                'TransactionIntegrityClass' => $response->getTransactionIntegrityClass(),
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => $response->getAuthorizationID(),
