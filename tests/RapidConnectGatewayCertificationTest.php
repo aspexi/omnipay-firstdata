@@ -8,7 +8,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
 {
     public $responses;
 
-
     public function setUp()
     {
         parent::setUp();
@@ -39,16 +38,15 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
+
 
         $requestData = array(
             'card' => array(
@@ -62,8 +60,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -135,11 +131,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
+
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
@@ -158,8 +154,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -226,10 +220,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -249,8 +241,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -317,10 +307,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -340,8 +328,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -408,10 +394,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -431,8 +415,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -499,10 +481,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -519,8 +499,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -583,10 +561,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -606,8 +582,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -677,8 +651,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -765,10 +737,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -788,8 +758,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -853,10 +821,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -876,8 +842,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -941,10 +905,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -964,8 +926,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -1037,10 +997,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -1060,8 +1018,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -1138,8 +1094,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -1224,10 +1178,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -1247,8 +1199,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -1319,10 +1269,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -1342,8 +1290,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -1410,10 +1356,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -1433,8 +1377,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -1505,10 +1447,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -1528,8 +1468,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -1596,10 +1534,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -1619,8 +1555,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -1691,10 +1625,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -1714,8 +1646,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -1782,10 +1712,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -1805,8 +1733,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -1873,10 +1799,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -1896,8 +1820,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -1964,10 +1886,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -1987,8 +1907,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2052,10 +1970,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -2075,8 +1991,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2140,10 +2054,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -2163,8 +2075,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2228,10 +2138,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -2251,8 +2159,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2316,10 +2222,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -2336,8 +2240,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2395,10 +2297,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -2418,8 +2318,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2488,10 +2386,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -2508,8 +2404,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2567,10 +2461,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -2587,8 +2479,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2646,10 +2536,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -2668,8 +2556,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2734,10 +2620,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -2754,8 +2638,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2813,10 +2695,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -2835,8 +2715,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2902,8 +2780,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -2985,10 +2861,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -3008,8 +2882,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3074,8 +2946,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3147,10 +3017,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -3168,8 +3036,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3229,8 +3095,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3302,10 +3166,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -3324,8 +3186,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3391,8 +3251,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3474,10 +3332,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -3496,8 +3352,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3560,10 +3414,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -3583,8 +3435,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3649,8 +3499,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3732,10 +3580,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -3755,8 +3601,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3824,8 +3668,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3907,10 +3749,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -3929,8 +3769,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -3994,8 +3832,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -4067,10 +3903,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -4088,8 +3922,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -4152,8 +3984,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -4225,10 +4055,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -4247,8 +4075,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -4312,8 +4138,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -4395,10 +4219,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -4418,8 +4240,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -4486,10 +4306,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -4508,8 +4326,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -4582,8 +4398,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -4664,10 +4478,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -4685,8 +4497,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -4758,8 +4568,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -4843,10 +4651,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -4865,8 +4671,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -4934,8 +4738,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5014,10 +4816,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -5035,8 +4835,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5108,8 +4906,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5193,10 +4989,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -5215,8 +5009,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5282,8 +5074,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5365,10 +5155,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -5386,8 +5174,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5447,8 +5233,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5520,10 +5304,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -5541,8 +5323,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5602,8 +5382,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5675,10 +5453,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -5695,8 +5471,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5755,8 +5529,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5786,11 +5558,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '000011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '000011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '84002',
             'currency' => '840',
@@ -5828,10 +5600,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -5848,8 +5618,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5908,8 +5676,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -5939,11 +5705,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '020011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '020011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '84202',
             'currency' => '840',
@@ -5981,10 +5747,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -6001,8 +5765,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6061,8 +5823,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6134,10 +5894,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -6154,8 +5912,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6214,8 +5970,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6245,11 +5999,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '090011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '090011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '19606',
             'currency' => '840',
@@ -6287,10 +6041,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -6307,8 +6059,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6367,8 +6117,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6398,11 +6146,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '160011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '160011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34350',
             'currency' => '840',
@@ -6440,10 +6188,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -6460,8 +6206,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6520,8 +6264,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6551,11 +6293,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '02',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '180011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '180011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34550',
             'currency' => '840',
@@ -6593,10 +6335,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -6613,8 +6353,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6673,8 +6411,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6704,11 +6440,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '01',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '250011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '250011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '1602',
             'currency' => '840',
@@ -6746,10 +6482,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -6766,8 +6500,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6826,8 +6558,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6899,10 +6629,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -6919,8 +6647,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -6979,8 +6705,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7010,11 +6734,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '290011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '290011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '2610',
             'currency' => '840',
@@ -7052,10 +6776,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -7072,8 +6794,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7131,10 +6851,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -7151,8 +6869,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7210,10 +6926,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -7230,8 +6944,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7289,10 +7001,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -7309,8 +7019,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7368,10 +7076,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -7391,8 +7097,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7456,10 +7160,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -7479,8 +7181,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7544,10 +7244,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -7564,8 +7262,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7624,8 +7320,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7702,10 +7396,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -7722,8 +7414,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7782,8 +7472,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7860,10 +7548,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -7883,8 +7569,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -7949,8 +7633,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8031,10 +7713,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -8054,8 +7734,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8120,8 +7798,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8202,10 +7878,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -8225,8 +7899,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8294,8 +7966,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8370,16 +8040,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -8390,8 +8063,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8433,7 +8104,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '12001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '120012',
                 'OriginalResponseCode' => '000',
@@ -8473,10 +8144,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -8495,8 +8164,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8563,8 +8230,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8639,16 +8304,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -8659,8 +8327,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8697,7 +8363,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '14001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '140012',
                 'OriginalResponseCode' => '000',
@@ -8737,10 +8403,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -8760,8 +8424,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8826,8 +8488,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8899,16 +8559,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -8919,8 +8582,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -8962,7 +8623,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '32001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '320012',
                 'OriginalResponseCode' => '000',
@@ -9002,10 +8663,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -9024,8 +8683,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -9089,8 +8746,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -9162,16 +8817,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -9182,8 +8840,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -9220,7 +8876,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '34001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '340012',
                 'OriginalResponseCode' => '000',
@@ -9260,10 +8916,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -9283,8 +8937,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -9356,8 +9008,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -9423,10 +9073,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -9434,6 +9082,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
+        
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -9443,8 +9096,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -9489,7 +9140,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '02001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '020012',
                 'OriginalResponseCode' => '000',
@@ -9529,10 +9180,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -9551,8 +9200,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -9623,8 +9270,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -9690,16 +9335,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -9710,8 +9358,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -9751,7 +9397,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '04001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '040012',
                 'OriginalResponseCode' => '000',
@@ -9791,10 +9437,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -9814,8 +9458,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -9887,8 +9529,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -9954,16 +9594,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -9974,8 +9617,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -10020,7 +9661,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '22001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '220012',
                 'OriginalResponseCode' => '000',
@@ -10060,10 +9701,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -10082,8 +9721,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -10154,8 +9791,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -10221,16 +9856,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -10241,8 +9879,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -10282,7 +9918,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '24001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '240012',
                 'OriginalResponseCode' => '000',
@@ -10322,10 +9958,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -10345,8 +9979,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -10413,10 +10045,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -10436,8 +10066,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -10505,8 +10133,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -10588,10 +10214,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -10608,8 +10232,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -10667,10 +10289,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -10690,8 +10310,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -10759,8 +10377,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -10832,10 +10448,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -10855,8 +10469,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -10923,10 +10535,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -10943,8 +10553,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11002,10 +10610,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -11025,8 +10631,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11094,8 +10698,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11167,10 +10769,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -11188,8 +10788,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11252,8 +10850,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11330,10 +10926,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -11350,8 +10944,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11409,10 +11001,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -11430,8 +11020,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11494,8 +11082,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11567,10 +11153,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -11588,8 +11172,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11651,10 +11233,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -11671,8 +11251,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11730,10 +11308,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -11751,8 +11327,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11815,8 +11389,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11888,10 +11460,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -11911,8 +11481,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -11977,8 +11545,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12060,10 +11626,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -12080,8 +11644,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12139,10 +11701,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -12162,8 +11722,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12228,8 +11786,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12301,10 +11857,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -12324,8 +11878,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12389,10 +11941,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -12409,8 +11959,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12468,10 +12016,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -12491,8 +12037,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12557,8 +12101,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12588,11 +12130,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '130011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '130011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '21031',
             'currency' => '840',
@@ -12630,10 +12172,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -12651,8 +12191,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12712,8 +12250,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12790,10 +12326,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -12810,8 +12344,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12869,10 +12401,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -12890,8 +12420,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -12951,8 +12479,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13024,10 +12550,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -13045,8 +12569,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13105,10 +12627,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -13125,8 +12645,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13184,10 +12702,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -13205,8 +12721,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13266,8 +12780,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13297,11 +12809,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '260011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '260011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '21044',
             'currency' => '840',
@@ -13339,10 +12851,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -13361,8 +12871,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13427,10 +12935,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -13450,8 +12956,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13520,10 +13024,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -13542,8 +13044,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13603,10 +13103,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -13625,8 +13123,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13694,10 +13190,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -13716,8 +13210,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13785,10 +13277,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -13808,8 +13298,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13881,10 +13369,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -13902,8 +13388,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -13970,10 +13454,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -13991,8 +13473,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -14059,10 +13539,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -14082,8 +13560,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -14150,10 +13626,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -14172,8 +13646,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -14233,10 +13705,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -14255,8 +13725,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -14319,10 +13787,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -14342,8 +13808,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -14410,10 +13874,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -14432,8 +13894,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -14501,10 +13961,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -14524,8 +13982,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -14597,10 +14053,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -14619,8 +14073,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -14683,10 +14135,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -14705,8 +14155,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -14774,10 +14222,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -14796,8 +14242,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -14865,10 +14309,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -14888,8 +14330,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -14961,10 +14401,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -14982,8 +14420,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -15050,10 +14486,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -15071,8 +14505,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -15139,10 +14571,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -15162,8 +14592,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -15235,10 +14663,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -15257,8 +14683,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -15324,8 +14748,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -15402,10 +14824,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -15425,8 +14845,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -15496,8 +14914,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -15574,10 +14990,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -15597,8 +15011,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -15663,8 +15075,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -15745,10 +15155,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -15768,8 +15176,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -15837,8 +15243,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -15910,10 +15314,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -15933,8 +15335,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16002,8 +15402,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16075,10 +15473,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -16097,8 +15493,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16159,8 +15553,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16232,10 +15624,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -16255,8 +15645,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16321,8 +15709,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16394,10 +15780,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -16416,8 +15800,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16478,8 +15860,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16551,10 +15931,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -16573,8 +15951,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16635,8 +16011,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16718,10 +16092,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -16741,8 +16113,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16807,8 +16177,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16880,10 +16248,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -16903,8 +16269,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -16972,8 +16336,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17045,10 +16407,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -17068,8 +16428,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17137,8 +16495,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17220,10 +16576,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -17242,8 +16596,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17304,8 +16656,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17335,11 +16685,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '950011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '950011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '57711',
             'currency' => '840',
@@ -17377,10 +16727,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -17400,8 +16748,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17466,8 +16812,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17497,11 +16841,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '960011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '960011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '57208',
             'currency' => '840',
@@ -17539,10 +16883,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -17562,8 +16904,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17631,8 +16971,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17704,10 +17042,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -17726,8 +17062,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17800,8 +17134,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17886,10 +17218,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -17909,8 +17239,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -17987,8 +17315,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -18072,10 +17398,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -18094,8 +17418,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -18163,8 +17485,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -18243,10 +17563,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -18266,8 +17584,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -18344,8 +17660,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -18430,10 +17744,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -18451,8 +17763,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -18519,8 +17829,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -18599,10 +17907,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -18620,8 +17926,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -18688,8 +17992,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -18773,10 +18075,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -18795,8 +18095,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -18869,8 +18167,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -18954,10 +18250,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -18977,8 +18271,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -19055,8 +18347,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -19140,10 +18430,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -19163,8 +18451,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -19241,8 +18527,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -19326,10 +18610,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -19348,8 +18630,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -19422,8 +18702,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -19508,10 +18786,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -19530,8 +18806,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -19595,8 +18869,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -19671,10 +18943,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -19694,8 +18964,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -19768,8 +19036,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -19849,10 +19115,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -19870,8 +19134,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -19935,10 +19197,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -19956,8 +19216,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20021,10 +19279,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -20044,8 +19300,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20109,10 +19363,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -20130,8 +19382,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20198,10 +19448,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -20219,8 +19467,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20287,10 +19533,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -20310,8 +19554,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20376,8 +19618,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20459,10 +19699,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -20482,8 +19720,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20548,8 +19784,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20631,10 +19865,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -20654,8 +19886,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20720,8 +19950,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20803,10 +20031,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -20826,8 +20052,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20892,8 +20116,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -20975,10 +20197,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -20998,8 +20218,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21064,8 +20282,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21147,10 +20363,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -21168,8 +20382,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21229,8 +20441,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21311,10 +20521,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -21332,8 +20540,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21393,8 +20599,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21475,10 +20679,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -21496,8 +20698,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21557,8 +20757,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21639,10 +20837,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -21660,8 +20856,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21721,8 +20915,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21803,10 +20995,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -21824,8 +21014,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21892,8 +21080,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -21977,10 +21163,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -21998,8 +21182,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -22066,8 +21248,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -22151,10 +21331,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -22172,8 +21350,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -22233,8 +21409,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -22315,10 +21489,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -22336,8 +21508,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -22397,8 +21567,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -22479,10 +21647,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -22502,8 +21668,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -22578,10 +21742,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -22601,8 +21763,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -22672,10 +21832,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -22695,8 +21853,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -22762,8 +21918,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -22841,10 +21995,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -22864,8 +22016,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -22931,8 +22081,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23010,10 +22158,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -23033,8 +22179,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23107,8 +22251,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23189,10 +22331,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -23212,8 +22352,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23281,10 +22419,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -23301,8 +22437,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23361,10 +22495,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -23381,8 +22513,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23441,10 +22571,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -23461,8 +22589,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23521,10 +22647,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -23543,8 +22667,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23608,10 +22730,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -23631,8 +22751,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23698,8 +22816,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23772,10 +22888,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -23794,8 +22908,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23864,8 +22976,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -23945,10 +23055,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -23968,8 +23076,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24035,8 +23141,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24109,10 +23213,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -24131,8 +23233,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24199,8 +23299,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24283,10 +23381,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -24306,8 +23402,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24373,8 +23467,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24447,10 +23539,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -24469,8 +23559,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24536,10 +23624,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -24558,8 +23644,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24628,10 +23712,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -24650,8 +23732,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24717,10 +23797,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -24739,8 +23817,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24806,10 +23882,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -24829,8 +23903,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24896,8 +23968,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -24970,10 +24040,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -24990,8 +24058,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25051,8 +24117,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25083,11 +24147,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '040011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '040011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '7678',
             'currency' => '840',
@@ -25125,10 +24189,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -25145,8 +24207,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25206,8 +24266,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25238,11 +24296,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '200011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '200011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34750',
             'currency' => '840',
@@ -25280,10 +24338,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -25300,8 +24356,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25361,8 +24415,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25393,11 +24445,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '300011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '300011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '2612',
             'currency' => '840',
@@ -25435,10 +24487,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -25455,8 +24505,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25516,8 +24564,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25590,10 +24636,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -25613,8 +24657,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25680,8 +24722,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25754,16 +24794,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -25774,8 +24817,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25818,7 +24859,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '92001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '920012',
                 'OriginalResponseCode' => '000',
@@ -25858,10 +24899,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -25880,8 +24919,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -25946,8 +24983,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26020,16 +25055,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -26040,8 +25078,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26079,7 +25115,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '94001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '940012',
                 'OriginalResponseCode' => '000',
@@ -26119,10 +25155,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -26142,8 +25176,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26216,8 +25248,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26284,16 +25314,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -26304,8 +25337,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26351,7 +25382,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '82001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '820012',
                 'OriginalResponseCode' => '000',
@@ -26391,10 +25422,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -26413,8 +25442,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26486,8 +25513,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26554,16 +25579,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -26574,8 +25602,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26616,7 +25642,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '84001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '840012',
                 'OriginalResponseCode' => '000',
@@ -26656,10 +25682,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -26679,8 +25703,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26744,10 +25766,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -26767,8 +25787,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26834,8 +25852,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26918,10 +25934,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -26938,8 +25952,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -26998,10 +26010,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -27021,8 +26031,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27088,8 +26096,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27162,10 +26168,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -27185,8 +26189,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27251,10 +26253,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -27271,8 +26271,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27331,10 +26329,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -27354,8 +26350,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27421,8 +26415,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27495,10 +26487,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -27516,8 +26506,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27578,8 +26566,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27657,10 +26643,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -27677,8 +26661,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27737,10 +26719,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -27758,8 +26738,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27820,8 +26798,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27894,10 +26870,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -27915,8 +26889,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -27976,10 +26948,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -27996,8 +26966,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -28056,10 +27024,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -28077,8 +27043,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -28139,8 +27103,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -28213,16 +27175,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -28233,8 +27198,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -28272,7 +27235,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '22001000',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '220010',
                 'OriginalResponseCode' => '000',
@@ -28312,10 +27275,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -28323,6 +27284,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
 
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
+        
         $requestData = array(
             'card' => array(
                 'number' => '5424180273333333',
@@ -28332,8 +27298,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -28374,7 +27338,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '26001000',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '260010',
                 'OriginalResponseCode' => '000',
@@ -28414,16 +27378,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_MOTO'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_MOTO'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -28434,8 +27401,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -28473,7 +27438,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '32001000',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '320010',
                 'OriginalResponseCode' => '000',
@@ -28513,10 +27478,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -28535,8 +27498,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -28603,8 +27564,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -28682,10 +27641,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -28704,8 +27661,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -28772,8 +27727,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -28856,10 +27809,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -28879,8 +27830,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -28951,8 +27900,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -29030,10 +27977,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -29053,8 +27998,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -29120,8 +28063,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -29204,10 +28145,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -29226,8 +28165,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -29301,8 +28238,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -29387,10 +28322,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -29409,8 +28342,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -29484,8 +28415,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -29571,10 +28500,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -29594,8 +28521,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -29673,8 +28598,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -29759,10 +28682,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -29782,8 +28703,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -29861,8 +28780,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -29948,10 +28865,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -29970,8 +28885,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -30038,8 +28951,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -30117,10 +29028,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -30139,8 +29048,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -30207,8 +29114,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -30291,10 +29196,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -30314,8 +29217,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -30386,8 +29287,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -30465,10 +29364,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -30488,8 +29385,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -30555,8 +29450,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -30639,10 +29532,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -30662,8 +29553,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -30733,10 +29622,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -30756,8 +29643,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -30827,10 +29712,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -30849,8 +29732,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -30916,10 +29797,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -30938,8 +29817,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31005,10 +29882,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -31027,8 +29902,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31097,10 +29970,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -31119,8 +29990,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31189,10 +30058,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -31211,8 +30078,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31278,10 +30143,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -31299,8 +30162,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31361,8 +30222,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31444,10 +30303,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -31465,8 +30322,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31527,8 +30382,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31610,10 +30463,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -31631,8 +30482,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31693,8 +30542,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31776,10 +30623,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -31797,8 +30642,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31859,8 +30702,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -31942,10 +30783,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -31963,8 +30802,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32032,8 +30869,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32118,10 +30953,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -32139,8 +30972,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32208,8 +31039,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32294,10 +31123,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -32317,8 +31144,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32384,8 +31209,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32468,10 +31291,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -32489,8 +31310,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32551,8 +31370,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32634,10 +31451,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -32655,8 +31470,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32717,8 +31530,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32800,10 +31611,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -32823,8 +31632,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32890,8 +31697,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -32974,10 +31779,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -32997,8 +31800,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -33064,8 +31865,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -33138,10 +31937,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -33161,8 +31958,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -33233,8 +32028,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -33312,10 +32105,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -33335,8 +32126,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -33402,8 +32191,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -33476,10 +32263,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -33499,8 +32284,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -33566,8 +32349,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -33645,10 +32426,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -33668,8 +32447,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -33735,8 +32512,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -33814,10 +32589,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -33837,8 +32610,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -33898,10 +32669,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -33918,8 +32687,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -33974,8 +32741,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -34048,10 +32813,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -34059,6 +32822,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
+        
         $requestData = array(
             'card' => array(
                 'number' => '4005562231212149',
@@ -34068,8 +32836,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -34102,7 +32868,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '64001000',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '640010',
                 'OriginalResponseCode' => '000',
@@ -34142,10 +32908,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -34165,8 +32929,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -34231,10 +32993,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -34254,8 +33014,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -34320,10 +33078,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -34343,8 +33099,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -34409,10 +33163,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -34432,8 +33184,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -34498,10 +33248,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -34518,8 +33266,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -34573,10 +33319,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -34596,8 +33340,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -34661,10 +33403,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -34684,8 +33424,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -34749,10 +33487,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -34769,8 +33505,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -34825,8 +33559,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -34899,10 +33631,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -34919,8 +33649,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -34982,8 +33710,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -35014,28 +33740,28 @@ class RapidConnectGatewayCertificationTest extends TestCase
                     'AdditionalAmountCurrency' => '840',
                     'AdditionalAmountType' => 'TotalAuthAmt',
                 ),
-                ),
+            ),
             'MastercardGroup' => array(
                 'AuthorizationType' => '0',
                 'MastercardAdditionalData' => '0000000000000',
                 'BankNetData' => $response->getBankNetData(),
                 'TransactionIntegrityClass' => $response->getTransactionIntegrityClass(),
             ),
-                'OriginalAuthorizationGroup' => array(
-                    'OriginalAuthorizationID' => $response->getAuthorizationID(),
-                    'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
-                    'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                    'OriginalSTAN' => $response->getSTAN(),
-                    'OriginalResponseCode' => $response->getResponseCode(),
-                ),
-                'amount' => '21400',
-                'currency' => '840',
-                'ClientRef' => '000023670011',
-            );
+            'OriginalAuthorizationGroup' => array(
+                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
+                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalSTAN' => $response->getSTAN(),
+                'OriginalResponseCode' => $response->getResponseCode(),
+            ),
+            'amount' => '21400',
+            'currency' => '840',
+            'ClientRef' => '000023670011',
+        );
 
-            // Act
-            $request = $gateway->partialReversal($requestData);
-            $response = $request->send();
+        // Act
+        $request = $gateway->partialReversal($requestData);
+        $response = $request->send();
 
         // Assert
         try {
@@ -35063,10 +33789,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -35074,17 +33798,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
+        $track1 = "%B5424180011113336^YATES^" .
+            $expirationDate->format('ym') .
+            "1011";
+        $track1 .= str_pad($track1, 79 - strlen($track1), "0");
+        $track2 = "5424180011113336=" .
+            $expirationDate->format('ym') .
+            "1011";
+        $track2 = str_pad($track2, 40 - strlen($track2) - 1, "0");
+
         $requestData = array(
-            'card' => array(
-                'number' => '379605177111118',
-                'expiryMonth' => $expiryMonth,
-                'expiryYear' => $expiryYear,
-                'type' => 'amex',
-            ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -35102,6 +33827,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
+            ),
+            'CardGroup' => array(
+                'Track2Data' => $track2,
+                'CardType' => 'MasterCard',
+                'MergeWithExisting' => false,
             ),
             'amount' => '35276',
             'currency' => '840',
@@ -35138,10 +33868,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -35161,8 +33889,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -35229,10 +33955,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -35252,8 +33976,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -35324,16 +34046,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -35344,8 +34069,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -35381,7 +34104,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '04001000',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '040010',
                 'OriginalResponseCode' => '000',
@@ -35421,10 +34144,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -35444,8 +34165,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -35511,8 +34230,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -35586,10 +34303,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -35609,8 +34324,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -35681,8 +34394,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -35756,10 +34467,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -35779,8 +34488,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -35846,8 +34553,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -35921,10 +34626,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -35944,8 +34647,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -36011,8 +34712,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -36090,10 +34789,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -36113,8 +34810,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -36180,8 +34875,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -36259,10 +34952,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -36281,8 +34972,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -36341,10 +35030,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -36352,17 +35039,18 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
+        $track1 = "%B5424181111112228^YATES^" .
+            $expirationDate->format('ym') .
+            "1011";
+        $track1 .= str_pad($track1, 79 - strlen($track1), "0");
+        $track2 = "5424181111112228=" .
+            $expirationDate->format('ym') .
+            "1011";
+        $track2 = str_pad($track2, 40 - strlen($track2) - 1, "0");
+
         $requestData = array(
-            'card' => array(
-                'number' => '5424181111112228',
-                'expiryMonth' => $expiryMonth,
-                'expiryYear' => $expiryYear,
-                'type' => 'mastercard',
-            ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -36380,6 +35068,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
+            ),
+            'CardGroup' => array(
+                'Track2Data' => $track2,
+                'CardType' => 'MasterCard',
+                'MergeWithExisting' => false,
             ),
             'amount' => '000',
             'currency' => '840',
@@ -36416,10 +35109,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -36436,8 +35127,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -36491,10 +35180,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -36511,8 +35198,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -36571,10 +35256,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -36591,8 +35274,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -36646,10 +35327,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -36666,8 +35345,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -36721,10 +35398,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -36741,8 +35416,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -36796,10 +35469,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -36816,8 +35487,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -36871,10 +35540,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -36891,8 +35558,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -36946,10 +35611,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -36966,8 +35629,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -37022,8 +35683,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -37092,10 +35751,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -37112,8 +35769,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -37168,8 +35823,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -37238,10 +35891,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -37258,8 +35909,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -37322,8 +35971,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -37400,10 +36047,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -37420,8 +36065,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -37484,8 +36127,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -37562,10 +36203,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -37582,8 +36221,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -37638,8 +36275,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -37708,10 +36343,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -37728,8 +36361,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -37784,8 +36415,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -37854,10 +36483,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -37874,8 +36501,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -37930,8 +36555,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -38000,10 +36623,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -38020,8 +36641,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -38076,8 +36695,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -38146,10 +36763,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -38166,8 +36781,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -38229,8 +36842,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -38306,10 +36917,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -38326,8 +36935,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -38387,8 +36994,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -38462,10 +37067,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -38482,8 +37085,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -38543,8 +37144,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -38617,10 +37216,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -38637,8 +37234,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -38693,8 +37288,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -38763,10 +37356,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -38783,8 +37374,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -38839,8 +37428,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -38913,10 +37500,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -38934,8 +37519,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -38991,8 +37574,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -39061,10 +37642,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -39082,8 +37661,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -39144,8 +37721,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -39219,10 +37794,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -39240,8 +37813,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -39297,8 +37868,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -39325,11 +37894,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '830011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '830011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '12722',
             'currency' => '840',
@@ -39367,10 +37936,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -39388,8 +37955,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -39450,8 +38015,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -39483,11 +38046,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '840011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '840011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '6096',
             'currency' => '840',
@@ -39525,10 +38088,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -39546,8 +38107,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -39603,8 +38162,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -39677,10 +38234,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -39698,8 +38253,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -39755,8 +38308,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -39825,10 +38376,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -39846,8 +38395,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -39906,8 +38453,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -39979,10 +38524,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -40000,8 +38543,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -40064,8 +38605,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -40141,10 +38680,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -40162,8 +38699,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -40219,8 +38754,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -40289,10 +38822,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -40310,8 +38841,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -40371,10 +38900,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -40391,8 +38918,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -40447,8 +38972,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -40475,11 +38998,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '140011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '140011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '34150',
             'currency' => '840',
@@ -40517,10 +39040,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -40537,8 +39058,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -40593,8 +39112,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -40663,10 +39180,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -40683,8 +39198,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -40739,8 +39252,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -40767,11 +39278,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => $response->getAuthorizationID(),
+                'OriginalAuthorizationID' => '190011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
                 'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
-                'OriginalSTAN' => $response->getSTAN(),
-                'OriginalResponseCode' => $response->getResponseCode(),
+                'OriginalSTAN' => '190011',
+                'OriginalResponseCode' => '000',
             ),
             'amount' => '101142',
             'currency' => '840',
@@ -40809,10 +39320,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -40829,8 +39338,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -40885,8 +39392,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -40955,10 +39460,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -40978,8 +39481,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -41040,8 +39541,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -41109,10 +39608,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -41120,6 +39617,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
+        
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -41129,8 +39631,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -41168,7 +39668,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '62001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '620012',
                 'OriginalResponseCode' => '000',
@@ -41208,10 +39708,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -41228,8 +39726,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -41284,8 +39780,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -41353,10 +39847,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -41364,6 +39856,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
+        
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -41373,8 +39870,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -41407,7 +39902,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '64001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '640012',
                 'OriginalResponseCode' => '000',
@@ -41447,10 +39942,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -41469,8 +39962,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -41530,8 +40021,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -41599,10 +40088,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -41610,6 +40097,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
+        
         $requestData = array(
             'card' => array(
                 'number' => '4005571701111111',
@@ -41619,8 +40111,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -41653,7 +40143,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '66001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '660012',
                 'OriginalResponseCode' => '000',
@@ -41693,10 +40183,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -41716,8 +40204,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -41785,8 +40271,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -41849,10 +40333,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -41860,6 +40342,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
+        
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -41869,8 +40356,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -41911,7 +40396,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '52001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '520012',
                 'OriginalResponseCode' => '000',
@@ -41951,10 +40436,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -41971,8 +40454,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -42034,8 +40515,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -42097,10 +40576,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -42108,6 +40585,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
 
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
+        
         $requestData = array(
             'card' => array(
                 'number' => '5424180011113336',
@@ -42117,8 +40599,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -42154,7 +40634,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '54001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '540012',
                 'OriginalResponseCode' => '000',
@@ -42194,10 +40674,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -42216,8 +40694,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -42284,8 +40760,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -42347,16 +40821,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -42367,8 +40844,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -42404,7 +40879,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '56001200',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '560012',
                 'OriginalResponseCode' => '000',
@@ -42444,10 +40919,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -42464,8 +40937,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -42527,10 +40998,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -42547,8 +41016,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -42605,10 +41072,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -42625,8 +41090,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -42688,10 +41151,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -42708,8 +41169,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -42763,16 +41222,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -42783,8 +41245,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -42817,7 +41277,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '82001000',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '820010',
                 'OriginalResponseCode' => '000',
@@ -42857,16 +41317,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -42877,8 +41340,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -42914,7 +41375,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '84001000',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '840010',
                 'OriginalResponseCode' => '000',
@@ -42954,16 +41415,19 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
         $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('UTC'));
+        $nowLocal = new \DateTime();
+        $nowLocal->setTimezone(new \DateTimeZone('PST'));
 
         $requestData = array(
             'card' => array(
@@ -42974,8 +41438,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -43008,7 +41470,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'OriginalAuthorizationGroup' => array(
                 'OriginalAuthorizationID' => '86001000',
-                'OriginalLocalDateandTime' => $now->format('Ymdhis'),
+                'OriginalLocalDateandTime' => $nowLocal->format('Ymdhis'),
                 'OriginalTransmissionDateandTime' => $now->format('Ymdhis'),
                 'OriginalSTAN' => '860010',
                 'OriginalResponseCode' => '000',
@@ -43048,10 +41510,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -43068,8 +41528,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -43129,8 +41587,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -43204,10 +41660,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -43224,8 +41678,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -43285,8 +41737,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -43360,10 +41810,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -43380,8 +41828,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -43439,8 +41885,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -43512,10 +41956,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -43532,8 +41974,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -43593,8 +42033,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -43668,10 +42106,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -43688,8 +42124,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -43749,8 +42183,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -43824,10 +42256,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -43844,8 +42274,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -43900,8 +42328,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -43970,10 +42396,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -43990,8 +42414,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -44051,8 +42473,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -44125,10 +42545,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -44145,8 +42563,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -44206,8 +42622,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -44281,10 +42695,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -44301,8 +42713,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -44357,8 +42767,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -44431,10 +42839,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -44451,8 +42857,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -44507,8 +42911,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -44581,10 +42983,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -44601,8 +43001,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -44664,8 +43062,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -44741,10 +43137,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -44761,8 +43155,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -44829,8 +43221,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -44906,10 +43296,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -44926,8 +43314,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -44989,8 +43375,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -45066,10 +43450,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -45086,8 +43468,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -45149,8 +43529,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -45226,10 +43604,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -45246,8 +43622,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -45302,8 +43676,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -45372,10 +43744,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -45392,8 +43762,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -45453,8 +43821,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -45527,10 +43893,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -45547,8 +43911,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -45608,8 +43970,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -45682,10 +44042,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -45702,8 +44060,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -45758,8 +44114,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -45828,10 +44182,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -45848,8 +44200,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -45904,8 +44254,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -45978,10 +44326,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -45999,8 +44345,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -46055,10 +44399,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -46076,8 +44418,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -46138,8 +44478,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -46213,10 +44551,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -46234,8 +44570,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -46291,8 +44625,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -46361,10 +44693,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -46382,8 +44712,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -46444,8 +44772,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -46522,10 +44848,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -46543,8 +44867,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -46600,8 +44922,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -46678,10 +44998,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -46699,8 +45017,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -46756,8 +45072,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -46826,10 +45140,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -46848,8 +45160,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -46908,10 +45218,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -46930,8 +45238,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -46990,10 +45296,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47012,8 +45316,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47075,10 +45377,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47097,8 +45397,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47160,10 +45458,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47182,8 +45478,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47242,10 +45536,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47264,8 +45556,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47324,10 +45614,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47346,8 +45634,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47406,10 +45692,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47428,8 +45712,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47488,10 +45770,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47509,8 +45789,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47565,10 +45843,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47586,8 +45862,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47642,10 +45916,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47662,8 +45934,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47717,10 +45987,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47738,8 +46006,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47794,10 +46060,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47815,8 +46079,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47871,10 +46133,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47892,8 +46152,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -47948,10 +46206,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -47969,8 +46225,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48025,10 +46279,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48046,8 +46298,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48102,10 +46352,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48123,8 +46371,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48179,10 +46425,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48200,8 +46444,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48259,10 +46501,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48280,8 +46520,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48339,10 +46577,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48360,8 +46596,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48419,10 +46653,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48440,8 +46672,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48499,10 +46729,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48520,8 +46748,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48576,10 +46802,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48597,8 +46821,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48653,10 +46875,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48673,8 +46893,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48728,10 +46946,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48749,8 +46965,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48805,10 +47019,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48826,8 +47038,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -48882,10 +47092,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -48903,8 +47111,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -48960,8 +47166,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -49030,10 +47234,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -49050,8 +47252,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -49111,8 +47311,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -49185,10 +47383,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -49205,8 +47401,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -49264,8 +47458,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -49341,10 +47533,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -49361,8 +47551,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -49417,8 +47605,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -49495,6 +47681,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
 //        $now->setTimezone(new \DateTimeZone('GMT'));
 //
 //        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+//        $gateway->setLocalTimeZone('PST');
 //        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
 //        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
 //        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -49646,10 +47833,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -49666,8 +47851,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -49727,8 +47910,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -49801,10 +47982,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -49821,8 +48000,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -49880,8 +48057,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -49957,10 +48132,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -49977,8 +48150,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -50033,8 +48204,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -50107,10 +48276,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -50127,8 +48294,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -50188,8 +48353,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -50262,10 +48425,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -50283,8 +48444,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -50343,8 +48502,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -50420,10 +48577,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -50441,8 +48596,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -50506,8 +48659,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '01',
                     'pinCapability' => '2',
@@ -50583,10 +48734,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -50604,8 +48753,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -50664,8 +48811,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -50741,10 +48886,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $expiryMonth = $expirationDate->format('m');
         $expiryYear = $expirationDate->format('Y');
 
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone('GMT'));
-
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
         $gateway->setApp(getenv('RAPIDCONNECT_APP'));
         $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
         $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
@@ -50762,8 +48905,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
@@ -50827,8 +48968,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-                'LocalDateandTime' => $now->format('Ymdhis'),
-                'TransmissionDateandTime' => $now->format('Ymdhis'),
                 'POSEntryMode' => array(
                     'entryMode' => '90',
                     'pinCapability' => '2',
