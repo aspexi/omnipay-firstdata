@@ -252,7 +252,14 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['CommonGroup']['MerchantID'] = $merchantId;
         }
 
-        return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectBalanceInquiryRequest', $parameters);
+        $request = $this->createRequest('\Omnipay\FirstData\Message\RapidConnectBalanceInquiryRequest', $parameters);
+
+//        $cardGroup = $request->getParameters()['CardGroup'];
+//        if ('MasterCard' == $cardGroup->getCardType()) {
+//            $cardGroup->setCardInfoRequestIndicator('Y');
+//        }
+
+        return $request;
     }
 
     public function capture(array $parameters = array())
