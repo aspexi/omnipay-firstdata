@@ -27,6 +27,9 @@ class RapidConnectGateway extends AbstractGateway
             'ServiceID' => '',
             'TerminalID' => '',
 
+            'localTimeZone' => 'UTC',
+            'transmissionTimeZone' => 'UTC',
+
             'industry' => '',
             'liveEndpoint' => 'https://stg.dw.us.fdcnet.biz/rc',
             'testMode' => false,
@@ -79,6 +82,31 @@ class RapidConnectGateway extends AbstractGateway
     public function setGroupID($groupId)
     {
         return $this->setParameter('GroupId', $groupId);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLocalTimeZone()
+    {
+        return $this->getParameter('localTimeZone');
+    }
+
+    /**
+     * @param $value
+     * @return RapidConnectGateway
+     */
+    public function setLocalTimeZone($value)
+    {
+        return $this->setParameter('localTimeZone', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTransmissionTimeZone()
+    {
+        return $this->getParameter('transmissionTimeZone');
     }
 
     /**
@@ -199,6 +227,18 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['CommonGroup']['TransactionType'] = TransactionType::AUTHORIZATION;
         }
 
+        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+        }
+
+        if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+        }
+
         $groupId = $this->getGroupID();
         if ($groupId !== null) {
             $parameters['CommonGroup']['GroupID'] = $groupId;
@@ -235,6 +275,18 @@ class RapidConnectGateway extends AbstractGateway
 
         if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TransactionType'] = TransactionType::BALANCE_INQUIRY;
+        }
+
+        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+        }
+
+        if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
         }
 
         $groupId = $this->getGroupID();
@@ -281,6 +333,18 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['CommonGroup']['TransactionType'] = TransactionType::COMPLETION;
         }
 
+        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+        }
+
+        if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+        }
+
         $groupId = $this->getGroupID();
         if ($groupId !== null) {
             $parameters['CommonGroup']['GroupID'] = $groupId;
@@ -321,6 +385,18 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['CommonGroup']['ReversalReasonCode'] = 'Partial';
         }
 
+        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+        }
+
+        if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+        }
+
         $groupId = $this->getGroupID();
         if ($groupId !== null) {
             $parameters['CommonGroup']['GroupID'] = $groupId;
@@ -356,6 +432,18 @@ class RapidConnectGateway extends AbstractGateway
 
         if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TransactionType'] = TransactionType::SALE;
+        }
+
+        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+        }
+
+        if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
         }
 
         $groupId = $this->getGroupID();
@@ -395,6 +483,18 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['CommonGroup']['TransactionType'] = TransactionType::REFUND;
         }
 
+        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+        }
+
+        if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+        }
+
         $groupId = $this->getGroupID();
         if ($groupId !== null) {
             $parameters['CommonGroup']['GroupID'] = $groupId;
@@ -430,6 +530,28 @@ class RapidConnectGateway extends AbstractGateway
 
         if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TransactionType'] = TransactionType::VERIFICATION;
+        }
+
+        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+        }
+
+        if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+        }        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+        $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+    }
+
+        if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
         }
 
         $groupId = $this->getGroupID();
@@ -471,6 +593,18 @@ class RapidConnectGateway extends AbstractGateway
 
         if (!array_key_exists('ReversalReasonCode', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['ReversalReasonCode'] = ReversalReasonCode::VOID;
+        }
+
+        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+        }
+
+        if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
         }
 
         $groupId = $this->getGroupID();
