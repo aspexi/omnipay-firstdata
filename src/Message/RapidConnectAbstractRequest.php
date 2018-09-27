@@ -106,11 +106,17 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
 
     public function setCardGroup($value)
     {
+        $mergeWithExisting = false;
+        if (array_key_exists('MergeWithExisting', $value)) {
+            $mergeWithExisting = $value['MergeWithExisting'];
+            unset($value['MergeWithExisting']);
+        }
+
         if ($value && !$value instanceof Card\Group) {
             $value = new Card\Group($value);
         }
 
-        if ($value->getMergeWithExisting()) {
+        if ($mergeWithExisting) {
             $cg = $this->getCardGroup();
             if ($cg) {
                 $value = $cg->merge($value);

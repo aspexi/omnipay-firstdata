@@ -33781,83 +33781,83 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-//    public function testCaseNumber000023780010()
-//    {
-//        // Arrange
-//        $expirationDate = new \DateTime();
-//        $expirationDate->add(new \DateInterval('P1Y'));
-//        $expiryMonth = $expirationDate->format('m');
-//        $expiryYear = $expirationDate->format('Y');
-//
-//        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-//        $gateway->setLocalTimeZone('PST');
-//        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-//        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-//        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-//        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-//        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
-//        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-//
-//        $track1 = "%B5424180011113336^YATES^" .
-//            $expirationDate->format('ym') .
-//            "1011";
-//        $track1 .= str_pad($track1, 79 - strlen($track1), "0");
-//        $track2 = "5424180011113336=" .
-//            $expirationDate->format('ym') .
-//            "1011";
-//        $track2 = str_pad($track2, 40 - strlen($track2) - 1, "0");
-//
-//        $requestData = array(
-//            'CommonGroup' => array(
-//                'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-//                'POSEntryMode' => array(
-//                    'entryMode' => '90',
-//                    'pinCapability' => '2',
-//                ),
-//
-//                'POSConditionCode' => '00',
-//                'TerminalCategoryCode' => '00',
-//                'TerminalEntryCapability' => '03',
-//                'TerminalLocationIndicator' => '0',
-//                'CardCaptureCapability' => '1',
-//                'MerchantCategoryCode' => '5399',
-//                'STAN' => '780010',
-//                'ReferenceNumber' => '000023780010',
-//                'OrderNumber' => '000023780010',
-//            ),
-//            'AlternateMerchantNameandAddressGroup' => array(
-//                'MerchantCountry' => '840',
-//            ),
-//            'CardGroup' => array(
-//                'Track2Data' => $track2,
-//                'CardType' => 'MasterCard',
-//                'MergeWithExisting' => false,
-//            ),
-//            'amount' => '35276',
-//            'currency' => '840',
-//            'ClientRef' => '000023780010',
-//        );
-//
-//        // Act
-//        $request = $gateway->authorize($requestData);
-//        $response = $request->send();
-//
-//        // Assert
-//        try {
-//            $this->assertEquals('000', $response->getResponseCode());
-//        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
-//            $testCaseNumber = $requestData['ClientRef'];
-//            $responseCode = $response->getResponseCode();
-//            if ($responseCode === null) {
-//                $responseCode = 'null';
-//            }
-//            $errorData = $response->getErrorData();
-//            if ($errorData === null) {
-//                $errorData = 'null';
-//            }
-//            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
-//        }
-//    }
+    public function testCaseNumber000023780010()
+    {
+        // Arrange
+        $expirationDate = new \DateTime();
+        $expirationDate->add(new \DateInterval('P1Y'));
+        $expiryMonth = $expirationDate->format('m');
+        $expiryYear = $expirationDate->format('Y');
+
+        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
+        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
+        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
+        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
+        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
+        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
+
+        $track1 = "%B5424180011113336^YATES^" .
+            $expirationDate->format('ym') .
+            "1011";
+        $track1 .= str_pad($track1, 79 - strlen($track1), "0");
+        $track2 = "5424180011113336=" .
+            $expirationDate->format('ym') .
+            "1011";
+        $track2 = str_pad($track2, 40 - strlen($track2) - 1, "0");
+
+        $requestData = array(
+            'CommonGroup' => array(
+                'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
+                'POSEntryMode' => array(
+                    'entryMode' => '90',
+                    'pinCapability' => '2',
+                ),
+
+                'POSConditionCode' => '00',
+                'TerminalCategoryCode' => '00',
+                'TerminalEntryCapability' => '03',
+                'TerminalLocationIndicator' => '0',
+                'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
+                'STAN' => '780010',
+                'ReferenceNumber' => '000023780010',
+                'OrderNumber' => '000023780010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+            ),
+            'CardGroup' => array(
+                'Track2Data' => $track2,
+                'CardType' => 'MasterCard',
+                'MergeWithExisting' => false,
+            ),
+            'amount' => '35276',
+            'currency' => '840',
+            'ClientRef' => '000023780010',
+        );
+
+        // Act
+        $request = $gateway->authorize($requestData);
+        $response = $request->send();
+
+        // Assert
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
+    }
 
 
     public function testCaseNumber000023840010()
@@ -34944,82 +34944,82 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-//    public function testCaseNumber000024230010()
-//    {
-//        // Arrange
-//        $expirationDate = new \DateTime();
-//        $expirationDate->add(new \DateInterval('P1Y'));
-//        $expiryMonth = $expirationDate->format('m');
-//        $expiryYear = $expirationDate->format('Y');
-//
-//        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-//        $gateway->setLocalTimeZone('PST');
-//        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-//        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-//        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-//        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-//        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
-//        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-//
-//        $requestData = array(
-//            'card' => array(
-//                'billingAddress1' => '1307 Broad Hollow Road',
-//                'billingPostcode' => '11747',
-//                'number' => '371030089333338',
-//                'expiryMonth' => $expiryMonth,
-//                'expiryYear' => $expiryYear,
-//                'type' => 'amex',
-//            ),
-//            'CommonGroup' => array(
-//                'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-//                'POSEntryMode' => array(
-//                    'entryMode' => '01',
-//                    'pinCapability' => '2',
-//                ),
-//
-//                'POSConditionCode' => '00',
-//                'TerminalCategoryCode' => '00',
-//                'TerminalEntryCapability' => '03',
-//                'TerminalLocationIndicator' => '0',
-//                'CardCaptureCapability' => '1',
-//                'MerchantCategoryCode' => '5399',
-//                'STAN' => '230010',
-//                'ReferenceNumber' => '000024230010',
-//                'OrderNumber' => '000024230010',
-//            ),
-//            'AlternateMerchantNameandAddressGroup' => array(
-//                'MerchantCountry' => '840',
-//            ),
-//            'CustomerInformationGroup' => array(
-//                'AVSBillingAddress' => '1307 Broad Hollow Road',
-//                'AVSBillingPostalCode' => '11747',
-//            ),
-//            'amount' => '000',
-//            'currency' => '840',
-//            'ClientRef' => '000024230010',
-//        );
-//
-//        // Act
-//        $request = $gateway->verification($requestData);
-//        $response = $request->send();
-//
-//        // Assert
-//        try {
-//            $this->assertEquals('Z', $response->getAVSResultCode());
-//            $this->assertEquals('000', $response->getResponseCode());
-//        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
-//            $testCaseNumber = $requestData['ClientRef'];
-//            $responseCode = $response->getResponseCode();
-//            if ($responseCode === null) {
-//                $responseCode = 'null';
-//            }
-//            $errorData = $response->getErrorData();
-//            if ($errorData === null) {
-//                $errorData = 'null';
-//            }
-//            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
-//        }
-//    }
+    public function testCaseNumber000024230010()
+    {
+        // Arrange
+        $expirationDate = new \DateTime();
+        $expirationDate->add(new \DateInterval('P1Y'));
+        $expiryMonth = $expirationDate->format('m');
+        $expiryYear = $expirationDate->format('Y');
+
+        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
+        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
+        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
+        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
+        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
+        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
+
+        $requestData = array(
+            'card' => array(
+                'billingAddress1' => '1307 Broad Hollow Road',
+                'billingPostcode' => '11747',
+                'number' => '371030089333338',
+                'expiryMonth' => $expiryMonth,
+                'expiryYear' => $expiryYear,
+                'type' => 'amex',
+            ),
+            'CommonGroup' => array(
+                'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
+                'POSEntryMode' => array(
+                    'entryMode' => '01',
+                    'pinCapability' => '2',
+                ),
+
+                'POSConditionCode' => '00',
+                'TerminalCategoryCode' => '00',
+                'TerminalEntryCapability' => '03',
+                'TerminalLocationIndicator' => '0',
+                'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
+                'STAN' => '230010',
+                'ReferenceNumber' => '000024230010',
+                'OrderNumber' => '000024230010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
+            'amount' => '000',
+            'currency' => '840',
+            'ClientRef' => '000024230010',
+        );
+
+        // Act
+        $request = $gateway->verification($requestData);
+        $response = $request->send();
+
+        // Assert
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
+    }
 
 
     public function testCaseNumber000133760010()
@@ -40175,154 +40175,154 @@ class RapidConnectGatewayCertificationTest extends TestCase
     }
 
 
-//    public function testCaseNumber000235520010And000235520011()
-//    {
-//        // Arrange
-//        $expirationDate = new \DateTime();
-//        $expirationDate->add(new \DateInterval('P1Y'));
-//        $expiryMonth = $expirationDate->format('m');
-//        $expiryYear = $expirationDate->format('Y');
-//
-//        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
-//        $gateway->setLocalTimeZone('PST');
-//        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-//        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-//        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-//        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-//        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
-//        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
-//
-//        $requestData = array(
-//            'card' => array(
-//                'billingAddress1' => '1307 Broad Hollow Road',
-//                'billingPostcode' => '11747',
-//                'cvv' => '123',
-//                'number' => '5424180011113336',
-//                'expiryMonth' => $expiryMonth,
-//                'expiryYear' => $expiryYear,
-//                'type' => 'mastercard',
-//            ),
-//            'CommonGroup' => array(
-//                'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-//                'POSEntryMode' => array(
-//                    'entryMode' => '01',
-//                    'pinCapability' => '2',
-//                ),
-//
-//                'POSConditionCode' => '00',
-//                'TerminalCategoryCode' => '00',
-//                'TerminalEntryCapability' => '03',
-//                'TerminalLocationIndicator' => '0',
-//                'CardCaptureCapability' => '1',
-//                'MerchantCategoryCode' => '5399',
-//                'TransactionInitiation' => 'Merchant',
-//                'STAN' => '520010',
-//                'ReferenceNumber' => '000235520010',
-//                'OrderNumber' => '000235520010',
-//            ),
-//            'AlternateMerchantNameandAddressGroup' => array(
-//                'MerchantCountry' => '840',
-//            ),
-//            'MastercardGroup' => array(
-//                'AuthorizationType' => '1',
-//            ),
-//            'CustomerInformationGroup' => array(
-//                'AVSBillingAddress' => '1307 Broad Hollow Road',
-//                'AVSBillingPostalCode' => '11747',
-//            ),
-//            'OriginalAuthorizationGroup' => array(
-//                'OriginalSTAN' => '520010',
-//            ),
-//            'amount' => '12252',
-//            'currency' => '840',
-//            'ClientRef' => '000235520010',
-//        );
-//
-//        // Act
-//        $request = $gateway->authorize($requestData);
-//        $response = $request->send();
-//
-//        // Assert
-//        try {
-//            $this->assertEquals('Z', $response->getAVSResultCode());
-//            $this->assertEquals('Match', $response->getCCVResultCode());
-//            $this->assertEquals('000', $response->getResponseCode());
-//        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
-//            $testCaseNumber = $requestData['ClientRef'];
-//            $responseCode = $response->getResponseCode();
-//            if ($responseCode === null) {
-//                $responseCode = 'null';
-//            }
-//            $errorData = $response->getErrorData();
-//            if ($errorData === null) {
-//                $errorData = 'null';
-//            }
-//            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
-//        }
-//
-//
-//        // Arrange
-//        $requestData = array(
-//            'card' => array(
-//                'number' => '5424180011113336',
-//                'expiryMonth' => $expiryMonth,
-//                'expiryYear' => $expiryYear,
-//                'type' => 'mastercard',
-//            ),
-//            'CommonGroup' => array(
-//                'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-//                'POSEntryMode' => array(
-//                    'entryMode' => '01',
-//                    'pinCapability' => '2',
-//                ),
-//
-//                'POSConditionCode' => '00',
-//                'TerminalCategoryCode' => '00',
-//                'TerminalEntryCapability' => '03',
-//                'TerminalLocationIndicator' => '0',
-//                'CardCaptureCapability' => '1',
-//                'MerchantCategoryCode' => '5399',
-//                'TransactionInitiation' => 'Merchant',
-//                'STAN' => '520011',
-//                'ReferenceNumber' => '000235520011',
-//                'OrderNumber' => '000235520011',
-//            ),
-//            'AlternateMerchantNameandAddressGroup' => array(
-//                'MerchantCountry' => '840',
-//            ),
-//            'MastercardGroup' => array(
-//                'AuthorizationType' => '1',
-//                'MastercardACI' => 'I',
-//                'MastercardAdditionalData' => str_pad('', 13, '0'),
-//            ),
-//            'OriginalAuthorizationGroup' => array(
-//                'OriginalSTAN' => '520011',
-//            ),
-//            'amount' => '812',
-//            'currency' => '840',
-//            'ClientRef' => '000235520011',
-//        );
-//
-//        // Act
-//        $request = $gateway->authorize($requestData);
-//        $response = $request->send();
-//
-//        // Assert
-//        try {
-//            $this->assertEquals('000', $response->getResponseCode());
-//        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
-//            $testCaseNumber = $requestData['ClientRef'];
-//            $responseCode = $response->getResponseCode();
-//            if ($responseCode === null) {
-//                $responseCode = 'null';
-//            }
-//            $errorData = $response->getErrorData();
-//            if ($errorData === null) {
-//                $errorData = 'null';
-//            }
-//            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
-//        }
-//    }
+    public function testCaseNumber000235520010And000235520011()
+    {
+        // Arrange
+        $expirationDate = new \DateTime();
+        $expirationDate->add(new \DateInterval('P1Y'));
+        $expiryMonth = $expirationDate->format('m');
+        $expiryYear = $expirationDate->format('Y');
+
+        $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
+        $gateway->setLocalTimeZone('PST');
+        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
+        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
+        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
+        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
+        $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
+        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
+
+        $requestData = array(
+            'card' => array(
+                'billingAddress1' => '1307 Broad Hollow Road',
+                'billingPostcode' => '11747',
+                'cvv' => '123',
+                'number' => '5424180011113336',
+                'expiryMonth' => $expiryMonth,
+                'expiryYear' => $expiryYear,
+                'type' => 'mastercard',
+            ),
+            'CommonGroup' => array(
+                'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
+                'POSEntryMode' => array(
+                    'entryMode' => '01',
+                    'pinCapability' => '2',
+                ),
+
+                'POSConditionCode' => '00',
+                'TerminalCategoryCode' => '00',
+                'TerminalEntryCapability' => '03',
+                'TerminalLocationIndicator' => '0',
+                'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
+                'STAN' => '520010',
+                'ReferenceNumber' => '000235520010',
+                'OrderNumber' => '000235520010',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '1',
+            ),
+            'CustomerInformationGroup' => array(
+                'AVSBillingAddress' => '1307 Broad Hollow Road',
+                'AVSBillingPostalCode' => '11747',
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '520010',
+            ),
+            'amount' => '12252',
+            'currency' => '840',
+            'ClientRef' => '000235520010',
+        );
+
+        // Act
+        $request = $gateway->authorize($requestData);
+        $response = $request->send();
+
+        // Assert
+        try {
+            $this->assertEquals('Z', $response->getAVSResultCode());
+            $this->assertEquals('Match', $response->getCCVResultCode());
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
+
+
+        // Arrange
+        $requestData = array(
+            'card' => array(
+                'number' => '5424180011113336',
+                'expiryMonth' => $expiryMonth,
+                'expiryYear' => $expiryYear,
+                'type' => 'mastercard',
+            ),
+            'CommonGroup' => array(
+                'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
+                'POSEntryMode' => array(
+                    'entryMode' => '01',
+                    'pinCapability' => '2',
+                ),
+
+                'POSConditionCode' => '00',
+                'TerminalCategoryCode' => '00',
+                'TerminalEntryCapability' => '03',
+                'TerminalLocationIndicator' => '0',
+                'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
+                'TransactionInitiation' => 'Merchant',
+                'STAN' => '520011',
+                'ReferenceNumber' => '000235520011',
+                'OrderNumber' => '000235520011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+            ),
+            'MastercardGroup' => array(
+                'AuthorizationType' => '1',
+                'MastercardACI' => 'I',
+                'MastercardAdditionalData' => str_pad('', 13, '0'),
+            ),
+            'OriginalAuthorizationGroup' => array(
+                'OriginalSTAN' => '520011',
+            ),
+            'amount' => '812',
+            'currency' => '840',
+            'ClientRef' => '000235520011',
+        );
+
+        // Act
+        $request = $gateway->authorize($requestData);
+        $response = $request->send();
+
+        // Assert
+        try {
+            $this->assertEquals('000', $response->getResponseCode());
+        } catch (\PHPUnit_Framework_ExpectationFailedException $e) {
+            $testCaseNumber = $requestData['ClientRef'];
+            $responseCode = $response->getResponseCode();
+            if ($responseCode === null) {
+                $responseCode = 'null';
+            }
+            $errorData = $response->getErrorData();
+            if ($errorData === null) {
+                $errorData = 'null';
+            }
+            $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
+        }
+    }
 
 
     public function testCaseNumber000235520012()
