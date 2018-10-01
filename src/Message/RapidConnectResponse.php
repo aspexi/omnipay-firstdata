@@ -52,6 +52,79 @@ class RapidConnectResponse extends AbstractResponse
     }
 
     /**
+     * @return string|null
+     */
+    public function getStatusCode()
+    {
+        if (isset($this->data->Status)) {
+            return $this->data->Status->attributes()['StatusCode']->__toString();
+        }
+        return null;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getReturnCode()
+    {
+        if (isset($this->data->TransactionResponse->ReturnCode)) {
+            return $this->data->TransactionResponse->ReturnCode->__toString();
+        }
+        return null;
+    }
+
+    /**
+     * @return null
+     * @throws InvalidResponseException
+     */
+    public function getResponseCode()
+    {
+        $responseGroup = $this->getResponseGroup();
+        if ($responseGroup !== null && isset($responseGroup->RespCode)) {
+            return $responseGroup->RespCode;
+        }
+        return null;
+    }
+
+    /**
+     * @return null
+     * @throws InvalidResponseException
+     */
+    public function getResponseGroup()
+    {
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+        $response = $payload->children()[0];
+        if (isset($response->RespGrp)) {
+            return $response->RespGrp;
+        }
+        return null;
+    }
+
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
+    public function getPayload()
+    {
+        if (isset($this->data->TransactionResponse->Payload)) {
+            try {
+                return simplexml_load_string(
+                    htmlspecialchars_decode(
+                        $this->data->TransactionResponse->Payload->__toString(),
+                        ENT_XML1
+                    )
+                );
+            } catch (\Exception $e) {
+                throw new InvalidResponseException($e->getMessage());
+            }
+        }
+        return null;
+    }
+
+    /**
      * @return bool
      * @throws InvalidResponseException
      */
@@ -78,27 +151,6 @@ class RapidConnectResponse extends AbstractResponse
     {
         if (isset($this->data->RespClientID->ClientRef)) {
             return $this->data->RespClientID->ClientRef->__toString();
-        }
-        return null;
-    }
-
-    /**
-     * @return null|\SimpleXMLElement
-     * @throws InvalidResponseException
-     */
-    public function getPayload()
-    {
-        if (isset($this->data->TransactionResponse->Payload)) {
-            try {
-                return simplexml_load_string(
-                    htmlspecialchars_decode(
-                        $this->data->TransactionResponse->Payload->__toString(),
-                        ENT_XML1
-                    )
-                );
-            } catch (\Exception $e) {
-                throw new InvalidResponseException($e->getMessage());
-            }
         }
         return null;
     }
@@ -219,6 +271,19 @@ class RapidConnectResponse extends AbstractResponse
      * @return null|\SimpleXMLElement
      * @throws InvalidResponseException
      */
+    public function getMastercardAdditionalData()
+    {
+        $mastercardGroup = $this->getMastercardGroup();
+        if ($mastercardGroup !== null && isset($mastercardGroup->MCAddData)) {
+            return $mastercardGroup->MCAddData;
+        }
+        return null;
+    }
+
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
     public function getMastercardGroup()
     {
         $payload = $this->getPayload();
@@ -228,19 +293,6 @@ class RapidConnectResponse extends AbstractResponse
         $responseGroup = $payload->children()[0];
         if (isset($responseGroup->MCGrp)) {
             return $responseGroup->MCGrp;
-        }
-        return null;
-    }
-
-    /**
-     * @return null|\SimpleXMLElement
-     * @throws InvalidResponseException
-     */
-    public function getMastercardAdditionalData()
-    {
-        $mastercardGroup = $this->getMastercardGroup();
-        if ($mastercardGroup !== null && isset($mastercardGroup->MCAddData)) {
-            return $mastercardGroup->MCAddData;
         }
         return null;
     }
@@ -262,52 +314,41 @@ class RapidConnectResponse extends AbstractResponse
      * @return null|\SimpleXMLElement
      * @throws InvalidResponseException
      */
-    public function getTransactionIntegrityClass()
+    public function getTransactionAmount()
     {
-        $mastercardGroup = $this->getMastercardGroup();
-        if ($mastercardGroup !== null && isset($mastercardGroup->TranIntgClass)) {
-            return $mastercardGroup->TranIntgClass;
+        $commonGroup = $this->getCommonGroup();
+        if ($commonGroup !== null && isset($commonGroup->TxnAmt)) {
+            return $commonGroup->TxnAmt;
         }
         return null;
     }
 
     /**
-     * @return null
+     * @return null|\SimpleXMLElement
      * @throws InvalidResponseException
      */
-    public function getResponseCode()
-    {
-        $responseGroup = $this->getResponseGroup();
-        if ($responseGroup !== null && isset($responseGroup->RespCode)) {
-            return $responseGroup->RespCode;
-        }
-        return null;
-    }
-
-    /**
-     * @return null
-     * @throws InvalidResponseException
-     */
-    public function getResponseGroup()
+    public function getCommonGroup()
     {
         $payload = $this->getPayload();
         if ($payload === false || $payload === null) {
             return null;
         }
-        $response = $payload->children()[0];
-        if (isset($response->RespGrp)) {
-            return $response->RespGrp;
+        $responseGroup = $payload->children()[0];
+        if (isset($responseGroup->CommonGrp)) {
+            return $responseGroup->CommonGrp;
         }
         return null;
     }
 
     /**
-     * @return string|null
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
      */
-    public function getReturnCode()
+    public function getTransactionIntegrityClass()
     {
-        if (isset($this->data->TransactionResponse->ReturnCode)) {
-            return $this->data->TransactionResponse->ReturnCode->__toString();
+        $mastercardGroup = $this->getMastercardGroup();
+        if ($mastercardGroup !== null && isset($mastercardGroup->TranIntgClass)) {
+            return $mastercardGroup->TranIntgClass;
         }
         return null;
     }
@@ -319,17 +360,6 @@ class RapidConnectResponse extends AbstractResponse
     {
         if (isset($this->data->Status)) {
             return $this->data->Status->__toString();
-        }
-        return null;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getStatusCode()
-    {
-        if (isset($this->data->Status)) {
-            return $this->data->Status->attributes()['StatusCode']->__toString();
         }
         return null;
     }
