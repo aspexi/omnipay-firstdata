@@ -442,8 +442,8 @@ XML;
 $xml = simplexml_load_string($data, 'SimpleXMLElement', LIBXML_NOWARNING);//+++++
 $output = simplexml_load_string($xml->Transaction->Payload, 'SimpleXMLElement', LIBXML_NOWARNING);//+++++
 $logfile = fopen('/tmp/rc.log', 'a');//+++++
-fwrite($logfile, "\n********** Request\n" . print_r($output, TRUE));//+++++
-//fwrite($logfile, "\n********** Request\n" . $xml->Transaction->Payload);//+++++
+//fwrite($logfile, "\n********** Request\n" . print_r($output, TRUE));//+++++
+fwrite($logfile, "\n********** Request\n" . $xml->Transaction->Payload);//+++++
 fclose($logfile);//+++++
 
         return $this->response = new RapidConnectResponse($this, $httpResponse->getBody(true));

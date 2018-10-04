@@ -36,8 +36,8 @@ class RapidConnectResponse extends AbstractResponse
         }
 $output = simplexml_load_string($xml->TransactionResponse->Payload, 'SimpleXMLElement', LIBXML_NOWARNING);//+++++
 $logfile = fopen('/tmp/rc.log', 'a');//+++++
-fwrite($logfile, "\n********** Response\n" . print_r($output, TRUE));//+++++
-//fwrite($logfile, "\n********** Response\n" . $xml->TransactionResponse->Payload);//+++++
+//fwrite($logfile, "\n********** Response\n" . print_r($output, TRUE));//+++++
+fwrite($logfile, "\n********** Response\n" . $xml->TransactionResponse->Payload);//+++++
 fclose($logfile);//+++++
 
         parent::__construct($request, $xml);
