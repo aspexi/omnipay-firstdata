@@ -10,4 +10,6 @@ class CCVResultCode
     const NOT_PROVIDED = 'NotPrv';
     const NOT_PARTICIPATING = 'NotPrt';
     const UNKNOWN = 'Unknwn';
+
+
 }
