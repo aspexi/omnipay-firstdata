@@ -92,31 +92,31 @@ class shortTest extends TestCase
 
 
         // Arrange
-//        sleep(35);
-//        unset($requestData['card']['cvv']);
-//        $requestData['AdditionalAmountGroups'] =
-//        [
-//            [
-//                'AdditionalAmount' => $requestData['amount'],
-//                'AdditionalAmountCurrency' => $requestData['currency'],
-//                'AdditionalAmountType' => 'TotalAuthAmt',
-//            ]
-//        ];
-//        $requestData['OriginalAuthorizationGroup'] =
-//        [
-//            'OriginalLocalDateandTime' => $request->getLocalDateandTime()
-//            ,'OriginalTransmissionDateandTime' => $request->getTransmissionDateandTime()
-//            ,'OriginalSTAN' => $request->getSTAN()
-//        ];
-//        $requestData['TransactionType'] = $request->getTransactionType();
-//        $requestData['PaymentType'] = $request->getPaymentType();
-//
-//        // Act
-//        $request = $gateway->timeoutReversal($requestData);
-//        $response = $request->send();
-//
-//        // Assert
-//        $this->assertEquals('000', $response->getResponseCode());
+        sleep(35);
+        unset($requestData['card']['cvv']);
+        $requestData['AdditionalAmountGroups'] =
+        [
+            [
+                'AdditionalAmount' => $requestData['amount'],
+                'AdditionalAmountCurrency' => $requestData['currency'],
+                'AdditionalAmountType' => 'TotalAuthAmt',
+            ]
+        ];
+        $requestData['OriginalAuthorizationGroup'] =
+        [
+            'OriginalLocalDateandTime' => $request->getLocalDateandTime()
+            ,'OriginalTransmissionDateandTime' => $request->getTransmissionDateandTime()
+            ,'OriginalSTAN' => $request->getSTAN()
+        ];
+        $requestData['TransactionType'] = $request->getTransactionType();
+        $requestData['PaymentType'] = $request->getPaymentType();
+
+        // Act
+        $request = $gateway->timeoutReversal($requestData);
+        $response = $request->send();
+
+        // Assert
+        $this->assertEquals('000', $response->getResponseCode());
 
     }
 }

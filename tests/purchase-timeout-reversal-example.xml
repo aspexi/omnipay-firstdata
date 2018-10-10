@@ -3,16 +3,15 @@
     <CommonGrp>
       <PymtType>Credit</PymtType>
       <ReversalInd>Timeout</ReversalInd>
-      <TxnType>Refund</TxnType>
-      <LocalDateTime>20181008161108</LocalDateTime>
-      <TrnmsnDateTime>20181008161108</TrnmsnDateTime>
-      <STAN>687284</STAN>
-      <RefNum>6059846154</RefNum>
-      <OrderNum>15101684</OrderNum>
+      <TxnType>Sale</TxnType>
+      <LocalDateTime>20181005114653</LocalDateTime>
+      <TrnmsnDateTime>20181005114653</TrnmsnDateTime>
+      <STAN>600289</STAN>
+      <RefNum>3025870145</RefNum>
+      <OrderNum>21651704</OrderNum>
       <TPPID>RHO001</TPPID>
       <TermID>00000001</TermID>
       <MerchID>RCTST0000000065</MerchID>
-      <MerchCatCode>5399</MerchCatCode>
       <POSEntryMode>901</POSEntryMode>
       <POSCondCode>00</POSCondCode>
       <TermCatCode>01</TermCatCode>
@@ -27,9 +26,9 @@
       <MerchEmail>trr@1dc.com</MerchEmail>
     </AltMerchNameAndAddrGrp>
     <CardGrp>
-      <AcctNum>4264281511117771</AcctNum>
+      <AcctNum>6011208702222228</AcctNum>
       <CardExpiryDate>20201231</CardExpiryDate>
-      <CardType>Visa</CardType>
+      <CardType>Discover</CardType>
     </CardGrp>
     <AddtlAmtGrp>
       <AddAmt>100</AddAmt>

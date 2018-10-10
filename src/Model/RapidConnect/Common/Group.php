@@ -113,7 +113,7 @@ class Group extends BaseGroup
         }
         if ($this->getTransactionCurrency() !== null) {
             if (!$this->validateTransactionCurrency()) {
-                throw new InvalidRequestException("Invalid transaction currency");
+                throw new InvalidRequestException("Invalid transaction currency: " . $this->getTransactionCurrency());
             }
             $data->CommonGrp->TxnCrncy = $this->getTransactionCurrency();
         }
