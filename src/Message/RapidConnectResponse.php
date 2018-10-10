@@ -81,7 +81,7 @@ class RapidConnectResponse extends AbstractResponse
     {
         $responseGroup = $this->getResponseGroup();
         if ($responseGroup !== null && isset($responseGroup->RespCode)) {
-            return $responseGroup->RespCode;
+            return $responseGroup->RespCode->__toString();
         }
         return null;
     }
@@ -168,7 +168,7 @@ class RapidConnectResponse extends AbstractResponse
 
         $response = $payload->children()[0];
         if (isset($response->CardGrp->AVSResultCode)) {
-            return $response->CardGrp->AVSResultCode;
+            return $response->CardGrp->AVSResultCode->__toString();
         }
         return null;
     }
@@ -185,7 +185,7 @@ class RapidConnectResponse extends AbstractResponse
         }
         $response = $payload->children()[0];
         if (isset($response->CardGrp->CCVResultCode)) {
-            return $response->CardGrp->CCVResultCode;
+            return $response->CardGrp->CCVResultCode->__toString();
         }
         return null;
     }
