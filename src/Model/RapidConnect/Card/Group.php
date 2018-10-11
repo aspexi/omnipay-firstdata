@@ -536,4 +536,26 @@ class Group extends BaseGroup
     {
         return $this->setParameter('MergeWithExisting', $value);
     }
+
+    public function getAccountNumberFromTrack1Data()
+    {
+        $track1 = $this->getTrack1Data();
+        $pattern = '/\%B(\d{1,19})\^.{2,26}\^\d{4}\d*\?/';
+        if (preg_match($pattern, $track1, $matches) == 1) {
+            return $matches[1];
+        }
+
+        return null;
+    }
+
+    public function getAccountNumberFromTrack2Data()
+    {
+        $track2 = $this->getTrack2Data();
+        $pattern = '/;(\d{1,19})=\d{4}\d*\?/';
+        if (preg_match($pattern, $track2, $matches) == 1) {
+            return $matches[1];
+        }
+
+        return null;
+    }
 }
