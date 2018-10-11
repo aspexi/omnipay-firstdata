@@ -3267,7 +3267,7 @@ XML;
     /**
      * @return ClientInterface
      */
-    public function getHttpClient(): ClientInterface
+    public function getHttpClient(): \Guzzle\Http\ClientInterface
     {
         return $this->httpClient;
     }
@@ -3275,7 +3275,7 @@ XML;
     /**
      * @return HttpRequest
      */
-    public function getHttpRequest(): HttpRequest
+    public function getHttpRequest(): \Symfony\Component\HttpFoundation\Request
     {
         return $this->httpRequest;
     }
