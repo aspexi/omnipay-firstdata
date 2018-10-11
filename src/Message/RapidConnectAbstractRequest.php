@@ -3263,4 +3263,20 @@ XML;
 
         return $this->setCardGroup($cg);
     }
+
+    /**
+     * @return ClientInterface
+     */
+    public function getHttpClient(): ClientInterface
+    {
+        return $this->httpClient;
+    }
+
+    /**
+     * @return HttpRequest
+     */
+    public function getHttpRequest(): HttpRequest
+    {
+        return $this->httpRequest;
+    }
 }
