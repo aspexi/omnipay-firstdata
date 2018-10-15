@@ -125,8 +125,7 @@ class Group extends BaseGroup
 
         $this->setAccountNumber($value->getNumber());
         $this->setCardExpirationDate($value->getExpiryDate('Ym'));
-
-        $this->setCardType($brand);
+        $this->setCardType(CardType::FromOmnipayCardType($value->getBrand()));
 
         if ($value->getCvv()) {
             $this->setCCVData($value->getCvv());
