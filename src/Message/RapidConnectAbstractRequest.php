@@ -437,6 +437,7 @@ fclose($logfile);//+++++
     {
 $output = simplexml_load_string($data->Transaction->Payload, 'SimpleXMLElement', LIBXML_NOWARNING);//+++++
 $logfile = fopen('/tmp/rc.log', 'a');//+++++
+fwrite($logfile, "\n********** Endpoint\n" . $this->getLiveEndpoint());//+++++
 fwrite($logfile, "\n********** Request\n" . print_r($output, TRUE));//+++++
 //fwrite($logfile, "\n********** Request\n" . $xml->Transaction->Payload);//+++++
 fclose($logfile);//+++++
@@ -447,66 +448,63 @@ fclose($logfile);//+++++
         );
         $dataXml = $data->saveXml();
         $this->httpClient->setSslVerification(false, false);
-        $isOkay = TRUE;
-$logfile = fopen('/tmp/rc.log', 'a');//+++++
-fwrite($logfile, "\n********** Endpoint\n" . $this->getLiveEndpoint());//+++++
-fclose($logfile);//+++++
-        try {
+//        $isOkay = TRUE;
+//        try {
             $httpResponse = $this->httpClient->post($this->getLiveEndpoint(), $headers, $dataXml)->send();
-        } catch (\Exception $x) {
-            $isOkay = FALSE;
-            // TODO: More stuff here - logging?
-        }
-        $isOkay = strpos($httpResponse->getBody(TRUE), 'CreditResponse');
-        if (FALSE === $isOkay) {
-            $payload = simplexml_load_string($data->Transaction->Payload, 'SimpleXMLElement', LIBXML_NOWARNING);
-
-            if (2 < $timeoutCount) {
-                // TODO: How to bail out?
-                return FALSE;
-            }
-            if (2 == $timeoutCount) {
-                sleep(600);
-            }
-            if (1 == $timeoutCount) {
-                sleep(300);
-            }
-            if (0 == $timeoutCount) {
-                sleep(40);
-            }
-
-            if ($payload->CreditRequest->CardGrp->CCVInd) {
-                unset($payload->CreditRequest->CardGrp->CCVInd);
-                unset($payload->CreditRequest->CardGrp->CCVData);
-            }
-                    
-            if (! $payload->CreditRequest->CommonGrp->ReversalInd) {
-                $payload->CreditRequest->CommonGrp->addChild('ReversalInd');
-            }
-            $payload->CreditRequest->CommonGrp->ReversalInd = 'Timeout';
-
-            $this->getParameter('localTimeZone');
-            $now = new \DateTime();
-            $now->setTimezone(new \DateTimeZone('PST'));
-            $payload->CreditRequest->CommonGrp->LocalDateTime = $now->format('Ymdhis');
-            $now->setTimezone(new \DateTimeZone('UTC'));
-            $payload->CreditRequest->CommonGrp->TrnmsnDateTime = $now->format('Ymdhis');
-
-            if (0 == $timeoutCount) {
-                $AdditionalAmountGroup = $payload->CreditRequest->addChild('AddtlAmtGrp');
-                $AdditionalAmountGroup->addChild('AddAmt', $payload->CreditRequest->CommonGrp->TxnAmt);
-                $AdditionalAmountGroup->addChild('AddAmtCrncy', $payload->CreditRequest->CommonGrp->TxnCrncy);
-                $AdditionalAmountGroup->addChild('AddAmtType', 'TotalAuthAmt');
-
-                $OriginalAuthorizationGroup = $payload->CreditRequest->addChild('OrigAuthGrp');
-                $OriginalAuthorizationGroup->addChild('OrigLocalDateTime', $payload->CreditRequest->CommonGrp->LocalDateTime);
-                $OriginalAuthorizationGroup->addChild('OrigTranDateTime', $payload->CreditRequest->CommonGrp->TrnmsnDateTime);
-                $OriginalAuthorizationGroup->addChild('OrigSTAN', $payload->CreditRequest->CommonGrp->STAN);
-            }          
-
-            $data->Transaction->Payload = $payload->saveXml();
-            return $this->sendData($data, $timeoutCount + 1);
-        }
+//        } catch (\Exception $x) {
+//            $isOkay = FALSE;
+//            // TODO: More stuff here - logging?
+//        }
+//        $isOkay = strpos($httpResponse->getBody(TRUE), 'CreditResponse');
+//        if (FALSE === $isOkay) {
+//            $payload = simplexml_load_string($data->Transaction->Payload, 'SimpleXMLElement', LIBXML_NOWARNING);
+//
+//            if (2 < $timeoutCount) {
+//                // TODO: How to bail out?
+//                return FALSE;
+//            }
+//            if (2 == $timeoutCount) {
+//                sleep(600);
+//            }
+//            if (1 == $timeoutCount) {
+//                sleep(300);
+//            }
+//            if (0 == $timeoutCount) {
+//                sleep(40);
+//            }
+//
+//            if ($payload->CreditRequest->CardGrp->CCVInd) {
+//                unset($payload->CreditRequest->CardGrp->CCVInd);
+//                unset($payload->CreditRequest->CardGrp->CCVData);
+//            }
+//                    
+//            if (! $payload->CreditRequest->CommonGrp->ReversalInd) {
+//                $payload->CreditRequest->CommonGrp->addChild('ReversalInd');
+//            }
+//            $payload->CreditRequest->CommonGrp->ReversalInd = 'Timeout';
+//
+//            $this->getParameter('localTimeZone');
+//            $now = new \DateTime();
+//            $now->setTimezone(new \DateTimeZone('PST'));
+//            $payload->CreditRequest->CommonGrp->LocalDateTime = $now->format('Ymdhis');
+//            $now->setTimezone(new \DateTimeZone('UTC'));
+//            $payload->CreditRequest->CommonGrp->TrnmsnDateTime = $now->format('Ymdhis');
+//
+//            if (0 == $timeoutCount) {
+//                $AdditionalAmountGroup = $payload->CreditRequest->addChild('AddtlAmtGrp');
+//                $AdditionalAmountGroup->addChild('AddAmt', $payload->CreditRequest->CommonGrp->TxnAmt);
+//                $AdditionalAmountGroup->addChild('AddAmtCrncy', $payload->CreditRequest->CommonGrp->TxnCrncy);
+//                $AdditionalAmountGroup->addChild('AddAmtType', 'TotalAuthAmt');
+//
+//                $OriginalAuthorizationGroup = $payload->CreditRequest->addChild('OrigAuthGrp');
+//                $OriginalAuthorizationGroup->addChild('OrigLocalDateTime', $payload->CreditRequest->CommonGrp->LocalDateTime);
+//                $OriginalAuthorizationGroup->addChild('OrigTranDateTime', $payload->CreditRequest->CommonGrp->TrnmsnDateTime);
+//                $OriginalAuthorizationGroup->addChild('OrigSTAN', $payload->CreditRequest->CommonGrp->STAN);
+//            }          
+//
+//            $data->Transaction->Payload = $payload->saveXml();
+//            return $this->sendData($data, $timeoutCount + 1);
+//        }
 
         return $this->response = new RapidConnectResponse($this, $httpResponse->getBody(true));
     }

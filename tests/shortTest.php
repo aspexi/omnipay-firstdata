@@ -48,43 +48,38 @@ class shortTest extends TestCase
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
 
         $requestData = array(
-            'card' => array(
-                'number' => '5424180273333333',
-                'expiryMonth' => $expiryMonth,
-                'expiryYear' => $expiryYear,
-                'type' => 'mastercard',
-            ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
                 'POSEntryMode' => array(
-                    'entryMode' => '01',
+                    'entryMode' => '90',
                     'pinCapability' => '2',
                 ),
 
-                'POSConditionCode' => '59',
+                'POSConditionCode' => '00',
                 'TerminalCategoryCode' => '00',
-                'TerminalEntryCapability' => '01',
-                'TerminalLocationIndicator' => '1',
-                'CardCaptureCapability' => '0',
-                'MerchantCategoryCode' => '5965',
-                'STAN' => '000010',
-                'ReferenceNumber' => '000180000010',
-                'OrderNumber' => '000180000010',
+                'TerminalEntryCapability' => '03',
+                'TerminalLocationIndicator' => '0',
+                'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
+                'STAN' => '780010',
+                'ReferenceNumber' => '000023780010',
+                'OrderNumber' => '000023780010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'EcommGroup' => array(
-                'EcommTransactionIndicator' => '01',
-                'EcommURL' => 'google.com',
+            'CardGroup' => array(
+                'Track2Data' => '4021030000000012=20041011000012345678',
+                'CardType' => 'Visa',
+                'MergeWithExisting' => false,
             ),
-            'amount' => '84002',
+            'amount' => '10599',
             'currency' => '840',
-            'ClientRef' => '000180000010',
+            'ClientRef' => '000023780010',
         );
 
         // Act
-        $request = $gateway->refund($requestData);
+        $request = $gateway->purchase($requestData);
         $response = $request->send();
 
         // Assert

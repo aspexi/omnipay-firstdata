@@ -49,43 +49,34 @@ class shortTest extends TestCase
 
 
         $requestData = array(
-            'card' => array(
-                'billingAddress1' => '1307 Broad Hollow Road',
-                'billingPostcode' => '11747',
-                'cvv' => '123',
-                'number' => '4005562231212123',
-                'expiryMonth' => $expiryMonth,
-                'expiryYear' => $expiryYear,
-                'type' => 'visa',
-            ),
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
                 'POSEntryMode' => array(
-                    'entryMode' => '01',
+                    'entryMode' => '90',
                     'pinCapability' => '2',
                 ),
 
-                'POSConditionCode' => '59',
+                'POSConditionCode' => '00',
                 'TerminalCategoryCode' => '00',
-                'TerminalEntryCapability' => '01',
-                'TerminalLocationIndicator' => '1',
-                'CardCaptureCapability' => '0',
-                'MerchantCategoryCode' => '5965',
-                'STAN' => '840010',
-                'ReferenceNumber' => '000000840010',
-                'OrderNumber' => '000000840010',
+                'TerminalEntryCapability' => '03',
+                'TerminalLocationIndicator' => '0',
+                'CardCaptureCapability' => '1',
+                'MerchantCategoryCode' => '5399',
+                'STAN' => '780010',
+                'ReferenceNumber' => '000023780010',
+                'OrderNumber' => '000023780010',
             ),
-            'EcommGroup' => array(
-                'EcommTransactionIndicator' => '03',
-                'EcommURL' => 'google.com',
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
             ),
-            'CustomerInformationGroup' => array(
-                'AVSBillingAddress' => '1307 Broad Hollow Road',
-                'AVSBillingPostalCode' => '11747',
+            'CardGroup' => array(
+                'Track2Data' => '4021030000000012=20041011000012345678',
+                'CardType' => 'Visa',
+                'MergeWithExisting' => false,
             ),
-            'amount' => '62107',
+            'amount' => '10599',
             'currency' => '840',
-            'ClientRef' => '000000840010',
+            'ClientRef' => '000023780010',
         );
 
         // Act
@@ -98,7 +89,6 @@ class shortTest extends TestCase
 
         // Arrange
         sleep(35);
-        unset($requestData['card']['cvv']);
         $requestData['AdditionalAmountGroups'] =
         [
             [
