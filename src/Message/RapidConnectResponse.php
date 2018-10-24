@@ -340,6 +340,15 @@ class RapidConnectResponse extends AbstractResponse
         return null;
     }
 
+    public function getMerchantID()
+    {
+        $commonGroup = $this->getCommonGroup();
+        if ($commonGroup !== null && isset($commonGroup->MerchID)) {
+            return $commonGroup->MerchID;
+        }
+        return null;
+    }
+
     /**
      * @return null|\SimpleXMLElement
      * @throws InvalidResponseException
