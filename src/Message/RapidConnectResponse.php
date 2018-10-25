@@ -318,7 +318,7 @@ class RapidConnectResponse extends AbstractResponse
     {
         $commonGroup = $this->getCommonGroup();
         if ($commonGroup !== null && isset($commonGroup->TxnAmt)) {
-            return $commonGroup->TxnAmt;
+            return $commonGroup->TxnAmt->__toString();
         }
         return null;
     }
