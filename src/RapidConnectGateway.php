@@ -259,7 +259,7 @@ class RapidConnectGateway extends AbstractGateway
         }
 
         $tPPID = $this->getTPPID();
-        if ($tPPID !== null) {
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TPPID'] = $tPPID;
         }
 
@@ -314,7 +314,7 @@ class RapidConnectGateway extends AbstractGateway
         }
 
         $tPPID = $this->getTPPID();
-        if ($tPPID !== null) {
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TPPID'] = $tPPID;
         }
 
@@ -375,7 +375,7 @@ class RapidConnectGateway extends AbstractGateway
         }
 
         $tPPID = $this->getTPPID();
-        if ($tPPID !== null) {
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TPPID'] = $tPPID;
         }
 
@@ -432,7 +432,7 @@ class RapidConnectGateway extends AbstractGateway
         }
 
         $tPPID = $this->getTPPID();
-        if ($tPPID !== null) {
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TPPID'] = $tPPID;
         }
 
@@ -486,7 +486,7 @@ class RapidConnectGateway extends AbstractGateway
         }
 
         $tPPID = $this->getTPPID();
-        if ($tPPID !== null) {
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TPPID'] = $tPPID;
         }
 
@@ -540,7 +540,7 @@ class RapidConnectGateway extends AbstractGateway
         }
 
         $tPPID = $this->getTPPID();
-        if ($tPPID !== null) {
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TPPID'] = $tPPID;
         }
 
@@ -604,7 +604,7 @@ class RapidConnectGateway extends AbstractGateway
         }
 
         $tPPID = $this->getTPPID();
-        if ($tPPID !== null) {
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TPPID'] = $tPPID;
         }
 
@@ -662,7 +662,7 @@ class RapidConnectGateway extends AbstractGateway
         }
 
         $tPPID = $this->getTPPID();
-        if ($tPPID !== null) {
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
             $parameters['CommonGroup']['TPPID'] = $tPPID;
         }
 
