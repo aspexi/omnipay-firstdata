@@ -198,7 +198,7 @@ class RapidConnectResponse extends AbstractResponse
     {
         $responseGroup = $this->getResponseGroup();
         if ($responseGroup !== null && isset ($responseGroup->AuthID)) {
-            return $responseGroup->AuthID;
+            return $responseGroup->AuthID->__toString();
         }
         return null;
     }
@@ -215,7 +215,7 @@ class RapidConnectResponse extends AbstractResponse
         }
         $response = $payload->children()[0];
         if (isset($response->CommonGrp->LocalDateTime)) {
-            return $response->CommonGrp->LocalDateTime;
+            return $response->CommonGrp->LocalDateTime->__toString();
         }
         return null;
     }
@@ -232,7 +232,7 @@ class RapidConnectResponse extends AbstractResponse
         }
         $response = $payload->children()[0];
         if (isset($response->CommonGrp->TrnmsnDateTime)) {
-            return $response->CommonGrp->TrnmsnDateTime;
+            return $response->CommonGrp->TrnmsnDateTime->__toString();
         }
         return null;
     }
@@ -249,7 +249,7 @@ class RapidConnectResponse extends AbstractResponse
         }
         $response = $payload->children()[0];
         if (isset($response->CommonGrp->STAN)) {
-            return $response->CommonGrp->STAN;
+            return $response->CommonGrp->STAN->__toString();
         }
         return null;
     }
@@ -369,6 +369,58 @@ class RapidConnectResponse extends AbstractResponse
     {
         if (isset($this->data->Status)) {
             return $this->data->Status->__toString();
+        }
+        return null;
+    }
+
+    public function getBillPaymentGroup()
+    {
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+        $responseGroup = $payload->children()[0];
+        if (isset($responseGroup->BillPayGrp)) {
+            return $responseGroup->BillPayGrp;
+        }
+        return null;
+    }
+
+    public function getDiscoverGroup()
+    {
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+        $responseGroup = $payload->children()[0];
+        if (isset($responseGroup->DSGrp)) {
+            return $responseGroup->DSGrp;
+        }
+        return null;
+    }
+
+    public function getEcommGroup()
+    {
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+        $responseGroup = $payload->children()[0];
+        if (isset($responseGroup->EcommGrp)) {
+            return $responseGroup->EcommGrp;
+        }
+        return null;
+    }
+
+    public function getVisaGroup()
+    {
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+        $responseGroup = $payload->children()[0];
+        if (isset($responseGroup->VisaGrp)) {
+            return $responseGroup->VisaGrp;
         }
         return null;
     }
