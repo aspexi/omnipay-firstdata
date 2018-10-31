@@ -45,7 +45,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         CreditCard::BRAND_VISA => RapidConnectAbstractRequest::BRAND_VISA,
     );
 
-    final public function BuildRequestArray(
+    final public static function BuildRequestArray(
         array $requestData,
         RapidConnectAbstractRequest $request,
         RapidConnectResponse $response
