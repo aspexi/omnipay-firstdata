@@ -1,3 +1,34 @@
+<?php
+
+namespace Omnipay\FirstData;
+
+use Omnipay\Tests\TestCase;
+
+class RapidConnectGatewayCertificationTest extends TestCase
+{
+    public $responses;
+
+    public function setUp()
+    {
+        parent::setUp();
+
+        if (!getenv('RAPIDCONNECT_APP') ||
+            !getenv('RAPIDCONNECT_DID_ECOMM') ||
+            !getenv('RAPIDCONNECT_DID_MOTO') ||
+            !getenv('RAPIDCONNECT_DID_RETAIL') ||
+            !getenv('RAPIDCONNECT_GROUPID') ||
+            !getenv('RAPIDCONNECT_MERCHANTID_ECOMM') ||
+            !getenv('RAPIDCONNECT_MERCHANTID_MOTO') ||
+            !getenv('RAPIDCONNECT_MERCHANTID_RETAIL') ||
+            !getenv('RAPIDCONNECT_MERCHANT_EMAIL') ||
+            !getenv('RAPIDCONNECT_SERVICEID') ||
+            !getenv('RAPIDCONNECT_TERMINALID') ||
+            !getenv('RAPIDCONNECT_TPPID')
+        ) {
+            $this->markTestSkipped('Missing credentials');
+        }
+    }
+
     public function testCaseNumber000138430010()
     {
         // Arrange
@@ -490,9 +521,8 @@
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '290011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
-                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalTransmissionDateandTime' => $request->getTransmissionDateandTime(),
                 'OriginalSTAN' => '290011',
                 'OriginalResponseCode' => '000',
             ),
@@ -3982,9 +4012,8 @@
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '040011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
-                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalTransmissionDateandTime' => $request->getTransmissionDateandTime(),
                 'OriginalSTAN' => '040011',
                 'OriginalResponseCode' => '000',
             ),
@@ -4130,9 +4159,8 @@
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '200011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
-                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalTransmissionDateandTime' => $request->getTransmissionDateandTime(),
                 'OriginalSTAN' => '200011',
                 'OriginalResponseCode' => '000',
             ),
@@ -4278,9 +4306,9 @@
                 'EcommTransactionIndicator' => '03',
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '300011',
+ //               'OriginalAuthorizationID' => '300011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
-                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalTransmissionDateandTime' => $request->getTransmissionDateandTime(),
                 'OriginalSTAN' => '300011',
                 'OriginalResponseCode' => '000',
             ),
@@ -8316,9 +8344,8 @@
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '140011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
-                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalTransmissionDateandTime' => $request->getTransmissionDateandTime(),
                 'OriginalSTAN' => '140011',
                 'OriginalResponseCode' => '000',
             ),
@@ -8594,9 +8621,8 @@
                 ),
             ),
             'OriginalAuthorizationGroup' => array(
-                'OriginalAuthorizationID' => '190011',
                 'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
-                'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
+                'OriginalTransmissionDateandTime' => $request->getTransmissionDateandTime(),
                 'OriginalSTAN' => '190011',
                 'OriginalResponseCode' => '000',
             ),
@@ -12085,4 +12111,5 @@
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
     }
+}
 
