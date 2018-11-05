@@ -435,12 +435,6 @@ fclose($logfile);//+++++
      */
     function sendData($data, $timeoutCount = 0)
     {
-$output = simplexml_load_string($data->Transaction->Payload, 'SimpleXMLElement', LIBXML_NOWARNING);//+++++
-$logfile = fopen('/tmp/rc.log', 'a');//+++++
-fwrite($logfile, "\n********** Endpoint\n" . $this->getLiveEndpoint());//+++++
-fwrite($logfile, "\n********** Request\n" . print_r($output, TRUE));//+++++
-//fwrite($logfile, "\n********** Request\n" . $data->Transaction->Payload);//+++++
-fclose($logfile);//+++++
         $headers = array(
             "Connection" => "keep-alive",
             "Cache-Control" => "no-cache",
