@@ -115,6 +115,23 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
             return $requestData;
         };
 
+        // Alternate Merchant Name and Address Group
+        $requestData = $setupFromOriginalRequest(
+            'AlternateMerchantNameandAddressGroup',
+            [
+                'MerchantName',
+                'MerchantAddress',
+                'MerchantCity',
+                'MerchantState',
+                'MerchantCounty',
+                'MerchantPostalCode',
+                'MerchantCountry',
+                'MerchantEmailAddress',
+            ],
+            $requestData,
+            $request
+        );
+
         // Bill Payment Group
        $requestData = $setupFromOriginalRequest(
            'BillPaymentGroup',
