@@ -30,7 +30,7 @@ class shortTest extends TestCase
         }
     }
 
-    public function testCaseNumber000022440020And000022440021()
+    public function testCaseNumber000024130020And000024130021()
     {
         // Arrange
                 $expirationDate = new \DateTime();
@@ -38,8 +38,12 @@ class shortTest extends TestCase
                 $expiryMonth = $expirationDate->format('m');
                 $expiryYear = $expirationDate->format('Y');
 
-                $now = new \DateTime();
-                $now->setTimezone(new \DateTimeZone('GMT'));
+                $nowPdt = new \DateTime();
+                $nowUtc = new \DateTime();
+                $utc = new \DateTimeZone('UTC');
+                $pdt = new \DateTimeZone('America/Los_Angeles');
+                $nowUtc->setTimeZone($utc);
+                $nowPdt->setTimeZone($pdt);
 
                 $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
                 $gateway->setApp(getenv('RAPIDCONNECT_APP'));
@@ -48,48 +52,55 @@ class shortTest extends TestCase
                 $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
         $gateway->setDID(getenv('RAPIDCONNECT_DID_RETAIL'));
         $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_RETAIL'));
+        $track2 = "375987654111116=1911101123400000";
 
-        $requestData = array('card' => array('billingAddress1' => '1307 Broad Hollow Road','billingPostcode' => '11747','cvv' => '123','number' => '4005571702222222','expiryMonth' => $expiryMonth,'expiryYear' => $expiryYear,'type' => 'visa',),'CommonGroup' => array('TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-        'LocalDateandTime' => $now->format('Ymdhis'),
-        'TransmissionDateandTime' => $now->format('Ymdhis'),
-        'POSEntryMode' => array(
-        'entryMode' => '90',
-        'pinCapability' => '2',
-        ),
-
-        'POSConditionCode' => '00',
-        'TerminalCategoryCode' => '00',
-        'TerminalEntryCapability' => '03',
-        'TerminalLocationIndicator' => '0',
-        'CardCaptureCapability' => '1',
-        'MerchantCategoryCode' => '5399',
-        'STAN' => '440020',
-        'ReferenceNumber' => '000022440020',
-        'OrderNumber' => '000022440020',),'AlternateMerchantNameandAddressGroup' => array(
-        'MerchantName' => 'SMITH HARDWARE',
-        'MerchantAddress' => '1307 Walt Whitman Road',
-        'MerchantCity' => 'Melville',
-        'MerchantState' => 'NY',
-        'MerchantPostalCode' => '11747',
-        'MerchantCountry' => '840',
-        ),
-        'AdditionalAmountGroups' => array(
-            array(
-                'PartialAuthorizationApprovalCapability' => '1',
+        $requestData = array
+        (
+            'CommonGroup' => array
+            (
+                'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
+                'LocalDateandTime' => $nowPdt->format('Ymdhis'),
+                'TransmissionDateandTime' => $nowUtc->format('Ymdhis'),
+                'POSEntryMode' => array(
+                'entryMode' => '90',
+                'pinCapability' => '2',
             ),
-        ),
-        'CustomerInformationGroup' => array(
-            'AVSBillingAddress' => '1307 Broad Hollow Road',
-            'AVSBillingPostalCode' => '11747',
-        ),'amount' => '62008','currency' => '840','ClientRef' => '000022440020',);
+            'POSConditionCode' => '00',
+            'TerminalCategoryCode' => '00',
+            'TerminalEntryCapability' => '03',
+            'TerminalLocationIndicator' => '0',
+            'CardCaptureCapability' => '1',
+            'MerchantCategoryCode' => '5399',
+            'STAN' => '130020',
+            'ReferenceNumber' => '000024130020',
+            'OrderNumber' => '000024130020',),'AlternateMerchantNameandAddressGroup' => array
+            (
+                'MerchantName' => 'SMITH HARDWARE',
+                'MerchantAddress' => '1307 Walt Whitman Road',
+                'MerchantCity' => 'Melville',
+                'MerchantState' => 'NY',
+                 'MerchantPostalCode' => '11747',
+                'MerchantCountry' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'PartialAuthorizationApprovalCapability' => '1',
+                ),
+            ),
+            'CardGroup' => array
+            (
+                'Track2Data' => $track2,
+            ),
+            'amount' => '54436',
+            'currency' => '840',
+            'ClientRef' => '000024130020',
+        );
 
         // Act
         $request = $gateway->purchase($requestData);$response = $request->send();
 
         // Assert
         try {
-        $this->assertEquals('Y', $response->getAVSResultCode());
-        $this->assertEquals('Match', $response->getCCVResultCode());
         $this->assertEquals('002', $response->getResponseCode());
         } catch(\PHPUnit_Framework_ExpectationFailedException $e) {
         $testCaseNumber = $requestData['ClientRef'];
@@ -104,25 +115,36 @@ class shortTest extends TestCase
         $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
 
-
          // Arrange
-        $requestData = array('card' => array('number' => '4005571702222222','expiryMonth' => $expiryMonth,'expiryYear' => $expiryYear,'type' => 'visa',),'CommonGroup' => array('TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
-        'LocalDateandTime' => $now->format('Ymdhis'),
-        'TransmissionDateandTime' => $now->format('Ymdhis'),
-        'POSEntryMode' => array(
-        'entryMode' => '90',
-        'pinCapability' => '2',
+                $nowPdt = new \DateTime();
+                $nowUtc = new \DateTime();
+                $nowUtc->setTimeZone ($utc);
+                $nowPdt->setTimeZone ($pdt);
+       $requestData = array(
+            'card' => array(
+                'number' => '375987654111116',
+                'expiryMonth' => '11',
+                'expiryYear' => '19',
+                'type' => 'amex',
+            ),
+        'CommonGroup' => array
+        (
+            'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
+            'LocalDateandTime' => $nowPdt->format('Ymdhis'),
+            'TransmissionDateandTime' => $nowUtc->format('Ymdhis'),
+            'POSEntryMode' => array(
+            'entryMode' => '90',
+            'pinCapability' => '2',
         ),
-
         'POSConditionCode' => '00',
         'TerminalCategoryCode' => '00',
         'TerminalEntryCapability' => '03',
         'TerminalLocationIndicator' => '0',
         'CardCaptureCapability' => '1',
         'MerchantCategoryCode' => '5399',
-        'STAN' => '440021',
-        'ReferenceNumber' => '000022440021',
-        'OrderNumber' => '000022440021',),'AlternateMerchantNameandAddressGroup' => array(
+        'STAN' => '130021',
+        'ReferenceNumber' => '000024130021',
+        'OrderNumber' => '000024130021',),'AlternateMerchantNameandAddressGroup' => array(
         'MerchantName' => 'SMITH HARDWARE',
         'MerchantAddress' => '1307 Walt Whitman Road',
         'MerchantCity' => 'Melville',
@@ -131,22 +153,18 @@ class shortTest extends TestCase
         'MerchantCountry' => '840',
         ),'AdditionalAmountGroups' => array(
         array(
-        'AdditionalAmount' => '32004',
+        'AdditionalAmount' => '27218',
         'AdditionalAmountCurrency' => '840',
         'AdditionalAmountType' => 'TotalAuthAmt',
         ),
-        // array(
-        // 'AdditionalAmount' => '32004',
-        // 'AdditionalAmountCurrency' => '840',
-        // 'AdditionalAmountType' => 'FirstAuthAmt',
-        // ),
-        ),'OriginalAuthorizationGroup' => array(
+        ),
+        'OriginalAuthorizationGroup' => array(
         'OriginalAuthorizationID' => $response->getAuthorizationID(),
         'OriginalLocalDateandTime' => $response->getLocalDateandTime(),
         'OriginalTransmissionDateandTime' => $request->getTransmissionDateandTime(),
         'OriginalSTAN' => $response->getSTAN(),
         'OriginalResponseCode' => $response->getResponseCode(),
-        ),'amount' => '32004','currency' => '840','ClientRef' => '000022440021',);
+        ),'amount' => '27218','currency' => '840','ClientRef' => '000024130021',);
 
         // Act
         $requestData['CommonGroup']['TransactionType'] = 'Sale';

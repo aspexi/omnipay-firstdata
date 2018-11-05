@@ -439,7 +439,7 @@ $output = simplexml_load_string($data->Transaction->Payload, 'SimpleXMLElement',
 $logfile = fopen('/tmp/rc.log', 'a');//+++++
 fwrite($logfile, "\n********** Endpoint\n" . $this->getLiveEndpoint());//+++++
 fwrite($logfile, "\n********** Request\n" . print_r($output, TRUE));//+++++
-//fwrite($logfile, "\n********** Request\n" . $xml->Transaction->Payload);//+++++
+//fwrite($logfile, "\n********** Request\n" . $data->Transaction->Payload);//+++++
 fclose($logfile);//+++++
         $headers = array(
             "Connection" => "keep-alive",
