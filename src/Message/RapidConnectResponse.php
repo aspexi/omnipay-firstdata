@@ -204,6 +204,19 @@ class RapidConnectResponse extends AbstractResponse
     }
 
     /**
+     * @return null
+     * @throws InvalidResponseException
+     */
+    public function getAuthorizingNetworkID()
+    {
+        $responseGroup = $this->getResponseGroup();
+        if ($responseGroup !== null && isset ($responseGroup->AthNtwkID)) {
+            return $responseGroup->AthNtwkID;
+        }
+        return null;
+    }
+
+    /**
      * @return null|\SimpleXMLElement
      * @throws InvalidResponseException
      */
@@ -373,6 +386,10 @@ class RapidConnectResponse extends AbstractResponse
         return null;
     }
 
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
     public function getBillPaymentGroup()
     {
         $payload = $this->getPayload();
@@ -386,6 +403,10 @@ class RapidConnectResponse extends AbstractResponse
         return null;
     }
 
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
     public function getDiscoverGroup()
     {
         $payload = $this->getPayload();
@@ -399,6 +420,10 @@ class RapidConnectResponse extends AbstractResponse
         return null;
     }
 
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
     public function getEcommGroup()
     {
         $payload = $this->getPayload();
@@ -412,6 +437,10 @@ class RapidConnectResponse extends AbstractResponse
         return null;
     }
 
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
     public function getVisaGroup()
     {
         $payload = $this->getPayload();
@@ -421,6 +450,44 @@ class RapidConnectResponse extends AbstractResponse
         $responseGroup = $payload->children()[0];
         if (isset($responseGroup->VisaGrp)) {
             return $responseGroup->VisaGrp;
+        }
+        return null;
+    }
+
+    /**
+     * @return null
+     * @throws InvalidResponseException
+     */
+    public function getAuthorizationCharacteristicsIndicator()
+    {
+        $visaGroup = $this->getVisaGroup();
+        if ($visaGroup !== null && isset($visaGroup->ACI)) {
+            return $visaGroup->ACI;
+        }
+        return null;
+    }
+
+    /**
+     * @return null
+     * @throws InvalidResponseException
+     */
+    public function getCardLevelResultCode()
+    {
+        $visaGroup = $this->getVisaGroup();
+        if ($visaGroup !== null && isset($visaGroup->CardLevelResult)) {
+            return $visaGroup->CardLevelResult;
+        }
+        return null;
+    }
+
+    /**
+     * @return null
+     * @throws InvalidResponseException
+     */
+    public function getTransactionIdentifier() {
+        $visaGroup = $this->getVisaGroup();
+        if ($visaGroup !== null && isset($visaGroup->TransID)) {
+            return $visaGroup->TransID;
         }
         return null;
     }
