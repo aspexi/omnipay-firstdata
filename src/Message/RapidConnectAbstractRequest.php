@@ -50,73 +50,8 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         RapidConnectAbstractRequest $request,
         RapidConnectResponse $response
     ) {
-        $setupFromResponse = function (
-            string $groupName,
-            array $fieldNames,
-            array $requestData,
-            RapidConnectResponse $response
-        ) {
-            $group = $response->{'get' . $groupName}();
-            if ($group === null) {
-                return $requestData;
-            }
-
-            $fromResponse = [];
-            foreach ($fieldNames as $fieldName) {
-                if (!isset($group->{$fieldName})) {
-                    continue;
-                }
-                $fromResponse[$fieldName] = $group->{$fieldName}->__toString();
-            }
-
-            if (count($fromResponse) > 0) {
-                if (!array_key_exists($groupName, $requestData)) {
-                    $requestData[$groupName] = [];
-                }
-
-                foreach ($fromResponse as $fieldName => $value) {
-                    $requestData[$groupName][$fieldName] = $value;
-                }
-            }
-
-            return $requestData;
-        };
-
-        $setupFromOriginalRequest = function(
-            string $groupName,
-            array $fieldNames,
-            array $requestData,
-            RapidConnectAbstractRequest $request
-        ) {
-            $group = $request->{'get' . $groupName}();
-            if ($group === null) {
-                return $requestData;
-            }
-
-            $fromRequest = [];
-            foreach ($fieldNames as $fieldName) {
-                $value = $group->{'get' . $fieldName}();
-                if ($value === null) {
-                    continue;
-                }
-                $fromRequest[$fieldName] = $value;
-            }
-
-            if (count($fromRequest) > 0) {
-                if (!array_key_exists($groupName, $requestData)) {
-                    $requestData[$groupName] = [];
-                }
-
-                foreach ($fromRequest as $fieldName => $value) {
-                    $requestData[$groupName][$fieldName] = $value;
-                }
-            }
-
-            return $requestData;
-        };
-
         // Alternate Merchant Name and Address Group
-        $requestData = $setupFromOriginalRequest(
+        $requestData = self::setupFromOriginalRequest(
             'AlternateMerchantNameandAddressGroup',
             [
                 'MerchantName',
@@ -133,7 +68,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         );
 
         // Amex Group
-        $requestData = $setupFromResponse(
+        $requestData = self::setupFromResponse(
             'AmexGroup',
             [
                 'AmExPOSData',
@@ -142,24 +77,32 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
             $requestData,
             $response
         );
--
+
         // Bill Payment Group
-       $requestData = $setupFromOriginalRequest(
-           'BillPaymentGroup',
-           [ 'InstallmentPaymentInvoiceNumber', 'InstallmentPaymentDescription' ],
-           $requestData,
-           $request
-       );
+        $requestData = self::setupFromOriginalRequest(
+            'BillPaymentGroup',
+            ['InstallmentPaymentInvoiceNumber', 'InstallmentPaymentDescription'],
+            $requestData,
+            $request
+        );
+
+        // Common Group
+        $requestData = self::setupFromOriginalRequest(
+            'CommonGroup',
+            ['ReferenceNumber'],
+            $requestData,
+            $request
+        );
 
         // Discover Group
-        $requestData = $setupFromOriginalRequest(
+        $requestData = self::setupFromOriginalRequest(
             'DiscoverGroup',
             ['MOTOIndicator'],
             $requestData,
             $request
         );
 
-        $requestData = $setupFromResponse(
+        $requestData = self::setupFromResponse(
             'DiscoverGroup',
             [
                 'DiscProcCode',
@@ -174,7 +117,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         );
 
         // Ecomm Group
-        $requestData = $setupFromOriginalRequest(
+        $requestData = self::setupFromOriginalRequest(
             'EcommGroup',
             ['EcommTransactionIndicator'],
             $requestData,
@@ -182,7 +125,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         );
 
         // Mastercard Group
-        $requestData = $setupFromResponse(
+        $requestData = self::setupFromResponse(
             'MastercardGroup',
             ['TranIntgClass'],
             $requestData,
@@ -190,7 +133,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         );
 
         // Visa Group
-        $requestData = $setupFromOriginalRequest(
+        $requestData = self::setupFromOriginalRequest(
             'VisaGroup',
             [
                 'MarketSpecificDataIndicator',
@@ -201,7 +144,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
             $request
         );
 
-        $requestData = $setupFromResponse(
+        $requestData = self::setupFromResponse(
             'VisaGroup',
             [
                 'ACI',
@@ -229,11 +172,11 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         }
 
         foreach ($requestFields as $field) {
-            $value = $commonGroup->{'get'.$field}();
+            $value = $commonGroup->{'get' . $field}();
             if ($value == null) {
                 continue;
             }
-            $requestData['OriginalAuthorizationGroup']['Original'.$field] = $value;
+            $requestData['OriginalAuthorizationGroup']['Original' . $field] = $value;
         }
 
         $responseFields = [
@@ -242,8 +185,8 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         ];
 
         foreach ($responseFields as $field) {
-            $requestData['OriginalAuthorizationGroup']['Original'.$field] =
-                $response->{'get'.$field}();
+            $requestData['OriginalAuthorizationGroup']['Original' . $field] =
+                $response->{'get' . $field}();
         }
 
         return $requestData;
@@ -540,9 +483,9 @@ XML;
 
         $commonGroup = $this->getCommonGroup();
         if ($commonGroup !== null) {
-$logfile = fopen('/tmp/req.log', 'w');//+++++
-fwrite($logfile, print_r($request, TRUE));//+++++
-fclose($logfile);//+++++
+            $logfile = fopen('/tmp/req.log', 'w');//+++++
+            fwrite($logfile, print_r($request, true));//+++++
+            fclose($logfile);//+++++
 
             $commonGroup->addCommonGroup($request);
         }
@@ -648,7 +591,7 @@ fclose($logfile);//+++++
         $this->httpClient->setSslVerification(false, false);
 //        $isOkay = TRUE;
 //        try {
-            $httpResponse = $this->httpClient->post($this->getLiveEndpoint(), $headers, $dataXml)->send();
+        $httpResponse = $this->httpClient->post($this->getLiveEndpoint(), $headers, $dataXml)->send();
 //        } catch (\Exception $x) {
 //            $isOkay = FALSE;
 //            // TODO: More stuff here - logging?
@@ -3555,5 +3498,68 @@ fclose($logfile);//+++++
     public function getHttpRequest(): \Symfony\Component\HttpFoundation\Request
     {
         return $this->httpRequest;
+    }
+
+    private static function setupFromResponse(
+        string $groupName,
+        array $fieldNames,
+        array $requestData,
+        RapidConnectResponse $response
+    ) {
+        $group = $response->{'get' . $groupName}();
+
+        if ($group !== null) {
+            $fromResponse = [];
+            foreach ($fieldNames as $fieldName) {
+                if (!isset($group->{$fieldName})) {
+                    continue;
+                }
+                $fromResponse[$fieldName] = $group->{$fieldName}->__toString();
+            }
+
+            if (count($fromResponse) > 0) {
+                if (!array_key_exists($groupName, $requestData)) {
+                    $requestData[$groupName] = [];
+                }
+
+                foreach ($fromResponse as $fieldName => $value) {
+                    $requestData[$groupName][$fieldName] = $value;
+                }
+            }
+        }
+
+        return $requestData;
+    }
+
+    private
+    static function setupFromOriginalRequest(
+        string $groupName,
+        array $fieldNames,
+        array $requestData,
+        RapidConnectAbstractRequest $request
+    ) {
+        $group = $request->{'get' . $groupName}();
+        if ($group !== null) {
+            $fromRequest = [];
+            foreach ($fieldNames as $fieldName) {
+                $value = $group->{'get' . $fieldName}();
+                if ($value === null) {
+                    continue;
+                }
+                $fromRequest[$fieldName] = $value;
+            }
+
+            if (count($fromRequest) > 0) {
+                if (!array_key_exists($groupName, $requestData)) {
+                    $requestData[$groupName] = [];
+                }
+
+                foreach ($fromRequest as $fieldName => $value) {
+                    $requestData[$groupName][$fieldName] = $value;
+                }
+            }
+        }
+
+        return $requestData;
     }
 }
