@@ -1,7 +1,4 @@
 <?php
-<?php
-<?php
-<?php
 
 namespace Omnipay\FirstData;
 
