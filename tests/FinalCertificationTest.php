@@ -581,7 +581,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'CommonGroup' => array(
                 'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
                 'POSEntryMode' => array(
-                    'entryMode' => '01',
+                    'entryMode' => '10',
                     'pinCapability' => '2',
                 ),
 
@@ -589,6 +589,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'TerminalCategoryCode' => '00',
                 'TerminalEntryCapability' => '01',
                 'TerminalLocationIndicator' => '1',
+                'TransactionInitiation' => 'Merchant',
                 'CardCaptureCapability' => '0',
                 'MerchantCategoryCode' => '5965',
                 'STAN' => '080010',
@@ -601,6 +602,11 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'EcommGroup' => array(
                 'EcommTransactionIndicator' => '03',
                 'EcommURL' => 'google.com',
+            ),
+            'VisaGroup' => array(
+                'AuthIndicator' => 'CrdOnFile',
+                'StoredCredentialIndicator' => 'Subsequent',
+                'CardOnFileScheduleIndicator' => 'Unscheduled',
             ),
             'amount' => '21026',
             'currency' => '840',
@@ -12569,7 +12575,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         ),
 
         'POSConditionCode' => '00',
-        'TerminalCategoryCode' => '00',
+        'TerminalCategoryCode' => '01',
         'TerminalEntryCapability' => '03',
         'TerminalLocationIndicator' => '0',
         'CardCaptureCapability' => '1',
@@ -12646,7 +12652,13 @@ class RapidConnectGatewayCertificationTest extends TestCase
         'OriginalTransmissionDateandTime' => $response->getTransmissionDateandTime(),
         'OriginalSTAN' => $response->getSTAN(),
         'OriginalResponseCode' => $response->getResponseCode(),
-        ),'amount' => '10000','currency' => '840','ClientRef' => '000022420021',);
+        'OriginalAuthorizingNetworkID' => $response->getAuthorizingNetworkID(),
+        ),
+            'VisaGroup' => array(
+                'AuthorizationCharacteristicsIndicator' => $response->getAuthorizationCharacteristicsIndicator(),
+                'TransactionIdentifier' => $response->getTransactionIdentifier(),
+            ),
+            'amount' => '10000','currency' => '840','ClientRef' => '000022420021',);
 
         $requestData = RapidConnectAbstractRequest::BuildRequestArray($requestData, $request, $response);
 
@@ -12972,7 +12984,7 @@ class RapidConnectGatewayCertificationTest extends TestCase
         ),
 
         'POSConditionCode' => '00',
-        'TerminalCategoryCode' => '00',
+        'TerminalCategoryCode' => '01',
         'TerminalEntryCapability' => '03',
         'TerminalLocationIndicator' => '0',
         'CardCaptureCapability' => '1',
@@ -13251,6 +13263,10 @@ class RapidConnectGatewayCertificationTest extends TestCase
                 'entryMode' => '90',
                 'pinCapability' => '2',
             ),
+                'CustomerInformationGroup' => array(
+                    'AVSBillingAddress' => '1307 Broad Hollow Road',
+                    'AVSBillingPostalCode' => '11747',
+                ),
             'POSConditionCode' => '00',
             'TerminalCategoryCode' => '00',
             'TerminalEntryCapability' => '03',
@@ -13373,6 +13389,5 @@ class RapidConnectGatewayCertificationTest extends TestCase
         $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
     }
-
 }
 
