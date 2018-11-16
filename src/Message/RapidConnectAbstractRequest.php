@@ -45,6 +45,179 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         CreditCard::BRAND_VISA => RapidConnectAbstractRequest::BRAND_VISA,
     );
 
+    final public static function BuildRequestArray(
+        array $requestData,
+        RapidConnectAbstractRequest $request,
+        RapidConnectResponse $response
+    ) {
+        $setupFromResponse = function (
+            string $groupName,
+            array $fieldNames,
+            array $requestData,
+            RapidConnectResponse $response
+        ) {
+            $group = $response->{'get' . $groupName}();
+            if ($group === null) {
+                return $requestData;
+            }
+
+            $fromResponse = [];
+            foreach ($fieldNames as $fieldName) {
+                if (!isset($group->{$fieldName})) {
+                    continue;
+                }
+                $fromResponse[$fieldName] = $group->{$fieldName}->__toString();
+            }
+
+            if (count($fromResponse) > 0) {
+                if (!array_key_exists($groupName, $requestData)) {
+                    $requestData[$groupName] = [];
+                }
+
+                foreach ($fromResponse as $fieldName => $value) {
+                    $requestData[$groupName][$fieldName] = $value;
+                }
+            }
+
+            return $requestData;
+        };
+
+        $setupFromOriginalRequest = function(
+            string $groupName,
+            array $fieldNames,
+            array $requestData,
+            RapidConnectAbstractRequest $request
+        ) {
+            $group = $request->{'get' . $groupName}();
+            if ($group === null) {
+                return $requestData;
+            }
+
+            $fromRequest = [];
+            foreach ($fieldNames as $fieldName) {
+                $value = $group->{'get' . $fieldName}();
+                if ($value === null) {
+                    continue;
+                }
+                $fromRequest[$fieldName] = $value;
+            }
+
+            if (count($fromRequest) > 0) {
+                if (!array_key_exists($groupName, $requestData)) {
+                    $requestData[$groupName] = [];
+                }
+
+                foreach ($fromRequest as $fieldName => $value) {
+                    $requestData[$groupName][$fieldName] = $value;
+                }
+            }
+
+            return $requestData;
+        };
+
+        // Alternate Merchant Name and Address Group
+        $requestData = $setupFromOriginalRequest(
+            'AlternateMerchantNameandAddressGroup',
+            [
+                'MerchantName',
+                'MerchantAddress',
+                'MerchantCity',
+                'MerchantState',
+                'MerchantCounty',
+                'MerchantPostalCode',
+                'MerchantCountry',
+                'MerchantEmailAddress',
+            ],
+            $requestData,
+            $request
+        );
+
+        // Bill Payment Group
+       $requestData = $setupFromOriginalRequest(
+           'BillPaymentGroup',
+           [ 'InstallmentPaymentInvoiceNumber', 'InstallmentPaymentDescription' ],
+           $requestData,
+           $request
+       );
+
+        // Discover Group
+        $requestData = $setupFromOriginalRequest(
+            'DiscoverGroup',
+            ['MOTOIndicator'],
+            $requestData,
+            $request
+        );
+
+        $requestData = $setupFromResponse(
+            'DiscoverGroup',
+            [
+                'DiscProcCode',
+                'DiscPOSEntry',
+                'DiscRespCode',
+                'DiscPOSData',
+                'DiscTransQualifier',
+                'DiscNRID'
+            ],
+            $requestData,
+            $response
+        );
+
+        // Ecomm Group
+        $requestData = $setupFromOriginalRequest(
+            'EcommGroup',
+            ['EcommTransactionIndicator'],
+            $requestData,
+            $request
+        );
+
+        // Mastercard Group
+        $requestData = $setupFromResponse(
+            'MastercardGroup',
+            ['TranIntgClass'],
+            $requestData,
+            $response
+        );
+
+        // Visa Group
+        $requestData = $setupFromOriginalRequest(
+            'VisaGroup',
+            [
+                'MarketSpecificDataIndicator',
+                'TransactionIdentifier',
+                'StoredCredentialIndicator',
+            ],
+            $requestData,
+            $request
+        );
+
+        $requestData = $setupFromResponse(
+            'VisaGroup',
+            ['CofSchedInd'],
+            $requestData,
+            $response
+        );
+
+        // OriginalAuthorizationGroup
+        $fields = [
+            'AuthorizationID',
+            'LocalDateandTime',
+            'TransmissionDateandTime',
+            'STAN',
+            'ResponseCode',
+        ];
+
+        if (!array_key_exists('OriginalAuthorizationGroup', $requestData)) {
+            $requestData['OriginalAuthorizationGroup'] = [];
+        }
+
+        foreach ($fields as $field) {
+            $requestData['OriginalAuthorizationGroup']['Original'.$field] =
+                $response->{'get'.$field}();
+        }
+
+        return $requestData;
+    }
+
     public function getAdditionalAmountGroups()
     {
         return $this->getParameter('AdditionalAmountGroups');
@@ -2211,9 +2384,6 @@ fclose($logfile);//+++++
     }
 
 
-
-
-
     /**
      * @return string
      */
@@ -3338,5 +3508,21 @@ fclose($logfile);//+++++
 
 
         return $this->setCardGroup($cg);
+    }
+
+    /**
+     * @return ClientInterface
+     */
+    public function getHttpClient(): \Guzzle\Http\ClientInterface
+    {
+        return $this->httpClient;
+    }
+
+    /**
+     * @return HttpRequest
+     */
+    public function getHttpRequest(): \Symfony\Component\HttpFoundation\Request
+    {
+        return $this->httpRequest;
     }
 }

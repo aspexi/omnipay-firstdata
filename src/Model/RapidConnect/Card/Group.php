@@ -9,25 +9,6 @@ use Omnipay\FirstData\Model\RapidConnect\BaseGroup;
 
 class Group extends BaseGroup
 {
-
-    const BRAND_AMEX = 'Amex';
-    const BRAND_DINERS_CLUB = 'Diners';
-    const BRAND_DISCOVER = 'Discover';
-    const BRAND_JCB = 'JCB';
-    const BRAND_MAESTRO = 'MaestroInt';
-    const BRAND_MASTERCARD = 'MasterCard';
-    const BRAND_VISA = 'Visa';
-
-    protected $brandMap = array(
-        CreditCard::BRAND_AMEX => Group::BRAND_AMEX,
-        CreditCard::BRAND_DINERS_CLUB => Group::BRAND_DINERS_CLUB,
-        CreditCard::BRAND_DISCOVER => Group::BRAND_DISCOVER,
-        CreditCard::BRAND_JCB => Group::BRAND_JCB,
-        CreditCard::BRAND_MAESTRO => Group::BRAND_MAESTRO,
-        CreditCard::BRAND_MASTERCARD => Group::BRAND_MASTERCARD,
-        CreditCard::BRAND_VISA => Group::BRAND_VISA,
-    );
-
     public function addCardGroup(\SimpleXMLElement $data)
     {
         if ($this->getAccountNumber() !== null) {
@@ -144,13 +125,7 @@ class Group extends BaseGroup
 
         $this->setAccountNumber($value->getNumber());
         $this->setCardExpirationDate($value->getExpiryDate('Ym'));
-
-        $brand = $value->getBrand();
-        if (array_key_exists($brand, $this->brandMap)) {
-            $this->setCardType($this->brandMap[$brand]);
-        } else {
-            $this->setCardType($brand);
-        }
+        $this->setCardType(CardType::FromOmnipayCardType($value->getBrand()));
 
         if ($value->getCvv()) {
             $this->setCCVData($value->getCvv());
@@ -535,5 +510,27 @@ class Group extends BaseGroup
     public function setMergeWithExisting($value)
     {
         return $this->setParameter('MergeWithExisting', $value);
+    }
+
+    public function getAccountNumberFromTrack1Data()
+    {
+        $track1 = $this->getTrack1Data();
+        $pattern = '/\%B(\d{1,19})\^.{2,26}\^\d{4}\d*\?/';
+        if (preg_match($pattern, $track1, $matches) == 1) {
+            return $matches[1];
+        }
+
+        return null;
+    }
+
+    public function getAccountNumberFromTrack2Data()
+    {
+        $track2 = $this->getTrack2Data();
+        $pattern = '/;(\d{1,19})=\d{4}\d*\?/';
+        if (preg_match($pattern, $track2, $matches) == 1) {
+            return $matches[1];
+        }
+
+        return null;
     }
 }

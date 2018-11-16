@@ -1,4 +1,7 @@
 <?php
+<?php
+<?php
+<?php
 
 namespace Omnipay\FirstData;
 
@@ -22,6 +25,7 @@ class RapidConnectGateway extends AbstractGateway
         return array(
             'App' => '',
             'DID' => '',
+            'TPPID' => '',
             'GroupId' => '',
             'MerchantID' => '',
             'ServiceID' => '',
@@ -67,6 +71,24 @@ class RapidConnectGateway extends AbstractGateway
     {
         return $this->setParameter('DID', $dId);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTPPID()
+    {
+        return $this->getParameter('TPPID');
+    }
+
+    /**
+     * @param $tPPID
+     * @return RapidConnectGateway
+     */
+    public function setTPPID($tPPID)
+    {
+        return $this->setParameter('TPPID', $tPPID);
+    }
+
 
     /**
      * @return string
@@ -239,6 +261,11 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
+        $tPPID = $this->getTPPID();
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TPPID'] = $tPPID;
+        }
+
         $groupId = $this->getGroupID();
         if ($groupId !== null) {
             $parameters['CommonGroup']['GroupID'] = $groupId;
@@ -287,6 +314,11 @@ class RapidConnectGateway extends AbstractGateway
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone('UTC'));
             $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
+        }
+
+        $tPPID = $this->getTPPID();
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TPPID'] = $tPPID;
         }
 
         $groupId = $this->getGroupID();
@@ -345,6 +377,11 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
+        $tPPID = $this->getTPPID();
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TPPID'] = $tPPID;
+        }
+
         $groupId = $this->getGroupID();
         if ($groupId !== null) {
             $parameters['CommonGroup']['GroupID'] = $groupId;
@@ -397,6 +434,11 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
+        $tPPID = $this->getTPPID();
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TPPID'] = $tPPID;
+        }
+
         $groupId = $this->getGroupID();
         if ($groupId !== null) {
             $parameters['CommonGroup']['GroupID'] = $groupId;
@@ -446,6 +488,11 @@ class RapidConnectGateway extends AbstractGateway
             $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
+        $tPPID = $this->getTPPID();
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TPPID'] = $tPPID;
+        }
+
         $groupId = $this->getGroupID();
         if ($groupId !== null) {
             $parameters['CommonGroup']['GroupID'] = $groupId;
@@ -493,6 +540,11 @@ class RapidConnectGateway extends AbstractGateway
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone('UTC'));
             $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
+        }
+
+        $tPPID = $this->getTPPID();
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TPPID'] = $tPPID;
         }
 
         $groupId = $this->getGroupID();
@@ -598,6 +650,22 @@ class RapidConnectGateway extends AbstractGateway
             $now->setTimezone(new \DateTimeZone('UTC'));
             $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
+        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+        $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+    }
+
+        if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+        }
+
+        $tPPID = $this->getTPPID();
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TPPID'] = $tPPID;
+        }
 
         $groupId = $this->getGroupID();
         if ($groupId !== null) {
@@ -650,6 +718,11 @@ class RapidConnectGateway extends AbstractGateway
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone('UTC'));
             $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
+        }
+
+        $tPPID = $this->getTPPID();
+        if ($tPPID !== null && !array_key_exists('TPPID', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['TPPID'] = $tPPID;
         }
 
         $groupId = $this->getGroupID();
