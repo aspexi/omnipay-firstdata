@@ -2,6 +2,7 @@
 
 namespace Omnipay\FirstData;
 
+use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\FirstData\Message\RapidConnectAbstractRequest;
 use Omnipay\Tests\TestCase;
 
@@ -2031,6 +2032,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'ClientRef' => '000528150011',
         );
 
+        $requestData = RapidConnectAbstractRequest::BuildRequestArray($requestData, $request, $response);
+
         // Act
         $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
@@ -2186,6 +2189,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'ClientRef' => '000528160011',
         );
 
+        $requestData = RapidConnectAbstractRequest::BuildRequestArray($requestData, $request, $response);
+
         // Act
         $requestData['CommonGroup']['TransactionType'] = 'Sale';
         $request = $gateway->void($requestData);
@@ -2335,6 +2340,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'ClientRef' => '000528950011',
         );
+
+        $requestData = RapidConnectAbstractRequest::BuildRequestArray($requestData, $request, $response);
 
         // Act
         $requestData['CommonGroup']['TransactionType'] = 'Sale';
