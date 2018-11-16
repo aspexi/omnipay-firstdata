@@ -390,6 +390,23 @@ class RapidConnectResponse extends AbstractResponse
      * @return null|\SimpleXMLElement
      * @throws InvalidResponseException
      */
+    public function getAmexGroup()
+    {
+        $payload = $this->getPayload();
+        if ($payload === false || $payload === null) {
+            return null;
+        }
+        $responseGroup = $payload->children()[0];
+        if (isset($responseGroup->AmexGrp)) {
+            return $responseGroup->AmexGrp;
+        }
+        return null;
+    }
+
+    /**
+     * @return null|\SimpleXMLElement
+     * @throws InvalidResponseException
+     */
     public function getBillPaymentGroup()
     {
         $payload = $this->getPayload();
