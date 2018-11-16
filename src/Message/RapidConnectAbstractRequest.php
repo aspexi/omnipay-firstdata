@@ -132,6 +132,17 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
             $request
         );
 
+        // Amex Group
+        $requestData = $setupFromResponse(
+            'AmexGroup',
+            [
+                'AmExPOSData',
+                'AmExTranID',
+            ],
+            $requestData,
+            $response
+        );
+
         // Bill Payment Group
        $requestData = $setupFromOriginalRequest(
            'BillPaymentGroup',
