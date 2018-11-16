@@ -192,7 +192,11 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
 
         $requestData = $setupFromResponse(
             'VisaGroup',
-            ['CofSchedInd'],
+            [
+                'ACI',
+                'CofSchedInd',
+                'TransID',
+            ],
             $requestData,
             $response
         );
