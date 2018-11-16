@@ -12,12 +12,14 @@ class POSEntryMode
 
     const UNSPECIFIED = '00';
     const MANUAL = '01';
+    const VISA_CARD_ON_FILE = '10';
     const MAGNETICSTRIPE = '90';
 
     protected $validEntryModes = array(
         self::MAGNETICSTRIPE,
         self::MANUAL,
         self::UNSPECIFIED,
+        self::VISA_CARD_ON_FILE,
     );
 
     protected $parameters;
