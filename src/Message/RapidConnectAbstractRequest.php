@@ -142,7 +142,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
             $requestData,
             $response
         );
-
+-
         // Bill Payment Group
        $requestData = $setupFromOriginalRequest(
            'BillPaymentGroup',
@@ -213,19 +213,35 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         );
 
         // OriginalAuthorizationGroup
-        $fields = [
-            'AuthorizationID',
-            'LocalDateandTime',
-            'TransmissionDateandTime',
-            'STAN',
-            'ResponseCode',
-        ];
-
         if (!array_key_exists('OriginalAuthorizationGroup', $requestData)) {
             $requestData['OriginalAuthorizationGroup'] = [];
         }
 
-        foreach ($fields as $field) {
+        $requestFields = [
+            'LocalDateandTime',
+            'TransmissionDateandTime',
+            'STAN',
+        ];
+
+        $commonGroup = $request->getCommonGroup();
+        if ($commonGroup === null) {
+            return $requestData;
+        }
+
+        foreach ($requestFields as $field) {
+            $value = $commonGroup->{'get'.$field}();
+            if ($value == null) {
+                continue;
+            }
+            $requestData['OriginalAuthorizationGroup']['Original'.$field] = $value;
+        }
+
+        $responseFields = [
+            'AuthorizationID',
+            'ResponseCode',
+        ];
+
+        foreach ($responseFields as $field) {
             $requestData['OriginalAuthorizationGroup']['Original'.$field] =
                 $response->{'get'.$field}();
         }
