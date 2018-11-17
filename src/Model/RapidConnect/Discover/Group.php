@@ -78,6 +78,32 @@ class Group extends BaseGroup
     }
 
     /**
+     * @return mixed
+     */
+    public function getAuthIndicator()
+    {
+        return $this->getParameter('AuthIndicator');
+    }
+
+    /**
+     * @return Group
+     */
+    public function setAuthIndicator()
+    {
+        return $this->setParameter('AuthIndicator');
+    }
+
+    /**
+     * @return bool
+     */
+    public function validateAuthIndicator()
+    {
+        $value = $this->getParameter('AuthIndicator');
+        $valid = array('CrdOnFile', 'ReAuth');
+        return in_array($value, $valid);
+    }
+
+    /**
      * @return string
      */
     public function getDiscoverProcessingCode()
