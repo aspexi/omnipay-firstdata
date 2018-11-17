@@ -71,8 +71,8 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         $requestData = self::setupFromResponse(
             'AmexGroup',
             [
-                'AmExPOSData',
-                'AmExTranID',
+                'AmExPOSData' => 'AmExPOSData',
+                'AmExTranID' => 'AmExTranID',
             ],
             $requestData,
             $response
@@ -89,7 +89,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         // Common Group
         $requestData = self::setupFromOriginalRequest(
             'CommonGroup',
-            ['ReferenceNumber'],
+            ['OrderNumber', 'ReferenceNumber'],
             $requestData,
             $request
         );
@@ -105,12 +105,12 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         $requestData = self::setupFromResponse(
             'DiscoverGroup',
             [
-                'DiscProcCode',
-                'DiscPOSEntry',
-                'DiscRespCode',
-                'DiscPOSData',
-                'DiscTransQualifier',
-                'DiscNRID'
+                'DiscProcCode' => 'DiscoverProcessingCode',
+                'DiscPOSEntry' => 'DiscoverPOSEntryMode',
+                'DiscRespCode' => 'DiscoverResponseCode',
+                'DiscPOSData' => 'DiscoverPOSData',
+                'DiscTransQualifier' => 'DiscoverTransactionQualifier',
+                'DiscNRID' => 'DiscoverNRID'
             ],
             $requestData,
             $response
@@ -127,7 +127,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         // Mastercard Group
         $requestData = self::setupFromResponse(
             'MastercardGroup',
-            ['TranIntgClass'],
+            ['TranIntgClass' => 'TransactionIntegrityClass'],
             $requestData,
             $response
         );
@@ -147,9 +147,9 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         $requestData = self::setupFromResponse(
             'VisaGroup',
             [
-                'ACI',
-                'CofSchedInd',
-                'TransID',
+                'ACI' => 'AuthorizationCharacteristicsIndicator',
+                'CofSchedInd' => 'CardOnFileScheduleIndicator',
+                'TransID' => 'TransactionIdentifier',
             ],
             $requestData,
             $response
@@ -181,6 +181,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
 
         $responseFields = [
             'AuthorizationID',
+            'AuthorizingNetworkID',
             'ResponseCode',
         ];
 
@@ -3510,11 +3511,11 @@ XML;
 
         if ($group !== null) {
             $fromResponse = [];
-            foreach ($fieldNames as $fieldName) {
+            foreach ($fieldNames as $fieldName => $fieldFullName) {
                 if (!isset($group->{$fieldName})) {
                     continue;
                 }
-                $fromResponse[$fieldName] = $group->{$fieldName}->__toString();
+                $fromResponse[$fieldFullName] = $group->{$fieldName}->__toString();
             }
 
             if (count($fromResponse) > 0) {
@@ -3522,8 +3523,8 @@ XML;
                     $requestData[$groupName] = [];
                 }
 
-                foreach ($fromResponse as $fieldName => $value) {
-                    $requestData[$groupName][$fieldName] = $value;
+                foreach ($fromResponse as $fieldFullName => $value) {
+                    $requestData[$groupName][$fieldFullName] = $value;
                 }
             }
         }
