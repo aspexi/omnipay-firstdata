@@ -40,78 +40,135 @@ class shortTest extends TestCase
 
         $gateway = new RapidConnectGateway($this->getHttpClient(), $this->getHttpRequest());
         $gateway->setLocalTimeZone('PST');
-        $gateway->setApp(getenv('RAPIDCONNECT_APP'));
-        $gateway->setGroupID(getenv('RAPIDCONNECT_GROUPID'));
-        $gateway->setServiceID(getenv('RAPIDCONNECT_SERVICEID'));
-        $gateway->setTerminalID(getenv('RAPIDCONNECT_TERMINALID'));
-        $gateway->setDID(getenv('RAPIDCONNECT_DID_ECOMM'));
-        $gateway->setMerchantID(getenv('RAPIDCONNECT_MERCHANTID_ECOMM'));
+        $gateway->setApp('');
+        $gateway->setGroupID('');
+        $gateway->setServiceID('');
+        $gateway->setTerminalID('');
+        $gateway->setDID('');
+        $gateway->setMerchantID('');
 
         $requestData = array(
+            'card' => array(
+                'billingPostcode' => '11747',
+                'cvv' => '1234',
+                'number' => '379605176666666',
+                'expiryMonth' => $expiryMonth,
+                'expiryYear' => $expiryYear,
+                'type' => 'amex',
+            ),
             'CommonGroup' => array(
-                'TPPID' => str_pad(getenv('RAPIDCONNECT_TPPID'), 6, '0'),
+                'TPPID' => str_pad('', 6, '0'),
                 'POSEntryMode' => array(
-                    'entryMode' => '90',
+                    'entryMode' => '01',
                     'pinCapability' => '2',
                 ),
 
-                'POSConditionCode' => '00',
+                'POSConditionCode' => '59',
                 'TerminalCategoryCode' => '00',
-                'TerminalEntryCapability' => '03',
-                'TerminalLocationIndicator' => '0',
-                'CardCaptureCapability' => '1',
-                'MerchantCategoryCode' => '5399',
-                'STAN' => '780010',
-                'ReferenceNumber' => '000023780010',
-                'OrderNumber' => '000023780010',
+                'TerminalEntryCapability' => '01',
+                'TerminalLocationIndicator' => '1',
+                'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
+                'STAN' => '150010',
+                'ReferenceNumber' => '000528150010',
+                'OrderNumber' => '000528150010',
             ),
             'AlternateMerchantNameandAddressGroup' => array(
                 'MerchantCountry' => '840',
             ),
-            'CardGroup' => array(
-                'Track2Data' => '4021030000000012=20041011000012345678',
-                'CardType' => 'Visa',
-                'MergeWithExisting' => false,
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+                'EcommURL' => 'google.com',
             ),
-            'amount' => '10599',
+            'amount' => '34153',
             'currency' => '840',
-            'ClientRef' => '000023780010',
+            'ClientRef' => '000528150010',
         );
 
-        // Act
         $request = $gateway->purchase($requestData);
-        $response = $request->send();
 
-        // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+        $setupFromOriginalRequest = function(
+            string $groupName,
+            array $fieldNames,
+            array $requestData,
+            Omnipay\FirstData\RapidConnectAbstractRequest $request
+        ) {
+            $group = $request->{'get' . $groupName}();
+            if ($group === null) {
+                return $requestData;
+            }
 
+            $fromRequest = [];
+            foreach ($fieldNames as $fieldName) {
+                $value = $group->{'get' . $fieldName}();
+                if ($value === null) {
+                    continue;
+                }
+                $fromRequest[$fieldName] = $value;
+            }
 
-        // Arrange
-        sleep(60);
-        unset($requestData['card']['cvv']);
-        $requestData['AdditionalAmountGroups'] =
-        [
-            [
-                'AdditionalAmount' => $requestData['amount'],
-                'AdditionalAmountCurrency' => $requestData['currency'],
-                'AdditionalAmountType' => 'TotalAuthAmt',
-            ]
-        ];
-        $requestData['OriginalAuthorizationGroup'] =
-        [
-            'OriginalLocalDateandTime' => $request->getLocalDateandTime()
-            ,'OriginalTransmissionDateandTime' => $request->getTransmissionDateandTime()
-            ,'OriginalSTAN' => $request->getSTAN()
-        ];
-        $requestData['TransactionType'] = $request->getTransactionType();
-        $requestData['PaymentType'] = $request->getPaymentType();
+            if (count($fromRequest) > 0) {
+                if (!array_key_exists($groupName, $requestData)) {
+                    $requestData[$groupName] = [];
+                }
 
-        // Act
-        $request = $gateway->timeoutReversal($requestData);
-        $response = $request->send();
+                foreach ($fromRequest as $fieldName => $value) {
+                    $requestData[$groupName][$fieldName] = $value;
+                }
+            }
 
-        // Assert
-        $this->assertEquals('000', $response->getResponseCode());
+            return $requestData;
+        };
 
+        $requestData = array(
+            'card' => array(
+                'number' => '379605176666666',
+                'expiryMonth' => $expiryMonth,
+                'expiryYear' => $expiryYear,
+                'type' => 'amex',
+            ),
+            'CommonGroup' => array(
+                'TPPID' => str_pad('', 6, '0'),
+                'POSEntryMode' => array(
+                    'entryMode' => '01',
+                    'pinCapability' => '2',
+                ),
+
+                'POSConditionCode' => '59',
+                'TerminalCategoryCode' => '00',
+                'TerminalEntryCapability' => '01',
+                'TerminalLocationIndicator' => '1',
+                'CardCaptureCapability' => '0',
+                'MerchantCategoryCode' => '5965',
+                'STAN' => '150011',
+                'ReferenceNumber' => '000528150010',
+                'OrderNumber' => '000528150011',
+            ),
+            'AlternateMerchantNameandAddressGroup' => array(
+                'MerchantCountry' => '840',
+            ),
+            'AdditionalAmountGroups' => array(
+                array(
+                    'AdditionalAmount' => '34153',
+                    'AdditionalAmountCurrency' => '840',
+                    'AdditionalAmountType' => 'TotalAuthAmt',
+                ),
+            ),
+            'EcommGroup' => array(
+                'EcommTransactionIndicator' => '03',
+            ),
+            'amount' => '34153',
+            'currency' => '840',
+            'ClientRef' => '000528150011',
+        );
+
+        $requestData = $setupFromOriginalRequest(
+            'BillPaymentGroup',
+            [ 'InstallmentPaymentInvoiceNumber', 'InstallmentPaymentDescription' ],
+            $requestData,
+            $request
+        );
+
+        $this->assertEquals(true, true);
     }
 }

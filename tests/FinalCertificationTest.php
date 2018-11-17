@@ -8105,7 +8105,6 @@ class RapidConnectGatewayCertificationTest extends TestCase
             $this->fail("$testCaseNumber,$responseCode,\"$errorData\"");
         }
 
-
         // Arrange
         $requestData = array(
             'card' => array(
@@ -8152,6 +8151,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
             'currency' => '840',
             'ClientRef' => '000142610011',
         );
+
+        $requestData = RapidConnectAbstractRequest::BuildRequestArray($requestData, $request, $response);
 
         // Act
         $requestData['CommonGroup']['TransactionType'] = 'Sale';
@@ -13374,6 +13375,8 @@ class RapidConnectGatewayCertificationTest extends TestCase
         'OriginalSTAN' => $response->getSTAN(),
         'OriginalResponseCode' => $response->getResponseCode(),
         ),'amount' => '27218','currency' => '840','ClientRef' => '000024130021',);
+
+       $requestData = RapidConnectAbstractRequest::BuildRequestArray($requestData, $request, $response);
 
         // Act
         $requestData['CommonGroup']['TransactionType'] = 'Sale';
