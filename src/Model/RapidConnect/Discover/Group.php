@@ -80,6 +80,38 @@ class Group extends BaseGroup
     /**
      * @return string
      */
+    public function getAuthIndicator()
+    {
+        return $this->getParameter('AuthIndicator');
+    }
+
+
+    /**
+     * @param $value
+     * @return string
+     */
+    public function setAuthIndicator($value)
+    {
+        return $this->setParameter('AuthIndicator', $value);
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function validateAuthIndicator()
+    {
+        $value = $this->getParameter('AuthIndicator');
+        if (!preg_match('/[0-9A-Za-z]{6,6}/', $value)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * @return string
+     */
     public function getDiscoverProcessingCode()
     {
         return $this->getParameter('DiscoverProcessingCode');

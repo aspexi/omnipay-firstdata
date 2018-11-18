@@ -249,13 +249,13 @@ class RapidConnectGateway extends AbstractGateway
         if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
-            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('YmdHis');
         }
 
         if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
-            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
         $tPPID = $this->getTPPID();
@@ -310,7 +310,7 @@ class RapidConnectGateway extends AbstractGateway
         if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
-            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
         $tPPID = $this->getTPPID();
@@ -365,13 +365,13 @@ class RapidConnectGateway extends AbstractGateway
         if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
-            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('YmdHis');
         }
 
         if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
-            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
         $tPPID = $this->getTPPID();
@@ -422,13 +422,13 @@ class RapidConnectGateway extends AbstractGateway
         if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
-            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('YmdHis');
         }
 
         if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
-            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
         $tPPID = $this->getTPPID();
@@ -476,13 +476,13 @@ class RapidConnectGateway extends AbstractGateway
         if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
-            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('YmdHis');
         }
 
         if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
-            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
         $tPPID = $this->getTPPID();
@@ -530,13 +530,13 @@ class RapidConnectGateway extends AbstractGateway
         if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
-            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('YmdHis');
         }
 
         if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
-            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
         $tPPID = $this->getTPPID();
@@ -584,23 +584,23 @@ class RapidConnectGateway extends AbstractGateway
         if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
-            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('YmdHis');
         }
 
         if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
-            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
         $now = new \DateTime();
         $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
-        $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+        $parameters['CommonGroup']['LocalDateandTime'] = $now->format('YmdHis');
     }
 
         if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
-            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
         $tPPID = $this->getTPPID();
@@ -652,13 +652,13 @@ class RapidConnectGateway extends AbstractGateway
         if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
-            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('YmdHis');
         }
 
         if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
-            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('Ymdhis');
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
         }
 
         $tPPID = $this->getTPPID();
