@@ -89,7 +89,7 @@ abstract class RapidConnectAbstractRequest extends AbstractRequest
         // Common Group
         $requestData = self::setupFromOriginalRequest(
             'CommonGroup',
-            ['OrderNumber', 'ReferenceNumber'],
+            ['MerchantCategoryCode', 'OrderNumber', 'ReferenceNumber'],
             $requestData,
             $request
         );
