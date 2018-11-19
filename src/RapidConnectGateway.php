@@ -283,7 +283,7 @@ class RapidConnectGateway extends AbstractGateway
 
     public function balanceInquiry(array $parameters = array())
     {
-            // MessageType: CreditRequest, TransactionType: BalanceInquiry
+        // MessageType: CreditRequest, TransactionType: BalanceInquiry
         // MessageType: CreditRequest, TransactionType: Authorize
         if (!array_key_exists('MessageType', $parameters)) {
             $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
@@ -397,7 +397,8 @@ class RapidConnectGateway extends AbstractGateway
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectCompletionRequest', $parameters);
     }
 
-    public function partialReversal(array $parameters = array()) {
+    public function partialReversal(array $parameters = array())
+    {
         // MessageType: ReversalRequest, TransactionType: Authorization
         if (!array_key_exists('MessageType', $parameters)) {
             $parameters['MessageType'] = MessageType::REVERSAL_REQUEST;
@@ -654,11 +655,12 @@ class RapidConnectGateway extends AbstractGateway
             $now = new \DateTime();
             $now->setTimezone(new \DateTimeZone($this->getTransmissionTimeZone()));
             $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
-        }        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
-        $now = new \DateTime();
-        $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
-        $parameters['CommonGroup']['LocalDateandTime'] = $now->format('YmdHis');
-    }
+        }
+        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('YmdHis');
+        }
 
         if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
             $now = new \DateTime();
