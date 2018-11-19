@@ -562,6 +562,69 @@ class RapidConnectGateway extends AbstractGateway
         return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectRefundRequest', $parameters);
     }
 
+    public function timeoutReversal(array $parameters = array())
+    {
+        // MessageType: CreditRequest/ReversalRequest, TransactionType: provided
+        if (!array_key_exists('MessageType', $parameters)) {
+            $parameters['MessageType'] = MessageType::CREDIT_REQUEST;
+        }
+
+        if (!array_key_exists('ReversalReasonCode', $parameters['CommonGroup'])) {
+            $parameters['CommonGroup']['ReversalReasonCode'] = ReversalReasonCode::TIMEOUT;
+        }
+
+        if (!array_key_exists('CommonGroup', $parameters)) {
+            $parameters['CommonGroup'] = array();
+        }
+
+        if (array_key_exists('PaymentType', $parameters)) {
+            $parameters['CommonGroup']['PaymentType'] = $parameters['PaymentType'];
+            unset($parameters['PaymentType']);
+        } else {
+            if (!array_key_exists('PaymentType', $parameters['CommonGroup'])) {
+                $parameters['CommonGroup']['PaymentType'] = PaymentType::CREDIT; // make a guess
+            }
+        }
+
+        if (array_key_exists('TransactionType', $parameters)) {
+            $parameters['CommonGroup']['TransactionType'] = $parameters['TransactionType'];
+            unset($parameters['TransactionType']);
+        } else {
+            if (!array_key_exists('TransactionType', $parameters['CommonGroup'])) {
+                $parameters['CommonGroup']['TransactionType'] = TransactionType::SALE; // make a guess
+            }
+        }
+
+        if (!array_key_exists('LocalDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone($this->getLocalTimeZone()));
+            $parameters['CommonGroup']['LocalDateandTime'] = $now->format('YmdHis');
+        }
+
+        if (!array_key_exists('TransmissionDateandTime', $parameters['CommonGroup'])) {
+            $now = new \DateTime();
+            $now->setTimezone(new \DateTimeZone('UTC'));
+            $parameters['CommonGroup']['TransmissionDateandTime'] = $now->format('YmdHis');
+        }
+
+        $groupId = $this->getGroupID();
+        if ($groupId !== null) {
+            $parameters['CommonGroup']['GroupID'] = $groupId;
+        }
+
+        $terminalId = $this->getTerminalID();
+        if ($terminalId !== null) {
+            $parameters['CommonGroup']['TerminalID'] = $terminalId;
+        }
+
+        $merchantId = $this->getMerchantID();
+        if ($merchantId !== null) {
+            $parameters['CommonGroup']['MerchantID'] = $merchantId;
+        }
+
+        return $this->createRequest('\Omnipay\FirstData\Message\RapidConnectTimeoutReversalRequest', $parameters);
+    }
+
     public function verification(array $parameters = array())
     {
         // MessageType: CreditRequest, TransactionType: Verification

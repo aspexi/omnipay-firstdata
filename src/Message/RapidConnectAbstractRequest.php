@@ -898,7 +898,11 @@ XML;
      */
     public function getLocalDateandTime()
     {
-        return $this->getParameter('LocalDateandTime');
+        $g = $this->getCommonGroup();
+        if ($g === null) {
+            return null;
+        }
+        return $g->getLocalDateandTime();
     }
 
 
