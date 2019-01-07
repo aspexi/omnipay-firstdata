@@ -73,6 +73,16 @@ class PurchaseRequest extends AbstractRequest
         return $this->getParameter('sharedSecret');
     }
 
+	public function setFeedId($value)
+	{
+		return $this->setParameter('customParam_feedId', $value);
+	}
+
+	public function getFeedId()
+	{
+		return $this->getParameter('customParam_feedId');
+	}
+
     public function setHostedDataId($value)
     {
         return $this->setParameter('hostedDataId', $value);
@@ -141,12 +151,18 @@ class PurchaseRequest extends AbstractRequest
         $data['phone'] = $this->getCard()->getPhone();
         $data['email'] = $this->getCard()->getEmail();
 
-        $data['responseSuccessURL'] = $this->getParameter('returnUrl');
-        $data['responseFailURL']    = $this->getParameter('returnUrl');
+        $data['responseSuccessURL']         = $this->getParameter('returnUrl');
+        $data['responseFailURL']            = $this->getParameter('returnUrl');
+        $data['transactionNotificationURL'] = $this->getParameter('returnUrl');
+
+	    $data['customParam_feedId'] = $this->getFeedId();
 
         $data['customerid'] = $this->getCustomerId();
 
         $data['hosteddataid'] = $this->getHostedDataId();
+
+        // Force disable 3D secure
+	    $data['authenticateTransaction'] = 'false';
 
         return $data;
     }
