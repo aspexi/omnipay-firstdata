@@ -105,7 +105,7 @@ class PurchaseRequest extends AbstractRequest
 
     public function getData()
     {
-        $this->validate('amount', 'card');
+        $this->validate('amount'/*, 'card'*/);
 
         $data                = array();
         $data['storename']   = $this->getStoreId();
@@ -113,14 +113,17 @@ class PurchaseRequest extends AbstractRequest
         $data['timezone']    = 'GMT';
         $data['chargetotal'] = $this->getAmount();
         $data['txndatetime'] = $this->getDateTime();
+        //$data['hash_algorithm'] = 'SHA256';
+        $data['checkoutoption'] = 'classic';
         $data['hash']        = $this->createHash($data['txndatetime'], $data['chargetotal']);
         $data['currency']    = $this->getCurrencyNumeric();
         $data['mode']        = 'payonly';
-        $data['full_bypass'] = 'true';
-        $data['oid']         = $this->getParameter('transactionId');
+        //$data['full_bypass'] = 'false';
+        //$data['paymentMethod'] = 'M';
+        //$data['oid']         = $this->getParameter('transactionId');
 
         // If no hosted data, or a number is passed, validate the whole card
-        if (is_null($this->getHostedDataId()) || ! is_null($this->getCard()->getNumber())) {
+        /*if (is_null($this->getHostedDataId()) || ! is_null($this->getCard()->getNumber())) {
             $this->getCard()->validate();
         } elseif (is_null($this->getCard()->getCvv())) {
             // Else we only require the cvv when using hosted data
@@ -149,7 +152,7 @@ class PurchaseRequest extends AbstractRequest
         $data['szip']     = $this->getCard()->getShippingPostcode();
 
         $data['phone'] = $this->getCard()->getPhone();
-        $data['email'] = $this->getCard()->getEmail();
+        $data['email'] = $this->getCard()->getEmail();*/
 
         $data['responseSuccessURL']         = $this->getParameter('returnUrl');
         $data['responseFailURL']            = $this->getParameter('returnUrl');
@@ -162,7 +165,7 @@ class PurchaseRequest extends AbstractRequest
         $data['hosteddataid'] = $this->getHostedDataId();
 
         // Force disable 3D secure
-	    $data['authenticateTransaction'] = 'false';
+	    //$data['authenticateTransaction'] = 'false';
 
         return $data;
     }
@@ -187,6 +190,7 @@ class PurchaseRequest extends AbstractRequest
 
     public function sendData($data)
     {
+    	error_log( print_r( $data, 1 ) );
         return $this->response = new PurchaseResponse($this, $data);
     }
 
